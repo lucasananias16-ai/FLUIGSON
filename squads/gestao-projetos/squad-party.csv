@@ -1,0 +1,7 @@
+id,name,icon,role,path,execution,skills
+caio-coleta,Caio Coleta,🔎,Coleta dados do projeto em todas as fontes e arquiva as entregas aprovadas com memória do projeto,./agents/caio-coleta.agent.md,subagent,"web_search,web_fetch"
+paula-planejamento,Paula Planejamento,📐,"Planeja projetos novos: escopo, EAP, cronograma, responsáveis e marcos",./agents/paula-planejamento.agent.md,inline,
+rui-risco,Rui Risco,⚠️,"Mantém o registro de riscos e pendências com impacto, probabilidade, dono e plano de ação",./agents/rui-risco.agent.md,inline,
+sergio-status,Sergio Status,📊,"Gera o status report com percentual concluído, semáforo, desvios e próximos passos",./agents/sergio-status.agent.md,inline,
+ana-ata,Ana Ata,📝,Transforma anotações de reunião em ata com decisões e ações com dono e prazo,./agents/ana-ata.agent.md,inline,
+vitor-validacao,Vitor Validação,✅,"Revisa coerência, datas, responsáveis e completude antes da aprovação final",./agents/vitor-validacao.agent.md,inline,

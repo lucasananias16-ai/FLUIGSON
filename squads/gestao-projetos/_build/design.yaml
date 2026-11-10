@@ -1,0 +1,25 @@
+squad:
+  code: "gestao-projetos"
+  name: "Gestão de Projetos"
+  description: "Plano, status, riscos e atas de projetos em um único pipeline com aprovação humana."
+agents:
+  - { id: caio-coleta, name: "Caio Coleta", title: "Coletor de Dados e Arquivista", icon: "🔎", execution: subagent, tasks: [coletar-dados, arquivar-entrega] }
+  - { id: paula-planejamento, name: "Paula Planejamento", title: "Planejadora de Projetos", icon: "📐", execution: inline }
+  - { id: rui-risco, name: "Rui Risco", title: "Analista de Riscos e Pendências", icon: "⚠️", execution: inline }
+  - { id: sergio-status, name: "Sergio Status", title: "Redator de Status Report", icon: "📊", execution: inline }
+  - { id: ana-ata, name: "Ana Ata", title: "Secretária de Reuniões", icon: "📝", execution: inline }
+  - { id: vitor-validacao, name: "Vitor Validação", title: "Revisor de Qualidade", icon: "✅", execution: inline }
+pipeline:
+  - { step: 1, name: "Briefing da Execução", type: checkpoint, output_file: "output/briefing.md" }
+  - { step: 2, name: "Coleta de Dados", type: agent, agent: caio-coleta, execution: subagent, model_tier: powerful }
+  - { step: 3, name: "Conferência dos Dados", type: checkpoint, output_file: "output/snapshot-confirmado.md" }
+  - { step: 4, name: "Plano do Projeto", type: agent, agent: paula-planejamento, execution: inline }
+  - { step: 5, name: "Riscos e Pendências", type: agent, agent: rui-risco, execution: inline }
+  - { step: 6, name: "Status Report", type: agent, agent: sergio-status, execution: inline }
+  - { step: 7, name: "Ata e Follow-ups", type: agent, agent: ana-ata, execution: inline }
+  - { step: 8, name: "Revisão de Qualidade", type: agent, agent: vitor-validacao, execution: inline, on_reject: "4" }
+  - { step: 9, name: "Aprovação Final", type: checkpoint, output_file: "output/aprovacao.md" }
+  - { step: 10, name: "Arquivamento e Memória", type: agent, agent: caio-coleta, execution: subagent, model_tier: fast }
+skills_installed: [web_search, web_fetch]
+formats_selected: []
+best_practices_consulted: [data-analysis.md, technical-writing.md, review.md, researching.md]

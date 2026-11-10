@@ -1,0 +1,15 @@
+squad_code: "gestao-projetos"
+purpose: "Planejar projetos novos, gerar status reports, manter riscos e pendências e produzir atas com follow-ups."
+domain: "mixed"
+language: "Português (Brasil)"
+context:
+  sources: "chat, Google Sheets, Fluig (TOTVS), arquivos do repositório, artefatos, Gmail, Google Drive, memória da squad, WhatsApp (LetsBot)"
+  output_format: "Documento Markdown"
+  frequency: "sob demanda, semanal e por projeto"
+tools_needed:
+  - web_search
+  - web_fetch
+investigation:
+  enabled: false
+  profiles: []
+target_formats: []

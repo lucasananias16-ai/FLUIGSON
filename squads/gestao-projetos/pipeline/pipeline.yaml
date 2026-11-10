@@ -1,0 +1,104 @@
+name: "Pipeline — Gestão de Projetos"
+version: "1.0.0"
+created: "2026-11-10"
+squad: "gestao-projetos"
+
+description: >
+  Uma execução = uma entrega (plano, status, riscos ou ata) para um projeto.
+  O usuário escolhe a entrega e as fontes, confere os dados coletados, o
+  especialista da entrega trabalha (os demais registram "não se aplica"),
+  o revisor valida e o usuário aprova antes do arquivamento.
+
+max_review_cycles: 3
+
+steps:
+  - id: step-01
+    name: "Briefing da Execução"
+    type: checkpoint
+    file: steps/step-01-briefing.md
+
+  - id: step-02
+    name: "Coleta de Dados"
+    type: agent
+    agent: caio-coleta
+    tasks:
+      - coletar-dados
+    file: steps/step-02-coleta.md
+    depends_on: step-01
+
+  - id: step-03
+    name: "Conferência dos Dados"
+    type: checkpoint
+    file: steps/step-03-conferencia.md
+    depends_on: step-02
+
+  - id: step-04
+    name: "Plano do Projeto"
+    type: agent
+    agent: paula-planejamento
+    file: steps/step-04-plano.md
+    depends_on: step-03
+
+  - id: step-05
+    name: "Riscos e Pendências"
+    type: agent
+    agent: rui-risco
+    file: steps/step-05-riscos.md
+    depends_on: step-04
+
+  - id: step-06
+    name: "Status Report"
+    type: agent
+    agent: sergio-status
+    file: steps/step-06-status.md
+    depends_on: step-05
+
+  - id: step-07
+    name: "Ata e Follow-ups"
+    type: agent
+    agent: ana-ata
+    file: steps/step-07-ata.md
+    depends_on: step-06
+
+  - id: step-08
+    name: "Revisão de Qualidade"
+    type: agent
+    agent: vitor-validacao
+    file: steps/step-08-revisao.md
+    depends_on: step-07
+    on_reject: step-04
+
+  - id: step-09
+    name: "Aprovação Final"
+    type: checkpoint
+    file: steps/step-09-aprovacao.md
+    depends_on: step-08
+
+  - id: step-10
+    name: "Arquivamento e Memória"
+    type: agent
+    agent: caio-coleta
+    tasks:
+      - arquivar-entrega
+    file: steps/step-10-arquivamento.md
+    depends_on: step-09
+
+checkpoints:
+  - step-01  # Projeto, entrega, fontes, anotações
+  - step-03  # Conferência do resumo coletado
+  - step-09  # Aprovação final e follow-ups
+
+output:
+  artifacts:
+    - output/briefing.md
+    - output/snapshot.md
+    - output/snapshot-confirmado.md
+    - output/plano-projeto.md
+    - output/riscos.md
+    - output/status-report.md
+    - output/ata.md
+    - output/revisao.md
+    - output/aprovacao.md
+    - output/arquivamento.md
+  archive:
+    - projetos/{projeto}/

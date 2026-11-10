@@ -1,0 +1,78 @@
+name: "Gestão de Projetos"
+code: "gestao-projetos"
+description: >
+  Squad única de gestão de projetos: planeja projetos novos (escopo, EAP,
+  cronograma, responsáveis), gera status reports, mantém o registro de riscos
+  e pendências e transforma anotações de reunião em atas com follow-ups.
+  Coleta dados do chat, Google Sheets/Drive, Gmail, Fluig, WhatsApp, arquivos
+  do repositório e artefatos, e arquiva tudo em Markdown versionado.
+icon: "📋"
+version: "1.0.0"
+created: "2026-11-10"
+
+company: "_opensquad/_memory/company.md"
+preferences: "_opensquad/_memory/preferences.md"
+memory: "_memory/memories.md"
+
+target_audience: "Gestor(a) de projetos, patrocinadores e time do projeto"
+platform: "Markdown no repositório"
+
+skills:
+  - web_search
+  - web_fetch
+
+# Conectores do Claude usados quando disponíveis na sessão (não são skills do opensquad):
+connectors:
+  - google-sheets
+  - google-drive
+  - google-docs
+  - gmail
+  - google-calendar
+  - letsbot-whatsapp
+  - claude-artifacts
+  - fluig-api   # requer URL e token do Fluig configurados no ambiente
+
+data:
+  - pipeline/data/research-brief.md
+  - pipeline/data/domain-framework.md
+  - pipeline/data/quality-criteria.md
+  - pipeline/data/output-examples.md
+  - pipeline/data/anti-patterns.md
+  - pipeline/data/fontes-de-dados.md
+
+agents:
+  - id: caio-coleta
+    name: "Caio Coleta"
+    icon: "🔎"
+    path: agents/caio-coleta.agent.md
+
+  - id: paula-planejamento
+    name: "Paula Planejamento"
+    icon: "📐"
+    path: agents/paula-planejamento.agent.md
+
+  - id: rui-risco
+    name: "Rui Risco"
+    icon: "⚠️"
+    path: agents/rui-risco.agent.md
+
+  - id: sergio-status
+    name: "Sergio Status"
+    icon: "📊"
+    path: agents/sergio-status.agent.md
+
+  - id: ana-ata
+    name: "Ana Ata"
+    icon: "📝"
+    path: agents/ana-ata.agent.md
+
+  - id: vitor-validacao
+    name: "Vitor Validação"
+    icon: "✅"
+    path: agents/vitor-validacao.agent.md
+
+pipeline:
+  entry: pipeline/pipeline.yaml
+
+output_dir: output/
+archive_dir: projetos/
