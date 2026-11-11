@@ -2,6 +2,7 @@
 
 | Data | Run ID | Tema | Output | Resultado |
 |------|--------|------|--------|-----------|
+| 2026-11-11 | 2026-11-11-132949-protege | Status report Protege (Sinistros PTG-2418 + Fluxos de RH · Works) (lote por cliente) | Status report + registro de riscos | Aprovado |
 | 2026-11-11 | 2026-11-11-132526-lpc-latina | Status report LPC Latina (Sistema Gênio · BPO 60h + Gênio 2.0 120h) (lote por cliente) | Status report + registro de riscos | Aprovado |
 | 2026-11-11 | 2026-11-11-132040-assurant | Status report Assurant (Sustentação Fluig · Direta JYNX) (lote por cliente) | Status report + registro de riscos | Aprovado |
 | 2026-11-11 | 2026-11-11-131551-marchesan-tatu | Status report Marchesan (Tatu) (Compras + Portal · Proposta 036/2025) (lote por cliente) | Status report + registro de riscos | Aprovado |
