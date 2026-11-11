@@ -2,6 +2,7 @@
 
 | Data | Run ID | Tema | Output | Resultado |
 |------|--------|------|--------|-----------|
+| 2026-11-11 | 2026-11-11-140320-rede-icm | Status report Rede ICM (Colégio Stella Maris) · BPO Fluig 20h/mês (lote por cliente) | Status report + registro de riscos | Aprovado |
 | 2026-11-11 | 2026-11-11-135559-grupo-canopus | Status report Grupo Canopus (Desligamento Fluig + RM · Direta JYNX) (lote por cliente) | Status report + registro de riscos | Aprovado |
 | 2026-11-11 | 2026-11-11-135140-yangzi-tuut | Status report Yangzi (Tuut) · Projeto Conecta (PSA) (lote por cliente) | Status report + registro de riscos | Aprovado |
 | 2026-11-11 | 2026-11-11-134751-ods | Status report ODS (Liberação de Faturamento por Medição · Works) (lote por cliente) | Status report + registro de riscos | Aprovado |
