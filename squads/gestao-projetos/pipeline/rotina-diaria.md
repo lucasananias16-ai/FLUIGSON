@@ -20,6 +20,8 @@ Idioma: português do Brasil. Não há usuário para responder perguntas — nun
 ## 2. Quais clientes rodar
 Clientes ativos = clientes da Esteira com pelo menos um projeto fora de Encerrado/Cancelado, mais todas as pastas existentes em `projetos/`. Slug = nome em minúsculas, sem acento, com hífens (ex.: "Avantia (ESMG)" → `avantia-esmg`, "Marchesan (Tatu)" → `marchesan-tatu`, "Yangzi (Tuut)" → `yangzi-tuut`, "Rede ICM (Colégio Stella Maris)" → `rede-icm`, "BCI - Shineray" → `bci-shineray`, "M.A. Máquinas" → `m-a-maquinas`).
 
+Clientes cujo último status aprovado está como **⚫ Encerrado** ou **✅ Entregue** (ex.: Bombril, Sollar) ficam **fora** da rotina e da contagem por cor; só voltam se surgir fonte nova sobre eles (aí entram como conflito no painel). Leia a cor sempre da linha `**Semáforo:**` do último `projetos/{slug}/status-*.md`.
+
 Para cada cliente, verifique **desde a última execução**: e-mails novos com o nome do cliente (ou domínio), eventos da agenda realizados/alterados, commits novos nos repositórios dele, e mudança na Esteira (`ultimo_avanco`, `etapa`, `estado`, `proximo_marco`, `prazo`, backlog). Também rode quem tem **marco/prazo vencendo nos próximos 3 dias úteis** ou que **virou de cor só pela passagem do tempo** (ex.: passou de 20 dias parado, marco venceu hoje).
 - Com novidade → roda a squad (passo 3).
 - Sem novidade → só uma linha "sem novidade" no painel, com a cor do último status arquivado.
