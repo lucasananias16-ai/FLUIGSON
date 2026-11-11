@@ -9,6 +9,9 @@
   Também em atenção: R05 (9) contestação do banco de horas Fluig sem relatório analítico localizado; P03 excedente de 150h em Compras; R07 (6) nenhum repositório da Avantia no GitHub.
 - Ações abertas: 10 · Decisões pedidas: 5 (ver status-2026-11-11.md)
 
+## Correções posteriores
+- 2026-11-11: a proposta 019/2026 V03 é da LPC Latina (Gênio 2.0), não da Avantia/Compras (confirmado pelo usuário na execução da LPC)
+
 ## Histórico
 - 2026-11-11 · status · 🟡 · Analytics faturado à Global GCS (120h/mês), repasse a formalizar e fatura direta a cancelar; Estoques com pedido de novembro pendente; banco Fluig 40h/mês
 
