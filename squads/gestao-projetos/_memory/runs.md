@@ -2,6 +2,7 @@
 
 | Data | Run ID | Tema | Output | Resultado |
 |------|--------|------|--------|-----------|
+| 2026-11-11 | 2026-11-11-134751-ods | Status report ODS (Liberação de Faturamento por Medição · Works) (lote por cliente) | Status report + registro de riscos | Aprovado |
 | 2026-11-11 | 2026-11-11-134323-destro | Status report Destro (Lançamento de NF · Fluig + WinThor · Works) (lote por cliente) | Status report + registro de riscos | Aprovado |
 | 2026-11-11 | 2026-11-11-133740-alliance | Status report Alliance (Gestão de Resíduos · Works/TOTVS) (lote por cliente) | Status report + registro de riscos | Aprovado |
 | 2026-11-11 | 2026-11-11-132949-protege | Status report Protege (Sinistros PTG-2418 + Fluxos de RH · Works) (lote por cliente) | Status report + registro de riscos | Aprovado |
