@@ -4,6 +4,8 @@
 - Português do Brasil, direto, frases curtas, datas no formato AAAA-MM-DD.
 - Sempre dono + prazo em toda ação; nada de "alguém vai ver".
 
+- Semáforo do status: usar o critério da Esteira — 🔴 com prazo/marco vencido, trava, >20 dias parado ou horas fora do PSA; 🟡 com 8–20 dias parado, pendência do cliente ou consumo >80%; 🟢 com avanço em 7 dias. Projeto pausado formalmente não entra na cor.
+
 ## Design Visual
 - Markdown simples: títulos, tabelas e listas. Semáforo com 🟢 🟡 🔴.
 
