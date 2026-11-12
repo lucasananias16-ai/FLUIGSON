@@ -21,4 +21,4 @@
 ## Técnico (específico do squad)
 - Entregas aprovadas vão para `projetos/{slug-do-projeto}/` (versionado no git).
 - Histórico de cada projeto em `projetos/{slug-do-projeto}/memoria.md`.
-- Fluig: só usar se FLUIG_URL estiver configurado e o token estiver salvo como segredo do ambiente.
+- Fluig: usar o servidor MCP `fluig` (registrado em `.mcp.json`). Endereço, usuário e senha do Fluig vêm do usuário na conversa; nunca gravar senha em arquivo.

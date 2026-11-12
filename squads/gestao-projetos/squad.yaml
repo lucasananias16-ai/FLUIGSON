@@ -30,7 +30,7 @@ connectors:
   - google-calendar
   - letsbot-whatsapp
   - claude-artifacts
-  - fluig-api   # requer URL e token do Fluig configurados no ambiente
+  - fluig-mcp   # servidor MCP "fluig" em .mcp.json (token injetado pelo proxy)
 
 data:
   - pipeline/data/research-brief.md

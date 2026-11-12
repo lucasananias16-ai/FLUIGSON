@@ -3,6 +3,13 @@
     "playwright": {
       "command": "npx",
       "args": ["@playwright/mcp@latest", "--config", "_opensquad/config/playwright.config.json"]
+    },
+    "fluig": {
+      "type": "http",
+      "url": "https://fluig-mcp-local.netlify.app/mcp",
+      "headers": {
+        "Authorization": "Bearer proxy-injected"
+      }
     }
   }
 }
