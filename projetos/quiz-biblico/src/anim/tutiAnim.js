@@ -50,9 +50,11 @@ function blink(t) {
  *  - fala(t): volume da voz de 0 a 1, ou null quando ela não está falando
  *  - pulos: [{ t, n, altura, periodo }] sequências de pulinhos
  *  - tGlobal: tempo desde o começo do vídeo, para o balanço não dar tranco entre cenas
+ *  - ajuste(p, t): retoque livre na pose (por exemplo, o vaivém do aceno)
  */
-function tutiFrame(t, { track, fala, pulos = [], tGlobal = t, width = 560, height = 616 }) {
+function tutiFrame(t, { track, fala, pulos = [], tGlobal = t, width = 560, height = 616, ajuste = null }) {
   const p = poseAt(track, t);
+  if (ajuste) ajuste(p, t);
   p.extras = null;
   p.shadow = true;
 

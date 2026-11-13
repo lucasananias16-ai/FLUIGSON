@@ -1,68 +1,102 @@
 {
   "voz": {
     "nome": "pt-BR-Chirp3-HD-Leda",
-    "velocidade": 0.94
+    "velocidade": 0.94,
+    "estilo": "animada"
   },
   "falas": {
     "v1_abertura": {
       "texto": "Oi, amiguinho! Eu sou a Tuti! Hoje vamos brincar de quiz com a história da Arca de Noé. Eu pergunto, e você responde bem alto. Preparado? Vamos lá!",
-      "dur": 12.49
+      "dur": 12.807,
+      "estilo": "animada"
     },
     "v1_p1_pergunta": {
       "texto": "Quem construiu a arca? Foi o Noé... o Davi... ou o Moisés?",
-      "dur": 6.52,
+      "dur": 6.61,
       "partes": [
         {
           "ini": 0,
-          "fim": 1.19
+          "fim": 1.17
         },
         {
-          "ini": 2.09,
-          "fim": 2.84
+          "ini": 2.07,
+          "fim": 2.83
         },
         {
-          "ini": 3.84,
+          "ini": 3.83,
           "fim": 4.53
         },
         {
           "ini": 5.53,
-          "fim": 6.52
+          "fim": 6.61
         }
-      ]
+      ],
+      "estilo": "animada"
     },
     "v1_p1_resposta": {
       "texto": "Foi o Noé! Muito bem! Deus pediu para Noé construir um barco bem grandão.",
-      "dur": 6.315
+      "dur": 6.265,
+      "estilo": "animada"
     },
     "v1_p2_pergunta": {
       "texto": "De que a arca foi feita? De pedra... de madeira... ou de gelo?",
-      "dur": 6.72,
+      "dur": 6.74,
       "partes": [
         {
           "ini": 0,
-          "fim": 1.4
+          "fim": 1.27
         },
         {
-          "ini": 2.3,
-          "fim": 3.08
+          "ini": 2.17,
+          "fim": 3.01
         },
         {
-          "ini": 4.08,
-          "fim": 4.87
+          "ini": 4.01,
+          "fim": 4.89
         },
         {
-          "ini": 5.87,
-          "fim": 6.72
+          "ini": 5.89,
+          "fim": 6.74
         }
-      ]
+      ],
+      "estilo": "animada"
     },
     "v1_p2_resposta": {
       "texto": "De madeira! Isso mesmo! Noé usou muita, muita madeira.",
-      "dur": 5.619
+      "dur": 5.52,
+      "estilo": "animada"
     },
     "v1_p3_pergunta": {
       "texto": "Como os animais entraram na arca? Um sozinho... cinco de uma vez... ou dois juntinhos?",
-      "dur": 8.2,
+      "dur": 8.51,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 2.09
+        },
+        {
+          "ini": 2.99,
+          "fim": 3.88
+        },
+        {
+          "ini": 4.88,
+          "fim": 6.15
+        },
+        {
+          "ini": 7.15,
+          "fim": 8.51
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v1_p3_resposta": {
+      "texto": "Dois juntinhos! Acertou! Os bichinhos entraram de dois em dois.",
+      "dur": 4.865,
+      "estilo": "animada"
+    },
+    "v1_p4_pergunta": {
+      "texto": "Qual destes não é um animal? O leão... o guarda-chuva... ou a girafa?",
+      "dur": 7.26,
       "partes": [
         {
           "ini": 0,
@@ -70,155 +104,140 @@
         },
         {
           "ini": 2.8,
-          "fim": 3.77
+          "fim": 3.49
         },
         {
-          "ini": 4.77,
-          "fim": 6.01
+          "ini": 4.49,
+          "fim": 5.57
         },
         {
-          "ini": 7.01,
-          "fim": 8.2
+          "ini": 6.57,
+          "fim": 7.26
         }
-      ]
-    },
-    "v1_p3_resposta": {
-      "texto": "Dois juntinhos! Acertou! Os bichinhos entraram de dois em dois.",
-      "dur": 5.86
-    },
-    "v1_p4_pergunta": {
-      "texto": "Qual destes não é um animal? O leão... o guarda-chuva... ou a girafa?",
-      "dur": 7.02,
-      "partes": [
-        {
-          "ini": 0,
-          "fim": 1.68
-        },
-        {
-          "ini": 2.58,
-          "fim": 3.25
-        },
-        {
-          "ini": 4.25,
-          "fim": 5.38
-        },
-        {
-          "ini": 6.38,
-          "fim": 7.02
-        }
-      ]
+      ],
+      "estilo": "animada"
     },
     "v1_p4_resposta": {
       "texto": "O guarda-chuva! Ha ha! Guarda-chuva não é bicho! Mas ia ser útil, né?",
-      "dur": 4.807
+      "dur": 6.2,
+      "estilo": "animada"
     },
     "v1_p5_pergunta": {
       "texto": "O que caiu do céu por muitos dias? Neve... folhas... ou chuva?",
-      "dur": 7.08,
+      "dur": 6.9,
       "partes": [
         {
           "ini": 0,
-          "fim": 2.33
+          "fim": 2.08
         },
         {
-          "ini": 3.23,
-          "fim": 3.8
+          "ini": 2.98,
+          "fim": 3.62
         },
         {
-          "ini": 4.8,
-          "fim": 5.38
+          "ini": 4.62,
+          "fim": 5.22
         },
         {
-          "ini": 6.38,
-          "fim": 7.08
+          "ini": 6.22,
+          "fim": 6.9
         }
-      ]
+      ],
+      "estilo": "animada"
     },
     "v1_p5_resposta": {
       "texto": "Chuva! Choveu, choveu e choveu! Mas todos na arca estavam seguros.",
-      "dur": 4.507
+      "dur": 5.773,
+      "estilo": "animada"
     },
     "v1_p6_pergunta": {
       "texto": "Por quantos dias choveu? Quarenta... quatro... ou dez?",
-      "dur": 6.16,
+      "dur": 6.24,
       "partes": [
         {
           "ini": 0,
-          "fim": 1.4
+          "fim": 1.45
         },
         {
-          "ini": 2.3,
-          "fim": 2.97
+          "ini": 2.35,
+          "fim": 3
         },
         {
-          "ini": 3.97,
+          "ini": 4,
           "fim": 4.49
         },
         {
           "ini": 5.49,
-          "fim": 6.16
+          "fim": 6.24
         }
-      ]
+      ],
+      "estilo": "animada"
     },
     "v1_p6_resposta": {
       "texto": "Quarenta! Quarenta dias e quarenta noites! É muita chuva!",
-      "dur": 4.81
+      "dur": 4.69,
+      "estilo": "animada"
     },
     "v1_p7_pergunta": {
       "texto": "Qual passarinho trouxe uma folhinha para Noé? A coruja... a pomba... ou o pinguim?",
-      "dur": 8.075,
+      "dur": 7.48,
       "partes": [
         {
           "ini": 0,
-          "fim": 2.7
+          "fim": 2.46
         },
         {
-          "ini": 3.6,
-          "fim": 4.56
+          "ini": 3.36,
+          "fim": 4.08
         },
         {
-          "ini": 5.56,
-          "fim": 6.26
+          "ini": 5.08,
+          "fim": 5.72
         },
         {
-          "ini": 7.26,
-          "fim": 8.075
+          "ini": 6.72,
+          "fim": 7.48
         }
-      ]
+      ],
+      "estilo": "animada"
     },
     "v1_p7_resposta": {
       "texto": "A pomba! A pombinha mostrou que a terra já estava sequinha.",
-      "dur": 4.47
+      "dur": 4.66,
+      "estilo": "animada"
     },
     "v1_p8_pergunta": {
       "texto": "O que Deus colocou no céu como promessa? A estrela... a lua... ou o arco-íris?",
-      "dur": 7.94,
+      "dur": 7.64,
       "partes": [
         {
           "ini": 0,
-          "fim": 2.41
+          "fim": 2.23
         },
         {
-          "ini": 3.31,
-          "fim": 4.09
+          "ini": 3.13,
+          "fim": 3.96
         },
         {
-          "ini": 5.09,
-          "fim": 5.69
+          "ini": 4.96,
+          "fim": 5.51
         },
         {
-          "ini": 6.69,
-          "fim": 7.94
+          "ini": 6.51,
+          "fim": 7.64
         }
-      ]
+      ],
+      "estilo": "animada"
     },
     "v1_p8_resposta": {
       "texto": "O arco-íris! Que lindo! O arco-íris lembra que Deus sempre cumpre o que promete.",
-      "dur": 6.23
+      "dur": 6.31,
+      "estilo": "animada"
     },
     "v1_encerramento": {
       "texto": "Você foi demais! Deus cuidou de Noé, da família dele e de todos os bichinhos. E Ele cuida de você também! Tchau, amiguinho, até o próximo quiz!",
-      "dur": 10.14
+      "dur": 10.159,
+      "estilo": "animada"
     }
   }
 }

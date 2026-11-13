@@ -4,7 +4,8 @@
  * v1-arca-de-noe/01-narrativa.md. As opções são faladas na ordem da tela.
  */
 module.exports = {
-  voz: { nome: 'pt-BR-Chirp3-HD-Leda', velocidade: 0.94 },
+  // estilo 'animada': a fala vai para a voz com mais ênfase na pontuação (ver narracao.js)
+  voz: { nome: 'pt-BR-Chirp3-HD-Leda', velocidade: 0.94, estilo: 'animada' },
   contagem: 10, // segundos entre o fim da pergunta e a resposta
   abertura:
     'Oi, amiguinho! Eu sou a Tuti! Hoje vamos brincar de quiz com a história da Arca de Noé. Eu pergunto, e você responde bem alto. Preparado? Vamos lá!',
@@ -28,6 +29,8 @@ module.exports = {
     5: {
       pergunta: 'O que caiu do céu por muitos dias? Neve... folhas... ou chuva?',
       resposta: 'Chuva! Choveu, choveu e choveu! Mas todos na arca estavam seguros.',
+      // com a ênfase dobrada esta fala saía empolgada demais; aqui ela vai com ênfase simples
+      respostaVoz: 'Chuva! Choveu, choveu e choveu! Mas todos na arca estavam seguros!',
     },
     6: {
       pergunta: 'Por quantos dias choveu? Quarenta... quatro... ou dez?',

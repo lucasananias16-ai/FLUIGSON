@@ -162,8 +162,8 @@ function cenaAbertura({ comTuti = true } = {}) {
   return withOutline(TRACO, () => {
     let s = R(0, 0, 1920, 1080, 0, SKY, { sw: 0 });
     s += E(960, 720, 1400, 300, '#DDF3FF', { sw: 0 });
-    s += sun(250, 180, 88);
-    s += skyCloud(650, 150, 0.95) + skyCloud(1560, 120, 1.1);
+    s += `<g id="sol">${sun(250, 180, 88)}</g>`;
+    s += `<g id="nv1">${skyCloud(650, 150, 0.95)}</g><g id="nv2">${skyCloud(1560, 120, 1.1)}</g>`;
     // morros ao fundo
     s += P('M-20 650 Q280 480 660 620 Q960 500 1380 610 Q1680 520 1940 610 L1940 1100 L-20 1100Z', GRASS_FAR);
     s += tree(118, 660, 0.9) + bush(1820, 640, 1.1);
@@ -198,10 +198,10 @@ function cenaEncerramento({ comTuti = true } = {}) {
   return withOutline(TRACO, () => {
     let s = R(0, 0, 1920, 1080, 0, SKY, { sw: 0 });
     s += E(960, 720, 1400, 300, '#DDF3FF', { sw: 0 });
-    s += sun(210, 150, 78);
-    s += withOutline(TRACO, () => rainbowArc(1010, 840, 770, 29));
-    s += skyCloud(520, 120, 0.8) + skyCloud(1700, 250, 0.9);
-    s += G('translate(600,150) scale(0.2)', withOutline(TRACO / 0.2, animais.pomba));
+    s += `<g id="sol">${sun(210, 150, 78)}</g>`;
+    s += `<g id="arco">${withOutline(TRACO, () => rainbowArc(1010, 840, 770, 29))}</g>`;
+    s += `<g id="nv1">${skyCloud(520, 120, 0.8)}</g><g id="nv2">${skyCloud(1700, 250, 0.9)}</g>`;
+    s += `<g id="pomba">${G('translate(600,150) scale(0.2)', withOutline(TRACO / 0.2, animais.pomba))}</g>`;
     // morros ao fundo e o monte onde a arca parou
     s += P('M-20 690 Q260 560 600 660 Q900 600 1300 660 Q1660 580 1940 660 L1940 1100 L-20 1100Z', GRASS_FAR);
     s += P('M640 760 Q820 560 1190 566 Q1560 560 1760 760Z', '#C7B08A');
@@ -210,15 +210,15 @@ function cenaEncerramento({ comTuti = true } = {}) {
     s += P('M-20 760 Q480 700 960 742 Q1480 790 1940 724 L1940 1100 L-20 1100Z', GRASS);
     s += tuft(480, 800) + tuft(1100, 790) + tuft(1880, 780);
     // animais
-    s += place(animais.girafa, 1372, 312, 0.62);
-    s += place(animais.elefante, 1136, 468, 0.44);
-    s += place(animais.elefante, 1296, 566, 0.46);
-    s += place(animais.leao, 1596, 672, 0.36);
+    s += `<g id="b1">${place(animais.girafa, 1372, 312, 0.62)}</g>`;
+    s += `<g id="b2">${place(animais.elefante, 1136, 468, 0.44)}</g>`;
+    s += `<g id="b3">${place(animais.elefante, 1296, 566, 0.46)}</g>`;
+    s += `<g id="b4">${place(animais.leao, 1596, 672, 0.36)}</g>`;
     // Noé e a família
-    s += place(() => pessoas.esposa(feliz), 532, 566, 0.4);
-    s += place(() => pessoas.noe(Object.assign({}, feliz, { armL: [300, 470], armR: [700, 470] })), 352, 572, 0.42);
-    s += place(() => pessoas.nora(Object.assign({}, feliz, { armR: [700, 500] })), 882, 584, 0.39);
-    s += place(() => pessoas.filho(Object.assign({}, feliz, { armL: [300, 480], armR: [700, 480] })), 706, 590, 0.41);
+    s += `<g id="g2">${place(() => pessoas.esposa(feliz), 532, 566, 0.4)}</g>`;
+    s += `<g id="g1">${place(() => pessoas.noe(Object.assign({}, feliz, { armL: [300, 470], armR: [700, 470] })), 352, 572, 0.42)}</g>`;
+    s += `<g id="g4">${place(() => pessoas.nora(Object.assign({}, feliz, { armR: [700, 500] })), 882, 584, 0.39)}</g>`;
+    s += `<g id="g3">${place(() => pessoas.filho(Object.assign({}, feliz, { armL: [300, 480], armR: [700, 480] })), 706, 590, 0.41)}</g>`;
     // primeiro plano
     s += P('M-20 990 Q520 930 1040 990 Q1500 1036 1940 976 L1940 1100 L-20 1100Z', GRASS_NEAR);
     s += flowers([

@@ -14,7 +14,6 @@ const { criarPergunta } = require('./cenaPergunta');
 const { renderVideo } = require('../anim/render');
 const { mixar, comTrilha, ganhoParaAlvo } = require('../anim/mix');
 const musica = require('../anim/musica');
-const Z = require('../anim/ease');
 
 const ROOT = path.resolve(__dirname, '..', '..');
 const OUT = path.join(ROOT, '_rascunho', 'video');
@@ -24,13 +23,8 @@ const OUT = path.join(ROOT, '_rascunho', 'video');
   const num = Number(args.find((a) => !a.startsWith('--')) || 1);
   const soAudio = args.includes('--so-audio');
   const semTrilha = args.includes('--sem-trilha');
-  const cena = criarPergunta(num);
-  // o teste abre e fecha clareando a tela; no vídeo inteiro as cenas emendam direto
-  const frame = cena.frame;
-  cena.frame = (t) => {
-    const fade = 1 - Z.prog(t, 0, 0.35) + Z.prog(t, cena.dur - 0.3, 0.3);
-    return frame(t).concat([{ id: 'fade', style: `opacity:${Math.round(Z.clamp(fade) * 1000) / 1000}` }]);
-  };
+  // o teste abre e fecha clareando a tela; no vídeo inteiro as perguntas emendam direto
+  const cena = criarPergunta(num, { entrada: '#fff', saida: '#fff' });
   fs.mkdirSync(OUT, { recursive: true });
 
   // som: voz e efeitos em mono, mais a trilha em estéreo

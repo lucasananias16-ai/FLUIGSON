@@ -16,6 +16,8 @@ const Z = require('../anim/ease');
 const kit = require('../kit');
 const { stageHtml } = require('../anim/render');
 const { tutiFrame } = require('../anim/tutiAnim');
+const { falaEnvelope } = require('../anim/fala');
+const { confete, veu } = require('../anim/fx');
 const { POSES } = require('../tuti');
 const { fundoQuiz, TRACO } = require('../art/cenario');
 const perguntas = require('./opcoes');
@@ -28,7 +30,6 @@ const CARD = 440;
 const CX = [432, 920, 1408];
 const CY = 232;
 const TIMER = { x: 1160, y: 866 };
-const CONFETE = ['#FF6B6B', '#FFD23F', '#5DBB7A', '#4DA3FF', '#9B7EDE', '#FF8FB1', '#FFA53A'];
 
 const f = (v) => Math.round(v * 1000) / 1000;
 
@@ -39,22 +40,6 @@ const PENSANDO = Object.assign({}, POSES.perguntando, { mouth: 0 });
 const PENSANDO_FRENTE = Object.assign({}, PENSANDO, { gaze: [0, -0.1], headTilt: -4, browR: 6, browTiltR: 0 });
 const COMEMORA = Object.assign({}, POSES.comemorando, { jump: 0, squash: 1 });
 const FELIZ = { armL: [300, 650], armR: [700, 650], browL: 8, browR: 8, mouth: 0.4 };
-
-/** Volume da fala ao longo do tempo, de 0 a 1, para a boca da Tuti. */
-function falaEnvelope(file) {
-  const { data, rate } = A.readWav(file);
-  const env = A.envelope(data, rate, 1 / 60);
-  const sorted = Array.from(env.values).sort((a, b) => a - b);
-  const ref = sorted[Math.floor(sorted.length * 0.95)] || 1;
-  const v = Array.from(env.values, (x) => Math.min(1, Math.pow(x / ref, 0.7)));
-  for (let i = 1; i < v.length; i++) v[i] = Math.max(v[i], v[i - 1] * 0.72); // a boca fecha devagar
-  return (t) => {
-    const i = t / env.win;
-    const i0 = Math.floor(i);
-    if (i0 < 0 || i0 >= v.length - 1) return 0;
-    return v[i0] + (v[i0 + 1] - v[i0]) * (i - i0);
-  };
-}
 
 /** Verso do card: azul do lenço da Tuti, com bolinhas e o número (ou "?"). */
 function verso(label) {
@@ -105,8 +90,10 @@ function timerSvg(num, frac, pulse) {
 /**
  * Monta a cena da pergunta `num` (1 a 8).
  * `tGlobal0` é o instante em que a cena começa dentro do vídeo inteiro.
+ * `entrada` e `saida` são cores para abrir e fechar a cena com um véu; sem
+ * elas a cena emenda direto na anterior e na seguinte.
  */
-function criarPergunta(num, { tGlobal0 = 0 } = {}) {
+function criarPergunta(num, { tGlobal0 = 0, entrada = null, saida = null } = {}) {
   const q = perguntas.find((x) => x.n === num);
   const manifest = JSON.parse(fs.readFileSync(path.join(NARR, 'narracao.json'), 'utf8')).falas;
   const fq = manifest[`v1_p${num}_pergunta`];
@@ -219,21 +206,7 @@ function criarPergunta(num, { tGlobal0 = 0 } = {}) {
     const life0 = t - (T.revela + 0.95);
     if (life0 < 0 || t > T.saida + 0.7) return '';
     const fadeOut = 1 - Z.prog(t, T.saida, 0.5);
-    let s = `<g opacity="${f(fadeOut)}">`;
-    for (let i = 0; i < 90; i++) {
-      const life = life0 - Z.rand(i, 1) * 1.1;
-      if (life < 0) continue;
-      const x = Z.rand(i, 2) * 1920 + Math.sin(life * (1.4 + Z.rand(i, 5) * 2) + i) * (40 + Z.rand(i, 4) * 60);
-      const y = -40 + (330 + Z.rand(i, 3) * 360) * life + 50 * life * life;
-      if (y > 1120) continue;
-      const w = 16 + Z.rand(i, 7) * 12;
-      const c = CONFETE[i % CONFETE.length];
-      if (i % 3 === 0) s += `<circle cx="${f(x)}" cy="${f(y)}" r="${f(w / 2)}" fill="${c}"/>`;
-      else {
-        const rot = life * (130 + Z.rand(i, 6) * 300) * (i % 2 ? 1 : -1);
-        s += `<rect x="${f(x - w / 2)}" y="${f(y - w * 0.3)}" width="${f(w)}" height="${f(w * 0.6)}" rx="3" fill="${c}" transform="rotate(${f(rot)} ${f(x)} ${f(y)})"/>`;
-      }
-    }
+    let s = `<g opacity="${f(fadeOut)}">` + confete(life0);
     // brilhos em volta do card certo
     const cx = CX[certa] + CARD / 2;
     const cy = CY + CARD / 2;
@@ -327,6 +300,7 @@ function criarPergunta(num, { tGlobal0 = 0 } = {}) {
 
     ops.push({ id: 'tuti', html: tutiFrame(t, { track, fala, pulos, tGlobal: t + tGlobal0 }) });
     ops.push({ id: 'fx', html: fx(t) });
+    ops.push({ id: 'fade', style: veu(t, dur, { entrada, saida }) });
     return ops;
   }
 

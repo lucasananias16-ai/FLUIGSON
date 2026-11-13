@@ -169,6 +169,48 @@ function mixInto(dest, src, rate, at, gain = 1) {
   return dest;
 }
 
+/**
+ * Altura da voz ao longo da fala. Devolve a mediana em Hz e o quanto a voz
+ * varia, em semitons. Voz mais alta e mais variada é sinal de fala animada.
+ */
+function pitchStats(data, rate, { fmin = 140, fmax = 560 } = {}) {
+  const N = Math.round(0.04 * rate);
+  const H = Math.round(0.01 * rate);
+  const lagMin = Math.floor(rate / fmax);
+  const lagMax = Math.ceil(rate / fmin);
+  const r = new Float64Array(lagMax + 1);
+  const f0 = [];
+  for (let s = 0; s + N + lagMax < data.length; s += H) {
+    let e = 0;
+    for (let i = 0; i < N; i++) e += data[s + i] * data[s + i];
+    if (e / N < 2.5e-4) continue;
+    let best = 0;
+    for (let lag = lagMin; lag <= lagMax; lag++) {
+      let num = 0;
+      let d2 = 0;
+      for (let i = 0; i < N; i++) {
+        const b = data[s + i + lag];
+        num += data[s + i] * b;
+        d2 += b * b;
+      }
+      r[lag] = num / Math.sqrt(e * d2 + 1e-12);
+      if (r[lag] > best) best = r[lag];
+    }
+    if (best < 0.55) continue;
+    for (let lag = lagMin + 1; lag < lagMax; lag++) {
+      if (r[lag] >= 0.9 * best && r[lag] >= r[lag - 1] && r[lag] >= r[lag + 1]) {
+        f0.push(rate / lag);
+        break;
+      }
+    }
+  }
+  if (f0.length < 5) return { mediana: 0, desvio: 0 };
+  f0.sort((a, b) => a - b);
+  const med = f0[Math.floor(f0.length / 2)];
+  const desvio = Math.sqrt(f0.reduce((a, x) => a + Math.pow(12 * Math.log2(x / med), 2), 0) / f0.length);
+  return { mediana: med, desvio };
+}
+
 const peak = (data) => data.reduce((m, v) => Math.max(m, Math.abs(v)), 0);
 
-module.exports = { RATE, readWav, writeWav, envelope, speechSegments, splitParts, trim, slice, silence, concat, fadeEdges, mixInto, peak };
+module.exports = { RATE, readWav, writeWav, envelope, speechSegments, splitParts, trim, slice, silence, concat, fadeEdges, mixInto, peak, pitchStats };

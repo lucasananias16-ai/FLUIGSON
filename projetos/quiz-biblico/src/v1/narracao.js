@@ -13,6 +13,10 @@
  * A voz é generativa: cada gravação nova sai um pouco diferente. Por isso os
  * áudios aprovados ficam guardados no repositório.
  *
+ * De cada fala são gravadas três tomadas; fica a que passa na conferência
+ * (duração, pausas) e, entre essas, a de animação mais próxima da amostra
+ * aprovada.
+ *
  * Nas perguntas, a frase inteira é gerada de uma vez (para a entonação ficar
  * natural) e depois cortada nas pausas: pergunta, opção 1, opção 2 e opção 3.
  * Entre as partes entra um silêncio fixo, que é o tempo de cada card virar.
@@ -31,12 +35,39 @@ const SR = 24000; // taxa nativa da voz
 const PAUSA_PERGUNTA = 0.9; // depois da pergunta, antes da primeira opção
 const PAUSA_OPCAO = 1.0; // entre uma opção e outra
 const TENTATIVAS = 3;
+const ESTILO = roteiro.voz.estilo || 'neutra';
+
+/**
+ * Texto que vai para a voz. As palavras são as do roteiro; no estilo
+ * "animada" só a pontuação ganha ênfase, e a voz responde ficando mais
+ * empolgada (medido: cerca de 1 semitom mais aguda, com mais variação).
+ */
+function textoParaVoz(fala) {
+  if (fala.vozTexto) return fala.vozTexto; // texto de voz escrito à mão para esta fala
+  if (ESTILO !== 'animada') return fala.texto;
+  return fala.texto
+    .replace(/\.\.\./g, '\u2026') // preserva as reticências, que marcam as pausas
+    .replace(/!/g, '!!')
+    .replace(/\.(\s|$)/g, '!$1')
+    .replace(/\?/g, fala.tipo === 'pergunta' ? '?!' : '?')
+    .replace(/\u2026/g, '...');
+}
+
+// Altura da voz na amostra aprovada (F). Entre as tomadas boas, fica a mais
+// próxima dela, para a animação ser a mesma do começo ao fim do vídeo.
+const ALTURA_ALVO = 248;
+
+/** Distância, em semitons, entre a altura da voz da tomada e o alvo. */
+function distanciaDoAlvo(wav) {
+  const p = A.pitchStats(wav.data, wav.rate);
+  return p.mediana ? Math.abs(12 * Math.log2(p.mediana / ALTURA_ALVO)) : 99;
+}
 
 function falas() {
   const lista = [{ id: 'v1_abertura', texto: roteiro.abertura, tipo: 'fala' }];
   for (const n of Object.keys(roteiro.perguntas)) {
     lista.push({ id: `v1_p${n}_pergunta`, texto: roteiro.perguntas[n].pergunta, tipo: 'pergunta' });
-    lista.push({ id: `v1_p${n}_resposta`, texto: roteiro.perguntas[n].resposta, tipo: 'fala' });
+    lista.push({ id: `v1_p${n}_resposta`, texto: roteiro.perguntas[n].resposta, tipo: 'fala', vozTexto: roteiro.perguntas[n].respostaVoz });
   }
   lista.push({ id: 'v1_encerramento', texto: roteiro.encerramento, tipo: 'fala' });
   return lista;
@@ -119,27 +150,37 @@ function montar(fala, wav, partes) {
 
   for (const fala of falas()) {
     if (ids.length && !ids.includes(fala.id)) continue;
-    const pronto = fs.existsSync(path.join(OUT, `${fala.id}.wav`)) && manifest.falas[fala.id];
+    const pronto = fs.existsSync(path.join(OUT, `${fala.id}.wav`)) && manifest.falas[fala.id] && manifest.falas[fala.id].estilo === ESTILO;
     if (pronto && !refazer) continue;
-    let melhor = null;
-    for (let k = 1; k <= TENTATIVAS; k++) {
-      const arq = path.join(TAKES, `${fala.id}_t${k}.wav`);
-      if (novaTomada || !fs.existsSync(arq)) {
-        await synth({ voice: roteiro.voz.nome, text: fala.texto, rate: roteiro.voz.velocidade, sampleRate: SR, out: arq });
+
+    // Uma tomada que você já ouviu e aprovou tem prioridade: <id>_<estilo>_aprovada.wav
+    const aprovada = path.join(TAKES, `${fala.id}_${ESTILO}_aprovada.wav`);
+    const candidatas = [];
+    if (fs.existsSync(aprovada) && !novaTomada) {
+      const wav = A.readWav(aprovada);
+      candidatas.push({ k: 'aprovada', wav, av: avaliar(fala, wav), nota: 0 });
+    } else {
+      for (let k = 1; k <= TENTATIVAS; k++) {
+        const arq = path.join(TAKES, `${fala.id}_${ESTILO}_t${k}.wav`);
+        if (novaTomada || !fs.existsSync(arq)) {
+          await synth({ voice: roteiro.voz.nome, text: textoParaVoz(fala), rate: roteiro.voz.velocidade, sampleRate: SR, out: arq });
+        }
+        const wav = A.readWav(arq);
+        candidatas.push({ k, wav, av: avaliar(fala, wav), nota: distanciaDoAlvo(wav) });
       }
-      const wav = A.readWav(arq);
-      const av = avaliar(fala, wav);
-      if (!melhor || av.problemas.length < melhor.av.problemas.length) melhor = { k, wav, av };
-      if (!av.problemas.length) break;
     }
+    // a melhor tomada é a que tem menos problemas e, no empate, a mais próxima do nível aprovado
+    candidatas.sort((a, b) => a.av.problemas.length - b.av.problemas.length || a.nota - b.nota);
+    const melhor = candidatas[0];
     const utilizavel = fala.tipo !== 'pergunta' || (melhor.av.partes && melhor.av.partes.length === 4);
     if (!utilizavel) {
       console.log(`FALHOU ${fala.id}: ${melhor.av.problemas.join('; ')}`);
       continue;
     }
-    manifest.falas[fala.id] = montar(fala, melhor.wav, melhor.av.partes);
+    manifest.falas[fala.id] = Object.assign(montar(fala, melhor.wav, melhor.av.partes), { estilo: ESTILO });
     const aviso = melhor.av.problemas.length ? `  ATENÇÃO: ${melhor.av.problemas.join('; ')}` : '';
-    console.log(`${fala.id.padEnd(18)} tomada ${melhor.k}  ${manifest.falas[fala.id].dur.toFixed(2)} s${aviso}`);
+    const p = A.pitchStats(melhor.wav.data, melhor.wav.rate);
+    console.log(`${fala.id.padEnd(18)} tomada ${String(melhor.k).padEnd(8)} ${manifest.falas[fala.id].dur.toFixed(2).padStart(5)} s  voz ${p.mediana.toFixed(0)} Hz${aviso}`);
   }
   fs.writeFileSync(MANIFEST, JSON.stringify(manifest, null, 2) + '\n');
   const total = Object.values(manifest.falas).reduce((a, f) => a + f.dur, 0);

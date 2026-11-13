@@ -8,7 +8,10 @@ Roteiro de origem: documento "Roteiros dos vídeos piloto: Quiz Bíblico Infanti
 | Tema | Decisão |
 |---|---|
 | Imagens | Desenhadas em vetor por código (estilo flat cartoon), sem IA de imagem |
-| Narração | Google Cloud Text-to-Speech, voz feminina em pt-BR |
+| Narração | Google Cloud Text-to-Speech, voz Leda em pt-BR, no estilo animado (ênfase na pontuação do texto enviado à voz) |
+| Trilha | Composta por código (`src/anim/musica.js`), sem direitos autorais |
+| Dinâmica | Cards que viram: chegam virados e numerados, viram quando a Tuti fala cada opção e, na resposta, os errados viram de costas |
+| Tempo para pensar | Contagem de 10 segundos entre a pergunta e a resposta |
 | Publicação | Pacote pronto (MP4, thumbnail, título, descrição, tags, .srt) para subir manualmente no YouTube Studio |
 | Ordem | Vídeo 1 (Arca de Noé) primeiro; ele vira o molde do Vídeo 2 (Davi e Golias) |
 
@@ -19,9 +22,9 @@ Roteiro de origem: documento "Roteiros dos vídeos piloto: Quiz Bíblico Infanti
 | 1 | Narrativa final do Vídeo 1 | Aprovada |
 | 2 | Tuti em 3 poses | Aprovada |
 | 3 | Imagens das cenas e das opções | Aprovada |
-| 4 | Narração | Aguardando validação (voz escolhida: Leda, tom natural) |
-| 5 | Animação e edição | Pergunta 1 de teste entregue, aguardando validação; falta montar o vídeo inteiro |
-| 6 | Legendas | A fazer |
+| 4 | Narração | Aprovada: voz Leda no estilo animado |
+| 5 | Animação e edição | Vídeo inteiro montado, aguardando validação |
+| 6 | Legendas | Arquivo .srt gerado junto com o vídeo, aguardando validação |
 | 7 | Pacote do YouTube | A fazer |
 | 8 | Publicação | A fazer |
 
@@ -30,6 +33,7 @@ Roteiro de origem: documento "Roteiros dos vídeos piloto: Quiz Bíblico Infanti
 - `v1-arca-de-noe/` — arquivos do Vídeo 1
   - `01-narrativa.md` — texto aprovado da locução
   - `imagens/` — abertura, encerramento, as 24 opções (`v1_pN_opcao`, em SVG e PNG transparente) e as folhas de conferência
+  - `legendas/` — legendas em pt-BR (.srt); `mapa-do-video.json` — o instante em que cada cena começa
   - `narracao/` — os 18 áudios aprovados da locução (`v1_abertura`, `v1_pN_pergunta`, `v1_pN_resposta`, `v1_encerramento`) e `narracao.json` com os tempos
 - `personagens/tuti/` — poses da Tuti em SVG e PNG transparente, mais a folha de apresentação
 - `src/` — código que desenha e renderiza
@@ -41,7 +45,9 @@ Roteiro de origem: documento "Roteiros dos vídeos piloto: Quiz Bíblico Infanti
   - `tts.js` — cliente do Google Cloud Text-to-Speech; `audio.js` — leitura, corte e mixagem de áudio
   - `render-tuti.js`, `render-v1-imagens.js` — geram os arquivos finais
   - `anim/` — animação: `render.js` (quadro a quadro com Chromium e ffmpeg), `tutiAnim.js` (Tuti animada), `sfx.js` (efeitos sonoros sintetizados), `mix.js` (trilha de áudio), `ease.js`
-  - `v1/cenaPergunta.js` — a cena de uma pergunta; `v1/teste-pergunta.js` — renderiza uma pergunta sozinha
+  - `anim/musica.js` — a trilha de fundo; `anim/fx.js` — confete e véu de transição; `anim/fala.js` — volume da voz e tempo das frases
+  - `v1/cenaPergunta.js` — a cena de uma pergunta; `v1/cenasPontas.js` — abertura e encerramento
+  - `v1/video.js` — monta o vídeo inteiro; `v1/legendas.js` — gera o .srt; `v1/teste-pergunta.js` — renderiza uma pergunta sozinha
   - `preview.js` — prévia rápida de qualquer ilustração
 - `assets/fonts/` — fonte Fredoka (licença SIL OFL, incluída)
 
@@ -53,13 +59,19 @@ GOOGLE_APPLICATION_CREDENTIALS=/caminho/da/chave.json node src/v1/narracao.js
 
 A chave da conta de serviço nunca entra no repositório. A voz é generativa, então cada gravação nova sai um pouco diferente; por isso os áudios aprovados ficam guardados em `v1-arca-de-noe/narracao/`. Para regravar só uma fala: `node src/v1/narracao.js v1_p4_resposta --nova-tomada`.
 
-## Animação
+## Animação e vídeo completo
+
+```bash
+node src/v1/video.js
+```
+
+Monta o Vídeo 1 inteiro em `_rascunho/video/v1_quiz_arca_de_noe.mp4` (pasta fora do repositório) e grava as legendas e o mapa do vídeo. Cada cena é um trecho separado; só os trechos que mudaram são renderizados de novo. O vídeo de 4 min 15 s leva alguns minutos.
 
 ```bash
 node src/v1/teste-pergunta.js 1
 ```
 
-Renderiza a pergunta indicada em `_rascunho/video/` (pasta fora do repositório). A cena tira todos os tempos de `narracao.json`, então acompanha a voz automaticamente. Cada pergunta de ~28 s leva cerca de 70 s para renderizar.
+Renderiza só a pergunta indicada, para testar ajustes. As cenas tiram todos os tempos de `narracao.json`, então acompanham a voz automaticamente.
 
 ## Como regenerar as imagens
 
