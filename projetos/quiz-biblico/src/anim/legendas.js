@@ -1,10 +1,10 @@
 'use strict';
 /**
- * Vídeo 1 — legendas em pt-BR (.srt), tiradas do texto aprovado da locução e
- * dos tempos reais da narração dentro do vídeo.
+ * Legendas em pt-BR (.srt), tiradas do texto aprovado da locução e dos tempos
+ * reais da narração dentro do vídeo.
  */
 const path = require('path');
-const { temposDasFrases, emFrases } = require('../anim/fala');
+const { temposDasFrases, emFrases } = require('./fala');
 
 const MAX_LINHA = 40;
 
@@ -27,24 +27,27 @@ function quebrar(texto) {
 
 /**
  * Monta as legendas a partir das cenas (cada uma com `t0` e `falas`) e do
- * manifesto da narração. Devolve o texto do arquivo .srt.
+ * manifesto da narração. Devolve o texto do arquivo .srt. `tempos` é a
+ * função que localiza cada frase dentro de uma fala corrida.
  */
-function gerarSrt(cenas, manifest, narrDir) {
+function gerarSrt(cenas, manifest, narrDir, { tempos: temposDe = temposDasFrases } = {}) {
   const cues = [];
   for (const cena of cenas) {
     for (const fl of cena.falas || []) {
       const info = manifest[fl.id];
       const base = cena.t0 + fl.t;
       if (info.partes) {
-        // pergunta: a frase da pergunta e depois cada opção, nos tempos exatos
-        const [pergunta, resto] = info.texto.split(/\?\s*/, 2).map((x) => x.trim());
-        const opcoes = resto.split(/\.\.\.\s*/).map((x) => x.trim()).filter(Boolean);
-        const textos = [`${pergunta}?`].concat(opcoes.map((o, i) => (i < opcoes.length - 1 ? `${o}...` : `${o}?`)));
+        // fala cortada em partes (pergunta e opções, contagem): uma legenda por
+        // parte, nos tempos exatos. As últimas frases são as opções; o que vem
+        // antes delas fica junto na primeira legenda.
+        const frases = emFrases(info.texto);
+        const sobra = frases.length - info.partes.length;
+        const textos = [frases.slice(0, sobra + 1).join(' ')].concat(frases.slice(sobra + 1));
         info.partes.forEach((p, i) => cues.push({ ini: base + p.ini, fim: base + p.fim, texto: textos[i] }));
       } else {
         // fala corrida: uma legenda por frase, juntando as muito curtas com a seguinte
         const frases = emFrases(info.texto);
-        const tempos = temposDasFrases(path.join(narrDir, `${fl.id}.wav`), frases);
+        const tempos = temposDe(path.join(narrDir, `${fl.id}.wav`), frases);
         let atual = null;
         frases.forEach((fr, i) => {
           if (atual && (atual.fim - atual.ini < 1.1 || (atual.texto.length + fr.length < MAX_LINHA && tempos[i].fim - atual.ini < 4))) {

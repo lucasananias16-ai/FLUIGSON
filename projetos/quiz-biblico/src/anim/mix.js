@@ -25,6 +25,7 @@ function narr48(file) {
 function efeito(ev) {
   if (ev.tipo === 'tique') return sfx.tique(ev.agudo, 1);
   if (ev.tipo === 'virada') return sfx.virada(ev.semente || 1);
+  if (ev.tipo === 'nota') return sfx.bell(ev.freq, 0.9, { decay: 4.5, gain: 0.5 }); // sininho afinado (a contagem das pedrinhas)
   return sfx[ev.tipo]();
 }
 

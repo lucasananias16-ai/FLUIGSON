@@ -66,7 +66,30 @@ function temposDasFrases(file, frases) {
   return out;
 }
 
+/**
+ * Início e fim de cada frase, cortando nas pausas mais longas do áudio: o fim
+ * de uma frase quase sempre tem mais silêncio que uma vírgula ou uma
+ * consoante. Acerta mais que `temposDasFrases` quando a voz estica algumas
+ * palavras (o estilo animado faz isso). Sem pausas suficientes, cai na
+ * estimativa pelo tamanho do texto.
+ */
+function temposPorPausas(file, frases) {
+  const { data, rate } = A.readWav(file);
+  const segs = A.speechSegments(data, rate, { minPause: 0.1, pad: 0 }).filter((s) => s.end - s.start >= 0.05);
+  const pausas = segs.slice(1).map((s, i) => ({ ini: segs[i].end, fim: s.start }));
+  if (pausas.length < frases.length - 1) return temposDasFrases(file, frases);
+  const cortes = pausas
+    .slice()
+    .sort((x, y) => y.fim - y.ini - (x.fim - x.ini))
+    .slice(0, frases.length - 1)
+    .sort((x, y) => x.ini - y.ini);
+  return frases.map((_, i) => ({
+    ini: i === 0 ? segs[0].start : cortes[i - 1].fim,
+    fim: i === frases.length - 1 ? segs[segs.length - 1].end : cortes[i].ini,
+  }));
+}
+
 /** Divide um texto em frases (pelo ponto, exclamação, interrogação ou reticências). */
 const emFrases = (texto) => texto.match(/[^.!?]+(?:\.\.\.|[.!?])+/g).map((x) => x.trim());
 
-module.exports = { falaEnvelope, temposDasFrases, emFrases };
+module.exports = { falaEnvelope, temposDasFrases, temposPorPausas, emFrases };

@@ -12,7 +12,6 @@ const { stageHtml } = require('../anim/render');
 const { tutiFrame } = require('../anim/tutiAnim');
 const { falaEnvelope, temposDasFrases, emFrases } = require('../anim/fala');
 const { confete, veu } = require('../anim/fx');
-const { POSES } = require('../tuti');
 const cenario = require('../art/cenario');
 const roteiro = require('./roteiro');
 
@@ -22,19 +21,7 @@ const LINE = '#3D2C4E';
 const CEU = '#BDE5FF';
 const f = (v) => Math.round(v * 1000) / 1000;
 
-const FRENTE = { mouth: 0.15 };
-const ACENO = Object.assign({}, POSES.tchau, { extras: null });
-const FELIZ = { armL: [300, 650], armR: [700, 650], browL: 8, browR: 8, mouth: 0.4 };
-const APONTANDO = { headTilt: 4, lean: 1, armR: [772, 556], gaze: [0.85, -0.3], browL: 8, browR: 8, mouth: 0.3 };
-const PREPARADO = { headTilt: -7, armL: [394, 800], armR: [606, 800], browL: 12, browR: 12, gaze: [0, -0.1], mouth: 0.3 };
-const COMEMORA = Object.assign({}, POSES.comemorando, { jump: 0, squash: 1 });
-
-/** Vaivém do casco enquanto a Tuti acena (entre `ini` e `fim`). */
-const aceno = (ini, fim) => (p, t) => {
-  const k = Z.prog(t, ini, 0.35) * (1 - Z.prog(t, fim - 0.3, 0.3));
-  if (k <= 0) return;
-  p.armR = [p.armR[0] + 30 * k * Math.sin((t - ini) * 2 * Math.PI * 2.3), p.armR[1] - 6 * k];
-};
+const { FRENTE, ACENO, FELIZ, APONTANDO_CENA: APONTANDO, PREPARADO, COMEMORA, aceno } = require('../anim/palco');
 
 const falaDe = (id) => JSON.parse(fs.readFileSync(path.join(NARR, 'narracao.json'), 'utf8')).falas[id];
 const nuvens = (t, tG) => [

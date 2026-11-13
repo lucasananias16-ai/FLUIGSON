@@ -68,6 +68,19 @@ function timerSvg(num, frac, pulse) {
   );
 }
 
+// Poses da abertura e do encerramento, onde a Tuti fala de frente para a criança
+const FRENTE = { mouth: 0.15 };
+const ACENO = Object.assign({}, POSES.tchau, { extras: null });
+const APONTANDO_CENA = Object.assign({}, APONTANDO, { gaze: [0.85, -0.3] });
+const PREPARADO = { headTilt: -7, armL: [394, 800], armR: [606, 800], browL: 12, browR: 12, gaze: [0, -0.1], mouth: 0.3 };
+
+/** Vaivém do casco enquanto a Tuti acena (entre `ini` e `fim`). */
+const aceno = (ini, fim) => (p, t) => {
+  const k = Z.prog(t, ini, 0.35) * (1 - Z.prog(t, fim - 0.3, 0.3));
+  if (k <= 0) return;
+  p.armR = [p.armR[0] + 30 * k * Math.sin((t - ini) * 2 * Math.PI * 2.3), p.armR[1] - 6 * k];
+};
+
 /** Tuti procurando: casco sobre os olhos, olhando ao longe. */
 const PROCURANDO = { headTilt: -4, armR: [640, 318], armRFront: true, armL: [394, 800], gaze: [0.7, -0.1], browL: 10, browR: 10, mouth: 0.15 };
 
@@ -169,6 +182,11 @@ module.exports = {
   COMEMORA,
   FELIZ,
   PROCURANDO,
+  FRENTE,
+  ACENO,
+  APONTANDO_CENA,
+  PREPARADO,
+  aceno,
   verso,
   raios,
   timerSvg,
