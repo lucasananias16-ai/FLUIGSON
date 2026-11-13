@@ -29,3 +29,16 @@
 - Itens visuais e de regra da ata de 13/08 (descrição da conta contábil, filtro de CC por empresa, valor por CC para o validador, bloqueio de autoaprovação por CPF/CNPJ): exigem abrir o formulário ou criar solicitação de teste.
 - Widget de consulta/aprovação em massa, parâmetros e e-mails de lembrete.
 - Planilha de testes da MindLab (com o Gabriel).
+
+## Teste de ponta a ponta na versão 89 (13/11, autorizado pelo Lucas)
+- **Solicitação 789** (pagamento de teste, R$ 0,01, CC 002400 Logística, aberta com o usuário `admin`). Justificativa: "TESTE JYNX 13/11 ... (pode cancelar)".
+- Caminho percorrido na v89: Início → Gerente → Análise e Qualificação → Validação da Solicitação → **Integração**. Todos os desvios automáticos resolveram como esperado.
+- **Resultado: falhou na integração** com `The request requires authentication` (resposta de autenticação do REST do Protheus de teste). Está em "Erro de integração" (grupo TI). Não reprocessei.
+- Em 12/11 a mesma chamada ainda chegava ao Protheus (704 recebeu erro de negócio). Hipótese: senha do usuário REST alterada, expirada ou bloqueada, ou credencial desatualizada no dataset `ds_protheus_documento_entrada_JYNX`. A confirmar com o Luiz e o Gabriel.
+- O teste de **reembolso não foi aberto**: cairia na mesma falha de autenticação.
+- Ressalvas do método: a solicitação foi aberta e movimentada por webservice, sem passar pela tela do formulário. Por isso o teste valida fluxo, eventos e integração, mas **não** valida as regras de tela. Item trocado na Controladoria para DE000051/TES 012 (mesmos dados da 708, que integrou em outubro).
+- Observação técnica: na v89 o script de integração grava `aguardar_processamento` e espera a confirmação do Protheus (CONSULTADOC) antes de finalizar. Na v82 finalizava direto.
+
+## Rascunhos no Gmail (não enviados)
+1. Para o Luiz: fornecedor da 704 e falha de autenticação da 789.
+2. Para o grupo MindLab: conclusão das aprovações pendentes até 20/11 e reunião de aceite na semana de 23/11.
