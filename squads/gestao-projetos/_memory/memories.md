@@ -24,3 +24,7 @@
 - Entregas aprovadas vão para `projetos/{slug-do-projeto}/` (versionado no git).
 - Histórico de cada projeto em `projetos/{slug-do-projeto}/memoria.md`.
 - Fluig: só usar se FLUIG_URL estiver configurado e o token estiver salvo como segredo do ambiente.
+
+## Instruções do usuário (rotina)
+- 2026-11-13: o usuário informou que a ICM pediu para pausar a agenda Fluig de quarta. Não há ata da reunião de 11/11 (só a gravação, sem transcrição). Indício: a série recorrente foi editada pela Mayara em 11/11 14h39 e não há ocorrência depois de 11/11. Considerar a agenda pausada até a Mayara confirmar com o Vitor Kodama até quando vale.
+- 2026-11-13: mensagem diária para a Mayara (passo 4b da rotina): curta, só o que dá para resolver no dia, por dev.

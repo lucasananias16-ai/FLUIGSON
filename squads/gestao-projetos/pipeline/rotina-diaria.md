@@ -57,6 +57,13 @@ Fontes: Esteira {ok/indisponível · atualizada em ...} · Gmail · Agenda · Gi
 - {cliente} — {cor do último status} (último status: {data})
 ```
 
+## 4b. Mensagem do dia para a Mayara
+Grave `projetos/_painel/mensagem-mayara-{AAAA-MM-DD}.md`. É um rascunho que o usuário envia todo dia à Mayara (Analista de Projetos) para ela cobrar as pendências. Nunca envie nada.
+- **Só o que dá para resolver hoje:** ações e marcos com data de hoje, itens vencidos que dá para fechar hoje e o que precisa estar pronto para a reunião do próximo dia útil. Nada de prazos da semana seguinte, salvo um gatilho de cor no próximo dia útil (uma linha).
+- Agrupe por dev (Gabriel, Otávio, Gustavo, Weverton, Kauã...) com cliente e entrega objetiva. Feche com "Com você", o que é da própria Mayara. Máximo de ~6 blocos e 1 a 3 itens por bloco.
+- Abra com o pedido de retorno: até as 17h, com o que fechou e, se não fechou, o motivo e a nova data. Na sexta, priorize o que fecha a semana e o que é preciso para a segunda.
+- Tom de mensagem (WhatsApp/e-mail curto), sem colchetes de fonte; os fatos têm de estar nos rascunhos ou status com fonte. Respeite as instruções do usuário registradas na memória da squad (ex.: agendas pausadas).
+
 ## 5. Fechamento
 1. Atualize `squads/gestao-projetos/_memory/rotina-ultima-execucao.txt` com a data de hoje e acrescente uma linha por cliente rodado em `squads/gestao-projetos/_memory/runs.md` (Resultado: `Rascunho`).
 2. `git add projetos/ squads/gestao-projetos/_memory/rotina-ultima-execucao.txt squads/gestao-projetos/_memory/runs.md` (use `-f` para runs.md), commit "Rotina diária: rascunhos de status {AAAA-MM-DD}" com as linhas de atribuição da sessão, e `git push` para a mesma branch (retry 2s/4s/8s/16s só em erro de rede).
