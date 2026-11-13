@@ -1,0 +1,239 @@
+{
+  "voz": {
+    "nome": "pt-BR-Chirp3-HD-Leda",
+    "velocidade": 0.94,
+    "estilo": "animada"
+  },
+  "falas": {
+    "v2_abertura": {
+      "texto": "Oi, amiguinho! A Tuti voltou! Hoje vamos conhecer o Davi, um menino pastor muito corajoso. Tenho oito desafios para você. Vamos lá!",
+      "dur": 12.289,
+      "estilo": "animada"
+    },
+    "v2_p1_pergunta": {
+      "texto": "Uma ovelhinha se escondeu! Você consegue encontrar?",
+      "dur": 3.73,
+      "estilo": "animada"
+    },
+    "v2_p1_resposta": {
+      "texto": "Achou! Ela estava atrás da moita! Davi cuidava muito bem das suas ovelhinhas.",
+      "dur": 6.5,
+      "estilo": "animada"
+    },
+    "v2_p2_pergunta": {
+      "texto": "Davi pegou pedrinhas no riacho. Conte comigo!",
+      "dur": 3.531,
+      "estilo": "animada"
+    },
+    "v2_p2_contagem": {
+      "texto": "Um... dois... três... quatro... cinco!",
+      "dur": 6.47,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 0.42
+        },
+        {
+          "ini": 1.27,
+          "fim": 2.04
+        },
+        {
+          "ini": 2.89,
+          "fim": 3.5
+        },
+        {
+          "ini": 4.35,
+          "fim": 4.99
+        },
+        {
+          "ini": 5.84,
+          "fim": 6.47
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v2_p2_resposta": {
+      "texto": "Cinco pedrinhas! Muito bem!",
+      "dur": 2.33,
+      "estilo": "animada"
+    },
+    "v2_p3_pergunta": {
+      "texto": "De quem é essa sombra grandona? Do Davi... da ovelhinha... ou do Golias?",
+      "dur": 7.561,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.91
+        },
+        {
+          "ini": 2.81,
+          "fim": 3.52
+        },
+        {
+          "ini": 4.52,
+          "fim": 5.58
+        },
+        {
+          "ini": 6.58,
+          "fim": 7.561
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v2_p3_resposta": {
+      "texto": "Do Golias! É o gigante Golias! Ele era muito, muito alto.",
+      "dur": 4.091,
+      "estilo": "animada"
+    },
+    "v2_p4_pergunta": {
+      "texto": "Quem é o maior? O Davi... ou o Golias?",
+      "dur": 4.55,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 0.98
+        },
+        {
+          "ini": 1.88,
+          "fim": 2.54
+        },
+        {
+          "ini": 3.54,
+          "fim": 4.55
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v2_p4_resposta": {
+      "texto": "O Golias! Golias era o maior, mas Davi tinha Deus com ele!",
+      "dur": 5.22,
+      "estilo": "animada"
+    },
+    "v2_p5_pergunta": {
+      "texto": "O que Davi levou para enfrentar o gigante? A funda... a espada... ou o escudo?",
+      "dur": 8.19,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 2.57
+        },
+        {
+          "ini": 3.47,
+          "fim": 4.25
+        },
+        {
+          "ini": 5.25,
+          "fim": 6.19
+        },
+        {
+          "ini": 7.19,
+          "fim": 8.19
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v2_p5_resposta": {
+      "texto": "A funda! Davi levou sua funda e confiou em Deus.",
+      "dur": 4.07,
+      "estilo": "animada"
+    },
+    "v2_p6_pergunta": {
+      "texto": "O que não combina com o pastor Davi? O cajado... o skate... ou a ovelha?",
+      "dur": 7.39,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.9
+        },
+        {
+          "ini": 2.8,
+          "fim": 3.72
+        },
+        {
+          "ini": 4.72,
+          "fim": 5.55
+        },
+        {
+          "ini": 6.55,
+          "fim": 7.39
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v2_p6_resposta": {
+      "texto": "O skate! Ha ha! Não tinha skate naquele tempo!",
+      "dur": 4.4,
+      "estilo": "animada"
+    },
+    "v2_p7_mostrar": {
+      "texto": "Davi tocava harpa! Olhe bem onde a harpa está.",
+      "dur": 3.54,
+      "estilo": "animada"
+    },
+    "v2_p7_pergunta": {
+      "texto": "As cartas trocaram de lugar! Onde está a harpa? No um... no dois... ou no três?",
+      "dur": 8.11,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.72
+        },
+        {
+          "ini": 2.22,
+          "fim": 3.25
+        },
+        {
+          "ini": 4.05,
+          "fim": 4.65
+        },
+        {
+          "ini": 5.55,
+          "fim": 6.28
+        },
+        {
+          "ini": 7.18,
+          "fim": 8.11
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v2_p7_resposta": {
+      "texto": "No número um! Você tem olho bom! Davi tocava harpa e cantava para Deus.",
+      "dur": 5.03,
+      "estilo": "animada"
+    },
+    "v2_p8_pergunta": {
+      "texto": "Quando cresceu, Davi virou o quê? Um padeiro... um pescador... ou um rei?",
+      "dur": 7.38,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 2.09
+        },
+        {
+          "ini": 2.99,
+          "fim": 3.8
+        },
+        {
+          "ini": 4.8,
+          "fim": 5.68
+        },
+        {
+          "ini": 6.68,
+          "fim": 7.38
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v2_p8_resposta": {
+      "texto": "Um rei! Davi virou rei! Um rei que amava a Deus.",
+      "dur": 4.4,
+      "estilo": "animada"
+    },
+    "v2_encerramento": {
+      "texto": "Você viu? Davi era pequeno, mas confiava em um Deus bem grande. Você também pode confiar! Tchau, amiguinho, até a próxima!",
+      "dur": 9.14,
+      "estilo": "animada"
+    }
+  }
+}

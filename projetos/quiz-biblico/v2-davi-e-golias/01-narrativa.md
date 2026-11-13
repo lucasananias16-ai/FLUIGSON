@@ -49,7 +49,7 @@ Imagem: Davi menino no pasto com as ovelhas, a Tuti ao lado.
 | 4 | Quem é o maior? O Davi... ou o Golias? | Quem é o maior? | O **Golias**! Golias era o maior, mas Davi tinha Deus com ele! |
 | 5 | O que Davi levou para enfrentar o gigante? A funda... a espada... ou o escudo? | O que Davi levou? | A **funda**! Davi levou sua funda e confiou em Deus. |
 | 6 | O que não combina com o pastor Davi? O cajado... o skate... ou a ovelha? | O que não combina? | O **skate**! Ha ha! Não tinha skate naquele tempo! |
-| 7 | Davi tocava harpa! Olhe bem onde a harpa está. (os cards viram e trocam de lugar) Os cards trocaram de lugar! Onde está a harpa? No um... no dois... ou no três? | Onde está a harpa? | No **número um**! Você tem olho bom! Davi tocava harpa e cantava para Deus. |
+| 7 | Davi tocava harpa! Olhe bem onde a harpa está. (os cards viram e trocam de lugar) As cartas trocaram de lugar! Onde está a harpa? No um... no dois... ou no três? | Onde está a harpa? | No **número um**! Você tem olho bom! Davi tocava harpa e cantava para Deus. |
 | 8 | Quando cresceu, Davi virou o quê? Um padeiro... um pescador... ou um rei? | Davi virou o quê? | Um **rei**! Davi virou rei! Um rei que amava a Deus. |
 
 Posição da resposta certa nos desafios com três cards: direita no 3, esquerda no 5, meio no 6, esquerda no 7 (depois da troca) e direita no 8.

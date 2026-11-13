@@ -37,8 +37,8 @@ Mascote, voz, trilha e sistema de animação são os do Vídeo 1.
 | Nº | Etapa | Situação |
 |---|---|---|
 | 1 | Narrativa final | Aprovada |
-| 2 | Imagens das cenas e das opções | Aguardando validação |
-| 3 | Narração | A fazer |
+| 2 | Imagens das cenas e das opções | Aprovada |
+| 3 | Narração | Aguardando validação |
 | 4 | Animação e edição | A fazer |
 | 5 | Legendas | A fazer |
 | 6 | Pacote do YouTube | A fazer |
@@ -49,6 +49,7 @@ Mascote, voz, trilha e sistema de animação são os do Vídeo 1.
 - `v2-davi-e-golias/` — arquivos do Vídeo 2
   - `01-narrativa.md` — texto aprovado da locução
   - `imagens/` — abertura, encerramento, cenas dos desafios, as 15 opções (`v2_pN_opcao`) e as folhas de conferência
+  - `narracao/` — os 20 áudios da locução e `narracao.json` com os tempos
 - `v1-arca-de-noe/` — arquivos do Vídeo 1
   - `01-narrativa.md` — texto aprovado da locução
   - `imagens/` — abertura, encerramento, as 24 opções (`v1_pN_opcao`, em SVG e PNG transparente) e as folhas de conferência
@@ -62,7 +63,8 @@ Mascote, voz, trilha e sistema de animação são os do Vídeo 1.
   - `art/` — ilustrações: `pessoas.js`, `animais.js`, `objetos.js`, `cenario.js` (a arca) e `pasto.js` (o pasto de Davi)
   - `v2/desafios.js` — os oito desafios do Vídeo 2, com o tipo e as opções de cada um
   - `v1/opcoes.js` — perguntas e opções do Vídeo 1, na ordem da tela
-  - `v1/roteiro.js` — texto exato da locução; `v1/narracao.js` — gera os áudios
+  - `narrar.js` — gerador de narração compartilhado (tomadas, conferência, corte nas pausas)
+  - `v1/roteiro.js` e `v2/roteiro.js` — texto exato da locução; `v1/narracao.js` e `v2/narracao.js` — geram os áudios de cada vídeo
   - `tts.js` — cliente do Google Cloud Text-to-Speech; `audio.js` — leitura, corte e mixagem de áudio
   - `render-tuti.js`, `render-v1-imagens.js` — geram os arquivos finais
   - `anim/` — animação: `render.js` (quadro a quadro com Chromium e ffmpeg), `tutiAnim.js` (Tuti animada), `sfx.js` (efeitos sonoros sintetizados), `mix.js` (trilha de áudio), `ease.js`
@@ -79,7 +81,11 @@ Mascote, voz, trilha e sistema de animação são os do Vídeo 1.
 GOOGLE_APPLICATION_CREDENTIALS=/caminho/da/chave.json node src/v1/narracao.js
 ```
 
-A chave da conta de serviço nunca entra no repositório. A voz é generativa, então cada gravação nova sai um pouco diferente; por isso os áudios aprovados ficam guardados em `v1-arca-de-noe/narracao/`. Para regravar só uma fala: `node src/v1/narracao.js v1_p4_resposta --nova-tomada`.
+```bash
+GOOGLE_APPLICATION_CREDENTIALS=/caminho/da/chave.json node src/v2/narracao.js
+```
+
+A chave da conta de serviço nunca entra no repositório. A voz é generativa, então cada gravação nova sai um pouco diferente; por isso os áudios aprovados ficam guardados na pasta `narracao/` de cada vídeo. Para regravar só uma fala: `node src/v1/narracao.js v1_p4_resposta --nova-tomada`.
 
 ## Animação e vídeo completo
 
