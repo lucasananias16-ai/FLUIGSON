@@ -21,6 +21,8 @@ A criação de SC no Protheus funciona. **O bloqueio atual é a aprovação:** l
 Também houve uma falha transitória de SSL ao obter o token do Protheus (nº 49, em 06/10). Ela se recuperou: a 49 hoje tem a SC 000397 e está em aprovação.
 
 ## O ponto crítico: tabela SCR
+> **Atualização (atas):** na definição de 01/09 com a TOTVS ficou registrado: *"Regras de aprovação da SC não serão feitas no Protheus. Será direto no Fluig"*. Ou seja, **não existe alçada no Protheus e, por isso, não há SCR**. O erro é de desenho: a liberação precisa liberar a SC direto (`C1_APROV` B → L), sem depender da SCR. Hipótese 1/2 confirmada. Ver `requisitos-atas-2026-11-13.md`.
+
 - A SC é criada bloqueada (`C1_APROV = "B"`, regra do `servicetask30`), e a liberação e a reprovação são feitas pelo `POST /APROVCOM`, que procura o documento de alçada na **SCR**.
 - Nos casos 54 e 55, a SC existia no Protheus (000401, 000403), mas **sem registro na SCR**. Ou seja, o Protheus não gerou o documento de alçada quando a SC foi incluída pelo `gerasc`.
 - **Hipóteses a validar com o time Protheus:**

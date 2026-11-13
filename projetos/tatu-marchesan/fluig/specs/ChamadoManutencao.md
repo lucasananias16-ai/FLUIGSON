@@ -1,149 +1,122 @@
-# Spec — ChamadoManutencao (Chamado de Manutenção/Serviço) · Tatu Marchesan
+# Spec — ChamadoManutencao (Solicitação de Manutenção/Serviço) · Tatu Marchesan
 
-**Status:** 🟡 RASCUNHO, aguardando validação da Marchesan · **Versão:** 0.1 · 13/11/2026
-**Base:** campos do formulário "manutenção" já publicado em DEV (doc 102, dataset `teste1`) e padrões do projeto.
-**Formulário:** `frm_chamado_manutencao` (substitui o `teste1`) · **Dataset do formulário:** `dts_chamado_manutencao_JYNX`
-**Pré-requisito:** formulário de cadastro **`frm_catalogo_servicos_manutencao`** (seção 6).
+**Status:** 🟡 RASCUNHO v0.2, aguardando validação · 13/11/2026
+**Mudança da v0.1 → v0.2:** realinhada ao **levantamento de 15/10** (ver `../../requisitos-atas-2026-11-13.md`).
+- **Sem aprovação** (decisão do cliente): saem os 3 níveis e o loop de aprovação.
+- **Destino e responsável vêm de regras parametrizadas no Protheus**: o catálogo próprio no Fluig sai e os campos passam a ser preenchidos pelas regras.
+- A solicitação vai **direto para execução no Fluig** ou para **integração com o Protheus**, conforme a regra.
+- Validação de **cadastros ativos** e de **usuário existente no Protheus**.
 
-> Itens marcados **[VALIDAR]** são suposições minhas e precisam de confirmação do cliente.
+**Base:** levantamento 15/10, formulário "manutenção" (doc 102, `teste1`), padrões da Compra.
+**Formulário:** `frm_chamado_manutencao` · **Dataset:** `dts_chamado_manutencao_JYNX`
 
-## 1. Objetivo
-Centralizar os pedidos de manutenção e serviços internos (manutenção predial, de máquinas, TI, facilities…) num **catálogo de serviços**. Cada serviço define a equipe responsável, o SLA, se exige aprovação (até 3 níveis) e se exige agendamento. O processo mede o SLA, com pausa e feriados, e coleta a validação e a avaliação do solicitante.
+> **[VALIDAR]** = suposição minha, sem confirmação nas atas.
 
-## 2. Papéis
-| Papel | Quem | Como é definido |
-|---|---|---|
-| Solicitante | Qualquer colaborador | Usuário logado |
-| Aprovador 1, 2, 3 | Definidos **por serviço** no catálogo | Campos `hd_servico_idAprovador1..3` + flags `realizaAprov1..3` |
-| Equipe executora | Grupo Fluig do departamento (ex.: `MANUT_PREDIAL`, `MANUT_INDUSTRIAL`, `TI`) | Departamento do serviço no catálogo → grupo (pool). Um técnico **assume** a tarefa |
-| Gestor do processo | PCM / coordenação de manutenção **[VALIDAR]** | Pode transferir e reabrir |
+## 1. Decisões do cliente (15/10)
+| # | Decisão |
+|---|---|
+| D1 | "Solicitações de manutenção dispensam níveis de aprovação, direcionando o fluxo diretamente para execução ou integração" |
+| D2 | "Direcionamento automatizado por regras parametrizadas no Protheus e a validação de cadastros ativos" |
+| D3 | API de integração Fluig ↔ Protheus a desenvolver (Gabriel + Pedro/TOTVS) |
+| D4 | Regra que consulta os usuários do Protheus para validar o acesso no Fluig |
+| D5 | Carga em massa das regras de configuração (com o consultor TOTVS) |
+| D6 | Acesso dos usuários de teste via Identity |
 
-## 3. Fluxo
-> IDs provisórios (gerados no desenho). Conferir com `fluig_parse_process` depois de salvar no Studio.
+## 2. Hipótese de funcionamento **[VALIDAR com Pedro/TOTVS e consultor de Manutenção]**
+As "regras parametrizadas" ficam no **Protheus**. [I] Provavelmente no módulo **Manutenção de Ativos (SIGAMNT)**, que tem a **Solicitação de Serviço (SS)** e a **Ordem de Serviço (OS)**. Para cada tipo de serviço, bem ou área, a regra diz:
+- **destino:** `PROTHEUS` (gera SS/OS no MNT, executada por lá: manutenção de máquinas e ativos) ou `FLUIG` (executada e controlada no Fluig: serviços gerais, predial, TI **[VALIDAR]**);
+- **responsável/equipe** que recebe a solicitação.
 
+O Fluig consulta essas regras por um dataset (`dts_getRegrasManutencaoProtheus_MFX`, endpoint do Pedro) ao enviar a solicitação.
+
+## 3. Fluxo (IDs provisórios)
 | ID | Atividade | Tipo | Responsável |
 |---|---|---|---|
-| 1 | Abrir chamado | Início | Solicitante |
-| 2 | Exige (mais) aprovação? | Gateway | — |
-| 3 | Aprovar chamado | Tarefa (repetida por nível) | Aprovador do nível atual (catálogo) |
-| 4 | Decisão da aprovação | Gateway | — |
-| 5 | Ajustar chamado | Tarefa | Solicitante |
-| 6 | Reenviar ou cancelar? | Gateway | — |
-| 7 | Serviço com agendamento? | Gateway | — |
-| 8 | Agendar atendimento | Tarefa | Equipe do departamento |
-| 9 | Executar serviço | Tarefa | Equipe do departamento (técnico assume) |
-| 10 | Situação da execução | Gateway | — |
-| 11 | Aguardando peça/terceiro (SLA pausado) | Tarefa | Equipe do departamento |
-| 12 | Validar atendimento | Tarefa | Solicitante |
-| 13 | Serviço resolvido? | Gateway | — |
-| 14 | Avaliar atendimento | Tarefa | Solicitante |
-| 15 | Chamado encerrado | Fim | — |
-| 16 | Reprovado | Fim (cancelamento) | — |
-| 17 | Cancelado pelo solicitante | Fim (cancelamento) | — |
+| 1 | Abrir solicitação de manutenção | Início | Solicitante |
+| 2 | Destino da solicitação? | Gateway | — |
+| 3 | Gerar solicitação de serviço no Protheus | Atividade de serviço | — |
+| 4 | Falha na integração | Captura de erro (na 3) | — |
+| 5 | Tratar falha de integração | Tarefa | SUPORTE_FLUIG |
+| 6 | Aguardar encerramento no Protheus | Intermediário condicional | — (verifica a situação da SS/OS) |
+| 7 | Executar serviço | Tarefa | Responsável da regra |
+| 8 | Situação da execução | Gateway | — |
+| 9 | Aguardando peça/terceiro | Tarefa | Responsável da regra |
+| 10 | Validar atendimento | Tarefa | Solicitante |
+| 11 | Resolvido? | Gateway | — |
+| 12 | Avaliar atendimento | Tarefa | Solicitante |
+| 13 | Solicitação encerrada | Fim | — |
 
 ```mermaid
 flowchart LR
-  A((1 Abrir)) --> EA{2 Exige aprovação?}
-  EA -->|S| AP[3 Aprovar] --> DA{4 Decisão}
-  DA -->|APROVADO: próximo nível| EA
-  DA -->|DEVOLVIDO| AJ[5 Ajustar] --> DJ{6 Reenviar?}
-  DA -->|REPROVADO| FR(((16 Reprovado)))
-  DJ -->|REENVIAR| EA
-  DJ -->|CANCELAR| FC(((17 Cancelado)))
-  EA -->|N| AG{7 Agendamento?}
-  AG -->|S| AGD[8 Agendar] --> EX[9 Executar]
-  AG -->|N| EX
-  EX --> DE{10 Situação}
-  DE -->|CONCLUIDO| V[12 Validar] --> DV{13 Resolvido?}
-  DE -->|PAUSADO| W[11 Aguardando peça/terceiro] --> EX
-  DV -->|S| AV[14 Avaliar] --> F(((15 Encerrado)))
-  DV -->|N: reabre| EX
+  A((1 Abrir)) --> D{2 Destino?}
+  D -->|PROTHEUS| SS[3 Gerar SS no Protheus] --> W([6 Aguardar encerramento no Protheus]) --> V[10 Validar]
+  SS -.erro.-> E([4 Falha]) --> TF[5 Tratar falha] --> SS
+  D -->|FLUIG| EX[7 Executar] --> DE{8 Situação}
+  DE -->|CONCLUIDO| V
+  DE -->|PAUSADO| AG[9 Aguardando peça/terceiro] --> EX
+  V --> DV{11 Resolvido?}
+  DV -->|S| AV[12 Avaliar] --> F(((13 Encerrada)))
+  DV -->|N: reabre| D
 ```
-
-**Como funcionam as aprovações em vários níveis:** uma única atividade (3) é repetida. Ao sair da abertura, ou depois de cada aprovação, o `beforeTaskSave` calcula o **próximo nível pendente** (1 → 2 → 3, pulando os níveis desligados no catálogo). Ele grava `hd_nivel_aprovacao_atual` e `hd_exige_aprovacao = S/N` e atribui a tarefa ao aprovador desse nível. Assim o diagrama fica pequeno, e 0, 1, 2 ou 3 níveis usam o mesmo desenho.
 
 ## 4. Regras de negócio
 | # | Regra | Onde |
 |---|---|---|
-| RN01 | Departamento → categoria → subcategoria → serviço são escolhidos em cascata no catálogo (cada zoom filtra pelo anterior) | Formulário |
-| RN02 | Escolher o serviço preenche, a partir do catálogo: SLA (horas), equipe, aprovadores 1–3 e flags de aprovação e de agendamento | Formulário (zoom) + conferência no `beforeTaskSave` (não confiar no cliente) |
-| RN03 | Descrição obrigatória (mín. **[VALIDAR] 20** caracteres); patrimônio obrigatório quando o serviço é de equipamento **[VALIDAR]** | `validateForm` |
-| RN04 | **Prioridade = matriz impacto × urgência** (Alto/Médio/Baixo × Alta/Média/Baixa) → P1–P4. **[VALIDAR]** se a prioridade **reduz o SLA** do serviço (ex.: P1 = 25% do SLA) ou é só informativa | `beforeTaskSave` |
-| RN05 | **Prazo (SLA)** calculado ao entrar em "Executar" com `hAPI.calculateDeadLineHours` no expediente da Marchesan (feriados do Fluig) e aplicado na tarefa com `hAPI.setDueDate` | `afterTaskCreate` |
-| RN06 | **Pausa de SLA:** ao ir para "Aguardando peça/terceiro", grava o início da pausa e exige o motivo. Ao voltar para "Executar", soma o tempo pausado e **recalcula o prazo**. O SLA nativo do Fluig não pausa, por isso o prazo é recalculado pelo evento | `beforeTaskSave` / `afterTaskCreate` |
-| RN07 | Concluir a execução exige a descrição do que foi feito (`txta_execucao_servico`) e o tempo gasto | `validateForm` na atividade 9 |
-| RN08 | Devolver ou reprovar exige parecer | `validateForm` na atividade 3 |
-| RN09 | Se o solicitante disser que **não foi resolvido**, o chamado volta para "Executar" com o motivo e conta uma reabertura (`hd_qtd_reaberturas`) | `validateForm` / `beforeTaskSave` |
-| RN10 | Avaliação obrigatória de 1 a 5; nota ≤ 2 exige comentário. **[VALIDAR]** se o técnico também avalia o solicitante (o formulário atual tem `hd_avaliacao_atendNota`) | `validateForm` |
-| RN11 | Sem resposta do solicitante na validação em **[VALIDAR] 3 dias úteis**, o chamado é encerrado automaticamente como resolvido | Prazo na atividade 12 + job/evento (definir) |
-| RN12 | O aprovador não pode ser o solicitante; nesse caso pula para o próximo nível **[VALIDAR]** | `beforeTaskSave` |
+| RN01 | **Usuário (D4):** só abre solicitação quem existe e está ativo no Protheus (consulta por e-mail ou matrícula). Do contrário, bloqueia com mensagem | `validateForm` / `beforeTaskSave` na abertura |
+| RN02 | **Cadastros ativos (D2):** bem/equipamento, centro de custo e tipo de serviço precisam estar ativos no Protheus | `beforeTaskSave` |
+| RN03 | **Direcionamento (D2):** ao enviar, consulta a regra no Protheus e grava `hd_destino` (PROTHEUS/FLUIG), `hd_regra_codigo` e o responsável (`hd_loginExecutor` ou grupo) | `beforeTaskSave` |
+| RN04 | Sem regra para a combinação informada → **[VALIDAR]** bloqueia ou cai num grupo padrão (ex.: `PCM_MANUTENCAO`) | `beforeTaskSave` |
+| RN05 | **Destino Protheus:** a atividade 3 cria a SS no Protheus com os dados do formulário e grava o número da SS. Idempotente (não recria se já houver número) | `servicetask3` |
+| RN06 | **Encerramento no Protheus:** a atividade 6 verifica periodicamente a situação da SS/OS. Encerrada → segue para validação **[VALIDAR]**: intermediário condicional ou tarefa manual "Confirmar encerramento" | Intermediário condicional |
+| RN07 | **Destino Fluig:** o responsável executa e registra o que foi feito. Pode pausar (aguardando peça/terceiro) informando o motivo | `validateForm` |
+| RN08 | Prazo (SLA) **[VALIDAR se existe]**: se houver, vem da regra do Protheus e é aplicado à tarefa com `calculateDeadLineHours` + `setDueDate` | `afterTaskCreate` |
+| RN09 | **Não resolvido:** volta ao destino original (reabre SS no Protheus ou volta para a execução) e conta uma reabertura | `beforeTaskSave` |
+| RN10 | Avaliação de 1 a 5 obrigatória; nota ≤ 2 exige comentário **[VALIDAR]** | `validateForm` |
+| RN11 | Erro da integração copiado para o formulário ao entrar na 5 | `beforeStateEntry` |
 
-## 5. Formulário: campos
-**Limpeza em relação ao `teste1`:** os campos de 3 aprovadores ficam (vêm do catálogo); entram `hd_nivel_aprovacao_atual`, `hd_exige_aprovacao`, `hd_decisao`, `hd_decisao_ajuste`, `hd_prioridade`, `hd_pausa_inicio`, `hd_tempo_pausado_min` e `hd_qtd_reaberturas`.
+## 5. Campos (do `teste1`, ajustados)
+**Saem:** aprovação (`hd_servico_realizaAprov1..3`, `hd_servico_idAprovador1..3`, `hd_servico_aprovado1..3`) e catálogo próprio do Fluig. **Entram:** `hd_destino`, `hd_regra_codigo`, `hd_protheus_ss_numero`, `hd_protheus_os_numero`, `hd_protheus_status`, `hd_integracao_msg`, `hd_qtd_reaberturas`.
 
-| Seção | Campos principais |
+| Seção | Campos |
 |---|---|
-| Solicitante | `num_solicitacao`, `txt_solicitacao_data`, `txt_solicitacao_codSolicitante`, `hd_solicitante_nome`, `hd_solicitante_email`, `hd_solicitante_filial`, `hd_solicitante_local` |
-| Serviço (catálogo) | `ztxt_servico_departamento`, `ztxta_categoria`, `ztxt_servico_subcategoria`, `ztxt_servico_servico` + códigos `hd_servico_cod*`, `hd_servico_tempoSLA`, `hd_servico_realizaAgenda`, `hd_servico_realizaAprov1..3`, `hd_servico_idAprovador1..3` |
-| Equipamento | `hd_servico_codPatrimonio`, `hd_servico_descEquipamento`, `hd_servico_numSerieEquipamento`, `hd_servico_locEquip` |
-| Prioridade | `rdo_impacto`, `rdo_urgencia`, `hd_prioridade`, `txta_impacto_descricao`, `txta_urgencia_descricao` |
-| Descrição | `txta_servico_descricao`, `dt_preferencia`, anexos |
-| Aprovação | `hd_nivel_aprovacao_atual`, `hd_exige_aprovacao`, `hd_decisao`, `hd_servico_aprovado1..3`, `txta_servico_observacao` (parecer) |
-| Execução | `hd_loginExecutor`, `sl_servico_status`, `txta_execucao_servico`, `txt_servico_tempoExecucao`, `txt_servico_dataSLA`, `txt_servico_horarioSLA`, `hd_pausa_inicio`, `hd_tempo_pausado_min`, `hd_execucao_slaGasto` |
-| Validação | `hd_validacao_procRealizado`, `hd_qtd_reaberturas`, `hd_dataConclusao` |
-| Avaliação | `hd_avaliacao_solicNota`, `txta_desc_aval_solici`, `hd_dataConclusaoAvaliacao` |
+| Solicitante | `num_solicitacao`, `txt_solicitacao_data`, `hd_loginSolicitante`, `hd_solicitante_nome`, `hd_solicitante_email`, `hd_solicitante_filial`, `hd_solicitante_local` |
+| Serviço | tipo/categoria do serviço (zoom nas regras do Protheus), `txta_servico_descricao`, anexos, `dt_preferencia` |
+| Bem/equipamento | `hd_servico_codPatrimonio` (zoom no cadastro de bens do Protheus **[VALIDAR]** ST9/SN1), `hd_servico_descEquipamento`, `hd_servico_locEquip` |
+| Prioridade **[VALIDAR se fica]** | `rdo_impacto`, `rdo_urgencia` |
+| Direcionamento | `hd_destino`, `hd_regra_codigo`, `hd_loginExecutor` |
+| Protheus | `hd_protheus_ss_numero`, `hd_protheus_os_numero`, `hd_protheus_status`, `hd_integracao_msg` |
+| Execução (destino Fluig) | `sl_servico_status`, `txta_execucao_servico`, `txt_servico_tempoExecucao` |
+| Validação e avaliação | `hd_validacao_procRealizado`, `hd_qtd_reaberturas`, `hd_avaliacao_solicNota`, `txta_desc_aval_solici` |
 
-## 6. Pré-requisito: catálogo de serviços
-Formulário de cadastro **`frm_catalogo_servicos_manutencao`** (dataset `dts_catalogo_servicos_manutencao_JYNX`), mantido pelo PCM/TI:
-
-| Campo | Exemplo |
+## 6. Dependências do Protheus (Pedro/TOTVS)
+| Endpoint/dataset | Uso |
 |---|---|
-| Departamento | Manutenção Industrial |
-| Grupo Fluig executor | `MANUT_INDUSTRIAL` |
-| Categoria / Subcategoria / Serviço | Máquinas / Solda / Reparo de máquina de solda |
-| SLA (horas úteis) | 8 |
-| Exige agendamento | Não |
-| Aprovação nível 1/2/3 (sim/não + aprovador) | Sim: coordenador da área / Não / Não |
-| Exige patrimônio | Sim |
-| Ativo | Sim |
+| Consulta de usuário ativo | RN01 |
+| Consulta de regras de direcionamento | RN03/RN04 |
+| Consulta de bens/equipamentos, CC e tipos de serviço ativos | RN02, zooms |
+| Inclusão de Solicitação de Serviço (SS) | RN05 |
+| Consulta da situação da SS/OS | RN06 |
 
-Datasets de zoom em cascata: `dts_getDepartamentosManutencao_MFX`, `dts_getCategoriasManutencao_MFX`, `dts_getServicosManutencao_MFX` (filtram o catálogo ativo).
+## 7. Critérios de aceite
+- **CA01:** Dado um usuário que não existe no Protheus, quando tentar abrir, então é bloqueado com mensagem.
+- **CA02:** Dado um serviço cuja regra é destino PROTHEUS, quando o solicitante enviar, então uma SS é criada no Protheus e o número aparece no formulário, sem nenhuma aprovação.
+- **CA03:** Dado um serviço cuja regra é destino FLUIG com responsável X, quando enviar, então a tarefa "Executar serviço" vai para X.
+- **CA04:** Dado que a SS seja encerrada no Protheus, então a solicitação no Fluig avança para a validação do solicitante.
+- **CA05:** Dado que o solicitante responda "não resolvido", então volta ao destino original e conta uma reabertura.
+- **CA06:** Dado que a criação da SS falhe, então, após 3 tentativas, vai para "Tratar falha" com a mensagem visível.
 
-**Patrimônio:** **[VALIDAR]**
-- (a) consultar o **Ativo Fixo do Protheus (SN1)** com um dataset novo `dts_getPatrimonioProtheus_MFX`, reaproveitando a conexão REST da Compra; ou
-- (b) cadastro de equipamentos no Fluig.
+## 8. Perguntas (atualizadas)
+1. As "regras parametrizadas no Protheus" estão em qual rotina/tabela? É o SIGAMNT? Já existem ou serão criadas (carga em massa)?
+2. Quais serviços vão para o Protheus (SS/OS) e quais são executados no Fluig?
+3. Como o Fluig sabe que a OS foi encerrada no Protheus: consulta periódica ou o Protheus avisa?
+4. Existe SLA por tipo de serviço? Fica no Protheus?
+5. Impacto × urgência continua no formulário?
+6. Bens: cadastro de bens do MNT (ST9) ou Ativo Fixo (SN1)?
+7. Avaliação do atendimento: obrigatória?
 
-## 7. Eventos previstos
-| Evento | Função |
-|---|---|
-| `validateForm` (formulário) | RN03, RN07, RN08, RN10 por atividade |
-| `beforeTaskSave` | Próximo nível de aprovação e responsável (seção 3), prioridade (RN04), pausa e reabertura (RN06, RN09), autoaprovação (RN12) |
-| `afterTaskCreate` | Prazo da tarefa "Executar" pelo SLA com `calculateDeadLineHours` + `setDueDate` (RN05, RN06) |
-| `afterProcessCreate` | Número do chamado no formulário |
-
-Esse processo **não integra com o Protheus**, salvo a consulta de patrimônio, se for a opção (a). Por isso pode ficar pronto antes do Reembolso.
-
-## 8. Critérios de aceite
-- **CA01:** Dado um serviço sem aprovação e sem agendamento, quando o solicitante abrir, então a tarefa vai direto para o pool da equipe do departamento, com prazo = SLA em horas úteis.
-- **CA02:** Dado um serviço com aprovação nos níveis 1 e 3 (2 desligado), quando o nível 1 aprovar, então a tarefa vai para o aprovador do nível 3; quando ele aprovar, segue para execução.
-- **CA03:** Dado um chamado em execução com prazo para sexta 17h, quando o técnico pausar por 4 horas úteis e retomar, então o novo prazo é sexta + 4 horas úteis.
-- **CA04:** Dado que o solicitante responda "não resolvido", então o chamado volta para "Executar" com o motivo, e `hd_qtd_reaberturas` = 1.
-- **CA05:** Dado uma avaliação com nota 2 sem comentário, então o envio é bloqueado.
-- **CA06:** Dado um feriado cadastrado no Fluig no meio do prazo, então o prazo não conta esse dia.
-
-## 9. Perguntas para a Marchesan (validação)
-1. Quais departamentos atendem por este processo: só Manutenção (industrial/predial) ou também TI e facilities?
-2. Quem mantém o catálogo de serviços? Já existe uma lista de serviços com SLA?
-3. A prioridade (impacto × urgência) muda o prazo ou é só informativa?
-4. Quais serviços exigem aprovação e de quem (coordenador, gerente, diretoria)?
-5. Patrimônio: vem do Ativo Fixo do Protheus ou de uma planilha?
-6. Prazo para o solicitante validar antes do encerramento automático?
-7. O técnico avalia o solicitante também?
-8. Horário de expediente da manutenção (turnos? 24×7 para manutenção industrial?)
-
-## 10. Fontes TDN
+## 9. Fontes TDN
 - Atividades: https://tdn.totvs.com/display/public/fluig/Atividades+Workflow
-- Gateways: https://tdn.totvs.com/display/public/fluig/Gateways
-- Mecanismos de atribuição: https://tdn.totvs.com/pages/releaseview.action?pageId=270921079
-- hAPI (`calculateDeadLineHours`, `setDueDate`): https://tdn.totvs.com/display/public/fluig/hAPI
-- Eventos de processo: https://tdn.totvs.com/display/public/fluig/Eventos+de+Processos
+- Intermediários (condicional): https://tdn.totvs.com/pages/releaseview.action?pageId=126714787
+- Atividade de serviço e rollback: https://tdn.totvs.com/pages/releaseview.action?pageId=237397494
+- Captura de erro: https://tdn.totvs.com/pages/releaseview.action?pageId=990755497
+- hAPI: https://tdn.totvs.com/display/public/fluig/hAPI

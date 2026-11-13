@@ -1,164 +1,133 @@
-# Spec — SolicitacaoReembolso (Reembolso e Pagamento a Fornecedor) · Tatu Marchesan
+# Spec — SolicitacaoReembolso (Reembolso de Despesas) · Tatu Marchesan
 
-**Status:** 🟡 RASCUNHO, aguardando validação da Marchesan · **Versão:** 0.1 · 13/11/2026
-**Base:** campos do formulário "reembolso" já publicado em DEV (doc 104, dataset `teste2`), padrão do processo `solicitacaoDeCompra` (v28) e cadastro `dts_amarracaoAprovadores_JYNX`.
-**Formulário:** `frm_solicitacao_reembolso` (substitui o `teste2`) · **Dataset do formulário:** `dts_solicitacao_reembolso_JYNX`
+**Status:** 🟡 RASCUNHO v0.2, aguardando validação · 13/11/2026
+**Mudança da v0.1 → v0.2:** realinhada ao **levantamento de 16/10** (ver `../../requisitos-atas-2026-11-13.md`).
+- O processo é **reembolso de despesas a colaborador**, substituindo o **Paytrack**. Pagamento a fornecedor e dados fiscais **saem** (decisão do cliente).
+- Entram **câmbio** (despesa em dólar) e **cálculo automático de distância**.
+- Aprovação em **2 níveis configuráveis pela hierarquia** (já era a proposta).
 
-> Itens marcados **[VALIDAR]** são suposições minhas e precisam de confirmação do cliente antes do desenvolvimento.
+**Base:** levantamento 16/10, formulário "reembolso" (doc 104, `teste2`), padrões da Compra.
+**Formulário:** `frm_solicitacao_reembolso` · **Dataset:** `dts_solicitacao_reembolso_JYNX`
+
+> **[VALIDAR]** = suposição minha, sem confirmação nas atas.
 
 ## 1. Objetivo
-Formalizar e aprovar dois tipos de saída de caixa, gerando o **título a pagar no Protheus** sem redigitação:
-- **Reembolso de despesas a colaborador:** viagem, alimentação, combustível etc., pagas pelo colaborador.
-- **Pagamento a fornecedor sem pedido de compra:** nota de serviço, boleto ou recibo. Inclui as despesas pagas com **cartão corporativo** só para prestação de contas. **[VALIDAR]** se cartão entra no escopo.
+Substituir o Paytrack no reembolso de despesas a colaboradores: lançamento das despesas com comprovantes, **categorias padronizadas**, conversão de **moeda estrangeira**, **quilometragem calculada automaticamente**, aprovação em dois níveis e envio ao sistema de destino para pagamento/contabilização.
 
-## 2. Papéis
+## 2. Decisões do cliente (16/10)
+| # | Decisão | Fonte |
+|---|---|---|
+| D1 | Formulário no Fluig centraliza anexos e automatiza aprovações por alçada | Ata 16/10 |
+| D2 | **Duas etapas de aprovação** configuráveis conforme a hierarquia | Ata 16/10 |
+| D3 | Despesas em **dólar**: manter o valor original e converter só para contabilização | Ata 16/10 |
+| D4 | **Cálculo automático de distância** (como no sistema atual; o cliente envia o print) | Ata 16/10 |
+| D5 | **Sem dados fiscais e sem dados de fornecedor**; ficam categorias, centro de custo e projeto (opcional) | Ata 16/10 |
+| D6 | Categorias padronizadas | Ata 16/10 |
+
+## 3. Papéis
 | Papel | Quem | Como é definido |
 |---|---|---|
-| Solicitante | Qualquer colaborador | Usuário logado |
-| Gestor do centro de custo | Aprovador por CC | `dts_amarracaoAprovadores_JYNX` (processo = "Reembolso", amarração = Centro de Custo, etapa = Supervisor) |
-| Diretoria | Diretor da filial | Mesmo cadastro (amarração = Filial, etapa = Diretor) |
-| Controladoria | Grupo Fluig `CONTROLADORIA` | Pool de grupo. **[VALIDAR]** quem faz parte |
-| Financeiro | Grupo Fluig `FINANCEIRO` | Pool de grupo. **[VALIDAR]** quem faz parte |
-| Suporte Fluig | Grupo Fluig `SUPORTE_FLUIG` | Trata falhas de integração (Jynx/TI) |
+| Solicitante | Colaborador | Usuário logado |
+| Aprovador nível 1 | Gestor imediato / aprovador do CC **[VALIDAR]** | `dts_amarracaoAprovadores_JYNX` com `processo = "Reembolso"`, etapa nível 1 |
+| Aprovador nível 2 | Próximo nível da hierarquia **[VALIDAR]**: sempre, ou só acima de um valor? | Mesmo cadastro, etapa nível 2 |
+| Financeiro | Grupo `FINANCEIRO` **[VALIDAR]** quem confere | Pool de grupo |
+| Suporte Fluig | Grupo `SUPORTE_FLUIG` | Falhas de integração |
 
-> **Simplificação proposta:** o formulário atual prevê até **6 níveis** (validador, gerente, head, diretor 1, diretor 2, CEO). Proponho começar com **2 níveis por alçada** (gestor do CC → diretoria acima do limite), o mesmo modelo que a Marchesan já usa na Compra. **[VALIDAR]** se Head e CEO existem na Marchesan. Se existirem, entram como níveis extras por faixa de valor.
-
-## 3. Fluxo
-> IDs provisórios (gerados no desenho). Conferir com `fluig_parse_process` depois de salvar no Studio.
-
+## 4. Fluxo (IDs provisórios)
 | ID | Atividade | Tipo | Responsável |
 |---|---|---|---|
-| 1 | Solicitar reembolso/pagamento | Início | Solicitante |
-| 2 | Aprovação do gestor do centro de custo | Tarefa | Gestor do CC (cadastro de amarração) |
-| 3 | Decisão do gestor | Gateway | — |
+| 1 | Solicitar reembolso | Início | Solicitante |
+| 2 | Aprovação nível 1 | Tarefa | Aprovador nível 1 |
+| 3 | Decisão nível 1 | Gateway | — |
 | 4 | Revisar solicitação | Tarefa | Solicitante |
 | 5 | Reenviar ou cancelar? | Gateway | — |
-| 6 | Acima da alçada do gestor? | Gateway | — |
-| 7 | Aprovação da diretoria | Tarefa | Diretor da filial (cadastro de amarração) |
-| 8 | Decisão da diretoria | Gateway | — |
-| 9 | Conferência e classificação (Controladoria) | Tarefa | Grupo CONTROLADORIA |
-| 10 | Documentação OK? | Gateway | — |
-| 11 | Gerar título a pagar no Protheus | Atividade de serviço (automatizada, 3 tentativas) | — |
-| 12 | Falha ao gerar título | Captura de erro (anexada à 11) | — |
-| 13 | Tratar falha de integração | Tarefa | Grupo SUPORTE_FLUIG |
-| 14 | Programar e confirmar pagamento (Financeiro) | Tarefa | Grupo FINANCEIRO |
+| 6 | Exige nível 2? | Gateway | — |
+| 7 | Aprovação nível 2 | Tarefa | Aprovador nível 2 |
+| 8 | Decisão nível 2 | Gateway | — |
+| 9 | Conferência do Financeiro | Tarefa | Grupo FINANCEIRO |
+| 10 | Conferência OK? | Gateway | — |
+| 11 | Integrar reembolso (destino a definir) | Atividade de serviço | — |
+| 12 | Falha na integração | Captura de erro (na 11) | — |
+| 13 | Tratar falha de integração | Tarefa | SUPORTE_FLUIG |
+| 14 | Confirmar pagamento **[VALIDAR se existe]** | Tarefa | FINANCEIRO |
 | 15 | Pago | Fim | — |
 | 16 | Reprovada | Fim (cancelamento) | — |
-| 17 | Cancelada pelo solicitante | Fim (cancelamento) | — |
+| 17 | Cancelada | Fim (cancelamento) | — |
 
 ```mermaid
 flowchart LR
-  S((1 Solicitar)) --> G[2 Aprovação gestor CC] --> DG{3 Decisão}
-  DG -->|APROVADO| AL{6 Acima da alçada?}
-  DG -->|DEVOLVIDO| R[4 Revisar] --> DR{5 Reenviar?}
-  DG -->|REPROVADO| FR(((16 Reprovada)))
-  DR -->|REENVIAR| G
+  S((1 Solicitar)) --> N1[2 Aprovação nível 1] --> D1{3}
+  D1 -->|APROVADO| E2{6 Exige nível 2?}
+  D1 -->|DEVOLVIDO| R[4 Revisar] --> DR{5}
+  D1 -->|REPROVADO| FR(((16 Reprovada)))
+  DR -->|REENVIAR| N1
   DR -->|CANCELAR| FC(((17 Cancelada)))
-  AL -->|S| D[7 Aprovação diretoria] --> DD{8 Decisão}
-  AL -->|N| C[9 Controladoria]
-  DD -->|APROVADO| C
-  DD -->|DEVOLVIDO| R
-  DD -->|REPROVADO| FR
-  C --> DC{10 Doc OK?}
-  DC -->|APROVADO| T[11 Gerar título Protheus]
-  DC -->|DEVOLVIDO| R
-  T --> F[14 Financeiro] --> FP(((15 Pago)))
-  T -.erro.-> E([12 Falha]) --> TF[13 Tratar falha] --> T
+  E2 -->|S| N2[7 Aprovação nível 2] --> D2{8}
+  E2 -->|N| F[9 Conferência Financeiro]
+  D2 -->|APROVADO| F
+  D2 -->|DEVOLVIDO| R
+  D2 -->|REPROVADO| FR
+  F --> DF{10} -->|OK| I[11 Integrar]
+  DF -->|DEVOLVIDO| R
+  I --> P[14 Confirmar pagamento] --> FP(((15 Pago)))
+  I -.erro.-> E([12]) --> T[13 Tratar falha] --> I
 ```
 
-## 4. Regras de negócio
+## 5. Regras de negócio
 | # | Regra | Onde |
 |---|---|---|
-| RN01 | Tipo da solicitação obrigatório: `REEMBOLSO` ou `FORNECEDOR` (e `CARTAO`, se validado) | Formulário + `validateForm` |
-| RN02 | **Reembolso:** o favorecido é o próprio colaborador, que precisa estar cadastrado como **fornecedor no Protheus (SA2)**. **[VALIDAR]** é assim que a Marchesan paga reembolso hoje? | Formulário (zoom de fornecedor filtrado pelo CPF do colaborador) |
-| RN03 | **Fornecedor:** CNPJ/CPF, código/loja do Protheus, número e data do documento e anexo do documento fiscal ou boleto obrigatórios | `validateForm` na atividade 1/4 |
-| RN04 | Itens de despesa (tabela pai × filho): data, categoria, descrição, valor e comprovante; **valor total = soma dos itens** (calculado, não digitado) | Formulário + `validateForm` |
-| RN05 | Forma de pagamento: `PIX`, `TRANSFERENCIA` ou `BOLETO`. PIX exige chave; transferência exige banco/agência/conta/tipo; boleto exige anexo e linha digitável **[VALIDAR]** | `validateForm` |
-| RN06 | Vencimento ≥ hoje + **[VALIDAR] N dias úteis** (prazo mínimo do Financeiro) | `validateForm` |
-| RN07 | Aprovadores tirados de `dts_amarracaoAprovadores_JYNX` com `processo = "Reembolso"`. Sem aprovador cadastrado, a solicitação **não sai** do início, com mensagem clara | `beforeTaskSave` (mesmo padrão da Compra) |
-| RN08 | **Alçada:** `hd_exige_diretoria = S` quando o valor total passa do `valor_limite` do gestor no cadastro | `beforeTaskSave` ao sair da atividade 2 |
-| RN09 | O solicitante não aprova a própria solicitação: se o aprovador for o solicitante, vai para o nível seguinte **[VALIDAR]** | `beforeTaskSave` |
-| RN10 | Devolver ou reprovar exige parecer (`txta_parecer`) | `validateForm` nas atividades 2, 7 e 9 |
-| RN11 | A Controladoria informa **natureza**, **condição de pagamento** e, para fornecedor, **espécie/série/chave da NF** antes de aprovar | `validateForm` na atividade 9 |
-| RN12 | O título só é gerado uma vez: se `hd_protheus_id_titulo` estiver preenchido, a atividade 11 não reenvia (idempotência, a mesma lição da Compra) | `servicetask11` |
-| RN13 | Na falha de integração, a mensagem do Protheus é copiada para o formulário ao entrar na atividade 13 (o rollback apaga o `setCardValue` feito no servicetask) | `beforeStateEntry` |
-| RN14 | Na atividade 14, o Financeiro informa a data do pagamento. **[VALIDAR]** se consultamos a **baixa no Protheus** automaticamente em vez de confirmar à mão | Tarefa ou serviço |
+| RN01 | Cabeçalho: filial, **centro de custo** (obrigatório), **projeto** (opcional), período da despesa | `validateForm` |
+| RN02 | Itens (pai × filho `tb_despesas`): data, **categoria** (lista padronizada), descrição, moeda, valor, comprovante (anexo) | `validateForm` |
+| RN03 | **Câmbio (D3):** item em moeda ≠ BRL guarda o valor original + a taxa + o valor convertido. O **total da solicitação** soma os valores convertidos. Fonte da taxa: **[VALIDAR]** PTAX do dia da despesa, taxa do Protheus (SM2) ou taxa informada pelo colaborador com o comprovante da operadora do cartão | Formulário + `validateForm` |
+| RN04 | **Quilometragem (D4):** categoria "Quilometragem" pede origem e destino → distância calculada automaticamente × **valor por km [VALIDAR]**. Serviço de distância: **[VALIDAR]** Google Distance Matrix (precisa de chave de API; o Fluig chama via Cadastro de Serviços) ou o mesmo provedor do Paytrack | Formulário + dataset `dts_calculaDistancia_MFX` |
+| RN05 | Limites por categoria (ex.: refeição até R$ X/dia) **[VALIDAR]** | `validateForm` |
+| RN06 | Aprovador de cada nível vem de `dts_amarracaoAprovadores_JYNX` (`processo = "Reembolso"`). Sem aprovador, o envio é bloqueado com mensagem | `beforeTaskSave` (mesmo padrão da Compra) |
+| RN07 | **Nível 2 (D2):** "configurável conforme a hierarquia". Proposta: o cadastro diz, por CC/filial, se o nível 2 é **sempre** exigido ou só **acima de um valor** **[VALIDAR]** | `beforeTaskSave` |
+| RN08 | O solicitante não aprova a própria solicitação (pula para o próximo nível) **[VALIDAR]** | `beforeTaskSave` |
+| RN09 | Devolver ou reprovar exige parecer | `validateForm` |
+| RN10 | O Financeiro confere os comprovantes e pode devolver | `validateForm` |
+| RN11 | Integração idempotente: não reenvia se já houver protocolo/título | `servicetask11` |
+| RN12 | Erro da integração copiado para o formulário ao entrar na 13 (o rollback apaga o `setCardValue` do servicetask) | `beforeStateEntry` |
 
-## 5. Formulário: campos
-**Limpeza em relação ao `teste2`:** remove o campo `WKNumState` (nome reservado), os 3 campos de erro de integração (fica só `hd_integracao_protheus_msg`), os 4 de etapa (fica só `hd_etapa_atual`) e o duplicado `hd_codAvalidador`. Os campos de Head/CEO e de frete/CT-e saem até a validação.
+## 6. Campos (limpeza do `teste2`)
+**Saem (D5):** fornecedor (`*_fornecedor*`, `razao_social_*`, `cnpj_cpf_*`), dados fiscais e de controladoria (`controladoria_*`, chave de acesso, série, espécie, CT-e/frete), boleto, `itens_nota_json`, níveis Head/CEO/Diretor 2. Sai também o campo reservado `WKNumState` e os campos de erro e de etapa repetidos.
 
-| Seção | Campos principais |
+| Seção | Campos |
 |---|---|
 | Cabeçalho | `hd_num_solic`, `hd_data_solic`, `hd_solic_cod`, `hd_solic_nome`, `hd_solic_email`, `hd_etapa_atual` |
-| Classificação | `hd_tipo_solicitacao`, `hd_filial_codigo` (zoom `dts_getFilial_MFX`), `hd_ccusto_codigo` (zoom `dts_cCusto`) |
-| Favorecido | `hd_cod_fornecedor`, `hd_loja_fornecedor`, `hd_cnpj_cpf_fornecedor`, `razao_social_fornecedor` (zoom **novo** `dts_getFornecedoresProtheus_MFX`) |
-| Documento (fornecedor) | `tipo_documento`, `numero_documento`, `dt_emissao_nota`, `controladoria_serie`, `controladoria_chave_acesso`, anexo obrigatório |
-| Itens (pai × filho `tb_itens`) | `item_data___N`, `item_categoria___N`, `item_descricao___N`, `item_valor___N` |
-| Totais | `valor_solicitacao` (calculado) |
-| Pagamento | `formaPagamento`, `chave_pix`, `banco_transf`, `agencia_transf`, `conta_transf`, `tipo_conta_transf`, `financeiro_data_vencimento` |
-| Aprovação | `hd_decisao`, `hd_decisao_revisao`, `txta_parecer`, `hd_exige_diretoria`, `hd_aprov_gestor`, `hd_aprov_diretor` |
-| Controladoria | `controladoria_natureza` (zoom **novo** `dts_getNaturezasProtheus_MFX`), `controladoria_cond_pagamento` (zoom **novo** `dts_getCondPagtoProtheus_MFX`), `controladoria_especie` |
-| Integração | `hd_integracao_protheus_status`, `hd_integracao_protheus_msg`, `hd_integracao_protheus_payload`, `hd_integracao_protheus_retorno`, `hd_protheus_id_titulo` |
-| Financeiro | `hd_protheus_dt_baixa`, `hd_protheus_baixado` |
+| Classificação | `hd_filial_codigo` (zoom `dts_getFilial_MFX`), `hd_ccusto_codigo` (zoom `dts_cCusto`), `hd_projeto_codigo` (opcional; zoom **[VALIDAR]** origem dos projetos) |
+| Despesas (pai × filho `tb_despesas`) | `desp_data___N`, `desp_categoria___N`, `desp_descricao___N`, `desp_moeda___N`, `desp_valor_original___N`, `desp_taxa_cambio___N`, `desp_valor_brl___N`, `desp_km_origem___N`, `desp_km_destino___N`, `desp_km_distancia___N` |
+| Totais | `valor_solicitacao` (soma em BRL) |
+| Pagamento **[VALIDAR]** | dados bancários/PIX do colaborador (`chave_pix_reembolso`, `banco_reembolso`, `agencia_reembolso`, `conta_reembolso`, `tipo_conta_reembolso`) ou só o cadastro do Protheus/folha |
+| Aprovação | `hd_decisao`, `hd_decisao_revisao`, `txta_parecer`, `hd_exige_nivel2`, `hd_aprov_nivel1`, `hd_aprov_nivel2` |
+| Integração | `hd_integracao_status`, `hd_integracao_msg`, `hd_integracao_payload`, `hd_integracao_retorno`, `hd_integracao_protocolo` |
 
-## 6. Integrações e datasets
-| Item | Situação | Ação |
-|---|---|---|
-| Chamada REST autenticada ao Protheus | ✅ existe (`dts_consultaRestProtheus_MFX`, `dts_getTokenProtheus_MFX`) | Reaproveitar |
-| Filial, centro de custo, colaboradores | ✅ existem | Reaproveitar |
-| Matriz de aprovadores | ✅ existe (`dts_amarracaoAprovadores_JYNX`) | Cadastrar linhas com processo "Reembolso" |
-| Fornecedores (SA2) | ❌ | Novo dataset `dts_getFornecedoresProtheus_MFX` |
-| Naturezas (SED) | ❌ | Novo dataset `dts_getNaturezasProtheus_MFX` |
-| Condições de pagamento (SE4) | ❌ | Novo dataset `dts_getCondPagtoProtheus_MFX` |
-| **Geração do título a pagar (SE2 / FINA050)** | ❌ endpoint não existe | **Time Protheus:** criar `POST /aprovcom/geratitulo` (ou equivalente). Contrato proposto abaixo |
-| Consulta de baixa (SE2) | ❌ | Opcional (RN14) |
-
-**Contrato proposto: `POST /aprovcom/geratitulo`** **[VALIDAR com o time Protheus]**
-```json
-{
-  "empresa": "01", "filial": "0101",
-  "prefixo": "FLG", "numero": "<nº solicitação Fluig>", "parcela": "", "tipo": "<RC|NF|BOL>",
-  "fornecedor": "<A2_COD>", "loja": "<A2_LOJA>",
-  "natureza": "<ED_CODIGO>", "emissao": "AAAAMMDD", "vencimento": "AAAAMMDD",
-  "valor": 0.00, "centroCusto": "<CTT_CUSTO>",
-  "historico": "Fluig <nº> - <tipo>", "formaPagamento": "<PIX|TED|BOL>",
-  "fluigProcesso": "<nº>"
-}
-```
-Resposta esperada: `{"success": true, "titulo": {"prefixo": "...", "numero": "...", "parcela": "...", "tipo": "..."}}` ou `{"success": false, "erro": "...", "detalhes": [...]}`.
-
-## 7. Eventos previstos
-| Evento | Função |
-|---|---|
-| `validateForm` (formulário) | RN01–RN06, RN10, RN11 por atividade |
-| `beforeTaskSave` | Atribuição dos aprovadores (RN07), alçada (RN08), autoaprovação (RN09), etapa atual |
-| `servicetask11` | Gera o título (RN12), grava status, payload e retorno no sucesso, `throw` com mensagem útil na falha |
-| `beforeStateEntry` | Copia o erro do complemento para o formulário ao entrar na 13 (RN13) |
-| `afterProcessCreate` | Número da solicitação no formulário |
+## 7. Integração (destino a definir)
+Nas atas, o Paytrack integra hoje com o **Glovia**. Nada foi dito sobre o destino no Fluig. **[VALIDAR]** uma das opções:
+- (a) **Protheus:** título a pagar ao colaborador (SE2, colaborador como fornecedor) e contabilização. Endpoint novo pelo Pedro, no padrão `/aprovcom/...`.
+- (b) **Glovia:** manter o destino atual do Paytrack.
+- (c) Folha de pagamento.
 
 ## 8. Critérios de aceite
-- **CA01:** Dado um reembolso de R$ 300 no CC 640000 (gestor Paulo, limite R$ 500), quando o solicitante enviar, então vai para Paulo e, ao aprovar, segue direto para a Controladoria.
-- **CA02:** Dado um reembolso de R$ 800 no mesmo CC, quando Paulo aprovar, então vai para a diretoria da filial 0101.
-- **CA03:** Dado um CC sem aprovador para "Reembolso", quando o solicitante enviar, então o envio é bloqueado com mensagem indicando o CC sem aprovador.
-- **CA04:** Dado que o gestor devolva sem parecer, então o envio é bloqueado; com parecer, a solicitação volta ao solicitante na atividade 4.
-- **CA05:** Dado que a Controladoria aprove com natureza e condição preenchidas, então o título é criado no Protheus e o número fica em `hd_protheus_id_titulo`.
-- **CA06:** Dado que o Protheus recuse o título, então, após 3 tentativas, a solicitação vai para "Tratar falha" com a mensagem do Protheus visível no formulário. Ao reenviar, não duplica o título.
-- **CA07:** Dado um pagamento a fornecedor sem anexo do documento fiscal, então o envio é bloqueado.
+- **CA01:** Dado um reembolso com 2 despesas em BRL e 1 em USD (US$ 50 à taxa 5,40), quando o colaborador enviar, então o total = soma BRL + R$ 270,00, e o valor original em USD fica registrado.
+- **CA02:** Dado uma despesa de quilometragem de Matão a Ribeirão Preto, quando o colaborador informar origem e destino, então a distância é preenchida automaticamente e o valor = km × valor por km.
+- **CA03:** Dado um CC sem aprovador de nível 1 para "Reembolso", então o envio é bloqueado com mensagem indicando o CC.
+- **CA04:** Dado que o nível 2 seja exigido para o CC, quando o nível 1 aprovar, então a tarefa vai para o aprovador de nível 2.
+- **CA05:** Dado que a integração falhe, então, após 3 tentativas, a solicitação vai para "Tratar falha" com a mensagem visível no formulário. Ao reenviar, não duplica.
 
-## 9. Perguntas para a Marchesan (validação)
-1. Quais tipos entram: reembolso, fornecedor sem pedido, cartão corporativo?
-2. Como o reembolso é pago hoje: colaborador cadastrado como fornecedor no Protheus? Via folha?
-3. Níveis de aprovação reais: gestor do CC + diretoria bastam? Existem Head e CEO? Quais limites de valor?
-4. Quem compõe Controladoria e Financeiro?
-5. Prazo mínimo de vencimento e regras de forma de pagamento (aceita boleto? PIX só para CPF?)
-6. Categorias de despesa (lista fixa? mapeada para natureza?) e limites por categoria (ex.: alimentação até R$ X/dia)?
-7. Frete/CT-e entra neste processo ou fica no fiscal?
-8. A confirmação de pagamento deve ser automática pela baixa no Protheus?
+## 9. Perguntas para a Marchesan (atualizadas)
+1. **Nível 2:** sempre ou só acima de um valor? Quem é o nível 1 (gestor imediato ou aprovador do CC)?
+2. **Destino:** o reembolso vai para o Protheus (título ao colaborador), para o Glovia ou para a folha?
+3. **Câmbio:** fonte da taxa (PTAX, Protheus ou fatura do cartão)? Quais moedas além do dólar?
+4. **Quilometragem:** valor por km? Pode usar a API do Google (exige chave de API)? Ida e volta?
+5. **Categorias:** lista padronizada (a do Paytrack serve?) e limites por categoria?
+6. **Projeto:** de onde vem a lista (Protheus? qual tabela)?
+7. Existe adiantamento de viagem ou prestação de contas de cartão corporativo neste fluxo?
+8. O Financeiro só confere ou também confirma o pagamento no Fluig?
 
 ## 10. Fontes TDN
 - Atividades: https://tdn.totvs.com/display/public/fluig/Atividades+Workflow
 - Gateways: https://tdn.totvs.com/display/public/fluig/Gateways
-- Mecanismos de atribuição: https://tdn.totvs.com/pages/releaseview.action?pageId=270921079
 - Atividade de serviço e rollback: https://tdn.totvs.com/pages/releaseview.action?pageId=237397494
 - Captura de erro: https://tdn.totvs.com/pages/releaseview.action?pageId=990755497
 - Eventos de processo: https://tdn.totvs.com/display/public/fluig/Eventos+de+Processos
