@@ -16,4 +16,5 @@
 - Datasets usados: `workflowProcess` (active/status), `processHistory` (active=true → `stateSequence`), `processTask` (active=true → responsável), `processState` (nomes das atividades), `colleague`.
 
 ## Histórico
+- 2026-11-13 · Diagnóstico das falhas · Criação de SC no Protheus OK desde 06/10; as 15 falhas em "Gerar SC" são legado de 14–28/09; liberar/reprovar no ERP ainda falha (nº 54, 55); erro não é gravado no formulário.
 - 2026-11-13 · Status + riscos · 🔴 · 43 solicitações em andamento; 19 em falha de integração com o ERP; nenhuma movimentação desde 16/10.
