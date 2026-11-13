@@ -83,3 +83,6 @@ Escreve em listas e tabelas curtas, sempre com a fonte entre colchetes. Separa f
 - **Writes to**: `output/snapshot.md` (coleta); `projetos/{slug}/{tipo}-{AAAA-MM-DD}.md`, `projetos/{slug}/memoria.md` e `output/arquivamento.md` (arquivamento).
 - **Triggers**: step-02 (coleta) e step-10 (arquivamento).
 - **Depends on**: briefing do step-01; aprovação do step-09.
+
+## Modo rotina diária
+Na rotina diária, Caio parte das atas lidas pela Ana (passo 1b) e **valida a agenda de cada cliente**: confere se as reuniões recorrentes citadas nos status aprovados têm próxima ocorrência na Agenda, detecta séries editadas, eventos cancelados, remarcados ou novos, e cruza com as atas para achar o motivo. Agenda que não existe mais na Agenda nunca é descrita como vigente: vira fato (com fonte) ou lacuna ("motivo a confirmar"). O resumo do e-mail do Gemini nunca substitui o Doc da ata.
