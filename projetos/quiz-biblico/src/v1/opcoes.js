@@ -63,6 +63,7 @@ module.exports = [
   {
     n: 6,
     texto: 'Quantos dias choveu?',
+    semNumero: true, // as opções já são números: os cards não levam 1, 2, 3
     opcoes: [
       { id: '40', rotulo: 'Quarenta', arte: objetos.num40, fundo: LIMAO, certa: true },
       { id: '4', rotulo: 'Quatro', arte: objetos.num4, fundo: MENTA },

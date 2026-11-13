@@ -233,4 +233,24 @@ function cenaEncerramento({ comTuti = true } = {}) {
   });
 }
 
-module.exports = { arca, cenaAbertura, cenaEncerramento, sun, skyCloud, tree, bush, flowers, tuft, place, TRACO };
+/** Fundo da tela de pergunta: céu limpo para os cards e um gramado para a Tuti. */
+function fundoQuiz() {
+  return withOutline(TRACO, () => {
+    let s = R(0, 0, 1920, 1080, 0, SKY, { sw: 0 });
+    s += E(960, 860, 1500, 360, '#DDF3FF', { sw: 0 });
+    s += skyCloud(150, 150, 0.8) + skyCloud(1790, 176, 0.86);
+    s += P('M-20 936 Q480 884 960 918 Q1480 952 1940 902 L1940 1100 L-20 1100Z', GRASS);
+    s += tuft(600, 970) + tuft(1480, 978) + tuft(1790, 960) + tuft(820, 1000);
+    s += P('M-20 1040 Q520 1000 1040 1036 Q1500 1066 1940 1026 L1940 1100 L-20 1100Z', GRASS_NEAR);
+    s += flowers([
+      [560, 1022, 1.1],
+      [1420, 1016, 1.2],
+      [1790, 1030, 1.1],
+      [900, 1046, 1],
+      [1640, 1054, 0.9],
+    ]);
+    return s;
+  });
+}
+
+module.exports = { arca, cenaAbertura, cenaEncerramento, fundoQuiz, sun, skyCloud, tree, bush, flowers, tuft, place, TRACO };

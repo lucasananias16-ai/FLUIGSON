@@ -1,0 +1,336 @@
+'use strict';
+/**
+ * Vídeo 1 — cena de uma pergunta.
+ *
+ * Sequência: entra a faixa com a pergunta e chegam três cards virados; a Tuti
+ * pergunta e cada card vira quando ela fala a opção; contagem regressiva;
+ * os errados viram de costas e o certo gira, cresce e brilha; a Tuti explica.
+ *
+ * Os tempos saem da narração (narracao.json), então a cena sempre acompanha
+ * a voz, qualquer que seja a duração de cada fala.
+ */
+const fs = require('fs');
+const path = require('path');
+const A = require('../audio');
+const Z = require('../anim/ease');
+const kit = require('../kit');
+const { stageHtml } = require('../anim/render');
+const { tutiFrame } = require('../anim/tutiAnim');
+const { POSES } = require('../tuti');
+const { fundoQuiz, TRACO } = require('../art/cenario');
+const perguntas = require('./opcoes');
+const roteiro = require('./roteiro');
+
+const ROOT = path.resolve(__dirname, '..', '..');
+const NARR = path.join(ROOT, 'v1-arca-de-noe', 'narracao');
+const LINE = '#3D2C4E';
+const CARD = 440;
+const CX = [432, 920, 1408];
+const CY = 232;
+const TIMER = { x: 1160, y: 866 };
+const CONFETE = ['#FF6B6B', '#FFD23F', '#5DBB7A', '#4DA3FF', '#9B7EDE', '#FF8FB1', '#FFA53A'];
+
+const f = (v) => Math.round(v * 1000) / 1000;
+
+// Poses da Tuti usadas na cena
+const OLHANDO = { gaze: [0.7, -0.35], mouth: 0.15 };
+const APONTANDO = { headTilt: 4, lean: 1, armR: [772, 556], gaze: [0.85, -0.45], browL: 8, browR: 8, mouth: 0.3 };
+const PENSANDO = Object.assign({}, POSES.perguntando, { mouth: 0 });
+const PENSANDO_FRENTE = Object.assign({}, PENSANDO, { gaze: [0, -0.1], headTilt: -4, browR: 6, browTiltR: 0 });
+const COMEMORA = Object.assign({}, POSES.comemorando, { jump: 0, squash: 1 });
+const FELIZ = { armL: [300, 650], armR: [700, 650], browL: 8, browR: 8, mouth: 0.4 };
+
+/** Volume da fala ao longo do tempo, de 0 a 1, para a boca da Tuti. */
+function falaEnvelope(file) {
+  const { data, rate } = A.readWav(file);
+  const env = A.envelope(data, rate, 1 / 60);
+  const sorted = Array.from(env.values).sort((a, b) => a - b);
+  const ref = sorted[Math.floor(sorted.length * 0.95)] || 1;
+  const v = Array.from(env.values, (x) => Math.min(1, Math.pow(x / ref, 0.7)));
+  for (let i = 1; i < v.length; i++) v[i] = Math.max(v[i], v[i - 1] * 0.72); // a boca fecha devagar
+  return (t) => {
+    const i = t / env.win;
+    const i0 = Math.floor(i);
+    if (i0 < 0 || i0 >= v.length - 1) return 0;
+    return v[i0] + (v[i0 + 1] - v[i0]) * (i - i0);
+  };
+}
+
+/** Verso do card: azul do lenço da Tuti, com bolinhas e o número (ou "?"). */
+function verso(label) {
+  let dots = '';
+  for (let r = 0; r < 7; r++) {
+    for (let c = 0; c < 7; c++) dots += `<circle cx="${f(10 + c * 70 + (r % 2) * 35)}" cy="${10 + r * 70}" r="13"/>`;
+  }
+  return (
+    `<svg viewBox="0 0 440 440" width="100%" height="100%">` +
+    `<rect width="440" height="440" fill="#2E8BFF"/><g fill="#fff" opacity="0.3">${dots}</g>` +
+    `<rect x="20" y="20" width="400" height="400" rx="34" fill="none" stroke="#8CC2FF" stroke-width="6"/>` +
+    `<circle cx="220" cy="220" r="116" fill="#fff" stroke="${LINE}" stroke-width="7"/>` +
+    `<text x="220" y="272" text-anchor="middle" font-family="Fredoka" font-weight="700" font-size="156" fill="#2E8BFF">${label}</text>` +
+    `</svg>`
+  );
+}
+
+/** Raios de luz atrás do card certo. */
+function raios() {
+  let rays = '';
+  for (let i = 0; i < 12; i++) {
+    const a = (i * 30 * Math.PI) / 180;
+    const w = (8 * Math.PI) / 180;
+    rays += `<path d="M0 0 L${f(Math.cos(a - w) * 520)} ${f(Math.sin(a - w) * 520)} L${f(Math.cos(a + w) * 520)} ${f(Math.sin(a + w) * 520)}Z"/>`;
+  }
+  return (
+    `<svg viewBox="-520 -520 1040 1040" width="1040" height="1040"><defs><radialGradient id="rg" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="520">` +
+    `<stop offset="0" stop-color="#FFF6C4" stop-opacity="1"/><stop offset="0.55" stop-color="#FFE680" stop-opacity="0.75"/><stop offset="1" stop-color="#FFE680" stop-opacity="0"/>` +
+    `</radialGradient></defs><g fill="url(#rg)">${rays}</g></svg>`
+  );
+}
+
+function timerSvg(num, frac, pulse) {
+  const R = 88;
+  const C = 2 * Math.PI * R;
+  const color = num <= 3 ? '#FF8A3A' : '#2E8BFF';
+  return (
+    `<svg viewBox="-120 -120 240 240" width="240" height="240">` +
+    `<circle r="112" cy="8" fill="${LINE}" opacity="0.14"/>` +
+    `<circle r="108" fill="#fff" stroke="${LINE}" stroke-width="7"/>` +
+    `<circle r="${R}" fill="none" stroke="#E4EBF5" stroke-width="18"/>` +
+    `<circle r="${R}" fill="none" stroke="${color}" stroke-width="18" stroke-linecap="round" stroke-dasharray="${f(C * frac)} ${f(C)}" transform="rotate(-90)"/>` +
+    `<text y="${f(36 + 4 * pulse)}" text-anchor="middle" font-family="Fredoka" font-weight="700" font-size="${f(104 * (1 + 0.16 * pulse))}" fill="${LINE}">${num}</text>` +
+    `</svg>`
+  );
+}
+
+/**
+ * Monta a cena da pergunta `num` (1 a 8).
+ * `tGlobal0` é o instante em que a cena começa dentro do vídeo inteiro.
+ */
+function criarPergunta(num, { tGlobal0 = 0 } = {}) {
+  const q = perguntas.find((x) => x.n === num);
+  const manifest = JSON.parse(fs.readFileSync(path.join(NARR, 'narracao.json'), 'utf8')).falas;
+  const fq = manifest[`v1_p${num}_pergunta`];
+  const fr = manifest[`v1_p${num}_resposta`];
+  const certa = q.opcoes.findIndex((o) => o.certa);
+  const CONT = roteiro.contagem;
+
+  // ----- linha do tempo -----
+  const T = { banner: 0.1, selo: 0.35, cards: [0.45, 0.58, 0.71], pergunta: 1.45 };
+  T.viradas = [1, 2, 3].map((k) => T.pergunta + fq.partes[k].ini - 0.14);
+  T.fimPergunta = T.pergunta + fq.dur;
+  T.contagem = T.fimPergunta + 0.6;
+  T.revela = T.contagem + CONT + 0.1;
+  T.resposta = T.revela + 1.7;
+  T.fimResposta = T.resposta + fr.dur;
+  T.saida = T.fimResposta + 0.9;
+  const dur = T.saida + 0.75;
+
+  // ----- sons -----
+  const sons = [{ t: T.selo, tipo: 'plim', ganho: 0.5 }];
+  T.cards.forEach((t) => sons.push({ t: t + 0.36, tipo: 'pouso', ganho: 0.45 }));
+  T.viradas.forEach((t, i) => sons.push({ t: t + 0.05, tipo: 'virada', ganho: 0.5, semente: i + 1 }));
+  for (let k = 0; k < CONT; k++) sons.push({ t: T.contagem + k, tipo: 'tique', ganho: k >= CONT - 3 ? 0.5 : 0.36, agudo: k % 2 === 0 });
+  sons.push({ t: T.contagem + CONT, tipo: 'fimDoTempo', ganho: 0.45 });
+  sons.push({ t: T.revela + 0.15, tipo: 'virada', ganho: 0.5, semente: 5 });
+  sons.push({ t: T.revela + 0.95, tipo: 'acerto', ganho: 0.6 });
+  sons.push({ t: T.saida, tipo: 'sopro', ganho: 0.4 });
+  const falas = [
+    { t: T.pergunta, id: `v1_p${num}_pergunta` },
+    { t: T.resposta, id: `v1_p${num}_resposta` },
+  ];
+
+  // ----- Tuti -----
+  const envQ = falaEnvelope(path.join(NARR, `v1_p${num}_pergunta.wav`));
+  const envR = falaEnvelope(path.join(NARR, `v1_p${num}_resposta.wav`));
+  const fala = (t) => {
+    if (t >= T.pergunta && t <= T.fimPergunta) return envQ(t - T.pergunta);
+    if (t >= T.resposta && t <= T.fimResposta) return envR(t - T.resposta);
+    return null;
+  };
+  const track = [
+    { t: 0, pose: OLHANDO },
+    { t: T.pergunta - 0.3, pose: 'perguntando', dur: 0.45 },
+    { t: T.viradas[0] - 0.35, pose: APONTANDO, dur: 0.45 },
+    { t: T.fimPergunta + 0.15, pose: PENSANDO, dur: 0.5 },
+  ];
+  for (let k = 1; T.contagem + k * 2.6 < T.revela - 0.6; k++) {
+    track.push({ t: T.contagem + k * 2.6, pose: k % 2 ? PENSANDO_FRENTE : PENSANDO, dur: 0.6 });
+  }
+  track.push({ t: T.revela + 0.85, pose: COMEMORA, dur: 0.28 });
+  track.push({ t: T.resposta + 1.2, pose: FELIZ, dur: 0.6 });
+  track.push({ t: T.saida, pose: OLHANDO, dur: 0.5 });
+  const pulos = [{ t: T.revela + 0.95, n: 2, altura: 74, periodo: 0.44 }];
+
+  // ----- página -----
+  kit.resetIds();
+  const cardsHtml = q.opcoes
+    .map((op, i) => {
+      const badge = q.semNumero ? '' : `<div class="cnum">${i + 1}</div>`;
+      return (
+        `<div class="card" id="c${i}" style="left:${CX[i]}px;top:${CY}px;opacity:0">` +
+        `<div class="cshadow" id="c${i}s"></div>` +
+        `<div class="inner" id="c${i}i">` +
+        `<div class="face front" id="c${i}f" style="background:${op.fundo}"><svg class="art" viewBox="0 0 1000 1000">${op.arte()}</svg>${badge}</div>` +
+        `<div class="face back">${verso(q.semNumero ? '?' : String(i + 1))}</div>` +
+        `</div>` +
+        (op.certa
+          ? `<div class="check" id="check"><svg viewBox="0 0 60 60" width="62" height="62"><path d="M12 32 L25 45 L49 17" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/></svg></div>`
+          : '') +
+        `</div>`
+      );
+    })
+    .join('');
+  const css = `
+    #bg, #fx, #fade { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+    #fade { background: #fff; opacity: 0; }
+    #banner { position: absolute; left: 330px; top: 44px; width: 1260px; height: 132px; padding-left: 104px; background: #fff;
+      border: 7px solid ${LINE}; border-radius: 66px; box-shadow: 0 12px 0 rgba(61,44,78,.14);
+      display: flex; align-items: center; justify-content: center; font-size: 76px; font-weight: 600; white-space: nowrap; }
+    #qnum { position: absolute; left: -38px; top: -19px; width: 156px; height: 156px; border-radius: 50%; background: #2E8BFF;
+      border: 7px solid ${LINE}; color: #fff; font-size: 96px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+    #burst { position: absolute; left: ${CX[certa] + CARD / 2 - 520}px; top: ${CY + CARD / 2 - 520}px; width: 1040px; height: 1040px; opacity: 0; }
+    .card { position: absolute; width: ${CARD}px; height: ${CARD}px; perspective: 1800px; }
+    .cshadow { position: absolute; left: 0; top: 0; width: 100%; height: 100%; border-radius: 52px; background: rgba(61,44,78,.16); }
+    .inner { position: absolute; left: 0; top: 0; width: 100%; height: 100%; transform-style: preserve-3d; }
+    .face { position: absolute; left: 0; top: 0; width: 100%; height: 100%; border-radius: 52px; border: 7px solid ${LINE};
+      overflow: hidden; backface-visibility: hidden; }
+    .back { transform: rotateY(180deg); }
+    .art { position: absolute; left: 3%; top: 3%; width: 94%; height: 94%; }
+    .cnum { position: absolute; left: 16px; top: 16px; width: 84px; height: 84px; border-radius: 50%; background: #fff;
+      border: 6px solid ${LINE}; font-size: 52px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+    .check { position: absolute; right: -26px; top: -26px; width: 112px; height: 112px; border-radius: 50%; background: #3CC06F;
+      border: 7px solid ${LINE}; display: flex; align-items: center; justify-content: center; transform: scale(0); }
+    #timer { position: absolute; left: ${TIMER.x - 120}px; top: ${TIMER.y - 120}px; width: 240px; height: 240px; transform: scale(0); }
+    #tuti { position: absolute; left: -40px; top: 436px; width: 560px; height: 616px; }
+  `;
+  const body =
+    `<svg id="bg" viewBox="0 0 1920 1080">${fundoQuiz()}</svg>` +
+    `<div id="burst">${raios()}</div>` +
+    `<div id="banner"><div id="qnum">${num}</div>${q.texto}</div>` +
+    cardsHtml +
+    `<div id="timer"></div>` +
+    `<div id="tuti"></div>` +
+    `<svg id="fx" viewBox="0 0 1920 1080"></svg>` +
+    `<div id="fade"></div>`;
+  const html = stageHtml(css, body);
+
+  // ----- confete e brilhos -----
+  function fx(t) {
+    const life0 = t - (T.revela + 0.95);
+    if (life0 < 0 || t > T.saida + 0.7) return '';
+    const fadeOut = 1 - Z.prog(t, T.saida, 0.5);
+    let s = `<g opacity="${f(fadeOut)}">`;
+    for (let i = 0; i < 90; i++) {
+      const life = life0 - Z.rand(i, 1) * 1.1;
+      if (life < 0) continue;
+      const x = Z.rand(i, 2) * 1920 + Math.sin(life * (1.4 + Z.rand(i, 5) * 2) + i) * (40 + Z.rand(i, 4) * 60);
+      const y = -40 + (330 + Z.rand(i, 3) * 360) * life + 50 * life * life;
+      if (y > 1120) continue;
+      const w = 16 + Z.rand(i, 7) * 12;
+      const c = CONFETE[i % CONFETE.length];
+      if (i % 3 === 0) s += `<circle cx="${f(x)}" cy="${f(y)}" r="${f(w / 2)}" fill="${c}"/>`;
+      else {
+        const rot = life * (130 + Z.rand(i, 6) * 300) * (i % 2 ? 1 : -1);
+        s += `<rect x="${f(x - w / 2)}" y="${f(y - w * 0.3)}" width="${f(w)}" height="${f(w * 0.6)}" rx="3" fill="${c}" transform="rotate(${f(rot)} ${f(x)} ${f(y)})"/>`;
+      }
+    }
+    // brilhos em volta do card certo
+    const cx = CX[certa] + CARD / 2;
+    const cy = CY + CARD / 2;
+    for (let i = 0; i < 7; i++) {
+      const a = (i / 7) * Math.PI * 2 + 0.4;
+      const k = ((t - T.revela) / 1.15 + i / 7) % 1;
+      const size = (30 + (i % 3) * 12) * Z.bump(k);
+      if (size < 6) continue;
+      s += kit.withOutline(Math.min(TRACO, size * 0.16), () =>
+        kit.sparkle(cx + Math.cos(a) * 335, cy + Math.sin(a) * 305, size, i * 20, i % 2 ? '#FFFFFF' : '#FFD23F')
+      );
+    }
+    return s + '</g>';
+  }
+
+  // ----- quadro -----
+  function frame(t) {
+    const ops = [];
+
+    // faixa da pergunta e selo com o número
+    const bIn = Z.outBack(Z.prog(t, T.banner, 0.55), 1.2);
+    const bOut = Z.inBack(Z.prog(t, T.saida, 0.5));
+    ops.push({ id: 'banner', style: `transform:translateY(${f(-280 * (1 - bIn) - 280 * bOut)}px)` });
+    ops.push({ id: 'qnum', style: `transform:scale(${f(Z.outBack(Z.prog(t, T.selo, 0.45), 2.4))})` });
+
+    for (let i = 0; i < 3; i++) {
+      const ok = i === certa;
+      const kIn = Z.prog(t, T.cards[i], 0.55);
+      let dy = -780 * (1 - Z.outBack(kIn, 1.0));
+      const rotZ = (i - 1) * -8 * (1 - Z.outCubic(kIn));
+      let sc = 1;
+      let op = kIn > 0 ? 1 : 0;
+      let z = 2;
+
+      // vira para mostrar o desenho
+      const kF = Z.prog(t, T.viradas[i], 0.55);
+      let ang = 180 - 180 * Z.inOutCubic(kF);
+      dy -= 30 * Z.bump(kF);
+      sc += 0.06 * Z.bump(kF);
+
+      // flutua de leve durante a contagem
+      const calm = Z.prog(t, T.viradas[i] + 0.55, 0.9) * (1 - Z.prog(t, T.revela - 0.4, 0.4));
+      dy += 5 * calm * Math.sin(((t + tGlobal0) * 2 * Math.PI) / 2.8 + i * 2.1);
+
+      if (ok) {
+        // o certo dá um giro, cresce e brilha
+        ang -= 360 * Z.inOutCubic(Z.prog(t, T.revela + 0.1, 0.95));
+        const kG = Z.prog(t, T.revela + 0.8, 0.6);
+        sc += 0.15 * Z.outBack(kG, 2.2);
+        dy -= 10 * Z.outCubic(kG);
+        if (kG >= 1) sc += 0.012 * Math.sin(((t - T.revela) * 2 * Math.PI) / 1.3);
+        if (t >= T.revela) z = 6;
+        const kGlow = Z.outCubic(Z.prog(t, T.revela + 1.0, 0.4));
+        const glow = kGlow > 0 ? `;border-color:#2FA765;box-shadow:0 0 0 ${f(14 * kGlow)}px rgba(60,192,111,.38)` : '';
+        ops.push({ id: `c${i}f`, style: `background:${q.opcoes[i].fundo}${glow}` });
+        ops.push({ id: 'check', style: `transform:scale(${f(Z.outBack(Z.prog(t, T.revela + 1.35, 0.4), 2.4))})` });
+      } else {
+        // os errados viram de costas e recuam
+        ang -= 180 * Z.inOutCubic(Z.prog(t, T.revela + 0.12 + 0.1 * i, 0.55));
+        const kD = Z.outCubic(Z.prog(t, T.revela + 0.95, 0.5));
+        sc -= 0.09 * kD;
+        op = Math.min(op, 1 - 0.4 * kD);
+      }
+
+      // saída
+      const kOut = Z.inCubic(Z.prog(t, T.saida + 0.05 * i, 0.55));
+      dy += 1000 * kOut;
+
+      const cos = Math.abs(Math.cos((ang * Math.PI) / 180));
+      ops.push({
+        id: `c${i}`,
+        style: `left:${CX[i]}px;top:${CY}px;transform:translate(0px,${f(dy)}px) scale(${f(sc)}) rotate(${f(rotZ)}deg);opacity:${f(op)};z-index:${z}`,
+      });
+      ops.push({ id: `c${i}i`, style: `transform:rotateY(${f(ang)}deg)` });
+      ops.push({ id: `c${i}s`, style: `transform:translate(0px,16px) scaleX(${f(Math.max(0.03, cos))})` });
+    }
+
+    // raios atrás do card certo
+    const kB = Z.outCubic(Z.prog(t, T.revela + 0.95, 0.5)) * (1 - Z.prog(t, T.saida, 0.4));
+    ops.push({ id: 'burst', style: `opacity:${f(0.95 * kB)};transform:rotate(${f((t - T.revela) * 14)}deg) scale(${f(0.6 + 0.4 * kB)})` });
+
+    // contagem regressiva
+    const ts = Z.outBack(Z.prog(t, T.contagem - 0.4, 0.4), 1.8) * (1 - Z.inBack(Z.prog(t, T.revela - 0.02, 0.26)));
+    if (ts <= 0.001) ops.push({ id: 'timer', style: 'transform:scale(0)' });
+    else {
+      const el = Z.clamp(t - T.contagem, 0, CONT);
+      const shown = Math.max(1, CONT - Math.floor(el));
+      const pulse = t >= T.contagem ? Z.bump(Z.prog(el - Math.floor(el), 0, 0.3)) : 0;
+      ops.push({ id: 'timer', style: `transform:scale(${f(ts)})`, html: timerSvg(shown, 1 - el / CONT, pulse) });
+    }
+
+    ops.push({ id: 'tuti', html: tutiFrame(t, { track, fala, pulos, tGlobal: t + tGlobal0 }) });
+    ops.push({ id: 'fx', html: fx(t) });
+    return ops;
+  }
+
+  return { num, dur, html, frame, sons, falas, T };
+}
+
+module.exports = { criarPergunta };

@@ -20,7 +20,7 @@ Roteiro de origem: documento "Roteiros dos vídeos piloto: Quiz Bíblico Infanti
 | 2 | Tuti em 3 poses | Aprovada |
 | 3 | Imagens das cenas e das opções | Aprovada |
 | 4 | Narração | Aguardando validação (voz escolhida: Leda, tom natural) |
-| 5 | Animação e edição | A fazer |
+| 5 | Animação e edição | Pergunta 1 de teste entregue, aguardando validação; falta montar o vídeo inteiro |
 | 6 | Legendas | A fazer |
 | 7 | Pacote do YouTube | A fazer |
 | 8 | Publicação | A fazer |
@@ -40,6 +40,8 @@ Roteiro de origem: documento "Roteiros dos vídeos piloto: Quiz Bíblico Infanti
   - `v1/roteiro.js` — texto exato da locução; `v1/narracao.js` — gera os áudios
   - `tts.js` — cliente do Google Cloud Text-to-Speech; `audio.js` — leitura, corte e mixagem de áudio
   - `render-tuti.js`, `render-v1-imagens.js` — geram os arquivos finais
+  - `anim/` — animação: `render.js` (quadro a quadro com Chromium e ffmpeg), `tutiAnim.js` (Tuti animada), `sfx.js` (efeitos sonoros sintetizados), `mix.js` (trilha de áudio), `ease.js`
+  - `v1/cenaPergunta.js` — a cena de uma pergunta; `v1/teste-pergunta.js` — renderiza uma pergunta sozinha
   - `preview.js` — prévia rápida de qualquer ilustração
 - `assets/fonts/` — fonte Fredoka (licença SIL OFL, incluída)
 
@@ -50,6 +52,14 @@ GOOGLE_APPLICATION_CREDENTIALS=/caminho/da/chave.json node src/v1/narracao.js
 ```
 
 A chave da conta de serviço nunca entra no repositório. A voz é generativa, então cada gravação nova sai um pouco diferente; por isso os áudios aprovados ficam guardados em `v1-arca-de-noe/narracao/`. Para regravar só uma fala: `node src/v1/narracao.js v1_p4_resposta --nova-tomada`.
+
+## Animação
+
+```bash
+node src/v1/teste-pergunta.js 1
+```
+
+Renderiza a pergunta indicada em `_rascunho/video/` (pasta fora do repositório). A cena tira todos os tempos de `narracao.json`, então acompanha a voz automaticamente. Cada pergunta de ~28 s leva cerca de 70 s para renderizar.
 
 ## Como regenerar as imagens
 
