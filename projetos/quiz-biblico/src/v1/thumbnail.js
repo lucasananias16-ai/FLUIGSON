@@ -6,6 +6,7 @@
  *
  * Opção A: título grande, a Tuti apontando e a arca com o arco-íris.
  * Opção B: a Tuti e três cards do quiz, mostrando como é a brincadeira.
+ * Opção C: igual à A, com os três cards no lugar do leão e do elefante.
  */
 const fs = require('fs');
 const path = require('path');
@@ -53,20 +54,22 @@ const chao = () =>
 
 const APONTA = { headTilt: 5, lean: 1, armR: [790, 500], armL: [394, 800], gaze: [0.7, -0.5], browL: 12, browR: 12, mouth: 0.75, extras: null };
 
-function opcaoA() {
+const FLORES_A = [
+  [760, 1030, 1.5],
+  [1460, 1046, 1.4],
+  [1850, 1040, 1.3],
+];
+
+/** Composição da opção A; `frente` é o que aparece na frente da arca. */
+function baseA(frente, flores = FLORES_A) {
   return withOutline(TRACO, () => {
     let s = ceu(1300, 620);
     s += withOutline(TRACO, () => rainbowArc(1330, 960, 800, 38));
     s += cenario.skyCloud(250, 140, 1.0);
     s += chao();
     s += G('translate(1080,500) scale(0.64)', withOutline(TRACO / 0.64, cenario.arca));
-    s += G('translate(1436,584) scale(0.5)', withOutline(TRACO / 0.5, animais.elefante));
-    s += G('translate(1010,650) scale(0.4)', withOutline(TRACO / 0.4, animais.leao));
-    s += cenario.flowers([
-      [760, 1030, 1.5],
-      [1460, 1046, 1.4],
-      [1850, 1040, 1.3],
-    ]);
+    s += frente();
+    s += cenario.flowers(flores);
     s += G('translate(-90,120) scale(0.98)', tuti(APONTA, { shadow: false }));
     s += letreiro('QUIZ', 1330, 300, 330, '#FFD23F', { stroke: 36, rot: -4 });
     s += letreiro('da Arca de Noé', 1330, 456, 132, '#FFFFFF', { stroke: 26, rot: -4 });
@@ -74,15 +77,33 @@ function opcaoA() {
   });
 }
 
-function card(x, y, size, rot, fundo, arte, num) {
+const opcaoA = () =>
+  baseA(
+    () =>
+      G('translate(1436,584) scale(0.5)', withOutline(TRACO / 0.5, animais.elefante)) +
+      G('translate(1010,650) scale(0.4)', withOutline(TRACO / 0.4, animais.leao))
+  );
+
+// Igual à A, com os três cards do quiz no lugar dos animais. Os cards ficam
+// abaixo das janelas, para a arca continuar reconhecível atrás deles.
+const opcaoC = () =>
+  baseA(
+    () =>
+      card(1050, 904, 250, -6, '#FFF1B8', animais.umElefante, 1, 0.68) +
+      card(1330, 886, 268, 0, '#CFE6FF', animais.leao, 2, 0.68) +
+      card(1610, 904, 250, 6, '#CFF1E0', animais.girafa, 3, 0.68),
+    [FLORES_A[0], FLORES_A[2]]
+  );
+
+function card(x, y, size, rot, fundo, arte, num, selo = 1) {
   const r = size * 0.12;
   return G(
     `translate(${x},${y}) rotate(${rot})`,
     R(-size / 2, -size / 2 + 18, size, size, r, '#3D2C4E', { sw: 0, opacity: 0.18 }),
     R(-size / 2, -size / 2, size, size, r, fundo, { sw: TRACO * 1.3 }),
     G(`translate(${-size * 0.47},${-size * 0.47}) scale(${(size * 0.94) / 1000})`, withOutline(TRACO / ((size * 0.94) / 1000), arte)),
-    `<circle cx="${-size / 2 + 58}" cy="${-size / 2 + 58}" r="44" fill="#fff" stroke="${LINE}" stroke-width="${TRACO}"/>` +
-      `<text x="${-size / 2 + 58}" y="${-size / 2 + 78}" text-anchor="middle" font-family="Fredoka" font-weight="700" font-size="58" fill="${LINE}">${num}</text>`
+    `<circle cx="${-size / 2 + 58 * selo}" cy="${-size / 2 + 58 * selo}" r="${44 * selo}" fill="#fff" stroke="${LINE}" stroke-width="${TRACO}"/>` +
+      `<text x="${-size / 2 + 58 * selo}" y="${-size / 2 + 78 * selo}" text-anchor="middle" font-family="Fredoka" font-weight="700" font-size="${58 * selo}" fill="${LINE}">${num}</text>`
   );
 }
 
@@ -108,6 +129,7 @@ function opcaoB() {
   for (const [nome, fn] of [
     ['A', opcaoA],
     ['B', opcaoB],
+    ['C', opcaoC],
   ]) {
     kit.resetIds();
     const html = `<html><head><style>@font-face{font-family:Fredoka;src:url("file://${FONT}") format("woff2");font-weight:300 700}body{margin:0}</style></head><body><svg viewBox="0 0 1920 1080" width="1920" height="1080">${fn()}</svg></body></html>`;

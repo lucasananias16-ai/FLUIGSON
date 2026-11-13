@@ -25,7 +25,7 @@ Roteiro de origem: documento "Roteiros dos vídeos piloto: Quiz Bíblico Infanti
 | 4 | Narração | Aprovada: voz Leda no estilo animado |
 | 5 | Animação e edição | Aprovada: vídeo de 4 min 15 s |
 | 6 | Legendas | Aprovadas |
-| 7 | Pacote do YouTube | Aguardando validação (duas opções de thumbnail) |
+| 7 | Pacote do YouTube | Aguardando validação (três opções de thumbnail) |
 | 8 | Publicação | A fazer |
 
 ## Pastas

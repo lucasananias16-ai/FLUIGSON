@@ -7,7 +7,7 @@ Tudo o que você precisa está neste pacote. A publicação leva poucos minutos 
 | Arquivo | Para quê |
 |---|---|
 | `v1_quiz_arca_de_noe.mp4` | O vídeo final (4 min 15 s, 1080p). É o arquivo enviado na conversa |
-| `youtube/v1_thumbnail_A.png` ou `v1_thumbnail_B.png` | A imagem de capa (1280 x 720) |
+| `youtube/v1_thumbnail_A.png`, `_B.png` ou `_C.png` | A imagem de capa (1280 x 720); use a que você escolher |
 | `youtube/v1_titulo_descricao_tags.txt` | Título, descrição com capítulos e tags, prontos para copiar |
 | `legendas/v1_quiz_arca_de_noe.srt` | Legendas em português |
 
