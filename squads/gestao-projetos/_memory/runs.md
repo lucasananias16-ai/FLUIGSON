@@ -28,3 +28,13 @@
 | 2026-11-11 | 2026-11-11-104516 | Status report da carteira GOL (varredura da Esteira, Gmail, Agenda, GitHub) | Status report 🔴 + registro de 10 riscos | Aprovado |
 | 2026-11-11 | 2026-11-11-rotina-destro | Rotina diária — Destro (reteste NFS-e ok; validação fiscal aguarda fechamento de outubro) | Rascunho de status + riscos | Rascunho |
 | 2026-11-11 | 2026-11-11-rotina-protege | Rotina diária — Protege (agendas de homologação enviadas à Protege; aguarda de acordo) | Rascunho de status + riscos | Rascunho |
+| 2026-11-13 | 2026-11-13-rotina-adata | Rotina diária — ADATA (MOC: MIT 098 revisada +24h; ESGo vencido, 🟡→🔴) | Rascunho de status + riscos | Rascunho |
+| 2026-11-13 | 2026-11-13-rotina-alliance | Rotina diária — Alliance (saldo TOTVS 28h × 177h pendentes; 3 agendas do Gabriel a partir de 16/11) | Rascunho de status + riscos | Rascunho |
+| 2026-11-13 | 2026-11-13-rotina-marchesan-tatu | Rotina diária — Marchesan (datasets do Compras com falha; erros em produção na pauta de 18/11) | Rascunho de status + riscos | Rascunho |
+| 2026-11-13 | 2026-11-13-rotina-gol | Rotina diária — GOL (7 itens do Desligamento de 12/11 sem prova de entrega) | Rascunho de status + riscos | Rascunho |
+| 2026-11-13 | 2026-11-13-rotina-rede-icm | Rotina diária — Rede ICM (agenda de 11/11 só em gravação; agenda de 18/11 some) | Rascunho de status + riscos | Rascunho |
+| 2026-11-13 | 2026-11-13-rotina-protege | Rotina diária — Protege (fim do desenvolvimento vence 13/11; API pendente) | Rascunho de status + riscos | Rascunho |
+| 2026-11-13 | 2026-11-13-rotina-bci-shineray | Rotina diária — BCI-Shineray (entrega para homologação em 12/11) | Rascunho de status + riscos | Rascunho |
+| 2026-11-13 | 2026-11-13-rotina-yangzi-tuut | Rotina diária — Yangzi (formulário finalizado; WinThor sem conexão, gatilho 16/11) | Rascunho de status + riscos | Rascunho |
+| 2026-11-13 | 2026-11-13-rotina-grupo-canopus | Rotina diária — Grupo Canopus (integrador RM pendente; R10 envio de e-mail) | Rascunho de status + riscos | Rascunho |
+| 2026-11-13 | 2026-11-13-rotina-tamussino | Rotina diária — Tamussino (1ª apresentação de 12/11 sem convite) | Rascunho de status + riscos | Rascunho |
