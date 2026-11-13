@@ -1,7 +1,7 @@
 # Memória do Projeto — Tatu Marchesan · Fluig
 
 ## Estado atual
-- **Escopo visível no Fluig:** processo `solicitacaoDeCompra` (versão 22) integrado ao Protheus (gerar, liberar, atualizar e reprovar SC).
+- **Escopo visível no Fluig:** processo `solicitacaoDeCompra` (versão 28) integrado ao Protheus (gerar, liberar, atualizar e reprovar SC).
 - **Servidor:** `https://marchesanimplementos203231.fluig.cloudtotvs.com.br` (11 usuários).
 - **Riscos abertos:** R1 (integração com o ERP, exposição 25), R2 (projeto parado há 4 semanas), R3 (aprovações sem SLA).
 - **Ações abertas:** diagnosticar a falha de integração, confirmar se as solicitações são reais ou testes, configurar SLA.
@@ -16,5 +16,6 @@
 - Datasets usados: `workflowProcess` (active/status), `processHistory` (active=true → `stateSequence`), `processTask` (active=true → responsável), `processState` (nomes das atividades), `colleague`.
 
 ## Histórico
+- 2026-11-13 · Causa raiz das falhas · Erro real lido em `processTask.taskObservation`. Bloqueio atual: SCR não encontrada ao liberar/reprovar (alçada não gerada pelo `gerasc`). O rollback do servicetask explica os campos de erro vazios; evento `beforeStateEntry` proposto em `fluig/`.
 - 2026-11-13 · Diagnóstico das falhas · Criação de SC no Protheus OK desde 06/10; as 15 falhas em "Gerar SC" são legado de 14–28/09; liberar/reprovar no ERP ainda falha (nº 54, 55); erro não é gravado no formulário.
 - 2026-11-13 · Status + riscos · 🔴 · 43 solicitações em andamento; 19 em falha de integração com o ERP; nenhuma movimentação desde 16/10.

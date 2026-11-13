@@ -1,35 +1,44 @@
 # Diagnóstico — Falhas de integração Fluig → Protheus · Tatu Marchesan — 2026-11-13
 
-**Fonte:** dados do formulário (`dts_solicitacao_compras_JYNX`), cruzados com a atividade atual de cada solicitação. Só leitura.
-**Limite:** o serviço de histórico (`getHistories`) recusou o usuário (usa o e-mail no lugar da matrícula), então não vi os comentários das movimentações.
+**Fontes (só leitura):**
+- Complementos das tarefas automáticas (`processTask.taskObservation`), onde o Fluig grava o erro de cada atividade de serviço.
+- Formulário (`dts_solicitacao_compras_JYNX`).
+- Eventos do processo `solicitacaoDeCompra` v28, exportados do servidor.
 
-## Conclusões
-1. **A criação de SC no Protheus voltou a funcionar desde 06/10.** As 17 solicitações enviadas de 06/10 a 16/10 (nº 44 a 62, fora as canceladas 46 e 51) têm `hd_integracao_sc_status = OK` e um número de SC no Protheus (000388 a 000421).
-2. **As 15 paradas em "Gerar SC no ERP" são legado.** Todas são de 14/09 a 28/09 (nº 11, 12, 15–20, 27, 28, 39–43), abertas em versões antigas do processo (até a v20), e nenhuma tem número de SC no Protheus. Em princípio, o problema que as travou já foi corrigido.
-3. **A mensagem de erro não fica gravada.** Nas 19 solicitações em falha, os campos `hd_*_sc_erro`, `hd_*_sc_payload` e `hd_*_sc_raw` estão **vazios**. Quem cai em "Tratar Falhas" não tem como saber o que deu errado sem olhar o log do servidor. **Esta é a correção mais importante a fazer agora.**
-4. **As outras 4 falhas são nas etapas seguintes à criação da SC:**
-   | Nº | Falha em | SC no Protheus | Data |
-   |---|---|---|---|
-   | 21 | Libera Aprovação no ERP | 000120 | 15/09 |
-   | 30 | Atualiza SC no ERP | 000285 | 24/09 |
-   | 54 | Reprovar SC no ERP | 000401 | 06/10 |
-   | 55 | Libera Aprovação no ERP | 000403 | 06/10 |
-   Os nº 54 e 55 são os casos mais recentes (06/10), em versões atuais do processo. **Liberação e reprovação no ERP ainda não estão comprovadas.** Atenção: essas SCs **existem no Protheus**, em estado inconsistente com o Fluig.
-5. **Quase tudo é massa de teste.** 14 das 19 solicitações em falha têm observação "asd" ou "teste". As de aparência mais real são o nº 27 ("Material para Torno CNC") e o nº 28 (sem observação), ambas abertas pelo Héber Silva em 22/09.
+## Conclusão em uma linha
+A criação de SC no Protheus funciona. **O bloqueio atual é a aprovação:** liberar ou reprovar a SC no Protheus devolve `Registro nao Localizado na Tabela - SCR`. Isso deve se repetir nas **22 solicitações que hoje esperam aprovação**, assim que forem aprovadas.
 
-## Situação das 43 solicitações em andamento
-| Grupo | Nº | Leitura |
-|---|---|---|
-| Falha antiga em Gerar SC (sem SC no ERP) | 11, 12, 15–20, 27, 28, 39–43 | Legado. Cancelar as de teste; reabrir 27/28 se forem reais |
-| Falha em liberar/atualizar/reprovar (SC já existe no ERP) | 21, 30, 54, 55 | Investigar o erro no log; acertar a SC no Protheus |
-| Aguardando aprovação (SC já criada no ERP) | 13, 14, 26, 32–34, 36–38, 45, 47–49, 52, 53, 56–62 | A integração está OK; falta o aprovador agir. **É aqui que se testa a etapa "Libera Aprovação no ERP"** |
-| Revisão (devolvida ao solicitante) | 29, 44 | Gabriel Izidoro |
+## Causa de cada uma das 19 falhas
+| Causa (mensagem real) | Solicitações | Período | Situação hoje |
+|---|---|---|---|
+| **Protheus não encontra o registro de alçada (SCR)** ao liberar/reprovar: `Registro nao Localizado na Tabela - SCR` | 54 (reprovar), 55 (liberar) | 06/10 | 🔴 **Aberto.** São os casos mais recentes, na versão atual |
+| Protheus devolve erro genérico: `Erro nao tratado na geracao da Solicitacao de Compra!` | 15, 18, 27, 28, 40, 41, 42, 43 | 15/09–28/09 (repetiu na 51, em 06/10, depois cancelada) | 🟡 Do lado do Protheus (endpoint `/aprovcom/gerasc`). Parou de ocorrer nas solicitações seguintes, mas não há registro de correção |
+| Item sem unidade de medida: `Campo obrigatorio nao informado: C1_UM` | 16, 17, 19, 20, 39 | 15/09–28/09 | 🟢 Resolvido: o `beforeTaskSave` atual já valida a unidade |
+| Bug no script Fluig: `ClassCastException String → Map` | 11, 12 | 14–15/09 | 🟢 Resolvido nas versões seguintes |
+| Autenticação no APROVCOM: `The request requires authentication` | 21 | 15/09 | 🟢 Hoje a liberação já autentica (a 55 chegou ao Protheus) |
+| Integração de atualização ainda não implementada | 30 | 23–24/09 | 🟢 Implementada no `servicetask81` da v28 |
+
+Também houve uma falha transitória de SSL ao obter o token do Protheus (nº 49, em 06/10). Ela se recuperou: a 49 hoje tem a SC 000397 e está em aprovação.
+
+## O ponto crítico: tabela SCR
+- A SC é criada bloqueada (`C1_APROV = "B"`, regra do `servicetask30`), e a liberação e a reprovação são feitas pelo `POST /APROVCOM`, que procura o documento de alçada na **SCR**.
+- Nos casos 54 e 55, a SC existia no Protheus (000401, 000403), mas **sem registro na SCR**. Ou seja, o Protheus não gerou o documento de alçada quando a SC foi incluída pelo `gerasc`.
+- **Hipóteses a validar com o time Protheus:**
+  1. A rotina `/aprovcom/gerasc` inclui a SC sem acionar o controle de alçada que gera a SCR.
+  2. Não há grupo de aprovação configurado para a filial 0101 ou para os centros de custo usados (1010, 101100, 640000, 640800).
+- **Impacto:** as 22 solicitações em aprovação (SCs 000368 a 000421) devem falhar do mesmo jeito ao serem aprovadas.
+
+## Observabilidade: o erro existe, mas fica fora do formulário
+- O Fluig **desfaz** o `hAPI.setCardValue` quando a atividade de serviço lança exceção (TDN: "qualquer exceção [...] irá efetuar Rollback da transação [...] campos de formulário alterados com hAPI.setCardValue"). Por isso os campos `hd_*_sc_erro` ficam vazios, mesmo com o código da v28 tentando gravá-los.
+- O erro fica no **histórico da solicitação** (complemento da tarefa automática). Quem trata a falha consegue vê-lo, mas ele não aparece no formulário nem em relatórios.
+- **Correção proposta:** um evento novo, `beforeStateEntry`, que ao entrar em "Tratar Falhas" lê o último complemento de falha e o copia para `hd_*_sc_erro`. O código está em `fluig/workflow/scripts/solicitacaoDeCompra.beforeStateEntry.js`. Passou no lint e ainda **não foi publicado**.
 
 ## Recomendações
 | # | Ação | Dono | Prazo |
 |---|---|---|---|
-| 1 | Nos eventos das atividades de serviço, gravar a mensagem de erro, o payload e a resposta do Protheus nos campos `hd_*_sc_erro/payload/raw` antes de desviar para "Tratar Falhas" | Jynx (dev) | 20/11 |
-| 2 | Puxar o log do servidor de 06/10 para os nº 54 e 55 e corrigir liberar/reprovar no ERP | Jynx (dev) | 20/11 |
-| 3 | Aprovar 2 ou 3 solicitações já com SC criada (ex.: nº 58, 59, 60) para validar a liberação de ponta a ponta | Paulo Ferreira + Jynx | 20/11 |
-| 4 | Com o aval do cliente, cancelar as solicitações de teste em falha e reabrir 27/28 na versão atual, se forem reais | Gestão do projeto | 25/11 |
-| 5 | Conferir no Protheus as SCs 000120, 000285, 000401 e 000403 (estado inconsistente com o Fluig) | TI Marchesan | 25/11 |
+| 1 | **Levar o erro da SCR ao time Protheus**: conferir se o `gerasc` gera a alçada e se há grupo de aprovação para filial 0101 e CCs 1010/101100/640000/640800 | Jynx + TI Marchesan (Protheus) | 18/11 |
+| 2 | Depois do ajuste, aprovar uma solicitação de teste (ex.: nº 60, SC 000419) e conferir a liberação no Protheus | Paulo Ferreira + Jynx | 20/11 |
+| 3 | Investigar no Protheus o `Erro nao tratado na geracao da Solicitacao de Compra!` (log do `gerasc` dos dias 22/09 e 28/09) | TI Marchesan (Protheus) | 25/11 |
+| 4 | Testar em homologação e publicar o `beforeStateEntry` (erro no formulário) | Jynx (dev) | 25/11 |
+| 5 | Com o aval do cliente, cancelar as 17 falhas antigas que são teste e reabrir a 27/28 se forem reais | Gestão do projeto | 25/11 |
+| 6 | Acertar no Protheus as SCs 000120, 000285, 000401 e 000403 (estado inconsistente com o Fluig) | TI Marchesan | 25/11 |
