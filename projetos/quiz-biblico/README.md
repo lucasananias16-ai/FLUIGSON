@@ -28,7 +28,7 @@ Roteiro de origem: documento "Roteiros dos vídeos piloto: Quiz Bíblico Infanti
 | 5 | Animação e edição | Aprovada: vídeo de 4 min 15 s |
 | 6 | Legendas | Aprovadas |
 | 7 | Pacote do YouTube | Aprovado: thumbnail C e título com "Quiz Bíblico" |
-| 8 | Publicação | Com o dono do canal, seguindo `v1-arca-de-noe/youtube/como-publicar.md` |
+| 8 | Publicação | Publicado no canal Quizzito. O passo a passo testado está em `v1-arca-de-noe/youtube/como-publicar.md` |
 
 ### Vídeo 2 — Desafios de Davi e Golias
 
