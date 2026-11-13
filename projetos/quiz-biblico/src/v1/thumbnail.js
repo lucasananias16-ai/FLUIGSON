@@ -7,6 +7,9 @@
  * Opção A: título grande, a Tuti apontando e a arca com o arco-íris.
  * Opção B: a Tuti e três cards do quiz, mostrando como é a brincadeira.
  * Opção C: igual à A, com os três cards no lugar do leão e do elefante.
+ *
+ * A escolhida (C) é gravada como v1_thumbnail.png; as três opções ficam na
+ * subpasta `opcoes`.
  */
 const fs = require('fs');
 const path = require('path');
@@ -24,6 +27,7 @@ const OUT = path.join(ROOT, 'v1-arca-de-noe', 'youtube');
 const FONT = path.join(ROOT, 'assets', 'fonts', 'Fredoka-latin-wght.woff2');
 const LINE = '#3D2C4E';
 const TRACO = 8; // um pouco mais grosso que no vídeo: a thumbnail é vista pequena
+const ESCOLHIDA = 'C';
 
 /** Texto com contorno grosso e sombra dura, legível mesmo em miniatura. */
 function letreiro(txt, x, y, size, fill, { stroke = 28, rot = 0, anchor = 'middle' } = {}) {
@@ -123,7 +127,8 @@ function opcaoB() {
 }
 
 (async () => {
-  fs.mkdirSync(OUT, { recursive: true });
+  const OPCOES = path.join(OUT, 'opcoes');
+  fs.mkdirSync(OPCOES, { recursive: true });
   const browser = await chromium.launch();
   const page = await browser.newPage({ viewport: { width: 1920, height: 1080 } });
   for (const [nome, fn] of [
@@ -140,10 +145,14 @@ function opcaoB() {
     const grande = path.join(OUT, `_thumb_${nome}_1920.png`);
     await page.screenshot({ path: grande });
     fs.unlinkSync(tmp);
-    const final = path.join(OUT, `v1_thumbnail_${nome}.png`);
+    const final = path.join(OPCOES, `v1_thumbnail_${nome}.png`);
     execFileSync('convert', [grande, '-filter', 'Lanczos', '-resize', '1280x720', '-strip', final]);
     fs.unlinkSync(grande);
     console.log(final, (fs.statSync(final).size / 1024).toFixed(0) + ' KB');
+    if (nome === ESCOLHIDA) {
+      fs.copyFileSync(final, path.join(OUT, 'v1_thumbnail.png'));
+      console.log(`escolhida: ${path.join(OUT, 'v1_thumbnail.png')}`);
+    }
   }
   await browser.close();
 })();

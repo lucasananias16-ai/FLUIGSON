@@ -1,7 +1,5 @@
-TÍTULO (escolha um)
-1. Quiz da Arca de Noé para crianças: você consegue acertar todas?
-2. Quiz Bíblico Infantil: Arca de Noé | 8 perguntas com a ovelhinha Tuti
-3. Arca de Noé: quiz bíblico para crianças de 3 a 7 anos
+TÍTULO
+Quiz Bíblico da Arca de Noé para crianças: você acerta todas?
 
 ----------------------------------------------------------------------
 DESCRIÇÃO (copie daqui até a linha das hashtags)
@@ -39,3 +37,10 @@ Base bíblica: Gênesis, capítulos 6 a 9.
 TAGS (copie a linha inteira e cole no campo "Tags")
 ----------------------------------------------------------------------
 quiz bíblico infantil, arca de noé, quiz da arca de noé, histórias bíblicas para crianças, bíblia para crianças, quiz para crianças, noé e a arca, perguntas bíblicas para crianças, escola dominical, ebd infantil, culto infantil, ministério infantil, educação cristã infantil, desenho bíblico infantil, quiz da bíblia, ovelhinha Tuti
+
+----------------------------------------------------------------------
+TÍTULOS DE RESERVA (para testar depois, se a taxa de cliques ficar baixa)
+----------------------------------------------------------------------
+1. Quiz da Arca de Noé para crianças: você consegue acertar todas?
+2. Quiz Bíblico Infantil: Arca de Noé | 8 perguntas com a ovelhinha Tuti
+3. Arca de Noé: quiz bíblico para crianças de 3 a 7 anos

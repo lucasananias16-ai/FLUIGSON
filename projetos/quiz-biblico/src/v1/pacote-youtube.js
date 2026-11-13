@@ -15,7 +15,10 @@ const V1 = path.join(ROOT, 'v1-arca-de-noe');
 const OUT = path.join(V1, 'youtube');
 const mapa = JSON.parse(fs.readFileSync(path.join(V1, 'mapa-do-video.json'), 'utf8'));
 
-const TITULOS = [
+// Título escolhido: junta o termo de busca ("quiz bíblico") com o desafio
+const TITULO = 'Quiz Bíblico da Arca de Noé para crianças: você acerta todas?';
+// Reservas, caso a taxa de cliques peça um teste depois de publicar
+const RESERVAS = [
   'Quiz da Arca de Noé para crianças: você consegue acertar todas?',
   'Quiz Bíblico Infantil: Arca de Noé | 8 perguntas com a ovelhinha Tuti',
   'Arca de Noé: quiz bíblico para crianças de 3 a 7 anos',
@@ -68,8 +71,8 @@ Base bíblica: Gênesis, capítulos 6 a 9.
 
 #QuizBíblico #ArcaDeNoé #BíbliaParaCrianças`;
 
-const texto = `TÍTULO (escolha um)
-${TITULOS.map((t, i) => `${i + 1}. ${t}`).join('\n')}
+const texto = `TÍTULO
+${TITULO}
 
 ----------------------------------------------------------------------
 DESCRIÇÃO (copie daqui até a linha das hashtags)
@@ -80,10 +83,15 @@ ${DESCRICAO}
 TAGS (copie a linha inteira e cole no campo "Tags")
 ----------------------------------------------------------------------
 ${TAGS.join(', ')}
+
+----------------------------------------------------------------------
+TÍTULOS DE RESERVA (para testar depois, se a taxa de cliques ficar baixa)
+----------------------------------------------------------------------
+${RESERVAS.map((t, i) => `${i + 1}. ${t}`).join('\n')}
 `;
 
 fs.mkdirSync(OUT, { recursive: true });
 fs.writeFileSync(path.join(OUT, 'v1_titulo_descricao_tags.txt'), texto);
-console.log(TITULOS.map((t) => `${t.length} caracteres: ${t}`).join('\n'));
+console.log(`título: ${TITULO.length} caracteres: ${TITULO}`);
 console.log(`descrição: ${DESCRICAO.length} caracteres (limite 5000) | tags: ${TAGS.join(',').length} caracteres (limite 500)`);
 console.log(capitulos.join('\n'));
