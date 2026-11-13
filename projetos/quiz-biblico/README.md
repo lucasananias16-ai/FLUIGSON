@@ -38,11 +38,13 @@ Mascote, voz, trilha e sistema de animação são os do Vídeo 1.
 |---|---|---|
 | 1 | Narrativa final | Aprovada |
 | 2 | Imagens das cenas e das opções | Aprovada |
-| 3 | Narração | Aguardando validação |
-| 4 | Animação e edição | A fazer |
-| 5 | Legendas | A fazer |
-| 6 | Pacote do YouTube | A fazer |
-| 7 | Publicação | A fazer |
+| 3 | Narração | Aprovada: a mesma voz do Vídeo 1 |
+| 4 | Animação e edição | Aprovada: vídeo de 4 min 03 s |
+| 5 | Legendas | Aprovadas |
+| 6 | Pacote do YouTube | Aprovado: thumbnail no modelo C e título no formato do Vídeo 1 |
+| 7 | Publicação | Pronto para subir. O passo a passo está em `v2-davi-e-golias/youtube/como-publicar.md` |
+
+As etapas 3 a 6 do Vídeo 2 foram conferidas e aprovadas pelo Claude, por decisão do dono do canal. A publicação continua manual.
 
 ## Pastas
 
@@ -50,6 +52,8 @@ Mascote, voz, trilha e sistema de animação são os do Vídeo 1.
   - `01-narrativa.md` — texto aprovado da locução
   - `imagens/` — abertura, encerramento, cenas dos desafios, as 15 opções (`v2_pN_opcao`) e as folhas de conferência
   - `narracao/` — os 20 áudios da locução e `narracao.json` com os tempos
+  - `legendas/` — legendas em pt-BR (.srt); `mapa-do-video.json` — o instante em que cada cena começa
+  - `youtube/` — thumbnail, título, descrição com capítulos, tags e o passo a passo de publicação
 - `v1-arca-de-noe/` — arquivos do Vídeo 1
   - `01-narrativa.md` — texto aprovado da locução
   - `imagens/` — abertura, encerramento, as 24 opções (`v1_pN_opcao`, em SVG e PNG transparente) e as folhas de conferência
@@ -69,9 +73,14 @@ Mascote, voz, trilha e sistema de animação são os do Vídeo 1.
   - `render-tuti.js`, `render-v1-imagens.js` — geram os arquivos finais
   - `anim/` — animação: `render.js` (quadro a quadro com Chromium e ffmpeg), `tutiAnim.js` (Tuti animada), `sfx.js` (efeitos sonoros sintetizados), `mix.js` (trilha de áudio), `ease.js`
   - `anim/musica.js` — a trilha de fundo; `anim/fx.js` — confete e véu de transição; `anim/fala.js` — volume da voz e tempo das frases
-  - `v1/cenaPergunta.js` — a cena de uma pergunta; `v1/cenasPontas.js` — abertura e encerramento
+  - `anim/palco.js` — peças do palco usadas pelos dois vídeos (poses da Tuti, faixa da pergunta, relógio, verso dos cards); `anim/cenaCards.js` — a cena dos três cards que viram
+  - `anim/montar.js` — monta um vídeo inteiro a partir das cenas (imagem, som, legendas e mapa); `anim/legendas.js` — gera o .srt
+  - `thumb.js` — peças das thumbnails (letreiro, céu com raios, card numerado)
+  - `v1/cenaPergunta.js` — a cena de uma pergunta do Vídeo 1; `v1/cenasPontas.js` — abertura e encerramento
   - `v1/thumbnail.js` — gera as thumbnails; `v1/pacote-youtube.js` — gera título, descrição e tags
-  - `v1/video.js` — monta o vídeo inteiro; `v1/legendas.js` — gera o .srt; `v1/teste-pergunta.js` — renderiza uma pergunta sozinha
+  - `v1/video.js` — monta o Vídeo 1; `v1/teste-pergunta.js` — renderiza uma pergunta sozinha
+  - `v2/cenas.js` — os oito desafios do Vídeo 2 (achar, contar, sombra, comparar, cards e memória); `v2/cenasPontas.js` — abertura e encerramento
+  - `v2/video.js` — monta o Vídeo 2; `v2/thumbnail.js` e `v2/pacote-youtube.js` — thumbnail e textos do YouTube
   - `preview.js` — prévia rápida de qualquer ilustração
 - `assets/fonts/` — fonte Fredoka (licença SIL OFL, incluída)
 
@@ -93,13 +102,31 @@ A chave da conta de serviço nunca entra no repositório. A voz é generativa, e
 node src/v1/video.js
 ```
 
-Monta o Vídeo 1 inteiro em `_rascunho/video/v1_quiz_arca_de_noe.mp4` (pasta fora do repositório) e grava as legendas e o mapa do vídeo. Cada cena é um trecho separado; só os trechos que mudaram são renderizados de novo. O vídeo de 4 min 15 s leva alguns minutos.
+```bash
+node src/v2/video.js
+```
+
+Cada comando monta um vídeo inteiro em `_rascunho/video/` (pasta fora do repositório): `v1_quiz_arca_de_noe.mp4` e `v2_desafios_de_davi_e_golias.mp4`. Também grava as legendas e o mapa do vídeo na pasta de cada um. Cada cena é um trecho separado; só os trechos que mudaram são renderizados de novo. Um vídeo de 4 minutos leva cerca de 5 minutos para renderizar do zero.
+
+O Vídeo 1 já está publicado. Depois de mexer em código compartilhado (`src/anim/`, `src/art/`, `src/kit.js`, `src/tuti.js`), rode `node src/v1/video.js`: as dez cenas têm de sair como "sem mudanças".
 
 ```bash
 node src/v1/teste-pergunta.js 1
 ```
 
-Renderiza só a pergunta indicada, para testar ajustes. As cenas tiram todos os tempos de `narracao.json`, então acompanham a voz automaticamente.
+Renderiza só a pergunta indicada do Vídeo 1, para testar ajustes. As cenas tiram todos os tempos de `narracao.json`, então acompanham a voz automaticamente.
+
+## Thumbnail e textos do YouTube
+
+```bash
+node src/v2/thumbnail.js
+```
+
+```bash
+node src/v2/pacote-youtube.js
+```
+
+O primeiro grava a thumbnail em `youtube/`; o segundo grava título, descrição com capítulos e tags, lendo os tempos do mapa do vídeo. Os do Vídeo 1 são `src/v1/thumbnail.js` e `src/v1/pacote-youtube.js`.
 
 ## Como regenerar as imagens
 
