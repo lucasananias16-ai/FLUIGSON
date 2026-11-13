@@ -1,0 +1,6 @@
+# Rascunhos e renders de teste: ficam fora do repositório
+_rascunho/
+# Chaves e credenciais nunca entram no repositório
+*credencial*
+*service-account*
+*.key.json
