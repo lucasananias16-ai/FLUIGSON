@@ -104,7 +104,16 @@ function speechSegments(data, rate, { threshDb = -34, minPause = 0.12, pad = 0.0
  * Devolve menos de `n` partes se a fala não tiver pausas suficientes.
  */
 function splitParts(data, rate, n, opts = {}) {
-  const segs = speechSegments(data, rate, Object.assign({ minPause: 0.06, pad: 0 }, opts)).filter((s) => s.end - s.start >= 0.05);
+  let segs = speechSegments(data, rate, Object.assign({ minPause: 0.06, pad: 0 }, opts)).filter((s) => s.end - s.start >= 0.05);
+  // Estalos e respirações soltas (curtos e fracos) não contam como fala
+  const rms = (s) => {
+    const x = slice(data, rate, s.start, s.end);
+    let e = 0;
+    for (let i = 0; i < x.length; i++) e += x[i] * x[i];
+    return Math.sqrt(e / Math.max(1, x.length));
+  };
+  const ref = Math.max(...segs.map(rms), 0);
+  segs = segs.filter((s) => s.end - s.start >= 0.2 || rms(s) >= 0.3 * ref);
   while (segs.length > n) {
     let k = 0;
     let best = Infinity;

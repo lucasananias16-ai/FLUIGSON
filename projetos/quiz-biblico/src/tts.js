@@ -60,11 +60,11 @@ async function api(path, body) {
 const listVoices = (lang = 'pt-BR') => api(`v1/voices?languageCode=${lang}`).then((r) => r.voices || []);
 
 /**
- * Gera um áudio WAV (48 kHz, mono) e grava em `out`.
+ * Gera um áudio WAV mono (48 kHz, ou o valor de `sampleRate`) e grava em `out`.
  * Passe `text` (texto simples) ou `ssml`. `rate` é a velocidade (1 = normal).
  */
-async function synth({ text, ssml, voice, lang = 'pt-BR', rate, pitch, out }) {
-  const audioConfig = { audioEncoding: 'LINEAR16', sampleRateHertz: 48000 };
+async function synth({ text, ssml, voice, lang = 'pt-BR', rate, pitch, out, sampleRate = 48000 }) {
+  const audioConfig = { audioEncoding: 'LINEAR16', sampleRateHertz: sampleRate };
   if (rate !== undefined) audioConfig.speakingRate = rate;
   if (pitch !== undefined) audioConfig.pitch = pitch;
   const r = await api('v1/text:synthesize', {

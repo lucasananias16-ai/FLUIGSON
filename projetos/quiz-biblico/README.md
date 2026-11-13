@@ -18,8 +18,8 @@ Roteiro de origem: documento "Roteiros dos vídeos piloto: Quiz Bíblico Infanti
 |---|---|---|
 | 1 | Narrativa final do Vídeo 1 | Aprovada |
 | 2 | Tuti em 3 poses | Aprovada |
-| 3 | Imagens das cenas e das opções | Aguardando validação |
-| 4 | Narração | A fazer (depende da chave do Google Cloud) |
+| 3 | Imagens das cenas e das opções | Aprovada |
+| 4 | Narração | Aguardando validação (voz escolhida: Leda, tom natural) |
 | 5 | Animação e edição | A fazer |
 | 6 | Legendas | A fazer |
 | 7 | Pacote do YouTube | A fazer |
@@ -30,15 +30,26 @@ Roteiro de origem: documento "Roteiros dos vídeos piloto: Quiz Bíblico Infanti
 - `v1-arca-de-noe/` — arquivos do Vídeo 1
   - `01-narrativa.md` — texto aprovado da locução
   - `imagens/` — abertura, encerramento, as 24 opções (`v1_pN_opcao`, em SVG e PNG transparente) e as folhas de conferência
+  - `narracao/` — os 18 áudios aprovados da locução (`v1_abertura`, `v1_pN_pergunta`, `v1_pN_resposta`, `v1_encerramento`) e `narracao.json` com os tempos
 - `personagens/tuti/` — poses da Tuti em SVG e PNG transparente, mais a folha de apresentação
 - `src/` — código que desenha e renderiza
   - `tuti.js` — a mascote, montada em peças para poder ser animada
   - `kit.js` — peças de desenho compartilhadas (contorno, olhos, nuvens, membros)
   - `art/` — ilustrações: `pessoas.js`, `animais.js`, `objetos.js`, `cenario.js`
   - `v1/opcoes.js` — perguntas e opções do Vídeo 1, na ordem da tela
+  - `v1/roteiro.js` — texto exato da locução; `v1/narracao.js` — gera os áudios
+  - `tts.js` — cliente do Google Cloud Text-to-Speech; `audio.js` — leitura, corte e mixagem de áudio
   - `render-tuti.js`, `render-v1-imagens.js` — geram os arquivos finais
   - `preview.js` — prévia rápida de qualquer ilustração
 - `assets/fonts/` — fonte Fredoka (licença SIL OFL, incluída)
+
+## Narração
+
+```bash
+GOOGLE_APPLICATION_CREDENTIALS=/caminho/da/chave.json node src/v1/narracao.js
+```
+
+A chave da conta de serviço nunca entra no repositório. A voz é generativa, então cada gravação nova sai um pouco diferente; por isso os áudios aprovados ficam guardados em `v1-arca-de-noe/narracao/`. Para regravar só uma fala: `node src/v1/narracao.js v1_p4_resposta --nova-tomada`.
 
 ## Como regenerar as imagens
 

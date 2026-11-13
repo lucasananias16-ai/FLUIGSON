@@ -2,19 +2,21 @@
 
 - **Título:** Quiz da Arca de Noé para crianças: você consegue acertar todas?
 - **Base bíblica:** Gênesis 6 a 9
-- **Duração estimada:** cerca de 4 minutos (abertura 15 s + 8 perguntas de ~25 s + encerramento 15 s)
-- **Voz:** Tuti, feminina, calorosa, frases curtas, ritmo calmo
+- **Duração estimada:** cerca de 4 minutos e 20 segundos (abertura 14 s + 8 perguntas de ~29 s + encerramento 12 s)
+- **Voz:** Tuti, feminina, calorosa, frases curtas, ritmo calmo. Google Cloud Text-to-Speech, voz Leda (`pt-BR-Chirp3-HD-Leda`), velocidade 0,94, tom natural
 
-## Ritmo de cada pergunta (~25 s)
+## Ritmo de cada pergunta (~29 s)
 
 | Tempo | Na tela | Áudio |
 |---|---|---|
-| 0–1 s | Selo "Pergunta N" entra com um pulinho | plim |
-| 1–5 s | Tuti (pose perguntando) e a pergunta em texto curto | `v1_pN_pergunta` |
-| 5–11 s | As 3 opções entram uma a uma, no momento em que a Tuti fala o nome de cada uma | `v1_pN_pergunta` (continua) |
-| 11–16 s | Contagem 5, 4, 3, 2, 1 em um círculo | tique-taque |
-| 16–23 s | As erradas apagam, a certa cresce e brilha, Tuti comemora | som de acerto + `v1_pN_resposta` |
-| 23–25 s | Transição para a próxima pergunta | whoosh |
+| 0–1 s | Entram o selo "Pergunta N" e a faixa com a pergunta; os 3 cards chegam virados, com os números 1, 2 e 3 no verso | plim |
+| 1–3 s | Tuti (pose perguntando) faz a pergunta | `v1_pN_pergunta` |
+| 3–9 s | Cada card vira e mostra o desenho no momento em que a Tuti fala o nome da opção | `v1_pN_pergunta` (continua) |
+| 9–19 s | Contagem de 10 a 1 em um círculo | tique-taque |
+| 19–27 s | Os cards errados viram de costas; o certo gira, cresce e brilha; Tuti comemora e explica | som de acerto + `v1_pN_resposta` |
+| 27–29 s | Transição para a próxima pergunta | whoosh |
+
+O número de cada card continua num cantinho depois de virado, para a criança responder pelo número ou pelo nome. A pergunta 6 (40, 4 e 10) fica sem esses números, para não misturar.
 
 ## Locução (texto exato que vira áudio e legenda)
 
@@ -54,5 +56,8 @@ Imagem: a arca em terra firme, arco-íris no céu, Noé, a família e os animais
 3. **Texto na tela encurtado** em 6 das 8 perguntas (no máximo 26 caracteres), para caber grande e ser legível.
 4. **A posição da resposta certa foi embaralhada** entre esquerda, meio e direita.
 5. **Sem "inscreva-se" ou "comente" no final.** O vídeo será marcado como conteúdo para crianças, o que desativa comentários e sininho.
+
+6. **Contagem de 10 segundos**, em vez dos 5 do roteiro, para a criança ter mais tempo de pensar.
+7. **Os cards viram.** Chegam virados e numerados, viram um a um quando a Tuti fala cada opção e, na resposta, os errados viram de costas.
 
 As falas da abertura, das respostas e do encerramento seguem o roteiro original; só entraram as mudanças 1 e 2.
