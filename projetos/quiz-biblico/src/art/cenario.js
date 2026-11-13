@@ -253,4 +253,6 @@ function fundoQuiz() {
   });
 }
 
-module.exports = { arca, cenaAbertura, cenaEncerramento, fundoQuiz, sun, skyCloud, tree, bush, flowers, tuft, place, TRACO };
+const CORES = { SKY, GRASS_FAR, GRASS, GRASS_NEAR, GRASS_DARK };
+
+module.exports = { arca, cenaAbertura, cenaEncerramento, fundoQuiz, sun, skyCloud, tree, bush, flowers, tuft, place, TRACO, CORES };

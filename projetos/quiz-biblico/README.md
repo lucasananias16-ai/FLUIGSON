@@ -36,8 +36,8 @@ Mascote, voz, trilha e sistema de animação são os do Vídeo 1.
 
 | Nº | Etapa | Situação |
 |---|---|---|
-| 1 | Narrativa final | Aguardando validação |
-| 2 | Imagens das cenas e das opções | A fazer |
+| 1 | Narrativa final | Aprovada |
+| 2 | Imagens das cenas e das opções | Aguardando validação |
 | 3 | Narração | A fazer |
 | 4 | Animação e edição | A fazer |
 | 5 | Legendas | A fazer |
@@ -46,7 +46,9 @@ Mascote, voz, trilha e sistema de animação são os do Vídeo 1.
 
 ## Pastas
 
-- `v2-davi-e-golias/` — arquivos do Vídeo 2 (`01-narrativa.md` é o texto da locução)
+- `v2-davi-e-golias/` — arquivos do Vídeo 2
+  - `01-narrativa.md` — texto aprovado da locução
+  - `imagens/` — abertura, encerramento, cenas dos desafios, as 15 opções (`v2_pN_opcao`) e as folhas de conferência
 - `v1-arca-de-noe/` — arquivos do Vídeo 1
   - `01-narrativa.md` — texto aprovado da locução
   - `imagens/` — abertura, encerramento, as 24 opções (`v1_pN_opcao`, em SVG e PNG transparente) e as folhas de conferência
@@ -57,7 +59,8 @@ Mascote, voz, trilha e sistema de animação são os do Vídeo 1.
 - `src/` — código que desenha e renderiza
   - `tuti.js` — a mascote, montada em peças para poder ser animada
   - `kit.js` — peças de desenho compartilhadas (contorno, olhos, nuvens, membros)
-  - `art/` — ilustrações: `pessoas.js`, `animais.js`, `objetos.js`, `cenario.js`
+  - `art/` — ilustrações: `pessoas.js`, `animais.js`, `objetos.js`, `cenario.js` (a arca) e `pasto.js` (o pasto de Davi)
+  - `v2/desafios.js` — os oito desafios do Vídeo 2, com o tipo e as opções de cada um
   - `v1/opcoes.js` — perguntas e opções do Vídeo 1, na ordem da tela
   - `v1/roteiro.js` — texto exato da locução; `v1/narracao.js` — gera os áudios
   - `tts.js` — cliente do Google Cloud Text-to-Speech; `audio.js` — leitura, corte e mixagem de áudio
@@ -102,7 +105,11 @@ node src/render-tuti.js
 node src/render-v1-imagens.js
 ```
 
-Os dois usam o Playwright (Chromium) para transformar o SVG em PNG.
+```bash
+node src/render-v2-imagens.js
+```
+
+Todos usam o Playwright (Chromium) para transformar o SVG em PNG.
 
 ## Regras de desenho
 

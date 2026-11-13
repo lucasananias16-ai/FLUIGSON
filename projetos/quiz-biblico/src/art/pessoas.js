@@ -72,13 +72,16 @@ function head(c) {
     g.push(cheek(s * 108, 66, 25));
     g.push(eye(s * 60, 10, 0.66, { gaze: c.gaze, closed: c.happy }));
     if (c.brow === 'branca') g.push(E(s * 62, -48, 28, 11, '#FFFFFF', { rot: s * 10, sw: o(0.7) }));
+    else if (c.brow === 'seria') g.push(L(`M${s * 88} -56 L${s * 38} -40`, { sw: o(1.3) }));
     else g.push(L(`M${s * 62 - 22} ${-42} Q${s * 62} ${-56} ${s * 62 + 22} ${-42}`, { sw: o(0.8) }));
   }
   g.push(E(0, 52, c.beard ? 21 : 15, c.beard ? 15 : 11, c.skinShade, { sw: 0 }));
 
   // Barba e bigode
   let mouthY = 84;
-  if (c.beard) {
+  if (c.beard === 'curta') {
+    g.push(P('M-156 24 C-164 112 -102 178 0 182 C102 178 164 112 156 24 C134 96 72 124 0 122 C-72 124 -134 96 -156 24Z', c.hairColor));
+  } else if (c.beard) {
     const longa = c.beard === 'longa';
     const d = longa
       ? 'M-154 26 C-172 150 -112 266 0 274 C112 266 172 150 154 26 C120 70 70 90 0 88 C-70 90 -120 70 -154 26Z'
@@ -92,18 +95,22 @@ function head(c) {
     g.push(P('M0 76 C-22 66 -66 74 -76 106 C-52 114 -18 108 0 94 C18 108 52 114 76 106 C66 74 22 66 0 76Z', c.hairColor));
     mouthY = 112;
   }
+  const comBigode = c.beard && c.beard !== 'curta';
 
   // Boca
   if (c.mouth === 'aberta') {
-    const w = c.beard ? 20 : 30;
-    const h = c.beard ? 30 : 46;
+    const w = comBigode ? 20 : 30;
+    const h = comBigode ? 30 : 46;
     g.push(P(`M${-w} ${mouthY - 2} Q0 ${mouthY + h} ${w} ${mouthY - 2}Z`, '#7A2B45', { sw: o(0.7) }));
     g.push(E(0, mouthY + h * 0.42, w * 0.42, h * 0.16, '#FF8097', { sw: 0 }));
-  } else if (c.beard) {
+  } else if (c.mouth === 'confiante') {
+    g.push(L(`M-18 ${mouthY} Q4 ${mouthY + 12} 22 ${mouthY - 5}`, { sw: o(0.8) }));
+  } else if (comBigode) {
     g.push(L(`M-17 ${mouthY - 2} Q0 ${mouthY + 14} 17 ${mouthY - 2}`, { sw: o(0.8) }));
   } else {
     g.push(L(`M-28 ${mouthY - 2} Q0 ${mouthY + 24} 28 ${mouthY - 2}`, { sw: o(0.8) }));
   }
+  if (c.hat) g.push(c.hat); // chapéu, coroa ou capacete, por cima do cabelo
   return g.join('');
 }
 
@@ -122,13 +129,15 @@ function person(cfg = {}) {
       veil: '#FFF3D6',
       veilDark: '#EAD7A8',
       band: null,
-      beard: null, // 'longa' | 'media'
-      brow: null, // 'branca'
+      beard: null, // 'longa' | 'media' | 'curta'
+      brow: null, // 'branca' | 'seria'
+      hat: '', // desenho por cima do cabelo, nas coordenadas da cabeça
+      back: '', // desenhado atrás de tudo (uma capa, por exemplo)
       armL: [356, 708],
       armR: [644, 708],
       gaze: [0, 0],
       happy: false,
-      mouth: 'sorriso', // 'sorriso' | 'aberta'
+      mouth: 'sorriso', // 'sorriso' | 'aberta' | 'confiante'
       behind: '', // desenhado atrás dos braços: o que a mão segura
       front: '',
       shadow: true,
@@ -143,6 +152,7 @@ function person(cfg = {}) {
   const robeD = `M408 476 Q500 452 592 476 L${n(xr)} ${hem} Q500 ${hem + 36} ${n(xl)} ${hem}Z`;
 
   if (c.shadow) out.push(shadow(500, 904, 220));
+  out.push(c.back);
 
   // Pernas e pés
   if (hem < 800) {
@@ -281,4 +291,156 @@ const nora = (over = {}) =>
     )
   );
 
-module.exports = { person, noe, davi, moises, esposa, filho, nora, hammer, staff, sling };
+// ------------------------------------------------------------- Vídeo 2
+
+const DAVI = { skin: '#F2C49B', skinShade: '#DFA57A', hairColor: '#8A5A2B', hairShade: '#6E4420' };
+
+/** Davi pastor, com o cajado na mão. */
+const daviPastor = (over = {}) => davi(Object.assign({ behind: staff(742, 250, 896), armR: [742, 590] }, over));
+
+/** Davi adulto, já rei: os mesmos cachos, agora com barba, coroa e capa. */
+function reiDavi(over = {}) {
+  const coroa =
+    P('M-116 -150 L-116 -226 L-70 -186 L-36 -244 L0 -192 L36 -244 L70 -186 L116 -226 L116 -150Z', '#FFD23F') +
+    L('M-116 -166 L116 -166', { color: '#E0A93F', sw: o(0.7) }) +
+    Ci(-58, -186, 9, '#E25A52', { sw: o(0.5) }) +
+    Ci(0, -200, 11, '#4DA3FF', { sw: o(0.5) }) +
+    Ci(58, -186, 9, '#5DBB7A', { sw: o(0.5) });
+  return person(
+    Object.assign({}, DAVI, {
+      robe: '#8B5FD0',
+      robeDark: '#6F45B5',
+      sash: '#FFD23F',
+      hair: 'cachos',
+      beard: 'curta',
+      hat: coroa,
+      back: P('M398 484 C300 620 276 760 286 862 L714 862 C724 760 700 620 602 484Z', '#E25A52') + L('M330 700 L322 850 M670 700 L678 850', { color: '#C2443D', sw: o(0.7) }),
+      armR: [706, 560],
+      armL: [356, 708],
+    }, over)
+  );
+}
+
+/** Pescador, com chapéu de palha, vara e um peixe. */
+function pescador(over = {}) {
+  const chapeu =
+    E(0, -112, 236, 52, '#F2D38A') +
+    P('M-128 -118 C-128 -250 128 -250 128 -118 Q0 -92 -128 -118Z', '#F2D38A') +
+    P('M-128 -134 Q0 -106 128 -134 L128 -118 Q0 -92 -128 -118Z', '#D8574F', { sw: o(0.6) });
+  const vara =
+    tube('M690 628 L866 170', 14, WOOD_DARK) +
+    L('M866 170 Q892 320 856 420', { sw: o(0.5) }) +
+    G('translate(852,470) rotate(80)', P('M-66 0 C-40 -42 30 -42 56 0 C30 42 -40 42 -66 0Z', '#4DA3FF'), P('M50 0 L96 -34 L96 34Z', '#4DA3FF'), Ci(-34, -8, 7, '#3D2C4E', { sw: 0 }));
+  return person(
+    Object.assign(
+      { robe: '#3CC6B4', robeDark: '#27A896', sash: WOOD, hair: 'curto', hairColor: '#5A3A28', hairShade: '#7A5540', beard: 'curta', hat: chapeu, armR: [726, 534], armL: [356, 708], behind: vara },
+      over
+    )
+  );
+}
+
+/** Padeiro, com chapéu branco e um pão nas mãos. */
+function padeiro(over = {}) {
+  const chapeu =
+    cloud(
+      [
+        [-78, -216, 54],
+        [0, -238, 64],
+        [78, -216, 54],
+        [0, -204, 60],
+      ],
+      { fill: '#FFFFFF', shade: '#E3DDF2', sx: -5, sy: -8 }
+    ) + R(-118, -196, 236, 62, 14, '#FFFFFF');
+  const pao =
+    E(500, 668, 132, 58, '#D9A066') +
+    E(486, 652, 96, 26, '#E7BC85', { sw: 0 }) +
+    L('M430 646 L452 686 M486 640 L508 684 M542 644 L564 686', { color: '#A66A34', sw: o(0.8) });
+  return person(
+    Object.assign(
+      { skin: '#EDB98C', robe: '#F7F3EA', robeDark: '#DDD5C5', sash: null, hair: 'curto', hairColor: '#5A3A28', hairShade: '#7A5540', hat: chapeu, armL: [408, 640], armR: [592, 640], behind: pao },
+      over
+    )
+  );
+}
+
+/**
+ * Golias: um soldado enorme, de capacete, escudo e lança. Grande e sério,
+ * mas sem cara de mau. O corpo é próprio (mais largo e mais alto que o boneco
+ * comum) para ele parecer gigante mesmo sozinho num card.
+ */
+function golias(over = {}) {
+  const c = Object.assign(
+    {
+      skin: '#E3AC7E',
+      skinShade: '#CC9063',
+      hair: null,
+      hairColor: '#5A3A28',
+      hairShade: '#7A5540',
+      beard: 'media',
+      brow: 'seria',
+      mouth: 'confiante',
+      gaze: [0, 0],
+      happy: false,
+      veil: null,
+      veilDark: null,
+      band: null,
+      hat: '',
+      shadow: true,
+      lanca: true,
+    },
+    over
+  );
+  const bronze = '#E0A93F';
+  const bronzeDark = '#B9822A';
+  const aco = '#8FB0C4';
+  const acoDark = '#6C90A6';
+  const couro = '#9A6233';
+  const torso = 'M316 438 Q500 394 684 438 L656 650 Q500 682 344 650Z';
+  const escamas = [];
+  for (let r = 0; r < 5; r++) {
+    for (let k = 0; k < 9; k++) {
+      const x = 330 + k * 44 + (r % 2) * 22;
+      const y = 452 + r * 40;
+      escamas.push(L(`M${x - 20} ${y} Q${x} ${y + 26} ${x + 20} ${y}`, { color: acoDark, sw: o(0.6) }));
+    }
+  }
+  const capacete =
+    // penacho
+    P('M-92 -216 C-104 -372 104 -372 92 -216Z', '#E25A52') +
+    L('M-40 -316 L-32 -236 M0 -330 L0 -240 M40 -316 L32 -236', { color: '#C2443D', sw: o(0.6) }) +
+    // casco e protetores do rosto
+    P('M-182 -58 C-192 -252 192 -252 182 -58Z', bronze) +
+    P('M-182 -58 L-150 -58 L-140 62 Q-168 78 -186 44Z', bronze) +
+    P('M182 -58 L150 -58 L140 62 Q168 78 186 44Z', bronze) +
+    P('M-192 -86 L192 -86 L192 -52 L-192 -52Z', bronzeDark);
+  const out = [];
+  if (c.shadow) out.push(shadow(500, 908, 320));
+  if (c.lanca) {
+    out.push(tube('M214 902 L214 190', 22, '#A66A34'));
+    out.push(P('M214 60 C258 112 250 176 214 198 C178 176 170 112 214 60Z', '#C9CDD6'));
+  }
+  // pernas, grevas e sandálias
+  out.push(tube('M432 720 L426 856', 84, c.skin) + tube('M568 720 L574 856', 84, c.skin));
+  out.push(R(380, 770, 92, 92, 22, bronze) + R(528, 770, 92, 92, 22, bronze));
+  out.push(E(420, 884, 76, 30, couro) + E(580, 884, 76, 30, couro));
+  // saiote de tiras de couro
+  out.push(P('M348 630 L652 630 L680 770 Q500 800 320 770Z', couro));
+  out.push(L('M400 660 L388 780 M450 664 L444 790 M500 666 L500 794 M550 664 L556 790 M600 660 L612 780', { color: '#7A4A2B', sw: o(0.7) }));
+  // armadura de escamas e cinturão
+  out.push(P(torso, aco));
+  out.push(clipD(torso, escamas.join('')));
+  out.push(L(torso));
+  out.push(P('M340 622 Q500 652 660 622 L664 664 Q500 696 336 664Z', bronze));
+  // braços: um segura a lança, o outro some atrás do escudo
+  out.push(limb(ik(344, 462, 214, 606, 112, 112, [-1, 1]), 80, 42, { color: c.skin, tip: c.skin }));
+  out.push(limb(ik(656, 462, 716, 612, 100, 100, [1, 1]), 80, 42, { color: c.skin, tip: c.skin }));
+  out.push(R(300, 436, 96, 62, 26, bronze) + R(604, 436, 96, 62, 26, bronze));
+  // cabeça
+  out.push(G('translate(500,292) scale(0.84)', head(Object.assign({}, c, { hat: capacete }))));
+  // escudo
+  out.push(Ci(716, 612, 168, bronze) + Ci(716, 612, 124, '#E25A52') + Ci(716, 612, 44, bronze));
+  out.push([0, 60, 120, 180, 240, 300].map((a) => Ci(716 + Math.cos((a * Math.PI) / 180) * 146, 612 + Math.sin((a * Math.PI) / 180) * 146, 9, bronzeDark, { sw: 0 })).join(''));
+  return out.join('');
+}
+
+module.exports = { person, head, noe, davi, moises, esposa, filho, nora, hammer, staff, sling, daviPastor, reiDavi, pescador, padeiro, golias };

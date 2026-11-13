@@ -3,7 +3,7 @@
  * Animais do Vídeo 1. Prancheta de 1000 x 1000, chão em y ≈ 880.
  * Só os seres vivos têm rosto; os objetos nunca têm.
  */
-const { n, o, P, E, Ci, R, L, G, clip, clipD, tube, cloud, blob, squircle, eye, cheek, shadow } = require('../kit');
+const { n, o, P, E, Ci, R, L, G, clip, clipD, tube, cloud, curl, blob, squircle, eye, cheek, shadow } = require('../kit');
 
 /**
  * Perna na frente do corpo. Dentro do corpo (`inner`, a forma do corpo um
@@ -296,4 +296,60 @@ function pinguim() {
   );
 }
 
-module.exports = { elefante, umElefante, doisElefantes, cincoElefantes, leao, girafa, coruja, pomba, pinguim };
+// ------------------------------------------------------------------ Ovelha
+/**
+ * Ovelha do rebanho (Vídeo 2). É de quatro patas e tem o rosto um pouco mais
+ * escuro que o da Tuti, para ninguém confundir as duas.
+ */
+function ovelha({ feliz = false, olhar = [0, 0] } = {}) {
+  const pele = '#DCC3AC';
+  const peleEscura = '#C6AA91';
+  const casco = '#5E455C';
+  const corpo = [[540, 600, 150]];
+  for (let i = 0; i < 12; i++) {
+    const t = (i / 12) * Math.PI * 2 + 0.2;
+    corpo.push([540 + Math.cos(t) * 200, 600 + Math.sin(t) * 128, 70 + (i % 3) * 5]);
+  }
+  const perna = (x) => R(x - 26, 700, 52, 160, 22, pele) + R(x - 30, 836, 60, 46, 16, casco);
+  const topete = [
+    [-96, -64, 44],
+    [-52, -104, 52],
+    [6, -116, 54],
+    [62, -98, 48],
+    [100, -58, 42],
+    [0, -74, 60],
+  ];
+  return (
+    shadow(520, 884, 330) +
+    // rabinho e patas
+    cloud([[786, 560, 34], [812, 586, 26]], { sx: -4, sy: -6 }) +
+    perna(396) +
+    perna(486) +
+    perna(606) +
+    perna(690) +
+    cloud(corpo) +
+    curl(560, 640, 26, 190) +
+    curl(660, 570, 22, 160) +
+    curl(470, 560, 20, 200) +
+    curl(600, 700, 20, 175) +
+    // cabeça
+    G(
+      'translate(330,450)',
+      E(-150, -14, 66, 34, pele, { rot: -24 }),
+      E(-154, -10, 40, 17, '#FFAEC0', { rot: -24, sw: 0 }),
+      E(150, -14, 66, 34, pele, { rot: 24 }),
+      E(154, -10, 40, 17, '#FFAEC0', { rot: 24, sw: 0 }),
+      P(squircle(138, 124), pele),
+      cloud(topete, { sx: -5, sy: -8 }),
+      cheek(-88, 52, 20),
+      cheek(88, 52, 20),
+      eye(-52, 14, 0.52, { gaze: olhar, closed: feliz }),
+      eye(52, 14, 0.52, { gaze: olhar, closed: feliz }),
+      L('M0 68 L0 78 M-26 76 Q-13 92 0 78 Q13 92 26 76', { sw: o(0.8) }),
+      P('M-14 54 Q0 48 14 54 Q12 66 0 70 Q-12 66 -14 54Z', '#F27C93', { sw: o(0.6) }),
+      E(0, 100, 60, 14, peleEscura, { sw: 0, opacity: 0 })
+    )
+  );
+}
+
+module.exports = { elefante, umElefante, doisElefantes, cincoElefantes, leao, girafa, coruja, pomba, pinguim, ovelha };

@@ -268,6 +268,139 @@ function arcoIris() {
   return G('translate(0,-70)', rainbowArc(500, 710, 390, 36) + puff(210) + puff(800));
 }
 
+// ============================================================== Vídeo 2
+const BRONZE = '#E0A93F';
+const BRONZE_DARK = '#B9822A';
+const COURO = '#A66A34';
+
+/** Funda: duas tiras de couro com a bolsa e uma pedrinha, mais duas pedras ao lado. */
+function funda() {
+  return (
+    shadow(520, 884, 300) +
+    tube('M500 190 C300 300 290 560 420 690', 18, COURO) +
+    tube('M500 190 C700 300 710 560 580 690', 18, COURO) +
+    tube('M500 190 C470 140 500 100 530 140 C540 160 520 190 500 190', 12, COURO) +
+    Ci(500, 664, 66, '#B8B5C6') +
+    E(482, 644, 30, 18, '#D5D2E0', { sw: 0 }) +
+    P('M372 668 C410 800 590 800 628 668 C570 724 430 724 372 668Z', '#8F5A2E') +
+    P(blob(700, 846, 58, 42, 31, 0.1, 8), '#B8B5C6') +
+    P(blob(796, 858, 44, 32, 47, 0.1, 8), '#C9C6D6')
+  );
+}
+
+/** Espada, na diagonal. */
+function espada() {
+  return (
+    shadow(500, 884, 260) +
+    G(
+      'rotate(38 500 500)',
+      P('M462 150 L500 84 L538 150 L538 628 L462 628Z', '#DADDE5'),
+      L('M500 140 L500 612', { color: '#AEB3C0', sw: o(0.8) }),
+      R(374, 626, 252, 48, 22, BRONZE),
+      R(472, 672, 56, 150, 16, '#8A5A2B'),
+      L('M472 706 L528 720 M472 742 L528 756 M472 778 L528 792', { color: '#6E4420', sw: o(0.6) }),
+      Ci(500, 846, 36, BRONZE)
+    )
+  );
+}
+
+/** Escudo redondo, o mesmo que o Golias carrega. */
+function escudo() {
+  const rebites = [0, 45, 90, 135, 180, 225, 270, 315]
+    .map((a) => Ci(500 + Math.cos((a * Math.PI) / 180) * 290, 500 + Math.sin((a * Math.PI) / 180) * 290, 16, BRONZE_DARK, { sw: 0 }))
+    .join('');
+  return (
+    shadow(500, 900, 280) +
+    Ci(500, 500, 340, BRONZE) +
+    rebites +
+    Ci(500, 500, 246, '#E25A52') +
+    L('M320 420 A200 200 0 0 1 430 310', { color: '#F28B82', sw: o(1.6) }) +
+    Ci(500, 500, 86, BRONZE) +
+    Ci(476, 478, 22, '#F3CC78', { sw: 0 })
+  );
+}
+
+/** Cajado de pastor. */
+function cajado() {
+  return (
+    shadow(470, 902, 200) +
+    G('rotate(10 500 500)', tube('M420 900 L420 300 C420 150 640 150 640 300 L640 340', 46, COURO), L('M420 520 L420 600 M420 690 L420 730', { color: '#8F5A2E', sw: o(0.7) }))
+  );
+}
+
+/** Skate, visto de lado. */
+function skate() {
+  const roda = (x) => Ci(x, 640, 66, '#FFA53A') + Ci(x, 640, 24, '#FFE0B0', { sw: o(0.6) });
+  return (
+    shadow(500, 720, 360, 30) +
+    R(262, 560, 96, 50, 14, '#B8B5C6') +
+    R(642, 560, 96, 50, 14, '#B8B5C6') +
+    roda(310) +
+    roda(690) +
+    tube('M130 470 Q160 536 250 536 L750 536 Q840 536 870 470', 44, '#3CC6B4') +
+    L('M300 536 L700 536', { color: '#FFD23F', sw: o(1.4), cap: 'round' }) +
+    L('M150 380 Q190 400 170 440 M850 380 Q810 400 830 440', { opacity: 0.3 })
+  );
+}
+
+/** Harpa pequena, como a de Davi. */
+function harpa() {
+  const cordas = [];
+  for (let i = 0; i < 7; i++) {
+    const x = 392 + i * 44;
+    const topo = 262 - 30 * Math.sin(((x - 330) / 370) * Math.PI) + (x - 330) * 0.1;
+    const base = 300 + ((700 - x) / 280) * 500;
+    cordas.push(`M${x} ${n(topo)} L${x} ${n(base)}`);
+  }
+  return (
+    shadow(480, 890, 280) +
+    L(cordas.join(' '), { sw: o(0.6) }) +
+    tube('M700 300 L420 820', 58, '#C98A4B') +
+    tube('M330 820 L330 250', 46, '#FFC83D') +
+    tube('M330 250 C420 170 600 180 700 300', 46, '#FFC83D') +
+    Ci(330, 250, 40, '#FFC83D') +
+    Ci(330, 250, 14, '#E0A93F', { sw: 0 }) +
+    R(280, 800, 210, 56, 22, '#E0A93F')
+  );
+}
+
+/** Tambor com duas baquetas. */
+function tambor() {
+  const corpo = 'M250 400 L250 690 A250 82 0 0 0 750 690 L750 400Z';
+  const baqueta = (d, x, y) => tube(d, 20, '#D9A066') + Ci(x, y, 26, '#F7E3C0');
+  return (
+    shadow(500, 800, 320) +
+    P(corpo, '#EF6A5B') +
+    clipD(corpo, L('M250 420 L333 730 L417 430 L500 770 L583 430 L667 730 L750 420', { color: '#FFD23F', sw: o(1.2) })) +
+    L(corpo) +
+    L('M250 690 A250 82 0 0 0 750 690', { color: '#FFD23F', sw: o(2.2), cap: 'butt' }) +
+    L('M250 690 A250 82 0 0 0 750 690', { sw: o(0.6), cap: 'butt' }) +
+    E(500, 400, 250, 82, '#FFF1D6') +
+    E(470, 386, 150, 40, '#FFFFFF', { sw: 0, opacity: 0.6 }) +
+    baqueta('M380 330 L250 150', 246, 144) +
+    baqueta('M620 330 L750 150', 754, 144)
+  );
+}
+
+/** Flauta de madeira, com duas notinhas saindo. */
+function flauta() {
+  const nota = (x, y, s) =>
+    G(`translate(${x},${y}) scale(${s})`, E(0, 0, 30, 22, '#3D2C4E', { rot: -20, sw: 0 }), L('M26 -6 L26 -110 Q60 -100 70 -70', { sw: o(1 / s) }));
+  const furos = [0, 1, 2, 3, 4, 5].map((i) => E(380 + i * 62, 500, 16, 13, '#6E4420', { sw: 0 })).join('');
+  return (
+    shadow(500, 760, 300) +
+    G(
+      'rotate(-28 500 500)',
+      R(180, 458, 640, 84, 42, '#E7BC85'),
+      R(150, 466, 110, 68, 30, '#C98A4B'),
+      L('M300 462 L300 538 M760 462 L760 538', { color: '#B97A45', sw: o(0.9) }),
+      furos
+    ) +
+    nota(700, 240, 1) +
+    nota(830, 330, 0.7)
+  );
+}
+
 module.exports = {
   pedras,
   madeira,
@@ -287,4 +420,13 @@ module.exports = {
   leaf,
   drop,
   SKY_CLOUD,
+  rock,
+  funda,
+  espada,
+  escudo,
+  cajado,
+  skate,
+  harpa,
+  tambor,
+  flauta,
 };
