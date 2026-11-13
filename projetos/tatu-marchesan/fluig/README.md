@@ -16,6 +16,7 @@ Ao entrar em "Tratar Falhas", copia para o formulário a mensagem de erro da ati
 1. O processo não tinha `beforeStateEntry`: confirmar no Fluig Studio que nenhum outro evento foi criado desde a v28.
 2. (Opcional) Para cobrir a atividade 37, incluir no formulário `hd_aprovacao_sc_status` e `hd_aprovacao_sc_erro` e reativar o mapeamento.
 
-> Tentativa de publicar pelo MCP em 13/11: recusada, porque a API REST não aceita o login do usuário de consultoria (Fluig Identity). Publicar pelo Fluig Studio ou com um usuário local.
 3. Testar em homologação: forçar uma falha (ex.: SC inexistente na liberação) e conferir se o campo é preenchido. É preciso confirmar que o complemento da tentativa já aparece no `processTask` neste momento da transação. Se não aparecer, o evento só registra um log e não atrapalha o fluxo.
 4. Lint (`fluig_lint`, workflow-event): sem apontamentos.
+
+> Tentativa de publicar pelo MCP em 13/11: recusada, porque a API REST não aceita o login do usuário de consultoria (Fluig Identity). Publicar pelo Fluig Studio ou com um usuário local.
