@@ -42,3 +42,15 @@
 ## Rascunhos no Gmail (não enviados)
 1. Para o Luiz: fornecedor da 704 e falha de autenticação da 789.
 2. Para o grupo MindLab: conclusão das aprovações pendentes até 20/11 e reunião de aceite na semana de 23/11.
+
+## Teste do serviço de integração com o Protheus (13/11, ~16h BRT, só consultas)
+- Serviço cadastrado no Fluig: **`protheus_rest`** → `https://mindlabdo164168.protheus.cloudtotvs.com.br:4050/rest` (porta interna). Há um segundo cadastro, `testeintegracao`, na porta externa 2157. Todos os datasets `_JYNX` usam `protheus_rest`, com autenticação configurada no cadastro do serviço (não há credencial no código).
+- **Resultado: o REST do Protheus de teste está recusando conexão.**
+  - `ds_protheus_consulta_documento_JYNX` (`/api/v1/CONSULTADOC`): `HttpHostConnectException ... :4050 failed: Connection refused`.
+  - `dts_fornecedores_JYNX` (`/PROTHEUSDATASET`): "Erro ao consultar Protheus" (a resposta não é JSON, mesmo motivo).
+  - Repetido 3 vezes em cerca de 1 minuto, mesmo resultado.
+  - Mais cedo, `/api/v1/DOCENTRADA` (solicitação 789) devolveu `The request requires authentication`. Ou o serviço caiu depois, ou estava reiniciando.
+- **Cuidado ao interpretar:** os datasets de apoio (centro de custo, TES, condição de pagamento, espécie, natureza, empresas) devolvem linhas mesmo com o Protheus fora, porque são **sincronizados** (cópia local no Fluig). Não servem como prova de que a API responde. Com filtro, o de centro de custo voltou vazio.
+- Os datasets antigos `ds_protheus_cc`, `_condPag`, `_natureza`, `_tes`, `_especie` (sem sufixo JYNX) retornam "dataset inválido"; são do processo antigo.
+- Teste direto da porta externa 2157 a partir da minha sessão: sem resposta, mas inconclusivo (minha rede pode bloquear).
+- Não chamei `DOCENTRADA` neste teste, porque ela grava documento.
