@@ -17,6 +17,8 @@ Roteiro de origem: documento "Roteiros dos vídeos piloto: Quiz Bíblico Infanti
 
 ## Etapas (cada uma é validada antes da próxima)
 
+### Vídeo 1 — Quiz da Arca de Noé
+
 | Nº | Etapa | Situação |
 |---|---|---|
 | 1 | Narrativa final do Vídeo 1 | Aprovada |
@@ -28,8 +30,23 @@ Roteiro de origem: documento "Roteiros dos vídeos piloto: Quiz Bíblico Infanti
 | 7 | Pacote do YouTube | Aprovado: thumbnail C e título com "Quiz Bíblico" |
 | 8 | Publicação | Com o dono do canal, seguindo `v1-arca-de-noe/youtube/como-publicar.md` |
 
+### Vídeo 2 — Desafios de Davi e Golias
+
+Mascote, voz, trilha e sistema de animação são os do Vídeo 1.
+
+| Nº | Etapa | Situação |
+|---|---|---|
+| 1 | Narrativa final | Aguardando validação |
+| 2 | Imagens das cenas e das opções | A fazer |
+| 3 | Narração | A fazer |
+| 4 | Animação e edição | A fazer |
+| 5 | Legendas | A fazer |
+| 6 | Pacote do YouTube | A fazer |
+| 7 | Publicação | A fazer |
+
 ## Pastas
 
+- `v2-davi-e-golias/` — arquivos do Vídeo 2 (`01-narrativa.md` é o texto da locução)
 - `v1-arca-de-noe/` — arquivos do Vídeo 1
   - `01-narrativa.md` — texto aprovado da locução
   - `imagens/` — abertura, encerramento, as 24 opções (`v1_pN_opcao`, em SVG e PNG transparente) e as folhas de conferência
