@@ -45,7 +45,8 @@ function getPrefixoCampoErro(sequenceId) {
     if (atividade == ATV_TRATAR_FALHA_GERAR_SC) return "hd_integracao_sc";
     if (atividade == ATV_TRATAR_FALHA_ATUALIZAR_SC) return "hd_atualizacao_sc";
     if (atividade == ATV_TRATAR_FALHA_REPROVAR_SC) return "hd_reprovacao_sc";
-    if (atividade == ATV_TRATAR_FALHA_LIBERAR_SC) return "hd_aprovacao_sc"; // exige os campos novos no formulário
+    // ATV_TRATAR_FALHA_LIBERAR_SC (37): habilitar quando o formulário tiver
+    // hd_aprovacao_sc_status e hd_aprovacao_sc_erro.
     return "";
 }
 
