@@ -23,9 +23,9 @@ Roteiro de origem: documento "Roteiros dos vídeos piloto: Quiz Bíblico Infanti
 | 2 | Tuti em 3 poses | Aprovada |
 | 3 | Imagens das cenas e das opções | Aprovada |
 | 4 | Narração | Aprovada: voz Leda no estilo animado |
-| 5 | Animação e edição | Vídeo inteiro montado, aguardando validação |
-| 6 | Legendas | Arquivo .srt gerado junto com o vídeo, aguardando validação |
-| 7 | Pacote do YouTube | A fazer |
+| 5 | Animação e edição | Aprovada: vídeo de 4 min 15 s |
+| 6 | Legendas | Aprovadas |
+| 7 | Pacote do YouTube | Aguardando validação (duas opções de thumbnail) |
 | 8 | Publicação | A fazer |
 
 ## Pastas
@@ -34,6 +34,7 @@ Roteiro de origem: documento "Roteiros dos vídeos piloto: Quiz Bíblico Infanti
   - `01-narrativa.md` — texto aprovado da locução
   - `imagens/` — abertura, encerramento, as 24 opções (`v1_pN_opcao`, em SVG e PNG transparente) e as folhas de conferência
   - `legendas/` — legendas em pt-BR (.srt); `mapa-do-video.json` — o instante em que cada cena começa
+  - `youtube/` — thumbnails, título, descrição com capítulos, tags e o passo a passo de publicação
   - `narracao/` — os 18 áudios aprovados da locução (`v1_abertura`, `v1_pN_pergunta`, `v1_pN_resposta`, `v1_encerramento`) e `narracao.json` com os tempos
 - `personagens/tuti/` — poses da Tuti em SVG e PNG transparente, mais a folha de apresentação
 - `src/` — código que desenha e renderiza
@@ -47,6 +48,7 @@ Roteiro de origem: documento "Roteiros dos vídeos piloto: Quiz Bíblico Infanti
   - `anim/` — animação: `render.js` (quadro a quadro com Chromium e ffmpeg), `tutiAnim.js` (Tuti animada), `sfx.js` (efeitos sonoros sintetizados), `mix.js` (trilha de áudio), `ease.js`
   - `anim/musica.js` — a trilha de fundo; `anim/fx.js` — confete e véu de transição; `anim/fala.js` — volume da voz e tempo das frases
   - `v1/cenaPergunta.js` — a cena de uma pergunta; `v1/cenasPontas.js` — abertura e encerramento
+  - `v1/thumbnail.js` — gera as thumbnails; `v1/pacote-youtube.js` — gera título, descrição e tags
   - `v1/video.js` — monta o vídeo inteiro; `v1/legendas.js` — gera o .srt; `v1/teste-pergunta.js` — renderiza uma pergunta sozinha
   - `preview.js` — prévia rápida de qualquer ilustração
 - `assets/fonts/` — fonte Fredoka (licença SIL OFL, incluída)
