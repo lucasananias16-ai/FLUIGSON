@@ -1,8 +1,8 @@
-# Pauta interna — Tatu Marchesan · Fluig (Lucas, Mayara, Gabriel)
+# Pauta interna — Tatu Marchesan · Fluig · todos os projetos (Compras, Reembolso, Manutenção)
 
-**Quando:** no dia que a Mayara reservar para o Gabriel dedicar à Tatu (ação da daily de 12/11). **Duração sugerida:** 1h, no início do dia, para o resto do dia já render.
+**Quando:** quarta, 18/11/2026, das 10h30 às 11h30, logo após a Daily MFX · **Participantes:** Lucas Ananias, Mayara Centeno, Gabriel Izidoro
 **Objetivo:** tirar do Gabriel o que só ele sabe, fechar decisões e sair com o dia dele planejado. O que depender da TOTVS vira pergunta que ele leva ao Pedro.
-**Material de apoio (pasta `projetos/tatu-marchesan/`):** `diagnostico-falhas-2026-11-13.md`, `requisitos-atas-2026-11-13.md`, `analise-processos-dev-2026-11-13.md`, `fluig/specs/*.md`.
+**Material de apoio (repositório FLUIGSON, branch `claude/determined-hawking-cu8jt7`, pasta `projetos/tatu-marchesan/`):** `diagnostico-falhas-2026-11-13.md`, `requisitos-atas-2026-11-13.md`, `analise-processos-dev-2026-11-13.md`, `fluig/specs/*.md`.
 
 ## 1. Compras: destravar a aprovação (20 min) 🔴
 - **Contexto:** liberar ou reprovar a SC no Protheus falha com `Registro nao Localizado na Tabela - SCR` (SCs 000401 e 000403). Pela definição de 01/09, a aprovação é só no Fluig, então não há SCR. As 22 SCs em aprovação vão falhar do mesmo jeito.
