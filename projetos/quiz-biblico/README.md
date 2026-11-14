@@ -92,6 +92,15 @@ Vídeo educativo de inglês para crianças de 4 a 6 anos, no estilo de brincadei
 
 As etapas 2 a 7 do Vídeo 5 foram conferidas e aprovadas pelo Claude, por decisão do dono do canal.
 
+### Vídeo 6 — Inglês com a Tuti: o Foguete (números de one a ten)
+
+A Tuti, de capacete de astronauta, e o robô Bip treinam os números em inglês para a contagem regressiva do foguete. Mesma estrutura do Vídeo 5 (`src/v6/`, `art/espaco.js`, pasta `v6-ingles-numeros/`); o capacete é a opção `capacete` de `tuti.js`.
+
+| Nº | Etapa | Situação |
+|---|---|---|
+| 1 a 6 | Narrativa, imagens, narração, animação (4 min 19 s), legendas e pacote do YouTube | Aprovadas (2 a 6 pelo Claude, por decisão do dono do canal; a pronúncia do inglês depende de quem ouvir) |
+| 7 | Publicação | Pronto para subir. O passo a passo está em `v6-ingles-numeros/youtube/como-publicar.md` |
+
 ## Pastas
 
 - `v5-ingles-animais/` — arquivos do Vídeo 5, na mesma organização do Vídeo 4
@@ -168,6 +177,10 @@ node src/v4/video.js
 
 ```bash
 node src/v5/video.js
+```
+
+```bash
+node src/v6/video.js
 ```
 
 Cada comando monta um vídeo inteiro em `_rascunho/video/` (pasta fora do repositório): `v1_quiz_arca_de_noe.mp4`, `v2_desafios_de_davi_e_golias.mp4` e `v3_desafios_do_natal_de_jesus.mp4` e `v4_quiz_do_papai_noel.mp4` e `v5_festa_dos_animais.mp4`. Também grava as legendas e o mapa do vídeo na pasta de cada um. Cada cena é um trecho separado; só os trechos que mudaram são renderizados de novo. Um vídeo de 4 minutos leva cerca de 5 minutos para renderizar do zero.

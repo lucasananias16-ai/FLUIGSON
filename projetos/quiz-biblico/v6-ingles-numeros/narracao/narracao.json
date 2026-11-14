@@ -1,0 +1,683 @@
+{
+  "voz": {
+    "nome": "pt-BR-Chirp3-HD-Leda",
+    "velocidade": 0.94,
+    "estilo": "animada",
+    "vozes": {
+      "pt": {
+        "nome": "pt-BR-Chirp3-HD-Leda",
+        "lang": "pt-BR",
+        "velocidade": 0.94
+      },
+      "en": {
+        "nome": "en-US-Chirp3-HD-Leda",
+        "lang": "en-US",
+        "velocidade": 0.88
+      },
+      "bip": {
+        "nome": "en-US-Chirp3-HD-Puck",
+        "lang": "en-US",
+        "velocidade": 0.95
+      }
+    }
+  },
+  "falas": {
+    "v6_ab_1": {
+      "texto": "Hello! Oi, amiguinho! Hoje a Tuti vai de foguete até a Lua! Este é o meu amigo, o robô Bip.",
+      "dur": 8.234,
+      "segmentos": [
+        {
+          "voz": "en",
+          "texto": "Hello!",
+          "ini": 0,
+          "fim": 0.46
+        },
+        {
+          "voz": "pt",
+          "texto": "Oi, amiguinho! Hoje a Tuti vai de foguete até a Lua! Este é o meu amigo, o robô Bip.",
+          "ini": 1.06,
+          "fim": 8.234
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v6_ab_bip": {
+      "texto": "Hello! I am Bip!",
+      "dur": 1.64,
+      "segmentos": [
+        {
+          "voz": "bip",
+          "texto": "Hello! I am Bip!",
+          "ini": 0,
+          "fim": 1.64
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v6_ab_2": {
+      "texto": "O foguete só decola se a gente contar até dez em inglês. Você me ajuda? Vamos treinar!",
+      "dur": 6.09,
+      "segmentos": [
+        {
+          "voz": "pt",
+          "texto": "O foguete só decola se a gente contar até dez em inglês. Você me ajuda? Vamos treinar!",
+          "ini": 0,
+          "fim": 6.09
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v6_l1_intro": {
+      "texto": "Primeiro, de um a cinco. Olhe as estrelas!",
+      "dur": 3.6,
+      "segmentos": [
+        {
+          "voz": "pt",
+          "texto": "Primeiro, de um a cinco. Olhe as estrelas!",
+          "ini": 0,
+          "fim": 3.68
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v6_conta_1a5": {
+      "texto": "One... two... three... four... five!",
+      "dur": 5.83,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 0.53
+        },
+        {
+          "ini": 1.33,
+          "fim": 1.9
+        },
+        {
+          "ini": 2.7,
+          "fim": 3.23
+        },
+        {
+          "ini": 4.03,
+          "fim": 4.54
+        },
+        {
+          "ini": 5.34,
+          "fim": 5.83
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v6_repita": {
+      "texto": "Agora você! Repita comigo:",
+      "dur": 2.44,
+      "segmentos": [
+        {
+          "voz": "pt",
+          "texto": "Agora você! Repita comigo:",
+          "ini": 0,
+          "fim": 2.45
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v6_muito_bem": {
+      "texto": "Very good!",
+      "dur": 0.86,
+      "segmentos": [
+        {
+          "voz": "en",
+          "texto": "Very good!",
+          "ini": 0,
+          "fim": 0.86
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v6_j1_palmas": {
+      "texto": "Agora com o corpo! Bata palmas três vezes: clap three!",
+      "dur": 4.56,
+      "segmentos": [
+        {
+          "voz": "pt",
+          "texto": "Agora com o corpo! Bata palmas três vezes:,",
+          "ini": 0,
+          "fim": 3.68
+        },
+        {
+          "voz": "en",
+          "texto": "clap three!",
+          "ini": 3.77,
+          "fim": 4.56
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v6_conta_1a3": {
+      "texto": "One... two... three!",
+      "dur": 2.65,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 0.47
+        },
+        {
+          "ini": 1.17,
+          "fim": 1.65
+        },
+        {
+          "ini": 2.35,
+          "fim": 2.65
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v6_j1_pulos": {
+      "texto": "Agora pule cinco vezes: jump five!",
+      "dur": 3.1,
+      "segmentos": [
+        {
+          "voz": "pt",
+          "texto": "Agora pule cinco vezes:,",
+          "ini": 0,
+          "fim": 1.73
+        },
+        {
+          "voz": "en",
+          "texto": "jump five!",
+          "ini": 1.82,
+          "fim": 3.1
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v6_j1_vez": {
+      "texto": "Sua vez!",
+      "dur": 0.73,
+      "segmentos": [
+        {
+          "voz": "pt",
+          "texto": "Sua vez!",
+          "ini": 0,
+          "fim": 0.77
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v6_j1_c1": {
+      "texto": "Clap three!",
+      "dur": 0.8,
+      "segmentos": [
+        {
+          "voz": "en",
+          "texto": "Clap three!",
+          "ini": 0,
+          "fim": 0.8
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v6_j1_c2": {
+      "texto": "Jump five!",
+      "dur": 0.98,
+      "segmentos": [
+        {
+          "voz": "en",
+          "texto": "Jump five!",
+          "ini": 0,
+          "fim": 0.98
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v6_l2_intro": {
+      "texto": "Agora os números grandes, de seis a dez!",
+      "dur": 2.61,
+      "segmentos": [
+        {
+          "voz": "pt",
+          "texto": "Agora os números grandes, de seis a dez!",
+          "ini": 0,
+          "fim": 2.64
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v6_conta_6a10": {
+      "texto": "Six... seven... eight... nine... ten!",
+      "dur": 5.67,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 0.41
+        },
+        {
+          "ini": 1.21,
+          "fim": 1.72
+        },
+        {
+          "ini": 2.52,
+          "fim": 2.8
+        },
+        {
+          "ini": 3.6,
+          "fim": 4.27
+        },
+        {
+          "ini": 5.07,
+          "fim": 5.67
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v6_l2_fim": {
+      "texto": "Você já sabe contar até dez!",
+      "dur": 2.08,
+      "segmentos": [
+        {
+          "voz": "pt",
+          "texto": "Você já sabe contar até dez!",
+          "ini": 0,
+          "fim": 2.08
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v6_j2_pergunta": {
+      "texto": "Qual é o number four? O dois... o quatro... ou o sete?",
+      "dur": 6.64,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.61
+        },
+        {
+          "ini": 2.51,
+          "fim": 3.18
+        },
+        {
+          "ini": 4.18,
+          "fim": 4.99
+        },
+        {
+          "ini": 5.99,
+          "fim": 6.64
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v6_j2_resposta": {
+      "texto": "O quatro! Four! Muito bem!",
+      "dur": 3.22,
+      "segmentos": [
+        {
+          "voz": "pt",
+          "texto": "O quatro!",
+          "ini": 0,
+          "fim": 0.8
+        },
+        {
+          "voz": "en",
+          "texto": "Four!",
+          "ini": 1.4,
+          "fim": 1.89
+        },
+        {
+          "voz": "pt",
+          "texto": "Muito bem!",
+          "ini": 2.49,
+          "fim": 3.22
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v6_j3_pergunta": {
+      "texto": "Quantas estrelas tem no céu? Conte com calma!",
+      "dur": 2.88,
+      "segmentos": [
+        {
+          "voz": "pt",
+          "texto": "Quantas estrelas tem no céu? Conte com calma!",
+          "ini": 0,
+          "fim": 2.88
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v6_j3_vamos": {
+      "texto": "Vamos contar!",
+      "dur": 0.83,
+      "segmentos": [
+        {
+          "voz": "pt",
+          "texto": "Vamos contar!",
+          "ini": 0,
+          "fim": 0.83
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v6_conta_1a7": {
+      "texto": "One... two... three... four... five... six... seven!",
+      "dur": 7.82,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 0.54
+        },
+        {
+          "ini": 1.24,
+          "fim": 1.88
+        },
+        {
+          "ini": 2.58,
+          "fim": 3.02
+        },
+        {
+          "ini": 3.72,
+          "fim": 4.2
+        },
+        {
+          "ini": 4.9,
+          "fim": 5.45
+        },
+        {
+          "ini": 6.15,
+          "fim": 6.55
+        },
+        {
+          "ini": 7.25,
+          "fim": 7.82
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v6_j3_fim": {
+      "texto": "Seven estrelas!",
+      "dur": 1.5,
+      "segmentos": [
+        {
+          "voz": "en",
+          "texto": "Seven,",
+          "ini": 0,
+          "fim": 0.52
+        },
+        {
+          "voz": "pt",
+          "texto": "estrelas!",
+          "ini": 0.61,
+          "fim": 1.52
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v6_j4_intro": {
+      "texto": "O Bip vai contar, mas vai pular um número. Escute!",
+      "dur": 3.95,
+      "segmentos": [
+        {
+          "voz": "pt",
+          "texto": "O Bip vai contar, mas vai pular um número. Escute!",
+          "ini": 0,
+          "fim": 3.96
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v6_j4_bip": {
+      "texto": "One... two... four!",
+      "dur": 3.013,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 0.5
+        },
+        {
+          "ini": 1.3,
+          "fim": 1.76
+        },
+        {
+          "ini": 2.56,
+          "fim": 3.013
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v6_j4_pergunta": {
+      "texto": "Qual número faltou? O três... o cinco... ou o seis?",
+      "dur": 6.38,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.15
+        },
+        {
+          "ini": 2.05,
+          "fim": 2.77
+        },
+        {
+          "ini": 3.77,
+          "fim": 4.48
+        },
+        {
+          "ini": 5.48,
+          "fim": 6.38
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v6_j4_resposta": {
+      "texto": "O três! Three! Oops! Three!",
+      "dur": 4.03,
+      "segmentos": [
+        {
+          "voz": "pt",
+          "texto": "O três!",
+          "ini": 0,
+          "fim": 0.86
+        },
+        {
+          "voz": "en",
+          "texto": "Three!",
+          "ini": 1.46,
+          "fim": 1.89
+        },
+        {
+          "voz": "bip",
+          "texto": "Oops! Three!",
+          "ini": 2.49,
+          "fim": 4.03
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v6_j5_mostrar": {
+      "texto": "Olhe bem onde o ten está.",
+      "dur": 1.835,
+      "segmentos": [
+        {
+          "voz": "pt",
+          "texto": "Olhe bem onde o,",
+          "ini": 0,
+          "fim": 0.783
+        },
+        {
+          "voz": "en",
+          "texto": "ten,",
+          "ini": 0.873,
+          "fim": 1.413
+        },
+        {
+          "voz": "pt",
+          "texto": "está.",
+          "ini": 1.503,
+          "fim": 1.835
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v6_j5_pergunta": {
+      "texto": "As cartas trocaram de lugar! Onde está o dez? No um... no dois... ou no três?",
+      "dur": 8.02,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.7
+        },
+        {
+          "ini": 2.2,
+          "fim": 3.33
+        },
+        {
+          "ini": 4.13,
+          "fim": 4.69
+        },
+        {
+          "ini": 5.59,
+          "fim": 6.3
+        },
+        {
+          "ini": 7.2,
+          "fim": 8.02
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v6_j5_resposta": {
+      "texto": "No número três! Ten! Você tem olho bom!",
+      "dur": 4.18,
+      "segmentos": [
+        {
+          "voz": "pt",
+          "texto": "No número três!",
+          "ini": 0,
+          "fim": 1.3
+        },
+        {
+          "voz": "en",
+          "texto": "Ten!",
+          "ini": 1.9,
+          "fim": 2.48
+        },
+        {
+          "voz": "pt",
+          "texto": "Você tem olho bom!",
+          "ini": 3.08,
+          "fim": 4.18
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v6_f_intro": {
+      "texto": "Chegou a hora! Todos a bordo! Conte comigo, de trás para a frente!",
+      "dur": 5.26,
+      "segmentos": [
+        {
+          "voz": "pt",
+          "texto": "Chegou a hora! Todos a bordo! Conte comigo, de trás para a frente!",
+          "ini": 0,
+          "fim": 5.26
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v6_conta_10a6": {
+      "texto": "Ten... nine... eight... seven... six...",
+      "dur": 5.79,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 0.54
+        },
+        {
+          "ini": 1.34,
+          "fim": 2.02
+        },
+        {
+          "ini": 2.82,
+          "fim": 3.13
+        },
+        {
+          "ini": 3.93,
+          "fim": 4.59
+        },
+        {
+          "ini": 5.39,
+          "fim": 5.79
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v6_conta_5a1": {
+      "texto": "Five... four... three... two... one!",
+      "dur": 5.93,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 0.51
+        },
+        {
+          "ini": 1.31,
+          "fim": 1.84
+        },
+        {
+          "ini": 2.64,
+          "fim": 3.13
+        },
+        {
+          "ini": 3.93,
+          "fim": 4.53
+        },
+        {
+          "ini": 5.33,
+          "fim": 5.93
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v6_f_bip": {
+      "texto": "Blast off!",
+      "dur": 0.67,
+      "segmentos": [
+        {
+          "voz": "bip",
+          "texto": "Blast off!",
+          "ini": 0,
+          "fim": 0.67
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v6_f_lua": {
+      "texto": "Uhuuu! Chegamos à Lua! Você contou até dez em inglês!",
+      "dur": 4.89,
+      "segmentos": [
+        {
+          "voz": "pt",
+          "texto": "Uhuuu! Chegamos à Lua! Você contou até dez em inglês!",
+          "ini": 0,
+          "fim": 5.03
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v6_tchau": {
+      "texto": "Bye-bye! Tchau, amiguinho!",
+      "dur": 2.13,
+      "segmentos": [
+        {
+          "voz": "en",
+          "texto": "Bye-bye!",
+          "ini": 0,
+          "fim": 0.57
+        },
+        {
+          "voz": "pt",
+          "texto": "Tchau, amiguinho!",
+          "ini": 1.17,
+          "fim": 2.13
+        }
+      ],
+      "estilo": "animada"
+    }
+  }
+}

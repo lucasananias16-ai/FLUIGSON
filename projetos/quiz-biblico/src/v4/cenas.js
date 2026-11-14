@@ -82,6 +82,7 @@ const comNeve = (opts = {}) => {
   const opsExtra = extra.ops;
   return Object.assign({}, resto, {
     fundo: noel.fundoNeve,
+    tutiOpts: { gorro: true },
     extra: Object.assign({}, extra, {
       ops: (t, T) => [{ id: 'neveF', html: noel.flocos(t + tG0) }].concat(opsExtra ? opsExtra(t, T) : []),
     }),

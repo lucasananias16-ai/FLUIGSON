@@ -53,3 +53,5 @@ Leia primeiro o `README.md`. Este arquivo é o roteiro de trabalho. Os Vídeos 1
 - Acessórios na Tuti (o gorro do Vídeo 4) ficam desligados por padrão, para não mudar vídeos antigos. Ligue com `gorro: true` em `tuti()` e em `tutiFrame()`.
 - Narração com mais de uma voz ou língua (Vídeo 5): marque no texto `{en: ...}` e o nome do bicho; o gerador grava cada trecho com a voz do `roteiro.js` e emenda. Pontuação logo depois da marca fica junto do trecho, e frases soltas de uma palavra em português (como "e") saem estranhas: reescreva para não haver. A pausa de 3 segundos para a criança repetir fica na cena, não no áudio.
 - A conferência do inglês precisa de ouvido humano: avise o dono, com a lista das palavras, para ouvir principalmente as mais difíceis.
+- Acessórios da Tuti nas cenas de cards passam por `tutiOpts` de `criarCenaCards`. No Vídeo 4 a Tuti ficou sem gorro nessas cenas até isso ser corrigido: confira a Tuti em todas as cenas, não só na abertura.
+- Rode `freezedetect` no vídeo final: um trecho parado de mais de 3 s costuma ser uma fala sem ninguém se mexendo na tela.

@@ -32,8 +32,9 @@ const { LINE, CARD, f, OLHANDO, APONTANDO, PENSANDO, PENSANDO_FRENTE, COMEMORA, 
  *  - layout: { cx, cy, escala, timer } para cards menores ou em outro lugar
  *  - extra: { css, antes, ops(t, T), sons(T) } para peças a mais na cena
  *  - fundo: função que desenha o fundo (o padrão é o céu com gramado)
+ *  - tutiOpts: opções da Tuti nesta cena (gorro, capacete)
  */
-function criarCenaCards({ num, q, narrDir, idPergunta, idResposta, contagem, tGlobal0 = 0, entrada = null, saida = null, layout = {}, extra = {}, fundo = null }) {
+function criarCenaCards({ num, q, narrDir, idPergunta, idResposta, contagem, tGlobal0 = 0, entrada = null, saida = null, layout = {}, extra = {}, fundo = null, tutiOpts = {} }) {
   const NARR = narrDir;
   const CX = layout.cx || [432, 920, 1408];
   const CY = layout.cy === undefined ? 232 : layout.cy;
@@ -244,7 +245,7 @@ function criarCenaCards({ num, q, narrDir, idPergunta, idResposta, contagem, tGl
       ops.push({ id: 'timer', style: `transform:scale(${f(ts)})`, html: timerSvg(shown, 1 - el / CONT, pulse) });
     }
 
-    ops.push({ id: 'tuti', html: tutiFrame(t, { track, fala, pulos, tGlobal: t + tGlobal0 }) });
+    ops.push({ id: 'tuti', html: tutiFrame(t, Object.assign({ track, fala, pulos, tGlobal: t + tGlobal0 }, tutiOpts)) });
     ops.push({ id: 'fx', html: fx(t) });
     if (extra.ops) ops.push(...extra.ops(t, T));
     ops.push({ id: 'fade', style: veu(t, dur, { entrada, saida }) });

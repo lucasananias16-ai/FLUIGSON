@@ -55,6 +55,7 @@ const BASE = {
   earR: 0,
   extras: null, // 'wave' | 'sparkles'
   shadow: true,
+  capacete: false, // capacete de astronauta (Vídeo 6)
   gorro: false, // gorro de Papai Noel (Vídeo 4); desligado, o desenho é o de sempre
 };
 
@@ -187,6 +188,18 @@ function star(x, y, r, rot = 0, fill = C.star) {
   return `<path transform="translate(${n(x)},${n(y)}) rotate(${rot})" d="M0 ${-r} Q${a} ${-a} ${r} 0 Q${a} ${a} 0 ${r} Q${-a} ${a} ${-r} 0 Q${-a} ${-a} 0 ${-r}Z" fill="${fill}" stroke="${C.line}" stroke-width="7" stroke-linejoin="round"/>`;
 }
 
+/** Capacete de astronauta: redoma de vidro em volta da cabeça, com brilho e uma antena. Coordenadas da cabeça. */
+function capaceteAstro() {
+  return (
+    `<path d="M-250 196 Q0 262 250 196 L236 150 Q0 208 -236 150Z" fill="#DCE4F2" stroke="${C.line}" stroke-width="${O}" stroke-linejoin="round"/>` +
+    `<ellipse cx="0" cy="-36" rx="336" ry="292" fill="#BFE3FF" fill-opacity="0.2" stroke="${C.line}" stroke-width="${O}"/>` +
+    `<path d="M-262 -150 Q-200 -270 -70 -300" fill="none" stroke="#FFFFFF" stroke-width="20" stroke-linecap="round" opacity="0.85"/>` +
+    `<path d="M-286 -70 Q-282 -96 -274 -116" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="round" opacity="0.85"/>` +
+    `<path d="M150 -296 L190 -392" fill="none" stroke="${C.line}" stroke-width="12" stroke-linecap="round"/>` +
+    `<circle cx="192" cy="-400" r="22" fill="#E25A52" stroke="${C.line}" stroke-width="8"/>`
+  );
+}
+
 /** Gorro de Papai Noel: vermelho, com faixa de pelo e pompom caído para o lado. Coordenadas da cabeça. */
 function gorroNatal() {
   const vermelho = '#E25A52';
@@ -312,6 +325,7 @@ function head(p) {
   );
 
   if (p.gorro) g.push(gorroNatal());
+  if (p.capacete) g.push(capaceteAstro());
 
   return g.join('');
 }
@@ -447,7 +461,7 @@ function tutiSvg(pose, override = {}, { width = 1000, height = 1100, prefix = 't
   uid = 0;
   idPrefix = prefix;
   // com o gorro, a ponta passa do alto do desenho quando a Tuti pula: deixa aparecer
-  const gorro = override.gorro || (typeof pose === 'object' && pose && pose.gorro);
+  const gorro = override.gorro || override.capacete || (typeof pose === 'object' && pose && (pose.gorro || pose.capacete));
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1100" width="${width}" height="${height}"${gorro ? ' overflow="visible"' : ''}>${tuti(pose, override)}</svg>`;
 }
 
