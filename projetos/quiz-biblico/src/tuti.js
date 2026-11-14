@@ -55,6 +55,7 @@ const BASE = {
   earR: 0,
   extras: null, // 'wave' | 'sparkles'
   shadow: true,
+  boina: false, // boina de pintora (Vídeo 7)
   capacete: false, // capacete de astronauta (Vídeo 6)
   gorro: false, // gorro de Papai Noel (Vídeo 4); desligado, o desenho é o de sempre
 };
@@ -186,6 +187,18 @@ function squircle(rx, ry, k = 2.6, steps = 72) {
 function star(x, y, r, rot = 0, fill = C.star) {
   const a = r * 0.24;
   return `<path transform="translate(${n(x)},${n(y)}) rotate(${rot})" d="M0 ${-r} Q${a} ${-a} ${r} 0 Q${a} ${a} 0 ${r} Q${-a} ${a} ${-r} 0 Q${-a} ${-a} 0 ${-r}Z" fill="${fill}" stroke="${C.line}" stroke-width="7" stroke-linejoin="round"/>`;
+}
+
+/** Boina de pintora: vermelha, caída para o lado, com um cabinho no topo. Coordenadas da cabeça. */
+function boinaPintora() {
+  return (
+    `<g transform="rotate(-10 -20 -200)">` +
+    `<path d="M-6 -286 L12 -330" fill="none" stroke="${C.line}" stroke-width="18" stroke-linecap="round"/>` +
+    `<ellipse cx="-30" cy="-222" rx="218" ry="76" fill="#E25A52" stroke="${C.line}" stroke-width="${O}"/>` +
+    `<path d="M-200 -236 Q-90 -290 60 -276" fill="none" stroke="#F08A80" stroke-width="12" stroke-linecap="round"/>` +
+    `<path d="M-190 -172 Q-30 -130 140 -176" fill="none" stroke="#C2443D" stroke-width="20" stroke-linecap="round"/>` +
+    `</g>`
+  );
 }
 
 /** Capacete de astronauta: redoma de vidro em volta da cabeça, com brilho e uma antena. Coordenadas da cabeça. */
@@ -326,6 +339,7 @@ function head(p) {
 
   if (p.gorro) g.push(gorroNatal());
   if (p.capacete) g.push(capaceteAstro());
+  if (p.boina) g.push(boinaPintora());
 
   return g.join('');
 }

@@ -53,13 +53,14 @@ function blink(t) {
  *  - ajuste(p, t): retoque livre na pose (por exemplo, o vaivém do aceno)
  *  - gorro: a Tuti usa gorro de Papai Noel (Vídeo 4); capacete: de astronauta (Vídeo 6)
  */
-function tutiFrame(t, { track, fala, pulos = [], tGlobal = t, width = 560, height = 616, ajuste = null, gorro = false, capacete = false }) {
+function tutiFrame(t, { track, fala, pulos = [], tGlobal = t, width = 560, height = 616, ajuste = null, gorro = false, capacete = false, boina = false }) {
   const p = poseAt(track, t);
   if (ajuste) ajuste(p, t);
   p.extras = null;
   p.shadow = true;
   p.gorro = gorro;
   p.capacete = capacete;
+  p.boina = boina;
 
   // respiração e balanço
   p.squash *= 1 + 0.012 * Math.sin((tGlobal * 2 * Math.PI) / 2.3);

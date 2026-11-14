@@ -95,3 +95,9 @@ Posição da resposta certa: meio no jogo 2, esquerda no jogo 3, direita no jogo
 3. **Mistura mágica** só com uma mistura (yellow + blue = green), para não confundir.
 4. **Título sugerido:** `Cores em Inglês para Crianças: pinte o arco-íris com a Tuti`.
 5. **Playlist:** a mesma "Inglês para Crianças".
+
+## O que mudou na produção
+
+- A pergunta do jogo 3 ficou "Mistura mágica: yellow e blue viram qual cor?", sem o "Hora da", para as pausas maiores da fala serem as que separam as opções.
+- A Tuti usa a boina, mas não segura um pincel: o desenho dela não tem como segurar objetos.
+- A borboleta ganha cor junto com a laranja e as flores junto com a uva.

@@ -1,0 +1,704 @@
+{
+  "voz": {
+    "nome": "pt-BR-Chirp3-HD-Leda",
+    "velocidade": 0.94,
+    "estilo": "animada",
+    "vozes": {
+      "pt": {
+        "nome": "pt-BR-Chirp3-HD-Leda",
+        "lang": "pt-BR",
+        "velocidade": 0.94
+      },
+      "en": {
+        "nome": "en-US-Chirp3-HD-Leda",
+        "lang": "en-US",
+        "velocidade": 0.88
+      },
+      "leo": {
+        "nome": "en-US-Chirp3-HD-Umbriel",
+        "lang": "en-US",
+        "velocidade": 0.9
+      }
+    }
+  },
+  "falas": {
+    "v7_ab_1": {
+      "texto": "Hello! Oi, amiguinho! Olha só: as cores sumiram! Ficou tudo cinza! Este é o meu amigo, o camaleão Leo.",
+      "dur": 9.311,
+      "segmentos": [
+        {
+          "voz": "en",
+          "texto": "Hello!",
+          "ini": 0,
+          "fim": 0.58
+        },
+        {
+          "voz": "pt",
+          "texto": "Oi, amiguinho! Olha só: as cores sumiram! Ficou tudo cinza! Este é o meu amigo, o camaleão Leo.",
+          "ini": 1.18,
+          "fim": 9.311
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v7_ab_leo": {
+      "texto": "Hello! I am Leo!",
+      "dur": 1.62,
+      "segmentos": [
+        {
+          "voz": "leo",
+          "texto": "Hello! I am Leo!",
+          "ini": 0,
+          "fim": 1.62
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v7_ab_2": {
+      "texto": "Para as cores voltarem, a gente precisa dizer o nome delas em inglês. Você me ajuda? Pegue o seu pincel!",
+      "dur": 6.88,
+      "segmentos": [
+        {
+          "voz": "pt",
+          "texto": "Para as cores voltarem, a gente precisa dizer o nome delas em inglês. Você me ajuda? Pegue o seu pincel!",
+          "ini": 0,
+          "fim": 6.88
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v7_c_red": {
+      "texto": "A maçã é vermelha. Em inglês, vermelho é red! Sua vez: red!",
+      "dur": 6.553,
+      "segmentos": [
+        {
+          "voz": "pt",
+          "texto": "A maçã é vermelha. Em inglês, vermelho é,",
+          "ini": 0,
+          "fim": 3.973
+        },
+        {
+          "voz": "en",
+          "texto": "red!",
+          "ini": 4.063,
+          "fim": 4.543
+        },
+        {
+          "voz": "pt",
+          "texto": "Sua vez:,",
+          "ini": 5.143,
+          "fim": 5.983
+        },
+        {
+          "voz": "en",
+          "texto": "red!",
+          "ini": 6.073,
+          "fim": 6.553
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v7_leo_red": {
+      "texto": "Red!",
+      "dur": 0.42,
+      "segmentos": [
+        {
+          "voz": "leo",
+          "texto": "Red!",
+          "ini": 0,
+          "fim": 0.42
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v7_c_yellow": {
+      "texto": "O sol é amarelo. Em inglês, amarelo é yellow! Sua vez: yellow!",
+      "dur": 7.037,
+      "segmentos": [
+        {
+          "voz": "pt",
+          "texto": "O sol é amarelo. Em inglês, amarelo é,",
+          "ini": 0,
+          "fim": 3.837
+        },
+        {
+          "voz": "en",
+          "texto": "yellow!",
+          "ini": 3.927,
+          "fim": 4.737
+        },
+        {
+          "voz": "pt",
+          "texto": "Sua vez:,",
+          "ini": 5.337,
+          "fim": 6.177
+        },
+        {
+          "voz": "en",
+          "texto": "yellow!",
+          "ini": 6.267,
+          "fim": 7.037
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v7_leo_yellow": {
+      "texto": "Yellow!",
+      "dur": 0.57,
+      "segmentos": [
+        {
+          "voz": "leo",
+          "texto": "Yellow!",
+          "ini": 0,
+          "fim": 0.57
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v7_c_blue": {
+      "texto": "O céu é azul. Em inglês, azul é blue! Sua vez: blue!",
+      "dur": 5.982,
+      "segmentos": [
+        {
+          "voz": "pt",
+          "texto": "O céu é azul. Em inglês, azul é,",
+          "ini": 0,
+          "fim": 3.25
+        },
+        {
+          "voz": "en",
+          "texto": "blue!",
+          "ini": 3.34,
+          "fim": 3.892
+        },
+        {
+          "voz": "pt",
+          "texto": "Sua vez:,",
+          "ini": 4.492,
+          "fim": 5.332
+        },
+        {
+          "voz": "en",
+          "texto": "blue!",
+          "ini": 5.422,
+          "fim": 5.982
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v7_leo_blue": {
+      "texto": "Blue!",
+      "dur": 0.644,
+      "segmentos": [
+        {
+          "voz": "leo",
+          "texto": "Blue!",
+          "ini": 0,
+          "fim": 0.644
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v7_c_green": {
+      "texto": "A grama é verde. Em inglês, verde é green! Sua vez: green!",
+      "dur": 6.45,
+      "segmentos": [
+        {
+          "voz": "pt",
+          "texto": "A grama é verde. Em inglês, verde é,",
+          "ini": 0,
+          "fim": 3.46
+        },
+        {
+          "voz": "en",
+          "texto": "green!",
+          "ini": 3.55,
+          "fim": 4.24
+        },
+        {
+          "voz": "pt",
+          "texto": "Sua vez:,",
+          "ini": 4.84,
+          "fim": 5.67
+        },
+        {
+          "voz": "en",
+          "texto": "green!",
+          "ini": 5.76,
+          "fim": 6.45
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v7_leo_green": {
+      "texto": "Green!",
+      "dur": 0.49,
+      "segmentos": [
+        {
+          "voz": "leo",
+          "texto": "Green!",
+          "ini": 0,
+          "fim": 0.49
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v7_c_orange": {
+      "texto": "A laranja é laranja! Em inglês, laranja é orange! Sua vez: orange!",
+      "dur": 6.377,
+      "segmentos": [
+        {
+          "voz": "pt",
+          "texto": "A laranja é laranja! Em inglês, laranja é,",
+          "ini": 0,
+          "fim": 3.511
+        },
+        {
+          "voz": "en",
+          "texto": "orange!",
+          "ini": 3.601,
+          "fim": 4.241
+        },
+        {
+          "voz": "pt",
+          "texto": "Sua vez:,",
+          "ini": 4.841,
+          "fim": 5.647
+        },
+        {
+          "voz": "en",
+          "texto": "orange!",
+          "ini": 5.737,
+          "fim": 6.377
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v7_leo_orange": {
+      "texto": "Orange!",
+      "dur": 0.594,
+      "segmentos": [
+        {
+          "voz": "leo",
+          "texto": "Orange!",
+          "ini": 0,
+          "fim": 0.594
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v7_c_purple": {
+      "texto": "A uva é roxa. Em inglês, roxo é purple! Sua vez: purple!",
+      "dur": 6.55,
+      "segmentos": [
+        {
+          "voz": "pt",
+          "texto": "A uva é roxa. Em inglês, roxo é,",
+          "ini": 0,
+          "fim": 3.569
+        },
+        {
+          "voz": "en",
+          "texto": "purple!",
+          "ini": 3.659,
+          "fim": 4.309
+        },
+        {
+          "voz": "pt",
+          "texto": "Sua vez:,",
+          "ini": 4.909,
+          "fim": 5.749
+        },
+        {
+          "voz": "en",
+          "texto": "purple!",
+          "ini": 5.839,
+          "fim": 6.55
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v7_leo_purple": {
+      "texto": "Purple!",
+      "dur": 0.44,
+      "segmentos": [
+        {
+          "voz": "leo",
+          "texto": "Purple!",
+          "ini": 0,
+          "fim": 0.44
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v7_muito_bem": {
+      "texto": "Very good!",
+      "dur": 0.73,
+      "segmentos": [
+        {
+          "voz": "en",
+          "texto": "Very good!",
+          "ini": 0,
+          "fim": 0.73
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v7_j1_intro": {
+      "texto": "O Leo vai mudar de cor. Diga a cor em inglês bem rápido!",
+      "dur": 3.81,
+      "segmentos": [
+        {
+          "voz": "pt",
+          "texto": "O Leo vai mudar de cor. Diga a cor em inglês bem rápido!",
+          "ini": 0,
+          "fim": 3.81
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v7_j1_blue": {
+      "texto": "Blue!",
+      "dur": 0.49,
+      "segmentos": [
+        {
+          "voz": "en",
+          "texto": "Blue!",
+          "ini": 0,
+          "fim": 0.49
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v7_j1_red": {
+      "texto": "Red!",
+      "dur": 0.34,
+      "segmentos": [
+        {
+          "voz": "en",
+          "texto": "Red!",
+          "ini": 0,
+          "fim": 0.34
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v7_j1_yellow": {
+      "texto": "Yellow!",
+      "dur": 0.638,
+      "segmentos": [
+        {
+          "voz": "en",
+          "texto": "Yellow!",
+          "ini": 0,
+          "fim": 0.638
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v7_j2_pergunta": {
+      "texto": "Qual é o green? O vermelho... o verde... ou o roxo?",
+      "dur": 6.5,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.36
+        },
+        {
+          "ini": 2.26,
+          "fim": 3.05
+        },
+        {
+          "ini": 4.05,
+          "fim": 4.73
+        },
+        {
+          "ini": 5.73,
+          "fim": 6.5
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v7_j2_resposta": {
+      "texto": "O verde! Green! Muito bem!",
+      "dur": 3.184,
+      "segmentos": [
+        {
+          "voz": "pt",
+          "texto": "O verde!",
+          "ini": 0,
+          "fim": 0.8
+        },
+        {
+          "voz": "en",
+          "texto": "Green!",
+          "ini": 1.4,
+          "fim": 1.854
+        },
+        {
+          "voz": "pt",
+          "texto": "Muito bem!",
+          "ini": 2.454,
+          "fim": 3.184
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v7_j3_pergunta": {
+      "texto": "Mistura mágica: yellow e blue viram qual cor? Verde... laranja... ou roxo?",
+      "dur": 8.73,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 3.67
+        },
+        {
+          "ini": 4.57,
+          "fim": 5.3
+        },
+        {
+          "ini": 6.3,
+          "fim": 7.09
+        },
+        {
+          "ini": 8.09,
+          "fim": 8.73
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v7_j3_resposta": {
+      "texto": "Viram verde! Green! Que mágica!",
+      "dur": 3.69,
+      "segmentos": [
+        {
+          "voz": "pt",
+          "texto": "Viram verde!",
+          "ini": 0,
+          "fim": 0.91
+        },
+        {
+          "voz": "en",
+          "texto": "Green!",
+          "ini": 1.51,
+          "fim": 2.12
+        },
+        {
+          "voz": "pt",
+          "texto": "Que mágica!",
+          "ini": 2.72,
+          "fim": 3.7
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v7_j4_pergunta": {
+      "texto": "Qual não é red? A maçã... o morango... ou a banana?",
+      "dur": 6.9,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.57
+        },
+        {
+          "ini": 2.47,
+          "fim": 3.24
+        },
+        {
+          "ini": 4.24,
+          "fim": 5.03
+        },
+        {
+          "ini": 6.03,
+          "fim": 6.9
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v7_j4_resposta": {
+      "texto": "A banana! Ela é yellow!",
+      "dur": 3.019,
+      "segmentos": [
+        {
+          "voz": "pt",
+          "texto": "A banana! Ela é,",
+          "ini": 0,
+          "fim": 2.119
+        },
+        {
+          "voz": "en",
+          "texto": "yellow!",
+          "ini": 2.209,
+          "fim": 3.019
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v7_j5_mostrar": {
+      "texto": "Olhe bem onde o blue está.",
+      "dur": 2.132,
+      "segmentos": [
+        {
+          "voz": "pt",
+          "texto": "Olhe bem onde o,",
+          "ini": 0,
+          "fim": 1.12
+        },
+        {
+          "voz": "en",
+          "texto": "blue,",
+          "ini": 1.21,
+          "fim": 1.71
+        },
+        {
+          "voz": "pt",
+          "texto": "está.",
+          "ini": 1.8,
+          "fim": 2.132
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v7_j5_pergunta": {
+      "texto": "As cartas trocaram de lugar! Onde está o azul? No um... no dois... ou no três?",
+      "dur": 7.7,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.66
+        },
+        {
+          "ini": 2.16,
+          "fim": 3.21
+        },
+        {
+          "ini": 4.01,
+          "fim": 4.51
+        },
+        {
+          "ini": 5.41,
+          "fim": 6.06
+        },
+        {
+          "ini": 6.96,
+          "fim": 7.7
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v7_j5_resposta": {
+      "texto": "No número um! Blue! Você tem olho bom!",
+      "dur": 3.746,
+      "segmentos": [
+        {
+          "voz": "pt",
+          "texto": "No número um!",
+          "ini": 0,
+          "fim": 0.94
+        },
+        {
+          "voz": "en",
+          "texto": "Blue!",
+          "ini": 1.54,
+          "fim": 2.046
+        },
+        {
+          "voz": "pt",
+          "texto": "Você tem olho bom!",
+          "ini": 2.646,
+          "fim": 3.746
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v7_f_intro": {
+      "texto": "As cores voltaram! Agora o arco-íris! Diga comigo!",
+      "dur": 4.13,
+      "segmentos": [
+        {
+          "voz": "pt",
+          "texto": "As cores voltaram! Agora o arco-íris! Diga comigo!",
+          "ini": 0,
+          "fim": 4.14
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v7_conta_cores": {
+      "texto": "Red... orange... yellow... green... blue... purple!",
+      "dur": 7.246,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 0.46
+        },
+        {
+          "ini": 1.16,
+          "fim": 1.88
+        },
+        {
+          "ini": 2.58,
+          "fim": 3.31
+        },
+        {
+          "ini": 4.01,
+          "fim": 4.72
+        },
+        {
+          "ini": 5.42,
+          "fim": 6.02
+        },
+        {
+          "ini": 6.72,
+          "fim": 7.246
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v7_f_leo": {
+      "texto": "Rainbow!",
+      "dur": 0.55,
+      "segmentos": [
+        {
+          "voz": "leo",
+          "texto": "Rainbow!",
+          "ini": 0,
+          "fim": 0.55
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v7_f_fim": {
+      "texto": "Que lindo! Você pintou o mundo em inglês!",
+      "dur": 2.95,
+      "segmentos": [
+        {
+          "voz": "pt",
+          "texto": "Que lindo! Você pintou o mundo em inglês!",
+          "ini": 0,
+          "fim": 2.99
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v7_tchau": {
+      "texto": "Bye-bye! Tchau, amiguinho!",
+      "dur": 2.2,
+      "segmentos": [
+        {
+          "voz": "en",
+          "texto": "Bye-bye!",
+          "ini": 0,
+          "fim": 0.55
+        },
+        {
+          "voz": "pt",
+          "texto": "Tchau, amiguinho!",
+          "ini": 1.15,
+          "fim": 2.2
+        }
+      ],
+      "estilo": "animada"
+    }
+  }
+}

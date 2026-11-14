@@ -101,6 +101,15 @@ A Tuti, de capacete de astronauta, e o robô Bip treinam os números em inglês 
 | 1 a 6 | Narrativa, imagens, narração, animação (4 min 19 s), legendas e pacote do YouTube | Aprovadas (2 a 6 pelo Claude, por decisão do dono do canal; a pronúncia do inglês depende de quem ouvir) |
 | 7 | Publicação | Pronto para subir. O passo a passo está em `v6-ingles-numeros/youtube/como-publicar.md` |
 
+### Vídeo 7 — Inglês com a Tuti: o Arco-Íris Sumiu (cores)
+
+O mundo fica cinza e cada parte se pinta quando a criança diz a cor em inglês (red, yellow, blue, green, orange, purple). A Tuti usa boina de pintora (opção `boina` de `tuti.js`) e o amigo novo é o camaleão Leo. Código em `src/v7/` e `art/cores.js`; arquivos em `v7-ingles-cores/`.
+
+| Nº | Etapa | Situação |
+|---|---|---|
+| 1 a 6 | Narrativa, imagens, narração, animação (4 min 23 s), legendas e pacote do YouTube | Aprovadas (2 a 6 pelo Claude, por decisão do dono do canal; a pronúncia do inglês depende de quem ouvir) |
+| 7 | Publicação | Pronto para subir. O passo a passo está em `v7-ingles-cores/youtube/como-publicar.md` |
+
 ## Pastas
 
 - `v5-ingles-animais/` — arquivos do Vídeo 5, na mesma organização do Vídeo 4
@@ -181,6 +190,10 @@ node src/v5/video.js
 
 ```bash
 node src/v6/video.js
+```
+
+```bash
+node src/v7/video.js
 ```
 
 Cada comando monta um vídeo inteiro em `_rascunho/video/` (pasta fora do repositório): `v1_quiz_arca_de_noe.mp4`, `v2_desafios_de_davi_e_golias.mp4` e `v3_desafios_do_natal_de_jesus.mp4` e `v4_quiz_do_papai_noel.mp4` e `v5_festa_dos_animais.mp4`. Também grava as legendas e o mapa do vídeo na pasta de cada um. Cada cena é um trecho separado; só os trechos que mudaram são renderizados de novo. Um vídeo de 4 minutos leva cerca de 5 minutos para renderizar do zero.
