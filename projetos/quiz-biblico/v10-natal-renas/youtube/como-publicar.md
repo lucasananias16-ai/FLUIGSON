@@ -42,7 +42,7 @@ Cópia no Google Drive: crie uma pasta para este vídeo ao lado das dos Vídeos 
 5. **Público:** marque **"Sim, é conteúdo para crianças"**. Já vem marcado pelo padrão do canal, mas confira.
 6. Clique em **Mostrar mais** e preencha:
    - **Declaração de uso de IA:** responda **Não**, como no Vídeo 1. A regra do YouTube vale para conteúdo que parece real, e animação entra na lista do que não precisa ser declarado. A voz da Tuti é sintética (Google Cloud Text-to-Speech) e a trilha foi composta por código; a página oficial não trata de narração sintética em desenho animado, então, se o YouTube mudar a regra ou pedir a declaração, revise essa resposta.
-   - **Tags:** cole a linha de tags do arquivo de textos. Deve usar cerca de 340 dos 500 caracteres.
+   - **Tags:** cole a linha de tags do arquivo de textos. Deve usar cerca de 383 dos 500 caracteres.
    - **Idioma do vídeo:** Português (Brasil). Na lista, procure por "Português (Brasil)", que fica logo depois de "Português".
    - **Categoria:** Educação.
    - Deixe os capítulos automáticos e a incorporação como estão.
