@@ -38,7 +38,16 @@ Cópia no Google Drive: crie uma pasta para este vídeo ao lado das dos Vídeos 
 2. **Descrição:** cole o bloco da descrição do arquivo de textos, do "Vamos brincar..." até as hashtags. Os capítulos já estão dentro.
    - Ao terminar de colar as hashtags, o YouTube abre uma lista de sugestões. Aperte **Esc** para fechá-la.
 3. **Miniatura:** clique em **Enviar miniatura** e escolha `youtube/v4_thumbnail.png`.
-4. **Playlist:** este vídeo não é bíblico, então vale criar uma playlist **Quiz de Natal** (ou escolher a que você preferir). Se quiser que ele apareça junto dos outros quizzes, adicione também à **Quiz Bíblico Infantil**.
+4. **Playlist:** este vídeo não é bíblico, então ele entra numa playlist nova, a **Quiz de Natal**. Crie assim, ali mesmo na tela de envio:
+   1. Em **Playlists**, clique em **Selecionar**.
+   2. Clique em **Nova playlist**.
+   3. **Título:** `Quiz de Natal`.
+   4. **Visibilidade:** **Pública**. Enquanto o vídeo estiver como Privado, ninguém vê ele dentro da playlist; ele aparece sozinho quando você mudar para Público.
+   5. Clique em **Criar**. A playlist nova aparece na lista, já marcada.
+   6. Confirme que a caixinha **Quiz de Natal** está marcada e clique em **Concluído**.
+   - Se quiser que o vídeo apareça também junto dos quizzes bíblicos, marque **Quiz Bíblico Infantil** além da nova.
+   - Depois, no Studio, vá em **Conteúdo > Playlists**, abra a **Quiz de Natal** e use **Editar** para colocar a descrição: `Quizzes de Natal para crianças de 3 a 7 anos, com a ovelhinha Tuti. Perguntas faladas, respostas em desenhos e 10 segundos para pensar.`
+   - Os próximos vídeos de Natal, quando houver, entram nessa mesma playlist.
 5. **Público:** marque **"Sim, é conteúdo para crianças"**. Já vem marcado pelo padrão do canal, mas confira.
 6. Clique em **Mostrar mais** e preencha:
    - **Declaração de uso de IA:** responda **Não**, como no Vídeo 1. A regra do YouTube vale para conteúdo que parece real, e animação entra na lista do que não precisa ser declarado. A voz da Tuti é sintética (Google Cloud Text-to-Speech) e a trilha foi composta por código; a página oficial não trata de narração sintética em desenho animado, então, se o YouTube mudar a regra ou pedir a declaração, revise essa resposta.
@@ -88,7 +97,7 @@ O YouTube desativa nesses vídeos: comentários, sininho de notificação, anún
 ## Depois de publicar
 
 - Confira capítulos e legendas no player.
-- Confira se o vídeo entrou na playlist certa. Sem cards nem tela final, a playlist é o que leva a criança de um vídeo para o outro.
+- Confira se o vídeo entrou na playlist **Quiz de Natal** (e na bíblica, se você marcou as duas). Sem cards nem tela final, a playlist é o que leva a criança de um vídeo para o outro.
 - Em 1 ou 2 semanas, veja no **Analytics** a taxa de cliques das impressões. Se estiver baixa, teste um dos títulos de reserva do arquivo de textos.
 - Compare a **retenção de público** com a do Vídeo 1: este também tem desafios de tipos diferentes (achar, contar, sombra, memória), e o gráfico mostra quais prendem mais.
 
