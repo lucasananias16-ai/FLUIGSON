@@ -17,6 +17,11 @@
  * Entre as partes entra o silêncio pedido em `pausas`: é o tempo de cada card
  * virar ou de cada pedrinha acender.
  *
+ * Falas com vários idiomas ou vozes (o vídeo de inglês) trazem `segmentos`:
+ * [{ voz: 'pt' | 'en' | 'leao'..., texto }]. Cada segmento é gravado com a voz
+ * de `voz.vozes[chave]`, nivelado e emendado nos outros, e a fala segue o
+ * caminho normal (conferência, partes, nível).
+ *
  * Opções de linha de comando (em `args`): ids de falas, `--refazer` (monta de
  * novo a partir das tomadas guardadas) e `--nova-tomada` (pede gravações novas).
  */
@@ -49,7 +54,8 @@ function textoParaVoz(fala, estilo) {
 }
 
 /** Distância, em semitons, entre a altura da voz da tomada e o alvo. */
-function distanciaDoAlvo(wav) {
+function distanciaDoAlvo(wav, fala = {}) {
+  if (fala.semAlvo) return 0; // fala de outra voz (um bicho): a altura da Tuti não vale
   const p = A.pitchStats(wav.data, wav.rate);
   return p.mediana ? Math.abs(12 * Math.log2(p.mediana / ALTURA_ALVO)) : 99;
 }
@@ -61,6 +67,48 @@ function nivelar(data, rate) {
   const rms = Math.sqrt(loud.reduce((a, v) => a + v * v, 0) / Math.max(1, loud.length));
   const gain = Math.min(0.126 / rms, 0.9 / A.peak(data)); // alvo: -18 dB RMS, pico até -1 dB
   return data.map((v) => v * gain);
+}
+
+/**
+ * Grava uma tomada feita de segmentos, cada um com a sua voz. A pausa entre
+ * dois segmentos é curta no meio de uma frase e mais longa depois de ponto,
+ * exclamação ou interrogação, para as partes de uma pergunta ficarem separadas.
+ */
+async function gravarSegmentos(fala, voz, estilo, arq) {
+  const pecas = [];
+  for (let i = 0; i < fala.segmentos.length; i++) {
+    const seg = fala.segmentos[i];
+    const v = voz.vozes[seg.voz];
+    const tmp = arq.replace(/\.wav$/, `.s${i}.wav`);
+    const texto = v.ruidoso ? seg.texto : textoParaVoz({ texto: seg.texto, tipo: fala.tipo }, estilo);
+    await synth({ voice: v.nome, lang: v.lang, text: texto, rate: v.velocidade, sampleRate: SR, out: tmp });
+    const w = A.readWav(tmp);
+    pecas.push(nivelar(A.fadeEdges(A.trim(w.data, w.rate, 0.03), w.rate), w.rate));
+    if (i < fala.segmentos.length - 1) pecas.push(A.silence(/[.!?…]\s*$/.test(seg.texto) ? 0.6 : 0.09, SR));
+  }
+  A.writeWav(arq, A.concat(pecas), SR);
+}
+
+/**
+ * Quando cada segmento de uma tomada começa e termina na fala final (sem as
+ * partes). Lê de novo os pedaços gravados, na mesma conta de `gravarSegmentos`,
+ * e desconta o silêncio que `montar` corta do começo.
+ */
+function marcarSegmentos(fala, arq, wav) {
+  const marcas = [];
+  let t = 0;
+  fala.segmentos.forEach((seg, i) => {
+    const tmp = arq.replace(/\.wav$/, `.s${i}.wav`);
+    if (!fs.existsSync(tmp)) return;
+    const w = A.readWav(tmp);
+    const dur = A.trim(w.data, w.rate, 0.03).length / w.rate;
+    marcas.push({ voz: seg.voz, texto: seg.texto, ini: t, fim: t + dur });
+    t += dur + (/[.!?…]\s*$/.test(seg.texto) ? 0.6 : 0.09);
+  });
+  if (marcas.length !== fala.segmentos.length) return null;
+  const segs = A.speechSegments(wav.data, wav.rate, { minPause: 0.06, pad: 0 }).filter((x) => x.end - x.start >= 0.05);
+  const corte = segs.length ? Math.max(0, segs[0].start - 0.04) : 0;
+  return marcas.map((m) => ({ voz: m.voz, texto: m.texto, ini: +Math.max(0, m.ini - corte).toFixed(3), fim: +Math.max(0, m.fim - corte).toFixed(3) }));
 }
 
 /** Examina uma tomada e devolve os problemas encontrados (lista vazia = boa). */
@@ -89,7 +137,7 @@ function avaliar(fala, wav) {
 }
 
 /** Monta o áudio final de uma fala e devolve os tempos dela. */
-function montar(fala, wav, partes, outDir) {
+function montar(fala, wav, partes, outDir, arq) {
   const { data, rate } = wav;
   const total = data.length / rate;
   let final;
@@ -117,6 +165,10 @@ function montar(fala, wav, partes, outDir) {
   A.writeWav(path.join(outDir, `${fala.id}.wav`), final, rate);
   const info = { texto: fala.texto, dur: +(final.length / rate).toFixed(3) };
   if (marcas) info.partes = marcas;
+  else if (fala.segmentos && arq) {
+    const segs = marcarSegmentos(fala, arq, wav);
+    if (segs) info.segmentos = segs; // para a animação saber quando cada palavra em inglês é dita
+  }
   return info;
 }
 
@@ -150,16 +202,17 @@ async function narrar({ falas, voz, outDir, takesDir, args = [], semServico = fa
     const candidatas = [];
     if (fs.existsSync(aprovada) && !novaTomada) {
       const wav = A.readWav(aprovada);
-      candidatas.push({ k: 'aprovada', wav, av: avaliar(fala, wav), nota: 0 });
+      candidatas.push({ k: 'aprovada', wav, av: avaliar(fala, wav), nota: 0, arq: aprovada });
     } else {
       for (let k = 1; k <= TENTATIVAS; k++) {
         const arq = path.join(takesDir, `${fala.id}_${estilo}_t${k}.wav`);
         if (novaTomada || !fs.existsSync(arq)) {
           if (semServico) throw new Error(`falta a tomada ${path.basename(arq)}`);
-          await synth({ voice: voz.nome, text: textoParaVoz(fala, estilo), rate: voz.velocidade, sampleRate: SR, out: arq });
+          if (fala.segmentos) await gravarSegmentos(fala, voz, estilo, arq);
+          else await synth({ voice: voz.nome, text: textoParaVoz(fala, estilo), rate: voz.velocidade, sampleRate: SR, out: arq });
         }
         const wav = A.readWav(arq);
-        candidatas.push({ k, wav, av: avaliar(fala, wav), nota: distanciaDoAlvo(wav) });
+        candidatas.push({ k, wav, av: avaliar(fala, wav), nota: distanciaDoAlvo(wav, fala), arq });
       }
     }
     // a melhor tomada é a que tem menos problemas e, no empate, a mais próxima do nível aprovado
@@ -170,7 +223,7 @@ async function narrar({ falas, voz, outDir, takesDir, args = [], semServico = fa
       console.log(`FALHOU ${fala.id}: ${melhor.av.problemas.join('; ')}`);
       continue;
     }
-    manifest.falas[fala.id] = Object.assign(montar(fala, melhor.wav, melhor.av.partes, outDir), { estilo });
+    manifest.falas[fala.id] = Object.assign(montar(fala, melhor.wav, melhor.av.partes, outDir, melhor.arq), { estilo });
     const aviso = melhor.av.problemas.length ? `  ATENÇÃO: ${melhor.av.problemas.join('; ')}` : '';
     const p = A.pitchStats(melhor.wav.data, melhor.wav.rate);
     console.log(`${fala.id.padEnd(18)} tomada ${String(melhor.k).padEnd(8)} ${manifest.falas[fala.id].dur.toFixed(2).padStart(5)} s  voz ${p.mediana.toFixed(0)} Hz${aviso}`);

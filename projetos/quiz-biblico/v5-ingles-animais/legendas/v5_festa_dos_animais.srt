@@ -1,0 +1,260 @@
+1
+00:00:01,000 --> 00:00:01,980
+Hello!
+
+2
+00:00:02,060 --> 00:00:07,666
+Oi, amiguinho! Eu sou a Tuti! Hoje tem
+festa e a gente vai brincar de inglês!
+
+3
+00:00:08,016 --> 00:00:13,266
+Hello quer dizer oi, e a gente
+acena assim. Acene comigo!
+
+4
+00:00:13,616 --> 00:00:15,466
+Hello! Hello!
+
+5
+00:00:17,333 --> 00:00:21,086
+Eu sou uma ovelhinha.
+Em inglês, ovelha é
+
+6
+00:00:21,166 --> 00:00:28,716
+sheep! Faça o som comigo: béééé!
+
+7
+00:00:29,066 --> 00:00:30,266
+Sheep!
+
+8
+00:00:32,666 --> 00:00:35,236
+Very good! Muito bem!
+
+9
+00:00:37,000 --> 00:00:43,273
+Shhh... escute! Tem alguém
+na caixa! Rrrawr! Quem será?
+
+10
+00:00:43,723 --> 00:00:46,183
+Hello! I am a lion! Rrrawr!
+
+11
+00:00:46,283 --> 00:00:49,190
+O leão! Em inglês, leão é
+
+12
+00:00:49,270 --> 00:00:55,067
+lion! Faça garras e ruja comigo: rrrawr!
+
+13
+00:00:58,213 --> 00:01:00,463
+Very good! Muito bem!
+
+14
+00:01:02,233 --> 00:01:07,583
+Shhh... outra caixa! Pawooo! Quem será?
+
+15
+00:01:08,033 --> 00:01:11,863
+Hello! I am an elephant! Pawooo!
+
+16
+00:01:11,963 --> 00:01:15,013
+O elefante! Em inglês, elefante é
+
+17
+00:01:15,093 --> 00:01:18,693
+elephant! Balance o
+braço, que é a tromba!
+
+18
+00:01:21,833 --> 00:01:24,013
+Very good! Muito bem!
+
+19
+00:01:25,767 --> 00:01:29,198
+Uau, essa caixa é altíssima! Quem será?
+
+20
+00:01:29,648 --> 00:01:33,198
+Hello! I am a giraffe! Hello up there!
+
+21
+00:01:33,298 --> 00:01:37,141
+A girafa! Em inglês, girafa é
+
+22
+00:01:37,221 --> 00:01:40,811
+giraffe! Fique na ponta
+dos pés, bem alto!
+
+23
+00:01:43,961 --> 00:01:46,381
+Very good! Muito bem!
+
+24
+00:01:48,233 --> 00:01:54,543
+Agora é a vez do jogo "A Tuti diz"!
+Quando eu disser em inglês, você faz.
+
+25
+00:01:54,763 --> 00:01:56,333
+Jump! Pule!
+
+26
+00:01:58,473 --> 00:02:00,613
+Clap! Bata palmas!
+
+27
+00:02:02,763 --> 00:02:04,913
+Spin! Gire!
+
+28
+00:02:07,463 --> 00:02:10,913
+Agora sem eu mostrar! A Tuti diz:
+
+29
+00:02:10,993 --> 00:02:12,193
+Jump!
+
+30
+00:02:14,833 --> 00:02:16,033
+Clap!
+
+31
+00:02:18,573 --> 00:02:19,773
+Spin!
+
+32
+00:02:22,403 --> 00:02:24,983
+Very good! Você é demais!
+
+33
+00:02:27,583 --> 00:02:29,493
+Qual é o lion?
+
+34
+00:02:30,143 --> 00:02:31,363
+O elefante...
+
+35
+00:02:32,113 --> 00:02:33,313
+o leão...
+
+36
+00:02:33,783 --> 00:02:34,983
+ou a girafa?
+
+37
+00:02:46,883 --> 00:02:50,883
+O leão! Lion! Você sabe inglês!
+
+38
+00:02:53,500 --> 00:02:57,225
+A giraffe se escondeu!
+Você consegue encontrar?
+
+39
+00:03:09,375 --> 00:03:11,318
+Achou! A giraffe
+
+40
+00:03:11,398 --> 00:03:13,308
+estava atrás da árvore!
+
+41
+00:03:15,933 --> 00:03:20,053
+Vamos contar os elefantes em
+inglês! Bata palmas comigo!
+
+42
+00:03:20,503 --> 00:03:21,703
+One...
+
+43
+00:03:21,833 --> 00:03:23,033
+two...
+
+44
+00:03:23,203 --> 00:03:24,403
+three...
+
+45
+00:03:24,523 --> 00:03:25,723
+four...
+
+46
+00:03:25,953 --> 00:03:27,153
+five!
+
+47
+00:03:28,023 --> 00:03:29,353
+Five elephants!
+
+48
+00:03:29,703 --> 00:03:31,203
+Cinco elefantes!
+
+49
+00:03:31,553 --> 00:03:32,753
+Very good!
+
+50
+00:03:35,783 --> 00:03:36,913
+Olhe bem onde o
+
+51
+00:03:36,993 --> 00:03:38,243
+lion está.
+
+52
+00:03:43,493 --> 00:03:45,443
+As cartas trocaram de lugar!
+
+53
+00:03:45,693 --> 00:03:47,043
+Onde está o leão?
+
+54
+00:03:47,593 --> 00:03:48,793
+No um...
+
+55
+00:03:49,073 --> 00:03:50,273
+no dois...
+
+56
+00:03:50,663 --> 00:03:51,863
+ou no três?
+
+57
+00:04:03,743 --> 00:04:05,033
+No número dois!
+
+58
+00:04:05,383 --> 00:04:08,013
+Lion! Você tem olho bom!
+
+59
+00:04:10,233 --> 00:04:13,003
+Que festa linda! Hoje você aprendeu
+
+60
+00:04:13,083 --> 00:04:15,423
+hello sheep lion
+
+61
+00:04:15,503 --> 00:04:17,037
+elephant giraffe!
+
+62
+00:04:17,387 --> 00:04:20,107
+Vamos dançar? Dance com os bichos!
+
+63
+00:04:26,553 --> 00:04:28,991
+Bye-bye! Tchau, amiguinho!

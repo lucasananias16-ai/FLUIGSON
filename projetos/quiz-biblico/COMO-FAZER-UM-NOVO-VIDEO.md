@@ -1,13 +1,13 @@
 # Como fazer um novo vídeo (guia para a próxima sessão)
 
-Leia primeiro o `README.md`. Este arquivo é o roteiro de trabalho. Os Vídeos 1 a 4 são o molde; o Vídeo 4 é o mais recente e foi feito copiando o Vídeo 3 (`src/v3/`) e adaptando.
+Leia primeiro o `README.md`. Este arquivo é o roteiro de trabalho. Os Vídeos 1 a 5 são o molde; o Vídeo 4 é o mais indicado para um quiz de cards e desafios, e o Vídeo 5 para um vídeo com mais de uma língua ou de uma voz.
 
 ## Combinados com o dono do canal
 
 - Responda em português do Brasil. O dono escreve por voz, então frases soltas são normais.
 - Cada etapa é validada antes da próxima, mas o dono já autorizou aprovar em bloco quando ele pedir ("pode aprovar todas as etapas"). Sem essa frase, peça aprovação.
 - Quem publica no YouTube é o dono. Eu entrego o pacote pronto. Mudar para Público só depois do "pode publicar".
-- **Vídeos 1 e 2 estão publicados e não podem mudar.** Depois de mexer em código compartilhado (`src/anim/`, `src/art/`, `src/kit.js`, `src/tuti.js`), rode `node src/v1/video.js`, `node src/v2/video.js` e `node src/v3/video.js`: todas as cenas têm de sair como "sem mudanças".
+- **Vídeos 1 e 2 estão publicados e não podem mudar.** Depois de mexer em código compartilhado (`src/anim/`, `src/art/`, `src/kit.js`, `src/tuti.js`), rode `node src/v1/video.js`, `node src/v2/video.js`, `node src/v3/video.js` e `node src/v4/video.js`: todas as cenas têm de sair como "sem mudanças".
 - A chave do Google Cloud nunca entra no repositório nem no chat. Peça ao dono para anexar a chave de novo e use só via `GOOGLE_APPLICATION_CREDENTIALS`.
 - Não crie pull request sem pedido. Commit e push só na branch de trabalho.
 
@@ -51,3 +51,5 @@ Leia primeiro o `README.md`. Este arquivo é o roteiro de trabalho. Os Vídeos 1
 - Efeitos sonoros que tocam junto com a fala (sino de acerto, escadinha de notas) ficam abaixo da voz; meça com a comparação de envelopes antes de entregar.
 - Ao copiar as cenas de outro vídeo, os nomes dos áudios (`v3_p4_pergunta`...) vêm junto. Se os desafios mudarem de número, confira se cada cena `dN` toca só áudios `_pN_`. No Vídeo 4 a cena da sombra tocou o áudio da pergunta de cores até a conferência das legendas mostrar a diferença; a checagem de sincronia sozinha não pega isso.
 - Acessórios na Tuti (o gorro do Vídeo 4) ficam desligados por padrão, para não mudar vídeos antigos. Ligue com `gorro: true` em `tuti()` e em `tutiFrame()`.
+- Narração com mais de uma voz ou língua (Vídeo 5): marque no texto `{en: ...}` e o nome do bicho; o gerador grava cada trecho com a voz do `roteiro.js` e emenda. Pontuação logo depois da marca fica junto do trecho, e frases soltas de uma palavra em português (como "e") saem estranhas: reescreva para não haver. A pausa de 3 segundos para a criança repetir fica na cena, não no áudio.
+- A conferência do inglês precisa de ouvido humano: avise o dono, com a lista das palavras, para ouvir principalmente as mais difíceis.

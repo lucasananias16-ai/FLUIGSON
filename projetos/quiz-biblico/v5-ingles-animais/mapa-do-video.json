@@ -1,0 +1,60 @@
+{
+  "duracao": 270.967,
+  "cenas": [
+    {
+      "cena": "abertura",
+      "inicio": 0,
+      "duracao": 16.533
+    },
+    {
+      "cena": "v1",
+      "inicio": 16.533,
+      "duracao": 19.767
+    },
+    {
+      "cena": "v2",
+      "inicio": 36.3,
+      "duracao": 25.233
+    },
+    {
+      "cena": "v3",
+      "inicio": 61.533,
+      "duracao": 23.533
+    },
+    {
+      "cena": "v4",
+      "inicio": 85.067,
+      "duracao": 22.367
+    },
+    {
+      "cena": "j1",
+      "inicio": 107.433,
+      "duracao": 38.7
+    },
+    {
+      "cena": "j2",
+      "inicio": 146.133,
+      "duracao": 26.167
+    },
+    {
+      "cena": "j3",
+      "inicio": 172.3,
+      "duracao": 22.433
+    },
+    {
+      "cena": "j4",
+      "inicio": 194.733,
+      "duracao": 19.6
+    },
+    {
+      "cena": "j5",
+      "inicio": 214.333,
+      "duracao": 35.1
+    },
+    {
+      "cena": "final",
+      "inicio": 249.433,
+      "duracao": 21.533
+    }
+  ]
+}

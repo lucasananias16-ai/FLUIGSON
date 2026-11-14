@@ -44,6 +44,19 @@ function gerarSrt(cenas, manifest, narrDir, { tempos: temposDe = temposDasFrases
         const sobra = frases.length - info.partes.length;
         const textos = [frases.slice(0, sobra + 1).join(' ')].concat(frases.slice(sobra + 1));
         info.partes.forEach((p, i) => cues.push({ ini: base + p.ini, fim: base + p.fim, texto: textos[i] }));
+      } else if (info.segmentos) {
+        // fala com vozes diferentes (o vídeo de inglês): uma legenda por trecho de voz; trechos
+        // curtos (uma palavra em inglês, "Very good!") se juntam ao seguinte
+        const segs = info.segmentos.map((x) => ({ ini: base + x.ini, fim: base + x.fim, texto: x.texto.replace(/,$/, '') }));
+        for (let i = 0; i < segs.length; i++) {
+          const cue = Object.assign({}, segs[i]);
+          while (i + 1 < segs.length && (cue.fim - cue.ini < 1.0 || cue.texto.length < 14) && segs[i + 1].ini - cue.fim < 1.0 && cue.texto.length + segs[i + 1].texto.length < 70) {
+            i++;
+            cue.fim = segs[i].fim;
+            cue.texto += ` ${segs[i].texto}`;
+          }
+          cues.push(cue);
+        }
       } else {
         // fala corrida: uma legenda por frase, juntando as muito curtas com a seguinte
         const frases = emFrases(info.texto);
