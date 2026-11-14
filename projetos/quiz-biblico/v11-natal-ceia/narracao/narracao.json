@@ -1,0 +1,243 @@
+{
+  "voz": {
+    "nome": "pt-BR-Chirp3-HD-Leda",
+    "velocidade": 0.94,
+    "estilo": "animada"
+  },
+  "falas": {
+    "v11_abertura": {
+      "texto": "Oi, amiguinho! A Tuti voltou! Hoje é dia de ceia de Natal! Vamos arrumar a mesa juntos? São oito desafios. Vamos lá!",
+      "dur": 10.73,
+      "estilo": "animada"
+    },
+    "v11_p1_pergunta": {
+      "texto": "O biscoito de gengibre fugiu! Você consegue encontrar?",
+      "dur": 3.71,
+      "estilo": "animada"
+    },
+    "v11_p1_resposta": {
+      "texto": "Achou! Ele estava atrás do panetone! Que biscoito sapeca!",
+      "dur": 4.555,
+      "estilo": "animada"
+    },
+    "v11_p2_pergunta": {
+      "texto": "Vamos acender as velas. Conte comigo!",
+      "dur": 2.89,
+      "estilo": "animada"
+    },
+    "v11_p2_contagem": {
+      "texto": "Um... dois... três... quatro... cinco!",
+      "dur": 6.45,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 0.4
+        },
+        {
+          "ini": 1.25,
+          "fim": 1.96
+        },
+        {
+          "ini": 2.81,
+          "fim": 3.45
+        },
+        {
+          "ini": 4.3,
+          "fim": 4.96
+        },
+        {
+          "ini": 5.81,
+          "fim": 6.45
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v11_p2_resposta": {
+      "texto": "Cinco velas! Muito bem!",
+      "dur": 2.109,
+      "estilo": "animada"
+    },
+    "v11_p3_pergunta": {
+      "texto": "De quem é essa sombra? Da maçã... da banana... ou do panetone?",
+      "dur": 7.08,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.35
+        },
+        {
+          "ini": 2.25,
+          "fim": 3.09
+        },
+        {
+          "ini": 4.09,
+          "fim": 5.01
+        },
+        {
+          "ini": 6.01,
+          "fim": 7.08
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v11_p3_resposta": {
+      "texto": "Do panetone! Hum, que cheiro bom!",
+      "dur": 3.15,
+      "estilo": "animada"
+    },
+    "v11_p4_pergunta": {
+      "texto": "Qual biscoito tem forma de estrela? Este... este... ou este?",
+      "dur": 6.55,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.96
+        },
+        {
+          "ini": 2.86,
+          "fim": 3.4
+        },
+        {
+          "ini": 4.4,
+          "fim": 4.9
+        },
+        {
+          "ini": 5.9,
+          "fim": 6.55
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v11_p4_resposta": {
+      "texto": "Este! Ele tem cinco pontas, igual à estrela!",
+      "dur": 3.43,
+      "estilo": "animada"
+    },
+    "v11_p5_pergunta": {
+      "texto": "Qual panetone é o maior? O da esquerda... ou o da direita?",
+      "dur": 5.24,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.55
+        },
+        {
+          "ini": 2.45,
+          "fim": 3.37
+        },
+        {
+          "ini": 4.37,
+          "fim": 5.24
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v11_p5_resposta": {
+      "texto": "O da esquerda! Dá para a família toda!",
+      "dur": 2.825,
+      "estilo": "animada"
+    },
+    "v11_p6_pergunta": {
+      "texto": "Olhe a fila de doces! O que vem depois? A maçã... o pirulito... ou o biscoito?",
+      "dur": 8.41,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.4
+        },
+        {
+          "ini": 1.9,
+          "fim": 3
+        },
+        {
+          "ini": 3.9,
+          "fim": 4.67
+        },
+        {
+          "ini": 5.67,
+          "fim": 6.61
+        },
+        {
+          "ini": 7.61,
+          "fim": 8.41
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v11_p6_resposta": {
+      "texto": "O pirulito! Biscoito, pirulito, biscoito, pirulito!",
+      "dur": 4.99,
+      "estilo": "animada"
+    },
+    "v11_p7_pergunta": {
+      "texto": "O que não vai na mesa da ceia? A bota... o panetone... ou a maçã?",
+      "dur": 7.23,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.83
+        },
+        {
+          "ini": 2.73,
+          "fim": 3.49
+        },
+        {
+          "ini": 4.49,
+          "fim": 5.46
+        },
+        {
+          "ini": 6.46,
+          "fim": 7.23
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v11_p7_resposta": {
+      "texto": "A bota! Ha ha! Bota não é de comer!",
+      "dur": 4.043,
+      "estilo": "animada"
+    },
+    "v11_p8_mostrar": {
+      "texto": "Olhe bem onde o panetone está.",
+      "dur": 1.7,
+      "estilo": "animada"
+    },
+    "v11_p8_pergunta": {
+      "texto": "As cartas trocaram de lugar! Onde está o panetone? No um... no dois... ou no três?",
+      "dur": 8.65,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.82
+        },
+        {
+          "ini": 2.32,
+          "fim": 3.71
+        },
+        {
+          "ini": 4.51,
+          "fim": 5.15
+        },
+        {
+          "ini": 6.05,
+          "fim": 6.88
+        },
+        {
+          "ini": 7.78,
+          "fim": 8.65
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v11_p8_resposta": {
+      "texto": "No número três! Você tem olho bom! A mesa está pronta!",
+      "dur": 4.61,
+      "estilo": "animada"
+    },
+    "v11_encerramento": {
+      "texto": "A mesa ficou pronta! Que ceia gostosa! Feliz Natal, amiguinho! Até a próxima!",
+      "dur": 7.26,
+      "estilo": "animada"
+    }
+  }
+}
