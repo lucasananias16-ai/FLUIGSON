@@ -1,0 +1,243 @@
+{
+  "voz": {
+    "nome": "pt-BR-Chirp3-HD-Leda",
+    "velocidade": 0.94,
+    "estilo": "animada"
+  },
+  "falas": {
+    "v8_abertura": {
+      "texto": "Oi, amiguinho! A Tuti voltou! Hoje eu estou na oficina do Papai Noel! Os duendes precisam de ajuda com os brinquedos. São oito desafios. Vamos lá!",
+      "dur": 11.06,
+      "estilo": "animada"
+    },
+    "v8_p1_pergunta": {
+      "texto": "O ursinho se escondeu na prateleira! Você consegue encontrar?",
+      "dur": 3.97,
+      "estilo": "animada"
+    },
+    "v8_p1_resposta": {
+      "texto": "Achou! Ele estava atrás da caixa! Que ursinho sapeca!",
+      "dur": 4.97,
+      "estilo": "animada"
+    },
+    "v8_p2_pergunta": {
+      "texto": "Os presentes estão passando na esteira. Conte comigo!",
+      "dur": 3.66,
+      "estilo": "animada"
+    },
+    "v8_p2_contagem": {
+      "texto": "Um... dois... três... quatro... cinco!",
+      "dur": 6.47,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 0.42
+        },
+        {
+          "ini": 1.27,
+          "fim": 2.04
+        },
+        {
+          "ini": 2.89,
+          "fim": 3.5
+        },
+        {
+          "ini": 4.35,
+          "fim": 4.99
+        },
+        {
+          "ini": 5.84,
+          "fim": 6.47
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v8_p2_resposta": {
+      "texto": "Cinco presentes! Muito bem!",
+      "dur": 2.29,
+      "estilo": "animada"
+    },
+    "v8_p3_pergunta": {
+      "texto": "De qual brinquedo é essa sombra? Da bola... do pião... ou do trenzinho?",
+      "dur": 6.98,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.74
+        },
+        {
+          "ini": 2.64,
+          "fim": 3.37
+        },
+        {
+          "ini": 4.37,
+          "fim": 5.09
+        },
+        {
+          "ini": 6.09,
+          "fim": 6.98
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v8_p3_resposta": {
+      "texto": "Do trenzinho! Piuí! Olha as rodinhas!",
+      "dur": 3.511,
+      "estilo": "animada"
+    },
+    "v8_p4_pergunta": {
+      "texto": "Qual presente é o maior? O amarelo... ou o azul?",
+      "dur": 4.56,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.25
+        },
+        {
+          "ini": 2.15,
+          "fim": 2.89
+        },
+        {
+          "ini": 3.89,
+          "fim": 4.56
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v8_p4_resposta": {
+      "texto": "O azul! É uma caixa grandona!",
+      "dur": 2.85,
+      "estilo": "animada"
+    },
+    "v8_p5_pergunta": {
+      "texto": "Olhe a fila de brinquedos! O que vem depois? O ursinho... o pião... ou a boneca?",
+      "dur": 7.95,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 3.01
+        },
+        {
+          "ini": 3.91,
+          "fim": 4.64
+        },
+        {
+          "ini": 5.64,
+          "fim": 6.28
+        },
+        {
+          "ini": 7.28,
+          "fim": 7.95
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v8_p5_resposta": {
+      "texto": "O ursinho! Bola, ursinho, bola, ursinho!",
+      "dur": 3.38,
+      "estilo": "animada"
+    },
+    "v8_p6_pergunta": {
+      "texto": "O que não é brinquedo? A boneca... o carrinho... ou a vassoura?",
+      "dur": 6.41,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.24
+        },
+        {
+          "ini": 2.14,
+          "fim": 2.92
+        },
+        {
+          "ini": 3.92,
+          "fim": 4.53
+        },
+        {
+          "ini": 5.53,
+          "fim": 6.41
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v8_p6_resposta": {
+      "texto": "A vassoura! Ha ha! Ela é para varrer a oficina!",
+      "dur": 3.87,
+      "estilo": "animada"
+    },
+    "v8_p7_pergunta": {
+      "texto": "Esta caixa vermelha está sem laço! Qual laço é da mesma cor? O azul... o vermelho... ou o verde?",
+      "dur": 9.29,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 2.38
+        },
+        {
+          "ini": 2.88,
+          "fim": 4.24
+        },
+        {
+          "ini": 5.14,
+          "fim": 5.72
+        },
+        {
+          "ini": 6.72,
+          "fim": 7.47
+        },
+        {
+          "ini": 8.47,
+          "fim": 9.29
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v8_p7_resposta": {
+      "texto": "O vermelho! Caixa vermelha, laço vermelho!",
+      "dur": 3.92,
+      "estilo": "animada"
+    },
+    "v8_p8_mostrar": {
+      "texto": "Olhe bem onde o ursinho está.",
+      "dur": 1.89,
+      "estilo": "animada"
+    },
+    "v8_p8_pergunta": {
+      "texto": "As cartas trocaram de lugar! Onde está o ursinho? No um... no dois... ou no três?",
+      "dur": 8.1,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.75
+        },
+        {
+          "ini": 2.25,
+          "fim": 3.4
+        },
+        {
+          "ini": 4.2,
+          "fim": 4.76
+        },
+        {
+          "ini": 5.66,
+          "fim": 6.37
+        },
+        {
+          "ini": 7.27,
+          "fim": 8.1
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v8_p8_resposta": {
+      "texto": "No número três! Você tem olho bom! Os presentes estão prontos!",
+      "dur": 5.25,
+      "estilo": "animada"
+    },
+    "v8_encerramento": {
+      "texto": "Você ajudou os duendes! Os presentes já podem ir para o trenó. Feliz Natal, amiguinho! Até a próxima!",
+      "dur": 8.31,
+      "estilo": "animada"
+    }
+  }
+}

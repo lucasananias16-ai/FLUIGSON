@@ -46,7 +46,7 @@ A resposta certa está em negrito. Onde há opções, a ordem falada é a ordem 
 | 2 | Os presentes estão passando na esteira. Conte comigo! Um... dois... três... quatro... cinco! | Conte os presentes! | **Cinco** presentes! Muito bem! |
 | 3 | De qual brinquedo é essa sombra? Da bola... do pião... ou do trenzinho? | De quem é a sombra? | Do **trenzinho**! Piuí! Olha as rodinhas! |
 | 4 | Qual presente é o maior? O amarelo... ou o azul? | Qual é o maior? | O **azul**! É uma caixa grandona! |
-| 5 | Olhe a fila: bola, ursinho, bola, ursinho, bola... O que vem depois? O ursinho... o pião... ou a boneca? | O que vem depois? | O **ursinho**! Bola, ursinho, bola, ursinho! |
+| 5 | Olhe a fila de brinquedos! O que vem depois? O ursinho... o pião... ou a boneca? (a fila bola, ursinho, bola, ursinho, bola aparece na tela) | O que vem depois? | O **ursinho**! Bola, ursinho, bola, ursinho! |
 | 6 | O que não é brinquedo? A boneca... o carrinho... ou a vassoura? | O que não é brinquedo? | A **vassoura**! Ha ha! Ela é para varrer a oficina! |
 | 7 | Esta caixa vermelha está sem laço! Qual laço é da mesma cor? O azul... o vermelho... ou o verde? | Qual laço combina? | O **vermelho**! Caixa vermelha, laço vermelho! |
 | 8 | Olhe bem onde o ursinho está. (os cards viram e trocam de lugar) As cartas trocaram de lugar! Onde está o ursinho? No um... no dois... ou no três? | Onde está o ursinho? | No **número três**! Você tem olho bom! Os presentes estão prontos! |

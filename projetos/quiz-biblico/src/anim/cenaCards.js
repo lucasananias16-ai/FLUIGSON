@@ -33,8 +33,9 @@ const { LINE, CARD, f, OLHANDO, APONTANDO, PENSANDO, PENSANDO_FRENTE, COMEMORA, 
  *  - extra: { css, antes, ops(t, T), sons(T) } para peças a mais na cena
  *  - fundo: função que desenha o fundo (o padrão é o céu com gramado)
  *  - tutiOpts: opções da Tuti nesta cena (gorro, capacete)
+ *  - primeiraOpcao: em qual parte da pergunta começa a primeira opção (1, ou 2 se a pergunta tem duas frases antes)
  */
-function criarCenaCards({ num, q, narrDir, idPergunta, idResposta, contagem, tGlobal0 = 0, entrada = null, saida = null, layout = {}, extra = {}, fundo = null, tutiOpts = {} }) {
+function criarCenaCards({ num, q, narrDir, idPergunta, idResposta, contagem, tGlobal0 = 0, entrada = null, saida = null, layout = {}, extra = {}, fundo = null, tutiOpts = {}, primeiraOpcao = 1 }) {
   const NARR = narrDir;
   const CX = layout.cx || [432, 920, 1408];
   const CY = layout.cy === undefined ? 232 : layout.cy;
@@ -48,7 +49,7 @@ function criarCenaCards({ num, q, narrDir, idPergunta, idResposta, contagem, tGl
 
   // ----- linha do tempo -----
   const T = { banner: 0.1, selo: 0.35, cards: [0.45, 0.58, 0.71], pergunta: 1.45 };
-  T.viradas = [1, 2, 3].map((k) => T.pergunta + fq.partes[k].ini - 0.14);
+  T.viradas = [0, 1, 2].map((k) => T.pergunta + fq.partes[primeiraOpcao + k].ini - 0.14);
   T.fimPergunta = T.pergunta + fq.dur;
   T.contagem = T.fimPergunta + 0.6;
   T.revela = T.contagem + CONT + 0.1;

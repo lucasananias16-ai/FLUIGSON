@@ -55,3 +55,5 @@ Leia primeiro o `README.md`. Este arquivo é o roteiro de trabalho. Os Vídeos 1
 - A conferência do inglês precisa de ouvido humano: avise o dono, com a lista das palavras, para ouvir principalmente as mais difíceis.
 - Acessórios da Tuti nas cenas de cards passam por `tutiOpts` de `criarCenaCards`. No Vídeo 4 a Tuti ficou sem gorro nessas cenas até isso ser corrigido: confira a Tuti em todas as cenas, não só na abertura.
 - Rode `freezedetect` no vídeo final: um trecho parado de mais de 3 s costuma ser uma fala sem ninguém se mexendo na tela.
+- Perguntas com uma lista falada antes das opções ("bola, ursinho, bola...") confundem o corte em partes: a voz faz pausas na lista e engole as das opções. Mostre a lista na tela e deixe a fala curta. Confira sempre a duração de cada parte no `narracao.json` (opções costumam ter de 0,5 a 1 s).
+- Para fazer um vídeo com o mesmo formato e outro cenário, crie um módulo de arte com os mesmos nomes de cena e os mesmos `id` (como `art/oficina.js` fez com `art/noel.js`) e troque só o `require`.
