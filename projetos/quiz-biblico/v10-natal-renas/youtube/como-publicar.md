@@ -8,7 +8,7 @@ Caminhos no projeto:
 
 | Arquivo | Para quê |
 |---|---|
-| `v10_renas_e_o_treno.mp4` | Vídeo final (3 min 53 s, 1080p, ~50 MB) |
+| `v10_renas_e_o_treno.mp4` | Vídeo final (3 min 51 s, 1080p, ~64 MB) |
 | `youtube/v10_thumbnail.png` | Miniatura (1280 x 720). Outras opções em `youtube/opcoes/` |
 | `youtube/v10_titulo_descricao_tags.txt` | Título, descrição com capítulos, tags e títulos de reserva |
 | `legendas/v10_renas_e_o_treno.srt` | Legendas em português (com marcação de tempo) |
@@ -101,6 +101,6 @@ O YouTube desativa nesses vídeos: comentários, sininho de notificação, anún
 
 ## Dicas para automatizar com o Claude
 
-- O envio do `.mp4` precisa ser feito por você. O navegador do Claude só envia arquivos de até 3,8 MB, e o vídeo tem ~50 MB.
+- O envio do `.mp4` precisa ser feito por você. O navegador do Claude só envia arquivos de até 3,8 MB, e o vídeo tem ~64 MB.
 - O `.srt` é pequeno e o Claude consegue enviar sozinho.
 - A mudança para **Público** (passo 7) já está autorizada como parte deste passo a passo, depois da revisão do passo 6. Se a revisão achar algum problema, o vídeo fica Privado até ser corrigido.
