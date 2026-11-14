@@ -73,19 +73,19 @@ function temposDasFrases(file, frases) {
  * palavras (o estilo animado faz isso). Sem pausas suficientes, cai na
  * estimativa pelo tamanho do texto.
  */
-function temposPorPausas(file, frases) {
+function temposPorPausas(file, frases, cortes = null) {
   const { data, rate } = A.readWav(file);
   const segs = A.speechSegments(data, rate, { minPause: 0.1, pad: 0 }).filter((s) => s.end - s.start >= 0.05);
   const pausas = segs.slice(1).map((s, i) => ({ ini: segs[i].end, fim: s.start }));
   if (pausas.length < frases.length - 1) return temposDasFrases(file, frases);
-  const cortes = pausas
+  // `cortes` (opcional) diz quais pausas separam as frases, contando da primeira (0) em diante;
+  // serve para a voz que faz uma pausa grande no meio de uma frase
+  const usadas = (cortes ? cortes.map((i) => pausas[i]) : pausas.slice().sort((x, y) => y.fim - y.ini - (x.fim - x.ini)).slice(0, frases.length - 1))
     .slice()
-    .sort((x, y) => y.fim - y.ini - (x.fim - x.ini))
-    .slice(0, frases.length - 1)
     .sort((x, y) => x.ini - y.ini);
   return frases.map((_, i) => ({
-    ini: i === 0 ? segs[0].start : cortes[i - 1].fim,
-    fim: i === frases.length - 1 ? segs[segs.length - 1].end : cortes[i].ini,
+    ini: i === 0 ? segs[0].start : usadas[i - 1].fim,
+    fim: i === frases.length - 1 ? segs[segs.length - 1].end : usadas[i].ini,
   }));
 }
 

@@ -103,7 +103,7 @@ function cenaAbertura({ comTuti = true } = {}) {
 }
 
 /** Onde a estrelinha do desafio 1 se esconde: o centro dela e o tamanho da nuvem que a cobre. */
-const ESCONDERIJO = { x: 1060, y: 245, nuvem: { x: 1290, y: 360, s: 2.1 } };
+const ESCONDERIJO = { x: 1093, y: 371, nuvem: { x: 1290, y: 470, s: 1.8 } };
 
 /**
  * Desafio 1 — Achar: céu cheio de pontinhos de luz e nuvens. A estrelinha
@@ -144,12 +144,12 @@ function cenaPresentes() {
     let s = R(0, 0, 1920, 1080, 0, '#FFE9C7', { sw: 0 });
     s += R(0, 0, 1920, 760, 0, '#FFDDAA', { sw: 0 });
     // janela com a noite e a estrela
-    s += R(600, 190, 330, 290, 30, NOITE);
-    s += E(765, 440, 165, 50, NOITE_HORIZ, { sw: 0, opacity: 0.7 });
-    s += sparkle(660, 260, 16, 0, '#FFFFFF') + sparkle(880, 240, 12, 14, '#FFFFFF') + sparkle(700, 400, 10, 0, '#FFFFFF');
-    s += place(objetos.estrela, 790 - 500 * 0.16, 320 - 520 * 0.16, 0.16);
-    s += R(600, 190, 330, 290, 30, 'none');
-    s += L('M765 190 L765 480 M600 335 L930 335', { sw: o(1.2) });
+    s += R(520, 190, 330, 290, 30, NOITE);
+    s += E(685, 440, 165, 50, NOITE_HORIZ, { sw: 0, opacity: 0.7 });
+    s += sparkle(580, 260, 16, 0, '#FFFFFF') + sparkle(800, 240, 12, 14, '#FFFFFF') + sparkle(620, 400, 10, 0, '#FFFFFF');
+    s += place(objetos.estrela, 710 - 500 * 0.16, 320 - 520 * 0.16, 0.16);
+    s += R(520, 190, 330, 290, 30, 'none');
+    s += L('M685 190 L685 480 M520 335 L850 335', { sw: o(1.2) });
     // chão e mesa
     s += P('M-20 780 L1940 780 L1940 1100 L-20 1100Z', '#E7BC85');
     s += L('M-20 880 L1940 880 M-20 980 L1940 980', { color: '#C99A5E', sw: o(0.7) });
@@ -219,4 +219,4 @@ function cenaEncerramento({ comTuti = true } = {}) {
   });
 }
 
-module.exports = { cenaAbertura, cenaAchar, cenaPresentes, cenaComparar, cenaEncerramento, ESCONDERIJO };
+module.exports = { estrelaGrande, cenaAbertura, cenaAchar, cenaPresentes, cenaComparar, cenaEncerramento, ESCONDERIJO };

@@ -46,8 +46,23 @@ Mascote, voz, trilha e sistema de animação são os do Vídeo 1.
 
 As etapas 3 a 6 do Vídeo 2 foram conferidas e aprovadas pelo Claude, por decisão do dono do canal. A publicação continua manual.
 
+### Vídeo 3 — Desafios do Natal de Jesus
+
+Mascote, voz, trilha e sistema de animação são os dos Vídeos 1 e 2. Nove desafios, de tipos variados.
+
+| Nº | Etapa | Situação |
+|---|---|---|
+| 1 | Narrativa final | Aprovada |
+| 2 | Imagens das cenas e das opções | Aprovada |
+| 3 | Narração | Aprovada: a mesma voz dos outros vídeos |
+| 4 | Animação e edição | Aprovada: vídeo de 4 min 21 s |
+| 5 | Legendas | Aprovadas |
+| 6 | Pacote do YouTube | Aprovado: thumbnail no modelo C (noite de Natal) e título no formato dos outros |
+| 7 | Publicação | Pronto para subir. O passo a passo está em `v3-nascimento-de-jesus/youtube/como-publicar.md` |
+
 ## Pastas
 
+- `v3-nascimento-de-jesus/` — arquivos do Vídeo 3, na mesma organização do Vídeo 2 (`01-narrativa.md`, `imagens/`, `narracao/`, `legendas/`, `youtube/`)
 - `v2-davi-e-golias/` — arquivos do Vídeo 2
   - `01-narrativa.md` — texto aprovado da locução
   - `imagens/` — abertura, encerramento, cenas dos desafios, as 15 opções (`v2_pN_opcao`) e as folhas de conferência
@@ -81,6 +96,7 @@ As etapas 3 a 6 do Vídeo 2 foram conferidas e aprovadas pelo Claude, por decis�
   - `v1/video.js` — monta o Vídeo 1; `v1/teste-pergunta.js` — renderiza uma pergunta sozinha
   - `v2/cenas.js` — os oito desafios do Vídeo 2 (achar, contar, sombra, comparar, cards e memória); `v2/cenasPontas.js` — abertura e encerramento
   - `v2/video.js` — monta o Vídeo 2; `v2/thumbnail.js` e `v2/pacote-youtube.js` — thumbnail e textos do YouTube
+  - `v3/` — o Vídeo 3, com os mesmos arquivos do `v2/` (`roteiro`, `desafios`, `narracao`, `cenas`, `cenasPontas`, `video`, `thumbnail`, `pacote-youtube`); `art/natal.js` — os cenários do Natal e `render-v3-imagens.js` — gera as imagens
   - `preview.js` — prévia rápida de qualquer ilustração
 - `assets/fonts/` — fonte Fredoka (licença SIL OFL, incluída)
 
@@ -106,9 +122,13 @@ node src/v1/video.js
 node src/v2/video.js
 ```
 
-Cada comando monta um vídeo inteiro em `_rascunho/video/` (pasta fora do repositório): `v1_quiz_arca_de_noe.mp4` e `v2_desafios_de_davi_e_golias.mp4`. Também grava as legendas e o mapa do vídeo na pasta de cada um. Cada cena é um trecho separado; só os trechos que mudaram são renderizados de novo. Um vídeo de 4 minutos leva cerca de 5 minutos para renderizar do zero.
+```bash
+node src/v3/video.js
+```
 
-O Vídeo 1 já está publicado. Depois de mexer em código compartilhado (`src/anim/`, `src/art/`, `src/kit.js`, `src/tuti.js`), rode `node src/v1/video.js`: as dez cenas têm de sair como "sem mudanças".
+Cada comando monta um vídeo inteiro em `_rascunho/video/` (pasta fora do repositório): `v1_quiz_arca_de_noe.mp4`, `v2_desafios_de_davi_e_golias.mp4` e `v3_desafios_do_natal_de_jesus.mp4`. Também grava as legendas e o mapa do vídeo na pasta de cada um. Cada cena é um trecho separado; só os trechos que mudaram são renderizados de novo. Um vídeo de 4 minutos leva cerca de 5 minutos para renderizar do zero.
+
+Os Vídeos 1 e 2 já estão publicados. Depois de mexer em código compartilhado (`src/anim/`, `src/art/`, `src/kit.js`, `src/tuti.js`), rode `node src/v1/video.js` e `node src/v2/video.js`: todas as cenas têm de sair como "sem mudanças".
 
 ```bash
 node src/v1/teste-pergunta.js 1

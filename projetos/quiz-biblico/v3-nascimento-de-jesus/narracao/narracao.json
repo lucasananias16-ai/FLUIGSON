@@ -1,0 +1,259 @@
+{
+  "voz": {
+    "nome": "pt-BR-Chirp3-HD-Leda",
+    "velocidade": 0.94,
+    "estilo": "animada"
+  },
+  "falas": {
+    "v3_abertura": {
+      "texto": "Oi, amiguinho! A Tuti voltou! Hoje vamos conhecer a história do nascimento de Jesus. Tenho nove desafios para você. Vamos lá!",
+      "dur": 9.215,
+      "estilo": "animada"
+    },
+    "v3_p1_pergunta": {
+      "texto": "Uma estrelinha se escondeu no céu! Você consegue encontrar?",
+      "dur": 4,
+      "estilo": "animada"
+    },
+    "v3_p1_resposta": {
+      "texto": "Achou! Ela estava atrás da nuvem! Uma estrela brilhante mostrou o caminho até Jesus.",
+      "dur": 6.19,
+      "estilo": "animada"
+    },
+    "v3_p2_pergunta": {
+      "texto": "Os magos levaram presentes para Jesus. Conte comigo!",
+      "dur": 3.69,
+      "estilo": "animada"
+    },
+    "v3_p2_contagem": {
+      "texto": "Um... dois... três!",
+      "dur": 3.42,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 0.43
+        },
+        {
+          "ini": 1.28,
+          "fim": 1.97
+        },
+        {
+          "ini": 2.82,
+          "fim": 3.42
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v3_p2_resposta": {
+      "texto": "Três presentes! Muito bem!",
+      "dur": 2.273,
+      "estilo": "animada"
+    },
+    "v3_p3_pergunta": {
+      "texto": "De quem é essa sombra com asas? Do pastor... da ovelhinha... ou do anjo?",
+      "dur": 7.55,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 2.2
+        },
+        {
+          "ini": 3.1,
+          "fim": 3.88
+        },
+        {
+          "ini": 4.88,
+          "fim": 5.77
+        },
+        {
+          "ini": 6.77,
+          "fim": 7.55
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v3_p3_resposta": {
+      "texto": "Do anjo! Um anjo deu a boa notícia aos pastores.",
+      "dur": 3.79,
+      "estilo": "animada"
+    },
+    "v3_p4_pergunta": {
+      "texto": "Quem é o maior? A ovelhinha... ou o camelo?",
+      "dur": 4.64,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 0.97
+        },
+        {
+          "ini": 1.87,
+          "fim": 2.74
+        },
+        {
+          "ini": 3.74,
+          "fim": 4.64
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v3_p4_resposta": {
+      "texto": "O camelo! Os magos viajaram de longe para visitar Jesus.",
+      "dur": 5.21,
+      "estilo": "animada"
+    },
+    "v3_p5_pergunta": {
+      "texto": "Quem é a mãe do menino Jesus? A Maria... a Marta... ou a Ana?",
+      "dur": 6.83,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.76
+        },
+        {
+          "ini": 2.66,
+          "fim": 3.41
+        },
+        {
+          "ini": 4.41,
+          "fim": 5.16
+        },
+        {
+          "ini": 6.16,
+          "fim": 6.83
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v3_p5_resposta": {
+      "texto": "A Maria! Maria cuidou do bebê Jesus com muito amor.",
+      "dur": 3.55,
+      "estilo": "animada"
+    },
+    "v3_p6_pergunta": {
+      "texto": "Onde o bebê Jesus dormiu? Num castelo... num barco... ou numa manjedoura?",
+      "dur": 7.41,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.61
+        },
+        {
+          "ini": 2.51,
+          "fim": 3.46
+        },
+        {
+          "ini": 4.46,
+          "fim": 5.27
+        },
+        {
+          "ini": 6.27,
+          "fim": 7.41
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v3_p6_resposta": {
+      "texto": "Numa manjedoura! Era uma caminha de palha para os animais.",
+      "dur": 4.13,
+      "estilo": "animada"
+    },
+    "v3_p7_pergunta": {
+      "texto": "O que não combina com o Natal de Jesus? A estrela... o foguete... ou a ovelhinha?",
+      "dur": 7.69,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 2.19
+        },
+        {
+          "ini": 3.09,
+          "fim": 3.94
+        },
+        {
+          "ini": 4.94,
+          "fim": 5.81
+        },
+        {
+          "ini": 6.81,
+          "fim": 7.69
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v3_p7_resposta": {
+      "texto": "O foguete! Ha ha! Não tinha foguete naquele tempo!",
+      "dur": 4.053,
+      "estilo": "animada"
+    },
+    "v3_p8_mostrar": {
+      "texto": "Olhe bem onde a estrela está.",
+      "dur": 1.79,
+      "estilo": "animada"
+    },
+    "v3_p8_pergunta": {
+      "texto": "As cartas trocaram de lugar! Onde está a estrela? No um... no dois... ou no três?",
+      "dur": 8.15,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.78
+        },
+        {
+          "ini": 2.28,
+          "fim": 3.46
+        },
+        {
+          "ini": 4.26,
+          "fim": 4.81
+        },
+        {
+          "ini": 5.71,
+          "fim": 6.45
+        },
+        {
+          "ini": 7.35,
+          "fim": 8.15
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v3_p8_resposta": {
+      "texto": "No número dois! Você tem olho bom! A estrela guiou os magos até Jesus.",
+      "dur": 5.58,
+      "estilo": "animada"
+    },
+    "v3_p9_pergunta": {
+      "texto": "Os anjos deram a boa notícia a quem? Aos pastores... aos pescadores... ou aos padeiros?",
+      "dur": 8.61,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 2.38
+        },
+        {
+          "ini": 3.28,
+          "fim": 4.37
+        },
+        {
+          "ini": 5.37,
+          "fim": 6.51
+        },
+        {
+          "ini": 7.51,
+          "fim": 8.61
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v3_p9_resposta": {
+      "texto": "Aos pastores! Eles correram para ver o bebê Jesus.",
+      "dur": 4.34,
+      "estilo": "animada"
+    },
+    "v3_encerramento": {
+      "texto": "Você viu? Jesus nasceu para mostrar o amor de Deus. Deus ama você! Tchau, amiguinho, até a próxima!",
+      "dur": 7.44,
+      "estilo": "animada"
+    }
+  }
+}
