@@ -69,7 +69,7 @@ Cópia no Google Drive: crie uma pasta para este vídeo ao lado das dos Vídeos 
 1. Espere a checagem de direitos autorais. A trilha é a mesma dos outros vídeos, composta para o canal, então não deve haver reivindicação.
 2. Quando aparecer "Nenhum problema foi encontrado", clique em **Avançar**.
 
-### 5. Aba Visibilidade (salvar como Privado)
+### 5. Aba Visibilidade (salvar primeiro como Privado, para revisar)
 1. Marque **Privado** e clique em **Salvar**.
 2. O Studio avisa "Este vídeo está visível somente para você".
 3. O vídeo pode demorar alguns instantes para aparecer na lista de Conteúdo.
@@ -84,9 +84,14 @@ Cópia no Google Drive: crie uma pasta para este vídeo ao lado das dos Vídeos 
    - capítulos na barra do vídeo (dependem de a descrição começar em `0:00`);
    - miniatura aplicada.
 
-### 7. Publicar
-1. Em **Conteúdo**, abra o vídeo, vá em **Visibilidade** e mude de Privado para **Público**. Você também pode agendar.
-2. Clique em **Salvar**.
+### 7. Deixar o vídeo Público
+Esta etapa faz parte do passo a passo: feita a revisão do passo 6 sem achar problema, o vídeo já pode ir a público, sem esperar outra confirmação.
+1. Em **Conteúdo**, passe o mouse sobre o vídeo e clique no lápis (**Detalhes**).
+2. No canto direito, clique em **Visibilidade** (está como "Privado").
+3. Marque **Público**. Se preferir uma data, escolha **Programar** e defina dia e hora.
+4. Clique em **Concluído** e depois em **Salvar**, no alto da página.
+5. Confira na lista de **Conteúdo** se a coluna Visibilidade mostra **Público** (ou **Programado**, com a data).
+6. Abra o link do vídeo numa janela anônima, sem estar logado, para ter certeza de que qualquer pessoa consegue assistir.
 
 Boa prática: publicar em fim de semana de manhã (8h–11h) ou em dia útil no início da tarde (12h–15h). Depois ajuste pelo Analytics.
 
@@ -105,4 +110,4 @@ O YouTube desativa nesses vídeos: comentários, sininho de notificação, anún
 
 - O envio do `.mp4` precisa ser feito por você. O navegador do Claude só envia arquivos de até 3,8 MB, e o vídeo tem ~62 MB.
 - O `.srt` é pequeno e o Claude consegue enviar sozinho.
-- A mudança para **Público** só deve ser feita depois do seu "pode publicar".
+- A mudança para **Público** (passo 7) já está autorizada como parte deste passo a passo, depois da revisão do passo 6. Se a revisão achar algum problema, o vídeo fica Privado até ser corrigido.

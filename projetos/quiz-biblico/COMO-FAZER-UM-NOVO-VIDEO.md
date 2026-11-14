@@ -6,7 +6,7 @@ Leia primeiro o `README.md`. Este arquivo é o roteiro de trabalho. Os Vídeos 1
 
 - Responda em português do Brasil. O dono escreve por voz, então frases soltas são normais.
 - Cada etapa é validada antes da próxima, mas o dono já autorizou aprovar em bloco quando ele pedir ("pode aprovar todas as etapas"). Sem essa frase, peça aprovação.
-- Quem publica no YouTube é o dono. Eu entrego o pacote pronto. Mudar para Público só depois do "pode publicar".
+- Quem publica no YouTube é o dono. Eu entrego o pacote pronto. Deixar o vídeo Público é o passo 7 do guia de publicação e já está autorizado pelo dono (decisão de 14/11/2026), depois da revisão do vídeo em Privado.
 - **Vídeos 1 e 2 estão publicados e não podem mudar.** Depois de mexer em código compartilhado (`src/anim/`, `src/art/`, `src/kit.js`, `src/tuti.js`), rode `node src/v1/video.js`, `node src/v2/video.js`, `node src/v3/video.js` e `node src/v4/video.js`: todas as cenas têm de sair como "sem mudanças".
 - A chave do Google Cloud nunca entra no repositório nem no chat. Peça ao dono para anexar a chave de novo e use só via `GOOGLE_APPLICATION_CREDENTIALS`.
 - Não crie pull request sem pedido. Commit e push só na branch de trabalho.
