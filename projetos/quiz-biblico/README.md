@@ -137,6 +137,15 @@ Quarto vídeo da série de Natal. Cenário do céu de noite sobre a cidade nevad
 | 1 a 6 | Narrativa, imagens, narração, animação (3 min 51 s), legendas e pacote do YouTube | Aprovadas (2 a 6 pelo Claude, por decisão do dono do canal) |
 | 7 | Publicação | Pronto para subir. O passo a passo está em `v10-natal-renas/youtube/como-publicar.md` |
 
+### Vídeo 11 — Quiz de Natal 5: a Ceia e os Doces de Natal
+
+Quinto e último vídeo da série de Natal. Cenário da cozinha e da mesa da ceia (`art/ceia.js`): o biscoito de gengibre atrás do panetone, as velas que acendem ao serem contadas e a mesa pronta, com as chamas tremendo, no encerramento. Código em `src/v11/`; arquivos em `v11-natal-ceia/`.
+
+| Nº | Etapa | Situação |
+|---|---|---|
+| 1 a 6 | Narrativa, imagens, narração, animação (3 min 51 s), legendas e pacote do YouTube | Aprovadas (2 a 6 pelo Claude, por decisão do dono do canal) |
+| 7 | Publicação | Pronto para subir. O passo a passo está em `v11-natal-ceia/youtube/como-publicar.md` |
+
 ## Pastas
 
 - `v5-ingles-animais/` — arquivos do Vídeo 5, na mesma organização do Vídeo 4
@@ -233,6 +242,10 @@ node src/v9/video.js
 
 ```bash
 node src/v10/video.js
+```
+
+```bash
+node src/v11/video.js
 ```
 
 Cada comando monta um vídeo inteiro em `_rascunho/video/` (pasta fora do repositório): `v1_quiz_arca_de_noe.mp4`, `v2_desafios_de_davi_e_golias.mp4` e `v3_desafios_do_natal_de_jesus.mp4` e `v4_quiz_do_papai_noel.mp4` e `v5_festa_dos_animais.mp4`. Também grava as legendas e o mapa do vídeo na pasta de cada um. Cada cena é um trecho separado; só os trechos que mudaram são renderizados de novo. Um vídeo de 4 minutos leva cerca de 5 minutos para renderizar do zero.
