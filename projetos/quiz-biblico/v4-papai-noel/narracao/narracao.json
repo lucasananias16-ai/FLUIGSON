@@ -1,0 +1,235 @@
+{
+  "voz": {
+    "nome": "pt-BR-Chirp3-HD-Leda",
+    "velocidade": 0.94,
+    "estilo": "animada"
+  },
+  "falas": {
+    "v4_abertura": {
+      "texto": "Oi, amiguinho! A Tuti voltou! Olha só o meu gorro de Papai Noel! Hoje o Natal chegou com oito desafios para você. Vamos lá!",
+      "dur": 11.34,
+      "estilo": "animada"
+    },
+    "v4_p1_pergunta": {
+      "texto": "O Papai Noel está brincando de esconde-esconde! Você consegue encontrar?",
+      "dur": 4.63,
+      "estilo": "animada"
+    },
+    "v4_p1_resposta": {
+      "texto": "Achou! Ele estava atrás do pinheiro! Ho ho ho!",
+      "dur": 3.579,
+      "estilo": "animada"
+    },
+    "v4_p2_pergunta": {
+      "texto": "As renas vão puxar o trenó. Conte comigo!",
+      "dur": 3.14,
+      "estilo": "animada"
+    },
+    "v4_p2_contagem": {
+      "texto": "Um... dois... três... quatro!",
+      "dur": 4.71,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 0.34
+        },
+        {
+          "ini": 1.19,
+          "fim": 1.96
+        },
+        {
+          "ini": 2.81,
+          "fim": 3.38
+        },
+        {
+          "ini": 4.23,
+          "fim": 4.71
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v4_p2_resposta": {
+      "texto": "Quatro renas! Muito bem!",
+      "dur": 1.94,
+      "estilo": "animada"
+    },
+    "v4_p3_pergunta": {
+      "texto": "De que cor é a roupa do Papai Noel? Azul... vermelha... ou verde?",
+      "dur": 6.94,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.96
+        },
+        {
+          "ini": 2.86,
+          "fim": 3.44
+        },
+        {
+          "ini": 4.44,
+          "fim": 5.21
+        },
+        {
+          "ini": 6.21,
+          "fim": 6.94
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v4_p3_resposta": {
+      "texto": "Vermelha! A roupa do Papai Noel é vermelha e fofinha!",
+      "dur": 3.83,
+      "estilo": "animada"
+    },
+    "v4_p4_pergunta": {
+      "texto": "De quem é essa sombra de gorro? Da rena... do boneco de neve... ou do Papai Noel?",
+      "dur": 7.69,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.95
+        },
+        {
+          "ini": 2.85,
+          "fim": 3.53
+        },
+        {
+          "ini": 4.53,
+          "fim": 5.69
+        },
+        {
+          "ini": 6.69,
+          "fim": 7.69
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v4_p4_resposta": {
+      "texto": "Do Papai Noel! Olha o gorro e a barba bem grande!",
+      "dur": 3.64,
+      "estilo": "animada"
+    },
+    "v4_p5_pergunta": {
+      "texto": "Quem é o maior? O duendezinho... ou o Papai Noel?",
+      "dur": 4.85,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 0.98
+        },
+        {
+          "ini": 1.88,
+          "fim": 2.86
+        },
+        {
+          "ini": 3.86,
+          "fim": 4.85
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v4_p5_resposta": {
+      "texto": "O Papai Noel! Mas o duendezinho ajuda muito!",
+      "dur": 3.5,
+      "estilo": "animada"
+    },
+    "v4_p6_pergunta": {
+      "texto": "Por onde o Papai Noel entra na casa? Pela chaminé... pela janela... ou pela porta?",
+      "dur": 7.48,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 2.09
+        },
+        {
+          "ini": 2.99,
+          "fim": 3.86
+        },
+        {
+          "ini": 4.86,
+          "fim": 5.74
+        },
+        {
+          "ini": 6.74,
+          "fim": 7.48
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v4_p6_resposta": {
+      "texto": "Pela chaminé! Cuidado, que ela é estreitinha!",
+      "dur": 3.569,
+      "estilo": "animada"
+    },
+    "v4_p7_pergunta": {
+      "texto": "O que não combina com o Papai Noel? O gorro... o trenó... ou a prancha de surfe?",
+      "dur": 7.74,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.98
+        },
+        {
+          "ini": 2.88,
+          "fim": 3.62
+        },
+        {
+          "ini": 4.62,
+          "fim": 5.43
+        },
+        {
+          "ini": 6.43,
+          "fim": 7.74
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v4_p7_resposta": {
+      "texto": "A prancha de surfe! Ha ha! Na neve não tem onda!",
+      "dur": 4.13,
+      "estilo": "animada"
+    },
+    "v4_p8_mostrar": {
+      "texto": "Olhe bem onde o presente está.",
+      "dur": 1.81,
+      "estilo": "animada"
+    },
+    "v4_p8_pergunta": {
+      "texto": "As cartas trocaram de lugar! Onde está o presente? No um... no dois... ou no três?",
+      "dur": 8.15,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.74
+        },
+        {
+          "ini": 2.24,
+          "fim": 3.43
+        },
+        {
+          "ini": 4.23,
+          "fim": 4.78
+        },
+        {
+          "ini": 5.68,
+          "fim": 6.4
+        },
+        {
+          "ini": 7.3,
+          "fim": 8.15
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v4_p8_resposta": {
+      "texto": "No número um! Você tem olho bom! O Papai Noel tem presente para todo mundo.",
+      "dur": 5.193,
+      "estilo": "animada"
+    },
+    "v4_encerramento": {
+      "texto": "Feliz Natal, amiguinho! Até a próxima!",
+      "dur": 3.06,
+      "estilo": "animada"
+    }
+  }
+}

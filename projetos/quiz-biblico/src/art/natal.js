@@ -219,4 +219,4 @@ function cenaEncerramento({ comTuti = true } = {}) {
   });
 }
 
-module.exports = { estrelaGrande, cenaAbertura, cenaAchar, cenaPresentes, cenaComparar, cenaEncerramento, ESCONDERIJO };
+module.exports = { ceuNoite, nuvemNoite, estrelaGrande, cenaAbertura, cenaAchar, cenaPresentes, cenaComparar, cenaEncerramento, ESCONDERIJO };

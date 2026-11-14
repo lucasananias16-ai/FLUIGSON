@@ -55,6 +55,7 @@ const BASE = {
   earR: 0,
   extras: null, // 'wave' | 'sparkles'
   shadow: true,
+  gorro: false, // gorro de Papai Noel (Vídeo 4); desligado, o desenho é o de sempre
 };
 
 const POSES = {
@@ -186,6 +187,23 @@ function star(x, y, r, rot = 0, fill = C.star) {
   return `<path transform="translate(${n(x)},${n(y)}) rotate(${rot})" d="M0 ${-r} Q${a} ${-a} ${r} 0 Q${a} ${a} 0 ${r} Q${-a} ${a} ${-r} 0 Q${-a} ${-a} 0 ${-r}Z" fill="${fill}" stroke="${C.line}" stroke-width="7" stroke-linejoin="round"/>`;
 }
 
+/** Gorro de Papai Noel: vermelho, com faixa de pelo e pompom caído para o lado. Coordenadas da cabeça. */
+function gorroNatal() {
+  const vermelho = '#E25A52';
+  const sombra = '#C2443D';
+  const corpo = 'M-186 -128 C-196 -270 -50 -360 70 -338 C170 -320 246 -262 280 -168 C236 -212 176 -230 120 -222 C150 -176 148 -140 186 -128 Q0 -186 -186 -128Z';
+  const idc = `${idPrefix}g${uid++}`;
+  return (
+    `<path d="${corpo}" fill="${vermelho}" stroke="${C.line}" stroke-width="${O}" stroke-linejoin="round"/>` +
+    `<clipPath id="${idc}"><path d="${corpo}"/></clipPath>` +
+    `<path clip-path="url(#${idc})" d="M-120 -190 Q0 -260 150 -250 L150 -120 L-120 -120Z" fill="${sombra}" opacity="0.55"/>` +
+    `<path d="M-196 -128 Q0 -196 196 -128 Q214 -86 176 -78 Q0 -140 -176 -78 Q-214 -86 -196 -128Z" fill="#FFFFFF" stroke="${C.line}" stroke-width="${O}" stroke-linejoin="round"/>` +
+    `<path d="M-150 -112 Q-60 -138 0 -134 M60 -134 Q120 -134 160 -112" fill="none" stroke="${C.woolShade}" stroke-width="7" stroke-linecap="round"/>` +
+    `<circle cx="282" cy="-160" r="38" fill="#FFFFFF" stroke="${C.line}" stroke-width="${O}"/>` +
+    `<path d="M262 -170 Q282 -190 302 -172" fill="none" stroke="${C.woolShade}" stroke-width="7" stroke-linecap="round"/>`
+  );
+}
+
 /** Círculos que formam o topete de lã da cabeça. */
 const CAP = [
       [-172, -82, 48],
@@ -292,6 +310,8 @@ function head(p) {
     `<path d="M0 98 L0 ${my + 4} M-38 ${my - 1} Q-19 ${my + 22} 0 ${my + 4} Q19 ${my + 22} 38 ${my - 1}" fill="none" stroke="${C.line}" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>` +
       `<path d="M-19 77 Q0 70 19 77 Q16 94 0 100 Q-16 94 -19 77Z" fill="${C.nose}" stroke="${C.line}" stroke-width="7" stroke-linejoin="round"/>`
   );
+
+  if (p.gorro) g.push(gorroNatal());
 
   return g.join('');
 }
@@ -426,7 +446,9 @@ function tuti(pose = 'neutra', override = {}) {
 function tutiSvg(pose, override = {}, { width = 1000, height = 1100, prefix = 't' } = {}) {
   uid = 0;
   idPrefix = prefix;
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1100" width="${width}" height="${height}">${tuti(pose, override)}</svg>`;
+  // com o gorro, a ponta passa do alto do desenho quando a Tuti pula: deixa aparecer
+  const gorro = override.gorro || (typeof pose === 'object' && pose && pose.gorro);
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1100" width="${width}" height="${height}"${gorro ? ' overflow="visible"' : ''}>${tuti(pose, override)}</svg>`;
 }
 
 module.exports = { tuti, tutiSvg, POSES, BASE, C };

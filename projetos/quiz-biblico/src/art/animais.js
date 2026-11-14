@@ -391,4 +391,83 @@ function camelo() {
   );
 }
 
-module.exports = { elefante, umElefante, doisElefantes, cincoElefantes, leao, girafa, coruja, pomba, pinguim, ovelha, camelo };
+// ---------------------------------------------------- Vídeo 4: rena e boneco de neve
+function rena() {
+  const corpo = '#B9824B';
+  const sombra = '#9A6A38';
+  const creme = '#F4E3C6';
+  const casco = '#4A3140';
+  const chifre = '#D9A066';
+  const inner = '<ellipse cx="450" cy="610" rx="210" ry="104"/>';
+  const pescoco = 'M560 580 C596 500 614 440 636 380 L742 412 C716 470 716 540 680 624Z';
+  const longe = (cx) => R(cx - 22, 650, 44, 224, 18, sombra) + R(cx - 26, 850, 52, 32, 12, casco);
+  const perto = (cx) => leg(cx, 650, 852, 50, corpo, inner) + R(cx - 29, 840, 58, 38, 12, casco);
+  const galho = (d) => tube(d, 16, chifre);
+  return (
+    shadow(450, 886, 300) +
+    // chifres do lado de lá, rabo e pernas de trás
+    galho('M668 300 L650 190 M656 240 L606 200 M652 210 L690 150') +
+    cloud([[222, 566, 24], [208, 590, 18]], { sx: -3, sy: -5 }) +
+    longe(320) +
+    longe(552) +
+    E(450, 610, 218, 108, corpo) +
+    clip(inner, P(pescoco, corpo, { sw: o(2.4), stroke: corpo })) +
+    P(pescoco, corpo, { sw: 0 }) +
+    L('M560 580 C596 500 614 440 636 380', { sw: o(0.9) }) +
+    L('M680 624 C716 540 716 470 742 412', { sw: o(0.9) }) +
+    perto(274) +
+    perto(496) +
+    // coleira com sininho
+    tube('M606 470 Q664 496 724 470', 18, '#E25A52') +
+    Ci(664, 506, 15, '#FFD23F', { sw: o(0.7) }) +
+    // cabeça
+    E(704, 366, 80, 66, corpo, { rot: -8 }) +
+    E(784, 396, 56, 44, creme) +
+    Ci(830, 386, 21, '#E25A52', { sw: o(0.8) }) +
+    E(824, 380, 7, 6, '#FFB0A8', { sw: 0 }) +
+    // chifres da frente e orelha
+    galho('M716 306 L716 180 M716 236 L768 196 M716 206 L682 150') +
+    E(664, 318, 24, 38, sombra, { rot: -20 }) +
+    E(664, 322, 12, 22, '#FFAEC0', { rot: -20, sw: 0 }) +
+    eye(708, 348, 0.54) +
+    L('M682 306 Q708 292 734 306', { sw: o(0.8) }) +
+    cheek(746, 420, 20) +
+    L('M790 420 Q808 432 826 418', { sw: o(0.7) })
+  );
+}
+
+function bonecoNeve() {
+  const neve = (cx, cy, r) =>
+    Ci(cx, cy, r, '#FFFFFF') +
+    clip(`<circle cx="${cx}" cy="${cy}" r="${r}"/>`, E(cx + r * 0.2, cy + r * 0.6, r * 1.1, r * 0.6, '#DCEBFA', { sw: 0 }));
+  return (
+    shadow(500, 892, 250) +
+    // braços de galho
+    tube('M360 520 L230 440 M270 464 L240 400', 14, '#8F5A2E') +
+    tube('M640 520 L770 440 M730 464 L760 400', 14, '#8F5A2E') +
+    neve(500, 730, 168) +
+    neve(500, 530, 128) +
+    // cachecol
+    tube('M392 438 Q500 480 608 438', 40, '#E25A52') +
+    P('M580 460 L630 560 L584 574 L552 478Z', '#E25A52') +
+    L('M592 500 L612 530', { color: '#C2443D', sw: o(0.7) }) +
+    // botões
+    Ci(500, 590, 14, '#3D2C4E', { sw: 0 }) +
+    Ci(500, 650, 14, '#3D2C4E', { sw: 0 }) +
+    Ci(500, 710, 14, '#3D2C4E', { sw: 0 }) +
+    neve(500, 350, 98) +
+    // rosto
+    Ci(462, 332, 12, '#3D2C4E', { sw: 0 }) +
+    Ci(538, 332, 12, '#3D2C4E', { sw: 0 }) +
+    P('M500 350 L596 372 L500 392Z', '#FF8A3A', { sw: o(0.8) }) +
+    cheek(420, 372, 18) +
+    cheek(580, 372, 14) +
+    [0, 1, 2, 3, 4].map((i) => Ci(446 + i * 27, 408 + Math.abs(i - 2) * -5 + 12, 6, '#3D2C4E', { sw: 0 })).join('') +
+    // cartola
+    R(396, 262, 208, 26, 12, '#3B3548') +
+    R(430, 160, 140, 114, 16, '#3B3548') +
+    R(430, 236, 140, 24, 0, '#E25A52', { sw: 0 })
+  );
+}
+
+module.exports = { elefante, umElefante, doisElefantes, cincoElefantes, leao, girafa, coruja, pomba, pinguim, ovelha, camelo, rena, bonecoNeve };

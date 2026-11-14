@@ -31,8 +31,9 @@ const { LINE, CARD, f, OLHANDO, APONTANDO, PENSANDO, PENSANDO_FRENTE, COMEMORA, 
  *    cena emenda direto na anterior e na seguinte
  *  - layout: { cx, cy, escala, timer } para cards menores ou em outro lugar
  *  - extra: { css, antes, ops(t, T), sons(T) } para peças a mais na cena
+ *  - fundo: função que desenha o fundo (o padrão é o céu com gramado)
  */
-function criarCenaCards({ num, q, narrDir, idPergunta, idResposta, contagem, tGlobal0 = 0, entrada = null, saida = null, layout = {}, extra = {} }) {
+function criarCenaCards({ num, q, narrDir, idPergunta, idResposta, contagem, tGlobal0 = 0, entrada = null, saida = null, layout = {}, extra = {}, fundo = null }) {
   const NARR = narrDir;
   const CX = layout.cx || [432, 920, 1408];
   const CY = layout.cy === undefined ? 232 : layout.cy;
@@ -135,7 +136,7 @@ function criarCenaCards({ num, q, narrDir, idPergunta, idResposta, contagem, tGl
     #tuti { position: absolute; left: -40px; top: 436px; width: 560px; height: 616px; }
   ` + (extra.css || '');
   const body =
-    `<svg id="bg" viewBox="0 0 1920 1080">${fundoQuiz()}</svg>` +
+    `<svg id="bg" viewBox="0 0 1920 1080">${(fundo || fundoQuiz)()}</svg>` +
     `<div id="burst">${raios()}</div>` +
     `<div id="banner"><div id="qnum">${num}</div>${q.texto}</div>` +
     (extra.antes || '') +

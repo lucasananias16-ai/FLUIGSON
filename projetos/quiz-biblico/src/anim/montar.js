@@ -64,8 +64,9 @@ async function emParalelo(tarefas, limite) {
  *  - trechos: subpasta de _rascunho/video para os trechos de imagem
  *  - legendas: opções passadas ao gerador de legendas
  *  - args: argumentos da linha de comando (--refazer)
+ *  - limite: pico máximo do áudio (padrão 0,89, perto de −1 dBFS); baixe para sobrar folga ao codificar
  */
-async function montar({ nome, pasta, roteiro, trechos = 'trechos', legendas = {}, args = [] }) {
+async function montar({ nome, pasta, roteiro, trechos = 'trechos', legendas = {}, args = [], limite = 0.89 }) {
   const NARR = path.join(ROOT, pasta, 'narracao');
   const SEG = path.join(OUT, trechos);
   const refazer = args.includes('--refazer');
@@ -108,7 +109,7 @@ async function montar({ nome, pasta, roteiro, trechos = 'trechos', legendas = {}
   const final = path.join(OUT, `${nome}.mp4`);
   execFileSync('ffmpeg', [
     '-y', '-loglevel', 'error', '-i', imagem, '-i', wav, '-c:v', 'copy',
-    '-af', `volume=${g.ganho.toFixed(2)}dB,alimiter=limit=0.89:level=false`,
+    '-af', `volume=${g.ganho.toFixed(2)}dB,alimiter=limit=${limite}:level=false`,
     '-c:a', 'aac', '-b:a', '192k', '-ar', '48000', '-ac', '2', '-shortest', '-movflags', '+faststart', final,
   ]);
 

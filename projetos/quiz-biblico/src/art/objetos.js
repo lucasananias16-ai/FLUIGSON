@@ -547,6 +547,151 @@ const tresPresentes = () =>
   caixa(570, 860, 280, 380, '#4DA3FF', '#2E86E6', '#FFFFFF') +
   caixa(860, 860, 250, 240, '#9B7EDE', '#7F62C6', '#FFD23F');
 
+// ------------------------------------------------------------- Vídeo 4
+
+const VERM = '#E25A52';
+const VERM_ESC = '#C2443D';
+
+/** Chaminé de tijolos num telhado com neve, soltando fumaça. Sem rosto. */
+function chamine() {
+  const tijolos = [];
+  for (let r = 0; r < 6; r++) {
+    for (let c = 0; c < 3; c++) {
+      const x = 370 + c * 86 + (r % 2) * 43;
+      tijolos.push(`M${x} ${360 + r * 50} L${x} ${410 + r * 50}`);
+    }
+    tijolos.push(`M370 ${360 + r * 50} L630 ${360 + r * 50}`);
+  }
+  const telhado = 'M60 820 L940 820 L860 640 L140 640Z';
+  return (
+    shadow(500, 830, 420) +
+    cloud([[470, 200, 50], [540, 150, 62], [610, 190, 46], [560, 240, 56]], { fill: '#F2F0F8', shade: '#D6D2E4', sx: -4, sy: -6 }) +
+    P(telhado, '#8F5A5A') +
+    clipD(telhado, L('M80 700 L920 700 M80 760 L920 760', { color: '#6F3F46', sw: o(0.7) })) +
+    L(telhado) +
+    R(350, 330, 300, 340, 14, '#C2543F') +
+    clipD('M350 330 L650 330 L650 670 L350 670Z', L(tijolos.join(' '), { color: '#8F3A2C', sw: o(0.6) })) +
+    R(350, 330, 300, 340, 14, 'none') +
+    R(326, 290, 348, 56, 18, '#FFFFFF') +
+    P('M130 640 Q500 600 870 640 Q840 690 790 676 Q700 710 640 676 Q500 700 360 676 Q300 706 210 676 Q160 690 130 640Z', '#FFFFFF') +
+    sparkle(150, 300, 30, 0, '#FFD23F') +
+    sparkle(850, 360, 26, 12, '#FFD23F')
+  );
+}
+
+/** Janela de madeira acesa por dentro, com neve no parapeito. */
+function janela() {
+  return (
+    shadow(500, 860, 330) +
+    R(220, 160, 560, 640, 30, '#C98A4B') +
+    R(270, 210, 460, 540, 14, '#FFE9A8') +
+    P('M270 210 L730 210 L730 330 Q500 280 270 330Z', '#FFF6CC', { sw: 0 }) +
+    L('M500 210 L500 750 M270 480 L730 480', { sw: o(2.2), color: '#C98A4B' }) +
+    R(270, 210, 460, 540, 14, 'none') +
+    L('M500 210 L500 750 M270 480 L730 480', { sw: o(0.7) }) +
+    sparkle(385, 330, 34, 0, '#FFFFFF') +
+    sparkle(615, 600, 28, 14, '#FFFFFF') +
+    R(190, 770, 620, 60, 24, '#A66A34') +
+    P('M200 770 Q260 730 340 760 Q420 720 500 756 Q590 722 660 758 Q740 734 800 770 Q740 800 660 790 Q580 810 500 790 Q420 806 340 790 Q260 806 200 770Z', '#FFFFFF')
+  );
+}
+
+/** Porta de madeira com coroa de Natal e tapete. */
+function porta() {
+  const folha = 'M300 880 L300 340 A200 200 0 0 1 700 340 L700 880Z';
+  return (
+    shadow(500, 886, 340) +
+    R(262, 150, 476, 740, 36, '#F2F0F8') +
+    P(folha, '#B5562E') +
+    clipD(folha, L('M300 420 L700 420 M300 560 L700 560 M300 700 L700 700 M500 150 L500 880', { color: '#8F3F20', sw: o(0.7) })) +
+    L(folha) +
+    Ci(640, 620, 18, '#FFD23F', { sw: o(0.7) }) +
+    // coroa de Natal
+    Ci(500, 400, 92, '#5DBB7A') +
+    Ci(500, 400, 52, '#B5562E', { sw: o(0.8) }) +
+    Ci(430, 380, 12, VERM, { sw: o(0.6) }) +
+    Ci(560, 350, 12, VERM, { sw: o(0.6) }) +
+    Ci(546, 452, 12, VERM, { sw: o(0.6) }) +
+    P('M500 486 L452 536 L492 520 L500 548 L508 520 L548 536Z', VERM) +
+    R(300, 880, 400, 36, 16, VERM) +
+    sparkle(190, 280, 32, 0, '#FFD23F') +
+    sparkle(820, 330, 26, 12, '#FFD23F')
+  );
+}
+
+/** Gorro de Papai Noel como objeto. Sem rosto. */
+function gorroNoel() {
+  const corpo = 'M180 640 C180 380 380 240 560 250 C700 260 790 350 830 480 C760 430 680 420 620 440 C660 520 640 600 700 640 Q440 700 180 640Z';
+  return (
+    shadow(500, 820, 360) +
+    P(corpo, VERM) +
+    clipD(corpo, P('M260 520 Q460 380 700 400 L700 700 L260 700Z', VERM_ESC, { sw: 0, opacity: 0.5 })) +
+    L(corpo) +
+    P('M150 620 Q440 560 720 640 Q750 720 700 750 Q440 680 190 760 Q120 730 150 620Z', '#FFFFFF') +
+    L('M230 690 Q330 660 420 676 M520 690 Q600 676 660 700', { color: '#E3DDF2', sw: o(0.7) }) +
+    Ci(836, 500, 62, '#FFFFFF') +
+    L('M800 480 Q836 450 872 484', { color: '#E3DDF2', sw: o(0.7) }) +
+    sparkle(200, 250, 34, 0, '#FFD23F') +
+    sparkle(860, 250, 28, 12, '#FFD23F')
+  );
+}
+
+/** Trenó vermelho com patins dourados e um saco de presentes. Sem rosto. */
+function treno() {
+  const casco = 'M200 520 C200 420 330 380 480 396 L820 396 C820 470 780 520 700 560 L260 600 C220 590 200 560 200 520Z';
+  return (
+    shadow(500, 800, 400) +
+    // saco de presentes
+    P('M480 400 C400 290 430 190 520 180 C620 190 640 300 560 400Z', '#C98A4B') +
+    L('M470 250 Q520 280 580 250', { color: '#8F5A2E', sw: o(0.8) }) +
+    Ci(530, 190, 26, '#FFD23F') +
+    caixa(690, 400, 120, 110, '#4DA3FF', '#2E86E6', '#FFFFFF') +
+    // trenó
+    P(casco, VERM) +
+    clipD(casco, P('M180 560 L860 500 L860 620 L180 620Z', VERM_ESC, { sw: 0, opacity: 0.6 })) +
+    L(casco) +
+    L('M300 470 Q500 440 760 450', { color: '#FFD23F', sw: o(1.4) }) +
+    tube('M170 640 Q440 700 780 640 Q860 624 870 560 Q880 520 850 500', 16, '#FFD23F') +
+    tube('M290 600 L300 660 M640 596 L650 650', 14, '#FFD23F') +
+    sparkle(150, 380, 34, 0, '#FFFFFF') +
+    sparkle(880, 300, 28, 12, '#FFFFFF')
+  );
+}
+
+/** Prancha de surfe colorida: o intruso engraçado. Sem rosto. */
+function prancha() {
+  const forma = 'M500 90 C620 190 660 450 640 740 C630 850 560 900 500 900 C440 900 370 850 360 740 C340 450 380 190 500 90Z';
+  return (
+    shadow(500, 906, 260) +
+    G('rotate(18 500 500)',
+      P(forma, '#2EC4B6') +
+        clipD(forma, P('M300 300 L700 250 L700 400 L300 450Z', '#FFD23F', { sw: 0 }) + P('M300 520 L700 470 L700 590 L300 640Z', '#FF8FB1', { sw: 0 }) + E(450, 260, 40, 190, '#FFFFFF', { sw: 0, opacity: 0.35 })) +
+        L(forma) +
+        L('M500 140 C500 400 500 700 500 860', { color: '#FFFFFF', sw: o(0.9) }) +
+        P('M500 900 L470 960 L530 960Z', '#FFD23F')) +
+    sparkle(180, 220, 32, 0, '#FFD23F') +
+    sparkle(830, 280, 26, 12, '#FFD23F')
+  );
+}
+
+/** Meia de Natal pendurada, com um bocado de presentes. Sem rosto. */
+function meia() {
+  const forma = 'M360 220 L640 220 L640 600 C640 700 700 740 780 780 C860 830 800 920 700 910 C580 900 480 840 420 760 C370 690 360 640 360 560Z';
+  return (
+    shadow(560, 922, 300) +
+    P(forma, VERM) +
+    clipD(forma, P('M560 520 L700 520 L760 960 L560 960Z', VERM_ESC, { sw: 0, opacity: 0.5 }) + P('M360 780 L460 700 L520 780 L440 860Z', '#FFFFFF', { sw: 0 }) + P('M640 740 L800 740 L840 840 L700 880Z', '#FFFFFF', { sw: 0 })) +
+    L(forma) +
+    R(330, 150, 340, 120, 40, '#FFFFFF') +
+    L('M390 200 Q500 180 610 200', { color: '#E3DDF2', sw: o(0.8) }) +
+    Ci(500, 490, 62, '#FFD23F', { sw: o(1) }) +
+    sparkle(500, 490, 46, 0, '#FFFFFF') +
+    tube('M500 150 L500 90', 10, '#8F5A2E') +
+    sparkle(200, 300, 32, 0, '#FFD23F') +
+    sparkle(850, 250, 26, 12, '#FFD23F')
+  );
+}
+
 module.exports = {
   pedras,
   madeira,
@@ -583,4 +728,11 @@ module.exports = {
   manjedoura,
   manjedouraBebe,
   tresPresentes,
+  chamine,
+  janela,
+  porta,
+  gorroNoel,
+  treno,
+  prancha,
+  meia,
 };

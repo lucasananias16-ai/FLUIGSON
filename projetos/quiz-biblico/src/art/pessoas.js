@@ -140,6 +140,7 @@ function person(cfg = {}) {
       mouth: 'sorriso', // 'sorriso' | 'aberta' | 'confiante'
       behind: '', // desenhado atrás dos braços: o que a mão segura
       front: '',
+      shoe: '#9A6233',
       shadow: true,
     },
     cfg
@@ -158,7 +159,7 @@ function person(cfg = {}) {
   if (hem < 800) {
     out.push(tube(`M452 ${hem - 20} L448 866`, 50, c.skin) + tube(`M548 ${hem - 20} L552 866`, 50, c.skin));
   }
-  out.push(E(442, 880, 54, 25, '#9A6233') + E(558, 880, 54, 25, '#9A6233'));
+  out.push(E(442, 880, 54, 25, c.shoe) + E(558, 880, 54, 25, c.shoe));
 
   // Roupa
   out.push(P(robeD, c.robe));
@@ -558,4 +559,82 @@ const jose = (over = {}) =>
     )
   );
 
-module.exports = { person, head, noe, davi, moises, esposa, filho, nora, hammer, staff, sling, daviPastor, reiDavi, pescador, padeiro, golias, pastor, anjo, maria, marta, ana, jose };
+
+// ------------------------------------------------------------- Vídeo 4
+
+const ROUPAS_NOEL = { vermelha: ['#E25A52', '#C2443D'], azul: ['#4DA3FF', '#2E86E6'], verde: ['#5DBB7A', '#3F9E60'] };
+
+/**
+ * Papai Noel simpático: gorro, barba e cabelo brancos e roupa com pelo branco.
+ * `cor` ('vermelha', 'azul' ou 'verde') muda a roupa e o gorro juntos.
+ */
+function papaiNoel(over = {}) {
+  const [robe, robeDark] = ROUPAS_NOEL[over.cor || 'vermelha'];
+  const gorro = G(
+    'scale(0.86)',
+    P('M-186 -128 C-196 -270 -50 -360 70 -338 C170 -320 246 -262 280 -168 C236 -212 176 -230 120 -222 C150 -176 148 -140 186 -128 Q0 -186 -186 -128Z', robe) +
+      clipD('M-186 -128 C-196 -270 -50 -360 70 -338 C170 -320 246 -262 280 -168 C236 -212 176 -230 120 -222 C150 -176 148 -140 186 -128 Q0 -186 -186 -128Z', P('M-120 -190 Q0 -260 150 -250 L150 -120 L-120 -120Z', robeDark, { sw: 0, opacity: 0.55 })) +
+      P('M-196 -128 Q0 -196 196 -128 Q214 -86 176 -78 Q0 -140 -176 -78 Q-214 -86 -196 -128Z', '#FFFFFF') +
+      Ci(282, -160, 38, '#FFFFFF')
+  );
+  const barra = P('M330 800 L670 800 Q690 828 668 858 Q500 884 332 858 Q310 828 330 800Z', '#FFFFFF');
+  const listra = R(484, 498, 32, 302, 14, '#FFFFFF');
+  const fivela = R(466, 628, 68, 58, 10, '#FFD23F') + R(480, 642, 40, 30, 6, 'none', {});
+  const { cor, ...resto } = over;
+  return person(
+    Object.assign(
+      {
+        skin: '#F2C49B',
+        skinShade: '#DFA57A',
+        robe,
+        robeDark,
+        sash: '#3B3548',
+        hair: 'lados',
+        hairColor: '#FFFFFF',
+        hairShade: '#E3DDF2',
+        beard: 'longa',
+        brow: 'branca',
+        mouth: 'aberta',
+        happy: false,
+        hat: gorro,
+        shoe: '#3B3548',
+        armR: [744, 500],
+        armL: [356, 708],
+        front: listra + barra + fivela,
+      },
+      resto
+    )
+  );
+}
+
+/** Duende ajudante: orelhas de ponta, gorro verde com sininho e túnica verde e vermelha. */
+function duende(over = {}) {
+  const gorro =
+    P('M-150 -122 C-130 -230 -50 -292 70 -330 C84 -270 150 -210 150 -122 Q0 -166 -150 -122Z', '#3CA567') +
+    P('M-160 -122 Q0 -170 160 -122 Q170 -92 150 -86 Q0 -130 -150 -86 Q-170 -92 -160 -122Z', '#E25A52') +
+    Ci(72, -332, 24, '#FFD23F');
+  const orelhas = [-1, 1].map((sg) => P(`M${sg * 160} -4 L${sg * 262} -70 L${sg * 168} 58Z`, '#F2C49B')).join('');
+  return person(
+    Object.assign(
+      {
+        skin: '#F2C49B',
+        skinShade: '#DFA57A',
+        robe: '#3CA567',
+        robeDark: '#2B8650',
+        sash: '#E25A52',
+        hem: 800,
+        hair: 'curto',
+        hairColor: '#8A5A2B',
+        hairShade: '#6E4420',
+        mouth: 'aberta',
+        hat: orelhas + gorro,
+        shoe: '#E25A52',
+        armR: [740, 520],
+        armL: [356, 708],
+      },
+      over
+    )
+  );
+}
+
+module.exports = { person, head, noe, davi, moises, esposa, filho, nora, hammer, staff, sling, daviPastor, reiDavi, pescador, padeiro, golias, pastor, anjo, maria, marta, ana, jose, papaiNoel, duende };
