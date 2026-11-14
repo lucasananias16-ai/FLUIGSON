@@ -119,6 +119,15 @@ Segundo vídeo da série de Natal (plano em `SERIE-NATAL.md`). Usa as cenas do V
 | 1 a 6 | Narrativa, imagens, narração, animação (3 min 54 s), legendas e pacote do YouTube | Aprovadas (2 a 6 pelo Claude, por decisão do dono do canal) |
 | 7 | Publicação | Pronto para subir. O passo a passo está em `v8-natal-oficina/youtube/como-publicar.md` |
 
+### Vídeo 9 — Quiz de Natal 3: a Árvore de Natal
+
+Terceiro vídeo da série de Natal. Cenário da sala de casa (`art/sala.js`), com a árvore vazia na abertura e pronta, piscando, no encerramento; desafio novo "o diferente". Código em `src/v9/`; arquivos em `v9-natal-arvore/`.
+
+| Nº | Etapa | Situação |
+|---|---|---|
+| 1 a 6 | Narrativa, imagens, narração, animação (3 min 53 s), legendas e pacote do YouTube | Aprovadas (2 a 6 pelo Claude, por decisão do dono do canal) |
+| 7 | Publicação | Pronto para subir. O passo a passo está em `v9-natal-arvore/youtube/como-publicar.md` |
+
 ## Pastas
 
 - `v5-ingles-animais/` — arquivos do Vídeo 5, na mesma organização do Vídeo 4
@@ -207,6 +216,10 @@ node src/v7/video.js
 
 ```bash
 node src/v8/video.js
+```
+
+```bash
+node src/v9/video.js
 ```
 
 Cada comando monta um vídeo inteiro em `_rascunho/video/` (pasta fora do repositório): `v1_quiz_arca_de_noe.mp4`, `v2_desafios_de_davi_e_golias.mp4` e `v3_desafios_do_natal_de_jesus.mp4` e `v4_quiz_do_papai_noel.mp4` e `v5_festa_dos_animais.mp4`. Também grava as legendas e o mapa do vídeo na pasta de cada um. Cada cena é um trecho separado; só os trechos que mudaram são renderizados de novo. Um vídeo de 4 minutos leva cerca de 5 minutos para renderizar do zero.

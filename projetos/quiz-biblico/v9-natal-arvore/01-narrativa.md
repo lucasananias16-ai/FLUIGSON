@@ -80,3 +80,8 @@ Imagem: a sala com a árvore completa, a estrela no topo, as luzes piscando, os 
 3. **Sem falar a lista de cores na pergunta da sequência:** as luzinhas piscam na tela. Aprendi no vídeo da Oficina que falar a lista atrapalha a virada dos cards.
 4. **Título sugerido:** `Quiz de Natal 3: monte a Árvore de Natal | você acerta todas?`
 5. **Playlist:** a "Quiz de Natal".
+
+## O que mudou na produção
+
+- A árvore não ganha um enfeite a cada desafio. Ela aparece vazia na abertura, recebe as cinco bolas no desafio 2 e aparece pronta, com luzes piscando e a estrela, no encerramento. Nas cenas de cards os cards ocupam a tela e a árvore não aparece.
+- A pergunta das luzinhas tem duas frases antes das opções ("Olhe as luzinhas piscando! Qual cor vem depois?"), gravadas em cinco partes.

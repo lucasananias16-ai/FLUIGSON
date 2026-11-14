@@ -1,0 +1,225 @@
+{
+  "voz": {
+    "nome": "pt-BR-Chirp3-HD-Leda",
+    "velocidade": 0.94,
+    "estilo": "animada"
+  },
+  "falas": {
+    "v9_abertura": {
+      "texto": "Oi, amiguinho! A Tuti voltou! Hoje vamos montar a árvore de Natal! Cada desafio põe um enfeite nela. São oito desafios. Vamos lá!",
+      "dur": 11.821,
+      "estilo": "animada"
+    },
+    "v9_p1_pergunta": {
+      "texto": "A estrela da árvore sumiu! Você consegue encontrar?",
+      "dur": 3.8,
+      "estilo": "animada"
+    },
+    "v9_p1_resposta": {
+      "texto": "Achou! Ela estava atrás do sofá! Vamos guardar para o final.",
+      "dur": 4.58,
+      "estilo": "animada"
+    },
+    "v9_p2_pergunta": {
+      "texto": "Vamos pendurar as bolas. Conte comigo!",
+      "dur": 2.91,
+      "estilo": "animada"
+    },
+    "v9_p2_contagem": {
+      "texto": "Um... dois... três... quatro... cinco!",
+      "dur": 6.47,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 0.43
+        },
+        {
+          "ini": 1.28,
+          "fim": 1.98
+        },
+        {
+          "ini": 2.83,
+          "fim": 3.46
+        },
+        {
+          "ini": 4.31,
+          "fim": 4.98
+        },
+        {
+          "ini": 5.83,
+          "fim": 6.47
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v9_p2_resposta": {
+      "texto": "Cinco bolas! Muito bem!",
+      "dur": 2.07,
+      "estilo": "animada"
+    },
+    "v9_p3_pergunta": {
+      "texto": "O que vai no topo da árvore? A meia... a estrela... ou a bota?",
+      "dur": 6.65,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.62
+        },
+        {
+          "ini": 2.52,
+          "fim": 3.25
+        },
+        {
+          "ini": 4.25,
+          "fim": 5.03
+        },
+        {
+          "ini": 6.03,
+          "fim": 6.65
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v9_p3_resposta": {
+      "texto": "A estrela! Ela fica lá no alto, brilhando!",
+      "dur": 3.83,
+      "estilo": "animada"
+    },
+    "v9_p4_pergunta": {
+      "texto": "Olhe as luzinhas piscando! Qual cor vem depois? A amarela... a azul... ou a verde?",
+      "dur": 8.66,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.56
+        },
+        {
+          "ini": 2.06,
+          "fim": 3.39
+        },
+        {
+          "ini": 4.29,
+          "fim": 5.11
+        },
+        {
+          "ini": 6.11,
+          "fim": 6.89
+        },
+        {
+          "ini": 7.89,
+          "fim": 8.66
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v9_p4_resposta": {
+      "texto": "A amarela! Vermelha, amarela, vermelha, amarela!",
+      "dur": 4.89,
+      "estilo": "animada"
+    },
+    "v9_p5_pergunta": {
+      "texto": "Um destes enfeites é diferente! Qual é?",
+      "dur": 2.88,
+      "estilo": "animada"
+    },
+    "v9_p5_resposta": {
+      "texto": "O sino! Os outros são bolas. Blim, blém!",
+      "dur": 6.32,
+      "estilo": "animada"
+    },
+    "v9_p6_pergunta": {
+      "texto": "Qual pinheiro é o maior? O da esquerda... ou o da direita?",
+      "dur": 4.92,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.28
+        },
+        {
+          "ini": 2.18,
+          "fim": 3.13
+        },
+        {
+          "ini": 4.13,
+          "fim": 4.92
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v9_p6_resposta": {
+      "texto": "O da direita! Ele é bem alto!",
+      "dur": 2.74,
+      "estilo": "animada"
+    },
+    "v9_p7_pergunta": {
+      "texto": "O que não vai na árvore de Natal? A bola... o sino... ou o guarda-chuva?",
+      "dur": 7.39,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 2.03
+        },
+        {
+          "ini": 2.93,
+          "fim": 3.61
+        },
+        {
+          "ini": 4.61,
+          "fim": 5.26
+        },
+        {
+          "ini": 6.26,
+          "fim": 7.39
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v9_p7_resposta": {
+      "texto": "O guarda-chuva! Ha ha! Não chove dentro de casa!",
+      "dur": 4.07,
+      "estilo": "animada"
+    },
+    "v9_p8_mostrar": {
+      "texto": "Olhe bem onde a estrela está.",
+      "dur": 1.85,
+      "estilo": "animada"
+    },
+    "v9_p8_pergunta": {
+      "texto": "As cartas trocaram de lugar! Onde está a estrela? No um... no dois... ou no três?",
+      "dur": 8.1,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.67
+        },
+        {
+          "ini": 2.17,
+          "fim": 3.33
+        },
+        {
+          "ini": 4.13,
+          "fim": 4.73
+        },
+        {
+          "ini": 5.63,
+          "fim": 6.33
+        },
+        {
+          "ini": 7.23,
+          "fim": 8.1
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v9_p8_resposta": {
+      "texto": "No número dois! Você tem olho bom! Agora ela vai para o topo!",
+      "dur": 4.749,
+      "estilo": "animada"
+    },
+    "v9_encerramento": {
+      "texto": "A árvore ficou pronta! Olha que linda, toda iluminada! Feliz Natal, amiguinho! Até a próxima!",
+      "dur": 8.21,
+      "estilo": "animada"
+    }
+  }
+}
