@@ -352,4 +352,43 @@ function ovelha({ feliz = false, olhar = [0, 0] } = {}) {
   );
 }
 
-module.exports = { elefante, umElefante, doisElefantes, cincoElefantes, leao, girafa, coruja, pomba, pinguim, ovelha };
+// ------------------------------------------------------- Vídeo 3: camelo
+function camelo() {
+  const corpo = '#E7B974';
+  const sombra = '#CFA05D';
+  const creme = '#FFE9C7';
+  const casco = '#7A4A2B';
+  const inner = '<ellipse cx="430" cy="600" rx="210" ry="106"/>';
+  const giba = blob(420, 462, 98, 92, 3, 0.07, 8);
+  const pescoco = 'M500 590 C560 470 584 360 622 292 L736 322 C700 402 690 500 640 640Z';
+  const longe = (cx) => R(cx - 24, 640, 48, 232, 20, sombra) + R(cx - 28, 846, 56, 34, 14, casco);
+  const perto = (cx) => leg(cx, 640, 850, 54, corpo, inner) + R(cx - 31, 838, 62, 40, 14, casco);
+  return (
+    shadow(450, 886, 320) +
+    tube('M222 560 Q168 600 176 676', 12, corpo) +
+    P(blob(176, 700, 16, 24, 5, 0.14), casco) +
+    longe(318) +
+    longe(540) +
+    E(430, 600, 218, 112, corpo) +
+    P(giba, corpo) +
+    clip(inner, P(giba, corpo, { sw: o(2.4), stroke: corpo }) + P(pescoco, corpo, { sw: o(2.4), stroke: corpo })) +
+    P(pescoco, corpo, { sw: 0 }) +
+    L('M500 590 C560 470 584 360 622 292', { sw: o(0.9) }) +
+    L('M640 640 C690 500 700 402 736 322', { sw: o(0.9) }) +
+    perto(272) +
+    perto(488) +
+    // orelha e cabeça
+    E(640, 238, 26, 40, sombra, { rot: -18 }) +
+    E(640, 242, 13, 24, '#FFAEC0', { rot: -18, sw: 0 }) +
+    E(690, 282, 92, 72, corpo, { rot: -8 }) +
+    E(770, 316, 70, 54, creme) +
+    E(690, 296, 64, 42, corpo, { sw: 0 }) +
+    eye(688, 262, 0.58) +
+    L('M660, 214 Q688 200 716 214', { sw: o(0.8) }) +
+    cheek(732, 340, 22) +
+    Ci(800, 300, 6, casco, { sw: 0 }) +
+    L('M752 348 Q778 366 806 348', { sw: o(0.8) })
+  );
+}
+
+module.exports = { elefante, umElefante, doisElefantes, cincoElefantes, leao, girafa, coruja, pomba, pinguim, ovelha, camelo };

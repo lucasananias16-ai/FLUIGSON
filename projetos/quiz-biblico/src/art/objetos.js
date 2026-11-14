@@ -401,6 +401,152 @@ function flauta() {
   );
 }
 
+
+// ------------------------------------------------------------- Vídeo 3
+
+/** Caixa de presente com laço. `cor` e `fita` são as cores da caixa e da fita. */
+function caixa(cx, base, w, h, cor, corEscura, fita, laco) {
+  const x = cx - w / 2;
+  const top = base - h;
+  return (
+    E(cx, base + 6, w * 0.62, w * 0.09, '#3D2C4E', { sw: 0, opacity: 0.16 }) +
+    R(x, top, w, h, w * 0.08, cor) +
+    clipD(`M${x} ${top + h * 0.78} L${x + w} ${top + h * 0.78} L${x + w} ${base} L${x} ${base}Z`, R(x, top, w, h, 0, corEscura, { sw: 0 })) +
+    R(x, top, w, h, w * 0.08, 'none', {}) +
+    R(cx - w * 0.09, top, w * 0.18, h, 4, fita) +
+    R(x - w * 0.03, top - h * 0.14, w * 1.06, h * 0.2, w * 0.05, cor) +
+    R(cx - w * 0.09, top - h * 0.14, w * 0.18, h * 0.2, 4, fita) +
+    // laço
+    P(`M${cx} ${top - h * 0.14} C${cx - w * 0.34} ${top - h * 0.5} ${cx - w * 0.36} ${top - h * 0.1} ${cx} ${top - h * 0.14}Z`, fita) +
+    P(`M${cx} ${top - h * 0.14} C${cx + w * 0.34} ${top - h * 0.5} ${cx + w * 0.36} ${top - h * 0.1} ${cx} ${top - h * 0.14}Z`, fita) +
+    Ci(cx, top - h * 0.14, w * 0.06, fita)
+  );
+}
+
+/** Um presente dourado, para o jogo da memória. */
+const presente = () => caixa(500, 780, 420, 340, '#FFD23F', '#F4B824', '#E25A52', true) + sparkle(190, 280, 38, 0, '#FFFFFF') + sparkle(820, 340, 30, 10, '#FFFFFF');
+
+/** Foguete: serve de intruso na história de Natal. Sem rosto. */
+function foguete() {
+  const corpo = 'M500 150 C610 240 640 430 628 640 L372 640 C360 430 390 240 500 150Z';
+  const aletaE = 'M372 520 C300 540 262 610 258 700 L376 650Z';
+  const aletaD = 'M628 520 C700 540 738 610 742 700 L624 650Z';
+  return (
+    P(aletaE, '#E25A52') +
+    P(aletaD, '#E25A52') +
+    P('M430 650 Q500 960 570 650Z', '#FF8A3A') +
+    P('M458 650 Q500 860 542 650Z', '#FFD23F', { sw: 0 }) +
+    R(398, 626, 204, 52, 20, '#9AA3B8') +
+    P(corpo, '#F7F3EA') +
+    clipD(corpo, P('M300 120 L700 120 L700 300 Q500 340 300 300Z', '#E25A52', { sw: 0 }) + P('M520 130 C640 250 660 450 650 700 L700 700 L700 130Z', '#DDD5C5', { sw: 0 })) +
+    L(corpo) +
+    Ci(500, 400, 70, '#7CCBFF') +
+    Ci(480, 380, 22, '#D6F0FF', { sw: 0 }) +
+    sparkle(200, 260, 34, 0, '#FFD23F') +
+    sparkle(800, 220, 28, 14, '#FFD23F')
+  );
+}
+
+/** Castelo de pedra com duas torres. */
+function castelo() {
+  const torre = (x) => {
+    const w = 150;
+    return (
+      R(x - w / 2, 340, w, 460, 10, '#B8B5C6') +
+      P(`M${x - w / 2 - 20} 340 L${x} 170 L${x + w / 2 + 20} 340Z`, '#E25A52') +
+      L(`M${x - 30} 280 L${x - 30} 340 M${x + 30} 280 L${x + 30} 340`, { color: '#C2443D', sw: o(0.6) }) +
+      P(`M${x - 22} 470 L${x - 22} 430 A22 22 0 0 1 ${x + 22} 430 L${x + 22} 470Z`, '#5A3B4E') +
+      L(`M${x} 170 L${x} 110`, { sw: o(0.9) }) +
+      P(`M${x} 112 L${x + 62} 134 L${x} 156Z`, '#FFD23F')
+    );
+  };
+  const muro = 'M270 520 L270 800 L730 800 L730 520 L680 520 L680 480 L620 480 L620 520 L560 520 L560 480 L500 480 L500 520 L440 520 L440 480 L380 480 L380 520 L320 520 L320 480 L270 480Z';
+  return (
+    shadow(500, 806, 380) +
+    torre(230) +
+    torre(770) +
+    P(muro, '#C9C6D6') +
+    clipD(muro, L('M250 560 L750 560 M250 640 L750 640 M250 720 L750 720 M330 560 L330 640 M450 560 L450 640 M570 560 L570 640 M690 560 L690 640 M390 640 L390 720 M510 640 L510 720 M630 640 L630 720', { color: '#9A96AE', sw: o(0.6) })) +
+    P('M420 800 L420 660 A80 80 0 0 1 580 660 L580 800Z', '#7A4A2B') +
+    L('M500 600 L500 800', { color: '#5A3A28', sw: o(0.7) }) +
+    Ci(540, 720, 9, '#FFD23F', { sw: o(0.5) })
+  );
+}
+
+/** Barco a vela sobre as ondas. */
+function barco() {
+  const casco = 'M180 600 L820 600 C790 720 700 790 560 790 L440 790 C300 790 210 720 180 600Z';
+  return (
+    L('M500 600 L500 170', { sw: o(1.4) }) +
+    P('M520 190 C700 260 780 420 790 560 L520 560Z', '#FFFFFF') +
+    P('M480 250 C380 320 320 430 300 560 L480 560Z', '#FFD66B') +
+    P('M500 150 L580 176 L500 204Z', '#E25A52') +
+    P(casco, '#E25A52') +
+    clipD(casco, P('M150 600 L850 600 L850 650 L150 650Z', '#FFD23F', { sw: 0 })) +
+    L(casco) +
+    Ci(360, 690, 24, '#FFF1B8') +
+    Ci(500, 700, 24, '#FFF1B8') +
+    Ci(640, 690, 24, '#FFF1B8') +
+    P('M70 800 Q150 750 230 800 T390 800 T550 800 T710 800 T870 800 L940 800 L940 900 L70 900Z', '#4DA3FF') +
+    L('M120 850 Q180 826 240 850 M420 860 Q480 836 540 860 M700 850 Q760 826 820 850', { color: '#CFE6FF', sw: o(0.8) })
+  );
+}
+
+/** Manjedoura: cocho de madeira com pés cruzados e palha dentro. */
+function manjedoura() {
+  const cocho = 'M170 500 L830 500 L760 700 L240 700Z';
+  return (
+    shadow(500, 880, 360) +
+    tube('M280 690 L190 870 M720 690 L810 870', 40, WOOD_DARK) +
+    tube('M320 690 L430 870 M680 690 L570 870', 40, WOOD_MID) +
+    // palha
+    P('M200 500 C260 400 340 440 400 410 C480 360 560 430 620 400 C700 380 760 440 800 500Z', '#F2D06B') +
+    L('M260 470 L330 420 M400 456 L450 396 M520 450 L560 400 M640 446 L690 410 M330 490 L380 440', { color: '#D9A93A', sw: o(0.7) }) +
+    P(cocho, WOOD) +
+    clipD(cocho, L('M150 560 L850 560 M150 630 L850 630', { color: WOOD_DARK, sw: o(0.7) })) +
+    L(cocho) +
+    R(150, 480, 700, 46, 20, WOOD_MID) +
+    sparkle(130, 330, 36, 0, '#FFD23F') +
+    sparkle(870, 300, 30, 12, '#FFD23F')
+  );
+}
+
+/** Manjedoura com o bebê Jesus enrolado em panos e um brilho em volta. */
+function manjedouraBebe() {
+  const panos = 'M330 520 C330 440 400 410 500 410 C600 410 670 440 670 520 L670 560 L330 560Z';
+  return (
+    Ci(500, 440, 250, '#FFF3B0', { sw: 0, opacity: 0.55 }) +
+    Ci(500, 440, 170, '#FFE680', { sw: 0, opacity: 0.55 }) +
+    shadow(500, 880, 360) +
+    tube('M280 690 L190 870 M720 690 L810 870', 40, WOOD_DARK) +
+    tube('M320 690 L430 870 M680 690 L570 870', 40, WOOD_MID) +
+    P('M200 520 C260 440 340 470 400 450 C480 420 560 470 620 450 C700 440 760 480 800 520Z', '#F2D06B') +
+    // o bebê
+    P(panos, '#FFFFFF') +
+    clipD(panos, L('M330 500 Q500 560 670 500 M340 540 Q500 590 660 540', { color: '#DDD5C5', sw: o(0.7) })) +
+    Ci(500, 396, 84, '#F8D2AE') +
+    E(420, 360, 36, 16, '#8A5A2B', { sw: 0 }) +
+    L('M452 340 Q500 316 548 340', { color: '#8A5A2B', sw: o(1.2) }) +
+    E(462, 404, 22, 12, '#3D2C4E', { sw: 0 }) +
+    E(538, 404, 22, 12, '#3D2C4E', { sw: 0 }) +
+    L('M446 398 Q462 388 478 398 M522 398 Q538 388 554 398', { color: '#3D2C4E', sw: o(0.8) }) +
+    L('M478 438 Q500 454 522 438', { sw: o(0.8) }) +
+    E(432, 430, 18, 12, '#FF9DB0', { sw: 0, opacity: 0.8 }) +
+    E(568, 430, 18, 12, '#FF9DB0', { sw: 0, opacity: 0.8 }) +
+    // cocho na frente
+    P('M170 560 L830 560 L760 710 L240 710Z', WOOD) +
+    clipD('M170 560 L830 560 L760 710 L240 710Z', L('M150 620 L850 620 M150 680 L850 680', { color: WOOD_DARK, sw: o(0.7) })) +
+    L('M170 560 L830 560 L760 710 L240 710Z') +
+    R(150, 540, 700, 44, 20, WOOD_MID)
+  );
+}
+
+/** Três presentes lado a lado, para a cena de contar. */
+const tresPresentes = () =>
+  caixa(230, 860, 340, 300, '#FFD23F', '#F4B824', '#E25A52') +
+  caixa(570, 860, 280, 380, '#4DA3FF', '#2E86E6', '#FFFFFF') +
+  caixa(860, 860, 250, 240, '#9B7EDE', '#7F62C6', '#FFD23F');
+
 module.exports = {
   pedras,
   madeira,
@@ -429,4 +575,12 @@ module.exports = {
   harpa,
   tambor,
   flauta,
+  caixa,
+  presente,
+  foguete,
+  castelo,
+  barco,
+  manjedoura,
+  manjedouraBebe,
+  tresPresentes,
 };

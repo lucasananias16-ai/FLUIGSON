@@ -443,4 +443,119 @@ function golias(over = {}) {
   return out.join('');
 }
 
-module.exports = { person, head, noe, davi, moises, esposa, filho, nora, hammer, staff, sling, daviPastor, reiDavi, pescador, padeiro, golias };
+
+// ------------------------------------------------------------- Vídeo 3
+
+/** Pastor de ovelhas: lenço de cabeça com faixa, barba curta e cajado. */
+const pastor = (over = {}) =>
+  person(
+    Object.assign(
+      {
+        robe: '#7FA35B',
+        robeDark: '#648A43',
+        sash: WOOD,
+        hair: 'veu',
+        veil: '#F5E6C4',
+        veilDark: '#E0CC9C',
+        band: '#B5562E',
+        beard: 'curta',
+        hairColor: '#6E4420',
+        hairShade: '#55331A',
+        armR: [748, 566],
+        armL: [356, 708],
+        behind: staff(748, 196, 896),
+      },
+      over
+    )
+  );
+
+/** Anjo: túnica branca, asas, cachos louros e uma auréola dourada. */
+function anjo(over = {}) {
+  const asa = (s) =>
+    P(
+      `M${500 + s * 60} 470 C${500 + s * 260} 320 ${500 + s * 430} 360 ${500 + s * 462} 560 C${500 + s * 474} 656 ${500 + s * 404} 726 ${500 + s * 330} 706 C${500 + s * 296} 652 ${500 + s * 214} 644 ${500 + s * 130} 620Z`,
+      '#FFFFFF'
+    ) +
+    L(
+      `M${500 + s * 150} 520 Q${500 + s * 300} 450 ${500 + s * 390} 520 M${500 + s * 150} 580 Q${500 + s * 300} 520 ${500 + s * 420} 600 M${500 + s * 170} 640 Q${500 + s * 290} 600 ${500 + s * 370} 664`,
+      { color: '#CFC6EA', sw: o(0.7) }
+    );
+  const aureola =
+    `<ellipse cx="0" cy="-226" rx="104" ry="28" fill="none" stroke="${'#3D2C4E'}" stroke-width="${n(o(2.4))}"/>` +
+    `<ellipse cx="0" cy="-226" rx="104" ry="28" fill="none" stroke="#FFD23F" stroke-width="${n(o(1.2))}"/>`;
+  return person(
+    Object.assign(
+      {
+        skin: '#F8D2AE',
+        skinShade: '#EDB58A',
+        robe: '#FFFFFF',
+        robeDark: '#E3DDF2',
+        sash: '#FFD23F',
+        hem: 800,
+        hair: 'cachos',
+        hairColor: '#F2CF72',
+        hairShade: '#D9AE45',
+        happy: true,
+        mouth: 'aberta',
+        hat: aureola,
+        back: asa(-1) + asa(1),
+        armL: [286, 470],
+        armR: [714, 470],
+      },
+      over
+    )
+  );
+}
+
+/** Maria: véu azul sobre uma túnica clara. */
+const maria = (over = {}) =>
+  person(
+    Object.assign(
+      { skin: '#F2C49B', skinShade: '#DFA57A', robe: '#F7F3EA', robeDark: '#DDD5C5', sash: '#FFD23F', hair: 'veu', veil: '#3F7FE0', veilDark: '#2E5FB8' },
+      over
+    )
+  );
+
+/** Marta: cachos escuros com uma florzinha e vestido coral. */
+function marta(over = {}) {
+  const flor = [0, 1, 2, 3, 4].map((i) => {
+    const t = (i / 5) * Math.PI * 2 - Math.PI / 2;
+    return Ci(118 + Math.cos(t) * 24, -146 + Math.sin(t) * 24, 18, '#FFFFFF', { sw: o(0.55) });
+  });
+  return person(
+    Object.assign(
+      {
+        skin: '#D9A074',
+        skinShade: '#C0845A',
+        robe: '#FF8F7A',
+        robeDark: '#E5705B',
+        sash: '#8B5FD0',
+        hair: 'cachos',
+        hairColor: '#4A2E1F',
+        hairShade: '#6A4632',
+        hat: flor.join('') + Ci(118, -146, 14, '#FFD23F', { sw: o(0.55) }),
+      },
+      over
+    )
+  );
+}
+
+/** Ana: véu amarelo, vestido roxo e sobrancelhas brancas de quem já viveu muito. */
+const ana = (over = {}) =>
+  person(
+    Object.assign(
+      { robe: '#9B7EDE', robeDark: '#7F62C6', sash: '#FFFFFF', hair: 'veu', veil: '#FFD966', veilDark: '#E8B93F', brow: 'branca' },
+      over
+    )
+  );
+
+/** José: túnica marrom, cabelo curto e barba curta. */
+const jose = (over = {}) =>
+  person(
+    Object.assign(
+      { robe: '#C98A4B', robeDark: '#A66A34', sash: '#5A3A28', hair: 'curto', hairColor: '#4A2E1F', hairShade: '#6A4632', beard: 'curta', },
+      over
+    )
+  );
+
+module.exports = { person, head, noe, davi, moises, esposa, filho, nora, hammer, staff, sling, daviPastor, reiDavi, pescador, padeiro, golias, pastor, anjo, maria, marta, ana, jose };
