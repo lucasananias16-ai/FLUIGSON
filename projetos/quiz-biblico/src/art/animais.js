@@ -392,7 +392,8 @@ function camelo() {
 }
 
 // ---------------------------------------------------- Vídeo 4: rena e boneco de neve
-function rena() {
+/** Rena. `nariz` e `brilho` são as cores do nariz (o padrão é o vermelho). */
+function rena({ nariz = '#E25A52', brilho = '#FFB0A8' } = {}) {
   const corpo = '#B9824B';
   const sombra = '#9A6A38';
   const creme = '#F4E3C6';
@@ -423,8 +424,8 @@ function rena() {
     // cabeça
     E(704, 366, 80, 66, corpo, { rot: -8 }) +
     E(784, 396, 56, 44, creme) +
-    Ci(830, 386, 21, '#E25A52', { sw: o(0.8) }) +
-    E(824, 380, 7, 6, '#FFB0A8', { sw: 0 }) +
+    Ci(830, 386, 21, nariz, { sw: o(0.8) }) +
+    E(824, 380, 7, 6, brilho, { sw: 0 }) +
     // chifres da frente e orelha
     galho('M716 306 L716 180 M716 236 L768 196 M716 206 L682 150') +
     E(664, 318, 24, 38, sombra, { rot: -20 }) +

@@ -1,0 +1,229 @@
+{
+  "voz": {
+    "nome": "pt-BR-Chirp3-HD-Leda",
+    "velocidade": 0.94,
+    "estilo": "animada"
+  },
+  "falas": {
+    "v10_abertura": {
+      "texto": "Oi, amiguinho! A Tuti voltou! Hoje é a noite de Natal, e o trenó vai sair voando! Vamos ajudar as renas? São oito desafios. Vamos lá!",
+      "dur": 11.825,
+      "estilo": "animada"
+    },
+    "v10_p1_pergunta": {
+      "texto": "A rena do nariz vermelho se escondeu no céu! Você consegue encontrar?",
+      "dur": 4.4,
+      "estilo": "animada"
+    },
+    "v10_p1_resposta": {
+      "texto": "Achou! Ela estava atrás da nuvem! O nariz dela brilha no escuro!",
+      "dur": 4.81,
+      "estilo": "animada"
+    },
+    "v10_p2_pergunta": {
+      "texto": "O trenó vai passar por cima das casinhas. Conte comigo!",
+      "dur": 3.55,
+      "estilo": "animada"
+    },
+    "v10_p2_contagem": {
+      "texto": "Um... dois... três... quatro... cinco!",
+      "dur": 6.47,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 0.43
+        },
+        {
+          "ini": 1.28,
+          "fim": 1.98
+        },
+        {
+          "ini": 2.83,
+          "fim": 3.46
+        },
+        {
+          "ini": 4.31,
+          "fim": 4.98
+        },
+        {
+          "ini": 5.83,
+          "fim": 6.47
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v10_p2_resposta": {
+      "texto": "Cinco casinhas! Muito bem!",
+      "dur": 2.54,
+      "estilo": "animada"
+    },
+    "v10_p3_pergunta": {
+      "texto": "De quem é essa sombra? Do carrinho... do barco... ou do trenó?",
+      "dur": 6.74,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.52
+        },
+        {
+          "ini": 2.42,
+          "fim": 3.23
+        },
+        {
+          "ini": 4.23,
+          "fim": 4.99
+        },
+        {
+          "ini": 5.99,
+          "fim": 6.74
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v10_p3_resposta": {
+      "texto": "Do trenó! É nele que vão os presentes!",
+      "dur": 2.92,
+      "estilo": "animada"
+    },
+    "v10_p4_pergunta": {
+      "texto": "Quem puxa o trenó pelo céu? A rena... o elefante... ou a girafa?",
+      "dur": 6.89,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.81
+        },
+        {
+          "ini": 2.71,
+          "fim": 3.33
+        },
+        {
+          "ini": 4.33,
+          "fim": 5.21
+        },
+        {
+          "ini": 6.21,
+          "fim": 6.89
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v10_p4_resposta": {
+      "texto": "A rena! As renas voam bem alto na noite de Natal!",
+      "dur": 3.91,
+      "estilo": "animada"
+    },
+    "v10_p5_pergunta": {
+      "texto": "Uma destas renas é diferente! Qual é?",
+      "dur": 3.19,
+      "estilo": "animada"
+    },
+    "v10_p5_resposta": {
+      "texto": "A do nariz vermelho! Ele acende como uma luzinha!",
+      "dur": 3.48,
+      "estilo": "animada"
+    },
+    "v10_p6_pergunta": {
+      "texto": "Olhe o céu! O que vem depois? A lua... a estrela... ou o sol?",
+      "dur": 8.13,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 0.97
+        },
+        {
+          "ini": 1.47,
+          "fim": 2.66
+        },
+        {
+          "ini": 3.56,
+          "fim": 4.32
+        },
+        {
+          "ini": 5.32,
+          "fim": 6.3
+        },
+        {
+          "ini": 7.3,
+          "fim": 8.13
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v10_p6_resposta": {
+      "texto": "A lua! Estrela, lua, estrela, lua!",
+      "dur": 3.48,
+      "estilo": "animada"
+    },
+    "v10_p7_pergunta": {
+      "texto": "O que não cabe no trenó? O ursinho... a bola... ou o elefante?",
+      "dur": 6.93,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.51
+        },
+        {
+          "ini": 2.41,
+          "fim": 3.27
+        },
+        {
+          "ini": 4.27,
+          "fim": 4.88
+        },
+        {
+          "ini": 5.88,
+          "fim": 6.93
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v10_p7_resposta": {
+      "texto": "O elefante! Ha ha! Ele é grande demais!",
+      "dur": 4.1,
+      "estilo": "animada"
+    },
+    "v10_p8_mostrar": {
+      "texto": "Olhe bem onde o trenó está.",
+      "dur": 1.73,
+      "estilo": "animada"
+    },
+    "v10_p8_pergunta": {
+      "texto": "As cartas trocaram de lugar! Onde está o trenó? No um... no dois... ou no três?",
+      "dur": 8.36,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.71
+        },
+        {
+          "ini": 2.21,
+          "fim": 3.33
+        },
+        {
+          "ini": 4.13,
+          "fim": 4.79
+        },
+        {
+          "ini": 5.69,
+          "fim": 6.54
+        },
+        {
+          "ini": 7.44,
+          "fim": 8.36
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v10_p8_resposta": {
+      "texto": "No número um! Você tem olho bom! O trenó já pode voar!",
+      "dur": 4.36,
+      "estilo": "animada"
+    },
+    "v10_encerramento": {
+      "texto": "Lá vai o trenó, voando pelo céu! As renas conseguiram! Feliz Natal, amiguinho! Até a próxima!",
+      "dur": 7.05,
+      "estilo": "animada"
+    }
+  }
+}
