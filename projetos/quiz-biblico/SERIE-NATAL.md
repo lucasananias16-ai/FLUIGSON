@@ -6,7 +6,7 @@ Cinco vídeos de quiz de Natal, todos com a Tuti de gorro de Papai Noel, na play
 |---|---|---|---|---|
 | 1 | Vídeo 4 | **Quiz do Papai Noel**: quem ele é, a roupa, a chaminé | Noite de neve | Pronto |
 | 2 | Vídeo 8 | **A Oficina dos Duendes**: os brinquedos e os presentes | Dentro da oficina | Pronto |
-| 3 | a fazer | **A Árvore de Natal**: enfeites, luzinhas, a estrela do topo | Sala de casa | Ideia |
+| 3 | Vídeo 9 | **A Árvore de Natal**: enfeites, luzinhas, a estrela do topo | Sala de casa | Narrativa escrita |
 | 4 | a fazer | **As Renas e o Trenó**: a viagem da noite de Natal pelo céu | Céu sobre a cidade | Ideia |
 | 5 | a fazer | **A Ceia e os Doces de Natal**: biscoitos, panetone, a mesa da família | Cozinha e mesa | Ideia |
 

@@ -30,6 +30,8 @@ Leia primeiro o `README.md`. Este arquivo é o roteiro de trabalho. Os Vídeos 1
 6. **Pacote do YouTube.** `src/vN/thumbnail.js` (usa `src/thumb.js`), `src/vN/pacote-youtube.js` e um `como-publicar.md` baseado no do Vídeo 2.
 7. **Publicação.** Do dono.
 
+8. **Pasta no Google Drive (sempre, sem esperar o dono pedir).** Ao terminar o vídeo, criar no Drive do dono, dentro de `Meu Drive > Pv > Nova pasta` (id `1nMVgA7kR_uXU1GJPSrJLUYaukucvRMg8`), uma pasta chamada `N. Tema` (ex.: `7. Cores em Inglês`, `8. Natal - Oficina dos Duendes`) e subir a thumbnail, o arquivo de título/descrição/tags, o `.srt` e o `como-publicar.md`. O envio daqui aceita até 10 MB por arquivo, então o MP4 não sobe: avisar o dono para baixar o vídeo da conversa e arrastar para a pasta. Instrução dada pelo dono em 14/11/2026.
+
 ## Conferências automáticas antes de entregar
 
 - Formato: H.264 1080p 30 fps, AAC estéreo 48 kHz; volume perto de −15,5 LUFS e pico abaixo de −0,5 dBFS.
