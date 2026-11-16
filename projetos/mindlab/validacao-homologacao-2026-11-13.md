@@ -54,3 +54,14 @@
 - Os datasets antigos `ds_protheus_cc`, `_condPag`, `_natureza`, `_tes`, `_especie` (sem sufixo JYNX) retornam "dataset inválido"; são do processo antigo.
 - Teste direto da porta externa 2157 a partir da minha sessão: sem resposta, mas inconclusivo (minha rede pode bloquear).
 - Não chamei `DOCENTRADA` neste teste, porque ela grava documento.
+
+## Reteste do serviço `protheus_rest` (16/11, depois do retorno do Luiz; só consultas)
+- **O serviço voltou a responder.** Duas rodadas, com 15 s de intervalo, todas respondidas pelo Protheus em 0,5 a 2 s.
+  - `dts_fornecedores_JYNX` (`/PROTHEUSDATASET`): devolve cadastro completo (razão social, código, loja, endereço).
+  - `ds_protheus_consulta_documento_JYNX` (`/api/v1/CONSULTADOC`): o Protheus responde com validação de negócio (`304 - Problemas ao ler a TAG ...`), porque montei a consulta de teste sem todos os campos. A API está no ar e autenticando.
+- **Causa provável do erro da 704 (fornecedor não encontrado):**
+  - A 704 é da empresa **EDUK** (0102) e enviou o fornecedor com código **006441**.
+  - No Protheus de teste, o CNPJ 46.893.334/0001-32 (IRKO BPS) existe com código **009067** na EDUK e **004498** na MindLab. O código 006441 não aparece em nenhuma das duas.
+  - Hipótese: o fornecedor foi selecionado com um código que não existe mais (ou foi recadastrado) na base de teste. Para resolver, refazer a seleção do fornecedor na 704 (revisão) ou confirmar o código com o Luiz.
+- O fornecedor da 789 (002695, MindLab) existe na base de teste.
+- `DOCENTRADA` (gravação) não foi chamada; a 789 continua em "Erro de integração", aguardando autorização para reprocessar.
