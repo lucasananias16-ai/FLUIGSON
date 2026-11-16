@@ -1,0 +1,112 @@
+'use strict';
+/**
+ * Gera os Shorts (1080 x 1920, menos de 60 s). Cada Short é uma pergunta de
+ * cards de um vídeo longo, com o mesmo áudio, no molde de src/shorts/molde.js.
+ *
+ * Uso: node src/shorts/gerar.js [id ...]     (sem id, gera todos)
+ *
+ * O MP4 vai para _rascunho/video/shorts/ e os textos do YouTube para a pasta
+ * `shorts/` do vídeo de origem.
+ */
+const fs = require('fs');
+const path = require('path');
+const A = require('../audio');
+const sfx = require('../anim/sfx');
+const { renderVideo, stills } = require('../anim/render');
+const { mixar, comTrilha, ganhoParaAlvo, narr48 } = require('../anim/mix');
+const musica = require('../anim/musica');
+const { criarShort } = require('./molde');
+const fundos = require('./fundos');
+
+const ROOT = path.resolve(__dirname, '..', '..');
+const OUT = path.join(ROOT, '_rascunho', 'video', 'shorts');
+
+/** Um Short a partir de uma pergunta de cards de um vídeo. */
+function deVideo({ v, pasta, n, fundo, selo, corSelo, tutiOpts = {}, primeiraOpcao = 1 }) {
+  const desafios = require(`../${v}/desafios`);
+  const q = desafios.find((x) => x.n === n);
+  return () =>
+    criarShort({
+      q,
+      narrDir: path.join(ROOT, pasta, 'narracao'),
+      idPergunta: `${v}_p${n}_pergunta`,
+      idResposta: `${v}_p${n}_resposta`,
+      fundo,
+      selo,
+      corSelo,
+      tutiOpts,
+      primeiraOpcao,
+    });
+}
+
+/**
+ * Lista dos Shorts. `pasta` é a pasta do vídeo de origem; `textos` vira o
+ * arquivo de título, descrição e tags.
+ */
+const SHORTS = [
+  {
+    id: 'v11_short1',
+    pasta: 'v11-natal-ceia',
+    criar: deVideo({ v: 'v11', pasta: 'v11-natal-ceia', n: 7, fundo: fundos.cozinha, selo: 'QUIZ DE NATAL', tutiOpts: { gorro: true } }),
+    textos: {
+      titulo: 'O que não vai na ceia de Natal? 🎄 Você acerta? #shorts',
+      descricao:
+        'A ovelhinha Tuti arrumou a mesa da ceia, mas uma coisa ali não é de comer! Você tem 10 segundos para descobrir. 🎄\n\nQuiz para crianças de 3 a 7 anos. O quiz completo, com 8 desafios, é o "Quiz de Natal 5: a Ceia e os Doces", no canal Quizzito.\n\n#QuizDeNatal #NatalParaCrianças #QuizInfantil #shorts',
+      tags: ['quiz de natal', 'ceia de natal', 'quiz infantil', 'quiz para crianças', 'natal para crianças', 'ovelhinha Tuti', 'shorts infantil'],
+    },
+  },
+];
+
+async function gerar(item) {
+  const cena = item.criar();
+  const total = Math.ceil(cena.dur * 30) / 30;
+  cena.dur = total;
+  // som: efeitos e falas da cena (pasta do vídeo) + a fala final dos Shorts
+  const { mono, voz } = mixar([{ cena, t0: 0 }], path.join(ROOT, item.pasta, 'narracao'), total);
+  for (const fe of cena.falasExtras) {
+    const d = narr48(fe.arquivo);
+    A.mixInto(voz, d, sfx.RATE, fe.t, 1);
+    A.mixInto(mono, d, sfx.RATE, fe.t, 1);
+  }
+  const st = comTrilha(mono, voz, musica.compor(total));
+  fs.mkdirSync(OUT, { recursive: true });
+  const wav = path.join(OUT, `${item.id}.wav`);
+  musica.writeStereo(wav, st.L, st.R);
+  const g = ganhoParaAlvo(wav, -15.5);
+  const mp4 = path.join(OUT, `${item.id}.mp4`);
+  const r = await renderVideo(cena, { out: mp4, name: item.id, audio: wav, audioFilter: `volume=${g.ganho.toFixed(2)}dB,alimiter=limit=0.84:level=false`, crf: 21 });
+  const mb = fs.statSync(mp4).size / 1e6;
+  console.log(`${item.id}: ${total.toFixed(1)} s, ${r.frames} quadros em ${r.seconds.toFixed(0)} s, ${mb.toFixed(1)} MB → ${mp4}`);
+
+  // textos do YouTube na pasta do vídeo de origem
+  const dir = path.join(ROOT, item.pasta, 'shorts');
+  fs.mkdirSync(dir, { recursive: true });
+  const t = item.textos;
+  fs.writeFileSync(
+    path.join(dir, `${item.id}_titulo_descricao_tags.txt`),
+    `TÍTULO\n${t.titulo}\n\n----------------------------------------------------------------------\nDESCRIÇÃO\n----------------------------------------------------------------------\n${t.descricao}\n\n----------------------------------------------------------------------\nTAGS\n----------------------------------------------------------------------\n${t.tags.join(', ')}\n`
+  );
+  return { mp4, total, mb };
+}
+
+module.exports = { SHORTS, gerar };
+
+if (require.main === module) {
+  (async () => {
+    const ids = process.argv.slice(2).filter((a) => !a.startsWith('--'));
+    const lista = ids.length ? SHORTS.filter((s) => ids.includes(s.id)) : SHORTS;
+    if (process.argv.includes('--fotos')) {
+      for (const item of lista) {
+        const c = item.criar();
+        const ts = [1.0, c.T.viradas[2] + 0.6, c.T.contagem + 4, c.T.revela + 1.6, c.T.fim + 1.2, c.dur - 0.3];
+        const fs_ = await stills(c, ts, path.join(OUT, 'fotos_' + item.id), item.id);
+        console.log(fs_.join('\n'));
+      }
+      return;
+    }
+    for (const item of lista) await gerar(item);
+  })().catch((e) => {
+    console.error('ERRO:', e.stack);
+    process.exit(1);
+  });
+}

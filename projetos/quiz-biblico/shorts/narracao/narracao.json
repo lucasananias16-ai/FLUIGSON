@@ -1,0 +1,14 @@
+{
+  "voz": {
+    "nome": "pt-BR-Chirp3-HD-Leda",
+    "velocidade": 0.94,
+    "estilo": "animada"
+  },
+  "falas": {
+    "short_fim": {
+      "texto": "Você acertou? Tem muito mais desafios no quiz completo!",
+      "dur": 3.49,
+      "estilo": "animada"
+    }
+  }
+}

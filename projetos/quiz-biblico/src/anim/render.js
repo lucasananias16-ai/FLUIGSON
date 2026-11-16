@@ -63,7 +63,8 @@ async function openStage(browser, scene, name) {
   fs.mkdirSync(TMP, { recursive: true });
   const file = path.join(TMP, `${name}.html`);
   fs.writeFileSync(file, scene.html);
-  const page = await browser.newPage({ viewport: { width: 1920, height: 1080 }, deviceScaleFactor: 1 });
+  // `tamanho` só existe nas cenas em pé (Shorts); as do vídeo são 1920 x 1080
+  const page = await browser.newPage({ viewport: scene.tamanho || { width: 1920, height: 1080 }, deviceScaleFactor: 1 });
   await page.goto('file://' + file);
   await page.evaluate(() => document.fonts.ready);
   return page;
