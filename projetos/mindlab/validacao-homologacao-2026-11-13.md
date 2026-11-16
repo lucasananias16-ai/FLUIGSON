@@ -65,3 +65,12 @@
   - Hipótese: o fornecedor foi selecionado com um código que não existe mais (ou foi recadastrado) na base de teste. Para resolver, refazer a seleção do fornecedor na 704 (revisão) ou confirmar o código com o Luiz.
 - O fornecedor da 789 (002695, MindLab) existe na base de teste.
 - `DOCENTRADA` (gravação) não foi chamada; a 789 continua em "Erro de integração", aguardando autorização para reprocessar.
+
+## Solicitação 789: já tinha sido reprocessada (16/11)
+- **Não reprocessei.** Ao conferir antes, vi que alguém usando o usuário `admin` já reprocessou a 789 em **14/11 às 18:45** (saiu de "Erro de integração" para "Integração").
+- Desta vez o Protheus **aceitou** o documento: retorno `301 - Aguardando Execução` com o payload completo gravado (empresa 01, fornecedor 002695, documento 0000J1311, R$ 0,01, NumeroFluig 789).
+- Desde então a solicitação está na atividade **100 (Intermediário: aguardando processamento)**. O evento consulta o `CONSULTADOC` periodicamente e só finaliza quando o Protheus confirmar.
+- Consulta feita hoje: o Protheus **continua respondendo `301 - Aguardando Execução`**, ou seja, há 2 dias o documento está na fila sem ser processado.
+- **Leitura:** o `DOCENTRADA` do Protheus é assíncrono: recebe e enfileira, e uma rotina (job/schedule) do Protheus processa a fila. Essa rotina parece não estar rodando no ambiente de teste. É o mesmo sintoma da ata de 13/08 ("Analisar as regras de integração entre Protheus e Fluig. Corrigir o travamento no processamento", ação do Luiz).
+- Reprocessar de novo não ajudaria e poderia duplicar o documento no Protheus.
+- Reembolso de teste não aberto: cairia na mesma fila.
