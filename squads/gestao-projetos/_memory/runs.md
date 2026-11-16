@@ -38,3 +38,15 @@
 | 2026-11-13 | 2026-11-13-rotina-yangzi-tuut | Rotina diária — Yangzi (formulário finalizado; WinThor sem conexão, gatilho 16/11) | Rascunho de status + riscos | Rascunho |
 | 2026-11-13 | 2026-11-13-rotina-grupo-canopus | Rotina diária — Grupo Canopus (integrador RM pendente; R10 envio de e-mail) | Rascunho de status + riscos | Rascunho |
 | 2026-11-13 | 2026-11-13-rotina-tamussino | Rotina diária — Tamussino (1ª apresentação de 12/11 sem convite) | Rascunho de status + riscos | Rascunho |
+| 2026-11-16 | 2026-11-16-rotina-protege | Rotina diária — Protege (Sinistros não fechou em 13/11; 🟡→🔴) | Rascunho de status + riscos | Rascunho |
+| 2026-11-16 | 2026-11-16-rotina-gol | Rotina diária — GOL (7 itens do Desligamento entregues; Movimentação sem nova data) | Rascunho de status + riscos | Rascunho |
+| 2026-11-16 | 2026-11-16-rotina-marchesan-tatu | Rotina diária — Marchesan (datasets sincronizados; erro da SCR aberto) | Rascunho de status + riscos | Rascunho |
+| 2026-11-16 | 2026-11-16-rotina-alliance | Rotina diária — Alliance (uso das horas JYNX; TOTVS pede 2º recurso) | Rascunho de status + riscos | Rascunho |
+| 2026-11-16 | 2026-11-16-rotina-yangzi-tuut | Rotina diária — Yangzi (gatilho do WinThor em 16/11; 🟡→🔴) | Rascunho de status + riscos | Rascunho |
+| 2026-11-16 | 2026-11-16-rotina-grupo-canopus | Rotina diária — Grupo Canopus (acesso ao integrador não confirmado) | Rascunho de status + riscos | Rascunho |
+| 2026-11-16 | 2026-11-16-rotina-rede-icm | Rotina diária — Rede ICM (agendas de quarta canceladas pelo cliente) | Rascunho de status + riscos | Rascunho |
+| 2026-11-16 | 2026-11-16-rotina-mind-lab | Rotina diária — Mind Lab (homologação retomada; REST do Protheus de teste) | Rascunho de status + riscos | Rascunho |
+| 2026-11-16 | 2026-11-16-rotina-bci-shineray | Rotina diária — BCI-Shineray (entrega de 11/11 sem retorno; ID 54) | Rascunho de status + riscos | Rascunho |
+| 2026-11-16 | 2026-11-16-rotina-autoneum | Rotina diária — Autoneum (finalização relatada; reunião com o Thiago em 16/11) | Rascunho de status + riscos | Rascunho |
+| 2026-11-16 | 2026-11-16-rotina-destro | Rotina diária — Destro (sem agenda com o fiscal; incorpora o rascunho de 11/11) | Rascunho de status + riscos | Rascunho |
+| 2026-11-16 | 2026-11-16-rotina-assurant | Rotina diária — Assurant (documento de transporte volta para a JYNX) | Rascunho de status + riscos | Rascunho |
