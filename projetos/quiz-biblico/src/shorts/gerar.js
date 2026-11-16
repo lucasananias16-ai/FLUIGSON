@@ -15,7 +15,7 @@ const sfx = require('../anim/sfx');
 const { renderVideo, stills } = require('../anim/render');
 const { mixar, comTrilha, ganhoParaAlvo, narr48 } = require('../anim/mix');
 const musica = require('../anim/musica');
-const { criarShort } = require('./molde');
+const { criarShort, criarShortMemoria } = require('./molde');
 const fundos = require('./fundos');
 
 const ROOT = path.resolve(__dirname, '..', '..');
@@ -37,6 +37,14 @@ function deVideo({ v, pasta, n, fundo, selo, corSelo, tutiOpts = {}, primeiraOpc
       tutiOpts,
       primeiraOpcao,
     });
+}
+
+/** Um Short do jogo da memória de um vídeo. */
+function memoriaDeVideo({ v, pasta, n, fundo, selo, corSelo, tutiOpts = {} }) {
+  const desafios = require(`../${v}/desafios`);
+  const d = desafios.find((x) => x.n === n);
+  const p = `${v}_p${n}_`;
+  return () => criarShortMemoria({ d, narrDir: path.join(ROOT, pasta, 'narracao'), ids: { mostrar: p + 'mostrar', pergunta: p + 'pergunta', resposta: p + 'resposta' }, fundo, selo, corSelo, tutiOpts });
 }
 
 /**
@@ -66,6 +74,18 @@ const SHORTS = [
       descricao:
         'Funda, espada ou escudo? Você tem 10 segundos para responder bem alto! 🐑\n\nQuiz bíblico para crianças de 3 a 7 anos, com a ovelhinha Tuti. O quiz completo, com 8 desafios, é o "Quiz Bíblico de Davi e Golias para crianças", no canal Quizzito.\n\nBase bíblica: 1 Samuel 17.\n\n#QuizBíblico #DaviEGolias #BíbliaParaCrianças #shorts',
       tags: ['quiz bíblico infantil', 'davi e golias', 'funda de davi', 'quiz para crianças', 'bíblia para crianças', 'escola dominical', 'ovelhinha Tuti'],
+    },
+  },
+  {
+    // jogo da memória do vídeo mais visto: segura a criança até o fim, por isso também é aposta para viralizar
+    id: 'v2_short3',
+    pasta: 'v2-davi-e-golias',
+    criar: memoriaDeVideo({ v: 'v2', pasta: 'v2-davi-e-golias', n: 7, fundo: fundos.pasto, selo: 'QUIZ BÍBLICO' }),
+    textos: {
+      titulo: 'Onde está a harpa do Davi? 👀 Jogo da memória #shorts',
+      descricao:
+        'Olhe bem onde está a harpa... as cartas vão trocar de lugar! Você consegue acompanhar? 🐑\n\nJogo da memória para crianças de 3 a 7 anos, com a ovelhinha Tuti. O quiz completo, com 8 desafios, é o "Quiz Bíblico de Davi e Golias para crianças", no canal Quizzito.\n\n#QuizBíblico #JogoDaMemória #DaviEGolias #shorts',
+      tags: ['jogo da memória infantil', 'quiz bíblico infantil', 'davi e golias', 'harpa de davi', 'quiz para crianças', 'bíblia para crianças', 'ovelhinha Tuti'],
     },
   },
   {
@@ -122,7 +142,7 @@ if (require.main === module) {
     if (process.argv.includes('--fotos')) {
       for (const item of lista) {
         const c = item.criar();
-        const ts = [1.0, c.T.viradas[2] + 0.6, c.T.contagem + 4, c.T.revela + 1.6, c.T.fim + 1.2, c.dur - 0.3];
+        const ts = c.T.troca ? [c.T.mostrar + 1.5, c.T.troca + 0.6, c.T.contagem + 4, c.T.revela + 1.8, c.T.fim + 1.2, c.dur - 0.3] : [1.0, c.T.viradas[2] + 0.6, c.T.contagem + 4, c.T.revela + 1.6, c.T.fim + 1.2, c.dur - 0.3];
         const fs_ = await stills(c, ts, path.join(OUT, 'fotos_' + item.id), item.id);
         console.log(fs_.join('\n'));
       }

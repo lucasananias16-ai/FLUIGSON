@@ -12,6 +12,7 @@ const fs = require('fs');
 const path = require('path');
 const Z = require('../anim/ease');
 const { criarCenaCards } = require('../anim/cenaCards');
+const { criarMemoria } = require('./memoria');
 const { tutiFrame } = require('../anim/tutiAnim');
 const { falaEnvelope } = require('../anim/fala');
 const { confete } = require('../anim/fx');
@@ -48,10 +49,8 @@ function emPe(html, pecas) {
  *  - tutiOpts: acessórios da Tuti (gorro...)
  *  - primeiraOpcao, contagem: como na cena do vídeo
  */
-function criarShort({ q, narrDir, idPergunta, idResposta, fundo, selo, corSelo = '#FFD23F', tutiOpts = {}, primeiraOpcao = 1, contagem = 10, extra = {} }) {
-  const fimFala = JSON.parse(fs.readFileSync(path.join(NARR_SHORT, 'narracao.json'), 'utf8')).falas.short_fim;
-  const envFim = falaEnvelope(path.join(NARR_SHORT, 'short_fim.wav'));
-  const css = `
+/** CSS que arruma a cena de cards (ou de memória) no palco em pé. */
+const cssEmPe = (corSelo) => `
     #bg, #fx, #fade { width: ${W}px; height: ${H}px; }
     #banner { left: 40px; top: 236px; width: 1000px; height: 128px; padding-left: 96px; font-size: 64px; }
     #qnum { width: 146px; height: 146px; font-size: 86px; }
@@ -65,7 +64,13 @@ function criarShort({ q, narrDir, idPergunta, idResposta, fundo, selo, corSelo =
     #fim { position: absolute; left: 70px; top: 470px; width: 940px; padding: 50px 40px 56px; border-radius: 64px; background: #fff; border: 8px solid ${LINE};
       box-shadow: 0 16px 0 rgba(61,44,78,.16); text-align: center; font-size: 86px; line-height: 1.12; font-weight: 700; transform: scale(0); }
     #fim b { color: #2E8BFF; }
-  ` + (extra.css || '');
+  `;
+
+/** Posição dos cards no palco em pé: 330 px numa fileira, a 22, 375 e 728 da esquerda (a escala encolhe o card em volta do meio). */
+const CARDS = { x: [-33, 320, 673], y: 450, escala: 0.75 };
+const TUTI_DIM = { width: TUTI.width, height: TUTI.height };
+
+function criarShort({ q, narrDir, idPergunta, idResposta, fundo, selo, corSelo = '#FFD23F', tutiOpts = {}, primeiraOpcao = 1, contagem = 10, extra = {} }) {
   const base = criarCenaCards({
     num: '?',
     q,
@@ -75,11 +80,32 @@ function criarShort({ q, narrDir, idPergunta, idResposta, fundo, selo, corSelo =
     contagem,
     primeiraOpcao,
     fundo,
-    tutiOpts: Object.assign({}, tutiOpts, { width: TUTI.width, height: TUTI.height }),
-    // cards de 330 px numa fileira: 22, 375 e 728 da esquerda, no meio da tela (a escala encolhe o card em volta do meio)
-    layout: { cx: [-33, 320, 673], cy: 450, escala: 0.75, timer: { x: 890, y: 1200 } },
-    extra: Object.assign({}, extra, { css }),
+    tutiOpts: Object.assign({}, tutiOpts, TUTI_DIM),
+    layout: { cx: CARDS.x, cy: CARDS.y, escala: CARDS.escala, timer: { x: 890, y: 1200 } },
+    extra: Object.assign({}, extra, { css: cssEmPe(corSelo) + (extra.css || '') }),
   });
+  return emShort(base, { selo, tutiOpts });
+}
+
+/** Jogo da memória em pé: `d` é o desafio e `ids` as três falas ({ mostrar, pergunta, resposta }). */
+function criarShortMemoria({ d, narrDir, ids, fundo, selo, corSelo = '#FFD23F', tutiOpts = {}, contagem = 10 }) {
+  const base = criarMemoria({
+    d,
+    narrDir,
+    ids,
+    contagem,
+    fundo,
+    tutiOpts: Object.assign({}, tutiOpts, TUTI_DIM),
+    layout: { sx: CARDS.x, cy: CARDS.y, escala: CARDS.escala, num: '?' },
+    css: cssEmPe(corSelo) + '#timer { left: 770px; top: 1080px; }',
+  });
+  return emShort(base, { selo, tutiOpts });
+}
+
+/** Põe a cena no palco em pé, com o selo, o rodapé, a festa embaixo e o quadro final. */
+function emShort(base, { selo, tutiOpts = {} }) {
+  const fimFala = JSON.parse(fs.readFileSync(path.join(NARR_SHORT, 'narracao.json'), 'utf8')).falas.short_fim;
+  const envFim = falaEnvelope(path.join(NARR_SHORT, 'short_fim.wav'));
   const T = Object.assign({}, base.T);
   T.fim = base.dur - 0.2; // o quadro final entra quando os cards já saíram
   T.falaFim = T.fim + 0.5;
@@ -123,4 +149,4 @@ function criarShort({ q, narrDir, idPergunta, idResposta, fundo, selo, corSelo =
   return { nome: 'short', tamanho: { width: W, height: H }, dur, html, frame, sons, falas, falasExtras, T };
 }
 
-module.exports = { criarShort, W, H };
+module.exports = { criarShort, criarShortMemoria, W, H };
