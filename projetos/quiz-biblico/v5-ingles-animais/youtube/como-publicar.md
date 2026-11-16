@@ -93,7 +93,7 @@ Esta etapa faz parte do passo a passo: feita a revisão do passo 6 sem achar pro
 5. Confira na lista de **Conteúdo** se a coluna Visibilidade mostra **Público** (ou **Programado**, com a data).
 6. Abra o link do vídeo numa janela anônima, sem estar logado, para ter certeza de que qualquer pessoa consegue assistir.
 
-Boa prática: publicar em fim de semana de manhã (8h–11h) ou em dia útil no início da tarde (12h–15h). Depois ajuste pelo Analytics.
+Horário do canal (decisão de 16/11/2026, ver `ROTINA-DE-UPLOAD.md`): programe para as **16h** (horário de São Paulo), numa segunda, quarta ou sexta. Os Shorts saem às **17h**. Nunca publique na hora: sempre **Programar**.
 
 ## O que muda por ser conteúdo para crianças
 

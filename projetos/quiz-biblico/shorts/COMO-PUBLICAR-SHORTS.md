@@ -2,14 +2,14 @@
 
 Cada Short é **uma pergunta de cards de um vídeo longo**, em pé (1080 x 1920), com de 32 a 43 segundos: o selo da série, a pergunta, os três cards virando (ou, no jogo da memória, trocando de lugar), os 10 segundos para pensar, a resposta com festa e, no fim, a Tuti chamando para o quiz completo. A rotina completa está em `ROTINA-DE-UPLOAD.md`.
 
-## Agenda (fuso de São Paulo, 1 Short por dia, às 12h)
+## Agenda (fuso de São Paulo, 1 Short por dia, às 17h; os vídeos longos saem às 16h)
 
 | Short | Vídeo de origem | Pergunta | Agendar para |
 |---|---|---|---|
-| `v2_short1.mp4` | Vídeo 2 · Davi e Golias (o mais visto) | O que não combina com o pastor Davi? (o skate) | **Ter 17/11, 12h** · a minha aposta para viralizar |
-| `v2_short2.mp4` | Vídeo 2 · Davi e Golias | O que Davi levou para enfrentar o gigante? (a funda) | **Qua 18/11, 12h** |
-| `v2_short3.mp4` | Vídeo 2 · Davi e Golias | Jogo da memória: onde está a harpa? (cerca de 43 s) | **Qui 19/11, 12h** · segura até o fim, a outra aposta para viralizar |
-| `v11_short1.mp4` | Vídeo 11 · Ceia e os Doces de Natal | O que não vai na mesa da ceia? (a bota) | **No dia seguinte ao vídeo longo da Ceia ir ao ar, às 12h.** Ex.: longo na sex 20/11 às 16h → Short no sáb 21/11 às 12h |
+| `v2_short1.mp4` | Vídeo 2 · Davi e Golias (o mais visto) | O que não combina com o pastor Davi? (o skate) | **Ter 17/11, 17h** · a minha aposta para viralizar |
+| `v2_short2.mp4` | Vídeo 2 · Davi e Golias | O que Davi levou para enfrentar o gigante? (a funda) | **Qua 18/11, 17h** |
+| `v2_short3.mp4` | Vídeo 2 · Davi e Golias | Jogo da memória: onde está a harpa? (cerca de 43 s) | **Qui 19/11, 17h** · segura até o fim, a outra aposta para viralizar |
+| `v11_short1.mp4` | Vídeo 11 · Ceia e os Doces de Natal | O que não vai na mesa da ceia? (a bota) | **No dia seguinte ao vídeo longo da Ceia ir ao ar, às 17h.** Ex.: longo na sex 20/11 às 16h → Short no sáb 21/11 às 17h |
 
 Envie no máximo 3 por dia: por exemplo, os três de Davi na terça e o da Ceia em outro dia. O Short da Ceia só deve sair depois do vídeo longo dele, porque o fim do Short chama para o quiz completo.
 

@@ -16,10 +16,10 @@ Playlists ativas: **Quiz Bíblico Infantil**, **Quiz de Natal**.
 
 | Tipo | Quantidade | Dia e horário de publicação |
 |---|---|---|
-| Vídeo longo (quiz de 6 a 12 min, 16:9) | **3 por semana** | Seg, qua e sex às **16h**. Opcional: sáb às **8h** |
-| Short (1 pergunta do quiz longo, 9:16, < 60 s) | **1 por dia** | **12h** ou **17h** |
+| Vídeo longo (quiz de 6 a 12 min, 16:9) | **3 por semana** | Seg, qua e sex às **16h** |
+| Short (1 pergunta do quiz longo, 9:16, < 60 s) | **1 por dia** | **17h** |
 
-- Os horários ficam 2 h antes do pico infantil: depois da escola nos dias de semana e de manhã no fim de semana.
+- Horários fixos (decisão de 16/11/2026): **vídeo longo às 16h, Short às 17h**, sempre programados.
 - **Cada quiz longo gera de 2 a 3 Shorts.** 3 longos por semana = de 7 a 9 Shorts, o suficiente para a semana.
 - Fuso: America/Sao_Paulo.
 
