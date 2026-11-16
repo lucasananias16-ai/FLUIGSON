@@ -89,6 +89,72 @@ const SHORTS = [
     },
   },
   {
+    id: 'v12_short1',
+    pasta: 'v12-natal-boneco-neve',
+    criar: deVideo({ v: 'v12', pasta: 'v12-natal-boneco-neve', n: 9, fundo: fundos.neve, selo: 'QUIZ DE NATAL', tutiOpts: { gorro: true } }),
+    textos: {
+      titulo: 'O que não combina com a neve? 😂 Você acerta? #shorts',
+      descricao:
+        'Uma dessas coisas não é nada boa para brincar na neve! Você tem 10 segundos para descobrir. ⛄\n\nQuiz para crianças de 3 a 7 anos, com a ovelhinha Tuti. O quiz completo, com 12 desafios, é o "Quiz de Natal 6: o Boneco de Neve", no canal Quizzito.\n\n#QuizDeNatal #BonecoDeNeve #QuizInfantil #shorts',
+      tags: ['quiz de natal', 'boneco de neve', 'quiz infantil', 'quiz para crianças', 'natal para crianças', 'ovelhinha Tuti', 'shorts infantil'],
+    },
+  },
+  {
+    id: 'v12_short2',
+    pasta: 'v12-natal-boneco-neve',
+    criar: deVideo({ v: 'v12', pasta: 'v12-natal-boneco-neve', n: 11, fundo: fundos.neve, selo: 'QUIZ DE NATAL', tutiOpts: { gorro: true } }),
+    textos: {
+      titulo: 'Quem adora o frio e mora no gelo? 🐧 Você acerta? #shorts',
+      descricao:
+        'Camelo, leão ou pinguim? Você tem 10 segundos para responder bem alto! ⛄\n\nQuiz para crianças de 3 a 7 anos, com a ovelhinha Tuti. O quiz completo, com 12 desafios, é o "Quiz de Natal 6: o Boneco de Neve", no canal Quizzito.\n\n#QuizDeNatal #QuizDeAnimais #QuizInfantil #shorts',
+      tags: ['quiz de natal', 'pinguim', 'quiz de animais', 'quiz infantil', 'quiz para crianças', 'ovelhinha Tuti', 'shorts infantil'],
+    },
+  },
+  {
+    id: 'v12_short3',
+    pasta: 'v12-natal-boneco-neve',
+    criar: memoriaDeVideo({ v: 'v12', pasta: 'v12-natal-boneco-neve', n: 10, fundo: fundos.neve, selo: 'QUIZ DE NATAL', tutiOpts: { gorro: true } }),
+    textos: {
+      titulo: 'Onde está a luva? 👀 Jogo da memória de Natal #shorts',
+      descricao:
+        'Olhe bem onde está a luva... as cartas vão trocar de lugar! Você consegue acompanhar? ⛄\n\nJogo da memória para crianças de 3 a 7 anos, com a ovelhinha Tuti. O quiz completo, com 12 desafios, é o "Quiz de Natal 6: o Boneco de Neve", no canal Quizzito.\n\n#JogoDaMemória #QuizDeNatal #BonecoDeNeve #shorts',
+      tags: ['jogo da memória infantil', 'quiz de natal', 'boneco de neve', 'quiz para crianças', 'natal para crianças', 'ovelhinha Tuti', 'shorts infantil'],
+    },
+  },
+  {
+    id: 'v13_short1',
+    pasta: 'v13-biblico-jonas',
+    criar: deVideo({ v: 'v13', pasta: 'v13-biblico-jonas', n: 10, fundo: fundos.praia, selo: 'QUIZ BÍBLICO' }),
+    textos: {
+      titulo: 'O que não combina com o mar? 😂 Você acerta? #shorts',
+      descricao:
+        'Uma dessas coisas não ia gostar nada do mar quentinho! Você tem 10 segundos para descobrir. 🐟\n\nQuiz bíblico para crianças de 3 a 7 anos, com a ovelhinha Tuti. O quiz completo, com 12 desafios, é o "Quiz Bíblico de Jonas e o Grande Peixe para crianças", no canal Quizzito.\n\n#QuizBíblico #Jonas #BíbliaParaCrianças #shorts',
+      tags: ['quiz bíblico infantil', 'jonas e o grande peixe', 'quiz para crianças', 'bíblia para crianças', 'histórias bíblicas para crianças', 'ovelhinha Tuti', 'shorts infantil'],
+    },
+  },
+  {
+    id: 'v13_short2',
+    pasta: 'v13-biblico-jonas',
+    criar: deVideo({ v: 'v13', pasta: 'v13-biblico-jonas', n: 5, fundo: fundos.praia, selo: 'QUIZ BÍBLICO' }),
+    textos: {
+      titulo: 'O que aconteceu no mar quando Jonas fugiu? Você acerta? #shorts',
+      descricao:
+        'Tempestade, neve ou arco-íris? Você tem 10 segundos para responder bem alto! 🐟\n\nQuiz bíblico para crianças de 3 a 7 anos, com a ovelhinha Tuti. O quiz completo, com 12 desafios, é o "Quiz Bíblico de Jonas e o Grande Peixe para crianças", no canal Quizzito.\n\nBase bíblica: Jonas 1.\n\n#QuizBíblico #Jonas #BíbliaParaCrianças #shorts',
+      tags: ['quiz bíblico infantil', 'jonas e o grande peixe', 'jonas e a baleia', 'quiz para crianças', 'bíblia para crianças', 'escola dominical', 'ovelhinha Tuti'],
+    },
+  },
+  {
+    id: 'v13_short3',
+    pasta: 'v13-biblico-jonas',
+    criar: memoriaDeVideo({ v: 'v13', pasta: 'v13-biblico-jonas', n: 11, fundo: fundos.praia, selo: 'QUIZ BÍBLICO' }),
+    textos: {
+      titulo: 'Onde está o grande peixe de Jonas? 👀 Jogo da memória #shorts',
+      descricao:
+        'Olhe bem onde está o grande peixe... as cartas vão trocar de lugar! Você consegue acompanhar? 🐟\n\nJogo da memória para crianças de 3 a 7 anos, com a ovelhinha Tuti. O quiz completo, com 12 desafios, é o "Quiz Bíblico de Jonas e o Grande Peixe para crianças", no canal Quizzito.\n\n#QuizBíblico #JogoDaMemória #Jonas #shorts',
+      tags: ['jogo da memória infantil', 'quiz bíblico infantil', 'jonas e o grande peixe', 'quiz para crianças', 'bíblia para crianças', 'ovelhinha Tuti', 'shorts infantil'],
+    },
+  },
+  {
     id: 'v11_short1',
     pasta: 'v11-natal-ceia',
     criar: deVideo({ v: 'v11', pasta: 'v11-natal-ceia', n: 7, fundo: fundos.cozinha, selo: 'QUIZ DE NATAL', tutiOpts: { gorro: true } }),

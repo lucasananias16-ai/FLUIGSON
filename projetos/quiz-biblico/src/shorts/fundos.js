@@ -59,4 +59,17 @@ function pasto() {
   });
 }
 
-module.exports = { cozinha, neve, pasto };
+/** Praia: céu, mar e areia (Vídeo 13). */
+function praia() {
+  return withOutline(TRACO, () => {
+    let s = R(0, 0, 1080, 1920, 0, '#BDE5FF', { sw: 0 });
+    s += skyCloud(120, 1010, 0.55) + skyCloud(980, 960, 0.5);
+    s += P('M-20 1120 Q300 1100 600 1120 Q900 1140 1100 1110 L1100 1660 L-20 1660Z', '#3E8FE0');
+    for (let i = 0; i < 5; i++) s += L(`M${80 + i * 220} ${1200 + (i % 2) * 90} q40 -18 80 0`, { color: '#FFFFFF', sw: o(1.1), opacity: 0.8 });
+    s += P('M-20 1640 Q400 1600 800 1636 Q1000 1650 1100 1630 L1100 1940 L-20 1940Z', '#F6D99A');
+    s += L('M-20 1648 Q400 1608 800 1644', { color: '#FFFFFF', sw: o(2) });
+    return s;
+  });
+}
+
+module.exports = { cozinha, neve, pasto, praia };
