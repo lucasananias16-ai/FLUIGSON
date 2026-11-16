@@ -1,0 +1,341 @@
+{
+  "voz": {
+    "nome": "pt-BR-Chirp3-HD-Leda",
+    "velocidade": 0.94,
+    "estilo": "animada"
+  },
+  "falas": {
+    "v12_abertura": {
+      "texto": "Oi, amiguinho! A Tuti voltou! Olha quanta neve! Hoje vamos montar um boneco de neve juntos! São doze desafios. Vamos lá!",
+      "dur": 10.171,
+      "estilo": "animada"
+    },
+    "v12_p1_pergunta": {
+      "texto": "A cenoura do boneco de neve sumiu! Você consegue encontrar?",
+      "dur": 3.99,
+      "estilo": "animada"
+    },
+    "v12_p1_resposta": {
+      "texto": "Achou! Ela estava atrás do pinheiro! Vamos guardar para o nariz.",
+      "dur": 4.59,
+      "estilo": "animada"
+    },
+    "v12_p2_pergunta": {
+      "texto": "Vamos fazer bolas de neve. Conte comigo!",
+      "dur": 2.95,
+      "estilo": "animada"
+    },
+    "v12_p2_contagem": {
+      "texto": "Um... dois... três... quatro... cinco... seis!",
+      "dur": 7.77,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 0.38
+        },
+        {
+          "ini": 1.23,
+          "fim": 1.95
+        },
+        {
+          "ini": 2.8,
+          "fim": 3.4
+        },
+        {
+          "ini": 4.25,
+          "fim": 4.55
+        },
+        {
+          "ini": 5.4,
+          "fim": 6.14
+        },
+        {
+          "ini": 6.99,
+          "fim": 7.77
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v12_p2_resposta": {
+      "texto": "Seis bolas de neve! Muito bem!",
+      "dur": 3.02,
+      "estilo": "animada"
+    },
+    "v12_p3_pergunta": {
+      "texto": "O que está faltando no boneco de neve? O guarda-chuva... a luva... ou o chapéu?",
+      "dur": 7.68,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 2.17
+        },
+        {
+          "ini": 3.07,
+          "fim": 4.16
+        },
+        {
+          "ini": 5.16,
+          "fim": 5.87
+        },
+        {
+          "ini": 6.87,
+          "fim": 7.68
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v12_p3_resposta": {
+      "texto": "O chapéu! Agora ele ficou elegante!",
+      "dur": 2.97,
+      "estilo": "animada"
+    },
+    "v12_p4_pergunta": {
+      "texto": "O que a gente veste para ficar quentinho na neve? O cachecol... o pião... ou a prancha?",
+      "dur": 8.35,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 2.91
+        },
+        {
+          "ini": 3.81,
+          "fim": 4.79
+        },
+        {
+          "ini": 5.79,
+          "fim": 6.51
+        },
+        {
+          "ini": 7.51,
+          "fim": 8.35
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v12_p4_resposta": {
+      "texto": "O cachecol! Ele esquenta o pescoço!",
+      "dur": 3.17,
+      "estilo": "animada"
+    },
+    "v12_p5_pergunta": {
+      "texto": "De quem é essa sombra? Do pinguim... da rena... ou do boneco de neve?",
+      "dur": 7.34,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.54
+        },
+        {
+          "ini": 2.44,
+          "fim": 3.33
+        },
+        {
+          "ini": 4.33,
+          "fim": 5.04
+        },
+        {
+          "ini": 6.04,
+          "fim": 7.34
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v12_p5_resposta": {
+      "texto": "Do boneco de neve! Ele é redondinho!",
+      "dur": 3.13,
+      "estilo": "animada"
+    },
+    "v12_p6_pergunta": {
+      "texto": "Qual boneco de neve é o maior? O da esquerda... ou o da direita?",
+      "dur": 5.43,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.81
+        },
+        {
+          "ini": 2.71,
+          "fim": 3.61
+        },
+        {
+          "ini": 4.61,
+          "fim": 5.43
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v12_p6_resposta": {
+      "texto": "O da direita! Ele é bem grandão!",
+      "dur": 2.76,
+      "estilo": "animada"
+    },
+    "v12_p7_pergunta": {
+      "texto": "Uma destas luvas é diferente! Qual é?",
+      "dur": 3.02,
+      "estilo": "animada"
+    },
+    "v12_p7_resposta": {
+      "texto": "A vermelha! As outras são azuis!",
+      "dur": 3.06,
+      "estilo": "animada"
+    },
+    "v12_p8_pergunta": {
+      "texto": "Olhe a fila na neve! Quem vem depois? A rena... o pinguim... ou o boneco de neve?",
+      "dur": 8.71,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.43
+        },
+        {
+          "ini": 1.93,
+          "fim": 3.13
+        },
+        {
+          "ini": 4.03,
+          "fim": 4.73
+        },
+        {
+          "ini": 5.73,
+          "fim": 6.46
+        },
+        {
+          "ini": 7.46,
+          "fim": 8.71
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v12_p8_resposta": {
+      "texto": "O pinguim! Boneco, pinguim, boneco, pinguim!",
+      "dur": 3.43,
+      "estilo": "animada"
+    },
+    "v12_p9_pergunta": {
+      "texto": "O que não combina com a neve? O chinelo... o trenó... ou o boneco de neve?",
+      "dur": 7.7,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.74
+        },
+        {
+          "ini": 2.64,
+          "fim": 3.54
+        },
+        {
+          "ini": 4.54,
+          "fim": 5.33
+        },
+        {
+          "ini": 6.33,
+          "fim": 7.7
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v12_p9_resposta": {
+      "texto": "O chinelo! Ha ha! Com chinelo, o pé congela!",
+      "dur": 3.52,
+      "estilo": "animada"
+    },
+    "v12_p10_mostrar": {
+      "texto": "Olhe bem onde a luva está.",
+      "dur": 1.73,
+      "estilo": "animada"
+    },
+    "v12_p10_pergunta": {
+      "texto": "As cartas trocaram de lugar! Onde está a luva? No um... no dois... ou no três?",
+      "dur": 8.38,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.75
+        },
+        {
+          "ini": 2.25,
+          "fim": 3.42
+        },
+        {
+          "ini": 4.22,
+          "fim": 4.81
+        },
+        {
+          "ini": 5.71,
+          "fim": 6.53
+        },
+        {
+          "ini": 7.43,
+          "fim": 8.38
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v12_p10_resposta": {
+      "texto": "No número três! Você tem olho bom!",
+      "dur": 2.62,
+      "estilo": "animada"
+    },
+    "v12_p11_pergunta": {
+      "texto": "Quem adora o frio e mora no gelo? O camelo... o leão... ou o pinguim?",
+      "dur": 7.27,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 2.06
+        },
+        {
+          "ini": 2.96,
+          "fim": 3.79
+        },
+        {
+          "ini": 4.79,
+          "fim": 5.46
+        },
+        {
+          "ini": 6.46,
+          "fim": 7.27
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v12_p11_resposta": {
+      "texto": "O pinguim! Ele adora escorregar no gelo!",
+      "dur": 3.25,
+      "estilo": "animada"
+    },
+    "v12_p12_pergunta": {
+      "texto": "O que vira o nariz do boneco de neve? A banana... a cenoura... ou o pirulito?",
+      "dur": 7.16,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 2.15
+        },
+        {
+          "ini": 3.05,
+          "fim": 3.74
+        },
+        {
+          "ini": 4.74,
+          "fim": 5.44
+        },
+        {
+          "ini": 6.44,
+          "fim": 7.16
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v12_p12_resposta": {
+      "texto": "A cenoura! Pronto, o boneco de neve está completo!",
+      "dur": 4.38,
+      "estilo": "animada"
+    },
+    "v12_encerramento": {
+      "texto": "Olha que lindo o nosso boneco de neve! Você me ajudou muito! Feliz Natal, amiguinho! Até a próxima!",
+      "dur": 7.76,
+      "estilo": "animada"
+    }
+  }
+}

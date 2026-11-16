@@ -1,0 +1,333 @@
+{
+  "voz": {
+    "nome": "pt-BR-Chirp3-HD-Leda",
+    "velocidade": 0.94,
+    "estilo": "animada"
+  },
+  "falas": {
+    "v13_abertura": {
+      "texto": "Oi, amiguinho! A Tuti voltou! Hoje a história é de Jonas e o grande peixe! São doze desafios. Vamos lá!",
+      "dur": 9.26,
+      "estilo": "animada"
+    },
+    "v13_p1_pergunta": {
+      "texto": "O grande peixe se escondeu no fundo do mar! Você consegue encontrar?",
+      "dur": 4.43,
+      "estilo": "animada"
+    },
+    "v13_p1_resposta": {
+      "texto": "Achou! Ele estava atrás da pedra! Que peixe grandão!",
+      "dur": 4.38,
+      "estilo": "animada"
+    },
+    "v13_p2_pergunta": {
+      "texto": "Jonas ficou três dias na barriga do peixe. Conte comigo!",
+      "dur": 3.96,
+      "estilo": "animada"
+    },
+    "v13_p2_contagem": {
+      "texto": "Um... dois... três!",
+      "dur": 3.47,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 0.49
+        },
+        {
+          "ini": 1.34,
+          "fim": 2.04
+        },
+        {
+          "ini": 2.89,
+          "fim": 3.47
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v13_p2_resposta": {
+      "texto": "Três dias! Muito bem!",
+      "dur": 2.563,
+      "estilo": "animada"
+    },
+    "v13_p3_pergunta": {
+      "texto": "Para onde Deus mandou Jonas? Para a cidade... para a floresta... ou para a lua?",
+      "dur": 7.62,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.99
+        },
+        {
+          "ini": 2.89,
+          "fim": 3.83
+        },
+        {
+          "ini": 4.83,
+          "fim": 5.76
+        },
+        {
+          "ini": 6.76,
+          "fim": 7.62
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v13_p3_resposta": {
+      "texto": "Para a cidade! A grande cidade de Nínive!",
+      "dur": 3.627,
+      "estilo": "animada"
+    },
+    "v13_p4_pergunta": {
+      "texto": "Jonas tentou fugir. Ele entrou em quê? No foguete... no barco... ou no trem?",
+      "dur": 8.07,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.42
+        },
+        {
+          "ini": 1.92,
+          "fim": 2.91
+        },
+        {
+          "ini": 3.81,
+          "fim": 4.69
+        },
+        {
+          "ini": 5.69,
+          "fim": 6.4
+        },
+        {
+          "ini": 7.4,
+          "fim": 8.07
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v13_p4_resposta": {
+      "texto": "No barco! Jonas foi para o mar.",
+      "dur": 2.8,
+      "estilo": "animada"
+    },
+    "v13_p5_pergunta": {
+      "texto": "O que aconteceu no mar? Veio a tempestade... a neve... ou o arco-íris?",
+      "dur": 7.79,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.56
+        },
+        {
+          "ini": 2.46,
+          "fim": 3.87
+        },
+        {
+          "ini": 4.87,
+          "fim": 5.59
+        },
+        {
+          "ini": 6.59,
+          "fim": 7.79
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v13_p5_resposta": {
+      "texto": "A tempestade! O vento soprou forte e as ondas ficaram enormes!",
+      "dur": 5.04,
+      "estilo": "animada"
+    },
+    "v13_p6_pergunta": {
+      "texto": "De quem é essa sombra grandona? Do barco... do grande peixe... ou do castelo?",
+      "dur": 7.34,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.89
+        },
+        {
+          "ini": 2.79,
+          "fim": 3.32
+        },
+        {
+          "ini": 4.32,
+          "fim": 5.4
+        },
+        {
+          "ini": 6.4,
+          "fim": 7.34
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v13_p6_resposta": {
+      "texto": "Do grande peixe! Ele engoliu Jonas inteirinho!",
+      "dur": 3.49,
+      "estilo": "animada"
+    },
+    "v13_p7_pergunta": {
+      "texto": "Quem é o maior? O peixinho... ou o grande peixe?",
+      "dur": 4.86,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.04
+        },
+        {
+          "ini": 1.94,
+          "fim": 2.76
+        },
+        {
+          "ini": 3.76,
+          "fim": 4.86
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v13_p7_resposta": {
+      "texto": "O grande peixe! Ele era enorme!",
+      "dur": 2.92,
+      "estilo": "animada"
+    },
+    "v13_p8_pergunta": {
+      "texto": "Um destes peixinhos é diferente! Qual é?",
+      "dur": 3.2,
+      "estilo": "animada"
+    },
+    "v13_p8_resposta": {
+      "texto": "O amarelo! Os outros são azuis!",
+      "dur": 2.96,
+      "estilo": "animada"
+    },
+    "v13_p9_pergunta": {
+      "texto": "Olhe a fila no mar! O que vem depois? A concha... a estrela-do-mar... ou o peixe?",
+      "dur": 8.23,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.1
+        },
+        {
+          "ini": 1.6,
+          "fim": 2.68
+        },
+        {
+          "ini": 3.58,
+          "fim": 4.41
+        },
+        {
+          "ini": 5.41,
+          "fim": 6.42
+        },
+        {
+          "ini": 7.42,
+          "fim": 8.23
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v13_p9_resposta": {
+      "texto": "A estrela-do-mar! Peixe, estrela, peixe, estrela!",
+      "dur": 4.39,
+      "estilo": "animada"
+    },
+    "v13_p10_pergunta": {
+      "texto": "O que não combina com o mar? O peixe... o barco... ou o boneco de neve?",
+      "dur": 6.88,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.39
+        },
+        {
+          "ini": 2.29,
+          "fim": 3.04
+        },
+        {
+          "ini": 4.04,
+          "fim": 4.76
+        },
+        {
+          "ini": 5.76,
+          "fim": 6.88
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v13_p10_resposta": {
+      "texto": "O boneco de neve! Ha ha! No mar quentinho, ele derretia!",
+      "dur": 5.11,
+      "estilo": "animada"
+    },
+    "v13_p11_mostrar": {
+      "texto": "Olhe bem onde o grande peixe está.",
+      "dur": 2.04,
+      "estilo": "animada"
+    },
+    "v13_p11_pergunta": {
+      "texto": "As cartas trocaram de lugar! Onde está o grande peixe? No um... no dois... ou no três?",
+      "dur": 8.45,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.79
+        },
+        {
+          "ini": 2.29,
+          "fim": 3.81
+        },
+        {
+          "ini": 4.61,
+          "fim": 5.18
+        },
+        {
+          "ini": 6.08,
+          "fim": 6.77
+        },
+        {
+          "ini": 7.67,
+          "fim": 8.45
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v13_p11_resposta": {
+      "texto": "No número um! Você tem olho bom!",
+      "dur": 2.535,
+      "estilo": "animada"
+    },
+    "v13_p12_pergunta": {
+      "texto": "Onde o grande peixe deixou Jonas? Na montanha... na praia... ou na nuvem?",
+      "dur": 7.46,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 2.15
+        },
+        {
+          "ini": 3.05,
+          "fim": 3.95
+        },
+        {
+          "ini": 4.95,
+          "fim": 5.68
+        },
+        {
+          "ini": 6.68,
+          "fim": 7.46
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v13_p12_resposta": {
+      "texto": "Na praia! Jonas orou, e Deus cuidou dele!",
+      "dur": 3.47,
+      "estilo": "animada"
+    },
+    "v13_encerramento": {
+      "texto": "Jonas foi até Nínive e contou a todos sobre Deus! Deus sempre cuida de nós. Até a próxima, amiguinho!",
+      "dur": 7.64,
+      "estilo": "animada"
+    }
+  }
+}

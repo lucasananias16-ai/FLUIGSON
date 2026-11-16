@@ -1,6 +1,6 @@
 # Série de Natal do canal
 
-Cinco vídeos de quiz de Natal, todos com a Tuti de gorro de Papai Noel, na playlist **Quiz de Natal**. Cada um tem um cenário e um assunto próprios, para a série não se repetir.
+Vídeos de quiz de Natal, todos com a Tuti de gorro de Papai Noel, na playlist **Quiz de Natal**. Cada um tem um cenário e um assunto próprios, para a série não se repetir.
 
 | Nº da série | Vídeo do projeto | Subtema | Cenário | Situação |
 |---|---|---|---|---|
@@ -9,6 +9,7 @@ Cinco vídeos de quiz de Natal, todos com a Tuti de gorro de Papai Noel, na play
 | 3 | Vídeo 9 | **A Árvore de Natal**: enfeites, luzinhas, a estrela do topo | Sala de casa | Pronto |
 | 4 | Vídeo 10 | **As Renas e o Trenó**: a viagem da noite de Natal pelo céu | Céu sobre a cidade | Pronto |
 | 5 | Vídeo 11 | **A Ceia e os Doces de Natal**: biscoitos, panetone, a mesa da família | Cozinha e mesa | Pronto |
+| 6 | Vídeo 12 | **O Boneco de Neve**: brincar na neve e montar o boneco (12 desafios, 6 min) | Dia de neve | Pronto |
 
 O vídeo bíblico "Desafios do Natal de Jesus" (Vídeo 3) fica na playlist Quiz Bíblico Infantil e não entra na contagem desta série.
 

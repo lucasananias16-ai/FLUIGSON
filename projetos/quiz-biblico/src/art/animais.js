@@ -437,7 +437,8 @@ function rena({ nariz = '#E25A52', brilho = '#FFB0A8' } = {}) {
   );
 }
 
-function bonecoNeve() {
+/** Boneco de neve. `chapeu` e `nariz` podem sair (o padrão é com os dois). */
+function bonecoNeve({ chapeu = true, nariz = true } = {}) {
   const neve = (cx, cy, r) =>
     Ci(cx, cy, r, '#FFFFFF') +
     clip(`<circle cx="${cx}" cy="${cy}" r="${r}"/>`, E(cx + r * 0.2, cy + r * 0.6, r * 1.1, r * 0.6, '#DCEBFA', { sw: 0 }));
@@ -460,14 +461,12 @@ function bonecoNeve() {
     // rosto
     Ci(462, 332, 12, '#3D2C4E', { sw: 0 }) +
     Ci(538, 332, 12, '#3D2C4E', { sw: 0 }) +
-    P('M500 350 L596 372 L500 392Z', '#FF8A3A', { sw: o(0.8) }) +
+    (nariz ? P('M500 350 L596 372 L500 392Z', '#FF8A3A', { sw: o(0.8) }) : '') +
     cheek(420, 372, 18) +
     cheek(580, 372, 14) +
     [0, 1, 2, 3, 4].map((i) => Ci(446 + i * 27, 408 + Math.abs(i - 2) * -5 + 12, 6, '#3D2C4E', { sw: 0 })).join('') +
     // cartola
-    R(396, 262, 208, 26, 12, '#3B3548') +
-    R(430, 160, 140, 114, 16, '#3B3548') +
-    R(430, 236, 140, 24, 0, '#E25A52', { sw: 0 })
+    (chapeu ? R(396, 262, 208, 26, 12, '#3B3548') + R(430, 160, 140, 114, 16, '#3B3548') + R(430, 236, 140, 24, 0, '#E25A52', { sw: 0 }) : '')
   );
 }
 
