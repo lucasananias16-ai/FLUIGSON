@@ -45,6 +45,30 @@ function deVideo({ v, pasta, n, fundo, selo, corSelo, tutiOpts = {}, primeiraOpc
  */
 const SHORTS = [
   {
+    // o mais visto do canal (Vídeo 2); a pergunta do skate é a mais engraçada, a que eu apostaria para viralizar
+    id: 'v2_short1',
+    pasta: 'v2-davi-e-golias',
+    criar: deVideo({ v: 'v2', pasta: 'v2-davi-e-golias', n: 6, fundo: fundos.pasto, selo: 'QUIZ BÍBLICO', corSelo: '#FFD23F' }),
+    textos: {
+      titulo: 'O que não combina com o pastor Davi? 😂 Você acerta? #shorts',
+      descricao:
+        'Uma dessas coisas não existia no tempo de Davi! Você tem 10 segundos para descobrir. 🐑\n\nQuiz bíblico para crianças de 3 a 7 anos, com a ovelhinha Tuti. O quiz completo, com 8 desafios, é o "Quiz Bíblico de Davi e Golias para crianças", no canal Quizzito.\n\n#QuizBíblico #DaviEGolias #BíbliaParaCrianças #shorts',
+      tags: ['quiz bíblico infantil', 'davi e golias', 'quiz para crianças', 'bíblia para crianças', 'histórias bíblicas para crianças', 'ovelhinha Tuti', 'shorts infantil'],
+    },
+  },
+  {
+    // segundo Short do mais visto: a pergunta central da história
+    id: 'v2_short2',
+    pasta: 'v2-davi-e-golias',
+    criar: deVideo({ v: 'v2', pasta: 'v2-davi-e-golias', n: 5, fundo: fundos.pasto, selo: 'QUIZ BÍBLICO', corSelo: '#FFD23F' }),
+    textos: {
+      titulo: 'O que Davi levou para enfrentar o gigante Golias? Você acerta? #shorts',
+      descricao:
+        'Funda, espada ou escudo? Você tem 10 segundos para responder bem alto! 🐑\n\nQuiz bíblico para crianças de 3 a 7 anos, com a ovelhinha Tuti. O quiz completo, com 8 desafios, é o "Quiz Bíblico de Davi e Golias para crianças", no canal Quizzito.\n\nBase bíblica: 1 Samuel 17.\n\n#QuizBíblico #DaviEGolias #BíbliaParaCrianças #shorts',
+      tags: ['quiz bíblico infantil', 'davi e golias', 'funda de davi', 'quiz para crianças', 'bíblia para crianças', 'escola dominical', 'ovelhinha Tuti'],
+    },
+  },
+  {
     id: 'v11_short1',
     pasta: 'v11-natal-ceia',
     criar: deVideo({ v: 'v11', pasta: 'v11-natal-ceia', n: 7, fundo: fundos.cozinha, selo: 'QUIZ DE NATAL', tutiOpts: { gorro: true } }),

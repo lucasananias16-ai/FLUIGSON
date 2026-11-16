@@ -32,6 +32,9 @@ Leia primeiro o `README.md`. Este arquivo é o roteiro de trabalho. Os Vídeos 1
 
 8. **Pasta no Google Drive (sempre, sem esperar o dono pedir).** Ao terminar o vídeo, criar no Drive do dono, dentro de `Meu Drive > Pv > Nova pasta` (id `1nMVgA7kR_uXU1GJPSrJLUYaukucvRMg8`), uma pasta chamada `N. Tema` (ex.: `7. Cores em Inglês`, `8. Natal - Oficina dos Duendes`) e subir a thumbnail, o arquivo de título/descrição/tags, o `.srt` e o `como-publicar.md`. O envio daqui aceita até 10 MB por arquivo, então o MP4 não sobe: avisar o dono para baixar o vídeo da conversa e arrastar para a pasta. Instrução dada pelo dono em 14/11/2026.
 
+9. **Shorts.** Cada vídeo longo rende de 2 a 3 Shorts (rotina em `ROTINA-DE-UPLOAD.md`). Um Short é uma pergunta de cards do vídeo, em pé, no molde `src/shorts/molde.js`: registre em `SHORTS`, em `src/shorts/gerar.js` (vídeo, número da pergunta, fundo de `src/shorts/fundos.js`, selo e textos) e rode `node src/shorts/gerar.js <id>` (`--fotos` para conferir antes). O MP4 sai em `_rascunho/video/shorts/` com uns 6 MB, então sobe para o Drive: subpasta `shorts/` dentro da pasta do vídeo de origem, com o MP4, os textos e o `como-publicar-shorts.md`. A fala final ("Você acertou? Tem muito mais desafios no quiz completo!") é a mesma para todos e fica em `shorts/narracao/`. Por enquanto o molde serve só para perguntas de três cards (escolher, intruso, sombra sem o painel, sequência sem a fila).
+10. **Agenda.** Todo guia de publicação informa a data e a hora de agendamento conforme `ROTINA-DE-UPLOAD.md`: vídeo longo seg, qua e sex às 16h (até 24/12, 2 dos 3 da semana são de Natal); Short 1 por dia às 12h ou 17h, sempre depois do vídeo longo de origem estar no ar; no máximo 3 envios por dia; nunca publicar na hora, sempre programar.
+
 ## Conferências automáticas antes de entregar
 
 - Formato: H.264 1080p 30 fps, AAC estéreo 48 kHz; volume perto de −15,5 LUFS e pico abaixo de −0,5 dBFS.

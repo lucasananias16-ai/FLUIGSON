@@ -38,7 +38,7 @@ function neve() {
   return withOutline(TRACO, () => {
     let s = R(0, 0, 1080, 1920, 0, '#C4E1FF', { sw: 0 });
     s += E(540, 1500, 900, 400, '#E2F0FF', { sw: 0 });
-    s += skyCloud(160, 820, 0.7) + skyCloud(930, 880, 0.6);
+    s += skyCloud(120, 1010, 0.55) + skyCloud(980, 960, 0.5);
     s += noel.pinheiro(990, 1600, 0.45) + noel.pinheiro(90, 1620, 0.35);
     s += P('M-20 1560 Q300 1500 600 1540 Q900 1580 1100 1520 L1100 1940 L-20 1940Z', '#E4EFFB');
     s += P('M-20 1780 Q400 1740 800 1776 Q1000 1790 1100 1770 L1100 1940 L-20 1940Z', '#FFFFFF');
@@ -51,7 +51,7 @@ function neve() {
 function pasto() {
   return withOutline(TRACO, () => {
     let s = R(0, 0, 1080, 1920, 0, '#BDE5FF', { sw: 0 });
-    s += skyCloud(170, 830, 0.7) + skyCloud(920, 900, 0.6);
+    s += skyCloud(120, 1010, 0.55) + skyCloud(980, 960, 0.5);
     s += P('M-20 1540 Q300 1480 600 1520 Q900 1560 1100 1500 L1100 1940 L-20 1940Z', '#8FD18A');
     s += P('M-20 1760 Q400 1720 800 1756 Q1000 1770 1100 1750 L1100 1940 L-20 1940Z', '#6FBF6A');
     s += Ci(130, 1820, 14, '#FFD23F', { sw: o(0.6) }) + Ci(930, 1850, 12, '#FF8FB1', { sw: o(0.6) });
