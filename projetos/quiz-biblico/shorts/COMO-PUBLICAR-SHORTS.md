@@ -14,7 +14,7 @@ Os três podem ser enviados no mesmo dia (terça, como manda a rotina): são 3 e
 
 ## Arquivos
 
-- Vídeos: `v2_short1.mp4`, `v2_short2.mp4` e `v11_short1.mp4` (cerca de 6 MB cada). Já estão nas pastas do Drive, em `shorts/` dentro da pasta do vídeo de origem.
+- Vídeos: `v2_short1.mp4`, `v2_short2.mp4` e `v11_short1.mp4` (cerca de 6 MB cada). O envio para o Drive daqui aceita só uns 3 MB por arquivo, então baixe os vídeos da conversa e arraste para a subpasta `shorts/` da pasta do vídeo de origem (os textos e este guia já estão lá).
 - Textos: `vN_shortK_titulo_descricao_tags.txt`, ao lado de cada vídeo.
 
 ## Passo a passo (para cada Short)
