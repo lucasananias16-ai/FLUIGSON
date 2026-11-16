@@ -132,3 +132,6 @@ Olá a todos, seguem os pontos de hoje: go-live passa a 2026-12-12 e férias vai
 - **Writes to**: `output/ata.md`.
 - **Triggers**: step-07.
 - **Depends on**: step-03.
+
+## Modo rotina diária
+Na rotina diária (`pipeline/rotina-diaria.md`, passo 1b), Ana atua **sempre**, independentemente da entrega escolhida. Ela coleta e lê as atas de todas as reuniões realizadas desde a última execução: e-mail do Gemini **e** o Doc "Anotações do Gemini" inteiro (Detalhes e, se preciso, Transcrição). Também resolve nomes de cliente ambíguos pelos Detalhes e registra "sem ata nem transcrição" quando só houver gravação. O resumo por reunião vai para `output/{data}-rotina-atas/`. Ela não envia follow-up nem escreve em sistemas externos.
