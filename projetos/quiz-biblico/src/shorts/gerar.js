@@ -155,6 +155,39 @@ const SHORTS = [
     },
   },
   {
+    id: 'v14_short1',
+    pasta: 'v14-jogo-da-memoria',
+    criar: memoriaDeVideo({ v: 'v14', pasta: 'v14-jogo-da-memoria', n: 5, fundo: fundos.pasto, selo: 'JOGO DA MEMÓRIA' }),
+    textos: {
+      titulo: 'Onde está a girafa? 🦒 Jogo da memória #shorts',
+      descricao:
+        'Olhe bem onde está a girafa... as cartas vão trocar de lugar! Você consegue acompanhar? 🐑\n\nJogo da memória para crianças de 3 a 7 anos, com a ovelhinha Tuti. O jogo completo, com 12 desafios, é o "Jogo da Memória para crianças", no canal Quizzito.\n\n#JogoDaMemória #JogosEducativos #shorts',
+      tags: ['jogo da memória', 'jogo da memória infantil', 'teste de memória', 'jogos educativos infantis', 'quiz para crianças', 'ovelhinha Tuti', 'shorts infantil'],
+    },
+  },
+  {
+    id: 'v14_short2',
+    pasta: 'v14-jogo-da-memoria',
+    criar: memoriaDeVideo({ v: 'v14', pasta: 'v14-jogo-da-memoria', n: 10, fundo: fundos.pasto, selo: 'JOGO DA MEMÓRIA' }),
+    textos: {
+      titulo: 'Onde está a lua? 🌙 Jogo da memória #shorts',
+      descricao:
+        'Olhe bem onde está a lua... as cartas vão trocar de lugar três vezes! Você consegue acompanhar? 🐑\n\nJogo da memória para crianças de 3 a 7 anos, com a ovelhinha Tuti. O jogo completo, com 12 desafios, é o "Jogo da Memória para crianças", no canal Quizzito.\n\n#JogoDaMemória #JogosEducativos #shorts',
+      tags: ['jogo da memória', 'jogo da memória infantil', 'teste de memória', 'jogos educativos infantis', 'quiz para crianças', 'ovelhinha Tuti', 'shorts infantil'],
+    },
+  },
+  {
+    id: 'v14_short3',
+    pasta: 'v14-jogo-da-memoria',
+    criar: memoriaDeVideo({ v: 'v14', pasta: 'v14-jogo-da-memoria', n: 12, fundo: fundos.pasto, selo: 'JOGO DA MEMÓRIA' }),
+    textos: {
+      titulo: 'Onde está o foguete? 🚀 Jogo da memória #shorts',
+      descricao:
+        'Olhe bem onde está o foguete... as cartas vão trocar de lugar! Você consegue acompanhar? 🐑\n\nJogo da memória para crianças de 3 a 7 anos, com a ovelhinha Tuti. O jogo completo, com 12 desafios, é o "Jogo da Memória para crianças", no canal Quizzito.\n\n#JogoDaMemória #JogosEducativos #shorts',
+      tags: ['jogo da memória', 'jogo da memória infantil', 'teste de memória', 'jogos educativos infantis', 'quiz para crianças', 'ovelhinha Tuti', 'shorts infantil'],
+    },
+  },
+  {
     id: 'v11_short1',
     pasta: 'v11-natal-ceia',
     criar: deVideo({ v: 'v11', pasta: 'v11-natal-ceia', n: 7, fundo: fundos.cozinha, selo: 'QUIZ DE NATAL', tutiOpts: { gorro: true } }),

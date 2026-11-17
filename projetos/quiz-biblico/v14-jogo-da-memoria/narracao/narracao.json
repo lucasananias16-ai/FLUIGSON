@@ -1,0 +1,439 @@
+{
+  "voz": {
+    "nome": "pt-BR-Chirp3-HD-Leda",
+    "velocidade": 0.94,
+    "estilo": "animada"
+  },
+  "falas": {
+    "v14_abertura": {
+      "texto": "Oi, amiguinho! A Tuti voltou! Hoje é dia de jogo da memória! Preste bem atenção, que são doze desafios. Vamos lá!",
+      "dur": 9.369,
+      "estilo": "animada"
+    },
+    "v14_p1_mostrar": {
+      "texto": "Olhe bem onde o ursinho está.",
+      "dur": 1.89,
+      "estilo": "animada"
+    },
+    "v14_p1_pergunta": {
+      "texto": "As cartas trocaram de lugar! Onde está o ursinho? No um... no dois... ou no três?",
+      "dur": 8.94,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 2
+        },
+        {
+          "ini": 2.5,
+          "fim": 3.82
+        },
+        {
+          "ini": 4.62,
+          "fim": 5.38
+        },
+        {
+          "ini": 6.28,
+          "fim": 7.14
+        },
+        {
+          "ini": 8.04,
+          "fim": 8.94
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v14_p1_resposta": {
+      "texto": "No número três! Você tem olho bom!",
+      "dur": 2.51,
+      "estilo": "animada"
+    },
+    "v14_p2_mostrar": {
+      "texto": "Olhe bem as quatro frutas!",
+      "dur": 1.89,
+      "estilo": "animada"
+    },
+    "v14_p2_pergunta": {
+      "texto": "Uma fruta sumiu! Qual foi? O morango... a banana... ou a uva?",
+      "dur": 7.65,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.24
+        },
+        {
+          "ini": 1.74,
+          "fim": 2.41
+        },
+        {
+          "ini": 3.31,
+          "fim": 4.14
+        },
+        {
+          "ini": 5.14,
+          "fim": 5.94
+        },
+        {
+          "ini": 6.94,
+          "fim": 7.65
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v14_p2_resposta": {
+      "texto": "A banana! Ela estava aqui, do ladinho da maçã!",
+      "dur": 4.09,
+      "estilo": "animada"
+    },
+    "v14_p3_mostrar": {
+      "texto": "Olhe bem o balão!",
+      "dur": 1.11,
+      "estilo": "animada"
+    },
+    "v14_p3_pergunta": {
+      "texto": "De que cor era o balão? Azul... amarelo... ou vermelho?",
+      "dur": 6.16,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.28
+        },
+        {
+          "ini": 2.18,
+          "fim": 2.71
+        },
+        {
+          "ini": 3.71,
+          "fim": 4.42
+        },
+        {
+          "ini": 5.42,
+          "fim": 6.16
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v14_p3_resposta": {
+      "texto": "Vermelho! Que memória boa!",
+      "dur": 2.44,
+      "estilo": "animada"
+    },
+    "v14_p4_mostrar": {
+      "texto": "Olhe bem as estrelas!",
+      "dur": 1.56,
+      "estilo": "animada"
+    },
+    "v14_p4_pergunta": {
+      "texto": "Quantas estrelas tinha? Duas... três... ou quatro?",
+      "dur": 6.02,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.41
+        },
+        {
+          "ini": 2.31,
+          "fim": 2.93
+        },
+        {
+          "ini": 3.93,
+          "fim": 4.52
+        },
+        {
+          "ini": 5.52,
+          "fim": 6.02
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v14_p4_resposta": {
+      "texto": "Três estrelas! Muito bem!",
+      "dur": 2.911,
+      "estilo": "animada"
+    },
+    "v14_p5_mostrar": {
+      "texto": "Olhe bem onde a girafa está.",
+      "dur": 1.62,
+      "estilo": "animada"
+    },
+    "v14_p5_pergunta": {
+      "texto": "As cartas trocaram de lugar! Onde está a girafa? No um... no dois... ou no três?",
+      "dur": 8.52,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.69
+        },
+        {
+          "ini": 2.19,
+          "fim": 3.7
+        },
+        {
+          "ini": 4.5,
+          "fim": 5.1
+        },
+        {
+          "ini": 6,
+          "fim": 6.75
+        },
+        {
+          "ini": 7.65,
+          "fim": 8.52
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v14_p5_resposta": {
+      "texto": "No número um! Você é demais!",
+      "dur": 2.5,
+      "estilo": "animada"
+    },
+    "v14_p6_mostrar": {
+      "texto": "Olhe quem vai aparecer!",
+      "dur": 1.37,
+      "estilo": "animada"
+    },
+    "v14_p6_pergunta": {
+      "texto": "Quem apareceu primeiro? O pinguim... a pomba... ou a coruja?",
+      "dur": 6.46,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.39
+        },
+        {
+          "ini": 2.29,
+          "fim": 2.99
+        },
+        {
+          "ini": 3.99,
+          "fim": 4.67
+        },
+        {
+          "ini": 5.67,
+          "fim": 6.46
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v14_p6_resposta": {
+      "texto": "A coruja! Ela chegou primeiro!",
+      "dur": 2.61,
+      "estilo": "animada"
+    },
+    "v14_p7_mostrar": {
+      "texto": "Olhe bem os quatro brinquedos!",
+      "dur": 2.02,
+      "estilo": "animada"
+    },
+    "v14_p7_pergunta": {
+      "texto": "Um brinquedo sumiu! Qual foi? O trenzinho... o carrinho... ou a boneca?",
+      "dur": 7.64,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.39
+        },
+        {
+          "ini": 1.89,
+          "fim": 2.5
+        },
+        {
+          "ini": 3.4,
+          "fim": 4.26
+        },
+        {
+          "ini": 5.26,
+          "fim": 6.02
+        },
+        {
+          "ini": 7.02,
+          "fim": 7.64
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v14_p7_resposta": {
+      "texto": "O trenzinho! Piuí!",
+      "dur": 2.08,
+      "estilo": "animada"
+    },
+    "v14_p8_mostrar": {
+      "texto": "Olhe bem o peixinho!",
+      "dur": 1.24,
+      "estilo": "animada"
+    },
+    "v14_p8_pergunta": {
+      "texto": "De que cor era o peixinho? Azul... amarelo... ou vermelho?",
+      "dur": 6.53,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.51
+        },
+        {
+          "ini": 2.41,
+          "fim": 3.02
+        },
+        {
+          "ini": 4.02,
+          "fim": 4.74
+        },
+        {
+          "ini": 5.74,
+          "fim": 6.53
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v14_p8_resposta": {
+      "texto": "Amarelo! Você lembrou!",
+      "dur": 2.2,
+      "estilo": "animada"
+    },
+    "v14_p9_mostrar": {
+      "texto": "Olhe bem as bolas!",
+      "dur": 1.29,
+      "estilo": "animada"
+    },
+    "v14_p9_pergunta": {
+      "texto": "Quantas bolas tinha? Cinco... seis... ou quatro?",
+      "dur": 5.84,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.22
+        },
+        {
+          "ini": 2.12,
+          "fim": 2.74
+        },
+        {
+          "ini": 3.74,
+          "fim": 4.35
+        },
+        {
+          "ini": 5.35,
+          "fim": 5.84
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v14_p9_resposta": {
+      "texto": "Cinco bolas! Que memória!",
+      "dur": 2.09,
+      "estilo": "animada"
+    },
+    "v14_p10_mostrar": {
+      "texto": "Olhe bem onde a lua está. Agora vai ser mais rápido!",
+      "dur": 4,
+      "estilo": "animada"
+    },
+    "v14_p10_pergunta": {
+      "texto": "As cartas trocaram de lugar! Onde está a lua? No um... no dois... ou no três?",
+      "dur": 8.35,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.85
+        },
+        {
+          "ini": 2.35,
+          "fim": 3.39
+        },
+        {
+          "ini": 4.19,
+          "fim": 4.82
+        },
+        {
+          "ini": 5.72,
+          "fim": 6.59
+        },
+        {
+          "ini": 7.49,
+          "fim": 8.35
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v14_p10_resposta": {
+      "texto": "No número dois! Uau, que olho rápido!",
+      "dur": 3.21,
+      "estilo": "animada"
+    },
+    "v14_p11_mostrar": {
+      "texto": "Olhe quem vai aparecer agora!",
+      "dur": 1.829,
+      "estilo": "animada"
+    },
+    "v14_p11_pergunta": {
+      "texto": "Quem apareceu por último? A maçã... a laranja... ou o morango?",
+      "dur": 6.84,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.48
+        },
+        {
+          "ini": 2.38,
+          "fim": 3.16
+        },
+        {
+          "ini": 4.16,
+          "fim": 4.96
+        },
+        {
+          "ini": 5.96,
+          "fim": 6.84
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v14_p11_resposta": {
+      "texto": "A maçã! Ela foi a última!",
+      "dur": 2.6,
+      "estilo": "animada"
+    },
+    "v14_p12_mostrar": {
+      "texto": "Último desafio! Olhe bem onde o foguete está.",
+      "dur": 3.43,
+      "estilo": "animada"
+    },
+    "v14_p12_pergunta": {
+      "texto": "As cartas trocaram de lugar! Onde está o foguete? No um... no dois... ou no três?",
+      "dur": 8.27,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.69
+        },
+        {
+          "ini": 2.19,
+          "fim": 3.57
+        },
+        {
+          "ini": 4.37,
+          "fim": 4.94
+        },
+        {
+          "ini": 5.84,
+          "fim": 6.54
+        },
+        {
+          "ini": 7.44,
+          "fim": 8.27
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v14_p12_resposta": {
+      "texto": "No número um! Você venceu o jogo da memória!",
+      "dur": 3.34,
+      "estilo": "animada"
+    },
+    "v14_encerramento": {
+      "texto": "Parabéns, amiguinho! Você lembrou de tudo! Até a próxima!",
+      "dur": 4.26,
+      "estilo": "animada"
+    }
+  }
+}
