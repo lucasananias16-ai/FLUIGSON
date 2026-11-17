@@ -254,6 +254,39 @@ const SHORTS = [
     },
   },
   {
+    id: 'v17_short1',
+    pasta: 'v17-natal-floresta',
+    criar: deVideo({ v: 'v17', pasta: 'v17-natal-floresta', n: 9, fundo: fundos.neve, selo: 'QUIZ DE NATAL', tutiOpts: { gorro: true } }),
+    textos: {
+      titulo: 'O que não combina com a festa na neve? 😂 Você acerta? #shorts',
+      descricao:
+        'O gorro, o cachecol ou o guarda-sol? Você tem 10 segundos para descobrir! ❄️\n\nQuiz para crianças de 3 a 7 anos, com a ovelhinha Tuti. O quiz completo, com 12 desafios, é o "Quiz de Natal 8: o Natal na Floresta", no canal Quizzito.\n\n#QuizDeNatal #NatalNaFloresta #QuizInfantil #shorts',
+      tags: ['quiz de natal', 'natal na floresta', 'quiz infantil', 'quiz para crianças', 'natal para crianças', 'ovelhinha Tuti', 'shorts infantil'],
+    },
+  },
+  {
+    id: 'v17_short2',
+    pasta: 'v17-natal-floresta',
+    criar: deVideo({ v: 'v17', pasta: 'v17-natal-floresta', n: 3, fundo: fundos.neve, selo: 'QUIZ DE NATAL', tutiOpts: { gorro: true } }),
+    textos: {
+      titulo: 'O que o coelhinho gosta de comer? 🐰 Você acerta? #shorts',
+      descricao:
+        'A cenoura, o peixe ou o osso? Você tem 10 segundos para responder bem alto! ❄️\n\nQuiz para crianças de 3 a 7 anos, com a ovelhinha Tuti. O quiz completo, com 12 desafios, é o "Quiz de Natal 8: o Natal na Floresta", no canal Quizzito.\n\n#QuizDeAnimais #QuizDeNatal #QuizInfantil #shorts',
+      tags: ['quiz de animais', 'coelho', 'quiz de natal', 'quiz infantil', 'quiz para crianças', 'ovelhinha Tuti', 'shorts infantil'],
+    },
+  },
+  {
+    id: 'v17_short3',
+    pasta: 'v17-natal-floresta',
+    criar: memoriaDeVideo({ v: 'v17', pasta: 'v17-natal-floresta', n: 10, fundo: fundos.neve, selo: 'QUIZ DE NATAL', tutiOpts: { gorro: true } }),
+    textos: {
+      titulo: 'Onde está o esquilo? 👀 Jogo da memória de Natal #shorts',
+      descricao:
+        'Olhe bem onde está o esquilo... as cartas vão trocar de lugar! Você consegue acompanhar? ❄️\n\nJogo da memória para crianças de 3 a 7 anos, com a ovelhinha Tuti. O quiz completo, com 12 desafios, é o "Quiz de Natal 8: o Natal na Floresta", no canal Quizzito.\n\n#JogoDaMemória #QuizDeNatal #NatalNaFloresta #shorts',
+      tags: ['jogo da memória infantil', 'quiz de natal', 'natal na floresta', 'quiz para crianças', 'natal para crianças', 'ovelhinha Tuti', 'shorts infantil'],
+    },
+  },
+  {
     id: 'v11_short1',
     pasta: 'v11-natal-ceia',
     criar: deVideo({ v: 'v11', pasta: 'v11-natal-ceia', n: 7, fundo: fundos.cozinha, selo: 'QUIZ DE NATAL', tutiOpts: { gorro: true } }),
