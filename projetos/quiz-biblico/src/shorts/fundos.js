@@ -72,4 +72,16 @@ function praia() {
   });
 }
 
-module.exports = { cozinha, neve, pasto, praia };
+/** Sala de casa (Vídeo 15): parede verde-clara, rodapé e chão de madeira. */
+function sala() {
+  return withOutline(TRACO, () => {
+    let s = R(0, 0, 1080, 1920, 0, '#DCEFE4', { sw: 0 });
+    s += luzinhas(14);
+    s += L('M0 1560 L1080 1560', { color: '#FFFFFF', sw: o(3) });
+    s += P('M-20 1640 L1100 1640 L1100 1940 L-20 1940Z', '#C98A4B');
+    s += L('M-20 1730 L1100 1730 M-20 1820 L1100 1820 M300 1640 L270 1940 M800 1640 L820 1940', { color: '#A66A34', sw: o(0.7) });
+    return s;
+  });
+}
+
+module.exports = { cozinha, neve, pasto, praia, sala };

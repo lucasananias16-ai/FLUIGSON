@@ -15,18 +15,21 @@ Cada Short só sai depois de o vídeo longo de origem estar no ar, porque o fim 
 | **Sáb 21/11, 17h** | `v13_short1.mp4` | Jonas (no ar na sex 20/11) | O que não combina com o mar? (o boneco de neve) |
 | **Dom 22/11, 17h** | `v2_short3.mp4` | Davi e Golias | Jogo da memória: onde está a harpa? |
 | **Seg 23/11, 17h** | `v12_short2.mp4` | Boneco de Neve | Quem adora o frio e mora no gelo? (o pinguim) |
-| **Ter 24/11, 17h** | `v13_short2.mp4` | Jonas | O que aconteceu no mar? (a tempestade) |
-| **Qua 25/11, 17h** | `v12_short3.mp4` | Boneco de Neve | Jogo da memória: onde está a luva? |
-| **Qui 26/11, 17h** | `v13_short3.mp4` | Jonas | Jogo da memória: onde está o grande peixe? |
+| **Ter 24/11, 17h** | `v15_short1.mp4` | Cartinha para o Papai Noel (no ar na seg 23/11) | O que não cabe no envelope? (o castelo) |
+| **Qua 25/11, 17h** | `v13_short2.mp4` | Jonas | O que aconteceu no mar? (a tempestade) |
+| **Qui 26/11, 17h** | `v12_short3.mp4` | Boneco de Neve | Jogo da memória: onde está a luva? |
 | **Sex 27/11, 17h** | `v14_short1.mp4` | Jogo da Memória (no ar no sáb 21/11) | Onde está a girafa? (duas trocas) |
-| **Sáb 28/11, 17h** | `v14_short2.mp4` | Jogo da Memória | Onde está a lua? (três trocas) |
-| **Dom 29/11, 17h** | `v14_short3.mp4` | Jogo da Memória | Onde está o foguete? (duas trocas) |
+| **Sáb 28/11, 17h** | `v15_short2.mp4` | Cartinha para o Papai Noel | Quem lê as cartinhas no Polo Norte? (o Papai Noel) |
+| **Dom 29/11, 17h** | `v13_short3.mp4` | Jonas | Jogo da memória: onde está o grande peixe? |
+| **Seg 30/11, 17h** | `v14_short2.mp4` | Jogo da Memória | Onde está a lua? (três trocas) |
+| **Ter 01/12, 17h** | `v15_short3.mp4` | Cartinha para o Papai Noel | Jogo da memória: onde está a cartinha? |
+| **Qua 02/12, 17h** | `v14_short3.mp4` | Jogo da Memória | Onde está o foguete? (duas trocas) |
 
-**Limite de 3 envios por dia (contando os vídeos longos):** por exemplo, segunda os dois longos (12 e 13) e o `v2_short1`; terça os três seguintes da lista; quarta mais três; quinta os três últimos. Tudo já programado para a data da tabela.
+**Limite de 3 envios por dia (contando os vídeos longos):** envie em lotes de até três por dia, na ordem da tabela, sempre já programados para a data dela. O Short pode ser enviado antes de o vídeo longo de origem ir ao ar; o que importa é a data programada ser depois.
 
 ## Arquivos
 
-- Vídeos: os treze `.mp4` da tabela (de 6 a 8 MB cada). O envio para o Drive daqui aceita só uns 3 MB por arquivo, então baixe os vídeos da conversa e arraste para a subpasta `shorts/` da pasta do vídeo de origem (os textos e este guia já estão lá).
+- Vídeos: os dezesseis `.mp4` da tabela (de 6 a 8 MB cada). O envio para o Drive daqui aceita só uns 3 MB por arquivo, então baixe os vídeos da conversa e arraste para a subpasta `shorts/` da pasta do vídeo de origem (os textos e este guia já estão lá).
 - Textos: `vN_shortK_titulo_descricao_tags.txt`, ao lado de cada vídeo.
 
 ## Passo a passo (para cada Short)
@@ -34,7 +37,7 @@ Cada Short só sai depois de o vídeo longo de origem estar no ar, porque o fim 
 1. No Studio, **Criar > Enviar vídeos** e escolha o `.mp4`. Por ser em pé e ter menos de 60 s, o YouTube já trata como Short.
 2. **Título** e **descrição:** cole do arquivo de textos. O `#shorts` já está no título.
 3. **Miniatura:** o Studio no computador não deixa enviar miniatura para Short. Se quiser escolher o quadro de capa, use o app do YouTube no celular. Se não mexer, o YouTube escolhe um quadro.
-4. **Playlist:** a mesma do vídeo de origem (**Quiz Bíblico Infantil** para os de Davi e de Jonas, **Quiz de Natal** para os da Ceia e do Boneco de Neve, **Jogos da Tuti** para os do Jogo da Memória).
+4. **Playlist:** a mesma do vídeo de origem (**Quiz Bíblico Infantil** para os de Davi e de Jonas, **Quiz de Natal** para os da Ceia, do Boneco de Neve e da Cartinha, **Jogos da Tuti** para os do Jogo da Memória).
 5. **Público:** **"Sim, é conteúdo para crianças"**.
 6. **Mostrar mais:**
    - **Vídeo relacionado:** escolha o vídeo longo de origem. Aparece um link para ele embaixo do Short, e é isso que leva a criança ao quiz completo.

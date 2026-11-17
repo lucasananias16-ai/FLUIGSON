@@ -1,0 +1,333 @@
+{
+  "voz": {
+    "nome": "pt-BR-Chirp3-HD-Leda",
+    "velocidade": 0.94,
+    "estilo": "animada"
+  },
+  "falas": {
+    "v15_abertura": {
+      "texto": "Oi, amiguinho! A Tuti voltou! Hoje eu vou escrever uma cartinha para o Papai Noel! Você me ajuda? São doze desafios. Vamos lá!",
+      "dur": 9.843,
+      "estilo": "animada"
+    },
+    "v15_p1_pergunta": {
+      "texto": "A cartinha voou! Você consegue encontrar?",
+      "dur": 3,
+      "estilo": "animada"
+    },
+    "v15_p1_resposta": {
+      "texto": "Achou! Ela estava atrás da caixa do correio! Ufa!",
+      "dur": 4.43,
+      "estilo": "animada"
+    },
+    "v15_p2_pergunta": {
+      "texto": "Vamos contar as cartinhas na caixa do correio. Conte comigo!",
+      "dur": 3.94,
+      "estilo": "animada"
+    },
+    "v15_p2_contagem": {
+      "texto": "Um... dois... três... quatro!",
+      "dur": 4.49,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 0.43
+        },
+        {
+          "ini": 1.28,
+          "fim": 1.92
+        },
+        {
+          "ini": 2.77,
+          "fim": 3.32
+        },
+        {
+          "ini": 4.17,
+          "fim": 4.49
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v15_p2_resposta": {
+      "texto": "Quatro cartinhas! Muito bem!",
+      "dur": 2.55,
+      "estilo": "animada"
+    },
+    "v15_p3_pergunta": {
+      "texto": "Com o que a gente escreve a cartinha? O lápis... o garfo... ou a colher?",
+      "dur": 7.26,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 2.01
+        },
+        {
+          "ini": 2.91,
+          "fim": 3.76
+        },
+        {
+          "ini": 4.76,
+          "fim": 5.51
+        },
+        {
+          "ini": 6.51,
+          "fim": 7.26
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v15_p3_resposta": {
+      "texto": "O lápis! Agora dá para escrever!",
+      "dur": 2.4,
+      "estilo": "animada"
+    },
+    "v15_p4_pergunta": {
+      "texto": "De quem é essa sombra? Da bola... do ursinho... ou do carrinho?",
+      "dur": 6.66,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.4
+        },
+        {
+          "ini": 2.3,
+          "fim": 2.97
+        },
+        {
+          "ini": 3.97,
+          "fim": 4.79
+        },
+        {
+          "ini": 5.79,
+          "fim": 6.66
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v15_p4_resposta": {
+      "texto": "Do ursinho! Foi o presente que a Tuti pediu!",
+      "dur": 2.87,
+      "estilo": "animada"
+    },
+    "v15_p5_pergunta": {
+      "texto": "O que está faltando no envelope? O laço... o botão... ou o selo?",
+      "dur": 6.86,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.68
+        },
+        {
+          "ini": 2.58,
+          "fim": 3.3
+        },
+        {
+          "ini": 4.3,
+          "fim": 5.03
+        },
+        {
+          "ini": 6.03,
+          "fim": 6.86
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v15_p5_resposta": {
+      "texto": "O selo! Sem selo, a cartinha não viaja!",
+      "dur": 4.04,
+      "estilo": "animada"
+    },
+    "v15_p6_pergunta": {
+      "texto": "Qual saco de cartinhas é o maior? O da esquerda... ou o da direita?",
+      "dur": 5.69,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 2
+        },
+        {
+          "ini": 2.9,
+          "fim": 3.87
+        },
+        {
+          "ini": 4.87,
+          "fim": 5.69
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v15_p6_resposta": {
+      "texto": "O da esquerda! Quanta cartinha!",
+      "dur": 2.59,
+      "estilo": "animada"
+    },
+    "v15_p7_pergunta": {
+      "texto": "Um destes envelopes é diferente! Qual é?",
+      "dur": 3.06,
+      "estilo": "animada"
+    },
+    "v15_p7_resposta": {
+      "texto": "O vermelho! Os outros são brancos!",
+      "dur": 2.35,
+      "estilo": "animada"
+    },
+    "v15_p8_pergunta": {
+      "texto": "Olhe a fila! O que vem depois? O selo... o presente... ou o lápis?",
+      "dur": 7.88,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 0.84
+        },
+        {
+          "ini": 1.34,
+          "fim": 2.56
+        },
+        {
+          "ini": 3.46,
+          "fim": 4.14
+        },
+        {
+          "ini": 5.14,
+          "fim": 6.01
+        },
+        {
+          "ini": 7.01,
+          "fim": 7.88
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v15_p8_resposta": {
+      "texto": "O presente! Envelope, presente, envelope, presente!",
+      "dur": 4.79,
+      "estilo": "animada"
+    },
+    "v15_p9_pergunta": {
+      "texto": "O que não cabe no envelope? A cartinha... a foto... ou o castelo?",
+      "dur": 7.02,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.63
+        },
+        {
+          "ini": 2.53,
+          "fim": 3.37
+        },
+        {
+          "ini": 4.37,
+          "fim": 5.12
+        },
+        {
+          "ini": 6.12,
+          "fim": 7.02
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v15_p9_resposta": {
+      "texto": "O castelo! Ha ha! Ele não cabe no envelope!",
+      "dur": 4.6,
+      "estilo": "animada"
+    },
+    "v15_p10_mostrar": {
+      "texto": "Olhe bem onde a cartinha está.",
+      "dur": 1.72,
+      "estilo": "animada"
+    },
+    "v15_p10_pergunta": {
+      "texto": "As cartas trocaram de lugar! Onde está a cartinha? No um... no dois... ou no três?",
+      "dur": 8.41,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.77
+        },
+        {
+          "ini": 2.27,
+          "fim": 3.51
+        },
+        {
+          "ini": 4.31,
+          "fim": 4.96
+        },
+        {
+          "ini": 5.86,
+          "fim": 6.64
+        },
+        {
+          "ini": 7.54,
+          "fim": 8.41
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v15_p10_resposta": {
+      "texto": "No número dois! Você tem olho bom!",
+      "dur": 2.92,
+      "estilo": "animada"
+    },
+    "v15_p11_pergunta": {
+      "texto": "Quem lê as cartinhas no Polo Norte? O pescador... o Papai Noel... ou o padeiro?",
+      "dur": 8.03,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 2.15
+        },
+        {
+          "ini": 3.05,
+          "fim": 4.07
+        },
+        {
+          "ini": 5.07,
+          "fim": 6.1
+        },
+        {
+          "ini": 7.1,
+          "fim": 8.03
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v15_p11_resposta": {
+      "texto": "O Papai Noel! Ele lê todas com carinho!",
+      "dur": 2.68,
+      "estilo": "animada"
+    },
+    "v15_p12_pergunta": {
+      "texto": "Para onde vai a cartinha? Para o Polo Norte... para a praia... ou para a floresta?",
+      "dur": 7.37,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.44
+        },
+        {
+          "ini": 2.34,
+          "fim": 3.53
+        },
+        {
+          "ini": 4.53,
+          "fim": 5.41
+        },
+        {
+          "ini": 6.41,
+          "fim": 7.37
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v15_p12_resposta": {
+      "texto": "Para o Polo Norte! Lá vai ela!",
+      "dur": 2.757,
+      "estilo": "animada"
+    },
+    "v15_encerramento": {
+      "texto": "A cartinha foi voando para o Polo Norte! O Papai Noel já está lendo! Feliz Natal, amiguinho! Até a próxima!",
+      "dur": 7.56,
+      "estilo": "animada"
+    }
+  }
+}

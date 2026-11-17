@@ -188,6 +188,39 @@ const SHORTS = [
     },
   },
   {
+    id: 'v15_short1',
+    pasta: 'v15-natal-cartinha',
+    criar: deVideo({ v: 'v15', pasta: 'v15-natal-cartinha', n: 9, fundo: fundos.sala, selo: 'QUIZ DE NATAL', tutiOpts: { gorro: true } }),
+    textos: {
+      titulo: 'O que não cabe no envelope? 😂 Você acerta? #shorts',
+      descricao:
+        'A Tuti vai mandar a cartinha para o Papai Noel, mas uma dessas coisas não cabe no envelope! Você tem 10 segundos para descobrir. ✉️\n\nQuiz para crianças de 3 a 7 anos, com a ovelhinha Tuti. O quiz completo, com 12 desafios, é o "Quiz de Natal 7: a Cartinha para o Papai Noel", no canal Quizzito.\n\n#QuizDeNatal #PapaiNoel #QuizInfantil #shorts',
+      tags: ['quiz de natal', 'cartinha para o papai noel', 'quiz infantil', 'quiz para crianças', 'natal para crianças', 'ovelhinha Tuti', 'shorts infantil'],
+    },
+  },
+  {
+    id: 'v15_short2',
+    pasta: 'v15-natal-cartinha',
+    criar: deVideo({ v: 'v15', pasta: 'v15-natal-cartinha', n: 11, fundo: fundos.sala, selo: 'QUIZ DE NATAL', tutiOpts: { gorro: true } }),
+    textos: {
+      titulo: 'Quem lê as cartinhas no Polo Norte? 🎅 Você acerta? #shorts',
+      descricao:
+        'O pescador, o Papai Noel ou o padeiro? Você tem 10 segundos para responder bem alto! ✉️\n\nQuiz para crianças de 3 a 7 anos, com a ovelhinha Tuti. O quiz completo, com 12 desafios, é o "Quiz de Natal 7: a Cartinha para o Papai Noel", no canal Quizzito.\n\n#QuizDeNatal #PapaiNoel #QuizInfantil #shorts',
+      tags: ['quiz de natal', 'papai noel', 'polo norte', 'quiz infantil', 'quiz para crianças', 'ovelhinha Tuti', 'shorts infantil'],
+    },
+  },
+  {
+    id: 'v15_short3',
+    pasta: 'v15-natal-cartinha',
+    criar: memoriaDeVideo({ v: 'v15', pasta: 'v15-natal-cartinha', n: 10, fundo: fundos.sala, selo: 'QUIZ DE NATAL', tutiOpts: { gorro: true } }),
+    textos: {
+      titulo: 'Onde está a cartinha do Papai Noel? 👀 Jogo da memória #shorts',
+      descricao:
+        'Olhe bem onde está a cartinha... as cartas vão trocar de lugar! Você consegue acompanhar? ✉️\n\nJogo da memória para crianças de 3 a 7 anos, com a ovelhinha Tuti. O quiz completo, com 12 desafios, é o "Quiz de Natal 7: a Cartinha para o Papai Noel", no canal Quizzito.\n\n#JogoDaMemória #QuizDeNatal #PapaiNoel #shorts',
+      tags: ['jogo da memória infantil', 'quiz de natal', 'cartinha para o papai noel', 'quiz para crianças', 'natal para crianças', 'ovelhinha Tuti', 'shorts infantil'],
+    },
+  },
+  {
     id: 'v11_short1',
     pasta: 'v11-natal-ceia',
     criar: deVideo({ v: 'v11', pasta: 'v11-natal-ceia', n: 7, fundo: fundos.cozinha, selo: 'QUIZ DE NATAL', tutiOpts: { gorro: true } }),
