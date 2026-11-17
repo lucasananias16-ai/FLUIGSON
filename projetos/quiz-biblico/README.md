@@ -164,6 +164,15 @@ Primeiro vídeo de 12 desafios (5 min 33 s). Dia de neve ao ar livre (`art/neve.
 | 1 a 6 | Narrativa, imagens, narração, animação (5 min 32 s), legendas e pacote do YouTube | Aprovadas (pelo Claude, por decisão do dono do canal) |
 | 7 | Publicação | Pronto para subir. O passo a passo está em `v13-biblico-jonas/youtube/como-publicar.md` |
 
+### Vídeo 14 — Jogo da Memória da Tuti
+
+Série nova "Jogos da Tuti": 12 desafios de memória de cinco tipos (cartas que trocam, o que sumiu, de que cor era, quantos tinha, quem veio primeiro ou por último), 6 min 53 s. Nos tipos novos, a cena `dNa` mostra os desenhos e a `dN` faz a pergunta com um lembrete na faixa de cima. Código em `src/v14/`; arquivos em `v14-jogo-da-memoria/`. Agendado para sábado 21/11/2026, 16h.
+
+| Nº | Etapa | Situação |
+|---|---|---|
+| 1 a 6 | Narrativa, imagens, narração, animação (6 min 53 s), legendas e pacote do YouTube | Aprovadas (pelo Claude, por decisão do dono do canal) |
+| 7 | Publicação | Pronto para subir. O passo a passo está em `v14-jogo-da-memoria/youtube/como-publicar.md` |
+
 ## Pastas
 
 - `v5-ingles-animais/` — arquivos do Vídeo 5, na mesma organização do Vídeo 4
@@ -272,6 +281,10 @@ node src/v12/video.js
 
 ```bash
 node src/v13/video.js
+```
+
+```bash
+node src/v14/video.js
 ```
 
 Cada comando monta um vídeo inteiro em `_rascunho/video/` (pasta fora do repositório): `v1_quiz_arca_de_noe.mp4`, `v2_desafios_de_davi_e_golias.mp4` e `v3_desafios_do_natal_de_jesus.mp4` e `v4_quiz_do_papai_noel.mp4` e `v5_festa_dos_animais.mp4`. Também grava as legendas e o mapa do vídeo na pasta de cada um. Cada cena é um trecho separado; só os trechos que mudaram são renderizados de novo. Um vídeo de 4 minutos leva cerca de 5 minutos para renderizar do zero.

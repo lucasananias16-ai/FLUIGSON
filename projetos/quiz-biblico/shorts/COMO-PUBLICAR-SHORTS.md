@@ -18,12 +18,15 @@ Cada Short só sai depois de o vídeo longo de origem estar no ar, porque o fim 
 | **Ter 24/11, 17h** | `v13_short2.mp4` | Jonas | O que aconteceu no mar? (a tempestade) |
 | **Qua 25/11, 17h** | `v12_short3.mp4` | Boneco de Neve | Jogo da memória: onde está a luva? |
 | **Qui 26/11, 17h** | `v13_short3.mp4` | Jonas | Jogo da memória: onde está o grande peixe? |
+| **Sex 27/11, 17h** | `v14_short1.mp4` | Jogo da Memória (no ar no sáb 21/11) | Onde está a girafa? (duas trocas) |
+| **Sáb 28/11, 17h** | `v14_short2.mp4` | Jogo da Memória | Onde está a lua? (três trocas) |
+| **Dom 29/11, 17h** | `v14_short3.mp4` | Jogo da Memória | Onde está o foguete? (duas trocas) |
 
 **Limite de 3 envios por dia (contando os vídeos longos):** por exemplo, segunda os dois longos (12 e 13) e o `v2_short1`; terça os três seguintes da lista; quarta mais três; quinta os três últimos. Tudo já programado para a data da tabela.
 
 ## Arquivos
 
-- Vídeos: os dez `.mp4` da tabela (de 6 a 8 MB cada). O envio para o Drive daqui aceita só uns 3 MB por arquivo, então baixe os vídeos da conversa e arraste para a subpasta `shorts/` da pasta do vídeo de origem (os textos e este guia já estão lá).
+- Vídeos: os treze `.mp4` da tabela (de 6 a 8 MB cada). O envio para o Drive daqui aceita só uns 3 MB por arquivo, então baixe os vídeos da conversa e arraste para a subpasta `shorts/` da pasta do vídeo de origem (os textos e este guia já estão lá).
 - Textos: `vN_shortK_titulo_descricao_tags.txt`, ao lado de cada vídeo.
 
 ## Passo a passo (para cada Short)
@@ -31,7 +34,7 @@ Cada Short só sai depois de o vídeo longo de origem estar no ar, porque o fim 
 1. No Studio, **Criar > Enviar vídeos** e escolha o `.mp4`. Por ser em pé e ter menos de 60 s, o YouTube já trata como Short.
 2. **Título** e **descrição:** cole do arquivo de textos. O `#shorts` já está no título.
 3. **Miniatura:** o Studio no computador não deixa enviar miniatura para Short. Se quiser escolher o quadro de capa, use o app do YouTube no celular. Se não mexer, o YouTube escolhe um quadro.
-4. **Playlist:** a mesma do vídeo de origem (**Quiz Bíblico Infantil** para os de Davi e de Jonas, **Quiz de Natal** para os da Ceia e do Boneco de Neve).
+4. **Playlist:** a mesma do vídeo de origem (**Quiz Bíblico Infantil** para os de Davi e de Jonas, **Quiz de Natal** para os da Ceia e do Boneco de Neve, **Jogos da Tuti** para os do Jogo da Memória).
 5. **Público:** **"Sim, é conteúdo para crianças"**.
 6. **Mostrar mais:**
    - **Vídeo relacionado:** escolha o vídeo longo de origem. Aparece um link para ele embaixo do Short, e é isso que leva a criança ao quiz completo.
