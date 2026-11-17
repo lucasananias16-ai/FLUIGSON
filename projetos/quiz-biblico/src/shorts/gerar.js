@@ -221,6 +221,39 @@ const SHORTS = [
     },
   },
   {
+    id: 'v16_short1',
+    pasta: 'v16-biblico-criacao',
+    criar: deVideo({ v: 'v16', pasta: 'v16-biblico-criacao', n: 9, fundo: fundos.pasto, selo: 'QUIZ BÍBLICO' }),
+    textos: {
+      titulo: 'O que Deus não criou? 🚀 Você acerta? #shorts',
+      descricao:
+        'A árvore, o peixe ou o foguete? Uma dessas coisas foram as pessoas que fizeram! Você tem 10 segundos para descobrir. 🌍\n\nQuiz bíblico para crianças de 3 a 7 anos, com a ovelhinha Tuti. O quiz completo, com 12 desafios, é o "Quiz Bíblico da Criação do Mundo para crianças", no canal Quizzito.\n\n#QuizBíblico #CriaçãoDoMundo #BíbliaParaCrianças #shorts',
+      tags: ['quiz bíblico infantil', 'a criação do mundo', 'deus criou o mundo', 'quiz para crianças', 'bíblia para crianças', 'ovelhinha Tuti', 'shorts infantil'],
+    },
+  },
+  {
+    id: 'v16_short2',
+    pasta: 'v16-biblico-criacao',
+    criar: deVideo({ v: 'v16', pasta: 'v16-biblico-criacao', n: 3, fundo: fundos.pasto, selo: 'QUIZ BÍBLICO' }),
+    textos: {
+      titulo: 'O que Deus fez primeiro? ✨ Você acerta? #shorts',
+      descricao:
+        'A luz, o carro ou a casa? Você tem 10 segundos para responder bem alto! 🌍\n\nQuiz bíblico para crianças de 3 a 7 anos, com a ovelhinha Tuti. O quiz completo, com 12 desafios, é o "Quiz Bíblico da Criação do Mundo para crianças", no canal Quizzito.\n\nBase bíblica: Gênesis 1.\n\n#QuizBíblico #CriaçãoDoMundo #BíbliaParaCrianças #shorts',
+      tags: ['quiz bíblico infantil', 'a criação do mundo', 'haja luz', 'quiz para crianças', 'bíblia para crianças', 'escola dominical', 'ovelhinha Tuti'],
+    },
+  },
+  {
+    id: 'v16_short3',
+    pasta: 'v16-biblico-criacao',
+    criar: memoriaDeVideo({ v: 'v16', pasta: 'v16-biblico-criacao', n: 10, fundo: fundos.pasto, selo: 'QUIZ BÍBLICO' }),
+    textos: {
+      titulo: 'Onde está o sol? 👀 Jogo da memória #shorts',
+      descricao:
+        'Olhe bem onde está o sol... as cartas vão trocar de lugar! Você consegue acompanhar? 🌍\n\nJogo da memória para crianças de 3 a 7 anos, com a ovelhinha Tuti. O quiz completo, com 12 desafios, é o "Quiz Bíblico da Criação do Mundo para crianças", no canal Quizzito.\n\n#QuizBíblico #JogoDaMemória #CriaçãoDoMundo #shorts',
+      tags: ['jogo da memória infantil', 'quiz bíblico infantil', 'a criação do mundo', 'quiz para crianças', 'bíblia para crianças', 'ovelhinha Tuti', 'shorts infantil'],
+    },
+  },
+  {
     id: 'v11_short1',
     pasta: 'v11-natal-ceia',
     criar: deVideo({ v: 'v11', pasta: 'v11-natal-ceia', n: 7, fundo: fundos.cozinha, selo: 'QUIZ DE NATAL', tutiOpts: { gorro: true } }),

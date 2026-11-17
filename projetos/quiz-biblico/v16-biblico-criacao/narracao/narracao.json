@@ -1,0 +1,337 @@
+{
+  "voz": {
+    "nome": "pt-BR-Chirp3-HD-Leda",
+    "velocidade": 0.94,
+    "estilo": "animada"
+  },
+  "falas": {
+    "v16_abertura": {
+      "texto": "Oi, amiguinho! A Tuti voltou! Hoje a história é de como Deus criou o mundo! São doze desafios. Vamos lá!",
+      "dur": 9.37,
+      "estilo": "animada"
+    },
+    "v16_p1_pergunta": {
+      "texto": "Um passarinho se escondeu no jardim! Você consegue encontrar?",
+      "dur": 3.83,
+      "estilo": "animada"
+    },
+    "v16_p1_resposta": {
+      "texto": "Achou! Ele estava atrás da árvore! Deus fez os passarinhos.",
+      "dur": 4.44,
+      "estilo": "animada"
+    },
+    "v16_p2_pergunta": {
+      "texto": "Deus fez as estrelas no céu. Conte comigo!",
+      "dur": 3.45,
+      "estilo": "animada"
+    },
+    "v16_p2_contagem": {
+      "texto": "Um... dois... três... quatro... cinco!",
+      "dur": 6.22,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 0.39
+        },
+        {
+          "ini": 1.24,
+          "fim": 1.86
+        },
+        {
+          "ini": 2.71,
+          "fim": 3.29
+        },
+        {
+          "ini": 4.14,
+          "fim": 4.71
+        },
+        {
+          "ini": 5.56,
+          "fim": 6.22
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v16_p2_resposta": {
+      "texto": "Cinco estrelas! Muito bem!",
+      "dur": 2.25,
+      "estilo": "animada"
+    },
+    "v16_p3_pergunta": {
+      "texto": "O que Deus fez primeiro? A luz... o carro... ou a casa?",
+      "dur": 6.67,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.51
+        },
+        {
+          "ini": 2.41,
+          "fim": 3.13
+        },
+        {
+          "ini": 4.13,
+          "fim": 4.87
+        },
+        {
+          "ini": 5.87,
+          "fim": 6.67
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v16_p3_resposta": {
+      "texto": "A luz! Deus disse: haja luz! E a luz apareceu!",
+      "dur": 5.551,
+      "estilo": "animada"
+    },
+    "v16_p4_pergunta": {
+      "texto": "De quem é essa sombra? Do leão... da girafa... ou do elefante?",
+      "dur": 7.16,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.59
+        },
+        {
+          "ini": 2.49,
+          "fim": 3.2
+        },
+        {
+          "ini": 4.2,
+          "fim": 5.1
+        },
+        {
+          "ini": 6.1,
+          "fim": 7.16
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v16_p4_resposta": {
+      "texto": "Do elefante! Deus fez os bichos grandes e pequenos!",
+      "dur": 4.18,
+      "estilo": "animada"
+    },
+    "v16_p5_pergunta": {
+      "texto": "O que está faltando no céu da noite? O sol... a lua... ou o guarda-chuva?",
+      "dur": 7.4,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.89
+        },
+        {
+          "ini": 2.79,
+          "fim": 3.51
+        },
+        {
+          "ini": 4.51,
+          "fim": 5.22
+        },
+        {
+          "ini": 6.22,
+          "fim": 7.4
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v16_p5_resposta": {
+      "texto": "A lua! Deus fez a lua para brilhar de noite!",
+      "dur": 3.76,
+      "estilo": "animada"
+    },
+    "v16_p6_pergunta": {
+      "texto": "Quem é o maior? A ovelhinha... ou o elefante?",
+      "dur": 4.81,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 0.95
+        },
+        {
+          "ini": 1.85,
+          "fim": 2.75
+        },
+        {
+          "ini": 3.75,
+          "fim": 4.81
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v16_p6_resposta": {
+      "texto": "O elefante! Ele é enorme!",
+      "dur": 2.79,
+      "estilo": "animada"
+    },
+    "v16_p7_pergunta": {
+      "texto": "Uma destas flores é diferente! Qual é?",
+      "dur": 2.89,
+      "estilo": "animada"
+    },
+    "v16_p7_resposta": {
+      "texto": "A cor-de-rosa! As outras são amarelas!",
+      "dur": 3.24,
+      "estilo": "animada"
+    },
+    "v16_p8_pergunta": {
+      "texto": "Olhe o céu! O que vem depois? A lua... a estrela... ou o sol?",
+      "dur": 8.13,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 0.97
+        },
+        {
+          "ini": 1.47,
+          "fim": 2.66
+        },
+        {
+          "ini": 3.56,
+          "fim": 4.32
+        },
+        {
+          "ini": 5.32,
+          "fim": 6.3
+        },
+        {
+          "ini": 7.3,
+          "fim": 8.13
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v16_p8_resposta": {
+      "texto": "A lua! Sol, lua, sol, lua! O dia e a noite!",
+      "dur": 4.101,
+      "estilo": "animada"
+    },
+    "v16_p9_pergunta": {
+      "texto": "O que Deus não criou? A árvore... o peixe... ou o foguete?",
+      "dur": 6.07,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.12
+        },
+        {
+          "ini": 2.02,
+          "fim": 2.74
+        },
+        {
+          "ini": 3.74,
+          "fim": 4.42
+        },
+        {
+          "ini": 5.42,
+          "fim": 6.07
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v16_p9_resposta": {
+      "texto": "O foguete! As pessoas é que fizeram o foguete!",
+      "dur": 3.25,
+      "estilo": "animada"
+    },
+    "v16_p10_mostrar": {
+      "texto": "Olhe bem onde o sol está.",
+      "dur": 1.68,
+      "estilo": "animada"
+    },
+    "v16_p10_pergunta": {
+      "texto": "As cartas trocaram de lugar! Onde está o sol? No um... no dois... ou no três?",
+      "dur": 8.07,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.8
+        },
+        {
+          "ini": 2.3,
+          "fim": 3.26
+        },
+        {
+          "ini": 4.06,
+          "fim": 4.69
+        },
+        {
+          "ini": 5.59,
+          "fim": 6.34
+        },
+        {
+          "ini": 7.24,
+          "fim": 8.07
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v16_p10_resposta": {
+      "texto": "No número três! Você tem olho bom!",
+      "dur": 2.9,
+      "estilo": "animada"
+    },
+    "v16_p11_pergunta": {
+      "texto": "Quem mora na água? O leão... o peixe... ou o passarinho?",
+      "dur": 6.36,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.17
+        },
+        {
+          "ini": 2.07,
+          "fim": 2.68
+        },
+        {
+          "ini": 3.68,
+          "fim": 4.41
+        },
+        {
+          "ini": 5.41,
+          "fim": 6.36
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v16_p11_resposta": {
+      "texto": "O peixe! Deus encheu o mar de peixinhos!",
+      "dur": 3.35,
+      "estilo": "animada"
+    },
+    "v16_p12_pergunta": {
+      "texto": "No sétimo dia, o que Deus fez? Descansou... correu... ou nadou?",
+      "dur": 7.21,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 2.28
+        },
+        {
+          "ini": 3.18,
+          "fim": 4
+        },
+        {
+          "ini": 5,
+          "fim": 5.56
+        },
+        {
+          "ini": 6.56,
+          "fim": 7.21
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v16_p12_resposta": {
+      "texto": "Descansou! Deus viu que tudo era muito bom!",
+      "dur": 3.16,
+      "estilo": "animada"
+    },
+    "v16_encerramento": {
+      "texto": "Deus fez tudo com muito amor, e tudo era muito bom! Até a próxima, amiguinho!",
+      "dur": 5.387,
+      "estilo": "animada"
+    }
+  }
+}
