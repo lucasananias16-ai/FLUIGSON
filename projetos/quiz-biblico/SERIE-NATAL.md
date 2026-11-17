@@ -11,6 +11,7 @@ Vídeos de quiz de Natal, todos com a Tuti de gorro de Papai Noel, na playlist *
 | 5 | Vídeo 11 | **A Ceia e os Doces de Natal**: biscoitos, panetone, a mesa da família | Cozinha e mesa | Pronto |
 | 6 | Vídeo 12 | **O Boneco de Neve**: brincar na neve e montar o boneco (12 desafios, 6 min) | Dia de neve | Pronto |
 | 7 | Vídeo 15 | **A Cartinha para o Papai Noel**: escrever, pôr no envelope, mandar pelo correio | Casa e correio | Pronto |
+| 8 | Vídeo 17 | **O Natal na Floresta**: os bichinhos enfeitam o pinheiro e fazem a festa | Floresta com neve | Narrativa escrita |
 
 O vídeo bíblico "Desafios do Natal de Jesus" (Vídeo 3) fica na playlist Quiz Bíblico Infantil e não entra na contagem desta série.
 
