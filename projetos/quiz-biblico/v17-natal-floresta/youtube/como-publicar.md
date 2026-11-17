@@ -8,7 +8,7 @@ Caminhos no projeto:
 
 | Arquivo | Para quê |
 |---|---|
-| `v17_natal_na_floresta.mp4` | Vídeo final (5 min 26 s, 1080p, ~82 MB) |
+| `v17_natal_na_floresta.mp4` | Vídeo final (5 min 28 s, 1080p, ~86 MB) |
 | `youtube/v17_thumbnail.png` | Miniatura (1280 x 720). Outras opções em `youtube/opcoes/` |
 | `youtube/v17_titulo_descricao_tags.txt` | Título, descrição com capítulos, tags e títulos de reserva |
 | `legendas/v17_natal_na_floresta.srt` | Legendas em português (com marcação de tempo) |
@@ -44,7 +44,7 @@ Cópia no Google Drive: crie uma pasta para este vídeo ao lado das dos Vídeos 
 5. **Público:** marque **"Sim, é conteúdo para crianças"**. Já vem marcado pelo padrão do canal, mas confira.
 6. Clique em **Mostrar mais** e preencha:
    - **Declaração de uso de IA:** responda **Não**, como no Vídeo 1. A regra do YouTube vale para conteúdo que parece real, e animação entra na lista do que não precisa ser declarado. A voz da Tuti é sintética (Google Cloud Text-to-Speech) e a trilha foi composta por código; a página oficial não trata de narração sintética em desenho animado, então, se o YouTube mudar a regra ou pedir a declaração, revise essa resposta.
-   - **Tags:** cole a linha de tags do arquivo de textos. Deve usar cerca de 397 dos 500 caracteres.
+   - **Tags:** cole a linha de tags do arquivo de textos. Deve usar cerca de 404 dos 500 caracteres.
    - **Idioma do vídeo:** Português (Brasil). Na lista, procure por "Português (Brasil)", que fica logo depois de "Português".
    - **Categoria:** Educação.
    - Deixe os capítulos automáticos e a incorporação como estão.
@@ -103,6 +103,6 @@ O YouTube desativa nesses vídeos: comentários, sininho de notificação, anún
 
 ## Dicas para automatizar com o Claude
 
-- O envio do `.mp4` precisa ser feito por você. O navegador do Claude só envia arquivos de até 3,8 MB, e o vídeo tem ~82 MB.
+- O envio do `.mp4` precisa ser feito por você. O navegador do Claude só envia arquivos de até 3,8 MB, e o vídeo tem ~86 MB.
 - O `.srt` é pequeno e o Claude consegue enviar sozinho.
 - A mudança para **Público** (passo 7) já está autorizada como parte deste passo a passo, depois da revisão do passo 6. Se a revisão achar algum problema, o vídeo fica Privado até ser corrigido.
