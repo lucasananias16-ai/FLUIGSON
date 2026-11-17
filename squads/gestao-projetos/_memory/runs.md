@@ -50,3 +50,17 @@
 | 2026-11-16 | 2026-11-16-rotina-autoneum | Rotina diária — Autoneum (finalização relatada; reunião com o Thiago em 16/11) | Rascunho de status + riscos | Rascunho |
 | 2026-11-16 | 2026-11-16-rotina-destro | Rotina diária — Destro (sem agenda com o fiscal; incorpora o rascunho de 11/11) | Rascunho de status + riscos | Rascunho |
 | 2026-11-16 | 2026-11-16-rotina-assurant | Rotina diária — Assurant (documento de transporte volta para a JYNX) | Rascunho de status + riscos | Rascunho |
+| 2026-11-17 | 2026-11-17-rotina-protege | Rotina diária — Protege (API de sinistros completa liberada; fim do dev segue vencido) | Rascunho de status + riscos | Rascunho |
+| 2026-11-17 | 2026-11-17-rotina-yangzi-tuut | Rotina diária — Yangzi (gravação no WinThor começou em 16/11 sem conexão registrada) | Rascunho de status + riscos | Rascunho |
+| 2026-11-17 | 2026-11-17-rotina-destro | Rotina diária — Destro (aprovador por setor configurado; fiscal sem data) | Rascunho de status + riscos | Rascunho |
+| 2026-11-17 | 2026-11-17-rotina-grupo-canopus | Rotina diária — Grupo Canopus (autorização de gravação em discussão; integração não iniciada) | Rascunho de status + riscos | Rascunho |
+| 2026-11-17 | 2026-11-17-rotina-assurant | Rotina diária — Assurant (#4193387 ainda em ajuste; Alinhamento 17/11) | Rascunho de status + riscos | Rascunho |
+| 2026-11-17 | 2026-11-17-rotina-autoneum | Rotina diária — Autoneum (Abertura de Vagas finalizada; melhorias sem estimativa) | Rascunho de status + riscos | Rascunho |
+| 2026-11-17 | 2026-11-17-rotina-gol | Rotina diária — GOL (Movimentação vencida; Emerson cobra prioridades; 3 reuniões sem ata) | Rascunho de status + riscos | Rascunho |
+| 2026-11-17 | 2026-11-17-rotina-lpc-latina | Rotina diária — LPC Latina (GMUD 19/11; Follow up sem ata) | Rascunho de status + riscos | Rascunho |
+| 2026-11-17 | 2026-11-17-rotina-alliance | Rotina diária — Alliance (status TOTVS de 13/11; camada Protheus fora do Works; homologação 18/11) | Rascunho de status + riscos | Rascunho |
+| 2026-11-17 | 2026-11-17-rotina-mind-lab | Rotina diária — Mind Lab (REST voltou; 789 aguardando job do Protheus) | Rascunho de status + riscos | Rascunho |
+| 2026-11-17 | 2026-11-17-rotina-adata | Rotina diária — ADATA (MOC corrigido e reenviado; ESGo vencido) | Rascunho de status + riscos | Rascunho |
+| 2026-11-17 | 2026-11-17-rotina-tamussino | Rotina diária — Tamussino (1ª aba integrada; homologação estendida; Status Report 17/11) | Rascunho de status + riscos | Rascunho |
+| 2026-11-17 | 2026-11-17-rotina-bci-shineray | Rotina diária — BCI-Shineray (itens de 4h aguardando validação) | Rascunho de status + riscos | Rascunho |
+| 2026-11-17 | 2026-11-17-rotina-m-a-maquinas | Rotina diária — M.A. Máquinas (V1 antes da V2; Status Report removido da agenda) | Rascunho de status + riscos | Rascunho |
