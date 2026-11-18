@@ -1,0 +1,1483 @@
+<list>
+  <ProcessDefinition>
+    <processDefinitionPK>
+      <companyId>1</companyId>
+      <processId>aprovacaoPedidoDeCompra</processId>
+    </processDefinitionPK>
+    <processDescription>Pedido de Compra - Aprovação</processDescription>
+    <instruction></instruction>
+    <active>true</active>
+    <publicProcess>false</publicProcess>
+    <volumeId>Default</volumeId>
+    <categoryId>Aprovação de Compras</categoryId>
+    <managerEngineAllocationId>Grupo</managerEngineAllocationId>
+    <managerEngineAllocationConfiguration>&lt;AssignmentController&gt;&lt;Group&gt;TRATATIVAS.APROVACAO.PEDIDO&lt;/Group&gt;&lt;/AssignmentController&gt;</managerEngineAllocationConfiguration>
+    <snapshotFrequency>0</snapshotFrequency>
+    <baseDay>0</baseDay>
+    <baseMonth>0</baseMonth>
+    <periodId>Default</periodId>
+    <keyWord></keyWord>
+    <uniqueCardVersion>false</uniqueCardVersion>
+    <complementsLevel>1</complementsLevel>
+    <notifyRequisitionerComplements>true</notifyRequisitionerComplements>
+    <notifyManagerComplements>false</notifyManagerComplements>
+    <notifyAuthorityComplements>true</notifyAuthorityComplements>
+    <deadlineTime>0</deadlineTime>
+    <warningDeadlineTime>0</warningDeadlineTime>
+  </ProcessDefinition>
+  <ProcessDefinitionVersion>
+    <processDefinitionVersionPK>
+      <companyId>1</companyId>
+      <processId>aprovacaoPedidoDeCompra</processId>
+      <version>7</version>
+    </processDefinitionVersionPK>
+    <versionDescription></versionDescription>
+    <formId>8</formId>
+    <editionMode>false</editionMode>
+    <updateAttachmentsVersion>false</updateAttachmentsVersion>
+    <controlsAttachmentsSecurity>false</controlsAttachmentsSecurity>
+    <active>true</active>
+    <blockedVersion>false</blockedVersion>
+    <counterSign>false</counterSign>
+    <processDiagram>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; style=&quot;stroke-dasharray:none; shape-rendering:auto; font-family:&apos;Arial&apos;; text-rendering:auto; fill-opacity:1; color-interpolation:auto; color-rendering:auto; font-size:12; fill:black; stroke:black; image-rendering:auto; stroke-miterlimit:10; stroke-linecap:square; stroke-linejoin:miter; font-style:normal; stroke-width:1; stroke-dashoffset:0; font-weight:normal; stroke-opacity:1;&quot; contentScriptType=&quot;text/ecmascript&quot; preserveAspectRatio=&quot;xMidYMid meet&quot; zoomAndPan=&quot;magnify&quot; version=&quot;1.0&quot; contentStyleType=&quot;text/css&quot; xml:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;1101&quot; height=&quot;426&quot;&gt;&lt;rect x=&quot;0&quot; y=&quot;10&quot; width=&quot;1101&quot; height=&quot;401&quot; ry=&quot;0&quot; rx=&quot;0&quot; style=&quot;stroke:#000000; fill:#FFFFFF&quot; /&gt;&lt;rect x=&quot;30&quot; y=&quot;210&quot; width=&quot;1071&quot; height=&quot;201&quot; ry=&quot;0&quot; rx=&quot;0&quot; style=&quot;stroke:#000000; fill:#ADC9AC&quot; /&gt;&lt;g componentSequence=&quot;3&quot;&gt;&lt;text x=&quot;-310&quot; y=&quot;37&quot; transform=&quot;rotate(270)&quot; text-anchor=&quot;middle&quot; style=&quot;font-weight:bold;font-size:10px;stroke:none; fill:#434343&quot;&gt;&lt;tspan dy=&quot;14&quot; x=&quot;-310&quot;&gt;Sistema&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;rect x=&quot;30&quot; y=&quot;10&quot; width=&quot;1071&quot; height=&quot;200&quot; ry=&quot;0&quot; rx=&quot;0&quot; style=&quot;stroke:#000000; fill:#9F9F9F&quot; /&gt;&lt;g componentSequence=&quot;2&quot;&gt;&lt;text x=&quot;-110&quot; y=&quot;37&quot; transform=&quot;rotate(270)&quot; text-anchor=&quot;middle&quot; style=&quot;font-weight:bold;font-size:10px;stroke:none; fill:#434343&quot;&gt;&lt;tspan dy=&quot;14&quot; x=&quot;-110&quot;&gt;Solicitante&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g componentSequence=&quot;1&quot;&gt;&lt;text x=&quot;-210&quot; y=&quot;7&quot; transform=&quot;rotate(270)&quot; text-anchor=&quot;middle&quot; style=&quot;font-weight:bold;font-size:10px;stroke:none; fill:#434343&quot;&gt;&lt;tspan dy=&quot;14&quot; x=&quot;-210&quot;&gt;Alteração ou exclusão de pedido&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g sequence=&quot;4&quot;&gt;&lt;ellipse cx=&quot;107&quot; cy=&quot;112&quot; rx=&quot;17&quot; ry=&quot;17&quot; stroke-width=&quot;1&quot; style=&quot;fill:url(#linearGradient66FF6696FF96B6FFB6_330791665);&quot; stroke=&quot;336633&quot; /&gt;&lt;/g&gt;&lt;g sequence=&quot;22&quot;&gt;&lt;rect x=&quot;600&quot; y=&quot;271&quot; width=&quot;106&quot; height=&quot;84&quot; ry=&quot;5&quot; rx=&quot;5&quot; style=&quot;fill:url(#linearGradientF8FBFEEDF5FCDEEDFAD4E7F8E2E5E9_493913847);&quot; stroke=&quot;191970&quot; /&gt;&lt;/g&gt;&lt;g componentSequence=&quot;22&quot;&gt;&lt;text x=&quot;653&quot; y=&quot;286&quot; text-anchor=&quot;middle&quot; style=&quot;font-weight:bold;font-size:10px;stroke:none; fill:#333399&quot;&gt;&lt;tspan dy=&quot;14&quot; x=&quot;653&quot;&gt;Libera&lt;/tspan&gt;&lt;tspan dy=&quot;14&quot; x=&quot;653&quot;&gt;Aprovação no&lt;/tspan&gt;&lt;tspan dy=&quot;14&quot; x=&quot;653&quot;&gt;Protheus&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g sequence=&quot;22&quot;&gt;&lt;image x=&quot;605&quot; y=&quot;276&quot; width=&quot;16&quot; height=&quot;16&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xlink:type=&quot;simple&quot; xlink:actuate=&quot;onLoad&quot; xlink:show=&quot;embed&quot; preserveAspectRatio=&quot;none&quot; xlink:href=&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACMUlEQVR42nVTv2taURR+g+AfIOjUUIe2q4ODQ4eWtosiCIKDQirYQQpCZycFhXR2cKhtuoqCIP4gqaCIYJJWaCXBgDpoBWvVPolPq6bm67vHeI0ED1zud84977vnfO9cATvM6XRCEARaHo9nVxqEu47P50M8Hies1+uRyWRxcnoKjUZDsWQySYSLxWKbQJIkfhtb+Xye9mKxiFarDYVCgWw2S7FcLkf7cDjcEHQ6HQoeH39Bv98nbLPZ8FvGi+tr7O+/pli7/RNXV2PCjUZjuwW/3w+lUonBYMU8HP7hFfV6PYrN53PyC4XCpgVWUiQS4WVPJlMcHn4mbDabYbFYCB8cvMdsNiOcTqcRDocRjUaZv+k9kUjILQwIM0HXFggEKFav19FoNrf0IoKxNN2UJPtGoxHL5ZLHGLbb7XS2trUWWxVcXtZoN5lM9wgcDgedieKI53u93o2IbrcbZ2dfMRJFOmSiri0YDHLlz88v6IJut7uquNVqwX7L3hPHFPzw8RP5TECr1UqY6bCamQm1qFKpUKlUIFSrVUr4Jx/+Eicof/sBSR60o0KZl9qUhbu5AUqlkjydGYzHq/5jsdiqBerlNtlgMNDHjFCcLDCS/tLNz1+8hE6ng1arpTyXy7U9yqwNNgtqtRq1ZhvidM5JR9IM36sX/E2wOWATe+8xMbVZBW/evsPTZ68Ih0IhPNh7iFq9iUePn8iTOtj9GhlBKpXiN5fLZfm3idxnU3v3JTL7DwtyzXGuJexyAAAAAElFTkSuQmCC&quot; /&gt;&lt;/g&gt;&lt;g sequence=&quot;23&quot;&gt;&lt;rect x=&quot;480&quot; y=&quot;370&quot; width=&quot;106&quot; height=&quot;56&quot; ry=&quot;5&quot; rx=&quot;5&quot; style=&quot;fill:url(#linearGradientF8FBFEEDF5FCDEEDFAD4E7F8E2E5E9_1548586188);&quot; stroke=&quot;191970&quot; /&gt;&lt;/g&gt;&lt;g componentSequence=&quot;23&quot;&gt;&lt;text x=&quot;533&quot; y=&quot;387&quot; text-anchor=&quot;middle&quot; style=&quot;font-weight:bold;font-size:10px;stroke:none; fill:#333399&quot;&gt;&lt;tspan dy=&quot;14&quot; x=&quot;533&quot;&gt;Trata falhas&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g sequence=&quot;24&quot;&gt;&lt;polygon points=&quot; 840 292 870 262 900 292 870 322 840 292&quot; style=&quot;fill:url(#linearGradientFAFBFCFFFFCC_1954874694);&quot; stroke=&quot;000000&quot; /&gt;&lt;/g&gt;&lt;g componentSequence=&quot;24&quot;&gt;&lt;text x=&quot;870&quot; y=&quot;332&quot; text-anchor=&quot;middle&quot; style=&quot;font-weight:bold;font-size:10px;stroke:none; fill:#333399&quot;&gt;&lt;tspan dy=&quot;14&quot; x=&quot;870&quot;&gt;Integrou&lt;/tspan&gt;&lt;tspan dy=&quot;14&quot; x=&quot;870&quot;&gt;?&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g sequence=&quot;25&quot;&gt;&lt;ellipse cx=&quot;1057&quot; cy=&quot;312&quot; rx=&quot;17&quot; ry=&quot;17&quot; stroke-width=&quot;3&quot; style=&quot;fill:url(#linearGradientFF6666FF9696FFB6B6_1843098143);&quot; stroke=&quot;993333&quot; /&gt;&lt;/g&gt;&lt;g sequence=&quot;28&quot;&gt;&lt;ellipse cx=&quot;615&quot; cy=&quot;338&quot; rx=&quot;15&quot; ry=&quot;15&quot; stroke-width=&quot;1&quot; style=&quot;fill:url(#linearGradientFFFF66FFFF96FFFFB6_217687356);&quot; stroke=&quot;999900&quot; /&gt;&lt;/g&gt;&lt;g sequence=&quot;28&quot;&gt;&lt;polygon points=&quot; 606 348 612 328 618 338 626 328 618 348 612 338&quot; style=&quot;stroke:#999900; fill:none&quot; /&gt;&lt;/g&gt;&lt;g sequence=&quot;40&quot;&gt;&lt;rect x=&quot;250&quot; y=&quot;85&quot; width=&quot;106&quot; height=&quot;56&quot; ry=&quot;5&quot; rx=&quot;5&quot; style=&quot;fill:url(#linearGradientF8FBFEEDF5FCDEEDFAD4E7F8E2E5E9_1013085059);&quot; stroke=&quot;191970&quot; /&gt;&lt;/g&gt;&lt;g componentSequence=&quot;40&quot;&gt;&lt;text x=&quot;303&quot; y=&quot;102&quot; text-anchor=&quot;middle&quot; style=&quot;font-weight:bold;font-size:10px;stroke:none; fill:#333399&quot;&gt;&lt;tspan dy=&quot;14&quot; x=&quot;303&quot;&gt;Aprovação&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g sequence=&quot;52&quot;&gt;&lt;polygon points=&quot; 400 292 430 262 460 292 430 322 400 292&quot; style=&quot;fill:url(#linearGradientFAFBFCFFFFCC_1620176508);&quot; stroke=&quot;000000&quot; /&gt;&lt;/g&gt;&lt;g componentSequence=&quot;52&quot;&gt;&lt;text x=&quot;430&quot; y=&quot;332&quot; text-anchor=&quot;middle&quot; style=&quot;font-weight:bold;font-size:10px;stroke:none; fill:#333399&quot;&gt;&lt;tspan dy=&quot;14&quot; x=&quot;430&quot;&gt;Aprovad&lt;/tspan&gt;&lt;tspan dy=&quot;14&quot; x=&quot;430&quot;&gt;o&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g sequence=&quot;54&quot;&gt;&lt;polygon points=&quot; 420 92 450 62 480 92 450 122 420 92&quot; style=&quot;fill:url(#linearGradientFAFBFCFFFFCC_1449927675);&quot; stroke=&quot;000000&quot; /&gt;&lt;/g&gt;&lt;g componentSequence=&quot;54&quot;&gt;&lt;text x=&quot;450&quot; y=&quot;132&quot; text-anchor=&quot;middle&quot; style=&quot;font-weight:bold;font-size:10px;stroke:none; fill:#333399&quot;&gt;&lt;tspan dy=&quot;14&quot; x=&quot;450&quot;&gt;Reprova&lt;/tspan&gt;&lt;tspan dy=&quot;14&quot; x=&quot;450&quot;&gt;do&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g sequence=&quot;57&quot;&gt;&lt;polygon points=&quot; 950 292 980 262 1010 292 980 322 950 292&quot; style=&quot;fill:url(#linearGradientFAFBFCFFFFCC_402500687);&quot; stroke=&quot;000000&quot; /&gt;&lt;/g&gt;&lt;g componentSequence=&quot;57&quot;&gt;&lt;text x=&quot;980&quot; y=&quot;332&quot; text-anchor=&quot;middle&quot; style=&quot;font-weight:bold;font-size:10px;stroke:none; fill:#333399&quot;&gt;&lt;tspan dy=&quot;14&quot; x=&quot;980&quot;&gt;Pendênci&lt;/tspan&gt;&lt;tspan dy=&quot;14&quot; x=&quot;980&quot;&gt;as?&lt;/tspan&gt;&lt;/text&gt;&lt;/g&gt;&lt;g componentSequence=&quot;6&quot;&gt;&lt;text x=&quot;197&quot; y=&quot;112&quot; style=&quot;font-size:10px;font-weight:none;stroke:none; fill:#333399&quot; text-anchor=&quot;left&quot; /&gt;&lt;/g&gt;&lt;g componentSequence=&quot;29&quot;&gt;&lt;text x=&quot;596&quot; y=&quot;359&quot; style=&quot;font-size:10px;font-weight:none;stroke:none; fill:#333399&quot; text-anchor=&quot;left&quot; /&gt;&lt;/g&gt;&lt;g componentSequence=&quot;30&quot;&gt;&lt;text x=&quot;548&quot; y=&quot;313&quot; style=&quot;font-size:10px;font-weight:none;stroke:none; fill:#333399&quot; text-anchor=&quot;left&quot; /&gt;&lt;/g&gt;&lt;g componentSequence=&quot;31&quot;&gt;&lt;text x=&quot;783&quot; y=&quot;313&quot; style=&quot;font-size:10px;font-weight:none;stroke:none; fill:#333399&quot; text-anchor=&quot;left&quot; /&gt;&lt;/g&gt;&lt;g componentSequence=&quot;32&quot;&gt;&lt;text x=&quot;935&quot; y=&quot;313&quot; style=&quot;font-size:10px;font-weight:none;stroke:none; fill:#333399&quot; text-anchor=&quot;left&quot; /&gt;&lt;/g&gt;&lt;g componentSequence=&quot;39&quot;&gt;&lt;text x=&quot;755&quot; y=&quot;397&quot; style=&quot;font-size:10px;font-weight:none;stroke:none; fill:#333399&quot; text-anchor=&quot;left&quot; /&gt;&lt;/g&gt;&lt;g componentSequence=&quot;51&quot;&gt;&lt;text x=&quot;313&quot; y=&quot;275&quot; style=&quot;font-size:10px;font-weight:none;stroke:none; fill:#333399&quot; text-anchor=&quot;left&quot; /&gt;&lt;/g&gt;&lt;g componentSequence=&quot;53&quot;&gt;&lt;text x=&quot;540&quot; y=&quot;313&quot; style=&quot;font-size:10px;font-weight:none;stroke:none; fill:#333399&quot; text-anchor=&quot;left&quot; /&gt;&lt;/g&gt;&lt;g componentSequence=&quot;55&quot;&gt;&lt;text x=&quot;398&quot; y=&quot;113&quot; style=&quot;font-size:10px;font-weight:none;stroke:none; fill:#333399&quot; text-anchor=&quot;left&quot; /&gt;&lt;/g&gt;&lt;g componentSequence=&quot;56&quot;&gt;&lt;text x=&quot;655&quot; y=&quot;113&quot; style=&quot;font-size:10px;font-weight:none;stroke:none; fill:#333399&quot; text-anchor=&quot;left&quot; /&gt;&lt;/g&gt;&lt;g componentSequence=&quot;58&quot;&gt;&lt;text x=&quot;1035&quot; y=&quot;312&quot; style=&quot;font-size:10px;font-weight:none;stroke:none; fill:#333399&quot; text-anchor=&quot;left&quot; /&gt;&lt;/g&gt;&lt;g componentSequence=&quot;59&quot;&gt;&lt;text x=&quot;740&quot; y=&quot;22&quot; style=&quot;font-size:10px;font-weight:none;stroke:none; fill:#333399&quot; text-anchor=&quot;left&quot; /&gt;&lt;/g&gt;&lt;g componentSequence=&quot;60&quot;&gt;&lt;text x=&quot;573&quot; y=&quot;334&quot; style=&quot;font-size:10px;font-weight:none;stroke:none; fill:#333399&quot; text-anchor=&quot;left&quot; /&gt;&lt;/g&gt;&lt;path style=&quot;fill:none; stroke:#000000;stroke-width:1&quot; d=&quot;M124.0 112.0 L249.0 112.0&quot; /&gt;&lt;polygon style=&quot;fill:#000000; stroke:#000000;&quot; points=&quot; 239 107 249 112 239 117 241 112&quot; /&gt;&lt;path style=&quot;fill:none; stroke:#000000;stroke-width:1&quot; d=&quot;M706.0 313.0 L839.0 313.0&quot; /&gt;&lt;polygon style=&quot;fill:#000000; stroke:#000000;&quot; points=&quot; 829 308 839 313 829 318 831 313&quot; /&gt;&lt;path style=&quot;fill:none; stroke:#000000;stroke-width:1&quot; d=&quot;M533.0 369.0 L533.0 313.0 L599.0 313.0&quot; /&gt;&lt;polygon style=&quot;fill:#000000; stroke:#000000;&quot; points=&quot; 589 308 599 313 589 318 591 313&quot; /&gt;&lt;path style=&quot;fill:none; stroke:#000000;stroke-width:1&quot; d=&quot;M460.0 313.0 L599.0 313.0&quot; /&gt;&lt;polygon style=&quot;fill:#000000; stroke:#000000;&quot; points=&quot; 589 308 599 313 589 318 591 313&quot; /&gt;&lt;path style=&quot;fill:none; stroke:#000000;stroke-width:1&quot; d=&quot;M480.0 113.0 L652.0 113.0 L652.0 270.0&quot; /&gt;&lt;polygon style=&quot;fill:#000000; stroke:#000000;&quot; points=&quot; 657 260 652 270 647 260 652 262&quot; /&gt;&lt;path style=&quot;fill:none; stroke:#009600;stroke-width:1&quot; d=&quot;M546.0 369.0 L565.0 330.0 L599.0 323.0&quot; /&gt;&lt;polygon style=&quot;fill:#009600; stroke:#009600;&quot; points=&quot; 588 320 599 323 590 330 591 325&quot; /&gt;&lt;path style=&quot;fill:none; stroke:#000000;stroke-width:1&quot; d=&quot;M602.0 346.0 L572.0 369.0&quot; /&gt;&lt;polygon style=&quot;fill:#000000; stroke:#000000;&quot; points=&quot; 583 367 572 369 577 359 578 364&quot; /&gt;&lt;path style=&quot;fill:none; stroke:#000000;stroke-width:1&quot; d=&quot;M870.0 364.0 L870.0 397.0 L586.0 397.0&quot; /&gt;&lt;polygon style=&quot;fill:#000000; stroke:#000000;&quot; points=&quot; 596 402 586 397 596 392 594 397&quot; /&gt;&lt;path style=&quot;fill:none; stroke:#000000;stroke-width:1&quot; d=&quot;M900.0 313.0 L949.0 313.0&quot; /&gt;&lt;polygon style=&quot;fill:#000000; stroke:#000000;&quot; points=&quot; 939 308 949 313 939 318 941 313&quot; /&gt;&lt;path style=&quot;fill:none; stroke:#000000;stroke-width:1&quot; d=&quot;M1010.0 312.0 L1040.0 312.0&quot; /&gt;&lt;polygon style=&quot;fill:#000000; stroke:#000000;&quot; points=&quot; 1030 307 1040 312 1030 317 1032 312&quot; /&gt;&lt;path style=&quot;fill:none; stroke:#000000;stroke-width:1&quot; d=&quot;M303.0 141.0 L303.0 312.0 L399.0 312.0&quot; /&gt;&lt;polygon style=&quot;fill:#000000; stroke:#000000;&quot; points=&quot; 389 307 399 312 389 317 391 312&quot; /&gt;&lt;path style=&quot;fill:none; stroke:#000000;stroke-width:1&quot; d=&quot;M356.0 113.0 L419.0 113.0&quot; /&gt;&lt;polygon style=&quot;fill:#000000; stroke:#000000;&quot; points=&quot; 409 108 419 113 409 118 411 113&quot; /&gt;&lt;path style=&quot;fill:none; stroke:#000000;stroke-width:1&quot; d=&quot;M980.0 261.0 L980.0 22.0 L302.0 22.0 L302.0 84.0&quot; /&gt;&lt;polygon style=&quot;fill:#000000; stroke:#000000;&quot; points=&quot; 307 74 302 84 297 74 302 76&quot; /&gt;&lt;defs&gt;&lt;linearGradient xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xlink:href=&quot;#linearGradient66FF6696FF96B6FFB6&quot; id=&quot;linearGradient66FF6696FF96B6FFB6_330791665&quot; x1=&quot;0&quot; y1=&quot;95.0&quot; x2=&quot;0&quot; y2=&quot;130.0&quot; gradientUnits=&quot;userSpaceOnUse&quot; xlink:type=&quot;simple&quot; xlink:actuate=&quot;onLoad&quot; xlink:show=&quot;other&quot; /&gt;&lt;linearGradient id=&quot;linearGradient66FF6696FF96B6FFB6&quot;&gt;&lt;stop style=&quot;stop-color:#66FF66;stop-opacity:1;&quot; offset=&quot;0.0&quot; id=&quot;stop66FF66&quot; /&gt;&lt;stop style=&quot;stop-color:#96FF96;stop-opacity:1;&quot; offset=&quot;0.5&quot; id=&quot;stop96FF96&quot; /&gt;&lt;stop style=&quot;stop-color:#B6FFB6;stop-opacity:1;&quot; offset=&quot;1.0&quot; id=&quot;stopB6FFB6&quot; /&gt;&lt;/linearGradient&gt;&lt;linearGradient xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xlink:href=&quot;#linearGradientF8FBFEEDF5FCDEEDFAD4E7F8E2E5E9&quot; id=&quot;linearGradientF8FBFEEDF5FCDEEDFAD4E7F8E2E5E9_493913847&quot; x1=&quot;0&quot; y1=&quot;271.0&quot; x2=&quot;0&quot; y2=&quot;377.0&quot; gradientUnits=&quot;userSpaceOnUse&quot; xlink:type=&quot;simple&quot; xlink:actuate=&quot;onLoad&quot; xlink:show=&quot;other&quot; /&gt;&lt;linearGradient id=&quot;linearGradientF8FBFEEDF5FCDEEDFAD4E7F8E2E5E9&quot;&gt;&lt;stop style=&quot;stop-color:#F8FBFE;stop-opacity:1;&quot; offset=&quot;0.0&quot; id=&quot;stopF8FBFE&quot; /&gt;&lt;stop style=&quot;stop-color:#EDF5FC;stop-opacity:1;&quot; offset=&quot;0.25&quot; id=&quot;stopEDF5FC&quot; /&gt;&lt;stop style=&quot;stop-color:#DEEDFA;stop-opacity:1;&quot; offset=&quot;0.5&quot; id=&quot;stopDEEDFA&quot; /&gt;&lt;stop style=&quot;stop-color:#D4E7F8;stop-opacity:1;&quot; offset=&quot;0.75&quot; id=&quot;stopD4E7F8&quot; /&gt;&lt;stop style=&quot;stop-color:#E2E5E9;stop-opacity:1;&quot; offset=&quot;1.0&quot; id=&quot;stopE2E5E9&quot; /&gt;&lt;/linearGradient&gt;&lt;linearGradient xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xlink:href=&quot;#linearGradientF8FBFEEDF5FCDEEDFAD4E7F8E2E5E9&quot; id=&quot;linearGradientF8FBFEEDF5FCDEEDFAD4E7F8E2E5E9_1548586188&quot; x1=&quot;0&quot; y1=&quot;370.0&quot; x2=&quot;0&quot; y2=&quot;476.0&quot; gradientUnits=&quot;userSpaceOnUse&quot; xlink:type=&quot;simple&quot; xlink:actuate=&quot;onLoad&quot; xlink:show=&quot;other&quot; /&gt;&lt;linearGradient xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xlink:href=&quot;#linearGradientFAFBFCFFFFCC&quot; id=&quot;linearGradientFAFBFCFFFFCC_1954874694&quot; x1=&quot;0&quot; y1=&quot;262.0&quot; x2=&quot;0&quot; y2=&quot;322.0&quot; gradientUnits=&quot;userSpaceOnUse&quot; xlink:type=&quot;simple&quot; xlink:actuate=&quot;onLoad&quot; xlink:show=&quot;other&quot; /&gt;&lt;linearGradient id=&quot;linearGradientFAFBFCFFFFCC&quot;&gt;&lt;stop style=&quot;stop-color:#FAFBFC;stop-opacity:1;&quot; offset=&quot;0.0&quot; id=&quot;stopFAFBFC&quot; /&gt;&lt;stop style=&quot;stop-color:#FFFFCC;stop-opacity:1;&quot; offset=&quot;1.0&quot; id=&quot;stopFFFFCC&quot; /&gt;&lt;/linearGradient&gt;&lt;linearGradient xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xlink:href=&quot;#linearGradientFF6666FF9696FFB6B6&quot; id=&quot;linearGradientFF6666FF9696FFB6B6_1843098143&quot; x1=&quot;0&quot; y1=&quot;295.0&quot; x2=&quot;0&quot; y2=&quot;330.0&quot; gradientUnits=&quot;userSpaceOnUse&quot; xlink:type=&quot;simple&quot; xlink:actuate=&quot;onLoad&quot; xlink:show=&quot;other&quot; /&gt;&lt;linearGradient id=&quot;linearGradientFF6666FF9696FFB6B6&quot;&gt;&lt;stop style=&quot;stop-color:#FF6666;stop-opacity:1;&quot; offset=&quot;0.0&quot; id=&quot;stopFF6666&quot; /&gt;&lt;stop style=&quot;stop-color:#FF9696;stop-opacity:1;&quot; offset=&quot;0.5&quot; id=&quot;stopFF9696&quot; /&gt;&lt;stop style=&quot;stop-color:#FFB6B6;stop-opacity:1;&quot; offset=&quot;1.0&quot; id=&quot;stopFFB6B6&quot; /&gt;&lt;/linearGradient&gt;&lt;linearGradient xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xlink:href=&quot;#linearGradientFFFF66FFFF96FFFFB6&quot; id=&quot;linearGradientFFFF66FFFF96FFFFB6_217687356&quot; x1=&quot;0&quot; y1=&quot;323.0&quot; x2=&quot;0&quot; y2=&quot;353.0&quot; gradientUnits=&quot;userSpaceOnUse&quot; xlink:type=&quot;simple&quot; xlink:actuate=&quot;onLoad&quot; xlink:show=&quot;other&quot; /&gt;&lt;linearGradient id=&quot;linearGradientFFFF66FFFF96FFFFB6&quot;&gt;&lt;stop style=&quot;stop-color:#FFFF66;stop-opacity:1;&quot; offset=&quot;0.0&quot; id=&quot;stopFFFF66&quot; /&gt;&lt;stop style=&quot;stop-color:#FFFF96;stop-opacity:1;&quot; offset=&quot;0.5&quot; id=&quot;stopFFFF96&quot; /&gt;&lt;stop style=&quot;stop-color:#FFFFB6;stop-opacity:1;&quot; offset=&quot;1.0&quot; id=&quot;stopFFFFB6&quot; /&gt;&lt;/linearGradient&gt;&lt;linearGradient xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xlink:href=&quot;#linearGradientF8FBFEEDF5FCDEEDFAD4E7F8E2E5E9&quot; id=&quot;linearGradientF8FBFEEDF5FCDEEDFAD4E7F8E2E5E9_1013085059&quot; x1=&quot;0&quot; y1=&quot;85.0&quot; x2=&quot;0&quot; y2=&quot;191.0&quot; gradientUnits=&quot;userSpaceOnUse&quot; xlink:type=&quot;simple&quot; xlink:actuate=&quot;onLoad&quot; xlink:show=&quot;other&quot; /&gt;&lt;linearGradient xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xlink:href=&quot;#linearGradientFAFBFCFFFFCC&quot; id=&quot;linearGradientFAFBFCFFFFCC_1620176508&quot; x1=&quot;0&quot; y1=&quot;262.0&quot; x2=&quot;0&quot; y2=&quot;322.0&quot; gradientUnits=&quot;userSpaceOnUse&quot; xlink:type=&quot;simple&quot; xlink:actuate=&quot;onLoad&quot; xlink:show=&quot;other&quot; /&gt;&lt;linearGradient xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xlink:href=&quot;#linearGradientFAFBFCFFFFCC&quot; id=&quot;linearGradientFAFBFCFFFFCC_1449927675&quot; x1=&quot;0&quot; y1=&quot;62.0&quot; x2=&quot;0&quot; y2=&quot;122.0&quot; gradientUnits=&quot;userSpaceOnUse&quot; xlink:type=&quot;simple&quot; xlink:actuate=&quot;onLoad&quot; xlink:show=&quot;other&quot; /&gt;&lt;linearGradient xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xlink:href=&quot;#linearGradientFAFBFCFFFFCC&quot; id=&quot;linearGradientFAFBFCFFFFCC_402500687&quot; x1=&quot;0&quot; y1=&quot;262.0&quot; x2=&quot;0&quot; y2=&quot;322.0&quot; gradientUnits=&quot;userSpaceOnUse&quot; xlink:type=&quot;simple&quot; xlink:actuate=&quot;onLoad&quot; xlink:show=&quot;other&quot; /&gt;&lt;/defs&gt;&lt;/svg&gt;</processDiagram>
+    <bpmnVersion>2</bpmnVersion>
+    <inheritFormSecurity>false</inheritFormSecurity>
+    <openInstances>0</openInstances>
+    <processStates/>
+    <favorito>false</favorito>
+    <mobileReady>true</mobileReady>
+    <rowId>0</rowId>
+  </ProcessDefinitionVersion>
+  <list>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <version>7</version>
+        <sequence>4</sequence>
+      </processStatePK>
+      <stateName>Início</stateName>
+      <stateDescription>Início</stateDescription>
+      <instruction></instruction>
+      <deadlineTime>0</deadlineTime>
+      <joint>false</joint>
+      <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId>Grupo</engineAllocationId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;Group&gt;TRATATIVAS.APROVACAO.PEDIDO&lt;/Group&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
+      <selectColleague>1</selectColleague>
+      <initialState>true</initialState>
+      <notifyAuthorityDelay>true</notifyAuthorityDelay>
+      <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
+      <allowanceAuthorityTime>3600</allowanceAuthorityTime>
+      <frequenceAuthorityTime>3600</frequenceAuthorityTime>
+      <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
+      <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <notifyAuthorityFollowUp>false</notifyAuthorityFollowUp>
+      <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
+      <automatic>false</automatic>
+      <positionX>90</positionX>
+      <positionY>95</positionY>
+      <forecastedEffortType>0</forecastedEffortType>
+      <forecastedEffort>0</forecastedEffort>
+      <notifyManagerFollowUp>false</notifyManagerFollowUp>
+      <notifyManagerDelay>false</notifyManagerDelay>
+      <allowanceManagerTime>0</allowanceManagerTime>
+      <frequenceManagerTime>0</frequenceManagerTime>
+      <inhibitTransfer>false</inhibitTransfer>
+      <periodId></periodId>
+      <stateType>0</stateType>
+      <bpmnType>10</bpmnType>
+      <counterSign>false</counterSign>
+      <digitalSignature>false</digitalSignature>
+      <noticeExpirationAuthorityTime>0</noticeExpirationAuthorityTime>
+      <noticeExpirationRequisitionerTime>0</noticeExpirationRequisitionerTime>
+      <noticeExpirationManagerTime>0</noticeExpirationManagerTime>
+      <signalId>0</signalId>
+      <openInstances>0</openInstances>
+      <destinationStates/>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <version>7</version>
+        <sequence>22</sequence>
+      </processStatePK>
+      <stateName>Libera Aprovação no Protheus</stateName>
+      <stateDescription>Libera Aprovação no Protheus</stateDescription>
+      <instruction></instruction>
+      <deadlineTime>0</deadlineTime>
+      <joint>false</joint>
+      <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId></engineAllocationId>
+      <selectColleague>1</selectColleague>
+      <initialState>false</initialState>
+      <notifyAuthorityDelay>false</notifyAuthorityDelay>
+      <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
+      <allowanceAuthorityTime>0</allowanceAuthorityTime>
+      <frequenceAuthorityTime>0</frequenceAuthorityTime>
+      <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
+      <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
+      <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
+      <automatic>false</automatic>
+      <positionX>600</positionX>
+      <positionY>271</positionY>
+      <forecastedEffortType>0</forecastedEffortType>
+      <forecastedEffort>0</forecastedEffort>
+      <notifyManagerFollowUp>false</notifyManagerFollowUp>
+      <notifyManagerDelay>false</notifyManagerDelay>
+      <allowanceManagerTime>0</allowanceManagerTime>
+      <frequenceManagerTime>0</frequenceManagerTime>
+      <inhibitTransfer>false</inhibitTransfer>
+      <periodId></periodId>
+      <stateType>0</stateType>
+      <bpmnType>82</bpmnType>
+      <counterSign>false</counterSign>
+      <digitalSignature>false</digitalSignature>
+      <noticeExpirationAuthorityTime>0</noticeExpirationAuthorityTime>
+      <noticeExpirationRequisitionerTime>0</noticeExpirationRequisitionerTime>
+      <noticeExpirationManagerTime>0</noticeExpirationManagerTime>
+      <signalId>0</signalId>
+      <executionType>1</executionType>
+      <deadlineFieldName></deadlineFieldName>
+      <openInstances>0</openInstances>
+      <destinationStates/>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <version>7</version>
+        <sequence>23</sequence>
+      </processStatePK>
+      <stateName>Trata falhas</stateName>
+      <stateDescription>Trata falhas</stateDescription>
+      <instruction></instruction>
+      <deadlineTime>7200</deadlineTime>
+      <joint>false</joint>
+      <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId>Pool Grupo</engineAllocationId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;Group&gt;TRATATIVAS.APROVACAO.PEDIDO&lt;/Group&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
+      <selectColleague>1</selectColleague>
+      <initialState>false</initialState>
+      <notifyAuthorityDelay>true</notifyAuthorityDelay>
+      <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
+      <allowanceAuthorityTime>3600</allowanceAuthorityTime>
+      <frequenceAuthorityTime>3600</frequenceAuthorityTime>
+      <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
+      <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
+      <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
+      <automatic>false</automatic>
+      <positionX>480</positionX>
+      <positionY>370</positionY>
+      <forecastedEffortType>0</forecastedEffortType>
+      <forecastedEffort>0</forecastedEffort>
+      <notifyManagerFollowUp>false</notifyManagerFollowUp>
+      <notifyManagerDelay>false</notifyManagerDelay>
+      <allowanceManagerTime>0</allowanceManagerTime>
+      <frequenceManagerTime>0</frequenceManagerTime>
+      <inhibitTransfer>false</inhibitTransfer>
+      <periodId></periodId>
+      <stateType>0</stateType>
+      <bpmnType>80</bpmnType>
+      <counterSign>false</counterSign>
+      <digitalSignature>false</digitalSignature>
+      <noticeExpirationAuthorityTime>0</noticeExpirationAuthorityTime>
+      <noticeExpirationRequisitionerTime>0</noticeExpirationRequisitionerTime>
+      <noticeExpirationManagerTime>0</noticeExpirationManagerTime>
+      <signalId>0</signalId>
+      <executionType>0</executionType>
+      <deadlineFieldName></deadlineFieldName>
+      <openInstances>0</openInstances>
+      <destinationStates/>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <version>7</version>
+        <sequence>24</sequence>
+      </processStatePK>
+      <stateName>Integrou?</stateName>
+      <stateDescription>Integrou?</stateDescription>
+      <joint>false</joint>
+      <selectColleague>1</selectColleague>
+      <initialState>false</initialState>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <automatic>true</automatic>
+      <positionX>840</positionX>
+      <positionY>262</positionY>
+      <inhibitTransfer>false</inhibitTransfer>
+      <stateType>1</stateType>
+      <bpmnType>120</bpmnType>
+      <digitalSignature>false</digitalSignature>
+      <signalId>0</signalId>
+      <openInstances>0</openInstances>
+      <destinationStates/>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <version>7</version>
+        <sequence>25</sequence>
+      </processStatePK>
+      <stateName>Fim</stateName>
+      <stateDescription>Fim</stateDescription>
+      <instruction>Atividade final do processo</instruction>
+      <deadlineTime>0</deadlineTime>
+      <joint>false</joint>
+      <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId></engineAllocationId>
+      <engineAllocationConfiguration></engineAllocationConfiguration>
+      <selectColleague>1</selectColleague>
+      <initialState>false</initialState>
+      <notifyAuthorityDelay>true</notifyAuthorityDelay>
+      <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
+      <allowanceAuthorityTime>0</allowanceAuthorityTime>
+      <frequenceAuthorityTime>1</frequenceAuthorityTime>
+      <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
+      <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <notifyAuthorityFollowUp>false</notifyAuthorityFollowUp>
+      <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
+      <automatic>false</automatic>
+      <positionX>1040</positionX>
+      <positionY>295</positionY>
+      <forecastedEffortType>0</forecastedEffortType>
+      <forecastedEffort>0</forecastedEffort>
+      <notifyManagerFollowUp>false</notifyManagerFollowUp>
+      <notifyManagerDelay>false</notifyManagerDelay>
+      <allowanceManagerTime>0</allowanceManagerTime>
+      <frequenceManagerTime>0</frequenceManagerTime>
+      <inhibitTransfer>false</inhibitTransfer>
+      <periodId></periodId>
+      <stateType>6</stateType>
+      <bpmnType>60</bpmnType>
+      <counterSign>false</counterSign>
+      <digitalSignature>false</digitalSignature>
+      <signalId>0</signalId>
+      <openInstances>0</openInstances>
+      <destinationStates/>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <version>7</version>
+        <sequence>28</sequence>
+      </processStatePK>
+      <stateName>Intermediate</stateName>
+      <stateDescription>Intermediate</stateDescription>
+      <instruction>Evento intermediário do processo</instruction>
+      <deadlineTime>0</deadlineTime>
+      <joint>false</joint>
+      <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId></engineAllocationId>
+      <engineAllocationConfiguration></engineAllocationConfiguration>
+      <selectColleague>1</selectColleague>
+      <initialState>false</initialState>
+      <notifyAuthorityDelay>true</notifyAuthorityDelay>
+      <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
+      <allowanceAuthorityTime>1</allowanceAuthorityTime>
+      <frequenceAuthorityTime>1</frequenceAuthorityTime>
+      <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
+      <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
+      <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
+      <automatic>false</automatic>
+      <positionX>600</positionX>
+      <positionY>323</positionY>
+      <forecastedEffortType>0</forecastedEffortType>
+      <forecastedEffort>0</forecastedEffort>
+      <notifyManagerFollowUp>false</notifyManagerFollowUp>
+      <notifyManagerDelay>false</notifyManagerDelay>
+      <frequenceManagerTime>0</frequenceManagerTime>
+      <inhibitTransfer>false</inhibitTransfer>
+      <periodId></periodId>
+      <stateType>0</stateType>
+      <bpmnType>43</bpmnType>
+      <counterSign>false</counterSign>
+      <digitalSignature>false</digitalSignature>
+      <signalId>0</signalId>
+      <parentSequence>22</parentSequence>
+      <openInstances>0</openInstances>
+      <destinationStates/>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <version>7</version>
+        <sequence>40</sequence>
+      </processStatePK>
+      <stateName>Aprovação</stateName>
+      <stateDescription>Aprovação</stateDescription>
+      <instruction></instruction>
+      <deadlineTime>0</deadlineTime>
+      <joint>true</joint>
+      <agreementPercentage>100</agreementPercentage>
+      <engineAllocationId>Campo Formulário</engineAllocationId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;FormField&gt;hd_aprovador_gestor&lt;/FormField&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
+      <selectColleague>2</selectColleague>
+      <initialState>false</initialState>
+      <notifyAuthorityDelay>true</notifyAuthorityDelay>
+      <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
+      <allowanceAuthorityTime>3600</allowanceAuthorityTime>
+      <frequenceAuthorityTime>3600</frequenceAuthorityTime>
+      <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
+      <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
+      <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
+      <automatic>false</automatic>
+      <positionX>250</positionX>
+      <positionY>85</positionY>
+      <forecastedEffortType>0</forecastedEffortType>
+      <forecastedEffort>0</forecastedEffort>
+      <notifyManagerFollowUp>false</notifyManagerFollowUp>
+      <notifyManagerDelay>false</notifyManagerDelay>
+      <allowanceManagerTime>0</allowanceManagerTime>
+      <frequenceManagerTime>0</frequenceManagerTime>
+      <inhibitTransfer>true</inhibitTransfer>
+      <periodId></periodId>
+      <stateType>0</stateType>
+      <bpmnType>80</bpmnType>
+      <counterSign>false</counterSign>
+      <digitalSignature>false</digitalSignature>
+      <noticeExpirationAuthorityTime>0</noticeExpirationAuthorityTime>
+      <noticeExpirationRequisitionerTime>0</noticeExpirationRequisitionerTime>
+      <noticeExpirationManagerTime>0</noticeExpirationManagerTime>
+      <signalId>0</signalId>
+      <executionType>0</executionType>
+      <deadlineFieldName></deadlineFieldName>
+      <openInstances>0</openInstances>
+      <destinationStates/>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <version>7</version>
+        <sequence>52</sequence>
+      </processStatePK>
+      <stateName>Aprovado</stateName>
+      <stateDescription>Aprovado</stateDescription>
+      <joint>false</joint>
+      <selectColleague>1</selectColleague>
+      <initialState>false</initialState>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <automatic>true</automatic>
+      <positionX>400</positionX>
+      <positionY>262</positionY>
+      <inhibitTransfer>false</inhibitTransfer>
+      <stateType>1</stateType>
+      <bpmnType>120</bpmnType>
+      <digitalSignature>false</digitalSignature>
+      <signalId>0</signalId>
+      <openInstances>0</openInstances>
+      <destinationStates/>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <version>7</version>
+        <sequence>54</sequence>
+      </processStatePK>
+      <stateName>Reprovado</stateName>
+      <stateDescription>Reprovado</stateDescription>
+      <joint>false</joint>
+      <selectColleague>1</selectColleague>
+      <initialState>false</initialState>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <automatic>true</automatic>
+      <positionX>420</positionX>
+      <positionY>62</positionY>
+      <inhibitTransfer>false</inhibitTransfer>
+      <stateType>1</stateType>
+      <bpmnType>120</bpmnType>
+      <digitalSignature>false</digitalSignature>
+      <signalId>0</signalId>
+      <openInstances>0</openInstances>
+      <destinationStates/>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <version>7</version>
+        <sequence>57</sequence>
+      </processStatePK>
+      <stateName>Pendências?</stateName>
+      <stateDescription>Pendências?</stateDescription>
+      <joint>false</joint>
+      <selectColleague>1</selectColleague>
+      <initialState>false</initialState>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <automatic>true</automatic>
+      <positionX>950</positionX>
+      <positionY>262</positionY>
+      <inhibitTransfer>false</inhibitTransfer>
+      <stateType>1</stateType>
+      <bpmnType>120</bpmnType>
+      <digitalSignature>false</digitalSignature>
+      <signalId>0</signalId>
+      <openInstances>0</openInstances>
+      <destinationStates/>
+    </ProcessState>
+  </list>
+  <list>
+    <ConditionProcessState>
+      <conditionProcessStatePK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <version>7</version>
+        <sequence>24</sequence>
+        <expressionOrder>1</expressionOrder>
+      </conditionProcessStatePK>
+      <condition>hAPI.getCardValue(&apos;hd_solicitacao_integraAlcadas&apos;) == &apos;true&apos;</condition>
+      <destinationSequenceId>57</destinationSequenceId>
+      <conditionType>0</conditionType>
+    </ConditionProcessState>
+    <ConditionProcessState>
+      <conditionProcessStatePK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <version>7</version>
+        <sequence>24</sequence>
+        <expressionOrder>2</expressionOrder>
+      </conditionProcessStatePK>
+      <condition>hAPI.getCardValue(&apos;hd_solicitacao_integraAlcadas&apos;) != &apos;true&apos;</condition>
+      <destinationSequenceId>23</destinationSequenceId>
+      <conditionType>0</conditionType>
+    </ConditionProcessState>
+    <ConditionProcessState>
+      <conditionProcessStatePK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <version>7</version>
+        <sequence>52</sequence>
+        <expressionOrder>1</expressionOrder>
+      </conditionProcessStatePK>
+      <condition>1==1</condition>
+      <engineAllocationId>Pool Grupo</engineAllocationId>
+      <destinationSequenceId>22</destinationSequenceId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;Group&gt;TRATATIVAS.APROVACAO.SOLIC.COMPRA&lt;/Group&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
+      <conditionType>0</conditionType>
+    </ConditionProcessState>
+    <ConditionProcessState>
+      <conditionProcessStatePK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <version>7</version>
+        <sequence>54</sequence>
+        <expressionOrder>1</expressionOrder>
+      </conditionProcessStatePK>
+      <condition>1==1</condition>
+      <destinationSequenceId>22</destinationSequenceId>
+      <conditionType>0</conditionType>
+    </ConditionProcessState>
+    <ConditionProcessState>
+      <conditionProcessStatePK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <version>7</version>
+        <sequence>57</sequence>
+        <expressionOrder>1</expressionOrder>
+      </conditionProcessStatePK>
+      <condition>hAPI.getCardValue(&apos;hd_solicitacao_pendenciaAprov&apos;) == &apos;false&apos;</condition>
+      <destinationSequenceId>25</destinationSequenceId>
+      <conditionType>0</conditionType>
+    </ConditionProcessState>
+    <ConditionProcessState>
+      <conditionProcessStatePK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <version>7</version>
+        <sequence>57</sequence>
+        <expressionOrder>2</expressionOrder>
+      </conditionProcessStatePK>
+      <condition>hAPI.getCardValue(&apos;hd_solicitacao_pendenciaAprov&apos;) == &apos;true&apos;</condition>
+      <destinationSequenceId>40</destinationSequenceId>
+      <conditionType>0</conditionType>
+    </ConditionProcessState>
+  </list>
+  <list>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <version>7</version>
+        <linkSequence>6</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>4</initialStateSequence>
+      <finalStateSequence>40</finalStateSequence>
+      <returnLabel></returnLabel>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+      <name></name>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <version>7</version>
+        <linkSequence>29</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>28</initialStateSequence>
+      <finalStateSequence>23</finalStateSequence>
+      <returnLabel></returnLabel>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+      <name></name>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <version>7</version>
+        <linkSequence>30</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>23</initialStateSequence>
+      <finalStateSequence>22</finalStateSequence>
+      <returnLabel></returnLabel>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+      <name></name>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <version>7</version>
+        <linkSequence>31</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>22</initialStateSequence>
+      <finalStateSequence>24</finalStateSequence>
+      <returnLabel></returnLabel>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+      <name></name>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <version>7</version>
+        <linkSequence>32</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>24</initialStateSequence>
+      <finalStateSequence>57</finalStateSequence>
+      <returnLabel></returnLabel>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+      <name></name>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <version>7</version>
+        <linkSequence>39</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>24</initialStateSequence>
+      <finalStateSequence>23</finalStateSequence>
+      <returnLabel></returnLabel>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+      <name></name>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <version>7</version>
+        <linkSequence>51</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>40</initialStateSequence>
+      <finalStateSequence>52</finalStateSequence>
+      <returnLabel></returnLabel>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+      <name></name>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <version>7</version>
+        <linkSequence>53</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>52</initialStateSequence>
+      <finalStateSequence>22</finalStateSequence>
+      <returnLabel></returnLabel>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+      <name></name>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <version>7</version>
+        <linkSequence>55</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>40</initialStateSequence>
+      <finalStateSequence>54</finalStateSequence>
+      <returnLabel></returnLabel>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+      <name></name>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <version>7</version>
+        <linkSequence>56</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>54</initialStateSequence>
+      <finalStateSequence>22</finalStateSequence>
+      <returnLabel></returnLabel>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+      <name></name>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <version>7</version>
+        <linkSequence>58</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>57</initialStateSequence>
+      <finalStateSequence>25</finalStateSequence>
+      <returnLabel></returnLabel>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+      <name></name>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <version>7</version>
+        <linkSequence>59</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>57</initialStateSequence>
+      <finalStateSequence>40</finalStateSequence>
+      <returnLabel></returnLabel>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+      <name></name>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <version>7</version>
+        <linkSequence>60</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>23</initialStateSequence>
+      <finalStateSequence>22</finalStateSequence>
+      <returnLabel></returnLabel>
+      <automaticLink>true</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+      <name></name>
+    </ProcessLink>
+  </list>
+  <list/>
+  <list>
+    <WorkflowProcessEvent>
+      <workflowProcessEventPK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <version>7</version>
+        <eventId>afterProcessCreate</eventId>
+      </workflowProcessEventPK>
+      <eventDescription>function afterProcessCreate(processId){&#xd;
+    hAPI.setCardValue(&quot;hd_solicitacao_numProcesso&quot;, processId);&#xd;
+}</eventDescription>
+    </WorkflowProcessEvent>
+    <WorkflowProcessEvent>
+      <workflowProcessEventPK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <version>7</version>
+        <eventId>beforeCancelProcess</eventId>
+      </workflowProcessEventPK>
+      <eventDescription>function beforeCancelProcess(colleagueId,processId){&#xd;
+	hAPI.setCardValue(&quot;hd_solicitacao_cancelada&quot;, &apos;SIM&apos;);&#xd;
+}</eventDescription>
+    </WorkflowProcessEvent>
+    <WorkflowProcessEvent>
+      <workflowProcessEventPK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <version>7</version>
+        <eventId>beforeTaskSave</eventId>
+      </workflowProcessEventPK>
+      <eventDescription>function beforeTaskSave(colleagueId,nextSequenceId,userList){&#xd;
+    hAPI.setCardValue(&quot;hd_solicitacao_atvAtual&quot;, nextSequenceId);&#xd;
+    var codProcess = getValue(&quot;WKNumProces&quot;);&#xd;
+    var states = {&#xd;
+        next    : getValue(&quot;WKNextState&quot;),&#xd;
+        actual  : getValue(&quot;WKNumState&quot;),&#xd;
+        etapa   : &quot;&quot;&#xd;
+    }&#xd;
+&#xd;
+    if(states.next == 22){&#xd;
+        hAPI.setCardValue(&quot;hd_aprovacao_solicitacao&quot;, formatarDataAtual(true));&#xd;
+    }&#xd;
+}&#xd;
+&#xd;
+function formatarDataAtual(comHorario){&#xd;
+    var data = new Date();&#xd;
+    var dia  = data.getDate().toString(); dia = (dia.length&gt;1)? dia : &quot;0&quot;+dia;&#xd;
+    var mes  = (data.getMonth()+1).toString(); mes = (mes.length&gt;1)? mes : &quot;0&quot;+mes;&#xd;
+    var ano  = data.getFullYear();&#xd;
+    var hora = data.getHours().toString(); hora = (hora.length&gt;1)? hora : &quot;0&quot;+hora;&#xd;
+    var minutos = data.getMinutes().toString(); minutos = (minutos.length&gt;1)? minutos : &quot;0&quot;+minutos;&#xd;
+    if(comHorario){&#xd;
+        return dia+&quot;/&quot;+mes+&quot;/&quot;+ano + &quot; &quot; + hora+&quot;:&quot;+minutos;&#xd;
+    }&#xd;
+    return dia+&quot;/&quot;+mes+&quot;/&quot;+ano;&#xd;
+}&#xd;
+&#xd;
+function formatarDataEnAtual(comHorario){&#xd;
+    var data = new Date();&#xd;
+    var dia  = data.getDate().toString(); dia = (dia.length&gt;1)? dia : &quot;0&quot;+dia;&#xd;
+    var mes  = (data.getMonth()+1).toString(); mes = (mes.length&gt;1)? mes : &quot;0&quot;+mes;&#xd;
+    var ano  = data.getFullYear();&#xd;
+    var hora = data.getHours().toString(); hora = (hora.length&gt;1)? hora : &quot;0&quot;+hora;&#xd;
+    var minutos = data.getMinutes().toString(); minutos = (minutos.length&gt;1)? minutos : &quot;0&quot;+minutos;&#xd;
+    if(comHorario){&#xd;
+        return ano+&quot;-&quot;+mes+&quot;-&quot;+dia + &quot; &quot; + hora+&quot;:&quot;+minutos;&#xd;
+    }&#xd;
+    return ano+&quot;-&quot;+mes+&quot;-&quot;+dia;&#xd;
+}</eventDescription>
+    </WorkflowProcessEvent>
+    <WorkflowProcessEvent>
+      <workflowProcessEventPK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <version>7</version>
+        <eventId>calculateAgreement</eventId>
+      </workflowProcessEventPK>
+      <eventDescription>/****** &#xd;
+** Enable customization script to change agreement calculation. &#xd;
+** Input: &#xd;
+**	stateId -&gt; Current state, whose agreement percentage is being calculated. &#xd;
+**	agreementData.get(&quot;currentPercentage&quot;) -&gt; Current percentage, calculated by the workflow engine&#xd;
+**	agreementData.get(&quot;currentDestState&quot;) -&gt; Current destination state. Zero, if process won&apos;t move&#xd;
+**	agreementData.get(&quot;currentDestUsers&quot;) -&gt; Current destination users. Empty if process won&apos;t move&#xd;
+**/&#xd;
+function calculateAgreement(currentState, agreementData) {&#xd;
+	var indAprov = hAPI.getChildrenIndexes(&quot;tblAprovadores&quot;), totalAprov = 0, user = getValue(&quot;WKUser&quot;), nextTask = getValue(&quot;WKNextState&quot;), codProcess = hAPI.getCardValue(&quot;hd_solicitacao_numProcesso&quot;);&#xd;
+	var nivelAtual = hAPI.getCardValue(&quot;hd_solicitacao_nivelAprovAtual&quot;), proxNivel = (parseFloat(hAPI.getCardValue(&quot;hd_solicitacao_nivelAprovAtual&quot;))+1), nivelCompleto = true;&#xd;
+	var filtrosProtheus = [], strObs = &apos;&apos;, strUserObs = &apos;&apos;, aprovFeita = false, strAprovsPendentes = &apos;&apos;, strAprovsProxNivel = &apos;&apos;;&#xd;
+&#xd;
+	if(hAPI.getCardValue(&apos;hd_sc_encerradoProtheus&apos;) != &apos;true&apos;){&#xd;
+		if(proxNivel.length == 1){&#xd;
+			proxNivel = &apos;0&apos; + proxNivel;&#xd;
+		}&#xd;
+&#xd;
+		hAPI.setCardValue(&apos;hd_solicitacao_integraAlcadas&apos;, false);&#xd;
+		hAPI.setCardValue(&apos;hd_solicitacao_integraProdutos&apos;, false);&#xd;
+		hAPI.setCardValue(&apos;hd_solicitacao_nivelCompleto&apos;, false);&#xd;
+		hAPI.setCardValue(&apos;hd_solicitacao_pendenciaAprov&apos;, true);&#xd;
+&#xd;
+		filtrosProtheus.push(DatasetFactory.createConstraint(&quot;processTaskPK.processInstanceId&quot;, codProcess, codProcess, ConstraintType.MUST));&#xd;
+		var dtsRetorno = DatasetFactory.getDataset(&quot;processTask&quot;, null, filtrosProtheus, null);&#xd;
+		if(dtsRetorno.rowsCount &gt; 0){&#xd;
+			var lastComment = dtsRetorno.rowsCount-1;&#xd;
+			strObs = dtsRetorno.getValue(lastComment, &quot;taskObservation&quot;);&#xd;
+			strUserObs = dtsRetorno.getValue(lastComment, &quot;processTaskPK.colleagueId&quot;);&#xd;
+		}&#xd;
+&#xd;
+		var indChat = hAPI.getChildrenIndexes(&quot;tblChat&quot;);&#xd;
+		if(strObs == &quot;&quot; &amp;&amp; indChat.length &gt; 0){&#xd;
+			var lastMsg = indChat.length-1;&#xd;
+&#xd;
+			strObs     = hAPI.getCardValue(&apos;hd_chat_observacao___&apos; + indChat[lastMsg]);&#xd;
+			strUserObs = hAPI.getCardValue(&apos;hd_chat_idUsuario___&apos; + indChat[lastMsg]);&#xd;
+		}&#xd;
+&#xd;
+		for(var i=0; i &lt; indAprov.length; i++){&#xd;
+			if(hAPI.getCardValue(&apos;hd_aprovador_codigoFluig___&apos; + indAprov[i]) == user){&#xd;
+				aprovFeita = true;&#xd;
+				if(nextTask == 54){&#xd;
+					hAPI.setCardValue(&apos;hd_aprovador_statusAprovacao___&apos; + indAprov[i], &apos;REPROVADO&apos;);&#xd;
+				}&#xd;
+				else{&#xd;
+					hAPI.setCardValue(&apos;hd_aprovador_statusAprovacao___&apos; + indAprov[i], &apos;APROVADO&apos;);&#xd;
+				}&#xd;
+&#xd;
+				if(user == strUserObs &amp;&amp; strObs != &apos;&apos;){&#xd;
+					hAPI.setCardValue(&apos;hd_aprovacao_observacao___&apos; + indAprov[i], strObs);&#xd;
+				}&#xd;
+&#xd;
+				var aprovacoesFeitas = hAPI.getCardValue(&apos;hd_solicitacao_aprovsAtuados&apos;);&#xd;
+				if(aprovacoesFeitas != &apos;&apos;){&#xd;
+					aprovacoesFeitas += &apos;,&apos;;&#xd;
+				}&#xd;
+				hAPI.setCardValue(&apos;hd_solicitacao_aprovsAtuados&apos;, aprovacoesFeitas + user);&#xd;
+			}&#xd;
+			&#xd;
+			if(hAPI.getCardValue(&apos;hd_aprovador_statusAprovacao___&apos; + indAprov[i]) != &apos;&apos;){&#xd;
+				totalAprov++;&#xd;
+			}&#xd;
+			else{&#xd;
+				if(hAPI.getCardValue(&apos;hd_aprovador_nivel___&apos; + indAprov[i]) == nivelAtual){&#xd;
+					nivelCompleto = false;&#xd;
+					if(strAprovsPendentes != &apos;&apos;){&#xd;
+						strAprovsPendentes += &apos;,&apos;;&#xd;
+					}&#xd;
+					strAprovsPendentes += hAPI.getCardValue(&apos;hd_aprovador_codigoFluig___&apos; + indAprov[i]);&#xd;
+				}&#xd;
+				else if(hAPI.getCardValue(&apos;hd_aprovador_nivel___&apos; + indAprov[i]) == proxNivel){&#xd;
+					if(strAprovsProxNivel != &apos;&apos;){&#xd;
+						strAprovsProxNivel += &apos;,&apos;;&#xd;
+					}&#xd;
+					strAprovsProxNivel += hAPI.getCardValue(&apos;hd_aprovador_codigoFluig___&apos; + indAprov[i]);&#xd;
+				}&#xd;
+			}&#xd;
+		}&#xd;
+&#xd;
+		if(!nivelCompleto){&#xd;
+			hAPI.setCardValue(&apos;hd_aprovador_gestor&apos;, strAprovsPendentes);&#xd;
+		}&#xd;
+		else{&#xd;
+			hAPI.setCardValue(&apos;hd_aprovador_gestor&apos;, strAprovsProxNivel);&#xd;
+			hAPI.setCardValue(&apos;hd_solicitacao_nivelCompleto&apos;, true);&#xd;
+		}&#xd;
+&#xd;
+		if(totalAprov == indAprov.length &amp;&amp; totalAprov &gt; 0){&#xd;
+			hAPI.setCardValue(&apos;hd_solicitacao_pendenciaAprov&apos;, false);&#xd;
+		}&#xd;
+&#xd;
+		if(/*totalAprov == indAprov.length &amp;&amp; totalAprov &gt; 0*/aprovFeita){&#xd;
+			agreementData.put(&quot;currentPercentage&quot;, 100);&#xd;
+			agreementData.put(&quot;currentDestState&quot;, 52);&#xd;
+			agreementData.put(&quot;currentDestUsers&quot;, &apos;System:Auto&apos;);&#xd;
+		}&#xd;
+	}&#xd;
+	else{&#xd;
+		hAPI.setCardValue(&apos;hd_solicitacao_integraAlcadas&apos;, true);&#xd;
+		hAPI.setCardValue(&apos;hd_solicitacao_integraProdutos&apos;, true);&#xd;
+		hAPI.setCardValue(&apos;hd_solicitacao_nivelCompleto&apos;, true);&#xd;
+		hAPI.setCardValue(&apos;hd_solicitacao_pendenciaAprov&apos;, false);&#xd;
+&#xd;
+		agreementData.put(&quot;currentPercentage&quot;, 100);&#xd;
+		agreementData.put(&quot;currentDestState&quot;, 52);&#xd;
+		agreementData.put(&quot;currentDestUsers&quot;, &apos;System:Auto&apos;);&#xd;
+	}&#xd;
+}</eventDescription>
+    </WorkflowProcessEvent>
+    <WorkflowProcessEvent>
+      <workflowProcessEventPK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <version>7</version>
+        <eventId>servicetask22</eventId>
+      </workflowProcessEventPK>
+      <eventDescription>function servicetask22(attempt, message) {
+    if(hAPI.getCardValue(&apos;hd_solicitacao_integraAlcadas&apos;) != &apos;true&apos;){
+        atualizaProtheusAlcadas();
+    }
+    else if(hAPI.getCardValue(&apos;hd_sc_encerradoProtheus&apos;) != &apos;true&apos;){
+        // D6: com integraAlcadas ja true o atualizaProtheusAlcadas nao roda, e e la dentro
+        // que o log é limpo. Sem isto o txta_logIntegration guarda para sempre o erro da
+        // ultima falha, e quem for diagnosticar depois le um erro ja resolvido como se
+        // fosse a causa atual. Escolhi limpar em vez de datar cada entrada: o valor aqui
+        // e o diagnostico do estado corrente, e o historico fica no log do servidor.
+        //
+        // A excecao e a solicitacao encerrada a forca (hd_sc_encerradoProtheus = &apos;true&apos;):
+        // ela passa por aqui a caminho do fim e o log guarda o motivo do encerramento
+        // gravado pelo dts_rotinaEncerramentoAprovPedidoCompras_jynx - qual aprovador ou
+        // valor divergiu. Esse detalhe nao existe em nenhum outro lugar; o comentario do
+        // historico e generico. Card que esta sendo fechado nao tem mais o que diagnosticar,
+        // entao preservar o motivo nao enfraquece o D6.
+        hAPI.setCardValue(&apos;txta_logIntegration&apos;, &quot;&quot;);
+    }
+}
+
+/**
+ * R2 - devolve o CR_STATUS quando a alcada JA esta processada no Protheus (03 ou 06),
+ * ou string vazia em qualquer outro caso.
+ *
+ * Casa por CR_NUM + CR_FILIAL + CR_APROV. Para pedido de compra o CR_NUM e o proprio
+ * C7_NUM, sem composicao - diferente da medicao, onde ele e medicao + planilha +
+ * sequencial. A filial e obrigatoria: o CR_NUM nao a codifica e o mesmo numero de
+ * pedido existe em mais de uma filial; marcar pelo registro da filial errada
+ * aprovaria a alcada errada.
+ *
+ * C_TIPO = &apos;PC&apos; e obrigatorio aqui: o dts_getScrMedicao_stg filtra CR_NUM por
+ * prefixo e sem o tipo devolveria tambem medicoes cujo numero comeca igual.
+ *
+ * Linha ausente da SCR devolve &apos;&apos; de proposito, ou seja, mantem a falha visivel.
+ * Tratar ausencia como &quot;ja processada&quot; esconderia erro de chave.
+ *
+ * Esta verificacao tambem e o que torna seguro o encerramento por alcada divergente
+ * feito no dts_rotinaEncerramentoAprovPedidoCompras_jynx: a solicitacao reaberta
+ * recebe da abertura todas as linhas da SCR, inclusive as que ja estao em 03, porque
+ * a abertura nao filtra CR_STATUS. Sem o R2 a reabertura tentaria reintegrar o que ja
+ * foi integrado e cairia de novo na Trata falhas.
+ */
+function statusAlcadaProtheus(empresa, filial, numDoc, codAprov) {
+    try {
+        var cNum  = DatasetFactory.createConstraint(&quot;C_MEDICAO&quot;,   numDoc,   numDoc,   ConstraintType.MUST);
+        var cEmp  = DatasetFactory.createConstraint(&quot;CEMP&quot;,        empresa,  empresa,  ConstraintType.MUST);
+        var cApr  = DatasetFactory.createConstraint(&quot;C_APROVADOR&quot;, codAprov, codAprov, ConstraintType.MUST);
+        var cTipo = DatasetFactory.createConstraint(&quot;C_TIPO&quot;,      &quot;PC&quot;,     &quot;PC&quot;,     ConstraintType.MUST);
+
+        var dts = DatasetFactory.getDataset(&quot;dts_getScrMedicao_stg&quot;, null, [cNum, cEmp, cApr, cTipo], null);
+
+        if (dts == null || dts.rowsCount == 0) { return &apos;&apos;; }
+
+        // getColumnsName devolve um ARRAY do Java (String[]): .length e o acesso por
+        // indice funcionam sob Rhino, mas concatenar com string da o toString da JVM
+        // (&quot;[Ljava.lang.String;@...&quot;) e nao os nomes, entao indexOf sobre isso e
+        // sempre -1 e o guard vira sempre-verdadeiro.
+        var cols = dts.getColumnsName();
+        if (cols == null || (cols.length == 1 &amp;&amp; (cols[0] + &apos;&apos;) == &apos;ERRO&apos;)) { return &apos;&apos;; }
+
+        for (var i = 0; i &lt; dts.rowsCount; i++) {
+            if (dts.getValue(i, &apos;CR_TIPO&apos;)   == &apos;PC&apos; &amp;&amp;
+                dts.getValue(i, &apos;CR_NUM&apos;)    == (numDoc + &apos;&apos;) &amp;&amp;
+                dts.getValue(i, &apos;CR_FILIAL&apos;) == (filial + &apos;&apos;)) {
+
+                var st = dts.getValue(i, &apos;CR_STATUS&apos;) + &apos;&apos;;
+                return (st == &apos;03&apos; || st == &apos;06&apos;) ? st : &apos;&apos;;
+            }
+        }
+        return &apos;&apos;;
+
+    } catch (e) {
+        log.info(&quot;statusAlcadaProtheus === &quot; + e.toString());
+        return &apos;&apos;;
+    }
+}
+
+var indexActualAprov = &apos;&apos;;
+function atualizaProtheusAlcadas() {
+    try {
+        var filial      = hAPI.getCardValue(&apos;hd_solicitacao_nroFilial&apos;).trim();
+        var empresa     = hAPI.getCardValue(&apos;hd_solicitacao_codFilial&apos;).trim();
+        var codProtheus = hAPI.getCardValue(&apos;hd_pedido_codProtheus&apos;).trim();
+        var indAprov = hAPI.getChildrenIndexes(&quot;tblAprovadores&quot;);
+        var indAlcadas  = hAPI.getChildrenIndexes(&quot;tblAlcadas&quot;);
+
+        var codAprov = &apos;&apos;, valorAprov = &apos;&apos;, obsAprov = &apos;&apos;;
+        for (var y = 0; y &lt; indAprov.length; y++) {
+            if(hAPI.getCardValue(&apos;hd_aprovacao_efetivada___&apos; + indAprov[y]) != &apos;true&apos; &amp;&amp; hAPI.getCardValue(&apos;hd_aprovador_statusAprovacao___&apos; + indAprov[y]) != &apos;&apos;){
+                codAprov   = hAPI.getCardValue(&apos;hd_aprovador_codigo___&apos; + indAprov[y]);
+                if(hAPI.getCardValue(&apos;hd_aprovador_statusAprovacao___&apos; + indAprov[y]) == &quot;APROVADO&quot;){
+                    valorAprov = &quot;001&quot;
+                }
+                else if(hAPI.getCardValue(&apos;hd_aprovador_statusAprovacao___&apos; + indAprov[y]) == &quot;REPROVADO&quot;){
+                    valorAprov = &quot;005&quot;
+                }
+                obsAprov = hAPI.getCardValue(&apos;hd_aprovacao_observacao___&apos; + indAprov[y]);
+
+                // R3: o Protheus exige CR_OBS preenchido na reprovacao (operacao 005) e recusa
+                // a chamada com &quot;O campo Observacoes (CR_OBS) nao foi preenchido&quot;. O Fluig
+                // permite reprovar sem comentario, entao sem este texto a solicitacao trava
+                // em Trata falhas.
+                if(obsAprov == &apos;&apos; &amp;&amp; valorAprov == &quot;005&quot;){
+                    obsAprov = &quot;Reprovado no Fluig sem justificativa informada pelo aprovador &quot;
+                             + hAPI.getCardValue(&apos;hd_aprovador_nome___&apos; + indAprov[y]);
+                }
+
+                indexActualAprov = indAprov[y];
+            }
+        }
+
+        /*var cEmp    = DatasetFactory.createConstraint(&apos;C_EMPRESA&apos;,       empresa,     empresa , ConstraintType.MUST);
+        var cFilial = DatasetFactory.createConstraint(&apos;C_FILIAL&apos;,        filial,      filial , ConstraintType.MUST);
+        var cNum    = DatasetFactory.createConstraint(&apos;C_NUMERO_DOC&apos;,    codProtheus, codProtheus  , ConstraintType.MUST);
+        var cTipo   = DatasetFactory.createConstraint(&apos;C_TIPO_DOC&apos;,      &quot;PC&quot;,        &quot;PC&quot;   , ConstraintType.MUST);
+        var cAprov  = DatasetFactory.createConstraint(&apos;C_APROVADOR_COD&apos;, codAprov,    codAprov, ConstraintType.MUST);
+        var cOpc    = DatasetFactory.createConstraint(&apos;C_OPERACAO&apos;,      valorAprov,  valorAprov, ConstraintType.MUST);
+        var cObs    = DatasetFactory.createConstraint(&apos;C_OBSERVACAO&apos;,    obsAprov,    obsAprov, ConstraintType.MUST);
+        var dts     = DatasetFactory.getDataset(&apos;dts_setAprovacaoComprasProtheus_jynx&apos;, null, [cEmp, cFilial, cNum, cTipo, cAprov, cOpc, cObs], null);
+
+        log.info(&quot;Aprovação PC ===&quot;)
+        log.dir(dts)
+        if(dts.rowsCount &gt; 0 &amp;&amp; dts.getValue(0, &quot;STATUS&quot;) == &quot;SUCESSO&quot;){
+            hAPI.setCardValue(&apos;hd_solicitacao_integraAlcadas&apos;, true);
+            hAPI.setCardValue(&apos;hd_aprovacao_efetivada___&apos; + indexActualAprov, true);
+        }
+        else{
+            var c1 = DatasetFactory.createConstraint(&quot;C_NUMSOLIC&quot;, codProtheus, codProtheus, ConstraintType.MUST);
+            var c2 = DatasetFactory.createConstraint(&quot;CEMP&quot;, empresa, empresa, ConstraintType.MUST);
+            var c3 = DatasetFactory.createConstraint(&quot;C_STATUS_ALCADA_ARR&quot;, &quot;&apos;03&apos;,&apos;06&apos;&quot;, &quot;&apos;03&apos;,&apos;06&apos;&quot;, ConstraintType.MUST);
+            var c4 = DatasetFactory.createConstraint(&quot;C_FILIAL&quot;, filial, filial, ConstraintType.MUST);
+            var c5 = DatasetFactory.createConstraint(&quot;C_APROVADOR&quot;, codAprov, codAprov, ConstraintType.MUST);
+            var dtsRetorno = DatasetFactory.getDataset(&quot;dts_getPedidosComprasAprovProtheus_jynx&quot;, null, [c1, c2, c3, c4, c5], null);
+
+            if(dtsRetorno.rowsCount &gt; 0 &amp;&amp; dtsRetorno.getValue(0, &quot;NUM_PEDIDO&quot;) == (codProtheus + &quot;&quot;) &amp;&amp; dtsRetorno.getValue(0, &quot;FILIAL&quot;) == (filial + &quot;&quot;)){
+                hAPI.setCardValue(&apos;hd_solicitacao_integraAlcadas&apos;, true);
+                hAPI.setCardValue(&apos;hd_aprovacao_efetivada___&apos; + indexActualAprov, true);
+            }
+            else if(dts.rowsCount &gt; 0 &amp;&amp; dts.getValue(0, &quot;STATUS&quot;) == &quot;ERRO&quot;){
+                hAPI.setCardValue(&apos;txta_logIntegration&apos;, dts.getValue(0, &quot;MENSAGEM&quot;) + &quot;&quot;);
+            }
+        }*/
+
+        hAPI.setCardValue(&apos;txta_logIntegration&apos;, &quot;&quot;);
+        var totalPendentes = 0, totalAlcadas = 0;
+        for (var z = 0; z &lt; indAlcadas.length; z++) {
+            if(codAprov == hAPI.getCardValue(&apos;hd_alcada_codAprovador___&apos; + indAlcadas[z])){
+                totalAlcadas++;
+                if(hAPI.getCardValue(&apos;hd_alcada_descisao___&apos; + indAlcadas[z]) == &quot;&quot;){
+                    var codDoc  = hAPI.getCardValue(&apos;hd_alcada_numDocumento___&apos; + indAlcadas[z]);
+                    var valor   = hAPI.getCardValue(&apos;hd_alcada_valorItem___&apos; + indAlcadas[z]);
+
+                    var cEmp    = DatasetFactory.createConstraint(&apos;C_EMPRESA&apos;,       empresa,     empresa , ConstraintType.MUST);
+                    var cFilial = DatasetFactory.createConstraint(&apos;C_FILIAL&apos;,        filial,      filial , ConstraintType.MUST);
+                    var cNum    = DatasetFactory.createConstraint(&apos;C_NUMERO_DOC&apos;,    codDoc,      codDoc  , ConstraintType.MUST);
+                    var cTipo   = DatasetFactory.createConstraint(&apos;C_TIPO_DOC&apos;,      &quot;PC&quot;,        &quot;PC&quot;   , ConstraintType.MUST);
+                    var cAprov  = DatasetFactory.createConstraint(&apos;C_APROVADOR_COD&apos;, codAprov,    codAprov, ConstraintType.MUST);
+                    var cOpc    = DatasetFactory.createConstraint(&apos;C_OPERACAO&apos;,      valorAprov,  valorAprov, ConstraintType.MUST);
+                    var cObs    = DatasetFactory.createConstraint(&apos;C_OBSERVACAO&apos;,    obsAprov,    obsAprov, ConstraintType.MUST);
+                    var cValor  = DatasetFactory.createConstraint(&apos;C_VALOR_TOTAL&apos;,   valor,       valor, ConstraintType.MUST);
+                    var dts     = DatasetFactory.getDataset(&apos;dts_setAprovacaoComprasProtheus_jynx&apos;, null, [cEmp, cFilial, cNum, cTipo, cAprov, cOpc, cObs, cValor], null);
+                    
+                    if(dts.rowsCount &gt; 0 &amp;&amp; dts.getValue(0, &quot;STATUS&quot;) == &quot;SUCESSO&quot;){
+                        hAPI.setCardValue(&apos;hd_alcada_descisao___&apos; + indAlcadas[z], valorAprov);
+                    }
+                    else{
+                        // R2: a chamada pode ter falhado porque a alcada ja foi aprovada direto
+                        // no Protheus. Nesse caso a API responde &quot;Registro nao Localizado&quot; e,
+                        // sem esta verificacao, a solicitacao trava em Trata falhas para sempre:
+                        // a decisao so e gravada por uma chamada bem-sucedida, que nunca mais
+                        // vai acontecer porque o trabalho ja foi feito la.
+                        var statusScr = statusAlcadaProtheus(empresa, filial, codDoc, codAprov);
+
+                        if(statusScr != &apos;&apos;){
+                            hAPI.setCardValue(&apos;hd_alcada_descisao___&apos; + indAlcadas[z], valorAprov);
+                            var msgOk = hAPI.getCardValue(&apos;txta_logIntegration&apos;);
+                            hAPI.setCardValue(&apos;txta_logIntegration&apos;, msgOk + &quot;\nAlcada &quot; + codDoc +
+                                &quot; ja processada no Protheus (CR_STATUS &quot; + statusScr +
+                                &quot;) - decisao &quot; + valorAprov + &quot; marcada sem nova chamada.&quot;);
+                        }
+                        else{
+                            totalPendentes++;
+                            var msgAtual = hAPI.getCardValue(&apos;txta_logIntegration&apos;);
+                            hAPI.setCardValue(&apos;txta_logIntegration&apos;, msgAtual + &quot;\n&quot; + dts.getValue(0, &quot;MENSAGEM&quot;));
+                        }
+                    }
+                }
+            }
+        }
+
+        if(totalPendentes == 0 &amp;&amp; totalAlcadas &gt; 0){
+            hAPI.setCardValue(&apos;hd_solicitacao_integraAlcadas&apos;, true);
+            hAPI.setCardValue(&apos;hd_aprovacao_efetivada___&apos; + indexActualAprov, true);
+        }
+    } catch (e) {
+        log.info(&quot;Erro serviceTask22 === &quot; + e.toString())
+    }
+}</eventDescription>
+    </WorkflowProcessEvent>
+  </list>
+  <list/>
+  <list>
+    <SwimLane>
+      <swimLanePK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <version>7</version>
+        <sequence>1</sequence>
+      </swimLanePK>
+      <stateName>Alteração ou exclusão de pedido</stateName>
+      <positionX>0</positionX>
+      <positionY>10</positionY>
+      <color>FFFFFF</color>
+      <height>401</height>
+      <width>1101</width>
+      <type>1</type>
+      <parentSequence>0</parentSequence>
+    </SwimLane>
+    <SwimLane>
+      <swimLanePK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <version>7</version>
+        <sequence>2</sequence>
+      </swimLanePK>
+      <stateName>Solicitante</stateName>
+      <positionX>30</positionX>
+      <positionY>10</positionY>
+      <color>9F9F9F</color>
+      <height>200</height>
+      <width>1071</width>
+      <type>2</type>
+      <parentSequence>1</parentSequence>
+    </SwimLane>
+    <SwimLane>
+      <swimLanePK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <version>7</version>
+        <sequence>3</sequence>
+      </swimLanePK>
+      <stateName>Sistema</stateName>
+      <positionX>30</positionX>
+      <positionY>210</positionY>
+      <color>adc9ac</color>
+      <height>201</height>
+      <width>1071</width>
+      <type>2</type>
+      <parentSequence>1</parentSequence>
+    </SwimLane>
+  </list>
+  <list/>
+  <list/>
+  <list>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <version>7</version>
+        <linkSequence>30</linkSequence>
+        <bendSequence>1</bendSequence>
+      </processLinkBendPK>
+      <positionX>533</positionX>
+      <positionY>313</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <version>7</version>
+        <linkSequence>39</linkSequence>
+        <bendSequence>1</bendSequence>
+      </processLinkBendPK>
+      <positionX>870</positionX>
+      <positionY>397</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <version>7</version>
+        <linkSequence>51</linkSequence>
+        <bendSequence>1</bendSequence>
+      </processLinkBendPK>
+      <positionX>303</positionX>
+      <positionY>312</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <version>7</version>
+        <linkSequence>56</linkSequence>
+        <bendSequence>1</bendSequence>
+      </processLinkBendPK>
+      <positionX>652</positionX>
+      <positionY>113</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <version>7</version>
+        <linkSequence>59</linkSequence>
+        <bendSequence>1</bendSequence>
+      </processLinkBendPK>
+      <positionX>980</positionX>
+      <positionY>22</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <version>7</version>
+        <linkSequence>59</linkSequence>
+        <bendSequence>2</bendSequence>
+      </processLinkBendPK>
+      <positionX>302</positionX>
+      <positionY>22</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <version>7</version>
+        <linkSequence>60</linkSequence>
+        <bendSequence>1</bendSequence>
+      </processLinkBendPK>
+      <positionX>565</positionX>
+      <positionY>330</positionY>
+    </ProcessLinkBend>
+  </list>
+  <list/>
+  <list/>
+  <list>
+    <ProcessFormField>
+      <processFormFieldPK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <fieldId>hd_comprador_codFluig</fieldId>
+      </processFormFieldPK>
+      <fieldDescription>Comprador - Código</fieldDescription>
+      <slotId>13</slotId>
+    </ProcessFormField>
+    <ProcessFormField>
+      <processFormFieldPK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <fieldId>hd_comprador_nome</fieldId>
+      </processFormFieldPK>
+      <fieldDescription>Comprador - Nome</fieldDescription>
+      <slotId>14</slotId>
+    </ProcessFormField>
+    <ProcessFormField>
+      <processFormFieldPK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <fieldId>hd_fornecedor_cnpj</fieldId>
+      </processFormFieldPK>
+      <fieldDescription>Fornecedor - CNPJ</fieldDescription>
+      <slotId>1</slotId>
+    </ProcessFormField>
+    <ProcessFormField>
+      <processFormFieldPK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <fieldId>hd_fornecedor_codigo</fieldId>
+      </processFormFieldPK>
+      <fieldDescription>Fornecedor - Código</fieldDescription>
+      <slotId>2</slotId>
+    </ProcessFormField>
+    <ProcessFormField>
+      <processFormFieldPK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <fieldId>hd_fornecedor_nome</fieldId>
+      </processFormFieldPK>
+      <fieldDescription>Fornecedor - Razão Social</fieldDescription>
+      <slotId>3</slotId>
+    </ProcessFormField>
+    <ProcessFormField>
+      <processFormFieldPK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <fieldId>hd_pedido_codProtheus</fieldId>
+      </processFormFieldPK>
+      <fieldDescription>Número pedido</fieldDescription>
+      <slotId>4</slotId>
+    </ProcessFormField>
+    <ProcessFormField>
+      <processFormFieldPK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <fieldId>hd_pedido_descrFrmPag</fieldId>
+      </processFormFieldPK>
+      <fieldDescription>Forma de Pagamento - Descrição</fieldDescription>
+      <slotId>5</slotId>
+    </ProcessFormField>
+    <ProcessFormField>
+      <processFormFieldPK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <fieldId>hd_pedido_formaPagamento</fieldId>
+      </processFormFieldPK>
+      <fieldDescription>Forma de Pagamento - Código</fieldDescription>
+      <slotId>6</slotId>
+    </ProcessFormField>
+    <ProcessFormField>
+      <processFormFieldPK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <fieldId>hd_pedido_subTotal</fieldId>
+      </processFormFieldPK>
+      <fieldDescription>Valor Total (Antigo)</fieldDescription>
+      <slotId>7</slotId>
+    </ProcessFormField>
+    <ProcessFormField>
+      <processFormFieldPK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <fieldId>hd_pedido_valorLiquido</fieldId>
+      </processFormFieldPK>
+      <fieldDescription>Valor Total</fieldDescription>
+      <slotId>8</slotId>
+    </ProcessFormField>
+    <ProcessFormField>
+      <processFormFieldPK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <fieldId>hd_solicitacao_codFilial</fieldId>
+      </processFormFieldPK>
+      <fieldDescription>Empresa - Código</fieldDescription>
+      <slotId>9</slotId>
+    </ProcessFormField>
+    <ProcessFormField>
+      <processFormFieldPK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <fieldId>hd_solicitacao_empresa</fieldId>
+      </processFormFieldPK>
+      <fieldDescription>Empresa - Descrição</fieldDescription>
+      <slotId>10</slotId>
+    </ProcessFormField>
+    <ProcessFormField>
+      <processFormFieldPK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <fieldId>hd_solicitacao_filial</fieldId>
+      </processFormFieldPK>
+      <fieldDescription>Filial - Descrição</fieldDescription>
+      <slotId>11</slotId>
+    </ProcessFormField>
+    <ProcessFormField>
+      <processFormFieldPK>
+        <companyId>1</companyId>
+        <processId>aprovacaoPedidoDeCompra</processId>
+        <fieldId>hd_solicitacao_nroFilial</fieldId>
+      </processFormFieldPK>
+      <fieldDescription>Filial - Código</fieldDescription>
+      <slotId>12</slotId>
+    </ProcessFormField>
+  </list>
+  <list>
+    <ProcessStateService>
+      <id>54</id>
+      <companyId>1</companyId>
+      <processId>aprovacaoPedidoDeCompra</processId>
+      <version>7</version>
+      <sequence>22</sequence>
+      <attempts>3</attempts>
+      <sucessFullMessage>Integração executada com sucesso</sucessFullMessage>
+      <serviceName></serviceName>
+      <frequency>5</frequency>
+      <frequencyType>0</frequencyType>
+    </ProcessStateService>
+  </list>
+  <list/>
+  <list>
+    <ProcessAppConfiguration>
+      <id>185</id>
+      <tenantId>1</tenantId>
+      <processId>aprovacaoPedidoDeCompra</processId>
+      <processVersion>7</processVersion>
+      <stateSequence>40</stateSequence>
+      <appKey>approval</appKey>
+      <appField>title</appField>
+      <description>Pedido de Compra</description>
+    </ProcessAppConfiguration>
+    <ProcessAppConfiguration>
+      <id>186</id>
+      <tenantId>1</tenantId>
+      <processId>aprovacaoPedidoDeCompra</processId>
+      <processVersion>7</processVersion>
+      <stateSequence>40</stateSequence>
+      <appKey>approval</appKey>
+      <appField>description</appField>
+      <description>Empresa: @[form:hd_solicitacao_codFilial] - @[form:hd_solicitacao_empresa] | Filial: @[form:hd_solicitacao_nroFilial] -  @[form:hd_solicitacao_filial] | Pedido: @[form:hd_pedido_codProtheus] | Fornecedor: @[form:hd_fornecedor_nome] | Comprador: @[form:hd_comprador_nome] | Centro de custo: @[form:hd_solicitacao_resumoCcusto] | Prazo de Pagamento: @[form:hd_pedido_formaPagamento] - @[form:hd_pedido_descrFrmPag]</description>
+    </ProcessAppConfiguration>
+    <ProcessAppConfiguration>
+      <id>187</id>
+      <tenantId>1</tenantId>
+      <processId>aprovacaoPedidoDeCompra</processId>
+      <processVersion>7</processVersion>
+      <stateSequence>40</stateSequence>
+      <appKey>approval</appKey>
+      <appField>highlight</appField>
+      <description>@[form:hd_pedido_valorLiquido]</description>
+    </ProcessAppConfiguration>
+    <ProcessAppConfiguration>
+      <id>188</id>
+      <tenantId>1</tenantId>
+      <processId>aprovacaoPedidoDeCompra</processId>
+      <processVersion>7</processVersion>
+      <stateSequence>40</stateSequence>
+      <appKey>approval</appKey>
+      <appField>approve</appField>
+      <description>52</description>
+    </ProcessAppConfiguration>
+    <ProcessAppConfiguration>
+      <id>189</id>
+      <tenantId>1</tenantId>
+      <processId>aprovacaoPedidoDeCompra</processId>
+      <processVersion>7</processVersion>
+      <stateSequence>40</stateSequence>
+      <appKey>approval</appKey>
+      <appField>reject</appField>
+      <description>54</description>
+    </ProcessAppConfiguration>
+  </list>
+  <list/>
+  <list/>
+</list>
