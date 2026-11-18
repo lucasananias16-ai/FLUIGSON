@@ -64,3 +64,14 @@
 | 2026-11-17 | 2026-11-17-rotina-tamussino | Rotina diária — Tamussino (1ª aba integrada; homologação estendida; Status Report 17/11) | Rascunho de status + riscos | Rascunho |
 | 2026-11-17 | 2026-11-17-rotina-bci-shineray | Rotina diária — BCI-Shineray (itens de 4h aguardando validação) | Rascunho de status + riscos | Rascunho |
 | 2026-11-17 | 2026-11-17-rotina-m-a-maquinas | Rotina diária — M.A. Máquinas (V1 antes da V2; Status Report removido da agenda) | Rascunho de status + riscos | Rascunho |
+| 2026-11-18 | 2026-11-18-rotina-grupo-canopus | Rotina diária — Grupo Canopus (Pretti cobra o acesso sem resposta; teste só no RM de produção) | Rascunho de status + riscos | Rascunho |
+| 2026-11-18 | 2026-11-18-rotina-gol | Rotina diária — GOL (Otávio só começa hoje; Movimentação +3 d.u.; Identity caiu) | Rascunho de status + riscos | Rascunho |
+| 2026-11-18 | 2026-11-18-rotina-adata | Rotina diária — ADATA (Talles prioriza Resíduos e Mobilização sem homologação) | Rascunho de status + riscos | Rascunho |
+| 2026-11-18 | 2026-11-18-rotina-protege | Rotina diária — Protege (de acordo às agendas até 17/12; janeiro a partir de 19/01) | Rascunho de status + riscos | Rascunho |
+| 2026-11-18 | 2026-11-18-rotina-alliance | Rotina diária — Alliance (TOTVS reconfirma 18 e 25/11 e 23/11; W8 Hub) | Rascunho de status + riscos | Rascunho |
+| 2026-11-18 | 2026-11-18-rotina-yangzi-tuut | Rotina diária — Yangzi (e-mails concluídos; WinThor sem registro) | Rascunho de status + riscos | Rascunho |
+| 2026-11-18 | 2026-11-18-rotina-assurant | Rotina diária — Assurant (Ailton 20 d.u.; Alinhamento 17/11 sem ata) | Rascunho de status + riscos | Rascunho |
+| 2026-11-18 | 2026-11-18-rotina-tamussino | Rotina diária — Tamussino (1ª apresentação e cronograma em 17/11; 🔴→🟡) | Rascunho de status + riscos | Rascunho |
+| 2026-11-18 | 2026-11-18-rotina-autoneum | Rotina diária — Autoneum (ajustes finais 19/11; gatilho do 🔴 em 19/11) | Rascunho de status + riscos | Rascunho |
+| 2026-11-18 | 2026-11-18-rotina-destro | Rotina diária — Destro (aprovador por setor em teste; fiscal 26/11; senhas por e-mail) | Rascunho de status + riscos | Rascunho |
+| 2026-11-18 | 2026-11-18-rotina-bci-shineray | Rotina diária — BCI-Shineray (Painel finalizado; liberação em lotes; 17 itens sem classificação) | Rascunho de status + riscos | Rascunho |
