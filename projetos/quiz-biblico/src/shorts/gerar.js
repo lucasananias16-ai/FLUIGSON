@@ -89,6 +89,18 @@ const SHORTS = [
     },
   },
   {
+    // quarto Short do Davi e Golias: a última pergunta do vídeo, sobre o que Davi virou
+    id: 'v2_short4',
+    pasta: 'v2-davi-e-golias',
+    criar: deVideo({ v: 'v2', pasta: 'v2-davi-e-golias', n: 8, fundo: fundos.pasto, selo: 'QUIZ BÍBLICO', corSelo: '#FFD23F' }),
+    textos: {
+      titulo: 'Quando cresceu, Davi virou o quê? 👑 Você acerta? #shorts',
+      descricao:
+        'Padeiro, pescador ou rei? Você tem 10 segundos para responder bem alto! 🐑\n\nQuiz bíblico para crianças de 3 a 7 anos, com a ovelhinha Tuti. O quiz completo, com 8 desafios, é o "Quiz Bíblico de Davi e Golias para crianças", no canal Quizzito.\n\nBase bíblica: 2 Samuel 5.\n\n#QuizBíblico #DaviEGolias #BíbliaParaCrianças #shorts',
+      tags: ['quiz bíblico infantil', 'davi e golias', 'rei davi', 'quiz para crianças', 'bíblia para crianças', 'escola dominical', 'ovelhinha Tuti'],
+    },
+  },
+  {
     id: 'v12_short1',
     pasta: 'v12-natal-boneco-neve',
     criar: deVideo({ v: 'v12', pasta: 'v12-natal-boneco-neve', n: 9, fundo: fundos.neve, selo: 'QUIZ DE NATAL', tutiOpts: { gorro: true } }),

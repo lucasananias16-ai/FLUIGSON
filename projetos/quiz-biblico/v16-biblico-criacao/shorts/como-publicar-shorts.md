@@ -30,12 +30,13 @@ Cada Short só sai depois de o vídeo longo de origem estar no ar, porque o fim 
 | **Dom 06/12, 17h** | `v14_short3.mp4` | Jogo da Memória | Onde está o foguete? (duas trocas) |
 | **Seg 07/12, 17h** | `v16_short2.mp4` | Criação do Mundo | O que Deus fez primeiro? (a luz) |
 | **Ter 08/12, 17h** | `v16_short3.mp4` | Criação do Mundo | Jogo da memória: onde está o sol? |
+| **Qua 09/12, 17h** | `v2_short4.mp4` | Davi e Golias | Quando cresceu, Davi virou o quê? (rei) |
 
 **Limite de 3 envios por dia (contando os vídeos longos):** envie em lotes de até três por dia, na ordem da tabela, sempre já programados para a data dela. O Short pode ser enviado antes de o vídeo longo de origem ir ao ar; o que importa é a data programada ser depois.
 
 ## Arquivos
 
-- Vídeos: os vinte e dois `.mp4` da tabela (de 6 a 8 MB cada). O envio para o Drive daqui aceita só uns 3 MB por arquivo, então baixe os vídeos da conversa e arraste para a subpasta `shorts/` da pasta do vídeo de origem (os textos e este guia já estão lá).
+- Vídeos: os vinte e três `.mp4` da tabela (de 6 a 8 MB cada). O envio para o Drive daqui aceita só uns 3 MB por arquivo, então baixe os vídeos da conversa e arraste para a subpasta `shorts/` da pasta do vídeo de origem (os textos e este guia já estão lá).
 - Textos: `vN_shortK_titulo_descricao_tags.txt`, ao lado de cada vídeo.
 
 ## Passo a passo (para cada Short)
