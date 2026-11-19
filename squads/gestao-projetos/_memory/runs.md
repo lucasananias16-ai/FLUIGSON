@@ -75,3 +75,13 @@
 | 2026-11-18 | 2026-11-18-rotina-autoneum | Rotina diária — Autoneum (ajustes finais 19/11; gatilho do 🔴 em 19/11) | Rascunho de status + riscos | Rascunho |
 | 2026-11-18 | 2026-11-18-rotina-destro | Rotina diária — Destro (aprovador por setor em teste; fiscal 26/11; senhas por e-mail) | Rascunho de status + riscos | Rascunho |
 | 2026-11-18 | 2026-11-18-rotina-bci-shineray | Rotina diária — BCI-Shineray (Painel finalizado; liberação em lotes; 17 itens sem classificação) | Rascunho de status + riscos | Rascunho |
+| 2026-11-19 | 2026-11-19-rotina-gol | Rotina diária — GOL (Desligamento primeiro; entrega "até sexta" = feriado; Movimentação parada) | Rascunho de status + riscos | Rascunho |
+| 2026-11-19 | 2026-11-19-rotina-grupo-canopus | Rotina diária — Grupo Canopus (base RMTST e CanopusAPI liberados; trava sai) | Rascunho de status + riscos | Rascunho |
+| 2026-11-19 | 2026-11-19-rotina-destro | Rotina diária — Destro (teste gerou título 8598 no WinThor; dados bancários opcionais) | Rascunho de status + riscos | Rascunho |
+| 2026-11-19 | 2026-11-19-rotina-protege | Rotina diária — Protege (agenda do Gustavo validada no cronograma v2; fim do dev sem data) | Rascunho de status + riscos | Rascunho |
+| 2026-11-19 | 2026-11-19-rotina-bci-shineray | Rotina diária — BCI-Shineray (Kauã até 30/11; IDs 54/56/57; >72 h) | Rascunho de status + riscos | Rascunho |
+| 2026-11-19 | 2026-11-19-rotina-yangzi-tuut | Rotina diária — Yangzi (WinThor com timeout; Ana Paula de férias 23–27/11) | Rascunho de status + riscos | Rascunho |
+| 2026-11-19 | 2026-11-19-rotina-marchesan-tatu | Rotina diária — Marchesan (Albert cobra o Gabriel sem resposta; alinhamento 18/11 sem ata) | Rascunho de status + riscos | Rascunho |
+| 2026-11-19 | 2026-11-19-rotina-autoneum | Rotina diária — Autoneum (gatilho do 🔴 hoje; vira 🔴 em 23/11 sem retorno) | Rascunho de status + riscos | Rascunho |
+| 2026-11-19 | 2026-11-19-rotina-assurant | Rotina diária — Assurant (Ailton 21 d.u.; documentação ambígua) | Rascunho de status + riscos | Rascunho |
+| 2026-11-19 | 2026-11-19-rotina-somattos | Rotina diária — Somattos (Kauã no formulário sem aprovação; cronograma +4 d.u.) | Rascunho de status + riscos | Rascunho |
