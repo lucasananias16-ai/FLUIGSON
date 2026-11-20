@@ -200,6 +200,15 @@ Série nova "Jogos da Tuti": 12 desafios de memória de cinco tipos (cartas que 
 | 1 a 6 | Narrativa, imagens, narração, animação (5 min 28 s), legendas e pacote do YouTube | Aprovadas (pelo Claude, por decisão do dono do canal) |
 | 7 | Publicação | Pronto para subir. O passo a passo está em `v17-natal-floresta/youtube/como-publicar.md` |
 
+### Vídeo 18 — Quiz das Estações do Ano
+
+12 desafios (5 min 35 s), primeiro da série educativa "Aprendendo com a Tuti". A árvore das quatro estações e o parque (`art/estacoes.js`), Tuti sem gorro; a sequência é a ordem das estações e o "o que falta" é a praia sem o sol. Código em `src/v18/`; arquivos em `v18-estacoes/`. Agendado para quarta 02/12/2026, 16h.
+
+| Nº | Etapa | Situação |
+|---|---|---|
+| 1 a 6 | Narrativa, imagens, narração, animação (5 min 35 s), legendas e pacote do YouTube | Aprovadas (pelo Claude, por decisão do dono do canal) |
+| 7 | Publicação | Pronto para subir. O passo a passo está em `v18-estacoes/youtube/como-publicar.md` |
+
 ## Pastas
 
 - `v5-ingles-animais/` — arquivos do Vídeo 5, na mesma organização do Vídeo 4
@@ -324,6 +333,10 @@ node src/v16/video.js
 
 ```bash
 node src/v17/video.js
+```
+
+```bash
+node src/v18/video.js
 ```
 
 Cada comando monta um vídeo inteiro em `_rascunho/video/` (pasta fora do repositório): `v1_quiz_arca_de_noe.mp4`, `v2_desafios_de_davi_e_golias.mp4` e `v3_desafios_do_natal_de_jesus.mp4` e `v4_quiz_do_papai_noel.mp4` e `v5_festa_dos_animais.mp4`. Também grava as legendas e o mapa do vídeo na pasta de cada um. Cada cena é um trecho separado; só os trechos que mudaram são renderizados de novo. Um vídeo de 4 minutos leva cerca de 5 minutos para renderizar do zero.
