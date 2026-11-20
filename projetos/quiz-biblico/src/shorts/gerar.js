@@ -299,6 +299,39 @@ const SHORTS = [
     },
   },
   {
+    id: 'v18_short1',
+    pasta: 'v18-estacoes',
+    criar: deVideo({ v: 'v18', pasta: 'v18-estacoes', n: 9, fundo: fundos.pasto, selo: 'ESTAÇÕES DO ANO' }),
+    textos: {
+      titulo: 'O que não combina com o inverno? 😂 Você acerta? #shorts',
+      descricao:
+        'O cachecol, a luva ou a boia? Você tem 10 segundos para descobrir! ❄️\n\nQuiz para crianças de 3 a 7 anos, com a ovelhinha Tuti. O quiz completo, com 12 desafios, é o "Quiz das Estações do Ano para crianças", no canal Quizzito.\n\n#EstaçõesDoAno #QuizInfantil #shorts',
+      tags: ['estações do ano', 'inverno', 'quiz infantil', 'quiz para crianças', 'educação infantil', 'ovelhinha Tuti', 'shorts infantil'],
+    },
+  },
+  {
+    id: 'v18_short2',
+    pasta: 'v18-estacoes',
+    criar: deVideo({ v: 'v18', pasta: 'v18-estacoes', n: 11, fundo: fundos.pasto, selo: 'ESTAÇÕES DO ANO' }),
+    textos: {
+      titulo: 'Em qual estação as folhas caem? 🍂 Você acerta? #shorts',
+      descricao:
+        'Primavera, outono ou verão? Você tem 10 segundos para responder bem alto! 🍂\n\nQuiz para crianças de 3 a 7 anos, com a ovelhinha Tuti. O quiz completo, com 12 desafios, é o "Quiz das Estações do Ano para crianças", no canal Quizzito.\n\n#EstaçõesDoAno #QuizInfantil #shorts',
+      tags: ['estações do ano', 'outono', 'quiz infantil', 'quiz para crianças', 'educação infantil', 'ovelhinha Tuti', 'shorts infantil'],
+    },
+  },
+  {
+    id: 'v18_short3',
+    pasta: 'v18-estacoes',
+    criar: memoriaDeVideo({ v: 'v18', pasta: 'v18-estacoes', n: 10, fundo: fundos.pasto, selo: 'ESTAÇÕES DO ANO' }),
+    textos: {
+      titulo: 'Onde está a flor? 👀 Jogo da memória #shorts',
+      descricao:
+        'Olhe bem onde está a flor... as cartas vão trocar de lugar! Você consegue acompanhar? 🌸\n\nQuiz para crianças de 3 a 7 anos, com a ovelhinha Tuti. O quiz completo, com 12 desafios, é o "Quiz das Estações do Ano para crianças", no canal Quizzito.\n\n#EstaçõesDoAno #QuizInfantil #shorts',
+      tags: ['jogo da memória infantil', 'estações do ano', 'quiz para crianças', 'educação infantil', 'ovelhinha Tuti', 'shorts infantil'],
+    },
+  },
+  {
     id: 'v11_short1',
     pasta: 'v11-natal-ceia',
     criar: deVideo({ v: 'v11', pasta: 'v11-natal-ceia', n: 7, fundo: fundos.cozinha, selo: 'QUIZ DE NATAL', tutiOpts: { gorro: true } }),
