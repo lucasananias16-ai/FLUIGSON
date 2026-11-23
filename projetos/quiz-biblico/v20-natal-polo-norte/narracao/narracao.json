@@ -336,6 +336,41 @@
       "texto": "Que passeio gelado e gostoso! Feliz Natal, amiguinho! Até a próxima!",
       "dur": 5.721,
       "estilo": "animada"
+    },
+    "v20_s_sombra_q1": {
+      "texto": "De quem é essa sombra? Rápido!",
+      "dur": 3.03,
+      "estilo": "animada"
+    },
+    "v20_s_sombra_r1": {
+      "texto": "Do urso-polar!",
+      "dur": 1.15,
+      "estilo": "animada"
+    },
+    "v20_s_sombra_q2": {
+      "texto": "E essa?",
+      "dur": 0.62,
+      "estilo": "animada"
+    },
+    "v20_s_sombra_r2": {
+      "texto": "Do pinguim!",
+      "dur": 0.82,
+      "estilo": "animada"
+    },
+    "v20_s_sombra_q3": {
+      "texto": "A última é difícil!",
+      "dur": 1.55,
+      "estilo": "animada"
+    },
+    "v20_s_sombra_r3": {
+      "texto": "Da foca!",
+      "dur": 0.95,
+      "estilo": "animada"
+    },
+    "v20_s_sombra_fim": {
+      "texto": "Acertou as três? Tenta de novo!",
+      "dur": 2.74,
+      "estilo": "animada"
     }
   }
 }

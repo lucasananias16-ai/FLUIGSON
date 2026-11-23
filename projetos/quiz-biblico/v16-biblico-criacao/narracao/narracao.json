@@ -332,6 +332,36 @@
       "texto": "Deus fez tudo com muito amor, e tudo era muito bom! Até a próxima, amiguinho!",
       "dur": 5.387,
       "estilo": "animada"
+    },
+    "v16_v2_p1_pergunta": {
+      "texto": "Socorro! O passarinho fugiu! Você me ajuda a achar? Rápido, aponta pra ele!",
+      "dur": 5.67,
+      "estilo": "animada"
+    },
+    "v16_v2_gancho": {
+      "texto": "Você é demais! São doze desafios, e o último é o mais difícil de todos. Vamos?",
+      "dur": 7.03,
+      "estilo": "animada"
+    },
+    "v16_v2_surpresa": {
+      "texto": "Agora vem um desafio surpresa!",
+      "dur": 2.05,
+      "estilo": "animada"
+    },
+    "v16_v2_metade": {
+      "texto": "Metade! Você está indo muito bem!",
+      "dur": 3.14,
+      "estilo": "animada"
+    },
+    "v16_v2_ultimo": {
+      "texto": "E agora, o último desafio! O mais difícil de todos!",
+      "dur": 4.62,
+      "estilo": "animada"
+    },
+    "v16_v2_encerramento": {
+      "texto": "Uhuu! Você completou os doze desafios! Deus fez tudo com muito amor. Vem jogar o próximo quiz comigo!",
+      "dur": 8.01,
+      "estilo": "animada"
     }
   }
 }

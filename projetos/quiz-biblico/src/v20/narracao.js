@@ -39,6 +39,7 @@ function falas() {
     lista.push({ id: `v20_p${n}_resposta`, texto: d.resposta, tipo: 'fala', vozTexto: d.respostaVoz });
   }
   lista.push({ id: 'v20_encerramento', texto: roteiro.encerramento, tipo: 'fala' });
+  for (const [k, texto] of Object.entries(roteiro.shorts)) lista.push({ id: `v20_s_${k}`, texto, tipo: 'fala' });
   return lista.map((f) => Object.assign(f, PARTES[f.id] || {}));
 }
 

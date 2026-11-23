@@ -16,6 +16,7 @@ const { renderVideo, stills } = require('../anim/render');
 const { mixar, comTrilha, ganhoParaAlvo, narr48 } = require('../anim/mix');
 const musica = require('../anim/musica');
 const { criarShort, criarShortMemoria } = require('./molde');
+const { criarTresSombras } = require('./tresEmUm');
 const fundos = require('./fundos');
 
 const ROOT = path.resolve(__dirname, '..', '..');
@@ -397,6 +398,32 @@ const SHORTS = [
       descricao:
         'Olhe bem onde está o pinguim... as cartas vão trocar de lugar! Você consegue acompanhar? 🐧\n\nJogo da memória para crianças de 3 a 7 anos, com a ovelhinha Tuti. O quiz completo, com 12 desafios, é o "Quiz de Natal 10: o Natal no Polo Norte", no canal Quizzito.\n\n#JogoDaMemória #QuizDeNatal #PoloNorte #shorts',
       tags: ['jogo da memória infantil', 'quiz de natal', 'polo norte', 'pinguim', 'quiz para crianças', 'ovelhinha Tuti', 'shorts infantil'],
+    },
+  },
+  {
+    // padrão de Shorts v2 (23/11/2026): Short nativo "3 em 1", ~20 s, cronômetro de 3 s, em loop
+    id: 'v20_sombras3',
+    pasta: 'v20-natal-polo-norte',
+    criar: () => {
+      const pl = require('../art/polo');
+      const animais = require('../art/animais');
+      const s = (k) => `v20_s_sombra_${k}`;
+      return criarTresSombras({
+        narrDir: path.join(ROOT, 'v20-natal-polo-norte', 'narracao'),
+        ids: { q: [s('q1'), s('q2'), s('q3')], r: [s('r1'), s('r2'), s('r3')], fim: s('fim') },
+        fundo: fundos.neve,
+        tutiOpts: { gorro: true },
+        perguntas: [
+          { arte: pl.ursoPolar, fundo: '#E4DAFB', opcoes: [{ arte: pl.foca, fundo: '#CFE6FF' }, { arte: pl.ursoPolar, fundo: '#FFF1B8', certa: true }, { arte: pl.pinguim, fundo: '#CFF1E0' }] },
+          { arte: pl.pinguim, fundo: '#CFE6FF', opcoes: [{ arte: pl.pinguim, fundo: '#FFD9E4', certa: true }, { arte: animais.camelo, fundo: '#FFF1B8' }, { arte: pl.ursoPolar, fundo: '#E4DAFB' }] },
+          { arte: pl.foca, fundo: '#FFE0C7', opcoes: [{ arte: animais.camelo, fundo: '#CFF1E0' }, { arte: pl.ursoPolar, fundo: '#CFE6FF' }, { arte: pl.foca, fundo: '#FFD9E4', certa: true }] },
+        ],
+      });
+    },
+    textos: {
+      titulo: 'De quem é a sombra? 🐻‍❄️ Acerta as 3? #shorts',
+      descricao: 'Três sombras do Polo Norte: você acerta todas em 3 segundos? 🐧\n\nQuiz completo: Quiz de Natal para Crianças 🎄 o Natal no Polo Norte (link do vídeo longo)\n\n#shorts #quizinfantil #paracriancas',
+      tags: ['quiz infantil', 'de quem é a sombra', 'polo norte', 'animais do frio', 'quiz para crianças', 'ovelhinha Tuti', 'shorts infantil'],
     },
   },
   {

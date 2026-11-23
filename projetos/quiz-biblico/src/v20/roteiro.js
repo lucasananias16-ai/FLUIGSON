@@ -32,4 +32,14 @@ module.exports = {
     12: { pergunta: 'O que deixa o céu do Polo Norte colorido? O arco-íris... a aurora... ou os fogos?', resposta: 'A aurora! Verde e roxa, que lindo!' },
   },
   encerramento: 'Que passeio gelado e gostoso! Feliz Natal, amiguinho! Até a próxima!',
+  // Shorts nativos (padrão de Shorts v2, 23/11/2026): "3 em 1" das sombras do Polo Norte
+  shorts: {
+    sombra_q1: 'De quem é essa sombra? Rápido!',
+    sombra_r1: 'Do urso-polar!',
+    sombra_q2: 'E essa?',
+    sombra_r2: 'Do pinguim!',
+    sombra_q3: 'A última é difícil!',
+    sombra_r3: 'Da foca!',
+    sombra_fim: 'Acertou as três? Tenta de novo!',
+  },
 };

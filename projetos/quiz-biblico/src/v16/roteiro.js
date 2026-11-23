@@ -32,4 +32,13 @@ module.exports = {
     12: { pergunta: 'No sétimo dia, o que Deus fez? Descansou... correu... ou nadou?', resposta: 'Descansou! Deus viu que tudo era muito bom!' },
   },
   encerramento: 'Deus fez tudo com muito amor, e tudo era muito bom! Até a próxima, amiguinho!',
+  // Versão 2 (padrão novo de 19/11/2026): começa no desafio 1, com gancho, reganchos e convite no fim
+  v2: {
+    p1_pergunta: 'Socorro! O passarinho fugiu! Você me ajuda a achar? Rápido, aponta pra ele!',
+    gancho: 'Você é demais! São doze desafios, e o último é o mais difícil de todos. Vamos?',
+    surpresa: 'Agora vem um desafio surpresa!',
+    metade: 'Metade! Você está indo muito bem!',
+    ultimo: 'E agora, o último desafio! O mais difícil de todos!',
+    encerramento: 'Uhuu! Você completou os doze desafios! Deus fez tudo com muito amor. Vem jogar o próximo quiz comigo!',
+  },
 };

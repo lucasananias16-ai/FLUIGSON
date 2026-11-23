@@ -65,8 +65,9 @@ async function emParalelo(tarefas, limite) {
  *  - legendas: opções passadas ao gerador de legendas
  *  - args: argumentos da linha de comando (--refazer)
  *  - limite: pico máximo do áudio (padrão 0,89, perto de −1 dBFS); baixe para sobrar folga ao codificar
+ *  - mapa: nome do arquivo do mapa do vídeo (padrão mapa-do-video.json; a versão 2 de um vídeo usa outro)
  */
-async function montar({ nome, pasta, roteiro, trechos = 'trechos', legendas = {}, args = [], limite = 0.89 }) {
+async function montar({ nome, pasta, roteiro, trechos = 'trechos', legendas = {}, args = [], limite = 0.89, mapa: arqMapa = 'mapa-do-video.json' }) {
   const NARR = path.join(ROOT, pasta, 'narracao');
   const SEG = path.join(OUT, trechos);
   const refazer = args.includes('--refazer');
@@ -119,7 +120,7 @@ async function montar({ nome, pasta, roteiro, trechos = 'trechos', legendas = {}
   fs.mkdirSync(legDir, { recursive: true });
   fs.writeFileSync(path.join(legDir, `${nome}.srt`), gerarSrt(lista, manifest, NARR, legendas));
   const mapa = lista.map((c) => ({ cena: c.nome, inicio: +c.t0.toFixed(3), duracao: +c.dur.toFixed(3) }));
-  fs.writeFileSync(path.join(ROOT, pasta, 'mapa-do-video.json'), JSON.stringify({ duracao: +total.toFixed(3), cenas: mapa }, null, 2) + '\n');
+  fs.writeFileSync(path.join(ROOT, pasta, arqMapa), JSON.stringify({ duracao: +total.toFixed(3), cenas: mapa }, null, 2) + '\n');
 
   const mm = (s) => `${Math.floor(s / 60)}:${String(Math.round(s % 60)).padStart(2, '0')}`;
   console.log(`\n${final}`);
