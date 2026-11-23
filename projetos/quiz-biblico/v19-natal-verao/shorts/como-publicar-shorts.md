@@ -37,12 +37,15 @@ Cada Short só sai depois de o vídeo longo de origem estar no ar, porque o fim 
 | **Dom 13/12, 17h** | `v19_short1.mp4` | Natal no Verão (no ar na seg 30/11) | O que não combina com a praia? (o casaco de frio) |
 | **Seg 14/12, 17h** | `v19_short2.mp4` | Natal no Verão | O que o Papai Noel veste na praia? (a bermuda) |
 | **Ter 15/12, 17h** | `v19_short3.mp4` | Natal no Verão | Jogo da memória: onde está o presente? |
+| **Qua 16/12, 17h** | `v20_short1.mp4` | Natal no Polo Norte (no ar na sex 04/12) | Quem não mora no Polo Norte? (o camelo) |
+| **Qui 17/12, 17h** | `v20_short2.mp4` | Natal no Polo Norte | O que a gente veste no frio? (o casaco) |
+| **Sex 18/12, 17h** | `v20_short3.mp4` | Natal no Polo Norte | Jogo da memória: onde está o pinguim? |
 
 **Limite de 3 envios por dia (contando os vídeos longos):** envie em lotes de até três por dia, na ordem da tabela, sempre já programados para a data dela. O Short pode ser enviado antes de o vídeo longo de origem ir ao ar; o que importa é a data programada ser depois.
 
 ## Arquivos
 
-- Vídeos: os vinte e nove `.mp4` da tabela (de 6 a 8 MB cada). O envio para o Drive daqui aceita só uns 3 MB por arquivo, então baixe os vídeos da conversa e arraste para a subpasta `shorts/` da pasta do vídeo de origem (os textos e este guia já estão lá).
+- Vídeos: os trinta e dois `.mp4` da tabela (de 6 a 8 MB cada). O envio para o Drive daqui aceita só uns 3 MB por arquivo, então baixe os vídeos da conversa e arraste para a subpasta `shorts/` da pasta do vídeo de origem (os textos e este guia já estão lá).
 - Textos: `vN_shortK_titulo_descricao_tags.txt`, ao lado de cada vídeo.
 
 ## Passo a passo (para cada Short)
@@ -50,7 +53,7 @@ Cada Short só sai depois de o vídeo longo de origem estar no ar, porque o fim 
 1. No Studio, **Criar > Enviar vídeos** e escolha o `.mp4`. Por ser em pé e ter menos de 60 s, o YouTube já trata como Short.
 2. **Título** e **descrição:** cole do arquivo de textos. O `#shorts` já está no título.
 3. **Miniatura:** o Studio no computador não deixa enviar miniatura para Short. Se quiser escolher o quadro de capa, use o app do YouTube no celular. Se não mexer, o YouTube escolhe um quadro.
-4. **Playlist:** a mesma do vídeo de origem (**Quiz Bíblico Infantil** para os de Davi, de Jonas e da Criação, **Quiz de Natal** para os da Ceia, do Boneco de Neve, da Cartinha, da Floresta e do Natal no Verão, **Jogos da Tuti** para os do Jogo da Memória, **Aprendendo com a Tuti** para os das Estações).
+4. **Playlist:** a mesma do vídeo de origem (**Quiz Bíblico Infantil** para os de Davi, de Jonas e da Criação, **Quiz de Natal** para os da Ceia, do Boneco de Neve, da Cartinha, da Floresta, do Natal no Verão e do Polo Norte, **Jogos da Tuti** para os do Jogo da Memória, **Aprendendo com a Tuti** para os das Estações).
 5. **Público:** **"Sim, é conteúdo para crianças"**.
 6. **Mostrar mais:**
    - **Vídeo relacionado:** escolha o vídeo longo de origem. Aparece um link para ele embaixo do Short, e é isso que leva a criança ao quiz completo.

@@ -1,0 +1,341 @@
+{
+  "voz": {
+    "nome": "pt-BR-Chirp3-HD-Leda",
+    "velocidade": 0.94,
+    "estilo": "animada"
+  },
+  "falas": {
+    "v20_abertura": {
+      "texto": "Oi, amiguinho! A Tuti voltou! Hoje vamos visitar o Polo Norte, a casa do Papai Noel! Brrr, que frio! São doze desafios. Vamos lá!",
+      "dur": 12.047,
+      "estilo": "animada"
+    },
+    "v20_p1_pergunta": {
+      "texto": "O pinguim se escondeu no gelo! Você consegue encontrar?",
+      "dur": 3.62,
+      "estilo": "animada"
+    },
+    "v20_p1_resposta": {
+      "texto": "Achou! Ele estava atrás do iglu! Que esconderijo gelado!",
+      "dur": 5.04,
+      "estilo": "animada"
+    },
+    "v20_p2_pergunta": {
+      "texto": "O pinguim pescou uns peixinhos. Conte comigo!",
+      "dur": 3.34,
+      "estilo": "animada"
+    },
+    "v20_p2_contagem": {
+      "texto": "Um... dois... três... quatro... cinco!",
+      "dur": 6.29,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 0.38
+        },
+        {
+          "ini": 1.23,
+          "fim": 1.95
+        },
+        {
+          "ini": 2.8,
+          "fim": 3.39
+        },
+        {
+          "ini": 4.24,
+          "fim": 4.84
+        },
+        {
+          "ini": 5.69,
+          "fim": 6.29
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v20_p2_resposta": {
+      "texto": "Cinco peixinhos! Muito bem!",
+      "dur": 2.14,
+      "estilo": "animada"
+    },
+    "v20_p3_pergunta": {
+      "texto": "Faz muito frio no Polo Norte! O que a gente veste? O maiô... o casaco... ou o chinelo?",
+      "dur": 9.16,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 2.07
+        },
+        {
+          "ini": 2.57,
+          "fim": 3.81
+        },
+        {
+          "ini": 4.71,
+          "fim": 5.39
+        },
+        {
+          "ini": 6.39,
+          "fim": 7.28
+        },
+        {
+          "ini": 8.28,
+          "fim": 9.16
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v20_p3_resposta": {
+      "texto": "O casaco! Quentinho!",
+      "dur": 2.03,
+      "estilo": "animada"
+    },
+    "v20_p4_pergunta": {
+      "texto": "De quem é essa sombra? Da foca... do urso-polar... ou do pinguim?",
+      "dur": 7.18,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.38
+        },
+        {
+          "ini": 2.28,
+          "fim": 3.2
+        },
+        {
+          "ini": 4.2,
+          "fim": 5.3
+        },
+        {
+          "ini": 6.3,
+          "fim": 7.18
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v20_p4_resposta": {
+      "texto": "Do urso-polar! Ele é branquinho como a neve!",
+      "dur": 3.23,
+      "estilo": "animada"
+    },
+    "v20_p5_pergunta": {
+      "texto": "O que está faltando na casinha do Papai Noel? A chaminé... a janela... ou a porta?",
+      "dur": 7.38,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 2.26
+        },
+        {
+          "ini": 3.16,
+          "fim": 3.98
+        },
+        {
+          "ini": 4.98,
+          "fim": 5.76
+        },
+        {
+          "ini": 6.76,
+          "fim": 7.38
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v20_p5_resposta": {
+      "texto": "A chaminé! É por ela que sai a fumacinha!",
+      "dur": 3.44,
+      "estilo": "animada"
+    },
+    "v20_p6_pergunta": {
+      "texto": "Qual urso-polar é o maior? O da esquerda... ou o da direita?",
+      "dur": 5.27,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.65
+        },
+        {
+          "ini": 2.55,
+          "fim": 3.49
+        },
+        {
+          "ini": 4.49,
+          "fim": 5.27
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v20_p6_resposta": {
+      "texto": "O da esquerda! Que ursão!",
+      "dur": 2.23,
+      "estilo": "animada"
+    },
+    "v20_p7_pergunta": {
+      "texto": "Um destes pinguins é diferente! Qual é?",
+      "dur": 3.3,
+      "estilo": "animada"
+    },
+    "v20_p7_resposta": {
+      "texto": "O de cachecol vermelho! Os outros têm cachecol azul!",
+      "dur": 3.6,
+      "estilo": "animada"
+    },
+    "v20_p8_pergunta": {
+      "texto": "Olhe a fila no céu! O que vem depois? O floco... o presente... ou a estrela?",
+      "dur": 8.19,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.18
+        },
+        {
+          "ini": 1.68,
+          "fim": 2.77
+        },
+        {
+          "ini": 3.67,
+          "fim": 4.42
+        },
+        {
+          "ini": 5.42,
+          "fim": 6.33
+        },
+        {
+          "ini": 7.33,
+          "fim": 8.19
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v20_p8_resposta": {
+      "texto": "A estrela! Floco, estrela, floco, estrela!",
+      "dur": 3.7,
+      "estilo": "animada"
+    },
+    "v20_p9_pergunta": {
+      "texto": "Quem não mora no Polo Norte? O pinguim... o camelo... ou a foca?",
+      "dur": 6.83,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.65
+        },
+        {
+          "ini": 2.55,
+          "fim": 3.31
+        },
+        {
+          "ini": 4.31,
+          "fim": 5.08
+        },
+        {
+          "ini": 6.08,
+          "fim": 6.83
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v20_p9_resposta": {
+      "texto": "O camelo! Ha ha! Ele gosta do deserto quentinho!",
+      "dur": 4.18,
+      "estilo": "animada"
+    },
+    "v20_p10_mostrar": {
+      "texto": "Olhe bem onde o pinguim está.",
+      "dur": 1.68,
+      "estilo": "animada"
+    },
+    "v20_p10_pergunta": {
+      "texto": "As cartas trocaram de lugar! Onde está o pinguim? No um... no dois... ou no três?",
+      "dur": 8.25,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.7
+        },
+        {
+          "ini": 2.2,
+          "fim": 3.46
+        },
+        {
+          "ini": 4.26,
+          "fim": 4.84
+        },
+        {
+          "ini": 5.74,
+          "fim": 6.49
+        },
+        {
+          "ini": 7.39,
+          "fim": 8.25
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v20_p10_resposta": {
+      "texto": "No número um! Você tem olho bom!",
+      "dur": 2.2,
+      "estilo": "animada"
+    },
+    "v20_p11_pergunta": {
+      "texto": "Onde o Papai Noel guarda os presentes? No saco vermelho... no balde... ou no aquário?",
+      "dur": 7.94,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 2.25
+        },
+        {
+          "ini": 3.15,
+          "fim": 4.32
+        },
+        {
+          "ini": 5.32,
+          "fim": 6.07
+        },
+        {
+          "ini": 7.07,
+          "fim": 7.94
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v20_p11_resposta": {
+      "texto": "No saco vermelho! Cheinho de presentes!",
+      "dur": 3.35,
+      "estilo": "animada"
+    },
+    "v20_p12_pergunta": {
+      "texto": "O que deixa o céu do Polo Norte colorido? O arco-íris... a aurora... ou os fogos?",
+      "dur": 7.96,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 2.33
+        },
+        {
+          "ini": 3.23,
+          "fim": 4.27
+        },
+        {
+          "ini": 5.27,
+          "fim": 5.96
+        },
+        {
+          "ini": 6.96,
+          "fim": 7.96
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v20_p12_resposta": {
+      "texto": "A aurora! Verde e roxa, que lindo!",
+      "dur": 3.18,
+      "estilo": "animada"
+    },
+    "v20_encerramento": {
+      "texto": "Que passeio gelado e gostoso! Feliz Natal, amiguinho! Até a próxima!",
+      "dur": 5.721,
+      "estilo": "animada"
+    }
+  }
+}
