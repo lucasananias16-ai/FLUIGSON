@@ -332,6 +332,39 @@ const SHORTS = [
     },
   },
   {
+    id: 'v19_short1',
+    pasta: 'v19-natal-verao',
+    criar: deVideo({ v: 'v19', pasta: 'v19-natal-verao', n: 9, fundo: fundos.praia, selo: 'QUIZ DE NATAL', tutiOpts: { gorro: true } }),
+    textos: {
+      titulo: 'O que não combina com a praia? 😂 Você acerta? #shorts',
+      descricao:
+        'O casaco de frio, o guarda-sol ou o chinelo? Você tem 10 segundos para descobrir! ☀️\n\nQuiz para crianças de 3 a 7 anos, com a ovelhinha Tuti. O quiz completo, com 12 desafios, é o "Quiz de Natal 9: o Natal no Verão", no canal Quizzito.\n\n#QuizDeNatal #NatalNoVerão #QuizInfantil #shorts',
+      tags: ['quiz de natal', 'natal no verão', 'natal na praia', 'quiz infantil', 'quiz para crianças', 'ovelhinha Tuti', 'shorts infantil'],
+    },
+  },
+  {
+    id: 'v19_short2',
+    pasta: 'v19-natal-verao',
+    criar: deVideo({ v: 'v19', pasta: 'v19-natal-verao', n: 11, fundo: fundos.praia, selo: 'QUIZ DE NATAL', tutiOpts: { gorro: true } }),
+    textos: {
+      titulo: 'O que o Papai Noel veste na praia? 🎅 Você acerta? #shorts',
+      descricao:
+        'O casaco, o cachecol ou a bermuda? Você tem 10 segundos para responder bem alto! ☀️\n\nQuiz para crianças de 3 a 7 anos, com a ovelhinha Tuti. O quiz completo, com 12 desafios, é o "Quiz de Natal 9: o Natal no Verão", no canal Quizzito.\n\n#QuizDeNatal #PapaiNoel #QuizInfantil #shorts',
+      tags: ['quiz de natal', 'papai noel', 'natal no verão', 'quiz infantil', 'quiz para crianças', 'ovelhinha Tuti', 'shorts infantil'],
+    },
+  },
+  {
+    id: 'v19_short3',
+    pasta: 'v19-natal-verao',
+    criar: memoriaDeVideo({ v: 'v19', pasta: 'v19-natal-verao', n: 10, fundo: fundos.praia, selo: 'QUIZ DE NATAL', tutiOpts: { gorro: true } }),
+    textos: {
+      titulo: 'Onde está o presente? 👀 Jogo da memória de Natal #shorts',
+      descricao:
+        'Olhe bem onde está o presente... as cartas vão trocar de lugar! Você consegue acompanhar? 🎁\n\nJogo da memória para crianças de 3 a 7 anos, com a ovelhinha Tuti. O quiz completo, com 12 desafios, é o "Quiz de Natal 9: o Natal no Verão", no canal Quizzito.\n\n#JogoDaMemória #QuizDeNatal #NatalNoVerão #shorts',
+      tags: ['jogo da memória infantil', 'quiz de natal', 'natal no verão', 'quiz para crianças', 'natal para crianças', 'ovelhinha Tuti', 'shorts infantil'],
+    },
+  },
+  {
     id: 'v11_short1',
     pasta: 'v11-natal-ceia',
     criar: deVideo({ v: 'v11', pasta: 'v11-natal-ceia', n: 7, fundo: fundos.cozinha, selo: 'QUIZ DE NATAL', tutiOpts: { gorro: true } }),

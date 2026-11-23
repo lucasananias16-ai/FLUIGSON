@@ -1,0 +1,75 @@
+{
+  "duracao": 331.9,
+  "cenas": [
+    {
+      "cena": "abertura",
+      "inicio": 0,
+      "duracao": 14.833
+    },
+    {
+      "cena": "d1",
+      "inicio": 14.833,
+      "duracao": 23.7
+    },
+    {
+      "cena": "d2",
+      "inicio": 38.533,
+      "duracao": 17.867
+    },
+    {
+      "cena": "d3",
+      "inicio": 56.4,
+      "duracao": 27.567
+    },
+    {
+      "cena": "d4",
+      "inicio": 83.967,
+      "duracao": 25.733
+    },
+    {
+      "cena": "d5",
+      "inicio": 109.7,
+      "duracao": 26.3
+    },
+    {
+      "cena": "d6",
+      "inicio": 136,
+      "duracao": 23.467
+    },
+    {
+      "cena": "d7",
+      "inicio": 159.467,
+      "duracao": 21.3
+    },
+    {
+      "cena": "d8",
+      "inicio": 180.767,
+      "duracao": 28.133
+    },
+    {
+      "cena": "d9",
+      "inicio": 208.9,
+      "duracao": 28.467
+    },
+    {
+      "cena": "d10",
+      "inicio": 237.367,
+      "duracao": 33.067
+    },
+    {
+      "cena": "d11",
+      "inicio": 270.433,
+      "duracao": 25.567
+    },
+    {
+      "cena": "d12",
+      "inicio": 296,
+      "duracao": 25.633
+    },
+    {
+      "cena": "encerramento",
+      "inicio": 321.633,
+      "duracao": 10.267
+    }
+  ]
+}

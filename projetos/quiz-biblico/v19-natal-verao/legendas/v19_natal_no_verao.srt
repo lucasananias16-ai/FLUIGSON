@@ -1,0 +1,276 @@
+1
+00:00:01,400 --> 00:00:05,500
+Oi, amiguinho!
+
+2
+00:00:05,690 --> 00:00:08,000
+A Tuti voltou!
+
+3
+00:00:08,100 --> 00:00:10,590
+Aqui no Brasil o Natal é no
+verão, e hoje a festa é na praia!
+
+4
+00:00:10,780 --> 00:00:13,900
+São doze desafios. Vamos lá!
+
+5
+00:00:16,083 --> 00:00:18,143
+O Papai Noel se escondeu na praia!
+
+6
+00:00:18,413 --> 00:00:19,853
+Você consegue encontrar?
+
+7
+00:00:32,083 --> 00:00:35,263
+Achou! Ele estava atrás do guarda-sol!
+
+8
+00:00:35,663 --> 00:00:37,053
+Fugindo do calor!
+
+9
+00:00:39,773 --> 00:00:43,073
+Tem conchinhas na areia. Conte comigo!
+
+10
+00:00:43,563 --> 00:00:44,723
+Um...
+
+11
+00:00:44,803 --> 00:00:46,003
+dois...
+
+12
+00:00:46,283 --> 00:00:47,483
+três...
+
+13
+00:00:47,753 --> 00:00:48,953
+quatro...
+
+14
+00:00:49,263 --> 00:00:50,463
+cinco!
+
+15
+00:00:51,503 --> 00:00:54,553
+Cinco conchinhas! Muito bem!
+
+16
+00:00:57,850 --> 00:00:59,030
+Está calor!
+
+17
+00:00:59,110 --> 00:01:00,880
+O que é bom para se refrescar?
+
+18
+00:01:01,530 --> 00:01:02,880
+A sopa quente...
+
+19
+00:01:03,630 --> 00:01:04,980
+a água de coco...
+
+20
+00:01:05,730 --> 00:01:07,300
+ou o chocolate quente?
+
+21
+00:01:19,500 --> 00:01:22,490
+A água de coco! Geladinha!
+
+22
+00:01:25,417 --> 00:01:26,997
+De quem é essa sombra?
+
+23
+00:01:27,647 --> 00:01:28,847
+Do barco...
+
+24
+00:01:29,497 --> 00:01:30,697
+do trenó...
+
+25
+00:01:31,307 --> 00:01:32,877
+ou do castelo de areia?
+
+26
+00:01:45,067 --> 00:01:48,267
+Do castelo de areia! Que castelo bonito!
+
+27
+00:01:51,150 --> 00:01:53,990
+O que está faltando na
+árvore de Natal da praia?
+
+28
+00:01:54,640 --> 00:01:55,840
+A estrela...
+
+29
+00:01:56,450 --> 00:01:57,650
+o peixe...
+
+30
+00:01:58,170 --> 00:01:59,370
+ou a concha?
+
+31
+00:02:11,380 --> 00:02:14,540
+A estrela! Agora a árvore brilha!
+
+32
+00:02:17,200 --> 00:02:19,230
+Qual castelo de areia é o maior?
+
+33
+00:02:19,880 --> 00:02:21,080
+O da esquerda...
+
+34
+00:02:21,810 --> 00:02:23,010
+ou o da direita?
+
+35
+00:02:35,030 --> 00:02:38,020
+O da direita! Que castelão!
+
+36
+00:02:40,707 --> 00:02:43,917
+Um destes sorvetes é diferente! Qual é?
+
+37
+00:02:56,177 --> 00:02:59,307
+O de chocolate! Os
+outros são de morango!
+
+38
+00:03:02,217 --> 00:03:03,847
+Olhe a fila na areia!
+
+39
+00:03:04,097 --> 00:03:05,527
+O que vem depois?
+
+40
+00:03:06,177 --> 00:03:07,377
+A concha...
+
+41
+00:03:07,927 --> 00:03:09,227
+a estrela-do-mar...
+
+42
+00:03:09,977 --> 00:03:11,177
+ou o peixe?
+
+43
+00:03:23,217 --> 00:03:27,447
+A estrela-do-mar! Concha,
+estrela, concha, estrela!
+
+44
+00:03:30,350 --> 00:03:32,740
+O que não combina com a praia no verão?
+
+45
+00:03:33,390 --> 00:03:34,860
+O casaco de frio...
+
+46
+00:03:35,610 --> 00:03:36,810
+o guarda-sol...
+
+47
+00:03:37,550 --> 00:03:38,750
+ou o chinelo?
+
+48
+00:03:50,820 --> 00:03:53,840
+O casaco de frio! Ha ha!
+
+49
+00:03:54,110 --> 00:03:55,890
+Na praia não precisa!
+
+50
+00:03:58,857 --> 00:04:00,777
+Olhe bem onde o presente está.
+
+51
+00:04:05,777 --> 00:04:07,697
+As cartas trocaram de lugar!
+
+52
+00:04:07,947 --> 00:04:09,417
+Onde está o presente?
+
+53
+00:04:09,967 --> 00:04:11,167
+No um...
+
+54
+00:04:11,437 --> 00:04:12,637
+no dois...
+
+55
+00:04:13,067 --> 00:04:14,267
+ou no três?
+
+56
+00:04:26,307 --> 00:04:28,967
+No número três! Você tem olho bom!
+
+57
+00:04:31,883 --> 00:04:34,193
+O que o Papai Noel veste na praia?
+
+58
+00:04:34,843 --> 00:04:36,043
+O casaco...
+
+59
+00:04:36,753 --> 00:04:37,953
+o cachecol...
+
+60
+00:04:38,543 --> 00:04:39,803
+ou a bermuda?
+
+61
+00:04:52,003 --> 00:04:54,543
+A bermuda! Fresquinho!
+
+62
+00:04:57,450 --> 00:04:59,880
+Em qual estação é o
+Natal aqui no Brasil?
+
+63
+00:05:00,530 --> 00:05:01,730
+No inverno...
+
+64
+00:05:02,320 --> 00:05:03,520
+no verão...
+
+65
+00:05:03,960 --> 00:05:05,230
+ou no outono?
+
+66
+00:05:17,430 --> 00:05:20,140
+No verão! Natal com sol e calor!
+
+67
+00:05:22,983 --> 00:05:25,253
+Natal no calor também é muito bom!
+
+68
+00:05:25,903 --> 00:05:28,873
+Feliz Natal, amiguinho! Até a próxima!

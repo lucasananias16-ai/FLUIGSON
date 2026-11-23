@@ -227,4 +227,4 @@ function cenaEncerramento({ comTuti = true } = {}) {
   });
 }
 
-module.exports = { grandePeixe, peixinho, estrelaMar, concha, tempestade, praia, montanha, nuvem, cidade, floresta, jonas, fundoNeve, flocos, fundoMar, cenaAbertura, cenaAchar, cenaRenas, cenaComparar, cenaEncerramento, ESCONDERIJO, RENAS_X, CHAO, PEQUENO, GRANDE };
+module.exports = { praiaCena, grandePeixe, peixinho, estrelaMar, concha, tempestade, praia, montanha, nuvem, cidade, floresta, jonas, fundoNeve, flocos, fundoMar, cenaAbertura, cenaAchar, cenaRenas, cenaComparar, cenaEncerramento, ESCONDERIJO, RENAS_X, CHAO, PEQUENO, GRANDE };
