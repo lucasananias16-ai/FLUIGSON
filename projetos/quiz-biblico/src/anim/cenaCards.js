@@ -34,8 +34,10 @@ const { LINE, CARD, f, OLHANDO, APONTANDO, PENSANDO, PENSANDO_FRENTE, COMEMORA, 
  *  - fundo: função que desenha o fundo (o padrão é o céu com gramado)
  *  - tutiOpts: opções da Tuti nesta cena (gorro, capacete)
  *  - primeiraOpcao: em qual parte da pergunta começa a primeira opção (1, ou 2 se a pergunta tem duas frases antes)
+ *  - inicioRapido: começa já em movimento (os cards caindo no quadro 0, a Tuti pulando e a pergunta em 0,3 s),
+ *    o gancho do padrão novo (19/11/2026) para os Shorts; sem ele, a linha do tempo é a de sempre
  */
-function criarCenaCards({ num, q, narrDir, idPergunta, idResposta, contagem, tGlobal0 = 0, entrada = null, saida = null, layout = {}, extra = {}, fundo = null, tutiOpts = {}, primeiraOpcao = 1 }) {
+function criarCenaCards({ num, q, narrDir, idPergunta, idResposta, contagem, tGlobal0 = 0, entrada = null, saida = null, layout = {}, extra = {}, fundo = null, tutiOpts = {}, primeiraOpcao = 1, inicioRapido = false }) {
   const NARR = narrDir;
   const CX = layout.cx || [432, 920, 1408];
   const CY = layout.cy === undefined ? 232 : layout.cy;
@@ -48,7 +50,9 @@ function criarCenaCards({ num, q, narrDir, idPergunta, idResposta, contagem, tGl
   const CONT = contagem;
 
   // ----- linha do tempo -----
-  const T = { banner: 0.1, selo: 0.35, cards: [0.45, 0.58, 0.71], pergunta: 1.45 };
+  const T = inicioRapido
+    ? { banner: -0.45, selo: -0.2, cards: [-0.32, -0.22, -0.12], pergunta: 0.3 }
+    : { banner: 0.1, selo: 0.35, cards: [0.45, 0.58, 0.71], pergunta: 1.45 };
   T.viradas = [0, 1, 2].map((k) => T.pergunta + fq.partes[primeiraOpcao + k].ini - 0.14);
   T.fimPergunta = T.pergunta + fq.dur;
   T.contagem = T.fimPergunta + 0.6;
@@ -59,8 +63,8 @@ function criarCenaCards({ num, q, narrDir, idPergunta, idResposta, contagem, tGl
   const dur = T.saida + 0.75;
 
   // ----- sons -----
-  const sons = [{ t: T.selo, tipo: 'plim', ganho: 0.5 }];
-  T.cards.forEach((t) => sons.push({ t: t + 0.36, tipo: 'pouso', ganho: 0.45 }));
+  const sons = inicioRapido ? [{ t: 0, tipo: 'pouso', ganho: 0.5 }] : [{ t: T.selo, tipo: 'plim', ganho: 0.5 }];
+  if (!inicioRapido) T.cards.forEach((t) => sons.push({ t: t + 0.36, tipo: 'pouso', ganho: 0.45 }));
   T.viradas.forEach((t, i) => sons.push({ t: t + 0.05, tipo: 'virada', ganho: 0.5, semente: i + 1 }));
   for (let k = 0; k < CONT; k++) sons.push({ t: T.contagem + k, tipo: 'tique', ganho: k >= CONT - 3 ? 0.5 : 0.36, agudo: k % 2 === 0 });
   sons.push({ t: T.contagem + CONT, tipo: 'fimDoTempo', ganho: 0.45 });
@@ -82,8 +86,8 @@ function criarCenaCards({ num, q, narrDir, idPergunta, idResposta, contagem, tGl
     return null;
   };
   const track = [
-    { t: 0, pose: OLHANDO },
-    { t: T.pergunta - 0.3, pose: 'perguntando', dur: 0.45 },
+    { t: 0, pose: inicioRapido ? 'perguntando' : OLHANDO },
+    { t: Math.max(0, T.pergunta - 0.3), pose: 'perguntando', dur: 0.45 },
     { t: T.viradas[0] - 0.35, pose: APONTANDO, dur: 0.45 },
     { t: T.fimPergunta + 0.15, pose: PENSANDO, dur: 0.5 },
   ];
@@ -94,6 +98,7 @@ function criarCenaCards({ num, q, narrDir, idPergunta, idResposta, contagem, tGl
   track.push({ t: T.resposta + 1.2, pose: FELIZ, dur: 0.6 });
   track.push({ t: T.saida, pose: OLHANDO, dur: 0.5 });
   const pulos = [{ t: T.revela + 0.95, n: 2, altura: 74, periodo: 0.44 }];
+  if (inicioRapido) pulos.unshift({ t: 0, n: 1, altura: 60, periodo: 0.42 }); // a Tuti já pula no quadro 0
 
   // ----- página -----
   kit.resetIds();

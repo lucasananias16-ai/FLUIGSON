@@ -22,7 +22,7 @@ const ROOT = path.resolve(__dirname, '..', '..');
 const OUT = path.join(ROOT, '_rascunho', 'video', 'shorts');
 
 /** Um Short a partir de uma pergunta de cards de um vídeo. */
-function deVideo({ v, pasta, n, fundo, selo, corSelo, tutiOpts = {}, primeiraOpcao = 1 }) {
+function deVideo({ v, pasta, n, fundo, selo, corSelo, tutiOpts = {}, primeiraOpcao = 1, inicioRapido = false }) {
   const desafios = require(`../${v}/desafios`);
   const q = desafios.find((x) => x.n === n);
   return () =>
@@ -36,6 +36,7 @@ function deVideo({ v, pasta, n, fundo, selo, corSelo, tutiOpts = {}, primeiraOpc
       corSelo,
       tutiOpts,
       primeiraOpcao,
+      inicioRapido,
     });
 }
 
@@ -213,11 +214,12 @@ const SHORTS = [
   {
     id: 'v15_short2',
     pasta: 'v15-natal-cartinha',
-    criar: deVideo({ v: 'v15', pasta: 'v15-natal-cartinha', n: 11, fundo: fundos.sala, selo: 'QUIZ DE NATAL', tutiOpts: { gorro: true } }),
+    // refeito em 23/11 no padrão novo: começa já com os cards caindo e a pergunta em 0,3 s
+    criar: deVideo({ v: 'v15', pasta: 'v15-natal-cartinha', n: 11, fundo: fundos.sala, selo: 'QUIZ DE NATAL', tutiOpts: { gorro: true }, inicioRapido: true }),
     textos: {
       titulo: 'Quem lê as cartinhas no Polo Norte? 🎅 Você acerta? #shorts',
       descricao:
-        'O pescador, o Papai Noel ou o padeiro? Você tem 10 segundos para responder bem alto! ✉️\n\nQuiz para crianças de 3 a 7 anos, com a ovelhinha Tuti. O quiz completo, com 12 desafios, é o "Quiz de Natal 7: a Cartinha para o Papai Noel", no canal Quizzito.\n\n#QuizDeNatal #PapaiNoel #QuizInfantil #shorts',
+        'O pescador, o Papai Noel ou o padeiro? Você tem 10 segundos para responder bem alto! ✉️\n\nQuiz para crianças de 3 a 7 anos, com a ovelhinha Tuti. O quiz completo, com 12 desafios, é o "Quiz de Natal para Crianças: a Cartinha para o Papai Noel", no canal Quizzito.\n\n#QuizDeNatal #PapaiNoel #QuizInfantil #shorts',
       tags: ['quiz de natal', 'papai noel', 'polo norte', 'quiz infantil', 'quiz para crianças', 'ovelhinha Tuti', 'shorts infantil'],
     },
   },

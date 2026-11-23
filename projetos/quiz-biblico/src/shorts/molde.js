@@ -70,8 +70,9 @@ const cssEmPe = (corSelo) => `
 const CARDS = { x: [-33, 320, 673], y: 450, escala: 0.75 };
 const TUTI_DIM = { width: TUTI.width, height: TUTI.height };
 
-function criarShort({ q, narrDir, idPergunta, idResposta, fundo, selo, corSelo = '#FFD23F', tutiOpts = {}, primeiraOpcao = 1, contagem = 10, extra = {} }) {
+function criarShort({ q, narrDir, idPergunta, idResposta, fundo, selo, corSelo = '#FFD23F', tutiOpts = {}, primeiraOpcao = 1, contagem = 10, extra = {}, inicioRapido = false }) {
   const base = criarCenaCards({
+    inicioRapido,
     num: '?',
     q,
     narrDir,
@@ -118,7 +119,8 @@ function emShort(base, { selo, tutiOpts = {} }) {
     `<div id="fim">Você acertou?<br><b>Tem mais no<br>quiz completo!</b></div>`;
   const html = emPe(base.html, pecas);
 
-  const sons = base.sons.concat([{ t: 0.15, tipo: 'plim', ganho: 0.45 }, { t: T.fim, tipo: 'plim', ganho: 0.45 }]);
+  // com o início rápido, o plim do selo não entra: a pergunta já começa em 0,3 s
+  const sons = base.sons.concat((base.T.pergunta < 1 ? [] : [{ t: 0.15, tipo: 'plim', ganho: 0.45 }]).concat([{ t: T.fim, tipo: 'plim', ganho: 0.45 }]));
   const falas = base.falas.slice(); // o áudio do fim vem de outra pasta: ver `falasExtras`
   const falasExtras = [{ t: T.falaFim, arquivo: path.join(NARR_SHORT, 'short_fim.wav') }];
 
@@ -127,7 +129,7 @@ function emShort(base, { selo, tutiOpts = {} }) {
 
   function frame(t) {
     const ops = base.frame(Math.min(t, base.dur - 1 / 30));
-    const kS = Z.outBack(Z.prog(t, 0.1, 0.5), 2) * (1 + 0.03 * Math.sin(t * 2 * Math.PI * 0.8));
+    const kS = Z.outBack(Z.prog(t, base.T.pergunta < 1 ? -0.3 : 0.1, 0.5), 2) * (1 + 0.03 * Math.sin(t * 2 * Math.PI * 0.8));
     ops.push({ id: 'selo', style: `transform:scale(${f(kS)}) rotate(${f(-2 + Math.sin((t * 2 * Math.PI) / 4))}deg)` });
     const vida = t - (T.revela + 0.95);
     const festa = vida >= 0 && t < T.saida + 0.7;
