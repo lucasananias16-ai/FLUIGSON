@@ -59,8 +59,8 @@ function comProgresso(cena, n) {
 const CSS_REGANCHO = `
   #bg, #fx, #fade { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
   #tuti { position: absolute; left: 610px; top: 300px; width: 700px; height: 770px; }
-  #palavra { position: absolute; left: 0; top: 70px; width: 1920px; text-align: center; font-family: Fredoka, sans-serif; font-weight: 700;
-    font-size: 150px; line-height: 1; color: #FFD23F; -webkit-text-stroke: 26px ${LINE}; paint-order: stroke fill; transform: scale(0); }
+  #palavra { position: absolute; left: 0; top: 50px; width: 1440px; text-align: center; font-family: Fredoka, sans-serif; font-weight: 700;
+    font-size: 132px; line-height: 1; color: #FFD23F; -webkit-text-stroke: 24px ${LINE}; paint-order: stroke fill; transform: scale(0); }
 `;
 
 /**

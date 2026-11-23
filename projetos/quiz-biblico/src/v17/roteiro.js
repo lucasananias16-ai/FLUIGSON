@@ -32,4 +32,13 @@ module.exports = {
     12: { pergunta: 'O que os amigos fazem no Natal? Dão um abraço... brigam... ou ficam sozinhos?', resposta: 'Dão um abraço! Que abraço gostoso!' },
   },
   encerramento: 'O pinheiro ficou lindo, e a festa começou! No Natal, a gente fica junto de quem a gente ama. Feliz Natal, amiguinho! Até a próxima!',
+  // Versão 2 (padrão novo de 19/11/2026): começa no desafio 1, com gancho, reganchos e convite no fim
+  v2: {
+    p1_pergunta: 'Socorro! O esquilo fugiu! Você me ajuda a achar? Rápido, aponta pra ele!',
+    gancho: 'Você é demais! São doze desafios, e o último é o mais difícil de todos. Vamos?',
+    surpresa: 'Agora vem um desafio surpresa!',
+    metade: 'Metade! Você está indo muito bem!',
+    ultimo: 'E agora, o último desafio! O mais difícil de todos!',
+    encerramento: 'Uhuu! Você completou os doze desafios! Feliz Natal, amiguinho! Vem jogar o próximo quiz comigo!',
+  },
 };
