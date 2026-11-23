@@ -32,4 +32,13 @@ module.exports = {
     12: { pergunta: 'Em qual estação é o Natal aqui no Brasil? No inverno... no verão... ou no outono?', resposta: 'No verão! Natal com sol e calor!' },
   },
   encerramento: 'Natal no calor também é muito bom! Feliz Natal, amiguinho! Até a próxima!',
+  // Versão 2 (padrão novo de 19/11/2026): começa no desafio 1, com gancho, reganchos e convite no fim
+  v2: {
+    p1_pergunta: 'Socorro! O Papai Noel fugiu! Você me ajuda a achar? Rápido, aponta pra ele!',
+    gancho: 'Você é demais! São doze desafios, e o último é o mais difícil de todos. Vamos?',
+    surpresa: 'Agora vem um desafio surpresa!',
+    metade: 'Metade! Você está indo muito bem!',
+    ultimo: 'E agora, o último desafio! O mais difícil de todos!',
+    encerramento: 'Uhuu! Você completou os doze desafios! Feliz Natal, amiguinho! Vem jogar o próximo quiz comigo!',
+  },
 };

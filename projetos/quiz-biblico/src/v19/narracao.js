@@ -39,6 +39,8 @@ function falas() {
     lista.push({ id: `v19_p${n}_resposta`, texto: d.resposta, tipo: 'fala', vozTexto: d.respostaVoz });
   }
   lista.push({ id: 'v19_encerramento', texto: roteiro.encerramento, tipo: 'fala' });
+  // versão 2 (padrão novo): falas a mais, gravadas na mesma pasta
+  if (roteiro.v2) for (const [k, texto] of Object.entries(roteiro.v2)) lista.push({ id: `v19_v2_${k}`, texto, tipo: 'fala' });
   return lista.map((f) => Object.assign(f, PARTES[f.id] || {}));
 }
 

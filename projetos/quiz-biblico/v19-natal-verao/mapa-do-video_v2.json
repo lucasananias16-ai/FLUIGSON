@@ -1,0 +1,85 @@
+{
+  "duracao": 342.633,
+  "cenas": [
+    {
+      "cena": "d1",
+      "inicio": 0,
+      "duracao": 26.8
+    },
+    {
+      "cena": "d2",
+      "inicio": 26.8,
+      "duracao": 17.867
+    },
+    {
+      "cena": "d3",
+      "inicio": 44.667,
+      "duracao": 27.567
+    },
+    {
+      "cena": "surpresa",
+      "inicio": 72.233,
+      "duracao": 3.3
+    },
+    {
+      "cena": "d4",
+      "inicio": 75.533,
+      "duracao": 25.733
+    },
+    {
+      "cena": "d5",
+      "inicio": 101.267,
+      "duracao": 26.3
+    },
+    {
+      "cena": "d6",
+      "inicio": 127.567,
+      "duracao": 23.467
+    },
+    {
+      "cena": "metade",
+      "inicio": 151.033,
+      "duracao": 4.3
+    },
+    {
+      "cena": "d7",
+      "inicio": 155.333,
+      "duracao": 21.3
+    },
+    {
+      "cena": "d8",
+      "inicio": 176.633,
+      "duracao": 28.133
+    },
+    {
+      "cena": "d9",
+      "inicio": 204.767,
+      "duracao": 28.467
+    },
+    {
+      "cena": "d10",
+      "inicio": 233.233,
+      "duracao": 33.067
+    },
+    {
+      "cena": "d11",
+      "inicio": 266.3,
+      "duracao": 25.567
+    },
+    {
+      "cena": "ultimo",
+      "inicio": 291.867,
+      "duracao": 5.533
+    },
+    {
+      "cena": "d12",
+      "inicio": 297.4,
+      "duracao": 25.633
+    },
+    {
+      "cena": "encerramento",
+      "inicio": 323.033,
+      "duracao": 19.6
+    }
+  ]
+}
