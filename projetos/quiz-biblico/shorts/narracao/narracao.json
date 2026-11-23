@@ -9,6 +9,121 @@
       "texto": "Você acertou? Tem muito mais desafios no quiz completo!",
       "dur": 3.49,
       "estilo": "animada"
+    },
+    "s3_e_agora": {
+      "texto": "E agora?",
+      "dur": 0.63,
+      "estilo": "animada"
+    },
+    "s3_ultima": {
+      "texto": "A última é difícil!",
+      "dur": 1.55,
+      "estilo": "animada"
+    },
+    "s3_fim": {
+      "texto": "Acertou as três? Tenta de novo!",
+      "dur": 2.607,
+      "estilo": "animada"
+    },
+    "s1_q1": {
+      "texto": "Qual é o diferente? Rápido!",
+      "dur": 2.767,
+      "estilo": "animada"
+    },
+    "s1_r1": {
+      "texto": "O coelho marrom!",
+      "dur": 1.06,
+      "estilo": "animada"
+    },
+    "s1_r2": {
+      "texto": "O de chocolate!",
+      "dur": 1.13,
+      "estilo": "animada"
+    },
+    "s1_r3": {
+      "texto": "O de cachecol vermelho!",
+      "dur": 1.66,
+      "estilo": "animada"
+    },
+    "s3m_q1": {
+      "texto": "Qual é o maior? Rápido!",
+      "dur": 2.29,
+      "estilo": "animada"
+    },
+    "s3m_r1": {
+      "texto": "O da direita!",
+      "dur": 0.94,
+      "estilo": "animada"
+    },
+    "s3m_r2": {
+      "texto": "O da esquerda!",
+      "dur": 0.9,
+      "estilo": "animada"
+    },
+    "s3m_r3": {
+      "texto": "O do meio!",
+      "dur": 0.85,
+      "estilo": "animada"
+    },
+    "s4_q1": {
+      "texto": "O que não combina com a praia? Rápido!",
+      "dur": 2.71,
+      "estilo": "animada"
+    },
+    "s4_r1": {
+      "texto": "O casaco! Na praia não precisa!",
+      "dur": 2.97,
+      "estilo": "animada"
+    },
+    "s4_q2": {
+      "texto": "E com o Polo Norte?",
+      "dur": 1.36,
+      "estilo": "animada"
+    },
+    "s4_r2": {
+      "texto": "O camelo! Ele mora no deserto!",
+      "dur": 2.7,
+      "estilo": "animada"
+    },
+    "s4_q3": {
+      "texto": "A última é difícil! E com a neve?",
+      "dur": 2.94,
+      "estilo": "animada"
+    },
+    "s4_r3": {
+      "texto": "A boia! No frio ninguém nada!",
+      "dur": 2.48,
+      "estilo": "animada"
+    },
+    "s5_q1": {
+      "texto": "Quantas estrelas? Conte rápido!",
+      "dur": 2.22,
+      "estilo": "animada"
+    },
+    "s5_r1": {
+      "texto": "Três!",
+      "dur": 0.81,
+      "estilo": "animada"
+    },
+    "s5_q2": {
+      "texto": "E quantos peixinhos?",
+      "dur": 1.411,
+      "estilo": "animada"
+    },
+    "s5_r2": {
+      "texto": "Quatro!",
+      "dur": 0.61,
+      "estilo": "animada"
+    },
+    "s5_q3": {
+      "texto": "A última é difícil! Quantas flores?",
+      "dur": 3.31,
+      "estilo": "animada"
+    },
+    "s5_r3": {
+      "texto": "Cinco!",
+      "dur": 0.71,
+      "estilo": "animada"
     }
   }
 }

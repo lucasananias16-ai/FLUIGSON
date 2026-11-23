@@ -6,6 +6,13 @@
  * em pé: tudo o que importa fica entre 20% e 70% da altura.
  *
  * Quadro 0: a sombra 1 grande, as três opções e a Tuti com cara de dúvida.
+ *
+ * O painel de cada pergunta pode ser (campo `painel` da pergunta):
+ *  - 'sombra' (padrão): a sombra vira o desenho colorido na resposta;
+ *  - 'figura': o desenho já colorido (o tema do "o que não combina?");
+ *  - 'contar': `n` cópias do desenho aparecem uma a uma ("conte rápido!");
+ *  - 'texto': um texto grande (o "?" do "qual é o diferente?").
+ * Cada opção pode ter `escala` (o mesmo desenho maior ou menor) ou `texto` (um número).
  */
 const fs = require('fs');
 const path = require('path');
@@ -46,7 +53,7 @@ function criarTresSombras({ narrDir, ids, perguntas, fundo, tutiOpts = {} }) {
     q.contagem = q.fala + Math.max(dq[k] + 0.1, 0.8);
     q.revela = q.contagem + CONT;
     q.resposta = q.revela + 0.2;
-    q.fim = q.resposta + dr[k] + 0.45;
+    q.fim = q.resposta + dr[k] + 0.35;
     Q.push(q);
     t = q.fim;
   }
@@ -92,15 +99,26 @@ function criarTresSombras({ narrDir, ids, perguntas, fundo, tutiOpts = {} }) {
 
   // ----- página -----
   kit.resetIds();
-  const svgArte = (fn, cls = '') => `<svg class="${cls}" viewBox="0 0 1000 1000">${kit.withOutline(6.5 / 0.5, fn)}</svg>`;
+  const svgArte = (fn, cls = '', esc = 1) =>
+    `<svg class="${cls}" viewBox="0 0 1000 1000">${esc === 1 ? kit.withOutline(6.5 / 0.5, fn) : `<g transform="translate(500,900) scale(${esc}) translate(-500,-900)">${kit.withOutline(6.5 / 0.5 / esc, fn)}</g>`}</svg>`;
+  const ARRUMA = { 3: [[0.3, 0.32], [0.7, 0.32], [0.5, 0.7]], 4: [[0.3, 0.3], [0.7, 0.3], [0.3, 0.72], [0.7, 0.72]], 5: [[0.22, 0.3], [0.5, 0.3], [0.78, 0.3], [0.36, 0.72], [0.64, 0.72]] };
+  const painelHtml = (p, k) => {
+    const tipo = p.painel || 'sombra';
+    if (tipo === 'sombra') return `<div class="sombra" id="s${k}">${svgArte(p.arte)}</div><div class="cor" id="c${k}">${svgArte(p.arte)}</div>`;
+    if (tipo === 'figura') return `<div class="cor fixa" id="c${k}">${svgArte(p.arte)}</div>`;
+    if (tipo === 'texto') return `<div class="texto" id="c${k}">${p.texto}</div>`;
+    // contar: as cópias espalhadas pelo painel
+    return ARRUMA[p.n].map(([x, y], j) => `<div class="lugarItem" style="left:${PAINEL.w * x - 105}px;top:${PAINEL.h * y - 105}px"><div class="item" id="n${k}_${j}">${svgArte(p.arte)}</div></div>`).join('');
+  };
+  const opcHtml = (o) => (o.texto ? `<div class="numero">${o.texto}</div>` : svgArte(o.arte, '', o.escala || 1));
   const grupos = perguntas
     .map((p, k) => {
       const cards = p.opcoes
-        .map((o, i) => `<div class="lugar" style="left:${OPC.x[i]}px"><div class="opc" id="o${k}_${i}" style="background:${o.fundo || '#fff'}">${svgArte(o.arte)}<div class="ok" id="k${k}_${i}">${P.CHECK_SVG}</div></div></div>`)
+        .map((o, i) => `<div class="lugar" style="left:${OPC.x[i]}px"><div class="opc" id="o${k}_${i}" style="background:${o.fundo || '#fff'}">${opcHtml(o)}<div class="ok" id="k${k}_${i}">${P.CHECK_SVG}</div></div></div>`)
         .join('');
       return (
         `<div class="q" id="q${k}">` +
-        `<div class="painel" style="background:${p.fundo || '#E4DAFB'}"><div class="sombra" id="s${k}">${svgArte(p.arte)}</div><div class="cor" id="c${k}">${svgArte(p.arte)}</div></div>` +
+        `<div class="painel" style="background:${p.fundo || '#E4DAFB'}">${painelHtml(p, k)}</div>` +
         cards +
         `</div>`
       );
@@ -116,6 +134,14 @@ function criarTresSombras({ narrDir, ids, perguntas, fundo, tutiOpts = {} }) {
     .painel svg { position: absolute; left: 90px; top: 16px; width: 460px; height: 460px; }
     .sombra svg { filter: brightness(0) opacity(0.82); }
     .cor { opacity: 0; }
+    .cor.fixa { opacity: 1; }
+    .texto { position: absolute; left: 0; top: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;
+      font-size: 380px; font-weight: 700; color: #FFD23F; -webkit-text-stroke: 26px ${LINE}; paint-order: stroke fill; }
+    .lugarItem { position: absolute; width: 210px; height: 210px; }
+    .item { position: absolute; left: 0; top: 0; width: 210px; height: 210px; transform: scale(0); }
+    .item svg { position: absolute; left: 0; top: 0; width: 210px; height: 210px; }
+    .numero { position: absolute; left: 0; top: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;
+      font-size: 210px; font-weight: 700; color: #2E8BFF; -webkit-text-stroke: 16px ${LINE}; paint-order: stroke fill; }
     .lugar { position: absolute; top: ${OPC.y}px; width: ${OPC.size}px; height: ${OPC.size}px; }
     .opc { position: absolute; left: 0; top: 0; width: ${OPC.size}px; height: ${OPC.size}px; border-radius: 44px; border: 8px solid ${LINE};
       box-shadow: 0 12px 0 rgba(61,44,78,.18); }
@@ -157,8 +183,23 @@ function criarTresSombras({ narrDir, ids, perguntas, fundo, tutiOpts = {} }) {
       // a sombra vira o bicho colorido com um "pop" na hora da resposta (no loop, a 1 volta a ser sombra)
       const revelou = t >= q.revela && !(k === 0 && t >= T.volta - 0.35);
       const kR = revelou ? Z.prog(t, q.revela, 0.25) : 0;
-      ops.push({ id: `c${k}`, style: `opacity:${f(kR)};transform:scale(${f(1 + 0.12 * Z.bump(Z.prog(t, q.revela, 0.45)) * (revelou ? 1 : 0))})` });
-      ops.push({ id: `s${k}`, style: `opacity:${f(1 - kR)}` });
+      const tipo = perguntas[k].painel || 'sombra';
+      const pop = 1 + 0.12 * Z.bump(Z.prog(t, q.revela, 0.45)) * (revelou ? 1 : 0);
+      if (tipo === 'sombra') {
+        ops.push({ id: `c${k}`, style: `opacity:${f(kR)};transform:scale(${f(pop)})` });
+        ops.push({ id: `s${k}`, style: `opacity:${f(1 - kR)}` });
+      } else if (tipo === 'contar') {
+        // as cópias aparecem uma a uma enquanto a Tuti pergunta; no fim do loop somem para entrar de novo
+        const n = perguntas[k].n;
+        for (let j = 0; j < n; j++) {
+          const tj = q.fala + 0.25 + j * 0.32;
+          const some = k === 0 && t >= T.volta - 0.35 ? 1 : 0;
+          const kj = Z.outBack(Z.prog(t, tj, 0.3), 2.2) * (1 - some) + 0.1 * Z.bump(Z.prog(t, q.revela + j * 0.08, 0.3));
+          ops.push({ id: `n${k}_${j}`, style: `transform:scale(${f(kj)})` });
+        }
+      } else {
+        ops.push({ id: `c${k}`, style: `transform:scale(${f(pop)})` });
+      }
       for (let i = 0; i < 3; i++) {
         const ok = i === certa[k];
         const bal = 4 * Math.sin(t * 2 * Math.PI * 1.1 + i * 2); // as opções balançam durante a contagem

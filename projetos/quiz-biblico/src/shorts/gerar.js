@@ -21,6 +21,7 @@ const fundos = require('./fundos');
 
 const ROOT = path.resolve(__dirname, '..', '..');
 const OUT = path.join(ROOT, '_rascunho', 'video', 'shorts');
+const NARR_SHORTS = path.join(ROOT, 'shorts', 'narracao'); // falas dos Shorts nativos
 
 /** Um Short a partir de uma pergunta de cards de um vídeo. */
 function deVideo({ v, pasta, n, fundo, selo, corSelo, tutiOpts = {}, primeiraOpcao = 1, inicioRapido = false }) {
@@ -426,6 +427,116 @@ const SHORTS = [
       tags: ['quiz infantil', 'de quem é a sombra', 'polo norte', 'animais do frio', 'quiz para crianças', 'ovelhinha Tuti', 'shorts infantil'],
     },
   },
+  // ---- Shorts nativos "3 em 1" (padrão de Shorts v2, 23/11/2026): um formato por dia, em rodízio ----
+  {
+    // S1 · qual é o diferente?
+    id: 'natal_diferente3',
+    pasta: 'v17-natal-floresta',
+    narrDir: NARR_SHORTS,
+    criar: () => {
+      const fl = require('../art/floresta');
+      const vr = require('../art/verao');
+      const pl = require('../art/polo');
+      const q = (arte, fundo) => ({ painel: 'texto', texto: '?', fundo, arte });
+      return criarTresSombras({
+        narrDir: NARR_SHORTS,
+        ids: { q: ['s1_q1', 's3_e_agora', 's3_ultima'], r: ['s1_r1', 's1_r2', 's1_r3'], fim: 's3_fim' },
+        fundo: fundos.neve,
+        tutiOpts: { gorro: true },
+        perguntas: [
+          Object.assign(q(null, '#FFE0C7'), { opcoes: [{ arte: fl.coelhoCor('#FFFFFF'), fundo: '#CFF1E0' }, { arte: fl.coelhoCor('#FFFFFF'), fundo: '#CFF1E0' }, { arte: fl.coelhoCor('#B9845A'), fundo: '#CFF1E0', certa: true }] }),
+          Object.assign(q(null, '#CFE6FF'), { opcoes: [{ arte: vr.sorveteCor('#8F5A2E'), fundo: '#FFD9E4', certa: true }, { arte: vr.sorveteCor('#FF8FB1'), fundo: '#FFD9E4' }, { arte: vr.sorveteCor('#FF8FB1'), fundo: '#FFD9E4' }] }),
+          Object.assign(q(null, '#E4DAFB'), { opcoes: [{ arte: pl.pinguimCachecol('#4DA3FF'), fundo: '#CFE6FF' }, { arte: pl.pinguimCachecol('#E25A52'), fundo: '#CFE6FF', certa: true }, { arte: pl.pinguimCachecol('#4DA3FF'), fundo: '#CFE6FF' }] }),
+        ],
+      });
+    },
+    textos: {
+      titulo: 'Qual é o diferente? 👀 Acerta as 3? #shorts',
+      descricao: 'Três desafios rápidos: ache o diferente em 3 segundos! 🐰\n\nQuiz completo: Quiz de Natal para Crianças 🎄 o Natal na Floresta (link do vídeo longo)\n\n#shorts #quizinfantil #paracriancas',
+      tags: ['quiz infantil', 'qual é o diferente', 'jogo de atenção', 'quiz de natal', 'quiz para crianças', 'ovelhinha Tuti', 'shorts infantil'],
+    },
+  },
+  {
+    // S3 · qual é o maior?
+    id: 'criacao_maior3',
+    pasta: 'v16-biblico-criacao',
+    narrDir: NARR_SHORTS,
+    criar: () => {
+      const animais = require('../art/animais');
+      const es = require('../art/estacoes');
+      const cr = require('../art/criacao');
+      const tres = (arte, escalas, certa, fundo, fundoOpc) => ({ painel: 'texto', texto: '?', fundo, opcoes: escalas.map((e, i) => ({ arte, escala: e, fundo: fundoOpc, certa: i === certa })) });
+      return criarTresSombras({
+        narrDir: NARR_SHORTS,
+        ids: { q: ['s3m_q1', 's3_e_agora', 's3_ultima'], r: ['s3m_r1', 's3m_r2', 's3m_r3'], fim: 's3_fim' },
+        fundo: fundos.pasto,
+        perguntas: [tres(animais.elefante, [0.55, 0.75, 1], 2, '#FFF1B8', '#CFE6FF'), tres(es.girassol, [1, 0.6, 0.78], 0, '#CFE6FF', '#FFF1B8'), tres(cr.arvore, [0.62, 1, 0.8], 1, '#FFD9E4', '#CFF1E0')],
+      });
+    },
+    textos: {
+      titulo: 'Qual é o maior? 🐘 Acerta as 3? #shorts',
+      descricao: 'Três desafios rápidos: qual é o maior? Você tem 3 segundos! 🐘\n\nQuiz completo: Quiz Bíblico para Crianças 🌍 A Criação do Mundo (link do vídeo longo)\n\n#shorts #quizinfantil #paracriancas',
+      tags: ['quiz infantil', 'qual é o maior', 'grande e pequeno', 'quiz bíblico infantil', 'quiz para crianças', 'ovelhinha Tuti', 'shorts infantil'],
+    },
+  },
+  {
+    // S4 · o que não combina? (o engraçado)
+    id: 'natal_intruso3',
+    pasta: 'v19-natal-verao',
+    narrDir: NARR_SHORTS,
+    criar: () => {
+      const mar = require('../art/mar');
+      const vr = require('../art/verao');
+      const pl = require('../art/polo');
+      const fl = require('../art/floresta');
+      const neve = require('../art/neve');
+      const es = require('../art/estacoes');
+      const animais = require('../art/animais');
+      return criarTresSombras({
+        narrDir: NARR_SHORTS,
+        ids: { q: ['s4_q1', 's4_q2', 's4_q3'], r: ['s4_r1', 's4_r2', 's4_r3'], fim: 's3_fim' },
+        fundo: fundos.neve,
+        tutiOpts: { gorro: true },
+        perguntas: [
+          { painel: 'figura', arte: mar.praia, fundo: '#BDE5FF', opcoes: [{ arte: neve.chinelo, fundo: '#CFF1E0' }, { arte: vr.casaco, fundo: '#FFD9E4', certa: true }, { arte: fl.guardaSol, fundo: '#FFF1B8' }] },
+          { painel: 'figura', arte: pl.iglu, fundo: '#CFE6FF', opcoes: [{ arte: pl.pinguim, fundo: '#E4DAFB' }, { arte: pl.foca, fundo: '#CFF1E0' }, { arte: animais.camelo, fundo: '#FFF1B8', certa: true }] },
+          { painel: 'figura', arte: () => es.arvoreEstacao('inverno'), fundo: '#E4DAFB', opcoes: [{ arte: es.boia, fundo: '#FFF1B8', certa: true }, { arte: neve.cachecol, fundo: '#CFE6FF' }, { arte: () => neve.luva('#E25A52'), fundo: '#FFD9E4' }] },
+        ],
+      });
+    },
+    textos: {
+      titulo: 'O que não combina? 😂 Acerta as 3? #shorts',
+      descricao: 'Casaco na praia? Camelo no gelo? Ache o que não combina em 3 segundos! 😂\n\nQuiz completo: Quiz de Natal para Crianças ☀️ o Natal no Verão (link do vídeo longo)\n\n#shorts #quizinfantil #paracriancas',
+      tags: ['quiz infantil', 'o que não combina', 'quiz engraçado', 'quiz de natal', 'quiz para crianças', 'ovelhinha Tuti', 'shorts infantil'],
+    },
+  },
+  {
+    // S5 · conte rápido!
+    id: 'criacao_contar3',
+    pasta: 'v16-biblico-criacao',
+    narrDir: NARR_SHORTS,
+    criar: () => {
+      const objetos = require('../art/objetos');
+      const mar = require('../art/mar');
+      const cr = require('../art/criacao');
+      const nums = (lista, certo, fundo) => lista.map((x) => ({ texto: String(x), fundo, certa: x === certo }));
+      return criarTresSombras({
+        narrDir: NARR_SHORTS,
+        ids: { q: ['s5_q1', 's5_q2', 's5_q3'], r: ['s5_r1', 's5_r2', 's5_r3'], fim: 's3_fim' },
+        fundo: fundos.pasto,
+        perguntas: [
+          { painel: 'contar', arte: objetos.estrela, n: 3, fundo: '#34498F', opcoes: nums([2, 3, 4], 3, '#FFF1B8') },
+          { painel: 'contar', arte: () => mar.peixinho('#FFA53A'), n: 4, fundo: '#BDE5FF', opcoes: nums([4, 5, 3], 4, '#CFF1E0') },
+          { painel: 'contar', arte: () => cr.flor('#FF8FB1'), n: 5, fundo: '#CFF1E0', opcoes: nums([3, 4, 5], 5, '#FFD9E4') },
+        ],
+      });
+    },
+    textos: {
+      titulo: 'Conte rápido! ⭐ Acerta as 3? #shorts',
+      descricao: 'Estrelas, peixinhos e flores: conte rápido em 3 segundos! ⭐\n\nQuiz completo: Quiz Bíblico para Crianças 🌍 A Criação do Mundo (link do vídeo longo)\n\n#shorts #quizinfantil #paracriancas',
+      tags: ['quiz infantil', 'contar até 5', 'números para crianças', 'quiz bíblico infantil', 'quiz para crianças', 'ovelhinha Tuti', 'shorts infantil'],
+    },
+  },
   {
     id: 'v11_short1',
     pasta: 'v11-natal-ceia',
@@ -444,7 +555,7 @@ async function gerar(item) {
   const total = Math.ceil(cena.dur * 30) / 30;
   cena.dur = total;
   // som: efeitos e falas da cena (pasta do vídeo) + a fala final dos Shorts
-  const { mono, voz } = mixar([{ cena, t0: 0 }], path.join(ROOT, item.pasta, 'narracao'), total);
+  const { mono, voz } = mixar([{ cena, t0: 0 }], item.narrDir || path.join(ROOT, item.pasta, 'narracao'), total);
   for (const fe of cena.falasExtras) {
     const d = narr48(fe.arquivo);
     A.mixInto(voz, d, sfx.RATE, fe.t, 1);

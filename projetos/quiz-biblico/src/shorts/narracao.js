@@ -9,7 +9,37 @@ const path = require('path');
 const { narrar } = require('../narrar');
 
 const ROOT = path.resolve(__dirname, '..', '..');
-const FALAS = [{ id: 'short_fim', texto: 'Você acertou? Tem muito mais desafios no quiz completo!', tipo: 'fala' }];
+const FALAS = [
+  { id: 'short_fim', texto: 'Você acertou? Tem muito mais desafios no quiz completo!', tipo: 'fala' },
+  // Shorts nativos "3 em 1" (padrão de Shorts v2, 23/11/2026)
+  { id: 's3_e_agora', texto: 'E agora?', tipo: 'fala' },
+  { id: 's3_ultima', texto: 'A última é difícil!', tipo: 'fala' },
+  { id: 's3_fim', texto: 'Acertou as três? Tenta de novo!', tipo: 'fala' },
+  // S1 · qual é o diferente?
+  { id: 's1_q1', texto: 'Qual é o diferente? Rápido!', tipo: 'fala' },
+  { id: 's1_r1', texto: 'O coelho marrom!', tipo: 'fala' },
+  { id: 's1_r2', texto: 'O de chocolate!', tipo: 'fala' },
+  { id: 's1_r3', texto: 'O de cachecol vermelho!', tipo: 'fala' },
+  // S3 · qual é o maior?
+  { id: 's3m_q1', texto: 'Qual é o maior? Rápido!', tipo: 'fala' },
+  { id: 's3m_r1', texto: 'O da direita!', tipo: 'fala' },
+  { id: 's3m_r2', texto: 'O da esquerda!', tipo: 'fala' },
+  { id: 's3m_r3', texto: 'O do meio!', tipo: 'fala' },
+  // S4 · o que não combina?
+  { id: 's4_q1', texto: 'O que não combina com a praia? Rápido!', tipo: 'fala' },
+  { id: 's4_r1', texto: 'O casaco! Na praia não precisa!', tipo: 'fala' },
+  { id: 's4_q2', texto: 'E com o Polo Norte?', tipo: 'fala' },
+  { id: 's4_r2', texto: 'O camelo! Ele mora no deserto!', tipo: 'fala' },
+  { id: 's4_q3', texto: 'A última é difícil! E com a neve?', tipo: 'fala' },
+  { id: 's4_r3', texto: 'A boia! No frio ninguém nada!', tipo: 'fala' },
+  // S5 · conte rápido!
+  { id: 's5_q1', texto: 'Quantas estrelas? Conte rápido!', tipo: 'fala' },
+  { id: 's5_r1', texto: 'Três!', tipo: 'fala' },
+  { id: 's5_q2', texto: 'E quantos peixinhos?', tipo: 'fala' },
+  { id: 's5_r2', texto: 'Quatro!', tipo: 'fala' },
+  { id: 's5_q3', texto: 'A última é difícil! Quantas flores?', tipo: 'fala' },
+  { id: 's5_r3', texto: 'Cinco!', tipo: 'fala' },
+];
 const VOZ = { nome: 'pt-BR-Chirp3-HD-Leda', velocidade: 0.94, estilo: 'animada' };
 const NARR = path.join(ROOT, 'shorts', 'narracao');
 

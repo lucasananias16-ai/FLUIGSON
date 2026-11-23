@@ -6,6 +6,22 @@ Cada Short é **uma pergunta de um vídeo longo**, em pé (1080 x 1920), com de 
 
 Cada Short só sai depois de o vídeo longo de origem estar no ar, porque o fim dele chama para o quiz completo. Os de Natal vêm primeiro, porque perdem a graça depois de 24/12.
 
+## Agenda nova: Shorts nativos "3 em 1" (padrão de Shorts v2, 23/11/2026)
+
+Substitui a regra de 3 Shorts recortados de cada longo. **1 Short por dia, às 17h**, girando os formatos (nunca dois iguais seguidos). Os Shorts antigos da tabela de baixo só entram se faltar Short num dia, no máximo 1 por dia, e só os de "o que não combina" ou "sombra" (nunca os de jogo da memória).
+
+| Dia | Short | Formato | Vídeo relacionado |
+|---|---|---|---|
+| **Qua 25/11, 17h** | `natal_diferente3.mp4` | S1 · Qual é o diferente? | Quiz de Natal na Floresta (V17) |
+| **Qui 26/11, 17h** | `v20_sombras3.mp4` | S2 · De quem é a sombra? | Quiz de Natal no Polo Norte (V20; trocar o link depois de 04/12) |
+| **Sex 27/11, 17h** | `criacao_maior3.mp4` | S3 · Qual é o maior? | Quiz Bíblico da Criação do Mundo (V16) |
+| **Sáb 28/11, 17h** | `natal_intruso3.mp4` | S4 · O que não combina? | Quiz de Natal no Verão (V19) |
+| **Dom 29/11, 17h** | `criacao_contar3.mp4` | S5 · Conte rápido! | Quiz Bíblico da Criação do Mundo (V16) |
+
+Em cada um: **Feito para crianças = Sim**, e no campo **Vídeo relacionado** escolher o longo da coluna da direita (testar se o campo aparece no canal). Na descrição, trocar "(link do vídeo longo)" pelo link do longo. Depois de 48 h, anotar em Insights → Alcance: "Exibidos no feed" e "Escolheram assistir".
+
+## Agenda antiga (recortes do longo): só para emergência
+
 | Dia | Short | Vídeo de origem | Pergunta |
 |---|---|---|---|
 | **Ter 17/11, 17h** | `v2_short1.mp4` | Davi e Golias (o mais visto) | O que não combina com o pastor Davi? (o skate) · aposta para viralizar |
