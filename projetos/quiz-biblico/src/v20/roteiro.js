@@ -42,4 +42,13 @@ module.exports = {
     sombra_r3: 'Da foca!',
     sombra_fim: 'Acertou as três? Tenta de novo!',
   },
+  // Versão 2 (padrão novo de 19/11/2026): começa no desafio 1, com gancho, reganchos e convite no fim
+  v2: {
+    p1_pergunta: 'Socorro! O pinguim fugiu! Você me ajuda a achar? Rápido, aponta pra ele!',
+    gancho: 'Você é demais! São doze desafios, e o último é o mais difícil de todos. Vamos?',
+    surpresa: 'Agora vem um desafio surpresa!',
+    metade: 'Metade! Você está indo muito bem!',
+    ultimo: 'E agora, o último desafio! O mais difícil de todos!',
+    encerramento: 'Uhuu! Você completou os doze desafios! Feliz Natal, amiguinho! Vem jogar o próximo quiz comigo!',
+  },
 };

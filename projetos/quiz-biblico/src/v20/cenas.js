@@ -86,28 +86,36 @@ const comNeve = (opts = {}) => {
 // =====================================================================
 // 1 · Achar o Papai Noel
 // =====================================================================
-function criarAchar({ tGlobal0 = 0, entrada = null, saida = null } = {}) {
+/**
+ * `v2`: padrão novo (19/11/2026). O vídeo já começa aqui: no quadro 0 o
+ * pinguim passa correndo e se esconde, a Tuti pula e pede ajuda; a contagem
+ * é de 5 s e, depois da resposta, vem o gancho dos 12 desafios.
+ */
+function criarAchar({ tGlobal0 = 0, entrada = null, saida = null, v2 = false } = {}) {
   const d = desafio(1);
   const m = manifesto();
-  const fq = m.v20_p1_pergunta;
+  const fq = v2 ? m.v20_v2_p1_pergunta : m.v20_p1_pergunta;
+  const fg = m.v20_v2_gancho;
+  const CONT1 = v2 ? 5 : CONT;
   const fr = m.v20_p1_resposta;
-  const T = { banner: 0.1, selo: 0.35, pergunta: 1.2 };
+  const T = v2 ? { banner: -0.4, selo: -0.2, pergunta: 0.35, voo: 1.3 } : { banner: 0.1, selo: 0.35, pergunta: 1.2 };
   T.fimPergunta = T.pergunta + fq.dur;
   T.contagem = T.fimPergunta + 0.6;
-  T.dica = T.contagem + 5; // na metade da contagem o pinheiro balança
-  T.revela = T.contagem + CONT + 0.1;
+  T.dica = T.contagem + CONT1 / 2; // na metade da contagem o pinheiro balança
+  T.revela = T.contagem + CONT1 + 0.1;
   T.pulo = T.revela + 0.25; // o Papai Noel sai de trás do pinheiro
   T.resposta = T.revela + 1.7;
   T.fimResposta = T.resposta + fr.dur;
-  T.saida = T.fimResposta + 0.9;
+  if (v2) T.gancho = T.fimResposta + 0.4;
+  T.saida = (v2 ? T.gancho + fg.dur : T.fimResposta) + 0.9;
   const dur = T.saida + 0.75;
 
   const E = noel.ESCONDERIJO;
   const arvore = E.arvore;
   const pouso = { x: 760, chao: 1010 }; // onde o pinguim fica, no gelo, longe do iglu
 
-  const sons = [{ t: T.selo, tipo: 'plim', ganho: 0.5 }]
-    .concat(P.sonsContagem(T, CONT))
+  const sons = (v2 ? [{ t: 0.02, tipo: 'sopro', ganho: 0.5 }, { t: T.voo - 0.05, tipo: 'pouso', ganho: 0.4 }] : [{ t: T.selo, tipo: 'plim', ganho: 0.5 }])
+    .concat(P.sonsContagem(T, CONT1))
     .concat([
       { t: T.dica, tipo: 'virada', ganho: 0.4, semente: 9 },
       { t: T.revela + 0.1, tipo: 'virada', ganho: 0.5, semente: 5 },
@@ -115,15 +123,16 @@ function criarAchar({ tGlobal0 = 0, entrada = null, saida = null } = {}) {
       { t: T.saida, tipo: 'sopro', ganho: 0.4 },
     ]);
   const itens = [
-    { t: T.pergunta, id: 'v20_p1_pergunta', dur: fq.dur },
+    { t: T.pergunta, id: v2 ? 'v20_v2_p1_pergunta' : 'v20_p1_pergunta', dur: fq.dur },
     { t: T.resposta, id: 'v20_p1_resposta', dur: fr.dur },
   ];
+  if (v2) itens.push({ t: T.gancho, id: 'v20_v2_gancho', dur: fg.dur });
   const falas = itens.map(({ t, id }) => ({ t, id }));
   const fala = vozes(itens);
 
   const track = [
-    { t: 0, pose: P.OLHANDO },
-    { t: T.pergunta - 0.3, pose: P.PROCURANDO, dur: 0.45 },
+    { t: 0, pose: v2 ? 'perguntando' : P.OLHANDO },
+    { t: v2 ? T.voo : T.pergunta - 0.3, pose: P.PROCURANDO, dur: 0.45 },
   ];
   for (let k = 1; T.contagem + k * 3 < T.revela - 0.6; k++) {
     track.push({ t: T.contagem + k * 3, pose: k % 2 ? P.PENSANDO : P.PROCURANDO, dur: 0.6 });
@@ -131,11 +140,20 @@ function criarAchar({ tGlobal0 = 0, entrada = null, saida = null } = {}) {
   track.push({ t: T.revela + 0.85, pose: P.COMEMORA, dur: 0.28 });
   track.push({ t: T.resposta + 1.0, pose: P.APONTANDO, dur: 0.5 });
   track.push({ t: T.resposta + 3.6, pose: P.FELIZ, dur: 0.6 });
+  if (v2) {
+    track.push({ t: T.gancho - 0.2, pose: P.COMEMORA, dur: 0.3 });
+    track.push({ t: T.gancho + 1.6, pose: P.APONTANDO, dur: 0.45 });
+    track.push({ t: T.gancho + fg.dur - 1.1, pose: P.COMEMORA, dur: 0.3 });
+  }
   track.push({ t: T.saida, pose: P.OLHANDO, dur: 0.5 });
   const pulos = [{ t: T.revela + 0.95, n: 2, altura: 74, periodo: 0.44 }];
+  if (v2) {
+    pulos.unshift({ t: 0.02, n: 1, altura: 64, periodo: 0.42 }); // a Tuti leva um susto quando o bichinho passa
+    pulos.push({ t: T.gancho, n: 2, altura: 60, periodo: 0.44 }, { t: T.gancho + fg.dur - 1.0, n: 2, altura: 70, periodo: 0.44 });
+  }
   // enquanto procura, o olhar da Tuti passeia pela neve
   const ajuste = (p, t) => {
-    if (p.armRFront && t < T.revela) p.gaze = [0.25 + 0.65 * Math.sin(((t - T.pergunta) * 2 * Math.PI) / 3.4), -0.1];
+    if (p.armRFront && t < T.revela && t > (v2 ? T.voo : 0)) p.gaze = [0.25 + 0.65 * Math.sin(((t - T.pergunta) * 2 * Math.PI) / 3.4), -0.1];
   };
 
   kit.resetIds();
@@ -160,6 +178,14 @@ function criarAchar({ tGlobal0 = 0, entrada = null, saida = null } = {}) {
     let dx = 0;
     let dy = -26 * Z.bump(Z.prog(t, T.dica + 0.1, 1.5));
     let sc = 1;
+    if (v2 && t < T.voo) {
+      // o pinguim entra grande, correndo aos pulinhos pela esquerda, e se esconde
+      const k = Z.prog(t, -0.25, T.voo + 0.25);
+      const e = Z.inOutCubic(k);
+      dx = -760 * (1 - e);
+      dy = -110 * Math.abs(Math.sin(Math.PI * k * 3)) * (1 - e);
+      sc = 1 + 0.7 * (1 - e);
+    }
     const kP = Z.prog(t, T.pulo, 1.1);
     if (kP > 0) {
       const e = Z.inOutCubic(kP);
@@ -174,13 +200,13 @@ function criarAchar({ tGlobal0 = 0, entrada = null, saida = null } = {}) {
     ops.push(opsAnel(t, T.revela, 1.9, arvore.x, arvore.y - 340));
     ops.push({ id: 'neveF', html: noel.flocos(tG) });
 
-    ops.push(...P.opsTimer(t, T, CONT));
+    ops.push(...P.opsTimer(t, T, CONT1));
     ops.push({ id: 'tuti', html: tutiFrame(t, { track, fala, pulos, ajuste, tGlobal: tG, gorro: true }) });
     const vida = t - (T.revela + 0.95);
     const festa = vida >= 0 && t < T.saida + 0.7;
     ops.push({
       id: 'fx',
-      html: festa ? `<g opacity="${f(1 - Z.prog(t, T.saida, 0.5))}">${confete(vida)}${P.brilhos(t, T.revela, pouso.x, pouso.chao - 120, 200, 160)}</g>` : '',
+      html: festa ? `<g opacity="${f(1 - Z.prog(t, T.saida, 0.5))}">${confete(vida)}${v2 ? confete(t - T.gancho) : ''}${P.brilhos(t, T.revela, pouso.x, pouso.chao - 120, 200, 160)}</g>` : '',
     });
     ops.push({ id: 'fade', style: veu(t, dur, { entrada, saida }) });
     return ops;

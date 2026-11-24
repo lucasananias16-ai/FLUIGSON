@@ -1,0 +1,305 @@
+1
+00:00:00,400 --> 00:00:03,170
+Socorro! O pinguim fugiu!
+
+2
+00:00:03,440 --> 00:00:04,840
+Você me ajuda a achar?
+
+3
+00:00:05,420 --> 00:00:07,230
+Rápido, aponta pra ele!
+
+4
+00:00:14,433 --> 00:00:17,473
+Achou! Ele estava atrás do iglu!
+
+5
+00:00:17,843 --> 00:00:19,633
+Que esconderijo gelado!
+
+6
+00:00:19,873 --> 00:00:21,233
+Você é demais!
+
+7
+00:00:21,453 --> 00:00:25,323
+São doze desafios, e o último
+é o mais difícil de todos.
+
+8
+00:00:25,713 --> 00:00:26,913
+Vamos?
+
+9
+00:00:29,107 --> 00:00:31,337
+O pinguim pescou uns peixinhos.
+
+10
+00:00:31,517 --> 00:00:32,717
+Conte comigo!
+
+11
+00:00:33,107 --> 00:00:34,257
+Um...
+
+12
+00:00:34,337 --> 00:00:35,537
+dois...
+
+13
+00:00:35,907 --> 00:00:37,107
+três...
+
+14
+00:00:37,347 --> 00:00:38,547
+quatro...
+
+15
+00:00:38,797 --> 00:00:39,997
+cinco!
+
+16
+00:00:40,947 --> 00:00:43,247
+Cinco peixinhos! Muito bem!
+
+17
+00:00:46,550 --> 00:00:48,870
+Faz muito frio no Polo Norte!
+
+18
+00:00:49,120 --> 00:00:50,610
+O que a gente veste?
+
+19
+00:00:51,260 --> 00:00:52,460
+O maiô...
+
+20
+00:00:52,940 --> 00:00:54,140
+o casaco...
+
+21
+00:00:54,830 --> 00:00:56,030
+ou o chinelo?
+
+22
+00:01:08,150 --> 00:01:10,330
+O casaco! Quentinho!
+
+23
+00:01:12,390 --> 00:01:14,590
+Agora vem um desafio surpresa!
+
+24
+00:01:16,617 --> 00:01:18,247
+De quem é essa sombra?
+
+25
+00:01:18,897 --> 00:01:20,097
+Da foca...
+
+26
+00:01:20,817 --> 00:01:22,167
+do urso-polar...
+
+27
+00:01:22,917 --> 00:01:24,117
+ou do pinguim?
+
+28
+00:01:36,237 --> 00:01:39,627
+Do urso-polar! Ele é
+branquinho como a neve!
+
+29
+00:01:42,550 --> 00:01:45,060
+O que está faltando na
+casinha do Papai Noel?
+
+30
+00:01:45,710 --> 00:01:46,910
+A chaminé...
+
+31
+00:01:47,530 --> 00:01:48,730
+a janela...
+
+32
+00:01:49,310 --> 00:01:50,510
+ou a porta?
+
+33
+00:02:02,370 --> 00:02:05,980
+A chaminé! É por ela
+que sai a fumacinha!
+
+34
+00:02:08,633 --> 00:02:10,533
+Qual urso-polar é o maior?
+
+35
+00:02:11,183 --> 00:02:12,383
+O da esquerda...
+
+36
+00:02:13,123 --> 00:02:14,323
+ou o da direita?
+
+37
+00:02:26,343 --> 00:02:28,743
+O da esquerda! Que ursão!
+
+38
+00:02:30,790 --> 00:02:34,500
+Metade! Você está indo muito bem!
+
+39
+00:02:36,307 --> 00:02:39,767
+Um destes pinguins é diferente! Qual é?
+
+40
+00:02:52,007 --> 00:02:53,637
+O de cachecol vermelho!
+
+41
+00:02:53,777 --> 00:02:55,767
+Os outros têm cachecol azul!
+
+42
+00:02:58,683 --> 00:03:00,113
+Olhe a fila no céu!
+
+43
+00:03:00,363 --> 00:03:01,703
+O que vem depois?
+
+44
+00:03:02,353 --> 00:03:03,553
+O floco...
+
+45
+00:03:04,103 --> 00:03:05,303
+o presente...
+
+46
+00:03:06,013 --> 00:03:07,213
+ou a estrela?
+
+47
+00:03:19,523 --> 00:03:23,173
+A estrela! Floco,
+estrela, floco, estrela!
+
+48
+00:03:26,083 --> 00:03:27,983
+Quem não mora no Polo Norte?
+
+49
+00:03:28,633 --> 00:03:29,833
+O pinguim...
+
+50
+00:03:30,393 --> 00:03:31,593
+o camelo...
+
+51
+00:03:32,163 --> 00:03:33,363
+ou a foca?
+
+52
+00:03:45,353 --> 00:03:47,493
+O camelo! Ha ha!
+
+53
+00:03:47,593 --> 00:03:49,703
+Ele gosta do deserto quentinho!
+
+54
+00:03:52,657 --> 00:03:54,477
+Olhe bem onde o pinguim está.
+
+55
+00:03:59,797 --> 00:04:01,747
+As cartas trocaram de lugar!
+
+56
+00:04:01,997 --> 00:04:03,507
+Onde está o pinguim?
+
+57
+00:04:04,057 --> 00:04:05,257
+No um...
+
+58
+00:04:05,537 --> 00:04:06,737
+no dois...
+
+59
+00:04:07,187 --> 00:04:08,387
+ou no três?
+
+60
+00:04:20,497 --> 00:04:22,847
+No número um! Você tem olho bom!
+
+61
+00:04:25,750 --> 00:04:28,250
+Onde o Papai Noel guarda os presentes?
+
+62
+00:04:28,900 --> 00:04:30,320
+No saco vermelho...
+
+63
+00:04:31,070 --> 00:04:32,270
+no balde...
+
+64
+00:04:32,820 --> 00:04:34,020
+ou no aquário?
+
+65
+00:04:46,130 --> 00:04:49,600
+No saco vermelho! Cheinho de presentes!
+
+66
+00:04:51,690 --> 00:04:54,070
+E agora, o último desafio!
+
+67
+00:04:54,200 --> 00:04:56,050
+O mais difícil de todos!
+
+68
+00:04:58,083 --> 00:05:00,663
+O que deixa o céu do
+Polo Norte colorido?
+
+69
+00:05:01,313 --> 00:05:02,603
+O arco-íris...
+
+70
+00:05:03,353 --> 00:05:04,553
+a aurora...
+
+71
+00:05:05,043 --> 00:05:06,293
+ou os fogos?
+
+72
+00:05:18,503 --> 00:05:21,823
+A aurora! Verde e roxa, que lindo!
+
+73
+00:05:24,640 --> 00:05:28,230
+Uhuu! Você completou os doze desafios!
+
+74
+00:05:28,440 --> 00:05:29,950
+Feliz Natal, amiguinho!
+
+75
+00:05:30,030 --> 00:05:32,050
+Vem jogar o próximo quiz comigo!

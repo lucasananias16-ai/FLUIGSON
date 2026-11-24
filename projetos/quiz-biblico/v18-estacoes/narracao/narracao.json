@@ -336,6 +336,36 @@
       "texto": "Primavera, verão, outono e inverno! E sabia que aqui no Brasil o Natal é no verão? Até a próxima, amiguinho!",
       "dur": 8.72,
       "estilo": "animada"
+    },
+    "v18_v2_p1_pergunta": {
+      "texto": "Socorro! A borboleta fugiu! Você me ajuda a achar? Rápido, aponta pra ela!",
+      "dur": 5.94,
+      "estilo": "animada"
+    },
+    "v18_v2_gancho": {
+      "texto": "Você é demais! São doze desafios, e o último é o mais difícil de todos. Vamos?",
+      "dur": 7.03,
+      "estilo": "animada"
+    },
+    "v18_v2_surpresa": {
+      "texto": "Agora vem um desafio surpresa!",
+      "dur": 1.98,
+      "estilo": "animada"
+    },
+    "v18_v2_metade": {
+      "texto": "Metade! Você está indo muito bem!",
+      "dur": 2.989,
+      "estilo": "animada"
+    },
+    "v18_v2_ultimo": {
+      "texto": "E agora, o último desafio! O mais difícil de todos!",
+      "dur": 4.22,
+      "estilo": "animada"
+    },
+    "v18_v2_encerramento": {
+      "texto": "Uhuu! Você completou os doze desafios! Primavera, verão, outono e inverno! Vem jogar o próximo quiz comigo!",
+      "dur": 8.61,
+      "estilo": "animada"
     }
   }
 }

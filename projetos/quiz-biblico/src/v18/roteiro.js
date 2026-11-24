@@ -32,4 +32,13 @@ module.exports = {
     12: { pergunta: 'Em qual estação faz mais frio? No verão... no inverno... ou na primavera?', resposta: 'No inverno! Hora de pôr o casaco!' },
   },
   encerramento: 'Primavera, verão, outono e inverno! E sabia que aqui no Brasil o Natal é no verão? Até a próxima, amiguinho!',
+  // Versão 2 (padrão novo de 19/11/2026): começa no desafio 1, com gancho, reganchos e convite no fim
+  v2: {
+    p1_pergunta: 'Socorro! A borboleta fugiu! Você me ajuda a achar? Rápido, aponta pra ela!',
+    gancho: 'Você é demais! São doze desafios, e o último é o mais difícil de todos. Vamos?',
+    surpresa: 'Agora vem um desafio surpresa!',
+    metade: 'Metade! Você está indo muito bem!',
+    ultimo: 'E agora, o último desafio! O mais difícil de todos!',
+    encerramento: 'Uhuu! Você completou os doze desafios! Primavera, verão, outono e inverno! Vem jogar o próximo quiz comigo!',
+  },
 };

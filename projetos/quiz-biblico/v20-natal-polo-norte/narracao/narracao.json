@@ -371,6 +371,36 @@
       "texto": "Acertou as três? Tenta de novo!",
       "dur": 2.74,
       "estilo": "animada"
+    },
+    "v20_v2_p1_pergunta": {
+      "texto": "Socorro! O pinguim fugiu! Você me ajuda a achar? Rápido, aponta pra ele!",
+      "dur": 6.643,
+      "estilo": "animada"
+    },
+    "v20_v2_gancho": {
+      "texto": "Você é demais! São doze desafios, e o último é o mais difícil de todos. Vamos?",
+      "dur": 6.38,
+      "estilo": "animada"
+    },
+    "v20_v2_surpresa": {
+      "texto": "Agora vem um desafio surpresa!",
+      "dur": 2.05,
+      "estilo": "animada"
+    },
+    "v20_v2_metade": {
+      "texto": "Metade! Você está indo muito bem!",
+      "dur": 3.55,
+      "estilo": "animada"
+    },
+    "v20_v2_ultimo": {
+      "texto": "E agora, o último desafio! O mais difícil de todos!",
+      "dur": 4.22,
+      "estilo": "animada"
+    },
+    "v20_v2_encerramento": {
+      "texto": "Uhuu! Você completou os doze desafios! Feliz Natal, amiguinho! Vem jogar o próximo quiz comigo!",
+      "dur": 7.223,
+      "estilo": "animada"
     }
   }
 }

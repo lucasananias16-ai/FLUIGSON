@@ -121,32 +121,43 @@ function criarAbertura({ tGlobal0 = 0, entrada = '#fff', saida = CEU } = {}) {
 }
 
 /** Encerramento: as quatro árvores e a borboleta voando; a Tuti comemora e se despede acenando. */
-function criarEncerramento({ tGlobal0 = 0, entrada = CEU, saida = '#fff' } = {}) {
-  const fa = falaDe('v18_encerramento');
-  const arq = path.join(NARR, 'v18_encerramento.wav');
+/**
+ * `v2`: padrão novo (19/11/2026). Festa maior por ter completado os 12, o
+ * convite para o próximo quiz e uns 10 s finais com a Tuti dançando.
+ */
+function criarEncerramento({ tGlobal0 = 0, entrada = CEU, saida = '#fff', v2 = false } = {}) {
+  const idFala = v2 ? 'v18_v2_encerramento' : 'v18_encerramento';
+  const fa = falaDe(idFala);
+  const arq = path.join(NARR, `${idFala}.wav`);
   const T = { fala: 1.3 }; // depois do sino de festa, para a primeira frase sair limpa
   T.fimFala = T.fala + fa.dur;
-  const dur = T.fimFala + 3.2;
+  const dur = T.fimFala + (v2 ? 10 : 3.2);
   // frases: primavera, verão, outono e inverno | e sabia que aqui no Brasil o Natal é no verão? | até a próxima, amiguinho
-  const F = temposPorPausas(arq, emFrases(roteiro.encerramento), roteiro.cortes.v18_encerramento).map((x) => ({ ini: T.fala + x.ini, fim: T.fala + x.fim }));
+  const F = temposPorPausas(arq, emFrases(v2 ? roteiro.v2.encerramento : roteiro.encerramento), roteiro.cortes[idFala]).map((x) => ({ ini: T.fala + x.ini, fim: T.fala + x.fim }));
   T.frases = F;
 
   const env = falaEnvelope(arq);
   const fala = (t) => (t >= T.fala && t <= T.fimFala ? env(t - T.fala) : null);
-  const track = [
+  // v2 — frases: uhuu | você completou os doze desafios | (a frase do tema) | vem jogar o próximo quiz comigo
+  const trackV2 = v2 ? [{ t: 0, pose: COMEMORA }, { t: F[2].ini - 0.2, pose: APONTANDO, dur: 0.45 }, { t: F[3].ini - 0.3, pose: ACENO, dur: 0.4 }] : [];
+  const pulosV2 = v2 ? [{ t: 0.2, n: 3, altura: 80, periodo: 0.42 }, { t: F[1].ini + 0.1, n: 2, altura: 64, periodo: 0.44 }] : [];
+  // depois do convite, a Tuti dança: um par de pulinhos a cada 2,4 s até o fim
+  if (v2) for (let t = T.fimFala + 1.2; t < dur - 1.5; t += 2.4) pulosV2.push({ t, n: 2, altura: 40, periodo: 0.44 });
+  const track = v2 ? trackV2 : [
     { t: 0, pose: COMEMORA },
     { t: F[0].ini - 0.2, pose: APONTANDO, dur: 0.45 }, // mostra as árvores
     { t: F[1].ini - 0.2, pose: 'perguntando', dur: 0.45 },
     { t: F[2].ini - 0.3, pose: ACENO, dur: 0.4 },
   ];
-  const pulos = [
+  const pulos = v2 ? pulosV2 : [
     { t: 0.3, n: 2, altura: 64, periodo: 0.44 },
     { t: F[1].ini + 0.1, n: 2, altura: 50, periodo: 0.44 },
   ];
-  const ajuste = aceno(F[2].ini - 0.3, dur + 1);
+  const ajuste = v2 ? aceno(F[3].ini - 0.3, dur + 1) : aceno(F[2].ini - 0.3, dur + 1);
 
   const sons = [{ t: 0.4, tipo: 'acerto', ganho: 0.5 }];
-  const falas = [{ t: T.fala, id: 'v18_encerramento' }];
+  if (v2) sons.push({ t: 0.15, tipo: 'fimDoTempo', ganho: 0.4 }, { t: F[1].ini, tipo: 'plim', ganho: 0.35 });
+  const falas = [{ t: T.fala, id: idFala }];
 
   kit.resetIds();
   const css = `
@@ -170,7 +181,8 @@ function criarEncerramento({ tGlobal0 = 0, entrada = CEU, saida = '#fff' } = {})
     ops.push({ id: 'o2', style: `transform:translate(${f(220 * Math.sin((t * 2 * Math.PI) / 5))}px,${f(60 * Math.sin((t * 4 * Math.PI) / 5))}px)` });
     ops.push({ id: 'tuti', html: tutiFrame(t, { track, fala, pulos, ajuste, tGlobal: tG, width: 600, height: 660 }) });
     const vida = t - 0.5;
-    ops.push({ id: 'fx', html: vida > 0 && vida < 6 ? confete(vida) : '' });
+    // v2: festa maior, com uma segunda chuva de confete em "você completou os doze desafios"
+    ops.push({ id: 'fx', html: (vida > 0 && vida < 6 ? confete(vida) : '') + (v2 && t > F[1].ini && t < F[1].ini + 6 ? confete(t - F[1].ini) : '') });
     ops.push({ id: 'fade', style: veu(t, dur, { entrada, saida, tOut: 0.9 }) });
     return ops;
   }
