@@ -29,12 +29,12 @@ function onSync(lastSyncDate) {
                       "      AND SC7.D_E_L_E_T_ = ' ' " +
                       ")";
 
-    if (lastSyncDate != null && lastSyncDate > 0) {
-        var dataUltimaSync = milissegundosParaDataProtheus(lastSyncDate);
-        filtroWhere += " AND C5_EMISSAO >= '" + dataUltimaSync + "'";
-    } else {
-        filtroWhere += " AND C5_EMISSAO >= '20260101'";
-    }
+    // Carga completa da janela a cada sincronização (não usa lastSyncDate).
+    // O filtro incremental por C5_EMISSAO perdia: (a) PV cujo PC foi criado depois de uma
+    // sincronização, porque o EXISTS em SC7 falhava naquela carga e a emissão já ficava
+    // para trás nas seguintes; (b) alterações em PVs já sincronizados.
+    // setKey(C5_NUM) + addOrUpdateRow atualizam as linhas existentes, sem duplicar.
+    filtroWhere += " AND C5_EMISSAO >= '20260101'";
 
     try {
         // 1. Busca credenciais dinâmicas do dataset connector
