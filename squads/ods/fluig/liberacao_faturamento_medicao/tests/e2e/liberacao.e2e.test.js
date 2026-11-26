@@ -27,6 +27,11 @@ const fluig = new FluigSoap({
   companyId: Number(env.FLUIG_COMPANY || 1),
 });
 
+// E2E_DATASET_SUFIXO=_test usa as cópias de teste dts_getPedidoCompra_JYNX_test / dts_getPedidoVenda_JYNX_test.
+const SUFIXO = env.E2E_DATASET_SUFIXO || '';
+const DS_PC = 'dts_getPedidoCompra_JYNX' + SUFIXO;
+const DS_PV = 'dts_getPedidoVenda_JYNX' + SUFIXO;
+
 const escolhidos = env.E2E_CENARIO
   ? env.E2E_CENARIO.split(',').map((s) => s.trim())
   : Object.keys(CENARIOS);
@@ -72,7 +77,7 @@ for (const nome of escolhidos) {
     let pcRow;
 
     test('0a. PV sincronizado do Protheus aparece no Fluig', async (t) => {
-      const pvs = await fluig.getDataset('dts_getPedidoVenda_JYNX');
+      const pvs = await fluig.getDataset(DS_PV);
       const pv = pvs.find((r) => String(r.C5_NUM).trim() === pc.pv);
       assert.ok(pv, 'PV ' + pc.pv + ' não está na carga sincronizada do Fluig (rotina agendada parada ou PV fora do filtro incremental por C5_EMISSAO)');
       if (String(pv.C_CUSTO).trim() !== pc.cc) {
@@ -81,8 +86,8 @@ for (const nome of escolhidos) {
     });
 
     test('0b. todo PV sincronizado tem o seu PC na carga sincronizada', async () => {
-      const pvs = await fluig.getDataset('dts_getPedidoVenda_JYNX');
-      const pcs = await fluig.getDataset('dts_getPedidoCompra_JYNX');
+      const pvs = await fluig.getDataset(DS_PV);
+      const pcs = await fluig.getDataset(DS_PC);
       const comPc = new Set(pcs.map((r) => String(r.C7_XNUMPV).trim()));
       // O dts_getPedidoVenda_JYNX só traz PV que tem PC no Protheus (EXISTS em SC7),
       // então PV sem PC aqui significa que a carga de PCs está incompleta.
@@ -96,7 +101,7 @@ for (const nome of escolhidos) {
     });
 
     test('1. PC sincronizado do Protheus aparece no Fluig com os dados do retorno', async (t) => {
-      const rows = await fluig.getDataset('dts_getPedidoCompra_JYNX', [{ field: 'C7_NUM', value: pc.numero }]);
+      const rows = await fluig.getDataset(DS_PC, [{ field: 'C7_NUM', value: pc.numero }]);
       pcRow = rows.find((r) => String(r.C7_NUM).trim() === pc.numero);
       assert.ok(pcRow, 'PC ' + pc.numero + ' não veio na carga do Protheus (rotina agendada rodou depois da criação?)');
       assert.equal(String(pcRow.C7_XNUMPV).trim(), pc.pv, 'PC não está amarrado ao PV esperado');

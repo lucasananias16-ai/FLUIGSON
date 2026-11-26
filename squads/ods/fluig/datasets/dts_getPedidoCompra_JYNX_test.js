@@ -120,7 +120,7 @@ function carregar(dataset, upsert) {
                 continue;
             }
             for (var k in SOMAR) {
-                pc[k] = String(numero(pc[k]) + numero(item[k]));
+                pc[k] = String(Math.round((numero(pc[k]) + numero(item[k])) * 10000) / 10000); // evita 3272.9700000000003
             }
             // Residuo/aprovação: basta um item marcado para o PC aparecer marcado.
             if (pc.C7_RESIDUO === "" && item.C7_RESIDUO !== "") pc.C7_RESIDUO = item.C7_RESIDUO;

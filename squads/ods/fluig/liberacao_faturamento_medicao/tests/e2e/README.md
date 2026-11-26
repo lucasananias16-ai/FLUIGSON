@@ -53,3 +53,9 @@ Resultado esperado com a foto de 26/11:
 - **Cenário de controle (CC 2000):** passa a etapa 3 e falha a 4, porque também não há aprovador de nível 1.
 
 O cenário PRIO TIGRIS só passa quando a parametrização estiver corrigida no Fluig.
+
+## Usar os datasets de teste (`_test`)
+
+`E2E_DATASET_SUFIXO=_test` faz as etapas 0a, 0b e 1 lerem `dts_getPedidoCompra_JYNX_test` e
+`dts_getPedidoVenda_JYNX_test`, publicados no DEV em 26/11/2026. Essas cópias não usam
+sincronização e só respondem ao usuário `admin`.
