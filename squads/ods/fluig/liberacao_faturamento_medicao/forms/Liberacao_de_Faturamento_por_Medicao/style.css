@@ -1,0 +1,8 @@
+.chk_medicao{
+    border: 1px solid #4980ff;
+    padding: 0.8rem 2rem;
+    display: flex;
+    gap:2rem;
+    background-color: #F4F7FE;
+    border-radius: 0.4rem;
+}

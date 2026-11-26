@@ -1,0 +1,565 @@
+<html>
+
+<head>
+	<link type="text/css" rel="stylesheet" href="/style-guide/css/fluig-style-guide-flat.min.css" />
+
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+	<script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+
+	<script type='text/javascript' src='/webdesk/vcXMLRPC.js'></script> <!-- Funcionar a chamada de Datasets -->
+	<script src="/wg_jynxComponents/resources/js/utils.js"></script>
+	<script src="/wg_jynxComponents/resources/js/progress_bar.js"></script>
+
+	<link type="text/css" rel="stylesheet" href="/wg_jynxComponents/resources/css/progress_bar.css" />
+	<link type="text/css" rel="stylesheet" href="/wg_jynxComponents/resources/css/buttons.css" />
+	<link type="text/css" rel="stylesheet" href="/wg_jynxComponents/resources/css/panels.css" />
+	<link type="text/css" rel="stylesheet" href="/wg_jynxComponents/resources/css/chat.css" />
+	<link rel="stylesheet" href="./css/style.css">
+	<script type="text/javascript" src="./js/main.js"></script>
+	<script type="text/javascript" src="/ecm_resources/resources/components/viewdocument/viewdocument.js"></script>
+	<!-- Funcionar a View -->
+</head>
+
+<body>
+	<div class="fluig-style-guide">
+		<form name="form" role="form">
+			<!-- Hiddens de Controle -->
+			<div id="hds">
+				<input type="hidden" id="hd_nvlPcAprov" name="hd_nvlPcAprov">
+				<input type="hidden" id="hd_aprovPc" name="hd_aprovPc" value="aprovado">
+				<input type="hidden" id="hd_aprovMedicao" name="hd_aprovMedicao">
+				<input type="hidden" id="hd_valNfOk" name="hd_valNfOk" value="aprovado">
+				<input type="hidden" id="hd_aprovValNf" name="hd_aprovValNf">
+				<input type="hidden" id="hd_codCCusto" name="hd_codCCusto">
+				<input type="hidden" id="hd_possuiSaldo" name="hd_possuiSaldo" value="true">
+
+				<input type="hidden" id="hd_hasAprovDois" name="hd_hasAprovDois">
+				<input type="hidden" id="hd_hasAprovTres" name="hd_hasAprovTres">
+				<input type="hidden" id="hd_hasAprovQuatro" name="hd_hasAprovQuatro">
+			</div>
+			<!-- .Hiddens de Controle -->
+			<!-- Progress bar -->
+			<div id="progress_bar" class="panel-custom">
+				<div class="panel-custom-head">
+					<i class="flaticon flaticon-airport-shuttle icon-md cor-destaque" aria-hidden="true"></i>
+					Etapas da Solicitação
+				</div>
+				<div class="panel-body">
+					<section class="step-wizard">
+						<ul class="step-wizard-list">
+							<li class="step-wizard-item" id="step_aprovPc">
+								<span class="progress-count"><i
+										class="fluigicon fluigicon-arrow-go-to-down icon-sm icon-progress"
+										aria-hidden="true"></i></span>
+								<span class="progress-label"><label for="form-control">Aprovação do
+										PC</label></span>
+							</li>
+							<li class="step-wizard-item" id="step_adicionarNF">
+								<span class="progress-count"><i
+										class="fluigicon fluigicon-arrow-go-to-down icon-sm icon-progress"
+										aria-hidden="true"></i></span>
+								<span class="progress-label"><label for="form-control">Adicionar NF</label></span>
+							</li>
+							<li class="step-wizard-item" id="step_medItens">
+								<span class="progress-count"><i
+										class="fluigicon fluigicon-arrow-go-to-down icon-sm icon-progress"
+										aria-hidden="true"></i></span>
+								<span class="progress-label"><label for="form-control">Medição dos
+										Itens</label></span>
+							</li>
+							<li class="step-wizard-item" id="step_aprovPagamento">
+								<span class="progress-count"><i
+										class="fluigicon fluigicon-arrow-go-to-down icon-sm icon-progress"
+										aria-hidden="true"></i></span>
+								<span class="progress-label"><label for="form-control">Aprovação de
+										Pagamento</label></span>
+							</li>
+							<li class="step-wizard-item" id="step_liberacaoPag">
+								<span class="progress-count"><i
+										class="fluigicon fluigicon-arrow-go-to-down icon-sm icon-progress"
+										aria-hidden="true"></i></span>
+								<span class="progress-label"><label for="form-control">Liberação de
+										Pagamento</label></span>
+							</li>
+						</ul>
+					</section>
+				</div>
+			</div>
+			<!-- .Progress bar -->
+
+			<!-- Dados da solicitação -->
+			<div id="pn_dadosSolic" class="panel-custom">
+				<div class="panel-custom-head">
+					<i class="flaticon flaticon-person icon-md" aria-hidden="true"></i>
+					Dados da Solicitação
+				</div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="panel-custom col-md-6" id="pn_infoSol">
+							<div class="panel-custom-head">
+								<i class="flaticon flaticon-info icon-md hide-mobile" aria-hidden="true"
+									style="color: #cf1143;"></i>
+								Informações do Solicitante
+							</div>
+							<div class="panel-custom-info">
+								<div class="row row-card">
+									<div class="col-md-3">
+										<span>Solicitante</span>
+									</div>
+									<div class="col-md-9 text-right">
+										<input type="text" name="txt_infoSol_solic" id="txt_infoSol_solic"
+											class="input-read" readonly value="admin,otavio.coelho">
+									</div>
+								</div>
+
+								<div class="row row-card">
+									<div class="col-md-3">
+										<span>Email</span>
+									</div>
+									<div class="col-md-9 text-right">
+										<input type="text" name="txt_infoSol_email" id="txt_infoSol_email"
+											class="input-read" readonly value="Otavioo.dev@gmail.com">
+									</div>
+								</div>
+
+								<div class="row row-card">
+									<div class="col-md-3">
+										<span>Área/Filial</span>
+									</div>
+									<div class="col-md-9 text-right">
+										<input type="text" name="txt_infoSol_area" id="txt_infoSol_area"
+											class="input-read" readonly value="Sorocaba - SP">
+									</div>
+								</div>
+
+								<div class="row row-card">
+									<div class="col-md-3">
+										<span>Matrícula</span>
+									</div>
+									<div class="col-md-9 text-right">
+										<input type="text" name="txt_infoSol_matric" id="txt_infoSol_matric"
+											class="input-read" readonly value="1010">
+									</div>
+								</div>
+
+								<div class="row row-card">
+									<div class="col-md-3">
+										<span>Status</span>
+									</div>
+									<div class="col-md-9 text-right">
+										<input type="text" name="txt_infoSol_status" id="txt_infoSol_status"
+											class="input-read" readonly value="Ativo">
+									</div>
+								</div>
+
+								<div class="row row-card">
+									<div class="col-md-3">
+										<span>Solicitação</span>
+									</div>
+									<div class="col-md-9 text-right">
+										<input type="text" name="txt_numSolic" id="txt_numSolic" class="input-read"
+											readonly>
+									</div>
+								</div>
+
+								<div class="row row-card">
+									<div class="col-md-3">
+										<span>Data Abertura</span>
+									</div>
+									<div class="col-md-9 text-right">
+										<input type="text" name="txt_dtSolic" id="txt_dtSolic" class="input-read"
+											readonly value="05/03/2026">
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Painel com as informações do PV -->
+						<div class="panel-custom col-md-6" id="pn_idPv">
+							<div class="panel-custom-head">
+								<i class="flaticon flaticon-info icon-md" aria-hidden="true"
+									style="color: #cf1143;"></i>
+								Informações do PV
+							</div>
+							<div class="panel-custom-info">
+								<div class="row row-card">
+									<div class="col-md-4">
+										<span>Nº PV</span>
+									</div>
+									<div class="col-md-8 text-right">
+										<input type="text" name="txt_idPv_numPv" id="txt_idPv_numPv" class="input-read"
+											readonly value="PV-2026-001">
+									</div>
+								</div>
+								<div class="row row-card">
+									<div class="col-md-4">
+										<span>Cliente</span>
+									</div>
+									<div class="col-md-8 text-right">
+										<input type="text" name="txt_idPv_cliente" id="txt_idPv_cliente"
+											class="input-read" readonly value="Construtora Alpha Ltda">
+									</div>
+								</div>
+								<div class="row row-card">
+									<div class="col-md-4">
+										<span>CNPJ</span>
+									</div>
+									<div class="col-md-8 text-right">
+										<input type="text" name="txt_idPv_cnpj" id="txt_idPv_cnpj" class="input-read"
+											readonly value="12.345.678/0001-90">
+									</div>
+								</div>
+								<div class="row row-card">
+									<div class="col-md-4">
+										<span>Vendedor</span>
+									</div>
+									<div class="col-md-8 text-right">
+										<input type="text" name="txt_idPv_vend" id="txt_idPv_vend" class="input-read"
+											readonly value="Carlos Silva">
+									</div>
+								</div>
+								<div class="row row-card">
+									<div class="col-md-4">
+										<span>Emissão</span>
+									</div>
+									<div class="col-md-8 text-right">
+										<input type="text" name="dt_idPv_emiss" id="dt_idPv_emiss" class="input-read"
+											readonly value="03/03/2026">
+									</div>
+								</div>
+								<div class="row row-card">
+									<div class="col-md-4">
+										<span>CC/Projeto</span>
+									</div>
+									<div class="col-md-8 text-right">
+										<input type="text" name="txt_idPv_proj" id="txt_idPv_proj" class="input-read"
+											readonly value="Projeto Residencial Aurora">
+									</div>
+								</div>
+								<div class="row row-card">
+									<div class="col-md-4">
+										<span>Valor total do PV</span>
+									</div>
+									<div class="col-md-8 text-right">
+										<input type="text" name="txt_idPv_valTot" id="txt_idPv_valTot"
+											class="input-read" readonly value="R$ 185.750,00">
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- .Painel com as informações do PV -->
+					</div>
+					<div class="row">
+						<!-- Painel com as informações do Pedido de Compra -->
+						<div class="panel-custom" id="pn_dadosPc">
+							<div class="panel-custom-head">
+								<i class="flaticon flaticon-info icon-md" aria-hidden="true"
+									style="color: #cf1143;"></i>
+								Dados do Pedido de Compra
+							</div>
+							<div class="panel-body">
+								<div class="panel-custom-info">
+									<div class="row">
+										<div class="col-md-3">
+											<div class="row row-card" style="display: none;">
+												<div class="col-md-12">
+													<small>Package:</small>
+												</div>
+												<div class="col-md-12">
+													<input type="text" name="txt_dadosPc_pack" id="txt_dadosPc_pack"
+														class="input-read-tb" readonly
+														value="Package Estrutura Metálica">
+												</div>
+											</div>
+											<div class="row row-card">
+												<div class="col-md-12">
+													<small>Moeda:</small>
+												</div>
+												<div class="col-md-12">
+													<input type="text" name="txt_dadosPc_moeda" id="txt_dadosPc_moeda"
+														class="input-read-tb" readonly
+														value="Package Estrutura Metálica">
+												</div>
+											</div>
+										</div>
+										<div class="col-md-2">
+											<div class="row row-card">
+												<div class="col-md-12">
+													<small>Nº PC:</small>
+												</div>
+												<div class="col-md-12">
+													<input type="text" name="num_dadosPc_numPc" id="num_dadosPc_numPc"
+														class="input-read-tb" readonly value="PC-2026-0145">
+												</div>
+											</div>
+										</div>
+										<div class="col-md-4">
+											<div class="row row-card">
+												<div class="col-md-12">
+													<small>Fornecedor:</small>
+												</div>
+												<div class="col-md-12">
+													<input type="text" name="txt_dadosPc_forn" id="txt_dadosPc_forn"
+														class="input-read-tb" readonly
+														value="Metalúrgica São Paulo Ltda">
+												</div>
+											</div>
+										</div>
+										<div class="col-md-3">
+											<div class="row row-card">
+												<div class="col-md-12">
+													<small>C. Custo:</small>
+												</div>
+												<div class="col-md-12">
+													<input type="text" name="txt_dadosPc_cc" id="txt_dadosPc_cc"
+														class="input-read-tb" readonly
+														value="CC-045 - Obras Industriais">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- .Painel com as informações do Pedido de Compra -->
+					</div>
+				</div>
+				<!-- FIM CAMPO DOS DADOS -->
+			</div> <!-- FIM DADOS DA SOLICITAÇÃO -->
+			<!-- Pedidos de Compras -->
+			<div class="panel-custom" id="pn_pedidoCompra">
+				<div class="panel-custom-head">
+					<i class="fluigicon fluigicon-list icon-md" style="color: #cf1143;"></i>
+					Pedido de Compra
+				</div>
+
+				<div class="panel-body">
+					<table tablename="tb_pedido" style="width: 100%;" id="tb_pedido" noaddbutton="true"
+						nodeletebutton="true">
+						<thead>
+							<tr>
+								<th>Produtos</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<div class="panel-custom">
+										<div class="panel-custom-head">
+											<div class="row" style="width: 100%;">
+												<div class="col-md-2">
+													<input type="text" id="txt_pedido_codItem" name="txt_pedido_codItem"
+														class="input-read text-left" readonly>
+												</div>
+												<div class="col-md-7">
+													<input type="text" id="txt_pedido_desc" name="txt_pedido_desc"
+														class="input-read text-left" readonly>
+												</div>
+												<div class="col-md-1 text-right">
+													<span>Status:</span>
+												</div>
+												<div class="col-md-2">
+													<input type="text" id="txt_pedido_status" name="txt_pedido_status"
+														class="input-read text-left" value="Pendente" readonly>
+												</div>
+											</div>
+										</div>
+										<div class="panel-body">
+											<div class="row">
+												<input type="hidden" id="hd_itemMedido" name="hd_itemMedido"
+													value="false">
+												<input type="hidden" id="hd_itemFaturado" name="hd_itemFaturado"
+													value="false">
+												<div class="col-md-3 form-group">
+													<small for="num_pedido_qtd">Quantidade</small></br>
+													<input type="text" id="num_pedido_qtd" name="num_pedido_qtd"
+														class="input-read text-left" readonly>
+												</div>
+												<div class="col-md-3 form-group">
+													<small for="txt_pedido_unid">Unidade</small></br>
+													<input type="text" id="txt_pedido_unid" name="txt_pedido_unid"
+														class="input-read text-left" readonly>
+												</div>
+												<div class="col-md-3 form-group">
+													<small for="num_pedido_vlUnit">Valor Unitário</small></br>
+													<input type="text" id="num_pedido_vlUnit" name="num_pedido_vlUnit"
+														class="input-read text-left" readonly>
+												</div>
+												<div class="col-md-3 form-group">
+													<small for="num_pedido_vlTot">Valor Total</small></br>
+													<input type="text" id="num_pedido_vlTot" name="num_pedido_vlTot"
+														class="input-read text-left" readonly>
+												</div>
+											</div>
+											<hr>
+											<div class="row" id="pn_pedido_medicao">
+												<div class="col-md-8 form-group">
+													<label for="txt_pedido_obs">Observação da Medição</label>
+													<textarea name="txt_pedido_obs" id="txt_pedido_obs" rows="3"
+														class="form-control" placeholder="Descreva sua observação.."
+														style="resize: none;"></textarea>
+												</div>
+												<div class="col-md-4 form-group">
+													<label for="chk_pedido_medicao"><br></label>
+													<div class="chk_medicao">
+														<label>
+															Medição Realizada?
+															<input type="checkbox" id="chk_pedido_medicao"
+																name="chk_pedido_medicao" data-on-color="success"
+																data-on-text="Sim" data-off-text="Não">
+														</label>
+													</div>
+												</div>
+											</div>
+
+											<div class="row" id="pn_pedido_faturamento" style="display: none;">
+												<div class="col-md-8 form-group">
+													<label for="txt_pedido_obsFatu">Observação do Faturamento</label>
+													<textarea name="txt_pedido_obsFatu" id="txt_pedido_obsFatu" rows="3"
+														class="form-control" placeholder="Descreva sua observação.."
+														style="resize: none;"></textarea>
+												</div>
+												<div class="col-md-4 form-group">
+													<label for="chk_pedido_faturamento"><br></label>
+													<div class="chk_medicao">
+														<label>
+															Liberado Para Pagamento?
+															<input type="checkbox" id="chk_pedido_faturamento"
+																name="chk_pedido_faturamento" data-on-color="success"
+																data-on-text="Sim" data-off-text="Não">
+														</label>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<div class="panel-custom-info">
+						<div class="panel-body" style="padding: 0;">
+							<div class="col-md-3">
+								Valor Total: <input type="text" id="txt_valTotalPc" name="txt_valTotalPc"
+									class="input-read text-left" />
+							</div>
+							<div class="col-md-3">
+								Valor Faturado: <input type="text" id="txt_valFaturadoPc" name="txt_valFaturadoPc"
+									class="input-read text-left" value="R$ 0" />
+							</div>
+							<div class="col-md-3">
+								saldo a Faturar: <input type="text" id="txt_valFaturarPc" name="txt_valFaturarPc"
+									class="input-read text-left" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- .Pedidos de Compras -->
+			<!-- Anexos -->
+			<div id="painel-anexos" class="panel-custom">
+				<div class="panel-custom-head">
+					<i class="flaticon flaticon-paperclip icon-md" style="color: #cf1143;" aria-hidden="true"></i>
+					Anexos
+				</div>
+				<div class="campo_anexos">
+					<div
+						class="panel-body border-anexos fs-display-flex fs-align-items-center fs-flex-direction-column" id="box_addAnexo">
+						<div>
+							<i class="flaticon flaticon-upload icon-md" aria-hidden="true"></i>
+						</div>
+						<div>
+							<p style="display: contents;">Clique para selecionar o seus arquivos</p>
+						</div>
+						<div>
+							<button class="btn btn-custom-theme" id="btn_anexo"
+								onclick="ElementUtils.openShowCamera('arquivos_anexados')">Selecionar
+								arquivo</button>
+						</div>
+					</div>
+					<div id="arquivos_anexados"
+						class="card-body fs-display-flex fs-flex-wrap-wrap fs-sm-gap-horizontal">
+					</div>
+				</div> <!-- FIM CAMPO DOS DADOS -->
+			</div>
+			<!-- .Anexos -->
+			<!-- Painel de Observações[cite: 2] -->
+			<div id="pn_observacoes" class="panel-custom">
+				<div class="panel-custom-head">
+					<i class="flaticon flaticon-chat icon-md" aria-hidden="true"></i>
+					Observações e Decisão
+				</div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="table-responsive">
+								<table class="table" tablename="tb_obsHistorico" noaddbutton="true"
+									nodeletebutton="true">
+									<thead>
+										<tr></tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												<div class="chat-wrapper">
+													<div class="chat-bubble">
+														<div class="chat-header">
+															<input type="text" name="txt_obs_etapa" id="txt_obs_etapa"
+																class="chat-etapa" readonly>
+															<input type="text" name="txt_obs_dtHr" id="txt_obs_dtHr"
+																class="chat-date" readonly>
+														</div>
+														<div class="chat-content">
+															<textarea name="txt_obs_comment" id="txt_obs_comment"
+																class="chat-textarea input-read-tb"></textarea>
+														</div>
+													</div>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="txt_obsGeral">Nova Observação</label>
+						<textarea name="txt_obsGeral" id="txt_obsGeral" rows="3" class="form-control"
+							placeholder="Descreva aqui sua análise..."></textarea>
+					</div>
+
+					<div class="text-right" id="pn_btnDecisions">
+						<button type="button" id="btn_revisar" class="btn btn-custom-warning"
+							onclick="ElementUtils.confirmStatus('#hd_aprovPc', 'Revisar', undefined, '#txt_obsGeral')">Solicitar Revisão</button>
+						<button type="button" id="btn_aprovar" class="btn btn-custom-success"
+							onclick="ElementUtils.confirmStatus('#hd_aprovPc', 'Aprovado')">Aprovar
+							Solicitação</button>
+					</div>
+
+					<div class="text-right" id="pn_btnDecisionsMedicao">
+						<button type="button" id="btn_revisar" class="btn btn-custom-warning"
+							onclick="ElementUtils.confirmStatus('#hd_valNfOk', 'revisao', undefined, '#txt_obsGeral')">Solicitar Revisão</button>
+						<button type="button" id="btn_aprovar" class="btn btn-custom-success"
+							onclick="ElementUtils.confirmStatus('#hd_valNfOk', 'aprovado', undefined, '#txt_obsGeral')">Aprovar
+							Solicitação</button>
+					</div>
+
+					<div class="text-right" id="pn_btnDecisionsNfOk">
+						<button type="button" id="btn_revisar" class="btn btn-custom-warning"
+							onclick="ElementUtils.confirmStatus('#hd_aprovValNf', 'revisao', undefined, '#txt_obsGeral')">Solicitar Revisão</button>
+						<button type="button" id="btn_aprovar" class="btn btn-custom-success"
+							onclick="ElementUtils.confirmStatus('#hd_aprovValNf', 'aprovado', undefined, '#txt_obsGeral')">Aprovar
+							Solicitação</button>
+					</div>
+				</div>
+			</div>
+			<!-- .Painel de Observações -->
+		</form>
+	</div>
+</body>
+
+</html>
