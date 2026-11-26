@@ -159,7 +159,9 @@ for (const nome of escolhidos) {
     });
 
     test('5. inicia a solicitação e ela chega à Aprovação 1 com responsável', { skip: env.E2E_START !== '1' && 'defina E2E_START=1 para criar (e cancelar) uma solicitação real' }, async (t) => {
-      const num = await fluig.startProcess({
+      let num;
+      try {
+        num = await fluig.startProcess({
         processId: PROCESS_ID,
         choosedState: APROV_PC_UM,
         comments: 'Teste E2E — cenário ' + nome + ' — processo ' + PROCESS_ID,
@@ -171,7 +173,12 @@ for (const nome of escolhidos) {
           txt_dadosPc_moeda: pc.moeda,
           txt_valTotalPc: String(pc.total),
         },
-      });
+        });
+      } catch (e) {
+        // Ex.: o beforeStateEntry da cópia de teste barra a entrada na Aprovação sem aprovador ativo.
+        t.diagnostic('solicitação recusada pelo Fluig: ' + e.message);
+        assert.fail('Fluig recusou iniciar a solicitação: ' + e.message);
+      }
       t.diagnostic('solicitação criada: ' + num);
       try {
         const tarefas = await fluig.getDataset('processTask', [

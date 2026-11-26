@@ -1,0 +1,60 @@
+▶ homologacao-26-11-prio-tigris — PV 104281 / PC I82810 — USD 30.000 — C. Custo FLU1G (retorno da homologação 26/11)
+  ✔ 0a. PV sincronizado do Protheus aparece no Fluig (2607.556191ms)
+  ℹ atenção: C. Custo do PV (2000 - FINANCEIRO) difere do C. Custo do PC (FLU1G); a busca de aprovadores usa o do PC
+  ✔ 0b. todo PV sincronizado tem o seu PC na carga sincronizada (2432.550542ms)
+  ✔ 1. PC sincronizado do Protheus aparece no Fluig com os dados do retorno (969.306078ms)
+  ℹ atenção: PC em USD com C7_TXMOEDA = 0 (sem taxa de câmbio gravada no Protheus)
+  ✔ 2. itens do PC são lidos do Protheus (530.75055ms)
+  ✖ 3. existem aprovadores para C. Custo FLU1G com limite para USD 30000 (791.9802ms)
+  ℹ AUGUSTO CESAR GONCALVES SETTI (CC FLU1G2026, posição 046 ANL. DE CONTROLADORI, subcat. "Expense Expendure For Company"): posição 046 não tem alçada cadastrada
+  ℹ IAGO SOARES BOTTA (CC FLU1G2026, posição 037 CONTADOR, subcat. "Expense Expendure For Company"): posição 037 não tem alçada cadastrada
+  ℹ ISAQUE GONCALVES CARNEIRO (CC FLU1G2026, posição 115 ANL. DE PROJETOS, subcat. "Fuel"): posição 115 não tem alçada cadastrada
+  ℹ ISAQUE GONCALVES CARNEIRO (CC FLU1G2026, posição 059 ANL. QUALIDADE, subcat. "Expense Expendure For Company"): posição 059 não tem alçada cadastrada
+  ℹ Everson dos Santos Fragoso (CC FLU1G202, posição 087 GERENTE FINANCEIRO, subcat. "Expense Expendure For Company"): alçada da posição existe só para subcat. " Expense sheets "
+  ℹ Ludmila Oliveira (CC FLU1G202, posição 138 ANL. CONTABIL PL, subcat. "Pedagio"): posição 138 não tem alçada cadastrada
+  ✖ 4. existe aprovador para o nível 1 (Aprovação 1 é obrigatória) (220.318521ms)
+  ✖ 5. inicia a solicitação e ela chega à Aprovação 1 com responsável (729.903153ms)
+  ℹ solicitação recusada pelo Fluig: startProcess: Erro ao executar evento do processo, Não há aprovador ativo de nível 1 para o Centro de Custo FLU1G com limite para USD 30000. Verifique 'Atribuição de Usuários e Posições' e 'Alçada por Posição'. (beforeStateEntry#68) in beforeStateEntry at line number 68
+✖ homologacao-26-11-prio-tigris — PV 104281 / PC I82810 — USD 30.000 — C. Custo FLU1G (retorno da homologação 26/11) (8284.012873ms)
+▶ controle-cc-2000 — PV 104279 / PC I82809 — BRL 30.000 — C. Custo 2000 (controle)
+  ✔ 0a. PV sincronizado do Protheus aparece no Fluig (656.025619ms)
+  ✔ 0b. todo PV sincronizado tem o seu PC na carga sincronizada (1645.282574ms)
+  ✔ 1. PC sincronizado do Protheus aparece no Fluig com os dados do retorno (953.1628ms)
+  ✔ 2. itens do PC são lidos do Protheus (523.669754ms)
+  ✔ 3. existem aprovadores para C. Custo 2000 com limite para BRL 30000 (219.753803ms)
+  ℹ aprovador: Everson dos Santos Fragoso — nível 3 — ativo: Não
+  ℹ aprovador: Licyara Pompeu — nível 2 — ativo: Não
+  ✖ 4. existe aprovador para o nível 1 (Aprovação 1 é obrigatória) (215.055569ms)
+  ✖ 5. inicia a solicitação e ela chega à Aprovação 1 com responsável (800.659113ms)
+  ℹ solicitação recusada pelo Fluig: startProcess: Erro ao executar evento do processo, Não há aprovador ativo de nível 1 para o Centro de Custo 2000 com limite para BRL 30000. Verifique 'Atribuição de Usuários e Posições' e 'Alçada por Posição'. (beforeStateEntry#68) in beforeStateEntry at line number 68
+✖ controle-cc-2000 — PV 104279 / PC I82809 — BRL 30.000 — C. Custo 2000 (controle) (5014.732566ms)
+ℹ tests 14
+ℹ suites 2
+ℹ pass 9
+ℹ fail 5
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 13370.53923
+✖ failing tests:
+test at tests/e2e/liberacao.e2e.test.js:125:5
+✖ 3. existem aprovadores para C. Custo FLU1G com limite para USD 30000 (791.9802ms)
+  AssertionError [ERR_ASSERTION]: Não foram encontrados aprovadores parametrizados para o C. Custo FLU1G com limite suficiente para o valor de USD 30000
+    AUGUSTO CESAR GONCALVES SETTI (CC FLU1G2026, posição 046 ANL. DE CONTROLADORI, subcat. "Expense Expendure For Company"): posição 046 não tem alçada cadastrada
+    IAGO SOARES BOTTA (CC FLU1G2026, posição 037 CONTADOR, subcat. "Expense Expendure For Company"): posição 037 não tem alçada cadastrada
+    ISAQUE GONCALVES CARNEIRO (CC FLU1G2026, posição 115 ANL. DE PROJETOS, subcat. "Fuel"): posição 115 não tem alçada cadastrada
+    ISAQUE GONCALVES CARNEIRO (CC FLU1G2026, posição 059 ANL. QUALIDADE, subcat. "Expense Expendure For Company"): posição 059 não tem alçada cadastrada
+    Everson dos Santos Fragoso (CC FLU1G202, posição 087 GERENTE FINANCEIRO, subcat. "Expense Expendure For Company"): alçada da posição existe só para subcat. " Expense sheets "
+    Ludmila Oliveira (CC FLU1G202, posição 138 ANL. CONTABIL PL, subcat. "Pedagio"): posição 138 não tem alçada cadastrada
+test at tests/e2e/liberacao.e2e.test.js:146:5
+✖ 4. existe aprovador para o nível 1 (Aprovação 1 é obrigatória) (220.318521ms)
+  AssertionError [ERR_ASSERTION]: nenhum aprovador de nível 1 para C. Custo FLU1G / USD 30000 — a solicitação pararia na Aprovação 1 (atividade 12)
+test at tests/e2e/liberacao.e2e.test.js:161:5
+✖ 5. inicia a solicitação e ela chega à Aprovação 1 com responsável (729.903153ms)
+  AssertionError [ERR_ASSERTION]: Fluig recusou iniciar a solicitação: startProcess: Erro ao executar evento do processo, Não há aprovador ativo de nível 1 para o Centro de Custo FLU1G com limite para USD 30000. Verifique 'Atribuição de Usuários e Posições' e 'Alçada por Posição'. (beforeStateEntry#68) in beforeStateEntry at line number 68
+test at tests/e2e/liberacao.e2e.test.js:146:5
+✖ 4. existe aprovador para o nível 1 (Aprovação 1 é obrigatória) (215.055569ms)
+  AssertionError [ERR_ASSERTION]: nenhum aprovador de nível 1 para C. Custo 2000 / BRL 30000 — a solicitação pararia na Aprovação 1 (atividade 12)
+test at tests/e2e/liberacao.e2e.test.js:161:5
+✖ 5. inicia a solicitação e ela chega à Aprovação 1 com responsável (800.659113ms)
+  AssertionError [ERR_ASSERTION]: Fluig recusou iniciar a solicitação: startProcess: Erro ao executar evento do processo, Não há aprovador ativo de nível 1 para o Centro de Custo 2000 com limite para BRL 30000. Verifique 'Atribuição de Usuários e Posições' e 'Alçada por Posição'. (beforeStateEntry#68) in beforeStateEntry at line number 68
