@@ -59,3 +59,13 @@ O cenário PRIO TIGRIS só passa quando a parametrização estiver corrigida no 
 `E2E_DATASET_SUFIXO=_test` faz as etapas 0a, 0b e 1 lerem `dts_getPedidoCompra_JYNX_test` e
 `dts_getPedidoVenda_JYNX_test`, publicados no DEV em 26/11/2026. Essas cópias não usam
 sincronização e só respondem ao usuário `admin`.
+- `E2E_PROCESS_ID=liberacao_faturamento_medicao_test` faz a etapa 5 iniciar a solicitação na cópia de teste,
+  cujo início é restrito ao `admin`. Sem a variável, a etapa usa o processo original.
+
+Teste completo contra a cópia de teste:
+
+```bash
+FLUIG_URL=https://odsdo204964.fluig.cloudtotvs.com.br FLUIG_USER=admin FLUIG_PASS='***' \
+E2E_DATASET_SUFIXO=_test E2E_PROCESS_ID=liberacao_faturamento_medicao_test E2E_START=1 \
+  node --test --test-reporter=spec tests/e2e/liberacao.e2e.test.js
+```

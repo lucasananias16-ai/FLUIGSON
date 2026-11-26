@@ -1,0 +1,62 @@
+▶ homologacao-26-11-prio-tigris — PV 104281 / PC I82810 — USD 30.000 — C. Custo FLU1G (retorno da homologação 26/11)
+  ✔ 0a. PV sincronizado do Protheus aparece no Fluig (1598.92839ms)
+  ℹ atenção: C. Custo do PV (2000 - FINANCEIRO) difere do C. Custo do PC (FLU1G); a busca de aprovadores usa o do PC
+  ✔ 0b. todo PV sincronizado tem o seu PC na carga sincronizada (2331.359607ms)
+  ✔ 1. PC sincronizado do Protheus aparece no Fluig com os dados do retorno (1435.520066ms)
+  ℹ atenção: PC em USD com C7_TXMOEDA = 0 (sem taxa de câmbio gravada no Protheus)
+  ✔ 2. itens do PC são lidos do Protheus (595.912488ms)
+  ✖ 3. existem aprovadores para C. Custo FLU1G com limite para USD 30000 (775.491067ms)
+  ℹ AUGUSTO CESAR GONCALVES SETTI (CC FLU1G2026, posição 046 ANL. DE CONTROLADORI, subcat. "Expense Expendure For Company"): posição 046 não tem alçada cadastrada
+  ℹ IAGO SOARES BOTTA (CC FLU1G2026, posição 037 CONTADOR, subcat. "Expense Expendure For Company"): posição 037 não tem alçada cadastrada
+  ℹ ISAQUE GONCALVES CARNEIRO (CC FLU1G2026, posição 115 ANL. DE PROJETOS, subcat. "Fuel"): posição 115 não tem alçada cadastrada
+  ℹ ISAQUE GONCALVES CARNEIRO (CC FLU1G2026, posição 059 ANL. QUALIDADE, subcat. "Expense Expendure For Company"): posição 059 não tem alçada cadastrada
+  ℹ Everson dos Santos Fragoso (CC FLU1G202, posição 087 GERENTE FINANCEIRO, subcat. "Expense Expendure For Company"): alçada da posição existe só para subcat. " Expense sheets "
+  ℹ Ludmila Oliveira (CC FLU1G202, posição 138 ANL. CONTABIL PL, subcat. "Pedagio"): posição 138 não tem alçada cadastrada
+  ✖ 4. existe aprovador para o nível 1 (Aprovação 1 é obrigatória) (203.918517ms)
+  ✖ 5. inicia a solicitação e ela chega à Aprovação 1 com responsável (2238.109133ms)
+  ℹ solicitação criada: 220
+  ℹ responsáveis na tarefa ativa: admin
+✖ homologacao-26-11-prio-tigris — PV 104281 / PC I82810 — USD 30.000 — C. Custo FLU1G (retorno da homologação 26/11) (9180.684434ms)
+▶ controle-cc-2000 — PV 104279 / PC I82809 — BRL 30.000 — C. Custo 2000 (controle)
+  ✔ 0a. PV sincronizado do Protheus aparece no Fluig (798.05939ms)
+  ✔ 0b. todo PV sincronizado tem o seu PC na carga sincronizada (1748.191706ms)
+  ✔ 1. PC sincronizado do Protheus aparece no Fluig com os dados do retorno (1006.882855ms)
+  ✔ 2. itens do PC são lidos do Protheus (3470.209542ms)
+  ✔ 3. existem aprovadores para C. Custo 2000 com limite para BRL 30000 (211.451355ms)
+  ℹ aprovador: Everson dos Santos Fragoso — nível 3 — ativo: Não
+  ℹ aprovador: Licyara Pompeu — nível 2 — ativo: Não
+  ✖ 4. existe aprovador para o nível 1 (Aprovação 1 é obrigatória) (204.14385ms)
+  ✖ 5. inicia a solicitação e ela chega à Aprovação 1 com responsável (1310.906705ms)
+  ℹ solicitação criada: 221
+  ℹ responsáveis na tarefa ativa: admin
+✖ controle-cc-2000 — PV 104279 / PC I82809 — BRL 30.000 — C. Custo 2000 (controle) (8750.745611ms)
+ℹ tests 14
+ℹ suites 2
+ℹ pass 9
+ℹ fail 5
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 17994.669776
+✖ failing tests:
+test at tests/e2e/liberacao.e2e.test.js:125:5
+✖ 3. existem aprovadores para C. Custo FLU1G com limite para USD 30000 (775.491067ms)
+  AssertionError [ERR_ASSERTION]: Não foram encontrados aprovadores parametrizados para o C. Custo FLU1G com limite suficiente para o valor de USD 30000
+    AUGUSTO CESAR GONCALVES SETTI (CC FLU1G2026, posição 046 ANL. DE CONTROLADORI, subcat. "Expense Expendure For Company"): posição 046 não tem alçada cadastrada
+    IAGO SOARES BOTTA (CC FLU1G2026, posição 037 CONTADOR, subcat. "Expense Expendure For Company"): posição 037 não tem alçada cadastrada
+    ISAQUE GONCALVES CARNEIRO (CC FLU1G2026, posição 115 ANL. DE PROJETOS, subcat. "Fuel"): posição 115 não tem alçada cadastrada
+    ISAQUE GONCALVES CARNEIRO (CC FLU1G2026, posição 059 ANL. QUALIDADE, subcat. "Expense Expendure For Company"): posição 059 não tem alçada cadastrada
+    Everson dos Santos Fragoso (CC FLU1G202, posição 087 GERENTE FINANCEIRO, subcat. "Expense Expendure For Company"): alçada da posição existe só para subcat. " Expense sheets "
+    Ludmila Oliveira (CC FLU1G202, posição 138 ANL. CONTABIL PL, subcat. "Pedagio"): posição 138 não tem alçada cadastrada
+test at tests/e2e/liberacao.e2e.test.js:146:5
+✖ 4. existe aprovador para o nível 1 (Aprovação 1 é obrigatória) (203.918517ms)
+  AssertionError [ERR_ASSERTION]: nenhum aprovador de nível 1 para C. Custo FLU1G / USD 30000 — a solicitação pararia na Aprovação 1 (atividade 12)
+test at tests/e2e/liberacao.e2e.test.js:161:5
+✖ 5. inicia a solicitação e ela chega à Aprovação 1 com responsável (2238.109133ms)
+  AssertionError [ERR_ASSERTION]: Aprovação 1 atribuída a quem não é aprovador de nível 1 da alçada: admin (aprovadores esperados: nenhum parametrizado)
+test at tests/e2e/liberacao.e2e.test.js:146:5
+✖ 4. existe aprovador para o nível 1 (Aprovação 1 é obrigatória) (204.14385ms)
+  AssertionError [ERR_ASSERTION]: nenhum aprovador de nível 1 para C. Custo 2000 / BRL 30000 — a solicitação pararia na Aprovação 1 (atividade 12)
+test at tests/e2e/liberacao.e2e.test.js:161:5
+✖ 5. inicia a solicitação e ela chega à Aprovação 1 com responsável (1310.906705ms)
+  AssertionError [ERR_ASSERTION]: Aprovação 1 atribuída a quem não é aprovador de nível 1 da alçada: admin (aprovadores esperados: nenhum parametrizado)

@@ -16,10 +16,12 @@ const assert = require('node:assert/strict');
 const { FluigSoap } = require('./fluig-soap');
 const CENARIOS = require('./cenarios');
 
-const PROCESS_ID = 'liberacao_faturamento_medicao';
+const env = process.env;
+
+// E2E_PROCESS_ID=liberacao_faturamento_medicao_test usa a cópia de teste (início restrito ao admin).
+const PROCESS_ID = env.E2E_PROCESS_ID || 'liberacao_faturamento_medicao';
 const APROV_PC_UM = 12;
 
-const env = process.env;
 const fluig = new FluigSoap({
   url: env.FLUIG_URL,
   username: env.FLUIG_USER,
@@ -160,7 +162,7 @@ for (const nome of escolhidos) {
       const num = await fluig.startProcess({
         processId: PROCESS_ID,
         choosedState: APROV_PC_UM,
-        comments: 'Teste E2E — cenário ' + nome,
+        comments: 'Teste E2E — cenário ' + nome + ' — processo ' + PROCESS_ID,
         cardData: {
           num_dadosPc_numPc: pc.numero,
           txt_idPv_numPv: pc.pv,
@@ -182,6 +184,28 @@ for (const nome of escolhidos) {
         assert.ok(
           responsaveis.some((r) => !/^System:/i.test(r)),
           'Aprovação 1 atribuída só a usuário de sistema (' + responsaveis.join(', ') + '), não aos aprovadores da alçada'
+        );
+        // Quem recebeu a Aprovação 1 precisa ser aprovador de nível 1 da alçada (C. Custo + moeda + valor).
+        const nivel1 = await fluig.getDataset('dts_consultUsuariosPosicoes', [
+          { field: 'COD_CCUSTO', value: pc.cc },
+          { field: 'NIVEL', value: '1' },
+          { field: 'VALOR_LIMITE', value: String(pc.total) },
+          { field: 'MOEDA', value: pc.moeda },
+          { field: 'TIPO_LIMITE', value: 'PROC' },
+        ]);
+        const esperados = new Set();
+        for (const a of nivel1) {
+          const email = String(a.usrPos_email || a.EMAIL || '').trim();
+          if (!email) continue;
+          const col = await fluig.getDataset('colleague', [{ field: 'mail', value: email }]);
+          col.forEach((c) => esperados.add(c['colleaguePK.colleagueId']));
+        }
+        const foraDaAlcada = responsaveis.filter((r) => !esperados.has(r));
+        assert.deepEqual(
+          foraDaAlcada,
+          [],
+          'Aprovação 1 atribuída a quem não é aprovador de nível 1 da alçada: ' + foraDaAlcada.join(', ') +
+            ' (aprovadores esperados: ' + ([...esperados].join(', ') || 'nenhum parametrizado') + ')'
         );
       } finally {
         if (env.E2E_KEEP !== '1') await fluig.cancelInstance(num).catch((e) => t.diagnostic('falha ao cancelar ' + num + ': ' + e.message));

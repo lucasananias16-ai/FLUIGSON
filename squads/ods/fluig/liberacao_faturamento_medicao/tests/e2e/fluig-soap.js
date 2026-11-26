@@ -31,7 +31,9 @@ function envelope(ns, op, inner) {
 
 // Lê todos os <tag>...</tag> de nível imediato dentro de um trecho XML (sem namespace).
 function children(xml, tag) {
-  const re = new RegExp('<(?:\\w+:)?' + tag + '(?:\\s[^>]*)?(?:/>|>([\\s\\S]*?)</(?:\\w+:)?' + tag + '>)', 'g');
+  // Atributos com quantificador preguiçoso: assim <value xsi:nil="true"/> fecha no próprio "/>"
+  // em vez de engolir o elemento seguinte.
+  const re = new RegExp('<(?:\\w+:)?' + tag + '(?:\\s[^>]*?)?(?:/>|>([\\s\\S]*?)</(?:\\w+:)?' + tag + '>)', 'g');
   const out = [];
   let m;
   while ((m = re.exec(xml))) out.push(m[1] === undefined ? '' : m[1]);
@@ -89,7 +91,8 @@ class FluigSoap {
       'getDataset',
       this.auth() + '<name>' + esc(name) + '</name><fields>' + f + '</fields><constraints>' + c + '</constraints><order/>'
     );
-    const ret = children(xml, 'return')[0] || '';
+    // O Fluig real devolve <getDatasetResponse><dataset>…; aceita também <return>.
+    const ret = children(xml, 'dataset')[0] ?? children(xml, 'return')[0] ?? '';
     const columns = children(ret, 'columns').map(unesc);
     return children(ret, 'values').map((row) => {
       const vals = children(row, 'value').map(unesc);
@@ -117,7 +120,11 @@ class FluigSoap {
         '<appointment/><managerMode>' + managerMode + '</managerMode>'
     );
     // Resposta: lista de pares chave/valor (String[][]); a chave iProcess traz o número.
-    const pairs = children(xml, 'item').map((it) => children(it, 'item').map(unesc));
+    // String[][] vem como <item><item>chave</item><item>valor</item></item> (itens aninhados).
+    const pairs = [];
+    const rePar = /<item>\s*<item>([^<]*)<\/item>\s*<item>([^<]*)<\/item>\s*<\/item>/g;
+    let mp;
+    while ((mp = rePar.exec(xml))) pairs.push([unesc(mp[1]), unesc(mp[2])]);
     const err = pairs.find((p) => p[0] === 'ERROR');
     if (err) throw new Error('startProcess: ' + err[1]);
     const ip = pairs.find((p) => p[0] === 'iProcess');

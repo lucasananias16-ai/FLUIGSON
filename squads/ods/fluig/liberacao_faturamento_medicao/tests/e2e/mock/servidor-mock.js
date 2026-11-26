@@ -56,11 +56,16 @@ function resposta(rows) {
   const cols = rows.length ? Object.keys(rows[0]) : [];
   const body =
     cols.map((k) => '<columns>' + esc(k) + '</columns>').join('') +
-    rows.map((r) => '<values>' + cols.map((k) => '<value>' + esc(r[k] ?? '') + '</value>').join('') + '</values>').join('');
+    rows.map((r) => '<values>' + cols.map((k) =>
+      // Igual ao Fluig real: nulo vem como elemento vazio com xsi:nil.
+      r[k] === null || r[k] === undefined
+        ? '<value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>'
+        : '<value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:string">' + esc(r[k]) + '</value>'
+    ).join('') + '</values>').join('');
   return (
     '<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body>' +
-    '<ns1:getDatasetResponse xmlns:ns1="http://ws.dataservice.ecm.technology.totvs.com/"><dataset><return>' +
-    body + '</return></dataset></ns1:getDatasetResponse></soap:Body></soap:Envelope>'
+    '<ns1:getDatasetResponse xmlns:ns1="http://ws.dataservice.ecm.technology.totvs.com/"><dataset>' +
+    body + '</dataset></ns1:getDatasetResponse></soap:Body></soap:Envelope>'
   );
 }
 
