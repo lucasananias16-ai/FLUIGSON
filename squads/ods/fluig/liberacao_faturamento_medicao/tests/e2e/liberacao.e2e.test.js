@@ -71,6 +71,30 @@ for (const nome of escolhidos) {
   test.describe(nome + ' — ' + cen.descricao, () => {
     let pcRow;
 
+    test('0a. PV sincronizado do Protheus aparece no Fluig', async (t) => {
+      const pvs = await fluig.getDataset('dts_getPedidoVenda_JYNX');
+      const pv = pvs.find((r) => String(r.C5_NUM).trim() === pc.pv);
+      assert.ok(pv, 'PV ' + pc.pv + ' não está na carga sincronizada do Fluig (rotina agendada parada ou PV fora do filtro incremental por C5_EMISSAO)');
+      if (String(pv.C_CUSTO).trim() !== pc.cc) {
+        t.diagnostic('atenção: C. Custo do PV (' + pv.C_CUSTO + ' - ' + pv.NOME_CUSTO + ') difere do C. Custo do PC (' + pc.cc + '); a busca de aprovadores usa o do PC');
+      }
+    });
+
+    test('0b. todo PV sincronizado tem o seu PC na carga sincronizada', async () => {
+      const pvs = await fluig.getDataset('dts_getPedidoVenda_JYNX');
+      const pcs = await fluig.getDataset('dts_getPedidoCompra_JYNX');
+      const comPc = new Set(pcs.map((r) => String(r.C7_XNUMPV).trim()));
+      // O dts_getPedidoVenda_JYNX só traz PV que tem PC no Protheus (EXISTS em SC7),
+      // então PV sem PC aqui significa que a carga de PCs está incompleta.
+      const orfaos = pvs.map((r) => String(r.C5_NUM).trim()).filter((n) => !comPc.has(n));
+      assert.deepEqual(
+        orfaos,
+        [],
+        'PVs sem PC na carga do Fluig: ' + orfaos.join(', ') + ' — a carga de PCs tem só ' + pcs.length +
+          ' linhas (a versão publicada do dts_getPedidoCompra_JYNX guarda apenas as 5 primeiras)'
+      );
+    });
+
     test('1. PC sincronizado do Protheus aparece no Fluig com os dados do retorno', async (t) => {
       const rows = await fluig.getDataset('dts_getPedidoCompra_JYNX', [{ field: 'C7_NUM', value: pc.numero }]);
       pcRow = rows.find((r) => String(r.C7_NUM).trim() === pc.numero);

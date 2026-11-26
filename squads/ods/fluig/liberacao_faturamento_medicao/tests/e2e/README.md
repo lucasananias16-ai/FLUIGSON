@@ -11,6 +11,8 @@ Sem dependências: usa Node 18+ (`fetch` e `node:test`) e os webservices SOAP pa
 
 | # | O que verifica | Fonte |
 |---|---|---|
+| 0a | O PV está na carga sincronizada do Fluig; avisa se o C. Custo do PV for diferente do C. Custo do PC | `dts_getPedidoVenda_JYNX` |
+| 0b | Todo PV sincronizado tem o seu PC na carga de PCs (detecta carga incompleta) | `dts_getPedidoVenda_JYNX` × `dts_getPedidoCompra_JYNX` |
 | 1 | O PC veio na carga do Protheus com PV, C. Custo, moeda e valor do cenário | `dts_getPedidoCompra_JYNX` |
 | 2 | Os itens do PC são lidos do Protheus, sem erro de integração | `dts_getPedidosCompra_JYNX` |
 | 3 | Há aprovadores para C. Custo + moeda + valor (a checagem que falhou) | `dts_consultUsuariosPosicoes` |
@@ -46,7 +48,8 @@ FLUIG_URL=http://127.0.0.1:8089 FLUIG_USER=x FLUIG_PASS=x node --test --test-rep
 ```
 
 Resultado esperado com a foto de 26/11:
-- **Cenário PRIO TIGRIS:** falham as etapas 3 e 4, reproduzindo o erro da homologação.
+- **Nos dois cenários:** falha a etapa 0b. A carga de PCs tem só 5 linhas e o PV 104276 ficou sem o seu PC.
+- **Cenário PRIO TIGRIS:** falham também as etapas 3 e 4, reproduzindo o erro da homologação.
 - **Cenário de controle (CC 2000):** passa a etapa 3 e falha a 4, porque também não há aprovador de nível 1.
 
 O cenário PRIO TIGRIS só passa quando a parametrização estiver corrigida no Fluig.

@@ -41,6 +41,7 @@ function dataset(name, c) {
       return snap[name].filter((r) => !c.C7_NUM || r.C7_NUM === c.C7_NUM);
     case 'dts_getPedidosCompra_JYNX':
       return snap[name][c.C7_NUM] || [];
+    case 'dts_getPedidoVenda_JYNX':
     case 'dsUserPosicao':
     case 'dsConfigAlcadPosic':
       return snap[name];
