@@ -69,8 +69,9 @@ test.describe('cadastro de aprovador — Ludmila / ANL. CONTABIL JR / FLU1G202 (
       faltando,
       [],
       'Faltou preencher os seguintes campos: ' + faltando.join(', ') +
-        ' — a versão publicada do dts_getColabProtheus_JYNX lê SYS_USR (usuários) e não devolve essas colunas;' +
-        ' a versão anterior lia SRA (funcionários) com MATRICULA/DEPARTAMENTO_COD/DEPARTAMENTO_DESC'
+        (colab.ORIGEM_MATRICULA === 'SEM_SRA'
+          ? ' — ' + DS_COLAB + ' devolve as colunas, mas o usuário não tem funcionário com o mesmo e-mail na SRA'
+          : ' — ' + DS_COLAB + ' (lê SYS_USR) não devolve essas colunas; até a v13 o dataset lia SRA com MATRICULA/DEPARTAMENTO_COD/DEPARTAMENTO_DESC')
     );
   });
 
