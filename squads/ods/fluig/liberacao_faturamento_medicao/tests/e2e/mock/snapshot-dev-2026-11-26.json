@@ -1,0 +1,31 @@
+{
+  "_origem": "Fluig DEV ODS (odsdo204964), consultado em 26/11/2026 via webservice. Somente os campos usados pelo teste.",
+  "dts_getPedidoCompra_JYNX": [
+    { "C7_NUM": "I82810", "C7_CC": "FLU1G", "C7_XNUMPV": "104281", "C7_TOTAL": "30000", "C7_MOEDA": "2", "C7_TXMOEDA": "0", "C7_EMISSAO": "20261126" },
+    { "C7_NUM": "I82809", "C7_CC": "2000", "C7_XNUMPV": "104279", "C7_TOTAL": "30000", "C7_MOEDA": "1", "C7_TXMOEDA": "0", "C7_EMISSAO": "20261103" },
+    { "C7_NUM": "I82808", "C7_CC": "2000", "C7_XNUMPV": "104280", "C7_TOTAL": "1000", "C7_MOEDA": "1", "C7_TXMOEDA": "0", "C7_EMISSAO": "20261103" }
+  ],
+  "dts_getPedidosCompra_JYNX": {
+    "I82810": [{ "C7_ITEM": "0001", "C7_PRODUTO": "ZZTESTE", "B1_DESC": "PRODUTO TESTE", "C7_QUANT": "3.00", "C7_PRECO": "10000.00", "C7_TOTAL": "30000.00", "C7_UM": "UN" }],
+    "I82809": [{ "C7_ITEM": "0001", "C7_PRODUTO": "ZZTESTE", "B1_DESC": "PRODUTO TESTE", "C7_QUANT": "1.00", "C7_PRECO": "30000.00", "C7_TOTAL": "30000.00", "C7_UM": "UN" }]
+  },
+  "dsUserPosicao": [
+    { "txt_codCCusto": "FLU1G2026", "usrPos_cCusto": "FLUIG - TESTES", "txt_codPosicao": "046", "usrPos_posicao": "ANL. DE CONTROLADORI", "usrPos_colaborador": "AUGUSTO CESAR GONCALVES SETTI", "usrPos_status": "Não", "usrPos_subCat": "Expense Expendure For Company", "txt_matColab": "000084" },
+    { "txt_codCCusto": "FLU1G2026", "usrPos_cCusto": "FLUIG - TESTES", "txt_codPosicao": "037", "usrPos_posicao": "CONTADOR", "usrPos_colaborador": "IAGO SOARES BOTTA", "usrPos_status": "Não", "usrPos_subCat": "Expense Expendure For Company", "txt_matColab": "000146" },
+    { "txt_codCCusto": "FLU1G2026", "usrPos_cCusto": "FLUIG - TESTES", "txt_codPosicao": "115", "usrPos_posicao": "ANL. DE PROJETOS", "usrPos_colaborador": "ISAQUE GONCALVES CARNEIRO", "usrPos_status": "Não", "usrPos_subCat": "Fuel", "txt_matColab": "000141" },
+    { "txt_codCCusto": "FLU1G2026", "usrPos_cCusto": "FLUIG - TESTES", "txt_codPosicao": "059", "usrPos_posicao": "ANL. QUALIDADE", "usrPos_colaborador": "ISAQUE GONCALVES CARNEIRO", "usrPos_status": "Sim", "usrPos_subCat": "Expense Expendure For Company", "txt_matColab": "000141" },
+    { "txt_codCCusto": "FLU1G202", "usrPos_cCusto": "REAL", "txt_codPosicao": "087", "usrPos_posicao": "GERENTE FINANCEIRO", "usrPos_colaborador": "Everson dos Santos Fragoso", "usrPos_status": "Não", "usrPos_subCat": "Expense Expendure For Company", "txt_matColab": null },
+    { "txt_codCCusto": "FLU1G202", "usrPos_cCusto": "REAL", "txt_codPosicao": "138", "usrPos_posicao": "ANL. CONTABIL PL", "usrPos_colaborador": "Ludmila Oliveira", "usrPos_status": "Não", "usrPos_subCat": "Pedagio", "txt_matColab": null },
+    { "txt_codCCusto": "2000", "usrPos_cCusto": "FINANCEIRO", "txt_codPosicao": "110", "usrPos_posicao": "ANL. FISCAL JR", "usrPos_colaborador": "Licyara Pompeu", "usrPos_status": "Não", "usrPos_subCat": "Expense sheets", "txt_matColab": null },
+    { "txt_codCCusto": "2000", "usrPos_cCusto": "FINANCEIRO", "txt_codPosicao": "087", "usrPos_posicao": "GERENTE FINANCEIRO", "usrPos_colaborador": "Everson dos Santos Fragoso", "usrPos_status": "Não", "usrPos_subCat": "Expense sheets", "txt_matColab": null },
+    { "txt_codCCusto": "2000", "usrPos_cCusto": "FINANCEIRO", "txt_codPosicao": "030", "usrPos_posicao": "ANL. FINANCEIRO", "usrPos_colaborador": "Fernando Henrique Quiantareto", "usrPos_status": "Não", "usrPos_subCat": "Expenses Sheets", "txt_matColab": null },
+    { "txt_codCCusto": "2000", "usrPos_cCusto": "FINANCEIRO", "txt_codPosicao": "030", "usrPos_posicao": "ANL. FINANCEIRO", "usrPos_colaborador": "Rafaella Fragatte", "usrPos_status": "Não", "usrPos_subCat": "Expenses Sheets", "txt_matColab": null }
+  ],
+  "dsConfigAlcadPosic": [
+    { "txt_codPosicao": "00086", "txt_posicao": "ANL. CONTABIL JR", "txt_sequenceLvl": "2", "txt_subCategoria": "Expense sheets", "txt_limitProcBrl": "500.000,00", "txt_limitProcUsd": "95.778,10" },
+    { "txt_codPosicao": "087", "txt_posicao": "GERENTE FINANCEIRO", "txt_sequenceLvl": "3", "txt_subCategoria": "Expense sheets", "txt_limitProcBrl": "1.000.000,00", "txt_limitProcUsd": "191.556,20" },
+    { "txt_codPosicao": "112", "txt_posicao": "ANL. FINANC JR", "txt_sequenceLvl": "1", "txt_subCategoria": "Expenses Sheets", "txt_limitProcBrl": "2.500,00", "txt_limitProcUsd": "478,89" },
+    { "txt_codPosicao": "030", "txt_posicao": "ANL. FINANCEIRO", "txt_sequenceLvl": "3", "txt_subCategoria": "Expenses Sheets", "txt_limitProcBrl": "10.000,00", "txt_limitProcUsd": "1.915,56" },
+    { "txt_codPosicao": "110", "txt_posicao": "ANL. FISCAL JR", "txt_sequenceLvl": "2", "txt_subCategoria": "Expense sheets", "txt_limitProcBrl": "250.000,00", "txt_limitProcUsd": "47.889,05" }
+  ]
+}
