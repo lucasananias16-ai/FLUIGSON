@@ -69,3 +69,17 @@ FLUIG_URL=https://odsdo204964.fluig.cloudtotvs.com.br FLUIG_USER=admin FLUIG_PAS
 E2E_DATASET_SUFIXO=_test E2E_PROCESS_ID=liberacao_faturamento_medicao_test E2E_START=1 \
   node --test --test-reporter=spec tests/e2e/liberacao.e2e.test.js
 ```
+
+## Cadastro de aprovador (`cadastro-aprovador.e2e.test.js`)
+
+Este teste só faz leituras. Ele reproduz a tentativa da homologação de cadastrar a Ludmila Oliveira
+na posição ANL. CONTABIL JR, C. Custo FLU1G202 - REAL. Etapas:
+
+- **A.** A colaboradora aparece na busca do Protheus.
+- **B.** A busca devolve matrícula, código do departamento e departamento, que a tela exige.
+- **C.** Se o cadastro fosse salvo, a Ludmila aprovaria o PC I82810 na Aprovação 1.
+
+```bash
+FLUIG_URL=https://odsdo204964.fluig.cloudtotvs.com.br FLUIG_USER=admin FLUIG_PASS='***' \
+  node --test --test-reporter=spec tests/e2e/cadastro-aprovador.e2e.test.js
+```
