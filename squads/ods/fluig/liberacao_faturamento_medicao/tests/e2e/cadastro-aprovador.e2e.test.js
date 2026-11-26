@@ -22,6 +22,9 @@ const fluig = new FluigSoap({
   companyId: Number(env.FLUIG_COMPANY || 1),
 });
 
+// E2E_DATASET_SUFIXO=_test usa dts_getColabProtheus_JYNX_test (SYS_USR + SRA).
+const DS_COLAB = 'dts_getColabProtheus_JYNX' + (env.E2E_DATASET_SUFIXO || '');
+
 // Parâmetros exatamente como no print da homologação.
 const CADASTRO = {
   colaborador: 'Ludmila Oliveira',
@@ -47,13 +50,14 @@ const norm = (s) => String(s || '').trim().toLowerCase();
 test.describe('cadastro de aprovador — Ludmila / ANL. CONTABIL JR / FLU1G202 (homologação 26/11)', () => {
   let colab;
 
-  test('A. a colaboradora é encontrada na busca do Protheus (dts_getColabProtheus_JYNX)', async (t) => {
-    const rows = await fluig.getDataset('dts_getColabProtheus_JYNX');
+  test('A. a colaboradora é encontrada na busca do Protheus (' + DS_COLAB + ')', async (t) => {
+    const rows = await fluig.getDataset(DS_COLAB);
     colab = rows.find((r) => norm(r.EMAIL) === norm(CADASTRO.email)) ||
             rows.find((r) => norm(r.NOME) === norm(CADASTRO.colaborador));
     assert.ok(colab, CADASTRO.colaborador + ' não veio na busca de colaboradores do Protheus');
     t.diagnostic('colunas devolvidas: ' + Object.keys(colab).join(', '));
     t.diagnostic('registro: ' + JSON.stringify(colab));
+    if (colab.ORIGEM_MATRICULA === 'SEM_SRA') t.diagnostic('atenção: usuário do Protheus sem funcionário correspondente na SRA (mesmo e-mail)');
   });
 
   test('B. a busca devolve os campos que a tela exige (matrícula, cód. departamento, departamento)', async () => {
