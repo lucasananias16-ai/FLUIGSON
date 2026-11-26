@@ -1,28 +1,16 @@
 // dts_getPedidoVenda_JYNX_test — CÓPIA DE TESTE do dts_getPedidoVenda_JYNX (carga completa da janela).
 // Não substitui o dataset publicado; serve para validar a correção antes de promover.
 
-function defineStructure() {
-    addColumn("C5_NUM");
-    addColumn("C5_TIPO");
-    addColumn("C5_CLIENTE");
-    addColumn("C5_LOJACLI");
-    addColumn("C5_EMISSAO");
-    addColumn("C5_VEND1");
-    addColumn("A1_NOME");
-    addColumn("CNPJ_CLIENTE");
-    addColumn("C5_VEND2");
-    addColumn("NOME_VEND2");
-    addColumn("VLR_TOTAL");
-    addColumn("C_CUSTO");
-    addColumn("NOME_CUSTO");
-    addColumn("C5_MOEDA");
-    addColumn("C5_TXMOEDA");
+// Linhas informativas do Protheus vêm com "=" seguido de ">" (não são dados).
+var MARCA_INFO = "=" + ">";
 
-    setKey(["C5_NUM"]);
+var COLS = ["C5_NUM", "C5_TIPO", "C5_CLIENTE", "C5_LOJACLI", "C5_EMISSAO", "C5_VEND1", "A1_NOME", "CNPJ_CLIENTE", "C5_VEND2", "NOME_VEND2", "VLR_TOTAL", "C_CUSTO", "NOME_CUSTO", "C5_MOEDA", "C5_TXMOEDA"];
+
+function colunasDataset() {
+    return COLS;
 }
 
-function onSync(lastSyncDate) {
-    var dataset = DatasetBuilder.newDataset();
+function carregar(dataset, upsert) {
     var prefixo = '160';
 
     var filtroWhere = "WHERE D_E_L_E_T_ = ' ' AND C5_VEND2 != '' " +
@@ -85,10 +73,10 @@ function onSync(lastSyncDate) {
             for (var j = 1; j < aLinhas.length; j++) {
                 var linhaCorrente = String(aLinhas[j]);
 
-                if (linhaCorrente.indexOf("=>") == -1 && linhaCorrente.indexOf("#ERRO#") == -1) {
+                if (linhaCorrente.indexOf(MARCA_INFO) == -1 && linhaCorrente.indexOf("#ERRO#") == -1) {
                     var colunas = linhaCorrente.split(";");
 
-                    dataset.addOrUpdateRow([
+                    var row = [
                         colunas.length > 0 ? colunas[0].trim() : "",
                         colunas.length > 1 ? colunas[1].trim() : "",
                         colunas.length > 2 ? colunas[2].trim() : "",
@@ -104,7 +92,8 @@ function onSync(lastSyncDate) {
                         colunas.length > 12 ? colunas[12].trim() : "",
                         colunas.length > 13 ? colunas[13].trim() : "1",
                         colunas.length > 14 ? colunas[14].trim() : "0"
-                    ]);
+                    ];
+                    if (upsert) { dataset.addOrUpdateRow(row); } else { dataset.addRow(row); }
                 }
             }
         }
@@ -125,6 +114,31 @@ function milissegundosParaDataProtheus(ms) {
     return ano + mes + dia;
 }
 
+// ---- Modo teste: restrito por usuário ----
+// Este dataset de TESTE é publicado SEM sincronização (não há defineStructure/onSync ativos):
+// responde na hora, sem depender da rotina agendada, e só devolve dados para os usuários
+// abaixo. Para promover ao dataset oficial, renomeie colunasDataset -> defineStructure
+// (com addColumn + setKey) e carregar -> onSync, como no arquivo original.
+var USUARIOS_PERMITIDOS = ["admin"];
+
+function usuarioPermitido() {
+    var usuario = "";
+    try { usuario = String(getValue("WKUser") || ""); } catch (e) {}
+    if (USUARIOS_PERMITIDOS.indexOf(usuario) == -1) {
+        log.warn("[dts_getPedidoVenda_JYNX_test] acesso negado ao usuário '" + usuario + "'");
+        return false;
+    }
+    return true;
+}
+
 function createDataset(fields, constraints, sortFields) {
-    return onSync(null);
+    var dataset = DatasetBuilder.newDataset();
+    var cols = colunasDataset();
+    for (var i = 0; i < cols.length; i++) {
+        dataset.addColumn(cols[i]);
+    }
+    if (!usuarioPermitido()) {
+        return dataset;
+    }
+    return carregar(dataset, false);
 }

@@ -23,7 +23,6 @@ var CFG = {
     pacote:    "br.com.cloudtotvs.protheus.odsdo175312._4040",
     consulta:  "GEN_01",
     tabela:    "SC7160",
-    dataCorte: "20260101",
     timeoutMs: 120000,
     separador: ";"
 };
@@ -40,24 +39,20 @@ var COLS_STATUS = ["C7_STATUS", "C7_COR_STATUS"];
 // Colunas somadas ao consolidar os itens de um mesmo PC.
 var SOMAR = { C7_TOTAL: true, C7_QUJE: true, C7_QUANT: true, C7_QTDACLA: true };
 
+// Linhas informativas do Protheus vêm com "=" seguido de ">" (não são dados).
+var MARCA_INFO = "=" + ">";
+
 var LOG_ID = "[dts_getPedidoCompra_JYNX_test] ";
 
-function defineStructure() {
-    for (var i = 0; i < COLS.length; i++) {
-        addColumn(COLS[i]);
-    }
-    for (var j = 0; j < COLS_STATUS.length; j++) {
-        addColumn(COLS_STATUS[j]);
-    }
-    setKey(["C7_NUM"]);
+function colunasDataset() {
+    return COLS.concat(COLS_STATUS);
 }
 
-function onSync(lastSyncDate) {
-    var dataset = DatasetBuilder.newDataset();
+function carregar(dataset, upsert) {
 
     // Carga completa da janela (não usa lastSyncDate): pega PCs alterados depois da emissão
     // (aprovação, quantidade entregue, resíduo). setKey + addOrUpdateRow não duplicam.
-    var filtroWhere = "WHERE D_E_L_E_T_ = ' ' AND C7_EMISSAO >= '" + CFG.dataCorte + "'";
+    var filtroWhere = "WHERE D_E_L_E_T_ = ' ' AND C7_EMISSAO >= '20260101'";
     var qCampos = "SELECT " + COLS.join(", ") + " FROM " + CFG.tabela;
     var qOrder  = "ORDER BY C7_NUM DESC";
 
@@ -101,7 +96,7 @@ function onSync(lastSyncDate) {
             if (linha.indexOf("#ERRO#") != -1) {
                 throw "Protheus devolveu erro: " + linha;
             }
-            if (linha.indexOf("=>") != -1 || linha === "") {
+            if (linha.indexOf(MARCA_INFO) != -1 || linha === "") {
                 continue;
             }
 
@@ -142,7 +137,7 @@ function onSync(lastSyncDate) {
             var status = consolidarStatusPedido(registro._status);
             row.push(status.nome);
             row.push(status.cor);
-            dataset.addOrUpdateRow(row);
+            if (upsert) { dataset.addOrUpdateRow(row); } else { dataset.addRow(row); }
         }
 
         log.info(LOG_ID + "sincronizados " + ordem.length + " PCs (" + (linhas.length - 1) + " itens lidos).");
@@ -155,9 +150,6 @@ function onSync(lastSyncDate) {
     return dataset;
 }
 
-function createDataset(fields, constraints, sortFields) {
-    return onSync(null);
-}
 
 // ---- Status (mesma regra da versão 20) ----
 
@@ -259,4 +251,33 @@ function texto(valor) {
     return (valor === null || valor === undefined)
          ? ""
          : String(valor).replace(/^\s+|\s+$/g, "");
+}
+
+// ---- Modo teste: restrito por usuário ----
+// Este dataset de TESTE é publicado SEM sincronização (não há defineStructure/onSync ativos):
+// responde na hora, sem depender da rotina agendada, e só devolve dados para os usuários
+// abaixo. Para promover ao dataset oficial, renomeie colunasDataset -> defineStructure
+// (com addColumn + setKey) e carregar -> onSync, como no arquivo original.
+var USUARIOS_PERMITIDOS = ["admin"];
+
+function usuarioPermitido() {
+    var usuario = "";
+    try { usuario = String(getValue("WKUser") || ""); } catch (e) {}
+    if (USUARIOS_PERMITIDOS.indexOf(usuario) == -1) {
+        log.warn("[dts_getPedidoCompra_JYNX_test] acesso negado ao usuário '" + usuario + "'");
+        return false;
+    }
+    return true;
+}
+
+function createDataset(fields, constraints, sortFields) {
+    var dataset = DatasetBuilder.newDataset();
+    var cols = colunasDataset();
+    for (var i = 0; i < cols.length; i++) {
+        dataset.addColumn(cols[i]);
+    }
+    if (!usuarioPermitido()) {
+        return dataset;
+    }
+    return carregar(dataset, false);
 }
