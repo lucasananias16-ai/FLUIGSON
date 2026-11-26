@@ -113,7 +113,7 @@
       <deadlineTime>0</deadlineTime>
       <joint>true</joint>
       <agreementPercentage>100</agreementPercentage>
-      <engineAllocationId>atribuicao_centro_custo_test</engineAllocationId>
+      <engineAllocationId>atribuicao_centro_custo</engineAllocationId>
       <engineAllocationConfiguration></engineAllocationConfiguration>
       <selectColleague>2</selectColleague>
       <initialState>false</initialState>
@@ -165,7 +165,7 @@
       <deadlineTime>0</deadlineTime>
       <joint>true</joint>
       <agreementPercentage>100</agreementPercentage>
-      <engineAllocationId>atribuicao_centro_custo_test</engineAllocationId>
+      <engineAllocationId>atribuicao_centro_custo</engineAllocationId>
       <engineAllocationConfiguration></engineAllocationConfiguration>
       <selectColleague>2</selectColleague>
       <initialState>false</initialState>
@@ -217,7 +217,7 @@
       <deadlineTime>0</deadlineTime>
       <joint>false</joint>
       <agreementPercentage>0</agreementPercentage>
-      <engineAllocationId>atribuicao_centro_custo_test</engineAllocationId>
+      <engineAllocationId>atribuicao_centro_custo</engineAllocationId>
       <engineAllocationConfiguration></engineAllocationConfiguration>
       <selectColleague>1</selectColleague>
       <initialState>false</initialState>
@@ -269,7 +269,7 @@
       <deadlineTime>0</deadlineTime>
       <joint>false</joint>
       <agreementPercentage>0</agreementPercentage>
-      <engineAllocationId>atribuicao_centro_custo_test</engineAllocationId>
+      <engineAllocationId>atribuicao_centro_custo</engineAllocationId>
       <engineAllocationConfiguration></engineAllocationConfiguration>
       <selectColleague>1</selectColleague>
       <initialState>false</initialState>
@@ -1490,6 +1490,92 @@
   </list>
   <list/>
   <list>
+    <WorkflowProcessEvent>
+      <workflowProcessEventPK>
+        <companyId>1</companyId>
+        <processId>liberacao_faturamento_medicao_test</processId>
+        <version>116</version>
+        <eventId>beforeStateEntry</eventId>
+      </workflowProcessEventPK>
+      <eventDescription>/*
+ * beforeStateEntry — SÓ na cópia de teste (liberacao_faturamento_medicao_test).
+ *
+ * Antes de a solicitação entrar numa Aprovação (12, 18, 20, 26), confere se existe aprovador
+ * ATIVO na alçada (C. Custo + nível + valor + moeda). Se não existir, lança erro: o Fluig
+ * desfaz a movimentação e mostra a mensagem a quem enviou.
+ *
+ * Motivo: o mecanismo atribuicao_centro_custo atribui ao &quot;admin&quot; quando não acha aprovador
+ * (e também em qualquer erro), então a solicitação seguia em vez de barrar.
+ * Limitação: a atribuição continua com o mecanismo original. Quando houver aprovadores ativos,
+ * ele ainda pode incluir cadastros inativos; isso só se corrige com o mecanismo _test.
+ */
+function beforeStateEntry(sequenceId) {
+    var NIVEIS = { &quot;12&quot;: &quot;1&quot;, &quot;18&quot;: &quot;2&quot;, &quot;20&quot;: &quot;3&quot;, &quot;26&quot;: &quot;4&quot; };
+    var nivel = NIVEIS[String(sequenceId)];
+    if (nivel === undefined) {
+        return;
+    }
+
+    var ccusto = texto(hAPI.getCardValue(&quot;hd_codCCusto&quot;));
+    var valor = texto(hAPI.getCardValue(&quot;txt_valTotalPc&quot;));
+    var moeda = texto(hAPI.getCardValue(&quot;txt_dadosPc_moeda&quot;));
+
+    if (ccusto === &quot;&quot;) {
+        throw &quot;Não foi possível definir o aprovador: o Centro de Custo do pedido está vazio.&quot;;
+    }
+    if (valor === &quot;&quot;) {
+        throw &quot;Não foi possível definir o aprovador: o valor total do pedido está vazio.&quot;;
+    }
+    if (moeda !== &quot;1&quot; &amp;&amp; moeda !== &quot;2&quot;) {
+        throw &quot;Não foi possível definir o aprovador: moeda do pedido inválida ('&quot; + moeda + &quot;'). Esperado 1 (BRL) ou 2 (USD).&quot;;
+    }
+
+    var constraints = [
+        DatasetFactory.createConstraint(&quot;COD_CCUSTO&quot;, ccusto, ccusto, ConstraintType.MUST),
+        DatasetFactory.createConstraint(&quot;NIVEL&quot;, nivel, nivel, ConstraintType.MUST),
+        DatasetFactory.createConstraint(&quot;VALOR_LIMITE&quot;, valor, valor, ConstraintType.MUST),
+        DatasetFactory.createConstraint(&quot;MOEDA&quot;, moeda, moeda, ConstraintType.MUST),
+        DatasetFactory.createConstraint(&quot;TIPO_LIMITE&quot;, &quot;PROC&quot;, &quot;PROC&quot;, ConstraintType.MUST),
+        DatasetFactory.createConstraint(&quot;ATIVO&quot;, &quot;Sim&quot;, &quot;Sim&quot;, ConstraintType.MUST)
+    ];
+
+    var ds = DatasetFactory.getDataset(&quot;dts_consultUsuariosPosicoes&quot;, null, constraints, null);
+    var total = (ds == null) ? 0 : ds.rowsCount;
+    var comUsuario = 0;
+    var semUsuario = [];
+
+    for (var i = 0; i &lt; total; i++) {
+        var email = texto(ds.getValue(i, &quot;usrPos_email&quot;));
+        if (email === &quot;&quot;) {
+            continue;
+        }
+        var cEmail = DatasetFactory.createConstraint(&quot;mail&quot;, email, email, ConstraintType.MUST);
+        var cAtivo = DatasetFactory.createConstraint(&quot;active&quot;, &quot;true&quot;, &quot;true&quot;, ConstraintType.MUST);
+        var col = DatasetFactory.getDataset(&quot;colleague&quot;, [&quot;colleaguePK.colleagueId&quot;], [cEmail, cAtivo], null);
+        if (col != null &amp;&amp; col.rowsCount &gt; 0) {
+            comUsuario++;
+        } else {
+            semUsuario.push(email);
+        }
+    }
+
+    log.info(&quot;[liberacao_faturamento_medicao_test.beforeStateEntry] atividade &quot; + sequenceId +
+             &quot; | CC &quot; + ccusto + &quot; | nível &quot; + nivel + &quot; | aprovadores ativos com usuário: &quot; + comUsuario);
+
+    if (comUsuario === 0) {
+        var simbolo = (moeda === &quot;2&quot;) ? &quot;USD&quot; : &quot;BRL&quot;;
+        throw &quot;Não há aprovador ativo de nível &quot; + nivel + &quot; para o Centro de Custo &quot; + ccusto +
+              &quot; com limite para &quot; + simbolo + &quot; &quot; + valor +
+              &quot;. Verifique 'Atribuição de Usuários e Posições' e 'Alçada por Posição'.&quot; +
+              (semUsuario.length &gt; 0 ? &quot; E-mails sem usuário ativo no Fluig: &quot; + semUsuario.join(&quot;, &quot;) + &quot;.&quot; : &quot;&quot;);
+    }
+}
+
+function texto(valor) {
+    return (valor === null || valor === undefined) ? &quot;&quot; : String(valor).replace(/^\s+|\s+$/g, &quot;&quot;);
+}
+</eventDescription>
+    </WorkflowProcessEvent>
     <WorkflowProcessEvent>
       <workflowProcessEventPK>
         <companyId>1</companyId>
