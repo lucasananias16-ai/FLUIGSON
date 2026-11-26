@@ -2111,7 +2111,6 @@ function calculateAgreement(currentState, agreementData) {&#xd;
   <list/>
   <list>
     <ConditionProcessAutomaticRules>
-      <id>3021</id>
       <tenantId>1</tenantId>
       <processId>liberacao_faturamento_medicao_test</processId>
       <version>116</version>
@@ -2124,7 +2123,6 @@ function calculateAgreement(currentState, agreementData) {&#xd;
       <valueType>1</valueType>
     </ConditionProcessAutomaticRules>
     <ConditionProcessAutomaticRules>
-      <id>3022</id>
       <tenantId>1</tenantId>
       <processId>liberacao_faturamento_medicao_test</processId>
       <version>116</version>
@@ -2137,7 +2135,6 @@ function calculateAgreement(currentState, agreementData) {&#xd;
       <valueType>1</valueType>
     </ConditionProcessAutomaticRules>
     <ConditionProcessAutomaticRules>
-      <id>3023</id>
       <tenantId>1</tenantId>
       <processId>liberacao_faturamento_medicao_test</processId>
       <version>116</version>
@@ -2150,7 +2147,6 @@ function calculateAgreement(currentState, agreementData) {&#xd;
       <valueType>1</valueType>
     </ConditionProcessAutomaticRules>
     <ConditionProcessAutomaticRules>
-      <id>3024</id>
       <tenantId>1</tenantId>
       <processId>liberacao_faturamento_medicao_test</processId>
       <version>116</version>
@@ -2163,7 +2159,6 @@ function calculateAgreement(currentState, agreementData) {&#xd;
       <valueType>1</valueType>
     </ConditionProcessAutomaticRules>
     <ConditionProcessAutomaticRules>
-      <id>3025</id>
       <tenantId>1</tenantId>
       <processId>liberacao_faturamento_medicao_test</processId>
       <version>116</version>
@@ -2176,7 +2171,6 @@ function calculateAgreement(currentState, agreementData) {&#xd;
       <valueType>1</valueType>
     </ConditionProcessAutomaticRules>
     <ConditionProcessAutomaticRules>
-      <id>3026</id>
       <tenantId>1</tenantId>
       <processId>liberacao_faturamento_medicao_test</processId>
       <version>116</version>
@@ -2189,7 +2183,6 @@ function calculateAgreement(currentState, agreementData) {&#xd;
       <valueType>1</valueType>
     </ConditionProcessAutomaticRules>
     <ConditionProcessAutomaticRules>
-      <id>3027</id>
       <tenantId>1</tenantId>
       <processId>liberacao_faturamento_medicao_test</processId>
       <version>116</version>
@@ -2202,7 +2195,6 @@ function calculateAgreement(currentState, agreementData) {&#xd;
       <valueType>1</valueType>
     </ConditionProcessAutomaticRules>
     <ConditionProcessAutomaticRules>
-      <id>3028</id>
       <tenantId>1</tenantId>
       <processId>liberacao_faturamento_medicao_test</processId>
       <version>116</version>
@@ -2215,7 +2207,6 @@ function calculateAgreement(currentState, agreementData) {&#xd;
       <valueType>1</valueType>
     </ConditionProcessAutomaticRules>
     <ConditionProcessAutomaticRules>
-      <id>3029</id>
       <tenantId>1</tenantId>
       <processId>liberacao_faturamento_medicao_test</processId>
       <version>116</version>
@@ -2228,7 +2219,6 @@ function calculateAgreement(currentState, agreementData) {&#xd;
       <valueType>1</valueType>
     </ConditionProcessAutomaticRules>
     <ConditionProcessAutomaticRules>
-      <id>3030</id>
       <tenantId>1</tenantId>
       <processId>liberacao_faturamento_medicao_test</processId>
       <version>116</version>
@@ -2241,7 +2231,6 @@ function calculateAgreement(currentState, agreementData) {&#xd;
       <valueType>1</valueType>
     </ConditionProcessAutomaticRules>
     <ConditionProcessAutomaticRules>
-      <id>3031</id>
       <tenantId>1</tenantId>
       <processId>liberacao_faturamento_medicao_test</processId>
       <version>116</version>
