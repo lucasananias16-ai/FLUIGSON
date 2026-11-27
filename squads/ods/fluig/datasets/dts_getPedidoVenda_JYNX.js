@@ -1,25 +1,22 @@
-function defineStructure() {
-    addColumn("C5_NUM");
-    addColumn("C5_TIPO");
-    addColumn("C5_CLIENTE");
-    addColumn("C5_LOJACLI");
-    addColumn("C5_EMISSAO");
-    addColumn("C5_VEND1");
-    addColumn("A1_NOME");
-    addColumn("CNPJ_CLIENTE");
-    addColumn("C5_VEND2");
-    addColumn("NOME_VEND2");
-    addColumn("VLR_TOTAL");
-    addColumn("C_CUSTO");
-    addColumn("NOME_CUSTO");
-    addColumn("C5_MOEDA");
-    addColumn("C5_TXMOEDA");
+// PROMOVIDO de dts_getPedidoVenda_JYNX_test (validado no DEV em 26/11/2026).
+// Volta: restaurar a versão 37 no Fluig.
 
-    setKey(["C5_NUM"]);
+// Linhas informativas do Protheus vêm com "=" seguido de ">" (não são dados).
+var MARCA_INFO = "=" + ">";
+
+var COLS = ["C5_NUM", "C5_TIPO", "C5_CLIENTE", "C5_LOJACLI", "C5_EMISSAO", "C5_VEND1", "A1_NOME", "CNPJ_CLIENTE", "C5_VEND2", "NOME_VEND2", "VLR_TOTAL", "C_CUSTO", "NOME_CUSTO", "C5_MOEDA", "C5_TXMOEDA"];
+
+function colunasDataset() {
+    return COLS;
 }
 
 function onSync(lastSyncDate) {
     var dataset = DatasetBuilder.newDataset();
+    var colsDs = colunasDataset();
+    for (var ci = 0; ci < colsDs.length; ci++) {
+        dataset.addColumn(colsDs[ci]);
+    }
+
     var prefixo = '160';
 
     var filtroWhere = "WHERE D_E_L_E_T_ = ' ' AND C5_VEND2 != '' " +
@@ -29,12 +26,12 @@ function onSync(lastSyncDate) {
                       "      AND SC7.D_E_L_E_T_ = ' ' " +
                       ")";
 
-    if (lastSyncDate != null && lastSyncDate > 0) {
-        var dataUltimaSync = milissegundosParaDataProtheus(lastSyncDate);
-        filtroWhere += " AND C5_EMISSAO >= '" + dataUltimaSync + "'";
-    } else {
-        filtroWhere += " AND C5_EMISSAO >= '20260101'";
-    }
+    // Carga completa da janela a cada sincronização (não usa lastSyncDate).
+    // O filtro incremental por C5_EMISSAO perdia: (a) PV cujo PC foi criado depois de uma
+    // sincronização, porque o EXISTS em SC7 falhava naquela carga e a emissão já ficava
+    // para trás nas seguintes; (b) alterações em PVs já sincronizados.
+    // setKey(C5_NUM) + addOrUpdateRow atualizam as linhas existentes, sem duplicar.
+    filtroWhere += " AND C5_EMISSAO >= '20260101'";
 
     try {
         // 1. Busca credenciais dinâmicas do dataset connector
@@ -82,10 +79,10 @@ function onSync(lastSyncDate) {
             for (var j = 1; j < aLinhas.length; j++) {
                 var linhaCorrente = String(aLinhas[j]);
 
-                if (linhaCorrente.indexOf("=>") == -1 && linhaCorrente.indexOf("#ERRO#") == -1) {
+                if (linhaCorrente.indexOf(MARCA_INFO) == -1 && linhaCorrente.indexOf("#ERRO#") == -1) {
                     var colunas = linhaCorrente.split(";");
 
-                    dataset.addOrUpdateRow([
+                    var row = [
                         colunas.length > 0 ? colunas[0].trim() : "",
                         colunas.length > 1 ? colunas[1].trim() : "",
                         colunas.length > 2 ? colunas[2].trim() : "",
@@ -101,7 +98,8 @@ function onSync(lastSyncDate) {
                         colunas.length > 12 ? colunas[12].trim() : "",
                         colunas.length > 13 ? colunas[13].trim() : "1",
                         colunas.length > 14 ? colunas[14].trim() : "0"
-                    ]);
+                    ];
+                    dataset.addOrUpdateRow(row);
                 }
             }
         }
@@ -120,6 +118,15 @@ function milissegundosParaDataProtheus(ms) {
     var mes = ("0" + (date.getMonth() + 1)).slice(-2);
     var dia = ("0" + date.getDate()).slice(-2);
     return ano + mes + dia;
+}
+
+function defineStructure() {
+    var cols = colunasDataset();
+    for (var i = 0; i < cols.length; i++) {
+        addColumn(cols[i], DatasetBuilder.STRING);
+    }
+    setKey(["C5_NUM"]);
+    addIndex(["C5_NUM"]);
 }
 
 function createDataset(fields, constraints, sortFields) {

@@ -8,7 +8,7 @@ const linhas=["HEADER",
  "I82805;000010;01;20260920;2000;104270;500;1;0;0;1;0;S;;;1"];
 const rows=[];const cols=[];let usuario=process.env.WKUSER||'admin';
 const ctx={log:{info:console.log,warn:console.log,error:console.log},
- addColumn:c=>cols.push(c),setKey:k=>console.log('key',k),
+ addColumn(){},setKey:k=>console.log('key',k),addIndex(){},
  getValue:k=>k==='WKUser'?usuario:null,
  DatasetBuilder:{newDataset:()=>({addColumn:c=>cols.push(c),addRow:r=>rows.push(r),addOrUpdateRow:r=>rows.push(r)})},
  DatasetFactory:{getDataset:()=>({rowsCount:1,getValue:()=>"x"})},
