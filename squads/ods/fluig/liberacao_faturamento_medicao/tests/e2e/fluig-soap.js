@@ -166,7 +166,15 @@ class FluigSoap {
   }
 
   // Movimenta a solicitação. Devolve os pares chave/valor da resposta; lança erro se vier ERROR.
-  async saveAndSendTask({ processInstanceId, choosedState, colleagueIds = [], comments = '', userId, completeTask = true, cardData = {}, managerMode = false, threadSequence = 0 }) {
+  // anexos: [{ fileName, contentBase64, description }] — anexos da solicitação (processAttachmentDto).
+  async saveAndSendTask({ processInstanceId, choosedState, colleagueIds = [], comments = '', userId, completeTask = true, cardData = {}, managerMode = false, threadSequence = 0, anexos = [] }) {
+    const att = anexos.map((a, i) =>
+      '<item><attachmentSequence>' + (i + 1) + '</attachmentSequence><attachments><attach>true</attach><descriptor>false</descriptor>' +
+      '<editing>false</editing><fileName>' + esc(a.fileName) + '</fileName><filecontent>' + a.contentBase64 + '</filecontent>' +
+      '<fileSelected>false</fileSelected><principal>true</principal></attachments><companyId>' + this.companyId + '</companyId>' +
+      '<description>' + esc(a.description || a.fileName) + '</description><fileName>' + esc(a.fileName) + '</fileName>' +
+      '<newAttach>true</newAttach><processInstanceId>' + processInstanceId + '</processInstanceId><size>' +
+      Math.round(a.contentBase64.length * 3 / 4) + '</size></item>').join('');
     const ids = colleagueIds.map((x) => '<item>' + esc(x) + '</item>').join('');
     const card = Object.entries(cardData)
       .map(([k, v]) => '<item><item>' + esc(k) + '</item><item>' + esc(v) + '</item></item>')
@@ -174,12 +182,19 @@ class FluigSoap {
     const xml = await this.call('ECMWorkflowEngineService', NS_WORKFLOW, 'saveAndSendTask',
       this.cred() + '<processInstanceId>' + processInstanceId + '</processInstanceId><choosedState>' + choosedState +
       '</choosedState><colleagueIds>' + ids + '</colleagueIds><comments>' + esc(comments) + '</comments><userId>' +
-      esc(userId || this.username) + '</userId><completeTask>' + completeTask + '</completeTask><attachments/><cardData>' +
+      esc(userId || this.username) + '</userId><completeTask>' + completeTask + '</completeTask><attachments>' + att + '</attachments><cardData>' +
       card + '</cardData><appointment/><managerMode>' + managerMode + '</managerMode><threadSequence>' + threadSequence + '</threadSequence>');
     const pairs = this.pares(xml);
     const err = pairs.find((p) => /^ERROR/i.test(String(p[0]).trim()));
     if (err) throw new Error('saveAndSendTask: ' + err[1]);
     return pairs;
+  }
+
+  // Formulário atual da solicitação como { campo: valor } (inclui linhas pai x filho campo___N).
+  async getInstanceCardData(processInstanceId, userId) {
+    const xml = await this.call('ECMWorkflowEngineService', NS_WORKFLOW, 'getInstanceCardData',
+      this.cred() + '<userId>' + esc(userId || this.username) + '</userId><processInstanceId>' + processInstanceId + '</processInstanceId>');
+    return Object.fromEntries(this.pares(xml));
   }
 
   async cancelInstance(processInstanceId, cancelText = 'Cancelado pelo teste E2E') {
