@@ -33,6 +33,7 @@ Fontes: `workflow/scripts/liberacao_faturamento_medicao_test.{beforeStateEntry,b
 `workflow/liberacao_faturamento_medicao_test.v6.export.xml` (v7: `….v7.export.xml`, regra do anexo; v8: `….v8.export.xml`, complemento desligado).
 
 ## 3. Resultado dos testes (27/11/2026, com cadastros de teste temporários já excluídos)
+- **v8 (complemento desligado), 27/11: fluxo completo 17/17 (solicitação 241) e reprovação 5/5 (242)**, mesmos resultados da v7.
 - **v7 (anexo da NF), 27/11: fluxo completo 17/17 (solicitação 239) e reprovação 5/5 (240).** Um PDF anexado na Aprovação 4
   não liberou a Adicionar NF; a NF anexada na própria etapa liberou e o nome dela foi para o histórico.
 - **fluxo-completo.e2e.test.js: 17/17** (solicitação 237). Passou por todas as atividades: Revisão, Aprovações 1–4,

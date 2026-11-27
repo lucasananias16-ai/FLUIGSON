@@ -80,3 +80,5 @@ Ao final da limpeza: nenhuma alçada ou atribuição TST*, 0 aprovadores para FL
 - **v8 publicada e ativa** em liberacao_faturamento_medicao_test, a pedido do Lucas: `complementsLevel` 1 → 0 (único diff
   em relação à v7). Conferido no export do servidor: v8 com complementsLevel 0; o original segue com 1.
 - Sem cadastros temporários nem solicitações nesta etapa. Os testes da v7 (239/240) não usam complemento.
+- **Testes na v8:** cadastros temporários TST1–TST4 (cards 738–745) criados e **excluídos**. Solicitações 241 (fluxo completo,
+  17/17) e 242 (reprovação, 5/5), ambas na v8 e finalizadas. Limpeza: 0 TST, 0 aprovadores FLU1G, nenhuma ativa na cópia.

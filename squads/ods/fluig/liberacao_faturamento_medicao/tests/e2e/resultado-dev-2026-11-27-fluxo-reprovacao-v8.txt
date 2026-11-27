@@ -1,0 +1,22 @@
+▶ reprovação — liberacao_faturamento_medicao_test — PV 104281 / PC I82810 — USD 30.000 — C. Custo FLU1G (retorno da homologação 26/11)
+  ✔ 00. monta o formulário como o widget (3869.84375ms)
+  ℹ PV 104281 (PRIO TIGRIS S.A.) | PC I82810 | itens: 1 | solicitante: Admin Fluig
+  ✔ 01. Início → Aprovação 1 (1381.552511ms)
+  ℹ solicitação 242
+  ✔ 02. reprovar SEM comentário é barrado (1265.460421ms)
+  ℹ barrado: saveAndSendTask: Erro ao executar evento do processo, Preencha antes de enviar: comentário explicando o motivo da reprovação. (beforeTaskSave#70) in beforeTaskSave at line number 70
+  ✔ 03. reprovar com comentário → fim Reprovado (2005.23326ms)
+  ℹ 12 Aprovação 1 → Fim | {"hd_aprovPc":"Reprovar","txt_obsGeral":"PC lançado no centro de custo errado; refazer no Protheus."}
+  ✔ 04. encerrada no fim "Reprovado", com o comentário no histórico (735.027126ms)
+  ℹ atividades percorridas: 10 → 12 → 80 → 100
+  ℹ histórico: Abertura | Admin Fluig — Solicitação aberta
+  ℹ histórico: Aprovação 1 | Admin Fluig — Reprovado: PC lançado no centro de custo errado; refazer no Protheus.
+✔ reprovação — liberacao_faturamento_medicao_test — PV 104281 / PC I82810 — USD 30.000 — C. Custo FLU1G (retorno da homologação 26/11) (9258.629432ms)
+ℹ tests 5
+ℹ suites 1
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 9328.082937
