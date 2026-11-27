@@ -236,6 +236,15 @@ Série nova "Jogos da Tuti": 12 desafios de memória de cinco tipos (cartas que 
 | 1 a 6 | Narrativa, imagens, narração, animação (5 min 46 s), legendas e pacote do YouTube | Aprovadas (pelo Claude, por decisão do dono do canal) |
 | 7 | Publicação | Pronto para subir. O passo a passo está em `v21-biblico-daniel/youtube/como-publicar.md` |
 
+### Vídeo 22 — Quiz de Natal: a Véspera de Natal
+
+12 desafios (5 min 39 s), no padrão novo. A sala à noite (`art/vespera.js`): a lareira, a poltrona, as meias, o leite com biscoito e o pijama; Tuti de gorro. O "o que falta" é o fogo da lareira, a sequência é vela e sino e, no comparar, a meia grande fica à esquerda. Código em `src/v22/`; arquivos em `v22-natal-vespera/`. Agendado para quarta 09/12/2026, 16h.
+
+| Nº | Etapa | Situação |
+|---|---|---|
+| 1 a 6 | Narrativa, imagens, narração, animação (5 min 39 s), legendas e pacote do YouTube | Aprovadas (pelo Claude, por decisão do dono do canal) |
+| 7 | Publicação | Pronto para subir. O passo a passo está em `v22-natal-vespera/youtube/como-publicar.md` |
+
 ## Pastas
 
 - `v5-ingles-animais/` — arquivos do Vídeo 5, na mesma organização do Vídeo 4
@@ -376,6 +385,10 @@ node src/v20/video.js
 
 ```bash
 node src/v21/video.js
+```
+
+```bash
+node src/v22/video.js
 ```
 
 Cada comando monta um vídeo inteiro em `_rascunho/video/` (pasta fora do repositório): `v1_quiz_arca_de_noe.mp4`, `v2_desafios_de_davi_e_golias.mp4` e `v3_desafios_do_natal_de_jesus.mp4` e `v4_quiz_do_papai_noel.mp4` e `v5_festa_dos_animais.mp4`. Também grava as legendas e o mapa do vídeo na pasta de cada um. Cada cena é um trecho separado; só os trechos que mudaram são renderizados de novo. Um vídeo de 4 minutos leva cerca de 5 minutos para renderizar do zero.

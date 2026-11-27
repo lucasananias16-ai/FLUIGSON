@@ -20,6 +20,9 @@ const FALAS = [
   { id: 's1_r1', texto: 'O coelho marrom!', tipo: 'fala' },
   { id: 's1_r2', texto: 'O de chocolate!', tipo: 'fala' },
   { id: 's1_r3', texto: 'O de cachecol vermelho!', tipo: 'fala' },
+  { id: 's1b_r1', texto: 'A meia verde!', tipo: 'fala' },
+  { id: 's1b_r2', texto: 'O sino!', tipo: 'fala' },
+  { id: 's1b_r3', texto: 'O biscoito!', tipo: 'fala' },
   // S3 · qual é o maior?
   { id: 's3m_q1', texto: 'Qual é o maior? Rápido!', tipo: 'fala' },
   { id: 's3m_r1', texto: 'O da direita!', tipo: 'fala' },

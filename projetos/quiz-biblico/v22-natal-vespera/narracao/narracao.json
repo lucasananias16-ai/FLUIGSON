@@ -1,0 +1,371 @@
+{
+  "voz": {
+    "nome": "pt-BR-Chirp3-HD-Leda",
+    "velocidade": 0.94,
+    "estilo": "animada"
+  },
+  "falas": {
+    "v22_abertura": {
+      "texto": "Oi, amiguinho! A Tuti voltou! Hoje é véspera de Natal! São doze desafios. Vamos lá!",
+      "dur": 7.64,
+      "estilo": "animada"
+    },
+    "v22_p1_pergunta": {
+      "texto": "O biscoito se escondeu na sala! Você consegue encontrar?",
+      "dur": 3.92,
+      "estilo": "animada"
+    },
+    "v22_p1_resposta": {
+      "texto": "Achou! Ele estava atrás da poltrona! Que biscoito levado!",
+      "dur": 4.51,
+      "estilo": "animada"
+    },
+    "v22_p2_pergunta": {
+      "texto": "Tem meias penduradas na sala. Conte comigo!",
+      "dur": 3.14,
+      "estilo": "animada"
+    },
+    "v22_p2_contagem": {
+      "texto": "Um... dois... três... quatro... cinco!",
+      "dur": 6.68,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 0.4
+        },
+        {
+          "ini": 1.25,
+          "fim": 1.96
+        },
+        {
+          "ini": 2.81,
+          "fim": 3.57
+        },
+        {
+          "ini": 4.42,
+          "fim": 5.15
+        },
+        {
+          "ini": 6,
+          "fim": 6.68
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v22_p2_resposta": {
+      "texto": "Cinco meias! Muito bem!",
+      "dur": 1.85,
+      "estilo": "animada"
+    },
+    "v22_p3_pergunta": {
+      "texto": "O Papai Noel chega com fome! O que a gente deixa para ele? O leite com biscoito... o sapato... ou a pedra?",
+      "dur": 9.48,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.81
+        },
+        {
+          "ini": 2.31,
+          "fim": 3.8
+        },
+        {
+          "ini": 4.7,
+          "fim": 6.08
+        },
+        {
+          "ini": 7.08,
+          "fim": 7.73
+        },
+        {
+          "ini": 8.73,
+          "fim": 9.48
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v22_p3_resposta": {
+      "texto": "O leite com biscoito! Que delícia!",
+      "dur": 2.73,
+      "estilo": "animada"
+    },
+    "v22_p4_pergunta": {
+      "texto": "De quem é essa sombra? Do sino... da meia... ou da vela?",
+      "dur": 6.83,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.72
+        },
+        {
+          "ini": 2.62,
+          "fim": 3.39
+        },
+        {
+          "ini": 4.39,
+          "fim": 5.05
+        },
+        {
+          "ini": 6.05,
+          "fim": 6.83
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v22_p4_resposta": {
+      "texto": "Da meia! A meia de Natal!",
+      "dur": 2.77,
+      "estilo": "animada"
+    },
+    "v22_p5_pergunta": {
+      "texto": "O que está faltando na lareira? A neve... a flor... ou o fogo?",
+      "dur": 6.82,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.76
+        },
+        {
+          "ini": 2.66,
+          "fim": 3.35
+        },
+        {
+          "ini": 4.35,
+          "fim": 4.98
+        },
+        {
+          "ini": 5.98,
+          "fim": 6.82
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v22_p5_resposta": {
+      "texto": "O fogo! Agora a sala fica quentinha!",
+      "dur": 3.16,
+      "estilo": "animada"
+    },
+    "v22_p6_pergunta": {
+      "texto": "Qual meia é a maior? A da esquerda... ou a da direita?",
+      "dur": 4.98,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.33
+        },
+        {
+          "ini": 2.23,
+          "fim": 3.17
+        },
+        {
+          "ini": 4.17,
+          "fim": 4.98
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v22_p6_resposta": {
+      "texto": "A da esquerda! Que meião!",
+      "dur": 2.34,
+      "estilo": "animada"
+    },
+    "v22_p7_pergunta": {
+      "texto": "Uma destas meias é diferente! Qual é?",
+      "dur": 2.92,
+      "estilo": "animada"
+    },
+    "v22_p7_resposta": {
+      "texto": "A verde! As outras são vermelhas!",
+      "dur": 3.27,
+      "estilo": "animada"
+    },
+    "v22_p8_pergunta": {
+      "texto": "Olhe a fila! O que vem depois? A vela... o presente... ou o sino?",
+      "dur": 7.47,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 0.78
+        },
+        {
+          "ini": 1.28,
+          "fim": 2.34
+        },
+        {
+          "ini": 3.24,
+          "fim": 3.93
+        },
+        {
+          "ini": 4.93,
+          "fim": 5.76
+        },
+        {
+          "ini": 6.76,
+          "fim": 7.47
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v22_p8_resposta": {
+      "texto": "O sino! Vela, sino, vela, sino!",
+      "dur": 2.98,
+      "estilo": "animada"
+    },
+    "v22_p9_pergunta": {
+      "texto": "O que não combina com a noite de Natal? A vela... a boia... ou o sino?",
+      "dur": 7.31,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 2.2
+        },
+        {
+          "ini": 3.1,
+          "fim": 3.78
+        },
+        {
+          "ini": 4.78,
+          "fim": 5.5
+        },
+        {
+          "ini": 6.5,
+          "fim": 7.31
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v22_p9_resposta": {
+      "texto": "A boia! Ha ha! Ninguém vai nadar agora!",
+      "dur": 3.98,
+      "estilo": "animada"
+    },
+    "v22_p10_mostrar": {
+      "texto": "Olhe bem onde a meia está.",
+      "dur": 1.7,
+      "estilo": "animada"
+    },
+    "v22_p10_pergunta": {
+      "texto": "As cartas trocaram de lugar! Onde está a meia? No um... no dois... ou no três?",
+      "dur": 8.38,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.87
+        },
+        {
+          "ini": 2.37,
+          "fim": 3.46
+        },
+        {
+          "ini": 4.26,
+          "fim": 4.88
+        },
+        {
+          "ini": 5.78,
+          "fim": 6.62
+        },
+        {
+          "ini": 7.52,
+          "fim": 8.38
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v22_p10_resposta": {
+      "texto": "No número três! Você tem olho bom!",
+      "dur": 2.73,
+      "estilo": "animada"
+    },
+    "v22_p11_pergunta": {
+      "texto": "O que a gente veste para dormir? O pijama... o casaco... ou a bermuda?",
+      "dur": 7.21,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.67
+        },
+        {
+          "ini": 2.57,
+          "fim": 3.43
+        },
+        {
+          "ini": 4.43,
+          "fim": 5.26
+        },
+        {
+          "ini": 6.26,
+          "fim": 7.21
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v22_p11_resposta": {
+      "texto": "O pijama! Bem quentinho!",
+      "dur": 2.36,
+      "estilo": "animada"
+    },
+    "v22_p12_pergunta": {
+      "texto": "Quando o Papai Noel chega? De manhã... de tarde... ou de noite?",
+      "dur": 6.58,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.4
+        },
+        {
+          "ini": 2.3,
+          "fim": 3.05
+        },
+        {
+          "ini": 4.05,
+          "fim": 4.81
+        },
+        {
+          "ini": 5.81,
+          "fim": 6.58
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v22_p12_resposta": {
+      "texto": "De noite! Quando todo mundo está dormindo!",
+      "dur": 3.26,
+      "estilo": "animada"
+    },
+    "v22_encerramento": {
+      "texto": "Agora é hora de dormir, que o Papai Noel já vem! Feliz Natal, amiguinho!",
+      "dur": 5.37,
+      "estilo": "animada"
+    },
+    "v22_v2_p1_pergunta": {
+      "texto": "Socorro! O biscoito fugiu! Você me ajuda a achar? Rápido, aponta pra ele!",
+      "dur": 6.7,
+      "estilo": "animada"
+    },
+    "v22_v2_gancho": {
+      "texto": "Você é demais! São doze desafios, e o último é o mais difícil de todos. Vamos?",
+      "dur": 6.38,
+      "estilo": "animada"
+    },
+    "v22_v2_surpresa": {
+      "texto": "Agora vem um desafio surpresa!",
+      "dur": 2.11,
+      "estilo": "animada"
+    },
+    "v22_v2_metade": {
+      "texto": "Metade! Você está indo muito bem!",
+      "dur": 3.06,
+      "estilo": "animada"
+    },
+    "v22_v2_ultimo": {
+      "texto": "E agora, o último desafio! O mais difícil de todos!",
+      "dur": 4.21,
+      "estilo": "animada"
+    },
+    "v22_v2_encerramento": {
+      "texto": "Uhuu! Você completou os doze desafios! Agora é hora de dormir, que o Papai Noel já vem. Vem jogar o próximo quiz comigo!",
+      "dur": 10.16,
+      "estilo": "animada"
+    }
+  }
+}

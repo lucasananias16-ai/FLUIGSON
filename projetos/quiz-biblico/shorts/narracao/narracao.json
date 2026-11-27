@@ -124,6 +124,21 @@
       "texto": "Cinco!",
       "dur": 0.71,
       "estilo": "animada"
+    },
+    "s1b_r1": {
+      "texto": "A meia verde!",
+      "dur": 1.01,
+      "estilo": "animada"
+    },
+    "s1b_r2": {
+      "texto": "O sino!",
+      "dur": 0.77,
+      "estilo": "animada"
+    },
+    "s1b_r3": {
+      "texto": "O biscoito!",
+      "dur": 0.91,
+      "estilo": "animada"
     }
   }
 }

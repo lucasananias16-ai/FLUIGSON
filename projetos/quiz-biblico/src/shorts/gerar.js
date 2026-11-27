@@ -564,6 +564,36 @@ const SHORTS = [
     },
   },
   {
+    // S1 · qual é o diferente? (a Véspera de Natal)
+    id: 'v22_diferente3',
+    pasta: 'v22-natal-vespera',
+    narrDir: NARR_SHORTS,
+    criar: () => {
+      const vp = require('../art/vespera');
+      const ceia = require('../art/ceia');
+      const objetos = require('../art/objetos');
+      const sala = require('../art/sala');
+      const q = (fundo, opcoes) => ({ painel: 'texto', texto: '?', fundo, opcoes });
+      const verde = vp.meiaCor('#3CA567', '#2F8F5A');
+      return criarTresSombras({
+        narrDir: NARR_SHORTS,
+        ids: { q: ['s1_q1', 's3_e_agora', 's3_ultima'], r: ['s1b_r1', 's1b_r2', 's1b_r3'], fim: 's3_fim' },
+        fundo: fundos.sala,
+        tutiOpts: { gorro: true },
+        perguntas: [
+          q('#FFE0C7', [{ arte: vp.meia, fundo: '#CFF1E0' }, { arte: verde, fundo: '#CFF1E0', certa: true }, { arte: vp.meia, fundo: '#CFF1E0' }]),
+          q('#CFE6FF', [{ arte: sala.sino, fundo: '#E4DAFB', certa: true }, { arte: () => ceia.vela(), fundo: '#E4DAFB' }, { arte: () => ceia.vela(), fundo: '#E4DAFB' }]),
+          q('#E4DAFB', [{ arte: objetos.presente, fundo: '#FFD9E4' }, { arte: objetos.presente, fundo: '#FFD9E4' }, { arte: ceia.gengibre, fundo: '#FFD9E4', certa: true }]),
+        ],
+      });
+    },
+    textos: {
+      titulo: 'Qual é o diferente? 🧦 Acerta as 3? #shorts',
+      descricao: 'Três desafios de Natal: ache o diferente em 3 segundos! 🧦\n\nQuiz completo: Quiz de Natal para Crianças 🧦 A Véspera de Natal (link do vídeo longo)\n\n#shorts #quizinfantil #paracriancas',
+      tags: ['quiz infantil', 'qual é o diferente', 'jogo de atenção', 'quiz de natal', 'quiz para crianças', 'ovelhinha Tuti', 'shorts infantil'],
+    },
+  },
+  {
     id: 'v11_short1',
     pasta: 'v11-natal-ceia',
     criar: deVideo({ v: 'v11', pasta: 'v11-natal-ceia', n: 7, fundo: fundos.cozinha, selo: 'QUIZ DE NATAL', tutiOpts: { gorro: true } }),
