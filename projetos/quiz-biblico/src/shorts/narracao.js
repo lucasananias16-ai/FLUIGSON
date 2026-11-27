@@ -23,6 +23,18 @@ const FALAS = [
   { id: 's1b_r1', texto: 'A meia verde!', tipo: 'fala' },
   { id: 's1b_r2', texto: 'O sino!', tipo: 'fala' },
   { id: 's1b_r3', texto: 'O biscoito!', tipo: 'fala' },
+  // S2 · de quem é a sombra? (Véspera de Natal)
+  { id: 's2_q1', texto: 'De quem é essa sombra? Rápido!', tipo: 'fala' },
+  { id: 's2n_r1', texto: 'Da meia!', tipo: 'fala' },
+  { id: 's2n_r2', texto: 'Do sino!', tipo: 'fala' },
+  { id: 's2n_r3', texto: 'Da vela!', tipo: 'fala' },
+  // S5 · conte rápido! (Daniel e Véspera de Natal; as respostas são as mesmas: três, quatro, cinco)
+  { id: 's5d_q1', texto: 'Quantos leões? Conte rápido!', tipo: 'fala' },
+  { id: 's5d_q2', texto: 'E quantas coroas?', tipo: 'fala' },
+  { id: 's5d_q3', texto: 'A última é difícil! Quantas estrelas?', tipo: 'fala' },
+  { id: 's5n_q1', texto: 'Quantas meias? Conte rápido!', tipo: 'fala' },
+  { id: 's5n_q2', texto: 'E quantas velas?', tipo: 'fala' },
+  { id: 's5n_q3', texto: 'A última é difícil! Quantos biscoitos?', tipo: 'fala' },
   // S3 · qual é o maior?
   { id: 's3m_q1', texto: 'Qual é o maior? Rápido!', tipo: 'fala' },
   { id: 's3m_r1', texto: 'O da direita!', tipo: 'fala' },

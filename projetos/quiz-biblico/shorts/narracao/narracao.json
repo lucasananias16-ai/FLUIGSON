@@ -139,6 +139,56 @@
       "texto": "O biscoito!",
       "dur": 0.91,
       "estilo": "animada"
+    },
+    "s2_q1": {
+      "texto": "De quem é essa sombra? Rápido!",
+      "dur": 2.91,
+      "estilo": "animada"
+    },
+    "s2n_r1": {
+      "texto": "Da meia!",
+      "dur": 0.85,
+      "estilo": "animada"
+    },
+    "s2n_r2": {
+      "texto": "Do sino!",
+      "dur": 0.805,
+      "estilo": "animada"
+    },
+    "s2n_r3": {
+      "texto": "Da vela!",
+      "dur": 0.89,
+      "estilo": "animada"
+    },
+    "s5d_q1": {
+      "texto": "Quantos leões? Conte rápido!",
+      "dur": 2.39,
+      "estilo": "animada"
+    },
+    "s5d_q2": {
+      "texto": "E quantas coroas?",
+      "dur": 1.44,
+      "estilo": "animada"
+    },
+    "s5d_q3": {
+      "texto": "A última é difícil! Quantas estrelas?",
+      "dur": 3.11,
+      "estilo": "animada"
+    },
+    "s5n_q1": {
+      "texto": "Quantas meias? Conte rápido!",
+      "dur": 2.33,
+      "estilo": "animada"
+    },
+    "s5n_q2": {
+      "texto": "E quantas velas?",
+      "dur": 1.25,
+      "estilo": "animada"
+    },
+    "s5n_q3": {
+      "texto": "A última é difícil! Quantos biscoitos?",
+      "dur": 3.43,
+      "estilo": "animada"
     }
   }
 }

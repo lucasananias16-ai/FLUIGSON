@@ -124,6 +124,8 @@ function criarTresSombras({ narrDir, ids, perguntas, fundo, tutiOpts = {} }) {
       );
     })
     .join('');
+  // no "conte rápido" nada pode tampar o que se conta: o relógio sobe para fora do painel e o "Rápido!" não aparece
+  const soContar = perguntas.every((p) => p.painel === 'contar');
   const css = `
     html, body { width: ${W}px; height: ${H}px; }
     #stage { position: relative; width: ${W}px; height: ${H}px; overflow: hidden; }
@@ -153,7 +155,7 @@ function criarTresSombras({ narrDir, ids, perguntas, fundo, tutiOpts = {} }) {
       box-shadow: 0 10px 0 rgba(61,44,78,.18); }
     #rapido { position: absolute; left: ${PAINEL.x}px; top: ${PAINEL.y + PAINEL.h - 120}px; width: ${PAINEL.w}px; text-align: center; font-size: 92px; font-weight: 700;
       color: #fff; -webkit-text-stroke: 18px ${LINE}; paint-order: stroke fill; transform: scale(0); }
-    #timer { position: absolute; left: ${PAINEL.x + PAINEL.w - 200}px; top: ${PAINEL.y - 60}px; width: 240px; height: 240px; transform: scale(0); }
+    #timer { position: absolute; left: ${PAINEL.x + PAINEL.w - 200}px; top: ${PAINEL.y - (soContar ? 225 : 60)}px; width: 240px; height: 240px; transform: scale(0); }
     #tuti { position: absolute; left: ${TUTI.left}px; top: ${TUTI.top}px; width: ${TUTI.width}px; height: ${TUTI.height}px; }
   `;
   const body =
@@ -222,7 +224,7 @@ function criarTresSombras({ narrDir, ids, perguntas, fundo, tutiOpts = {} }) {
     ops.push({ id: 'placarTxt', html: `${nPlacar}/3`, style: `transform:scale(${f(1 + 0.15 * Z.bump(Z.prog(t, atual > 0 ? Q[atual].ini : 99, 0.4)))})` });
     const q = Q[atual];
     const kRap = t < T.volta ? Z.outBack(Z.prog(t, q.contagem - 0.2, 0.3), 2.2) * (1 - Z.prog(t, q.revela - 0.25, 0.25)) : 0;
-    ops.push({ id: 'rapido', style: `transform:scale(${f(kRap)}) rotate(${f(-4 + 3 * Math.sin(t * 2 * Math.PI * 2))}deg)` });
+    ops.push({ id: 'rapido', style: `transform:scale(${f(soContar ? 0 : kRap)}) rotate(${f(-4 + 3 * Math.sin(t * 2 * Math.PI * 2))}deg)` });
     ops.push(...P.opsTimer(t, q, CONT));
     ops.push({ id: 'tuti', html: tutiFrame(t, Object.assign({ track, fala, pulos }, tutiOpts, { width: TUTI.width, height: TUTI.height })) });
     // confete a cada acerto e na festa do fim

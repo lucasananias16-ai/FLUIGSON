@@ -594,6 +594,111 @@ const SHORTS = [
     },
   },
   {
+    // S3 · qual é o maior? (Daniel e os Leões)
+    id: 'v21_maior3',
+    pasta: 'v21-biblico-daniel',
+    narrDir: NARR_SHORTS,
+    criar: () => {
+      const dn = require('../art/daniel');
+      const animais = require('../art/animais');
+      const pessoas = require('../art/pessoas');
+      const tres = (arte, escalas, certa, fundo, fundoOpc) => ({ painel: 'texto', texto: '?', fundo, opcoes: escalas.map((e, i) => ({ arte, escala: e, fundo: fundoOpc, certa: i === certa })) });
+      return criarTresSombras({
+        narrDir: NARR_SHORTS,
+        ids: { q: ['s3m_q1', 's3_e_agora', 's3_ultima'], r: ['s3m_r1', 's3m_r2', 's3m_r3'], fim: 's3_fim' },
+        fundo: fundos.pasto,
+        perguntas: [tres(dn.leao('feliz'), [0.75, 0.55, 1], 2, '#FFF1B8', '#CFE6FF'), tres(animais.camelo, [1, 0.78, 0.6], 0, '#CFE6FF', '#FFE0C7'), tres(() => pessoas.anjo(), [0.8, 1, 0.62], 1, '#FFD9E4', '#E4DAFB')],
+      });
+    },
+    textos: {
+      titulo: 'Qual é o maior? 🦁 Acerta as 3? #shorts',
+      descricao: 'Três desafios rápidos: qual é o maior? Você tem 3 segundos! 🦁\n\nQuiz completo: Quiz Bíblico para Crianças 🦁 Daniel e os Leões (link do vídeo longo)\n\n#shorts #quizinfantil #paracriancas',
+      tags: ['quiz infantil', 'qual é o maior', 'grande e pequeno', 'quiz bíblico infantil', 'quiz para crianças', 'ovelhinha Tuti', 'shorts infantil'],
+    },
+  },
+  {
+    // S5 · conte rápido! (Daniel e os Leões)
+    id: 'v21_contar3',
+    pasta: 'v21-biblico-daniel',
+    narrDir: NARR_SHORTS,
+    criar: () => {
+      const dn = require('../art/daniel');
+      const objetos = require('../art/objetos');
+      const nums = (lista, certo, fundo) => lista.map((x) => ({ texto: String(x), fundo, certa: x === certo }));
+      return criarTresSombras({
+        narrDir: NARR_SHORTS,
+        ids: { q: ['s5d_q1', 's5d_q2', 's5d_q3'], r: ['s5_r1', 's5_r2', 's5_r3'], fim: 's3_fim' },
+        fundo: fundos.pasto,
+        perguntas: [
+          { painel: 'contar', arte: dn.leao('feliz'), n: 3, fundo: '#FFF1B8', opcoes: nums([3, 2, 4], 3, '#CFE6FF') },
+          { painel: 'contar', arte: dn.coroa, n: 4, fundo: '#E4DAFB', opcoes: nums([5, 3, 4], 4, '#FFD9E4') },
+          { painel: 'contar', arte: objetos.estrela, n: 5, fundo: '#34498F', opcoes: nums([4, 5, 3], 5, '#FFF1B8') },
+        ],
+      });
+    },
+    textos: {
+      titulo: 'Conte rápido! 🦁 Acerta as 3? #shorts',
+      descricao: 'Leões, coroas e estrelas: conte rápido em 3 segundos! 🦁\n\nQuiz completo: Quiz Bíblico para Crianças 🦁 Daniel e os Leões (link do vídeo longo)\n\n#shorts #quizinfantil #paracriancas',
+      tags: ['quiz infantil', 'contar até 5', 'números para crianças', 'quiz bíblico infantil', 'quiz para crianças', 'ovelhinha Tuti', 'shorts infantil'],
+    },
+  },
+  {
+    // S2 · de quem é a sombra? (a Véspera de Natal)
+    id: 'v22_sombras3',
+    pasta: 'v22-natal-vespera',
+    narrDir: NARR_SHORTS,
+    criar: () => {
+      const vp = require('../art/vespera');
+      const ceia = require('../art/ceia');
+      const sala = require('../art/sala');
+      const objetos = require('../art/objetos');
+      const vela = () => ceia.vela();
+      return criarTresSombras({
+        narrDir: NARR_SHORTS,
+        ids: { q: ['s2_q1', 's3_e_agora', 's3_ultima'], r: ['s2n_r1', 's2n_r2', 's2n_r3'], fim: 's3_fim' },
+        fundo: fundos.sala,
+        tutiOpts: { gorro: true },
+        perguntas: [
+          { arte: vp.meia, fundo: '#E4DAFB', opcoes: [{ arte: sala.sino, fundo: '#FFF1B8' }, { arte: vp.meia, fundo: '#CFF1E0', certa: true }, { arte: vela, fundo: '#FFE0C7' }] },
+          { arte: sala.sino, fundo: '#CFE6FF', opcoes: [{ arte: sala.sino, fundo: '#FFD9E4', certa: true }, { arte: objetos.presente, fundo: '#E4DAFB' }, { arte: vp.meia, fundo: '#CFF1E0' }] },
+          { arte: vela, fundo: '#FFE0C7', opcoes: [{ arte: ceia.gengibre, fundo: '#CFE6FF' }, { arte: objetos.presente, fundo: '#E4DAFB' }, { arte: vela, fundo: '#FFD9E4', certa: true }] },
+        ],
+      });
+    },
+    textos: {
+      titulo: 'De quem é a sombra? 🧦 Acerta as 3? #shorts',
+      descricao: 'Três sombras de Natal: você acerta todas em 3 segundos? 🔔\n\nQuiz completo: Quiz de Natal para Crianças 🧦 A Véspera de Natal (link do vídeo longo)\n\n#shorts #quizinfantil #paracriancas',
+      tags: ['quiz infantil', 'de quem é a sombra', 'quiz de natal', 'natal para crianças', 'quiz para crianças', 'ovelhinha Tuti', 'shorts infantil'],
+    },
+  },
+  {
+    // S5 · conte rápido! (a Véspera de Natal)
+    id: 'v22_contar3',
+    pasta: 'v22-natal-vespera',
+    narrDir: NARR_SHORTS,
+    criar: () => {
+      const vp = require('../art/vespera');
+      const ceia = require('../art/ceia');
+      const nums = (lista, certo, fundo) => lista.map((x) => ({ texto: String(x), fundo, certa: x === certo }));
+      return criarTresSombras({
+        narrDir: NARR_SHORTS,
+        ids: { q: ['s5n_q1', 's5n_q2', 's5n_q3'], r: ['s5_r1', 's5_r2', 's5_r3'], fim: 's3_fim' },
+        fundo: fundos.sala,
+        tutiOpts: { gorro: true },
+        perguntas: [
+          { painel: 'contar', arte: vp.meia, n: 3, fundo: '#CFF1E0', opcoes: nums([4, 3, 2], 3, '#FFF1B8') },
+          { painel: 'contar', arte: () => ceia.vela(), n: 4, fundo: '#E4DAFB', opcoes: nums([4, 5, 3], 4, '#FFD9E4') },
+          { painel: 'contar', arte: ceia.gengibre, n: 5, fundo: '#CFE6FF', opcoes: nums([3, 4, 5], 5, '#FFE0C7') },
+        ],
+      });
+    },
+    textos: {
+      titulo: 'Conte rápido! 🧦 Acerta as 3? #shorts',
+      descricao: 'Meias, velas e biscoitos de Natal: conte rápido em 3 segundos! 🍪\n\nQuiz completo: Quiz de Natal para Crianças 🧦 A Véspera de Natal (link do vídeo longo)\n\n#shorts #quizinfantil #paracriancas',
+      tags: ['quiz infantil', 'contar até 5', 'números para crianças', 'quiz de natal', 'quiz para crianças', 'ovelhinha Tuti', 'shorts infantil'],
+    },
+  },
+  {
     id: 'v11_short1',
     pasta: 'v11-natal-ceia',
     criar: deVideo({ v: 'v11', pasta: 'v11-natal-ceia', n: 7, fundo: fundos.cozinha, selo: 'QUIZ DE NATAL', tutiOpts: { gorro: true } }),
