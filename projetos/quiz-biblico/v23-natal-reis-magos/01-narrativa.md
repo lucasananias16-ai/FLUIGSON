@@ -5,43 +5,51 @@
 - **Cenário novo:** o deserto à noite, com dunas, palmeiras e a estrela grande no céu.
 - **Já nasce no padrão novo:** começa no desafio 1 com movimento, barra 1/12, reganchos, último desafio "o mais difícil", final com convite, título sem número e 3 miniaturas.
 
+## O que muda em relação aos últimos vídeos (pedido de 27/11: variar o roteiro e a sequência)
+
+- **A abertura não é mais "Socorro! Fugiu!".** O vídeo abre com uma sombra misteriosa andando pelo deserto.
+- **A ordem dos jogos é outra.** O "achar" sai do começo, o "contar" vai para o meio e o "o que falta" vai para o fim.
+- **Três jogos diferentes entram:** "O que sumiu?" e "Quem apareceu primeiro?" (do vídeo do Jogo da Memória) e "Qual é o menor?" no lugar de "Qual é o maior?".
+- **A memória das cartas fica mais difícil:** três trocas em vez de duas.
+- **Os reganchos têm falas novas**, ligadas à viagem dos reis magos.
+
 ## Abertura (primeiros 15 s)
 
-No quadro 0, o camelo passa correndo e se esconde atrás da palmeira; a Tuti, de gorro, leva um susto.
+No quadro 0, uma sombra grande vem andando pelas dunas, sob a estrela; a Tuti, de gorro, arregala os olhos.
 
-- **Tuti:** "Socorro! O camelo fugiu! Você me ajuda a achar? Rápido, aponta pra ele!" (cronômetro de 5 s)
-- **Depois do acerto:** "Você é demais! São doze desafios, e o último é o mais difícil de todos. Vamos?"
+- **Tuti:** "Olha! Quem vem lá no deserto? De quem é essa sombra? Rápido!" (cronômetro de 5 s)
+- **Depois do acerto:** "É o camelo! Ele leva os reis magos! São doze desafios, e o último é o mais difícil de todos. Vamos seguir a estrela?"
 
 ## Os 12 desafios
 
 | Nº | Tipo | Pergunta | Resposta |
 |---|---|---|---|
-| 1 | Achar | O camelo fugiu! Você consegue encontrar? | Atrás da palmeira |
-| 2 | Contar | Vamos contar as estrelas do céu (1 a 5) | Cinco |
-| 3 | Escolher | Os reis magos viajaram pelo deserto! Como eles foram? De camelo, de barco ou de foguete? | De camelo (esquerda) |
-| — | Regancho | "Agora vem um desafio surpresa!" | |
-| 4 | Sombra | De quem é essa sombra? Da ovelha, do camelo ou do leão? | Do camelo (meio) |
-| 5 | O que falta | O céu da noite aparece sem a estrela grande. A estrela, o sol ou a nuvem? | A estrela (direita) |
-| 6 | Comparar | Qual presente é o maior? O da esquerda ou o da direita? | O da direita |
-| — | Regancho | "Metade! Você está indo muito bem!" | |
-| 7 | O diferente | Quatro coroas, três douradas e uma azul | A azul |
-| 8 | Sequência | Estrela, camelo, estrela, camelo, estrela... O que vem depois? | O camelo (esquerda) |
-| 9 | Intruso | O que não tinha no deserto? A palmeira, o boneco de neve ou o camelo? | O boneco de neve (meio) |
-| 10 | Memória | Coroa, presente e estrela trocam de lugar. Onde está a estrela? | No número um |
-| 11 | Escolher | O que os reis magos seguiram no céu? A estrela, a lua ou a nuvem? | A estrela (esquerda) |
-| — | Regancho | "E agora, o último desafio! O mais difícil de todos!" | |
-| 12 | Escolher | Para quem eram os presentes? Para o menino Jesus, para o camelo ou para o rei? | Para o menino Jesus (direita) |
+| 1 | Sombra | Quem vem lá no deserto? De quem é essa sombra? Da ovelha, do camelo ou do leão? | Do camelo (meio) |
+| 2 | Escolher | O que os reis magos seguiram no céu? A lua, a nuvem ou a estrela? | A estrela (direita) |
+| 3 | Qual é o menor? | Qual presente é o menor? O da esquerda ou o da direita? | O da esquerda |
+| 4 | Achar | Um rei perdeu a coroa! Você consegue encontrar? | Atrás da palmeira |
+| — | Regancho | "A estrela está andando! Vamos atrás dela!" | |
+| 5 | O que sumiu? | Três presentes aparecem, a nuvem passa e um some. Qual foi? O azul, o vermelho ou o amarelo? | O vermelho (meio) |
+| 6 | Contar | Vamos contar os camelos da viagem (1 a 5) | Cinco |
+| 7 | Intruso | O que não tinha no deserto? O boneco de neve, a palmeira ou o camelo? | O boneco de neve (esquerda) |
+| — | Regancho | "Metade do caminho! Você está indo muito bem!" | |
+| 8 | Quem apareceu primeiro? | Os três reis chegam um de cada vez. Quem chegou primeiro? O de roxo, o de verde ou o de vermelho? | O de verde (meio) |
+| 9 | O diferente | Quatro coroas, três douradas e uma azul | A azul |
+| 10 | Sequência | Estrela, camelo, estrela, camelo, estrela... O que vem depois? | O camelo (esquerda) |
+| 11 | O que falta | O céu da noite aparece sem a estrela grande. O sol, a nuvem ou a estrela? | A estrela (direita) |
+| — | Regancho | "Estamos chegando! Agora, o último desafio, o mais difícil de todos!" | |
+| 12 | Memória (3 trocas) | Coroa, presente e menino Jesus trocam de lugar três vezes. Onde está o menino Jesus? | No número um |
 
 ## Encerramento
 
-"Uhuu! Você completou os doze desafios! Os reis magos encontraram o menino Jesus. Vem jogar o próximo quiz comigo!" Depois, a Tuti dança uns 10 s, com os três reis, os camelos e a estrela brilhando.
+"Uhuu! Você completou os doze desafios! Os reis magos encontraram o menino Jesus e deram os presentes. Vem jogar o próximo quiz comigo!" Depois, a Tuti dança uns 10 s, com os três reis, os camelos e a estrela brilhando.
 
 ## Pacote
 
 - **Título:** `Quiz de Natal para Crianças ⭐ Os Reis Magos e a Estrela | Você acerta?`
 - **Playlists:** Quiz de Natal e Quiz Bíblico Infantil (as duas).
-- **Miniaturas:** A "FUGIU!" (o camelo correndo), B "A ou B?" (o camelo ou o barco), C "CADÊ?" (o camelo atrás da palmeira, com a lupa).
-- **3 Shorts "3 em 1":** `v23_short1` (O que não combina?), `v23_short2` (Qual é o maior?), `v23_short3` (Qual é o diferente?).
+- **Miniaturas:** A "QUEM É?" (a sombra gigante do camelo e a Tuti espantada), B "A ou B?" (a estrela ou a lua), C "CADÊ?" (a coroa atrás da palmeira, com a lupa).
+- **3 Shorts "3 em 1":** `v23_short1` (O que não combina?), `v23_short2` (De quem é a sombra?), `v23_short3` (Conte rápido!).
 
 ## Escolhas que você pode mudar
 
