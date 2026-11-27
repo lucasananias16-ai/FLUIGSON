@@ -132,6 +132,56 @@ class FluigSoap {
     return Number(ip[1]);
   }
 
+  cred() {
+    return '<username>' + esc(this.username) + '</username><password>' + esc(this.password) + '</password>' +
+      '<companyId>' + this.companyId + '</companyId>';
+  }
+
+  pares(xml) {
+    const pairs = [];
+    const rePar = /<item>\s*<item>([^<]*)<\/item>\s*<item>([^<]*)<\/item>\s*<\/item>/g;
+    let mp;
+    while ((mp = rePar.exec(xml))) pairs.push([unesc(mp[1]), unesc(mp[2])]);
+    return pairs;
+  }
+
+  // Atividades ativas da solicitação (sequências numéricas).
+  async getAllActiveStates(processInstanceId, userId) {
+    const xml = await this.call('ECMWorkflowEngineService', NS_WORKFLOW, 'getAllActiveStates',
+      this.cred() + '<userId>' + esc(userId || this.username) + '</userId><processInstanceId>' + processInstanceId + '</processInstanceId>');
+    return children(children(xml, 'result')[0] || xml, 'item').map((v) => Number(unesc(v))).filter((n) => !isNaN(n));
+  }
+
+  async getActualThread(processInstanceId, stateSequence) {
+    const xml = await this.call('ECMWorkflowEngineService', NS_WORKFLOW, 'getActualThread',
+      this.cred() + '<processInstanceId>' + processInstanceId + '</processInstanceId><stateSequence>' + stateSequence + '</stateSequence>');
+    return Number(unesc(children(xml, 'result')[0] || '0')) || 0;
+  }
+
+  // Assume uma tarefa de pool (grupo/papel) para o usuário.
+  async takeProcessTask(processInstanceId, threadSequence = 0, userId) {
+    return this.call('ECMWorkflowEngineService', NS_WORKFLOW, 'takeProcessTask',
+      this.cred() + '<userId>' + esc(userId || this.username) + '</userId><processInstanceId>' + processInstanceId +
+      '</processInstanceId><threadSequence>' + threadSequence + '</threadSequence>');
+  }
+
+  // Movimenta a solicitação. Devolve os pares chave/valor da resposta; lança erro se vier ERROR.
+  async saveAndSendTask({ processInstanceId, choosedState, colleagueIds = [], comments = '', userId, completeTask = true, cardData = {}, managerMode = false, threadSequence = 0 }) {
+    const ids = colleagueIds.map((x) => '<item>' + esc(x) + '</item>').join('');
+    const card = Object.entries(cardData)
+      .map(([k, v]) => '<item><item>' + esc(k) + '</item><item>' + esc(v) + '</item></item>')
+      .join('');
+    const xml = await this.call('ECMWorkflowEngineService', NS_WORKFLOW, 'saveAndSendTask',
+      this.cred() + '<processInstanceId>' + processInstanceId + '</processInstanceId><choosedState>' + choosedState +
+      '</choosedState><colleagueIds>' + ids + '</colleagueIds><comments>' + esc(comments) + '</comments><userId>' +
+      esc(userId || this.username) + '</userId><completeTask>' + completeTask + '</completeTask><attachments/><cardData>' +
+      card + '</cardData><appointment/><managerMode>' + managerMode + '</managerMode><threadSequence>' + threadSequence + '</threadSequence>');
+    const pairs = this.pares(xml);
+    const err = pairs.find((p) => p[0] === 'ERROR');
+    if (err) throw new Error('saveAndSendTask: ' + err[1]);
+    return pairs;
+  }
+
   async cancelInstance(processInstanceId, cancelText = 'Cancelado pelo teste E2E') {
     return this.call(
       'ECMWorkflowEngineService',
