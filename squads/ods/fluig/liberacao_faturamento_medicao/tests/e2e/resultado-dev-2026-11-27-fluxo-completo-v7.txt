@@ -1,0 +1,54 @@
+▶ fluxo completo — liberacao_faturamento_medicao_test — PV 104281 / PC I82810 — USD 30.000 — C. Custo FLU1G (retorno da homologação 26/11)
+  ✔ 00. monta o formulário como o widget (PV, PC, itens e solicitante) (3943.825696ms)
+  ℹ PV 104281 (PRIO TIGRIS S.A.) | PC I82810 | itens: 1 | solicitante: Admin Fluig
+  ✔ 01. Início → Aprovação 1 (abertura registrada no histórico) (1979.544158ms)
+  ℹ solicitação 239
+  ✔ 02. Aprovação 1 — revisão SEM comentário é barrada (1882.038287ms)
+  ℹ barrado: saveAndSendTask: Erro ao executar evento do processo, Preencha antes de enviar: comentário explicando o motivo da revisão. (beforeTaskSave#70) in beforeTaskSave at line number 70
+  ✔ 03. Aprovação 1 pede revisão com comentário → Revisão (2567.893541ms)
+  ℹ 12 Aprovação 1 → 28 Revisão | {"hd_aprovPc":"Revisar","txt_obsGeral":"Conferir o valor do PC com o contrato."}
+  ✔ 04. Revisão SEM comentário é barrada (1860.258325ms)
+  ℹ barrado: saveAndSendTask: Erro ao executar evento do processo, Preencha antes de enviar: comentário com o que foi corrigido na Revisão. (beforeTaskSave#70) in beforeTaskSave at line number 70
+  ✔ 05. Revisão com comentário → Aprovação 1 (2800.301102ms)
+  ℹ 28 Revisão → 12 Aprovação 1 | {"hd_aprovPc":"","txt_obsGeral":"Valor conferido: confere com o contrato."}
+  ✔ 06. Aprovação 1 aprova → Aprovação 2 (níveis recalculados no servidor) (3058.375323ms)
+  ℹ 12 Aprovação 1 → 18 Aprovação 2 | {"hd_aprovPc":"Aprovado","txt_obsGeral":"De acordo."}
+  ✔ 07. Aprovação 2 aprova → Aprovação 3 (2685.480099ms)
+  ℹ 18 Aprovação 2 → 20 Aprovação 3 | {"hd_aprovPc":"Aprovado","txt_obsGeral":""}
+  ✔ 08. Aprovação 3 aprova → Aprovação 4 (2819.56091ms)
+  ℹ 20 Aprovação 3 → 26 Aprovação 4 | {"hd_aprovPc":"Aprovado","txt_obsGeral":""}
+  ✔ 09. Aprovação 4 aprova (com um PDF anexado antes da hora) → Adicionar NF (2233.804455ms)
+  ℹ 26 Aprovação 4 → 73 Adicionar NF | {"hd_aprovPc":"Aprovado","txt_obsGeral":""}
+  ✔ 10. Adicionar NF SEM anexo nesta etapa é barrado (o anexo da Aprovação 4 não vale) (1942.846188ms)
+  ℹ barrado: saveAndSendTask: Erro ao executar evento do processo, Preencha antes de enviar: anexo da Nota Fiscal incluído por você nesta etapa (anexos de etapas anteriores ou de outros usuários não valem). (befor
+  ✔ 11. Adicionar NF com a NF anexada → Medição dos Itens (2585.231654ms)
+  ℹ 73 Adicionar NF → 32 Medição dos Itens | {"txt_obsGeral":"NF 12345 anexada."}
+  ✔ 12. Medição SEM item medido é barrada (1985.211026ms)
+  ℹ barrado: saveAndSendTask: Erro ao executar evento do processo, Preencha antes de enviar: pelo menos um item medido. (beforeTaskSave#70) in beforeTaskSave at line number 70
+  ✔ 13. Medição com item medido e NF fora do orçamento → Aprovação da NF (2665.535715ms)
+  ℹ 32 Medição dos Itens → 39 Aprovação da NF | {"hd_valNfOk":"revisao","hd_itemMedido___1":"true","txt_pedido_status___1":"Medido","txt_pedido_obs___1":"Medição conferida em campo.","txt_
+  ✔ 14. Aprovação da NF aprova → Liberação de Pagamento (3099.506613ms)
+  ℹ 39 Aprovação da NF → 46 Liberação de Pagamento | {"hd_aprovValNf":"aprovado","txt_obsGeral":"Diferença justificada pelo reajuste."}
+  ✔ 15. Liberação de Pagamento sem saldo → Fim (2758.427218ms)
+  ℹ 46 Liberação de Pagamento → Fim | {"hd_itemFaturado___1":"true","txt_pedido_status___1":"Liberado P/ Pagar","txt_pedido_obsFatu___1":"Pagamento liberado.","txt_valFaturadoPc"
+  ✔ 16. solicitação finalizada, com formulário preenchido e histórico completo (494.489125ms)
+  ℹ histórico: Abertura | 27/11/2026 01:26 | Admin Fluig — Solicitação aberta
+  ℹ histórico: Aprovação 1 | 27/11/2026 01:26 | Admin Fluig — Revisão solicitada: Conferir o valor do PC com o contrato.
+  ℹ histórico: Revisão | 27/11/2026 01:26 | Admin Fluig — Reenviado após revisão: Valor conferido: confere com o contrato.
+  ℹ histórico: Aprovação 1 | 27/11/2026 01:26 | Admin Fluig — Aprovado: De acordo.
+  ℹ histórico: Aprovação 2 | 27/11/2026 01:27 | Admin Fluig — Aprovado
+  ℹ histórico: Aprovação 3 | 27/11/2026 01:27 | Admin Fluig — Aprovado
+  ℹ histórico: Aprovação 4 | 27/11/2026 01:27 | Admin Fluig — Aprovado
+  ℹ histórico: Adicionar NF | 27/11/2026 01:27 | Admin Fluig — NF anexada (NF teste E2E): NF 12345 anexada.
+  ℹ histórico: Medição dos Itens | 27/11/2026 01:27 | Admin Fluig — Revisão solicitada: Valor da NF acima do orçado; enviar para aprovação.
+  ℹ histórico: Aprovação da NF | 27/11/2026 01:27 | Admin Fluig — Aprovado: Diferença justificada pelo reajuste.
+  ℹ histórico: Liberação de Pagamento | 27/11/2026 01:27 | Admin Fluig — Pagamento liberado: Pagamento liberado.
+✔ fluxo completo — liberacao_faturamento_medicao_test — PV 104281 / PC I82810 — USD 30.000 — C. Custo FLU1G (retorno da homologação 26/11) (41365.078116ms)
+ℹ tests 17
+ℹ suites 1
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 41445.84463

@@ -66,3 +66,12 @@ Ao final da limpeza: nenhuma alçada ou atribuição TST*, 0 aprovadores para FL
   237 (fluxo completo, v5, 17/17) e 238 (reprovação, v5, 5/5).
 
 - **v6** (27/11/2026): atividade final 53 renomeada de "Fim" para "Aprovado". Versão ativa: **v6**.
+
+## 27/11/2026 — Cópia de teste v7: anexo da NF na Adicionar NF (73)
+- **v7 publicada e ativa** em liberacao_faturamento_medicao_test (só muda o beforeTaskSave): na 73 só vale anexo incluído
+  na passagem atual pela etapa pelo usuário que envia. Motivo: era possível anexar sem assumir a tarefa (complemento), e
+  qualquer anexo da solicitação liberava a etapa.
+- **Cadastros temporários TST1–TST4** (alçadas e atribuições, cards 726–733): **excluídos**.
+- **Solicitações, ambas finalizadas** (status 2): 239 (fluxo completo, v7, 17/17) e 240 (reprovação, v7, 5/5).
+  Na 239, o PDF anexado na Aprovação 4 (doc 735, mov. 11) **não** liberou a 73; a NF anexada na própria 73 (doc 736, mov. 13) liberou.
+- Limpeza: 0 alçadas/atribuições TST, 0 aprovadores FLU1G, nenhuma solicitação ativa na cópia.
