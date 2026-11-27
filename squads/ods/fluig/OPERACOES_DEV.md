@@ -75,3 +75,8 @@ Ao final da limpeza: nenhuma alçada ou atribuição TST*, 0 aprovadores para FL
 - **Solicitações, ambas finalizadas** (status 2): 239 (fluxo completo, v7, 17/17) e 240 (reprovação, v7, 5/5).
   Na 239, o PDF anexado na Aprovação 4 (doc 735, mov. 11) **não** liberou a 73; a NF anexada na própria 73 (doc 736, mov. 13) liberou.
 - Limpeza: 0 alçadas/atribuições TST, 0 aprovadores FLU1G, nenhuma solicitação ativa na cópia.
+
+## 27/11/2026 — Cópia de teste v8: "Complementar solicitações" desligado
+- **v8 publicada e ativa** em liberacao_faturamento_medicao_test, a pedido do Lucas: `complementsLevel` 1 → 0 (único diff
+  em relação à v7). Conferido no export do servidor: v8 com complementsLevel 0; o original segue com 1.
+- Sem cadastros temporários nem solicitações nesta etapa. Os testes da v7 (239/240) não usam complemento.
