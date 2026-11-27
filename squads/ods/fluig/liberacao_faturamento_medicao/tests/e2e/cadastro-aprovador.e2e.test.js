@@ -57,7 +57,7 @@ test.describe('cadastro de aprovador — Ludmila / ANL. CONTABIL JR / FLU1G202 (
     assert.ok(colab, CADASTRO.colaborador + ' não veio na busca de colaboradores do Protheus');
     t.diagnostic('colunas devolvidas: ' + Object.keys(colab).join(', '));
     t.diagnostic('registro: ' + JSON.stringify(colab));
-    if (colab.ORIGEM_MATRICULA === 'SEM_SRA') t.diagnostic('atenção: usuário do Protheus sem funcionário correspondente na SRA (mesmo e-mail)');
+    if (colab.ORIGEM_MATRICULA && colab.ORIGEM_MATRICULA !== 'SRA') t.diagnostic('atenção: usuário sem funcionário na SRA (origem ' + colab.ORIGEM_MATRICULA + ')');
   });
 
   test('B. a busca devolve os campos que a tela exige (matrícula, cód. departamento, departamento)', async () => {
@@ -69,7 +69,7 @@ test.describe('cadastro de aprovador — Ludmila / ANL. CONTABIL JR / FLU1G202 (
       faltando,
       [],
       'Faltou preencher os seguintes campos: ' + faltando.join(', ') +
-        (colab.ORIGEM_MATRICULA === 'SEM_SRA'
+        (colab.ORIGEM_MATRICULA && colab.ORIGEM_MATRICULA !== 'SRA'
           ? ' — ' + DS_COLAB + ' devolve as colunas, mas o usuário não tem funcionário com o mesmo e-mail na SRA'
           : ' — ' + DS_COLAB + ' (lê SYS_USR) não devolve essas colunas; até a v13 o dataset lia SRA com MATRICULA/DEPARTAMENTO_COD/DEPARTAMENTO_DESC')
     );

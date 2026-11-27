@@ -14,9 +14,18 @@
  *   antigas: MATRICULA, DEPARTAMENTO_COD, DEPARTAMENTO_DESC, FUNCAO_COD, FUNCAO_DESC,
  *            SITUACAO_COD, SITUACAO_DESC, DATA_DEMISSAO
  *   nova:    ORIGEM_MATRICULA = "SRA" (achou funcionário) ou "SEM_SRA" (usuário sem funcionário)
- * Usuário sem funcionário na SRA continua aparecendo, com MATRICULA/DEPARTAMENTO_COD vazios e
- * ORIGEM_MATRICULA = "SEM_SRA": a tela continua recusando, mas agora dá para ver quem é e
- * corrigir o cadastro no Protheus.
+ * Versão 2 (caminho 1): na base DEV a SRA não tem os funcionários da ODS (13 de 132 usuários
+ * casam, quase todos @kloeckner.com). Quando o usuário não tem funcionário na SRA, os campos que a
+ * tela exige vêm do próprio usuário do Protheus:
+ *   MATRICULA         = USR_ID (ex.: 000117)
+ *   DEPARTAMENTO_COD  = USR_DEPTO (texto, ex.: "Fiscal")
+ *   DEPARTAMENTO_DESC = USR_DEPTO
+ *   FUNCAO_DESC       = USR_CARGO
+ *   ORIGEM_MATRICULA  = "SYS_USR"
+ * Matrícula e departamento não entram na aprovação (mecanismo e evento acham o aprovador pelo
+ * e-mail); servem para a tela "Atribuição de Usuários e Posições" conseguir salvar.
+ * Se o usuário não tiver departamento na SYS_USR, DEPARTAMENTO_COD/DESC ficam vazios e a tela
+ * continua recusando (ORIGEM_MATRICULA = "SYS_USR_SEM_DEPTO").
  *
  * Modo teste: sem sincronização e restrito aos usuários de USUARIOS_PERMITIDOS (como os demais _test).
  */
@@ -96,10 +105,22 @@ function createDataset(fields, constraints, sortFields) {
 
         var idUsuario = valor(col, 0);
         var nome = valor(col, 2);
-        var matricula = valor(col, 7);
+        var deptoUsr = valor(col, 4);
+        var cargoUsr = valor(col, 5);
         var situacaoCod = valor(col, 12);
-        if (matricula === "") {
+
+        var origem = "SRA";
+        var matricula = valor(col, 7);
+        var deptoCod = valor(col, 8);
+        var deptoDesc = valor(col, 9);
+        var funcaoDesc = valor(col, 11);
+        if (matricula === "") { // caminho 1: sem funcionário na SRA, usa o usuário do Protheus
             semSra++;
+            matricula = idUsuario;
+            deptoCod = deptoUsr;
+            deptoDesc = deptoUsr;
+            funcaoDesc = cargoUsr;
+            origem = (deptoUsr === "") ? "SYS_USR_SEM_DEPTO" : "SYS_USR";
         }
 
         dataset.addRow([
@@ -111,19 +132,19 @@ function createDataset(fields, constraints, sortFields) {
             valor(col, 5),                                       // CARGO
             valor(col, 6) == "1" ? "Sim" : "Não",                // BLOQUEADO
             idUsuario + " - " + nome,                   // FILTER
-            matricula,                                  // MATRICULA (SRA)
-            valor(col, 8),                                       // DEPARTAMENTO_COD (SRA)
-            valor(col, 9),                                       // DEPARTAMENTO_DESC (SQB)
-            valor(col, 10),                                      // FUNCAO_COD
-            valor(col, 11),                                      // FUNCAO_DESC
+            matricula,                                  // MATRICULA (SRA ou USR_ID)
+            deptoCod,                                   // DEPARTAMENTO_COD (SRA ou USR_DEPTO)
+            deptoDesc,                                  // DEPARTAMENTO_DESC (SQB ou USR_DEPTO)
+            valor(col, 10),                             // FUNCAO_COD (só SRA)
+            funcaoDesc,                                 // FUNCAO_DESC (SRJ ou USR_CARGO)
             situacaoCod,                                // SITUACAO_COD
-            descricaoSituacao(situacaoCod, matricula),  // SITUACAO_DESC
-            valor(col, 13),                                      // DATA_DEMISSAO
-            matricula !== "" ? "SRA" : "SEM_SRA"        // ORIGEM_MATRICULA
+            descricaoSituacao(situacaoCod, origem),     // SITUACAO_DESC
+            valor(col, 13),                             // DATA_DEMISSAO
+            origem                                      // ORIGEM_MATRICULA
         ]);
     }
 
-    log.info(LOG_ID + (aLinhas.length - 1) + " usuários lidos; " + semSra + " sem funcionário correspondente na SRA.");
+    log.info(LOG_ID + (aLinhas.length - 1) + " usuários lidos; " + semSra + " sem funcionário na SRA (usaram os dados da SYS_USR).");
     return dataset;
 }
 
@@ -131,8 +152,8 @@ function valor(col, i) {
     return col.length > i ? String(col[i]).trim() : "";
 }
 
-function descricaoSituacao(cod, matricula) {
-    if (matricula === "") return "Sem cadastro de funcionário";
+function descricaoSituacao(cod, origem) {
+    if (origem !== "SRA") return "Sem cadastro de funcionário (dados do usuário Protheus)";
     if (cod === "D") return "Demitido";
     if (cod === "F") return "Férias";
     if (cod === "A" || cod === "P" || cod === "T") return "Afastado";

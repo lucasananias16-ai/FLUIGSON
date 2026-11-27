@@ -4,6 +4,7 @@ const fs = require('fs'), vm = require('vm');
 const linhas = ['HEADER',
   '000117;ludmila.oliveira;Ludmila Oliveira;l.oliveira@odsenergysolutions.com;Fiscal;Analista Fiscal;2;000099;F.01;FISCAL;0123;ANALISTA CONTABIL;;',
   '000161;licyara.pompeu;Licyara Pompeu;l.pompeu@odsenergysolutions.com;Fiscal;Analista Fiscal;2;;;;;;;',
+  '000201;semdepto;Sem Depto;sd@ods.com;;;2;;;;;;;',
   '000200;fulano;Fulano Bloqueado;fulano@ods.com;TI;Analista;1;000300;T.01;TI;0456;ANALISTA TI;F;'];
 const rows = [], cols = [];
 let sql = '';
