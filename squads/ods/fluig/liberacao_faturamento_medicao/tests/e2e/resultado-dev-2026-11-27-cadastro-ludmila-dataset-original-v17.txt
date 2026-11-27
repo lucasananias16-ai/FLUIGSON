@@ -1,0 +1,22 @@
+▶ cadastro de aprovador — Ludmila / ANL. CONTABIL JR / FLU1G202 (homologação 26/11)
+  ✔ A. a colaboradora é encontrada na busca do Protheus (dts_getColabProtheus_JYNX) (1543.348159ms)
+  ℹ colunas devolvidas: ID_USUARIO, LOGIN, NOME, EMAIL, DEPARTAMENTO, CARGO, BLOQUEADO, FILTER, MATRICULA, DEPARTAMENTO_COD, DEPARTAMENTO_DESC, FUNCAO_COD, FUNCAO_DESC, SITUACAO_COD, SITUACAO_DESC, DATA_DEMISSAO, ORIGEM_MATRICULA
+  ℹ registro: {"ID_USUARIO":"000117","LOGIN":"ludmila.oliveira","NOME":"Ludmila Oliveira","EMAIL":"l.oliveira@odsenergysolutions.com","DEPARTAMENTO":"Fiscal","CARGO":"Analista Fiscal","BLOQUEADO":"Não","FILTER":"000117 - Ludmila Oliveira","MATRICULA":"U000117","DEPARTAMENTO_COD":"Fiscal","DEPARTAMENTO_DESC":"Fiscal","FUNCAO_COD":"","FUNCAO_DESC":"Analista Fiscal","SITUACAO_COD":"","SITUACAO_DESC":"Sem cadastro de funcionário (dados do usuário Protheus)","DATA_DEMISSAO":"","ORIGEM_MATRICULA":"SYS_USR"}
+  ℹ atenção: usuário sem funcionário na SRA (origem SYS_USR)
+  ✔ B. a busca devolve os campos que a tela exige (matrícula, cód. departamento, departamento) (2.274399ms)
+  ✖ C. se o cadastro fosse salvo, a Ludmila aprovaria o PC I82810 na Aprovação 1? (892.337756ms)
+  ℹ alçada: código 00086 | nível 2 | subcat. " Expense sheets " | limite txt_limitProcUsd 95.778,10
+  ℹ C. Custo do cadastro (FLU1G202) ≠ C. Custo do PC (FLU1G): só "casa" por causa do LIKE '%FLU1G%' do dataset
+✖ cadastro de aprovador — Ludmila / ANL. CONTABIL JR / FLU1G202 (homologação 26/11) (2440.951634ms)
+ℹ tests 3
+ℹ suites 1
+ℹ pass 2
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2516.392955
+✖ failing tests:
+test at tests/e2e/cadastro-aprovador.e2e.test.js:78:3
+✖ C. se o cadastro fosse salvo, a Ludmila aprovaria o PC I82810 na Aprovação 1? (892.337756ms)
+  AssertionError [ERR_ASSERTION]: com esses parâmetros a Ludmila NÃO aprovaria a Aprovação 1
