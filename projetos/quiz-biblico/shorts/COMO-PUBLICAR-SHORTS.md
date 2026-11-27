@@ -12,17 +12,17 @@ Substitui a regra de 3 Shorts recortados de cada longo. **1 Short por dia, às 1
 
 | Dia | Short | Formato | Vídeo relacionado |
 |---|---|---|---|
-| **Qua 25/11, 17h** | `natal_diferente3.mp4` | S1 · Qual é o diferente? | Quiz de Natal na Floresta (V17) |
-| **Qui 26/11, 17h** | `v20_sombras3.mp4` | S2 · De quem é a sombra? | Quiz de Natal no Polo Norte (V20; trocar o link depois de 04/12) |
-| **Sex 27/11, 17h** | `criacao_maior3.mp4` | S3 · Qual é o maior? | Quiz Bíblico da Criação do Mundo (V16) |
-| **Sáb 28/11, 17h** | `natal_intruso3.mp4` | S4 · O que não combina? | Quiz de Natal no Verão (V19) |
-| **Dom 29/11, 17h** | `criacao_contar3.mp4` | S5 · Conte rápido! | Quiz Bíblico da Criação do Mundo (V16) |
-| **Ter 08/12, 17h** | `v21_sombras3.mp4` | S2 · De quem é a sombra? | Quiz Bíblico Daniel e os Leões (V21, no ar na seg 07/12) |
-| **Qua 09/12, 17h** | `v21_maior3.mp4` | S3 · Qual é o maior? | Quiz Bíblico Daniel e os Leões (V21) |
-| **Qui 10/12, 17h** | `v22_diferente3.mp4` | S1 · Qual é o diferente? | Quiz de Natal Véspera de Natal (V22, no ar na qua 09/12) |
-| **Sex 11/12, 17h** | `v21_contar3.mp4` | S5 · Conte rápido! | Quiz Bíblico Daniel e os Leões (V21) |
-| **Sáb 12/12, 17h** | `v22_sombras3.mp4` | S2 · De quem é a sombra? | Quiz de Natal Véspera de Natal (V22) |
-| **Dom 13/12, 17h** | `v22_contar3.mp4` | S5 · Conte rápido! | Quiz de Natal Véspera de Natal (V22) |
+| **Qua 25/11, 17h** | `v17_short4.mp4` | S1 · Qual é o diferente? | Quiz de Natal na Floresta (V17) |
+| **Qui 26/11, 17h** | `v20_short4.mp4` | S2 · De quem é a sombra? | Quiz de Natal no Polo Norte (V20; trocar o link depois de 04/12) |
+| **Sex 27/11, 17h** | `v16_short4.mp4` | S3 · Qual é o maior? | Quiz Bíblico da Criação do Mundo (V16) |
+| **Sáb 28/11, 17h** | `v19_short4.mp4` | S4 · O que não combina? | Quiz de Natal no Verão (V19) |
+| **Dom 29/11, 17h** | `v16_short5.mp4` | S5 · Conte rápido! | Quiz Bíblico da Criação do Mundo (V16) |
+| **Ter 08/12, 17h** | `v21_short1.mp4` | S2 · De quem é a sombra? | Quiz Bíblico Daniel e os Leões (V21, no ar na seg 07/12) |
+| **Qua 09/12, 17h** | `v21_short2.mp4` | S3 · Qual é o maior? | Quiz Bíblico Daniel e os Leões (V21) |
+| **Qui 10/12, 17h** | `v22_short1.mp4` | S1 · Qual é o diferente? | Quiz de Natal Véspera de Natal (V22, no ar na qua 09/12) |
+| **Sex 11/12, 17h** | `v21_short3.mp4` | S5 · Conte rápido! | Quiz Bíblico Daniel e os Leões (V21) |
+| **Sáb 12/12, 17h** | `v22_short2.mp4` | S2 · De quem é a sombra? | Quiz de Natal Véspera de Natal (V22) |
+| **Dom 13/12, 17h** | `v22_short3.mp4` | S5 · Conte rápido! | Quiz de Natal Véspera de Natal (V22) |
 
 Em cada um: **Feito para crianças = Sim**, e no campo **Vídeo relacionado** escolher o longo da coluna da direita (testar se o campo aparece no canal). Na descrição, trocar "(link do vídeo longo)" pelo link do longo. Depois de 48 h, anotar em Insights → Alcance: "Exibidos no feed" e "Escolheram assistir".
 

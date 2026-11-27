@@ -403,7 +403,7 @@ const SHORTS = [
   },
   {
     // padrão de Shorts v2 (23/11/2026): Short nativo "3 em 1", ~20 s, cronômetro de 3 s, em loop
-    id: 'v20_sombras3',
+    id: 'v20_short4',
     pasta: 'v20-natal-polo-norte',
     criar: () => {
       const pl = require('../art/polo');
@@ -430,7 +430,7 @@ const SHORTS = [
   // ---- Shorts nativos "3 em 1" (padrão de Shorts v2, 23/11/2026): um formato por dia, em rodízio ----
   {
     // S1 · qual é o diferente?
-    id: 'natal_diferente3',
+    id: 'v17_short4',
     pasta: 'v17-natal-floresta',
     narrDir: NARR_SHORTS,
     criar: () => {
@@ -458,7 +458,7 @@ const SHORTS = [
   },
   {
     // S3 · qual é o maior?
-    id: 'criacao_maior3',
+    id: 'v16_short4',
     pasta: 'v16-biblico-criacao',
     narrDir: NARR_SHORTS,
     criar: () => {
@@ -481,7 +481,7 @@ const SHORTS = [
   },
   {
     // S4 · o que não combina? (o engraçado)
-    id: 'natal_intruso3',
+    id: 'v19_short4',
     pasta: 'v19-natal-verao',
     narrDir: NARR_SHORTS,
     criar: () => {
@@ -512,7 +512,7 @@ const SHORTS = [
   },
   {
     // S5 · conte rápido!
-    id: 'criacao_contar3',
+    id: 'v16_short5',
     pasta: 'v16-biblico-criacao',
     narrDir: NARR_SHORTS,
     criar: () => {
@@ -539,7 +539,7 @@ const SHORTS = [
   },
   {
     // S2 · de quem é a sombra? (Daniel e os Leões)
-    id: 'v21_sombras3',
+    id: 'v21_short1',
     pasta: 'v21-biblico-daniel',
     criar: () => {
       const dn = require('../art/daniel');
@@ -565,7 +565,7 @@ const SHORTS = [
   },
   {
     // S1 · qual é o diferente? (a Véspera de Natal)
-    id: 'v22_diferente3',
+    id: 'v22_short1',
     pasta: 'v22-natal-vespera',
     narrDir: NARR_SHORTS,
     criar: () => {
@@ -595,7 +595,7 @@ const SHORTS = [
   },
   {
     // S3 · qual é o maior? (Daniel e os Leões)
-    id: 'v21_maior3',
+    id: 'v21_short2',
     pasta: 'v21-biblico-daniel',
     narrDir: NARR_SHORTS,
     criar: () => {
@@ -618,7 +618,7 @@ const SHORTS = [
   },
   {
     // S5 · conte rápido! (Daniel e os Leões)
-    id: 'v21_contar3',
+    id: 'v21_short3',
     pasta: 'v21-biblico-daniel',
     narrDir: NARR_SHORTS,
     criar: () => {
@@ -644,7 +644,7 @@ const SHORTS = [
   },
   {
     // S2 · de quem é a sombra? (a Véspera de Natal)
-    id: 'v22_sombras3',
+    id: 'v22_short2',
     pasta: 'v22-natal-vespera',
     narrDir: NARR_SHORTS,
     criar: () => {
@@ -673,7 +673,7 @@ const SHORTS = [
   },
   {
     // S5 · conte rápido! (a Véspera de Natal)
-    id: 'v22_contar3',
+    id: 'v22_short3',
     pasta: 'v22-natal-vespera',
     narrDir: NARR_SHORTS,
     criar: () => {
