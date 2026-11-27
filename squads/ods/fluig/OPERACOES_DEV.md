@@ -64,3 +64,5 @@ Ao final da limpeza: nenhuma alçada ou atribuição TST*, 0 aprovadores para FL
 - **Cadastros temporários TST1–TST4** (alçadas e atribuições, cards 711–718): **excluídos**.
 - **Solicitações desta rodada, todas finalizadas** (status 2): 235 (v4, Aprovação 2 pulada; levou à v5), 236 (reprovação, v4),
   237 (fluxo completo, v5, 17/17) e 238 (reprovação, v5, 5/5).
+
+- **v6** (27/11/2026): atividade final 53 renomeada de "Fim" para "Aprovado". Versão ativa: **v6**.

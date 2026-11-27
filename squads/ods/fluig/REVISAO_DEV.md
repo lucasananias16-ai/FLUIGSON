@@ -15,7 +15,7 @@ As versões de **promoção** (sincronizadas, sem restrição) de PC e PV estão
 e `datasets/dts_getPedidoVenda_JYNX.js`, mas **não foram publicadas**. A do PC muda a estrutura, então precisa de
 "Apagar dados" + "Sincronizar" depois de publicar.
 
-## 2. Processo `liberacao_faturamento_medicao_test` — v5 (início restrito ao admin)
+## 2. Processo `liberacao_faturamento_medicao_test` — v6 (início restrito ao admin)
 | Mudança | Onde |
 |---|---|
 | Sem aprovador ativo na alçada, **barra** a entrada na Aprovação (o mecanismo original atribui ao admin) | beforeStateEntry |
@@ -24,14 +24,15 @@ e `datasets/dts_getPedidoVenda_JYNX.js`, mas **não foram publicadas**. A do PC 
 | **Campos obrigatórios no servidor**: abertura (PC, PV, CC, valor, moeda, itens); decisão em todas as aprovações; **comentário obrigatório em Revisar, Reprovar e na Revisão**; anexo na Adicionar NF; item medido na Medição | beforeTaskSave |
 | **Histórico** em tb_obsHistorico gravado pelo servidor a cada etapa: etapa, data/hora, usuário, decisão e comentário | beforeTaskSave |
 | **Reprovação**: novo fim "Reprovado" (100). Aprovações 1–4 com hd_aprovPc = "Reprovar" e Aprovação da NF com hd_aprovValNf = "reprovado" | XML: estado 100, links 101–105, condições |
+| Atividades finais com nome: **53 "Aprovado"** (antes "Fim") e **100 "Reprovado"** | XML: nome dos estados finais (v6) |
 | Responsável da **Medição dos Itens** = executor do Início (raia Comprador); da **Aprovação da NF** = grupo ADICIONA.NF.PC (raia Fiscal). Antes não havia mecanismo, e quem enviava escolhia entre 12 usuários | XML: atribuição das atividades 32 e 39 |
 
 Fontes: `workflow/scripts/liberacao_faturamento_medicao_test.{beforeStateEntry,beforeTaskSave}.js` e
-`workflow/liberacao_faturamento_medicao_test.v5.export.xml`.
+`workflow/liberacao_faturamento_medicao_test.v6.export.xml`.
 
 ## 3. Resultado dos testes (27/11/2026, com cadastros de teste temporários já excluídos)
 - **fluxo-completo.e2e.test.js: 17/17** (solicitação 237). Passou por todas as atividades: Revisão, Aprovações 1–4,
-  Adicionar NF, Medição, Aprovação da NF, Liberação e Fim. O formulário foi montado como no widget (PV, cliente, PC, itens, solicitante).
+  Adicionar NF, Medição, Aprovação da NF, Liberação e Fim (rodado na v5; a v6 só renomeia o Fim para "Aprovado"). O formulário foi montado como no widget (PV, cliente, PC, itens, solicitante).
   Os 4 envios inválidos foram barrados pelo servidor. O histórico ficou com as 11 etapas e os comentários.
 - **fluxo-reprovacao.e2e.test.js: 5/5** (solicitação 238). Reprovar sem comentário foi barrado; com comentário, a solicitação
   terminou no fim "Reprovado" e a reprovação ficou no histórico.
