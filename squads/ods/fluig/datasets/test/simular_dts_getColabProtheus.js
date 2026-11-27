@@ -11,7 +11,8 @@ let sql = '';
 const ctx = {
   log: { info: (m) => console.log('log:', m), warn: (m) => console.log('warn:', m), error: (m) => console.log('error:', m) },
   getValue: (k) => (k === 'WKUser' ? (process.argv[3] || 'admin') : null),
-  DatasetBuilder: { newDataset: () => ({ addColumn: (c) => cols.push(c), addRow: (r) => rows.push(r) }) },
+  DatasetBuilder: { STRING: 'string', newDataset: () => ({ addColumn: (c) => cols.push(c), addRow: (r) => rows.push(r), addOrUpdateRow: (r) => rows.push(r) }) },
+  addColumn() {}, setKey() {}, addIndex() {},
   DatasetFactory: { getDataset: () => ({ getValue: () => 'x' }) },
   ServiceManager: { getService: () => ({
     instantiate: () => ({ getINTERFACEMFXSOAP: () => ({}), setCUSER() {}, setCPASSW() {}, setCKEY() {} }),
