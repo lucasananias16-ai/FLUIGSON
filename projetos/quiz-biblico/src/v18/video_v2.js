@@ -31,7 +31,7 @@ function roteiro() {
   return [
     { nome: 'd1', criar: comBarra(1, (t0) => cenas.criarAchar({ tGlobal0: t0, saida: BRANCO, v2: true })) },
     { nome: 'd2', criar: comBarra(2, (t0) => cenas.criarContar({ tGlobal0: t0, entrada: BRANCO, saida: BRANCO })) },
-    { nome: 'd3', criar: comBarra(3, (t0) => cenas.criarEscolher(3, { tGlobal0: t0, entrada: BRANCO })) },
+    { nome: 'd3', criar: comBarra(3, (t0) => cenas.criarEscolher(3, { tGlobal0: t0, entrada: BRANCO, primeiraOpcao: 2 })) },
     { nome: 'surpresa', criar: regancho('surpresa', 'v18_v2_surpresa', 'SURPRESA!', 4) },
     { nome: 'd4', criar: comBarra(4, (t0) => cenas.criarSombra({ tGlobal0: t0 })) },
     { nome: 'd5', criar: comBarra(5, (t0) => cenas.criarFalta({ tGlobal0: t0, saida: BRANCO })) },

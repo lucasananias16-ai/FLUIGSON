@@ -538,6 +538,32 @@ const SHORTS = [
     },
   },
   {
+    // S2 · de quem é a sombra? (Daniel e os Leões)
+    id: 'v21_sombras3',
+    pasta: 'v21-biblico-daniel',
+    criar: () => {
+      const dn = require('../art/daniel');
+      const animais = require('../art/animais');
+      const s = (k) => `v21_s_sombra_${k}`;
+      const ovelha = () => animais.ovelha();
+      return criarTresSombras({
+        narrDir: path.join(ROOT, 'v21-biblico-daniel', 'narracao'),
+        ids: { q: [s('q1'), s('q2'), s('q3')], r: [s('r1'), s('r2'), s('r3')], fim: s('fim') },
+        fundo: fundos.pasto,
+        perguntas: [
+          { arte: dn.leao('feliz'), fundo: '#E4DAFB', opcoes: [{ arte: ovelha, fundo: '#CFF1E0' }, { arte: dn.leao('feliz'), fundo: '#FFF1B8', certa: true }, { arte: animais.camelo, fundo: '#FFE0C7' }] },
+          { arte: ovelha, fundo: '#CFE6FF', opcoes: [{ arte: ovelha, fundo: '#FFD9E4', certa: true }, { arte: animais.elefante, fundo: '#CFE6FF' }, { arte: dn.leao('feliz'), fundo: '#FFF1B8' }] },
+          { arte: animais.camelo, fundo: '#FFE0C7', opcoes: [{ arte: animais.girafa, fundo: '#CFF1E0' }, { arte: animais.elefante, fundo: '#CFE6FF' }, { arte: animais.camelo, fundo: '#FFD9E4', certa: true }] },
+        ],
+      });
+    },
+    textos: {
+      titulo: 'De quem é a sombra? 🦁 Acerta as 3? #shorts',
+      descricao: 'Três sombras de bichos: você acerta todas em 3 segundos? 🦁\n\nQuiz completo: Quiz Bíblico para Crianças 🦁 Daniel e os Leões (link do vídeo longo)\n\n#shorts #quizinfantil #paracriancas',
+      tags: ['quiz infantil', 'de quem é a sombra', 'animais para crianças', 'quiz bíblico infantil', 'quiz para crianças', 'ovelhinha Tuti', 'shorts infantil'],
+    },
+  },
+  {
     id: 'v11_short1',
     pasta: 'v11-natal-ceia',
     criar: deVideo({ v: 'v11', pasta: 'v11-natal-ceia', n: 7, fundo: fundos.cozinha, selo: 'QUIZ DE NATAL', tutiOpts: { gorro: true } }),

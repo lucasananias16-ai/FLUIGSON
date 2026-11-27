@@ -1,0 +1,406 @@
+{
+  "voz": {
+    "nome": "pt-BR-Chirp3-HD-Leda",
+    "velocidade": 0.94,
+    "estilo": "animada"
+  },
+  "falas": {
+    "v21_abertura": {
+      "texto": "Oi, amiguinho! A Tuti voltou! Hoje a história é de Daniel e os leões! São doze desafios. Vamos lá!",
+      "dur": 8.403,
+      "estilo": "animada"
+    },
+    "v21_p1_pergunta": {
+      "texto": "O leãozinho se escondeu! Você consegue encontrar?",
+      "dur": 3.6,
+      "estilo": "animada"
+    },
+    "v21_p1_resposta": {
+      "texto": "Achou! Ele estava atrás da pedra! Que leãozinho levado!",
+      "dur": 5.135,
+      "estilo": "animada"
+    },
+    "v21_p2_pergunta": {
+      "texto": "Na cova tinha muitos leões. Conte comigo!",
+      "dur": 3.41,
+      "estilo": "animada"
+    },
+    "v21_p2_contagem": {
+      "texto": "Um... dois... três... quatro... cinco!",
+      "dur": 6.17,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 0.36
+        },
+        {
+          "ini": 1.21,
+          "fim": 1.86
+        },
+        {
+          "ini": 2.71,
+          "fim": 3.26
+        },
+        {
+          "ini": 4.11,
+          "fim": 4.7
+        },
+        {
+          "ini": 5.55,
+          "fim": 6.17
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v21_p2_resposta": {
+      "texto": "Cinco leões! Muito bem!",
+      "dur": 1.993,
+      "estilo": "animada"
+    },
+    "v21_p3_pergunta": {
+      "texto": "Daniel falava com Deus todos os dias! O que ele fazia? Orava... pescava... ou dormia?",
+      "dur": 9.23,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 2.56
+        },
+        {
+          "ini": 3.06,
+          "fim": 4.13
+        },
+        {
+          "ini": 5.03,
+          "fim": 5.67
+        },
+        {
+          "ini": 6.67,
+          "fim": 7.47
+        },
+        {
+          "ini": 8.47,
+          "fim": 9.23
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v21_p3_resposta": {
+      "texto": "Orava! Daniel amava conversar com Deus!",
+      "dur": 3.33,
+      "estilo": "animada"
+    },
+    "v21_p4_pergunta": {
+      "texto": "De quem é essa sombra? Da ovelha... do leão... ou do camelo?",
+      "dur": 7.08,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.53
+        },
+        {
+          "ini": 2.43,
+          "fim": 3.37
+        },
+        {
+          "ini": 4.37,
+          "fim": 5.11
+        },
+        {
+          "ini": 6.11,
+          "fim": 7.08
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v21_p4_resposta": {
+      "texto": "Do leão! Olha a juba dele!",
+      "dur": 2.39,
+      "estilo": "animada"
+    },
+    "v21_p5_pergunta": {
+      "texto": "O que está faltando no rei? O chapéu... o gorro... ou a coroa?",
+      "dur": 6.64,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.48
+        },
+        {
+          "ini": 2.38,
+          "fim": 3.17
+        },
+        {
+          "ini": 4.17,
+          "fim": 4.85
+        },
+        {
+          "ini": 5.85,
+          "fim": 6.64
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v21_p5_resposta": {
+      "texto": "A coroa! Todo rei usa coroa!",
+      "dur": 2.72,
+      "estilo": "animada"
+    },
+    "v21_p6_pergunta": {
+      "texto": "Qual leão é o maior? O da esquerda... ou o da direita?",
+      "dur": 4.95,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.3
+        },
+        {
+          "ini": 2.2,
+          "fim": 3.11
+        },
+        {
+          "ini": 4.11,
+          "fim": 4.95
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v21_p6_resposta": {
+      "texto": "O da direita! Que leãozão!",
+      "dur": 2.41,
+      "estilo": "animada"
+    },
+    "v21_p7_pergunta": {
+      "texto": "Um destes leões é diferente! Qual é?",
+      "dur": 2.74,
+      "estilo": "animada"
+    },
+    "v21_p7_resposta": {
+      "texto": "O que está dormindo! Os outros estão acordados!",
+      "dur": 3.62,
+      "estilo": "animada"
+    },
+    "v21_p8_pergunta": {
+      "texto": "Olhe o céu! O que vem depois? A lua... a estrela... ou o sol?",
+      "dur": 8,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 0.97
+        },
+        {
+          "ini": 1.47,
+          "fim": 2.73
+        },
+        {
+          "ini": 3.63,
+          "fim": 4.32
+        },
+        {
+          "ini": 5.32,
+          "fim": 6.21
+        },
+        {
+          "ini": 7.21,
+          "fim": 8
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v21_p8_resposta": {
+      "texto": "A lua! Sol, lua, sol, lua! Daniel passou a noite toda com os leões.",
+      "dur": 7.13,
+      "estilo": "animada"
+    },
+    "v21_p9_pergunta": {
+      "texto": "O que não tinha na cova dos leões? A pedra... o leão... ou a televisão?",
+      "dur": 7.41,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 2.07
+        },
+        {
+          "ini": 2.97,
+          "fim": 3.72
+        },
+        {
+          "ini": 4.72,
+          "fim": 5.38
+        },
+        {
+          "ini": 6.38,
+          "fim": 7.41
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v21_p9_resposta": {
+      "texto": "A televisão! Ha ha! Naquele tempo nem existia!",
+      "dur": 4.6,
+      "estilo": "animada"
+    },
+    "v21_p10_mostrar": {
+      "texto": "Olhe bem onde o anjo está.",
+      "dur": 1.7,
+      "estilo": "animada"
+    },
+    "v21_p10_pergunta": {
+      "texto": "As cartas trocaram de lugar! Onde está o anjo? No um... no dois... ou no três?",
+      "dur": 8.26,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.72
+        },
+        {
+          "ini": 2.22,
+          "fim": 3.38
+        },
+        {
+          "ini": 4.18,
+          "fim": 4.83
+        },
+        {
+          "ini": 5.73,
+          "fim": 6.5
+        },
+        {
+          "ini": 7.4,
+          "fim": 8.26
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v21_p10_resposta": {
+      "texto": "No número dois! Você tem olho bom!",
+      "dur": 2.66,
+      "estilo": "animada"
+    },
+    "v21_p11_pergunta": {
+      "texto": "Quem Deus mandou para cuidar de Daniel? O anjo... o pescador... ou o padeiro?",
+      "dur": 7.35,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 2.19
+        },
+        {
+          "ini": 3.09,
+          "fim": 3.79
+        },
+        {
+          "ini": 4.79,
+          "fim": 5.5
+        },
+        {
+          "ini": 6.5,
+          "fim": 7.35
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v21_p11_resposta": {
+      "texto": "O anjo! Ele fechou a boca dos leões!",
+      "dur": 3.47,
+      "estilo": "animada"
+    },
+    "v21_p12_pergunta": {
+      "texto": "O que os leões fizeram com Daniel? Ficaram bravos... ficaram mansinhos... ou fugiram?",
+      "dur": 8.08,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 2.17
+        },
+        {
+          "ini": 3.07,
+          "fim": 4.12
+        },
+        {
+          "ini": 5.12,
+          "fim": 6.27
+        },
+        {
+          "ini": 7.27,
+          "fim": 8.08
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v21_p12_resposta": {
+      "texto": "Ficaram mansinhos! Deus cuidou de Daniel!",
+      "dur": 2.83,
+      "estilo": "animada"
+    },
+    "v21_encerramento": {
+      "texto": "Deus cuidou de Daniel, e cuida de você também! Até a próxima, amiguinho!",
+      "dur": 5.06,
+      "estilo": "animada"
+    },
+    "v21_v2_p1_pergunta": {
+      "texto": "Socorro! O leãozinho fugiu! Você me ajuda a achar? Rápido, aponta pra ele!",
+      "dur": 6.49,
+      "estilo": "animada"
+    },
+    "v21_v2_gancho": {
+      "texto": "Você é demais! São doze desafios, e o último é o mais difícil de todos. Vamos?",
+      "dur": 6.15,
+      "estilo": "animada"
+    },
+    "v21_v2_surpresa": {
+      "texto": "Agora vem um desafio surpresa!",
+      "dur": 1.9,
+      "estilo": "animada"
+    },
+    "v21_v2_metade": {
+      "texto": "Metade! Você está indo muito bem!",
+      "dur": 3.55,
+      "estilo": "animada"
+    },
+    "v21_v2_ultimo": {
+      "texto": "E agora, o último desafio! O mais difícil de todos!",
+      "dur": 4.21,
+      "estilo": "animada"
+    },
+    "v21_v2_encerramento": {
+      "texto": "Uhuu! Você completou os doze desafios! Deus cuidou de Daniel, e cuida de você também. Vem jogar o próximo quiz comigo!",
+      "dur": 9.76,
+      "estilo": "animada"
+    },
+    "v21_s_sombra_q1": {
+      "texto": "De quem é essa sombra? Rápido!",
+      "dur": 2.91,
+      "estilo": "animada"
+    },
+    "v21_s_sombra_r1": {
+      "texto": "Do leão!",
+      "dur": 0.737,
+      "estilo": "animada"
+    },
+    "v21_s_sombra_q2": {
+      "texto": "E essa?",
+      "dur": 0.6,
+      "estilo": "animada"
+    },
+    "v21_s_sombra_r2": {
+      "texto": "Da ovelha!",
+      "dur": 0.89,
+      "estilo": "animada"
+    },
+    "v21_s_sombra_q3": {
+      "texto": "A última é difícil!",
+      "dur": 1.55,
+      "estilo": "animada"
+    },
+    "v21_s_sombra_r3": {
+      "texto": "Do camelo!",
+      "dur": 0.92,
+      "estilo": "animada"
+    },
+    "v21_s_sombra_fim": {
+      "texto": "Acertou as três? Tenta de novo!",
+      "dur": 2.607,
+      "estilo": "animada"
+    }
+  }
+}
