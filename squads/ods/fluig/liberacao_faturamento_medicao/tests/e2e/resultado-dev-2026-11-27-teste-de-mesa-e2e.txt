@@ -1,0 +1,39 @@
+▶ homologacao-26-11-prio-tigris — PV 104281 / PC I82810 — USD 30.000 — C. Custo FLU1G (retorno da homologação 26/11)
+  ✔ 0a. PV sincronizado do Protheus aparece no Fluig (1480.676486ms)
+  ℹ atenção: C. Custo do PV (2000 - FINANCEIRO) difere do C. Custo do PC (FLU1G); a busca de aprovadores usa o do PC
+  ✔ 0b. todo PV sincronizado tem o seu PC na carga sincronizada (2252.497733ms)
+  ✔ 1. PC sincronizado do Protheus aparece no Fluig com os dados do retorno (1785.881587ms)
+  ℹ atenção: PC em USD com C7_TXMOEDA = 0 (sem taxa de câmbio gravada no Protheus)
+  ✔ 2. itens do PC são lidos do Protheus (546.553069ms)
+  ✔ 3. existem aprovadores para C. Custo FLU1G com limite para USD 30000 (218.693907ms)
+  ℹ aprovador: [TESTE] Admin Fluig — nível 1 — ativo: Sim
+  ✔ 4. existe aprovador para o nível 1 (Aprovação 1 é obrigatória) (214.309378ms)
+  ✔ 5. inicia a solicitação e ela chega à Aprovação 1 com responsável (1825.041639ms)
+  ℹ solicitação criada: 227
+  ℹ responsáveis na tarefa ativa: admin
+✔ homologacao-26-11-prio-tigris — PV 104281 / PC I82810 — USD 30.000 — C. Custo FLU1G (retorno da homologação 26/11) (8325.078532ms)
+▶ controle-cc-2000 — PV 104279 / PC I82809 — BRL 30.000 — C. Custo 2000 (controle)
+  ✔ 0a. PV sincronizado do Protheus aparece no Fluig (693.736465ms)
+  ✔ 0b. todo PV sincronizado tem o seu PC na carga sincronizada (1614.94941ms)
+  ✔ 1. PC sincronizado do Protheus aparece no Fluig com os dados do retorno (1600.958393ms)
+  ✔ 2. itens do PC são lidos do Protheus (492.051295ms)
+  ✔ 3. existem aprovadores para C. Custo 2000 com limite para BRL 30000 (299.408768ms)
+  ℹ aprovador: Ludmila Oliveira — nível 1 — ativo: Não
+  ℹ aprovador: Everson dos Santos Fragoso — nível 3 — ativo: Não
+  ℹ aprovador: Licyara Pompeu — nível 2 — ativo: Não
+  ✔ 4. existe aprovador para o nível 1 (Aprovação 1 é obrigatória) (219.386483ms)
+  ✖ 5. inicia a solicitação e ela chega à Aprovação 1 com responsável (883.415988ms)
+  ℹ solicitação recusada pelo Fluig: startProcess: Erro ao executar evento do processo, Não há aprovador ativo de nível 1 para o Centro de Custo 2000 com limite para BRL 30000. Verifique 'Atribuição de Usuários e Posições' e 'Alçada por Posição'. (beforeStateEntry#68) in beforeStateEntry at line number 68
+✖ controle-cc-2000 — PV 104279 / PC I82809 — BRL 30.000 — C. Custo 2000 (controle) (5806.528148ms)
+ℹ tests 14
+ℹ suites 2
+ℹ pass 13
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 14198.69887
+✖ failing tests:
+test at tests/e2e/liberacao.e2e.test.js:161:5
+✖ 5. inicia a solicitação e ela chega à Aprovação 1 com responsável (883.415988ms)
+  AssertionError [ERR_ASSERTION]: Fluig recusou iniciar a solicitação: startProcess: Erro ao executar evento do processo, Não há aprovador ativo de nível 1 para o Centro de Custo 2000 com limite para BRL 30000. Verifique 'Atribuição de Usuários e Posições' e 'Alçada por Posição'. (beforeStateEntry#68) in beforeStateEntry at line number 68

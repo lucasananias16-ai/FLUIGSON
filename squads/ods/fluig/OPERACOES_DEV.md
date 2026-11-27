@@ -22,3 +22,20 @@ Para desfazer: Agendador de tarefas → marcar a tarefa → Deletar.
 - Publicada a versão 17 (SYS_USR + SRA, prefixo U na matrícula de usuário). A versão anterior era a 16.
 - Datasets → Sincronização → "Apagar dados" + "Sincronizar agora": a tabela espelho foi recriada (132 inserts, 0 erros).
 - Para desfazer: restaurar a versão 16 e repetir "Apagar dados" + "Sincronizar agora".
+
+## 27/11/2026 — Teste de mesa antes do reteste da ODS
+Cadastros temporários de TESTE, todos excluídos ao final:
+
+| Formulário | cardId | Conteúdo |
+|---|---|---|
+| Alçada por Posição (8) | 692 | posição TST "[TESTE] APROVADOR E2E", nível 1, Expense sheets, BRL 500 mil / USD 100 mil |
+| Atribuição de Usuários e Posições (7) | 693 | "[TESTE] Admin Fluig", FLU1G, Ativo = Sim (gravado pela API) |
+| Atribuição de Usuários e Posições (7) | 694 | Ludmila Oliveira, posição TST, CC 2000, Ativo = Não (gravado **pela tela**) |
+
+Resultados:
+- **Tela de atribuição:** salvou a Ludmila com matrícula U000117 e departamento Fiscal. Não apareceu mais "Faltou preencher".
+- **Fim a fim** (datasets _test e processo _test): PRIO TIGRIS 7/7; a solicitação 227 chegou à Aprovação 1 com o aprovador da alçada e foi cancelada.
+  O controle (CC 2000) foi barrado corretamente, porque o único aprovador de nível 1 (a Ludmila) estava com Ativo = Não.
+- **Cadastro** (dataset de colaboradores original): A e B passam; C falha só pela parametrização do print.
+- **Problema novo:** a tela de atribuição oferece só 100 centros de custo (dts_cCustoProtheus_JYNX sem filtro = TOP 100), e o FLU1G não está entre eles.
+- **Limpeza:** os cards 692, 693 e 694 foram excluídos. A busca de aprovadores para FLU1G voltou a 0, e não há solicitação ativa na cópia de teste.
