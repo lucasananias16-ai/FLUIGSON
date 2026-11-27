@@ -1,0 +1,392 @@
+{
+  "voz": {
+    "nome": "pt-BR-Chirp3-HD-Leda",
+    "velocidade": 0.94,
+    "estilo": "animada"
+  },
+  "falas": {
+    "v23_abertura": {
+      "texto": "Oi, amiguinho! Hoje a gente vai passear com os reis magos!",
+      "dur": 4.063,
+      "estilo": "animada"
+    },
+    "v23_p1_pergunta": {
+      "texto": "A coroa do rei está brincando de esconde-esconde! Cadê ela?",
+      "dur": 4.32,
+      "estilo": "animada"
+    },
+    "v23_p1_resposta": {
+      "texto": "Achou! Estava atrás da moita! Coroa sapeca!",
+      "dur": 4.98,
+      "estilo": "animada"
+    },
+    "v23_p2_pergunta": {
+      "texto": "Quantos camelos vão passear? Conte comigo!",
+      "dur": 2.9,
+      "estilo": "animada"
+    },
+    "v23_p2_contagem": {
+      "texto": "Um... dois... três... quatro... cinco!",
+      "dur": 6.68,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 0.4
+        },
+        {
+          "ini": 1.25,
+          "fim": 1.96
+        },
+        {
+          "ini": 2.81,
+          "fim": 3.57
+        },
+        {
+          "ini": 4.42,
+          "fim": 5.15
+        },
+        {
+          "ini": 6,
+          "fim": 6.68
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v23_p2_resposta": {
+      "texto": "Cinco camelos! Que fila comprida!",
+      "dur": 3.07,
+      "estilo": "animada"
+    },
+    "v23_p3_pergunta": {
+      "texto": "Os reis magos olharam para o céu! O que será que eles viram brilhando? A lua... a nuvem... ou a estrela?",
+      "dur": 9.46,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.88
+        },
+        {
+          "ini": 2.38,
+          "fim": 4.26
+        },
+        {
+          "ini": 5.16,
+          "fim": 5.84
+        },
+        {
+          "ini": 6.84,
+          "fim": 7.63
+        },
+        {
+          "ini": 8.63,
+          "fim": 9.46
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v23_p3_resposta": {
+      "texto": "A estrela! Que brilho lindo!",
+      "dur": 2.3,
+      "estilo": "animada"
+    },
+    "v23_p4_pergunta": {
+      "texto": "Olha que sombra engraçada! Quem será que vem lá? A ovelha... o camelo... ou o leão?",
+      "dur": 8.96,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.76
+        },
+        {
+          "ini": 2.26,
+          "fim": 3.43
+        },
+        {
+          "ini": 4.33,
+          "fim": 5.23
+        },
+        {
+          "ini": 6.23,
+          "fim": 7.11
+        },
+        {
+          "ini": 8.11,
+          "fim": 8.96
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v23_p4_resposta": {
+      "texto": "É o camelo! Oi, camelo!",
+      "dur": 1.95,
+      "estilo": "animada"
+    },
+    "v23_p5_pergunta": {
+      "texto": "Ué, o céu ficou escurinho! Quem está faltando? O sol... a nuvem... ou a estrela?",
+      "dur": 8.677,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.87
+        },
+        {
+          "ini": 2.37,
+          "fim": 3.57
+        },
+        {
+          "ini": 4.47,
+          "fim": 5.15
+        },
+        {
+          "ini": 6.15,
+          "fim": 6.88
+        },
+        {
+          "ini": 7.88,
+          "fim": 8.677
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v23_p5_resposta": {
+      "texto": "A estrela! Voltou a brilhar!",
+      "dur": 2.21,
+      "estilo": "animada"
+    },
+    "v23_p6_pergunta": {
+      "texto": "Qual presente é o pequenininho? O da esquerda... ou o da direita?",
+      "dur": 5.5,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.7
+        },
+        {
+          "ini": 2.6,
+          "fim": 3.52
+        },
+        {
+          "ini": 4.52,
+          "fim": 5.5
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v23_p6_resposta": {
+      "texto": "O da esquerda! Pequenininho e cheio de amor!",
+      "dur": 3.16,
+      "estilo": "animada"
+    },
+    "v23_p7_pergunta": {
+      "texto": "Uma destas coroas quis ser diferente! Qual é?",
+      "dur": 3.37,
+      "estilo": "animada"
+    },
+    "v23_p7_resposta": {
+      "texto": "A azul! Que charmosa!",
+      "dur": 2.08,
+      "estilo": "animada"
+    },
+    "v23_p8_pergunta": {
+      "texto": "Olha a filinha! Quem vem agora? O camelo... a estrela... ou o presente?",
+      "dur": 8,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 0.93
+        },
+        {
+          "ini": 1.43,
+          "fim": 2.49
+        },
+        {
+          "ini": 3.39,
+          "fim": 4.22
+        },
+        {
+          "ini": 5.22,
+          "fim": 6.02
+        },
+        {
+          "ini": 7.02,
+          "fim": 8
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v23_p8_resposta": {
+      "texto": "O camelo! Ele não perde a fila!",
+      "dur": 2.767,
+      "estilo": "animada"
+    },
+    "v23_p9_pergunta": {
+      "texto": "Tem um engraçadinho no deserto! Quem não mora lá? O boneco de neve... a palmeira... ou o camelo?",
+      "dur": 9.01,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.74
+        },
+        {
+          "ini": 2.24,
+          "fim": 3.24
+        },
+        {
+          "ini": 4.14,
+          "fim": 5.34
+        },
+        {
+          "ini": 6.34,
+          "fim": 7.07
+        },
+        {
+          "ini": 8.07,
+          "fim": 9.01
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v23_p9_resposta": {
+      "texto": "O boneco de neve! Ha ha! No calor ele vira sorvete!",
+      "dur": 4.14,
+      "estilo": "animada"
+    },
+    "v23_p10_mostrar": {
+      "texto": "Olhe bem onde o menino Jesus está.",
+      "dur": 2.08,
+      "estilo": "animada"
+    },
+    "v23_p10_pergunta": {
+      "texto": "As cartas dançaram! Onde ele ficou? No um... no dois... ou no três?",
+      "dur": 7.76,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.43
+        },
+        {
+          "ini": 1.93,
+          "fim": 2.84
+        },
+        {
+          "ini": 3.64,
+          "fim": 4.3
+        },
+        {
+          "ini": 5.2,
+          "fim": 5.91
+        },
+        {
+          "ini": 6.81,
+          "fim": 7.76
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v23_p10_resposta": {
+      "texto": "No número um! Que olhinho esperto!",
+      "dur": 2.51,
+      "estilo": "animada"
+    },
+    "v23_p13_mostrar": {
+      "texto": "Olhe bem os presentes!",
+      "dur": 1.65,
+      "estilo": "animada"
+    },
+    "v23_p13_pergunta": {
+      "texto": "Ué, um presente foi dar uma voltinha! Qual foi? O azul... o vermelho... ou o amarelo?",
+      "dur": 8.57,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 2.34
+        },
+        {
+          "ini": 2.84,
+          "fim": 3.49
+        },
+        {
+          "ini": 4.39,
+          "fim": 4.98
+        },
+        {
+          "ini": 5.98,
+          "fim": 6.73
+        },
+        {
+          "ini": 7.73,
+          "fim": 8.57
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v23_p13_resposta": {
+      "texto": "O vermelho! Já, já ele volta!",
+      "dur": 2.7,
+      "estilo": "animada"
+    },
+    "v23_p14_mostrar": {
+      "texto": "Olha os reis chegando, um de cada vez!",
+      "dur": 2.75,
+      "estilo": "animada"
+    },
+    "v23_p14_pergunta": {
+      "texto": "Quem chegou primeiro? O de roxo... o de verde... ou o de vermelho?",
+      "dur": 6.56,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.14
+        },
+        {
+          "ini": 2.04,
+          "fim": 2.84
+        },
+        {
+          "ini": 3.84,
+          "fim": 4.6
+        },
+        {
+          "ini": 5.6,
+          "fim": 6.56
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v23_p14_resposta": {
+      "texto": "O de verde! Chegou todo contente!",
+      "dur": 2.75,
+      "estilo": "animada"
+    },
+    "v23_encerramento": {
+      "texto": "Que passeio gostoso! Até a próxima, amiguinho!",
+      "dur": 3.45,
+      "estilo": "animada"
+    },
+    "v23_v2_gancho": {
+      "texto": "Hoje a gente vai passear com os reis magos. São doze brincadeiras, e a última é uma surpresa. Vem comigo?",
+      "dur": 7.05,
+      "estilo": "animada"
+    },
+    "v23_v2_surpresa": {
+      "texto": "Olha, a estrela está passeando! Vamos passear também?",
+      "dur": 4.16,
+      "estilo": "animada"
+    },
+    "v23_v2_metade": {
+      "texto": "Já passeamos um montão! Está gostoso brincar com você!",
+      "dur": 4.39,
+      "estilo": "animada"
+    },
+    "v23_v2_ultimo": {
+      "texto": "Estamos chegando! Agora vem a brincadeira surpresa!",
+      "dur": 3.46,
+      "estilo": "animada"
+    },
+    "v23_v2_encerramento": {
+      "texto": "Uhuu! Que passeio gostoso! Os reis magos encontraram o menino Jesus e deram os presentes com muito carinho. Vem brincar comigo de novo!",
+      "dur": 9.8,
+      "estilo": "animada"
+    }
+  }
+}

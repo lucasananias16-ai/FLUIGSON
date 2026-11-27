@@ -1,0 +1,329 @@
+1
+00:00:00,300 --> 00:00:02,310
+Olha que sombra engraçada!
+
+2
+00:00:02,560 --> 00:00:03,980
+Quem será que vem lá?
+
+3
+00:00:04,630 --> 00:00:05,830
+A ovelha...
+
+4
+00:00:06,530 --> 00:00:07,730
+o camelo...
+
+5
+00:00:08,410 --> 00:00:09,610
+ou o leão?
+
+6
+00:00:16,700 --> 00:00:18,810
+É o camelo! Oi, camelo!
+
+7
+00:00:20,857 --> 00:00:23,317
+Hoje a gente vai passear
+com os reis magos.
+
+8
+00:00:23,397 --> 00:00:27,017
+São doze brincadeiras, e
+a última é uma surpresa.
+
+9
+00:00:27,167 --> 00:00:28,367
+Vem comigo?
+
+10
+00:00:30,083 --> 00:00:32,213
+Os reis magos olharam para o céu!
+
+11
+00:00:32,463 --> 00:00:34,593
+O que será que eles viram brilhando?
+
+12
+00:00:35,243 --> 00:00:36,443
+A lua...
+
+13
+00:00:36,923 --> 00:00:38,123
+a nuvem...
+
+14
+00:00:38,713 --> 00:00:39,913
+ou a estrela?
+
+15
+00:00:51,983 --> 00:00:54,443
+A estrela! Que brilho lindo!
+
+16
+00:00:57,100 --> 00:00:59,050
+Qual presente é o pequenininho?
+
+17
+00:00:59,700 --> 00:01:00,900
+O da esquerda...
+
+18
+00:01:01,620 --> 00:01:02,850
+ou o da direita?
+
+19
+00:01:15,040 --> 00:01:18,360
+O da esquerda! Pequenininho
+e cheio de amor!
+
+20
+00:01:21,083 --> 00:01:24,123
+A coroa do rei está brincando
+de esconde-esconde!
+
+21
+00:01:24,683 --> 00:01:25,883
+Cadê ela?
+
+22
+00:01:37,803 --> 00:01:41,353
+Achou! Estava atrás da moita!
+
+23
+00:01:41,433 --> 00:01:42,913
+Coroa sapeca!
+
+24
+00:01:45,000 --> 00:01:47,560
+Olha, a estrela está passeando!
+
+25
+00:01:47,830 --> 00:01:49,310
+Vamos passear também?
+
+26
+00:01:50,807 --> 00:01:52,597
+Olhe bem os presentes!
+
+27
+00:01:58,617 --> 00:02:01,207
+Ué, um presente foi dar uma voltinha!
+
+28
+00:02:01,457 --> 00:02:02,657
+Qual foi?
+
+29
+00:02:03,007 --> 00:02:04,207
+O azul...
+
+30
+00:02:04,597 --> 00:02:05,797
+o vermelho...
+
+31
+00:02:06,347 --> 00:02:07,547
+ou o amarelo?
+
+32
+00:02:19,637 --> 00:02:22,487
+O vermelho! Já, já ele volta!
+
+33
+00:02:25,207 --> 00:02:26,797
+Quantos camelos vão passear?
+
+34
+00:02:27,117 --> 00:02:28,317
+Conte comigo!
+
+35
+00:02:28,767 --> 00:02:29,937
+Um...
+
+36
+00:02:30,017 --> 00:02:31,217
+dois...
+
+37
+00:02:31,577 --> 00:02:32,777
+três...
+
+38
+00:02:33,187 --> 00:02:34,387
+quatro...
+
+39
+00:02:34,767 --> 00:02:35,967
+cinco!
+
+40
+00:02:36,987 --> 00:02:40,227
+Cinco camelos! Que fila comprida!
+
+41
+00:02:43,517 --> 00:02:45,507
+Tem um engraçadinho no deserto!
+
+42
+00:02:45,757 --> 00:02:47,007
+Quem não mora lá?
+
+43
+00:02:47,657 --> 00:02:49,107
+O boneco de neve...
+
+44
+00:02:49,857 --> 00:02:51,057
+a palmeira...
+
+45
+00:02:51,587 --> 00:02:52,787
+ou o camelo?
+
+46
+00:03:04,967 --> 00:03:07,297
+O boneco de neve! Ha ha!
+
+47
+00:03:07,387 --> 00:03:09,277
+No calor ele vira sorvete!
+
+48
+00:03:11,343 --> 00:03:13,423
+Já passeamos um montão!
+
+49
+00:03:13,713 --> 00:03:15,873
+Está gostoso brincar com você!
+
+50
+00:03:17,373 --> 00:03:20,273
+Olha os reis chegando, um de cada vez!
+
+51
+00:03:27,150 --> 00:03:28,540
+Quem chegou primeiro?
+
+52
+00:03:29,190 --> 00:03:30,390
+O de roxo...
+
+53
+00:03:30,990 --> 00:03:32,190
+o de verde...
+
+54
+00:03:32,750 --> 00:03:33,960
+ou o de vermelho?
+
+55
+00:03:46,150 --> 00:03:49,060
+O de verde! Chegou todo contente!
+
+56
+00:03:51,773 --> 00:03:54,223
+Uma destas coroas quis ser diferente!
+
+57
+00:03:54,693 --> 00:03:55,893
+Qual é?
+
+58
+00:04:07,553 --> 00:04:09,783
+A azul! Que charmosa!
+
+59
+00:04:12,683 --> 00:04:13,883
+Olha a filinha!
+
+60
+00:04:14,113 --> 00:04:15,423
+Quem vem agora?
+
+61
+00:04:16,073 --> 00:04:17,273
+O camelo...
+
+62
+00:04:17,903 --> 00:04:19,103
+a estrela...
+
+63
+00:04:19,703 --> 00:04:20,933
+ou o presente?
+
+64
+00:04:33,133 --> 00:04:36,083
+O camelo! Ele não perde a fila!
+
+65
+00:04:38,983 --> 00:04:41,103
+Ué, o céu ficou escurinho!
+
+66
+00:04:41,353 --> 00:04:42,803
+Quem está faltando?
+
+67
+00:04:43,453 --> 00:04:44,653
+O sol...
+
+68
+00:04:45,133 --> 00:04:46,333
+a nuvem...
+
+69
+00:04:46,863 --> 00:04:48,063
+ou a estrela?
+
+70
+00:05:00,100 --> 00:05:02,460
+A estrela! Voltou a brilhar!
+
+71
+00:05:04,523 --> 00:05:08,133
+Estamos chegando! Agora vem
+a brincadeira surpresa!
+
+72
+00:05:10,200 --> 00:05:12,410
+Olhe bem onde o menino Jesus está.
+
+73
+00:05:19,430 --> 00:05:21,110
+As cartas dançaram!
+
+74
+00:05:21,360 --> 00:05:22,560
+Onde ele ficou?
+
+75
+00:05:23,070 --> 00:05:24,270
+No um...
+
+76
+00:05:24,630 --> 00:05:25,830
+no dois...
+
+77
+00:05:26,240 --> 00:05:27,440
+ou no três?
+
+78
+00:05:39,640 --> 00:05:42,080
+No número um! Que olhinho esperto!
+
+79
+00:05:45,107 --> 00:05:47,647
+Uhuu! Que passeio gostoso!
+
+80
+00:05:47,727 --> 00:05:53,117
+Os reis magos encontraram o menino Jesus
+e deram os presentes com muito carinho.
+
+81
+00:05:53,337 --> 00:05:55,067
+Vem brincar comigo de novo!

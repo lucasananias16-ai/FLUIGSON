@@ -15,6 +15,7 @@ Vídeos de quiz de Natal, todos com a Tuti de gorro de Papai Noel, na playlist *
 | 9 | Vídeo 19 | **O Natal no Verão**: a festa de Natal na praia, do jeito brasileiro | Praia | Pronto |
 | 10 | Vídeo 20 | **O Natal no Polo Norte**: a casa do Papai Noel, os bichinhos do frio e a aurora | Gelo do Polo Norte | Pronto |
 | 11 | Vídeo 22 | **A Véspera de Natal**: a lareira, as meias, o leite com biscoito e a hora de dormir | Sala à noite | Pronto |
+| 12 | Vídeo 23 | **Os Reis Magos e a Estrela**: a viagem pelo deserto, de camelo, até o menino Jesus | Deserto à noite | Pronto |
 
 O vídeo bíblico "Desafios do Natal de Jesus" (Vídeo 3) fica na playlist Quiz Bíblico Infantil e não entra na contagem desta série.
 

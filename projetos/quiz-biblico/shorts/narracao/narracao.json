@@ -189,6 +189,61 @@
       "texto": "A última é difícil! Quantos biscoitos?",
       "dur": 3.43,
       "estilo": "animada"
+    },
+    "s4r_q1": {
+      "texto": "Quem não combina com o deserto?",
+      "dur": 1.86,
+      "estilo": "animada"
+    },
+    "s4r_r1": {
+      "texto": "O boneco de neve! Ele vira sorvete!",
+      "dur": 3.24,
+      "estilo": "animada"
+    },
+    "s4r_q2": {
+      "texto": "E com o céu da noite?",
+      "dur": 1.29,
+      "estilo": "animada"
+    },
+    "s4r_r2": {
+      "texto": "O sol! Ele só acorda de manhã!",
+      "dur": 2.535,
+      "estilo": "animada"
+    },
+    "s4r_q3": {
+      "texto": "A última! E com os reis magos?",
+      "dur": 2.9,
+      "estilo": "animada"
+    },
+    "s4r_r3": {
+      "texto": "A televisão! Ha ha!",
+      "dur": 2.14,
+      "estilo": "animada"
+    },
+    "s2r_r1": {
+      "texto": "Do camelo!",
+      "dur": 0.86,
+      "estilo": "animada"
+    },
+    "s2r_r2": {
+      "texto": "Da coroa!",
+      "dur": 0.97,
+      "estilo": "animada"
+    },
+    "s2r_r3": {
+      "texto": "Do rei!",
+      "dur": 0.64,
+      "estilo": "animada"
+    },
+    "s5r_q1": {
+      "texto": "Quantos camelos? Conte comigo!",
+      "dur": 2.67,
+      "estilo": "animada"
+    },
+    "s5r_q3": {
+      "texto": "A última! Quantas estrelas?",
+      "dur": 2.47,
+      "estilo": "animada"
     }
   }
 }

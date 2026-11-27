@@ -35,6 +35,18 @@ const FALAS = [
   { id: 's5n_q1', texto: 'Quantas meias? Conte rápido!', tipo: 'fala' },
   { id: 's5n_q2', texto: 'E quantas velas?', tipo: 'fala' },
   { id: 's5n_q3', texto: 'A última é difícil! Quantos biscoitos?', tipo: 'fala' },
+  // Vídeo 23 · os Reis Magos (tom leve)
+  { id: 's4r_q1', texto: 'Quem não combina com o deserto?', tipo: 'fala' },
+  { id: 's4r_r1', texto: 'O boneco de neve! Ele vira sorvete!', tipo: 'fala' },
+  { id: 's4r_q2', texto: 'E com o céu da noite?', tipo: 'fala' },
+  { id: 's4r_r2', texto: 'O sol! Ele só acorda de manhã!', tipo: 'fala' },
+  { id: 's4r_q3', texto: 'A última! E com os reis magos?', tipo: 'fala' },
+  { id: 's4r_r3', texto: 'A televisão! Ha ha!', tipo: 'fala' },
+  { id: 's2r_r1', texto: 'Do camelo!', tipo: 'fala' },
+  { id: 's2r_r2', texto: 'Da coroa!', tipo: 'fala' },
+  { id: 's2r_r3', texto: 'Do rei!', tipo: 'fala' },
+  { id: 's5r_q1', texto: 'Quantos camelos? Conte comigo!', tipo: 'fala' },
+  { id: 's5r_q3', texto: 'A última! Quantas estrelas?', tipo: 'fala' },
   // S3 · qual é o maior?
   { id: 's3m_q1', texto: 'Qual é o maior? Rápido!', tipo: 'fala' },
   { id: 's3m_r1', texto: 'O da direita!', tipo: 'fala' },

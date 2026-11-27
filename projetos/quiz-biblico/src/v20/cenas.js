@@ -383,8 +383,8 @@ function criarFalta(opts = {}) {
 function criarSombra(opts = {}) {
   const d = desafio(4);
   kit.resetIds();
-  // o guarda-chuva do painel usa nomes internos próprios, para não se misturar com os dos cards
-  const figura = kit.withOutline(6.5, objetos.guardaChuva).replace(/(id="|url\(#)k(\d+)/g, '$1painel$2');
+  // a sombra é sempre a do desenho da opção certa; o painel usa nomes internos próprios, para não se misturar com os dos cards
+  const figura = kit.withOutline(6.5, d.opcoes.find((o) => o.certa).arte).replace(/(id="|url\(#)k(\d+)/g, '$1painel$2');
   const painel =
     `<div id="painel"><svg id="sombraCor" viewBox="0 0 1000 1000">${figura}</svg>` +
     `<svg id="sombraPreta" viewBox="0 0 1000 1000">${pasto.sombra(figura, 'silhueta3')}</svg></div>`;

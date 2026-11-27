@@ -23,6 +23,9 @@ Substitui a regra de 3 Shorts recortados de cada longo. **1 Short por dia, às 1
 | **Sex 11/12, 17h** | `v21_short3.mp4` | S5 · Conte rápido! | Quiz Bíblico Daniel e os Leões (V21) |
 | **Sáb 12/12, 17h** | `v22_short2.mp4` | S2 · De quem é a sombra? | Quiz de Natal Véspera de Natal (V22) |
 | **Dom 13/12, 17h** | `v22_short3.mp4` | S5 · Conte rápido! | Quiz de Natal Véspera de Natal (V22) |
+| **Seg 14/12, 17h** | `v23_short1.mp4` | S4 · Quem não combina? | Quiz de Natal Reis Magos (V23, no ar na sex 11/12) |
+| **Ter 15/12, 17h** | `v23_short2.mp4` | S2 · De quem é a sombra? | Quiz de Natal Reis Magos (V23) |
+| **Qua 16/12, 17h** | `v23_short3.mp4` | S5 · Conte comigo! | Quiz de Natal Reis Magos (V23) |
 
 Em cada um: **Feito para crianças = Sim**, e no campo **Vídeo relacionado** escolher o longo da coluna da direita (testar se o campo aparece no canal). Na descrição, trocar "(link do vídeo longo)" pelo link do longo. Depois de 48 h, anotar em Insights → Alcance: "Exibidos no feed" e "Escolheram assistir".
 

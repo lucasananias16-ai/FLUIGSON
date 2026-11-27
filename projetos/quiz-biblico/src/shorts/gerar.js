@@ -699,6 +699,92 @@ const SHORTS = [
     },
   },
   {
+    // S4 · o que não combina? (os Reis Magos)
+    id: 'v23_short1',
+    pasta: 'v23-natal-reis-magos',
+    narrDir: NARR_SHORTS,
+    criar: () => {
+      const rs = require('../art/reis');
+      const dn = require('../art/daniel');
+      const cr = require('../art/criacao');
+      const animais = require('../art/animais');
+      const objetos = require('../art/objetos');
+      const ceuNatal = require('../art/ceuNatal');
+      return criarTresSombras({
+        narrDir: NARR_SHORTS,
+        ids: { q: ['s4r_q1', 's4r_q2', 's4r_q3'], r: ['s4r_r1', 's4r_r2', 's4r_r3'], fim: 's3_fim' },
+        fundo: fundos.neve,
+        tutiOpts: { gorro: true },
+        perguntas: [
+          { painel: 'figura', arte: rs.noiteSemEstrela, fundo: '#E4DAFB', opcoes: [{ arte: animais.camelo, fundo: '#FFE0C7' }, { arte: () => animais.bonecoNeve(), fundo: '#CFE6FF', certa: true }, { arte: () => rs.palmeira(500, 900, 1.6), fundo: '#FFF1B8' }] },
+          { painel: 'figura', arte: cr.noite, fundo: '#CFE6FF', opcoes: [{ arte: ceuNatal.solCard, fundo: '#FFF1B8', certa: true }, { arte: objetos.lua, fundo: '#34498F' }, { arte: objetos.estrela, fundo: '#E4DAFB' }] },
+          { painel: 'figura', arte: rs.reiMago('roxo'), fundo: '#FFF1B8', opcoes: [{ arte: rs.coroa, fundo: '#E4DAFB' }, { arte: rs.PRES.vermelho, fundo: '#CFF1E0' }, { arte: dn.televisao, fundo: '#CFE6FF', certa: true }] },
+        ],
+      });
+    },
+    textos: {
+      titulo: 'Quem não combina? 😂 Acerta as 3? #shorts',
+      descricao: 'Boneco de neve no deserto? Ache quem não combina em 3 segundos! 😂\n\nQuiz completo: Quiz de Natal para Crianças ⭐ Os Reis Magos e a Estrela (link do vídeo longo)\n\n#shorts #quizinfantil #paracriancas',
+      tags: ['quiz infantil', 'o que não combina', 'quiz engraçado', 'reis magos', 'quiz para crianças', 'ovelhinha Tuti', 'shorts infantil'],
+    },
+  },
+  {
+    // S2 · de quem é a sombra? (os Reis Magos)
+    id: 'v23_short2',
+    pasta: 'v23-natal-reis-magos',
+    narrDir: NARR_SHORTS,
+    criar: () => {
+      const rs = require('../art/reis');
+      const animais = require('../art/animais');
+      const objetos = require('../art/objetos');
+      const ovelha = () => animais.ovelha();
+      return criarTresSombras({
+        narrDir: NARR_SHORTS,
+        ids: { q: ['s2_q1', 's3_e_agora', 's3_ultima'], r: ['s2r_r1', 's2r_r2', 's2r_r3'], fim: 's3_fim' },
+        fundo: fundos.neve,
+        tutiOpts: { gorro: true },
+        perguntas: [
+          { arte: animais.camelo, fundo: '#E4DAFB', opcoes: [{ arte: ovelha, fundo: '#CFF1E0' }, { arte: animais.camelo, fundo: '#FFE0C7', certa: true }, { arte: animais.leao, fundo: '#FFF1B8' }] },
+          { arte: rs.coroa, fundo: '#CFE6FF', opcoes: [{ arte: rs.coroa, fundo: '#FFD9E4', certa: true }, { arte: objetos.estrela, fundo: '#E4DAFB' }, { arte: rs.PRES.azul, fundo: '#CFF1E0' }] },
+          { arte: rs.reiMago('verde'), fundo: '#FFE0C7', opcoes: [{ arte: animais.camelo, fundo: '#CFE6FF' }, { arte: ovelha, fundo: '#CFF1E0' }, { arte: rs.reiMago('verde'), fundo: '#FFD9E4', certa: true }] },
+        ],
+      });
+    },
+    textos: {
+      titulo: 'De quem é a sombra? 🐪 Acerta as 3? #shorts',
+      descricao: 'Três sombras dos reis magos: você acerta todas em 3 segundos? 🐪\n\nQuiz completo: Quiz de Natal para Crianças ⭐ Os Reis Magos e a Estrela (link do vídeo longo)\n\n#shorts #quizinfantil #paracriancas',
+      tags: ['quiz infantil', 'de quem é a sombra', 'reis magos', 'quiz de natal', 'quiz para crianças', 'ovelhinha Tuti', 'shorts infantil'],
+    },
+  },
+  {
+    // S5 · conte rápido! (os Reis Magos)
+    id: 'v23_short3',
+    pasta: 'v23-natal-reis-magos',
+    narrDir: NARR_SHORTS,
+    criar: () => {
+      const rs = require('../art/reis');
+      const animais = require('../art/animais');
+      const objetos = require('../art/objetos');
+      const nums = (lista, certo, fundo) => lista.map((x) => ({ texto: String(x), fundo, certa: x === certo }));
+      return criarTresSombras({
+        narrDir: NARR_SHORTS,
+        ids: { q: ['s5r_q1', 's5d_q2', 's5r_q3'], r: ['s5_r1', 's5_r2', 's5_r3'], fim: 's3_fim' },
+        fundo: fundos.neve,
+        tutiOpts: { gorro: true },
+        perguntas: [
+          { painel: 'contar', arte: animais.camelo, n: 3, fundo: '#FFF1B8', opcoes: nums([2, 4, 3], 3, '#CFE6FF') },
+          { painel: 'contar', arte: rs.coroa, n: 4, fundo: '#E4DAFB', opcoes: nums([4, 3, 5], 4, '#FFD9E4') },
+          { painel: 'contar', arte: objetos.estrela, n: 5, fundo: '#34498F', opcoes: nums([5, 4, 3], 5, '#FFF1B8') },
+        ],
+      });
+    },
+    textos: {
+      titulo: 'Conte comigo! 🐪 Acerta as 3? #shorts',
+      descricao: 'Camelos, coroas e estrelas: conte em 3 segundos! ⭐\n\nQuiz completo: Quiz de Natal para Crianças ⭐ Os Reis Magos e a Estrela (link do vídeo longo)\n\n#shorts #quizinfantil #paracriancas',
+      tags: ['quiz infantil', 'contar até 5', 'números para crianças', 'reis magos', 'quiz para crianças', 'ovelhinha Tuti', 'shorts infantil'],
+    },
+  },
+  {
     id: 'v11_short1',
     pasta: 'v11-natal-ceia',
     criar: deVideo({ v: 'v11', pasta: 'v11-natal-ceia', n: 7, fundo: fundos.cozinha, selo: 'QUIZ DE NATAL', tutiOpts: { gorro: true } }),
