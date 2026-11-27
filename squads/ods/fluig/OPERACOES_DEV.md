@@ -56,3 +56,11 @@ gateway 37 com NF fora do orçamento, o Fluig pede a escolha manual do responsá
 isso não é possível ("O destino informado é inválido"). O caminho 37 → 39 → 41 só pode ser testado pela tela.
 
 Ao final da limpeza: nenhuma alçada ou atribuição TST*, 0 aprovadores para FLU1G e nenhuma solicitação ativa na cópia.
+
+## 27/11/2026 — Cópia de teste v3 → v5 e testes completos
+- **liberacao_faturamento_medicao_test:** v3 (campos obrigatórios e histórico, responsáveis na Medição e na Aprovação da NF),
+  v4 (reprovação), v5 (níveis em hd_nvlPcAprov lidos pelos gateways; histórico sem gateways). Versão ativa: **v5**.
+- **dts_cCustoProtheus_JYNX_test v1:** publicado.
+- **Cadastros temporários TST1–TST4** (alçadas e atribuições, cards 711–718): **excluídos**.
+- **Solicitações desta rodada, todas finalizadas** (status 2): 235 (v4, Aprovação 2 pulada; levou à v5), 236 (reprovação, v4),
+  237 (fluxo completo, v5, 17/17) e 238 (reprovação, v5, 5/5).

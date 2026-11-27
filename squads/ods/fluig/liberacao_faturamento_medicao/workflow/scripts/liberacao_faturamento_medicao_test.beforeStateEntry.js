@@ -63,6 +63,17 @@ function beforeStateEntry(sequenceId) {
     log.info("[liberacao_faturamento_medicao_test.beforeStateEntry] atividade " + sequenceId +
              " | CC " + ccusto + " | nível " + nivel + " | aprovadores ativos com usuário: " + comUsuario);
 
+    if (String(sequenceId) === "12" && comUsuario > 0) {
+        // Níveis 2-4 com aprovador ativo, gravados em hd_nvlPcAprov (campo que o main.js não altera) e lidos
+        // pelos gateways 80/84/87. O main.js preenche hd_hasAprov* com C. Custo/valor fixos de teste.
+        var niveis = ["1"];
+        for (var nv = 2; nv <= 4; nv++) {
+            if (bse_temAprovadorAtivo(ccusto, String(nv), valor, moeda)) niveis.push(String(nv));
+        }
+        hAPI.setCardValue("hd_nvlPcAprov", niveis.join(","));
+        log.info("[liberacao_faturamento_medicao_test.beforeStateEntry] níveis com aprovador ativo: " + niveis.join(","));
+    }
+
     if (comUsuario === 0) {
         var simbolo = (moeda === "2") ? "USD" : "BRL";
         throw "Não há aprovador ativo de nível " + nivel + " para o Centro de Custo " + ccusto +
@@ -74,4 +85,27 @@ function beforeStateEntry(sequenceId) {
 
 function texto(valor) {
     return (valor === null || valor === undefined) ? "" : String(valor).replace(/^\s+|\s+$/g, "");
+}
+
+function bse_temAprovadorAtivo(ccusto, nivel, valor, moeda) {
+    var c = [
+        DatasetFactory.createConstraint("COD_CCUSTO", ccusto, ccusto, ConstraintType.MUST),
+        DatasetFactory.createConstraint("NIVEL", nivel, nivel, ConstraintType.MUST),
+        DatasetFactory.createConstraint("VALOR_LIMITE", valor, valor, ConstraintType.MUST),
+        DatasetFactory.createConstraint("MOEDA", moeda, moeda, ConstraintType.MUST),
+        DatasetFactory.createConstraint("TIPO_LIMITE", "PROC", "PROC", ConstraintType.MUST),
+        DatasetFactory.createConstraint("ATIVO", "Sim", "Sim", ConstraintType.MUST)
+    ];
+    var ds = DatasetFactory.getDataset("dts_consultUsuariosPosicoes", null, c, null);
+    var total = (ds == null) ? 0 : ds.rowsCount;
+    for (var i = 0; i < total; i++) {
+        var email = texto(ds.getValue(i, "usrPos_email"));
+        if (email === "") continue;
+        var col = DatasetFactory.getDataset("colleague", ["colleaguePK.colleagueId"], [
+            DatasetFactory.createConstraint("mail", email, email, ConstraintType.MUST),
+            DatasetFactory.createConstraint("active", "true", "true", ConstraintType.MUST)
+        ], null);
+        if (col != null && col.rowsCount > 0) return true;
+    }
+    return false;
 }
