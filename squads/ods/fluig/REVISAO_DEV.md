@@ -15,7 +15,7 @@ As versões de **promoção** (sincronizadas, sem restrição) de PC e PV estão
 e `datasets/dts_getPedidoVenda_JYNX.js`, mas **não foram publicadas**. A do PC muda a estrutura, então precisa de
 "Apagar dados" + "Sincronizar" depois de publicar.
 
-## 2. Processo `liberacao_faturamento_medicao_test` — v6 (início restrito ao admin)
+## 2. Processo `liberacao_faturamento_medicao_test` — v6 (v7 preparada) (início restrito ao admin)
 | Mudança | Onde |
 |---|---|
 | Sem aprovador ativo na alçada, **barra** a entrada na Aprovação (o mecanismo original atribui ao admin) | beforeStateEntry |
@@ -25,10 +25,11 @@ e `datasets/dts_getPedidoVenda_JYNX.js`, mas **não foram publicadas**. A do PC 
 | **Histórico** em tb_obsHistorico gravado pelo servidor a cada etapa: etapa, data/hora, usuário, decisão e comentário | beforeTaskSave |
 | **Reprovação**: novo fim "Reprovado" (100). Aprovações 1–4 com hd_aprovPc = "Reprovar" e Aprovação da NF com hd_aprovValNf = "reprovado" | XML: estado 100, links 101–105, condições |
 | Atividades finais com nome: **53 "Aprovado"** (antes "Fim") e **100 "Reprovado"** | XML: nome dos estados finais (v6) |
+| **Anexo da NF na Adicionar NF (73)** (v7, preparada, ainda **não publicada**): só vale anexo incluído **nesta passagem pela etapa** e **pelo próprio responsável que envia** (ou substituto). Anexo de etapa anterior, ou de outra pessoa que anexou sem assumir a tarefa, não conta. O nome da NF vai para o histórico. Usa processHistory (movimento de entrada na 73) e processAttachment (quem anexou e em qual movimento) | beforeTaskSave |
 | Responsável da **Medição dos Itens** = executor do Início (raia Comprador); da **Aprovação da NF** = grupo ADICIONA.NF.PC (raia Fiscal). Antes não havia mecanismo, e quem enviava escolhia entre 12 usuários | XML: atribuição das atividades 32 e 39 |
 
 Fontes: `workflow/scripts/liberacao_faturamento_medicao_test.{beforeStateEntry,beforeTaskSave}.js` e
-`workflow/liberacao_faturamento_medicao_test.v6.export.xml`.
+`workflow/liberacao_faturamento_medicao_test.v6.export.xml` (v7: `….v7.export.xml`, só muda o beforeTaskSave).
 
 ## 3. Resultado dos testes (27/11/2026, com cadastros de teste temporários já excluídos)
 - **fluxo-completo.e2e.test.js: 17/17** (solicitação 237). Passou por todas as atividades: Revisão, Aprovações 1–4,
@@ -49,3 +50,9 @@ Fontes: `workflow/scripts/liberacao_faturamento_medicao_test.{beforeStateEntry,b
    Corrigir só com o mecanismo `_test` (mechanisms/atribuicao_centro_custo_test.js), publicado pelo Fluig Studio.
 5. **Promoção**, se aprovada: datasets de PC/PV/CC, processo (v5 → original) e widget apontando para os datasets corrigidos.
 6. **Responsáveis** da Medição e da Aprovação da NF: confirmados pelo Lucas em 27/11 (Comprador = quem abriu; Fiscal = ADICIONA.NF.PC).
+7. **Anexar sem assumir a tarefa (apontado pelo Lucas em 27/11):** o processo está com "Complementar solicitações" ligado
+   (complementsLevel 1) e "Segurança anexos" em "Não controlar segurança". Pelo TDN, complemento permite incluir comentários
+   **e anexos** "sendo ou não responsável pela tarefa corrente", e a segurança de anexos é do processo inteiro, não por atividade.
+   Por isso a v7 resolve no servidor: o anexo de terceiros continua podendo existir, mas **não libera** a etapa.
+   Para impedir a inclusão em si, decidir com o cliente: (a) desligar "Complementar solicitações" (também tira os comentários
+   avulsos) ou (b) "Controlar segurança" com "Publicar anexos" só para quem deve anexar (vale para todas as etapas).

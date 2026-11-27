@@ -11,7 +11,8 @@
  *      Reprovar (Aprovações 1–4: hd_aprovPc = "Reprovar"; Aprovação da NF: hd_aprovValNf = "reprovado")
  *      encerra a solicitação no fim "Reprovado" (atividade 100).
  *    - Revisão (28): comentário obrigatório (o que foi corrigido).
- *    - Adicionar NF (73): pelo menos 1 anexo.
+ *    - Adicionar NF (73): pelo menos 1 anexo incluído NESTA etapa pelo próprio responsável que está enviando.
+ *      Anexos de etapas anteriores, ou incluídos por outra pessoa sem assumir a tarefa (complemento), não valem.
  *    - Medição dos Itens (32): pelo menos 1 item medido.
  * 2. Histórico: toda movimentação grava uma linha em tb_obsHistorico (etapa, data/hora,
  *    usuário, decisão e comentário) e limpa txt_obsGeral.
@@ -51,9 +52,11 @@ function beforeTaskSave(colleagueId, nextSequenceId, userList) {
         if (obs === "") erros.push("comentário com o que foi corrigido na Revisão");
         decisao = "Reenviado após revisão";
     } else if (atual === "73") {
-        var anexos = hAPI.listAttachments();
-        if (anexos == null || anexos.size() === 0) erros.push("anexo da Nota Fiscal");
-        decisao = "NF anexada";
+        var nf = bts_anexosDaEtapa("73");
+        if (nf.length === 0) {
+            erros.push("anexo da Nota Fiscal incluído por você nesta etapa (anexos de etapas anteriores ou de outros usuários não valem)");
+        }
+        decisao = "NF anexada" + (nf.length > 0 ? " (" + nf.join(", ") + ")" : "");
     } else if (atual === "32") {
         if (bts_contarFilhos("hd_itemMedido", "true") === 0) erros.push("pelo menos um item medido");
         decisao = bts_decisao("hd_valNfOk", "aprovado", "revisao", obs, erros, null);
@@ -117,6 +120,62 @@ function bts_registrarHistorico(atual, decisao, obs) {
     hAPI.setCardValue("txt_obsGeral", "");
 }
 
+
+// Anexos (sem o registro de formulário) incluídos na passagem ATUAL pela etapa, pelo usuário que está enviando
+// (ou pelo substituto dele). Devolve as descrições.
+// - Movimento de entrada na etapa: maior movimento de processHistory com essa atividade.
+// - processAttachment guarda, por anexo, quem anexou (colleagueId) e em qual movimento (originalMovementSequence).
+// - Anexo enviado junto com este envio ainda pode não estar em processAttachment: vale se o documento foi
+//   criado pelo próprio usuário.
+function bts_anexosDaEtapa(etapa) {
+    var num = String(getValue("WKNumProces"));
+    var usuarios = {};
+    usuarios[String(getValue("WKUser"))] = true;
+    var substituto = getValue("WKReplacement");
+    if (substituto != null && String(substituto) !== "") usuarios[String(substituto)] = true;
+
+    var cNum = DatasetFactory.createConstraint("processHistoryPK.processInstanceId", num, num, ConstraintType.MUST);
+    var hist = DatasetFactory.getDataset("processHistory", null, [cNum], null);
+    var movEntrada = -1;
+    for (var h = 0; hist != null && h < hist.rowsCount; h++) {
+        if (String(hist.getValue(h, "stateSequence")) !== etapa) continue;
+        var mov = parseInt(String(hist.getValue(h, "processHistoryPK.movementSequence")), 10);
+        if (mov > movEntrada) movEntrada = mov;
+    }
+
+    var cAnexo = DatasetFactory.createConstraint("processAttachmentPK.processInstanceId", num, num, ConstraintType.MUST);
+    var reg = DatasetFactory.getDataset("processAttachment", null, [cAnexo], null);
+    var gravados = {};
+    for (var r = 0; reg != null && r < reg.rowsCount; r++) {
+        gravados[String(reg.getValue(r, "documentId"))] = {
+            usuario: String(reg.getValue(r, "colleagueId")),
+            mov: parseInt(String(reg.getValue(r, "originalMovementSequence")), 10)
+        };
+    }
+
+    var cardId = String(getValue("WKCardId"));
+    var lista = hAPI.listAttachments();
+    var nomes = [];
+    var ignorados = [];
+    for (var i = 0; lista != null && i < lista.size(); i++) {
+        var doc = lista.get(i);
+        var id = String(doc.getDocumentId());
+        if (id === cardId) continue;
+        var g = gravados[id];
+        var autor = g ? g.usuario : String(doc.getColleagueId());
+        var nestaEtapa = g ? (movEntrada < 0 || g.mov >= movEntrada) : true;
+        var nome = String(doc.getDocumentDescription());
+        if (usuarios[autor] === true && nestaEtapa) {
+            nomes.push(nome);
+        } else {
+            ignorados.push(nome + " [por " + autor + (g ? ", mov. " + g.mov : "") + "]");
+        }
+    }
+    log.info("[liberacao_faturamento_medicao_test.beforeTaskSave] solicitação " + num + " etapa " + etapa +
+             " (entrada no mov. " + movEntrada + "): anexos válidos " + nomes.length +
+             (ignorados.length > 0 ? " | não valem: " + ignorados.join("; ") : ""));
+    return nomes;
+}
 
 function bts_texto(valor) {
     return (valor === null || valor === undefined) ? "" : String(valor).replace(/^\s+|\s+$/g, "");

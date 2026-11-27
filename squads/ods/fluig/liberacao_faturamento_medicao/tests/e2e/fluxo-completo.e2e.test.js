@@ -9,9 +9,9 @@
 // Gateways cruzados: 80, 84, 87, 90, 37, 41, 52.
 //
 // Regras conferidas (o servidor tem que barrar): revisão sem comentário, Revisão sem comentário, Adicionar NF sem
-// anexo, Medição sem item medido. No Fim, o histórico (tb_obsHistorico) tem que ter uma linha por etapa.
+// anexo DA ETAPA (uma NF anexada antes, na Aprovação 4, não pode valer), Medição sem item medido. No Fim, o histórico (tb_obsHistorico) tem que ter uma linha por etapa.
 //
-// Pré-requisitos: versão 3 da cópia de teste (beforeTaskSave com regras/histórico; Medição e Aprovação da NF com
+// Pré-requisitos: versão 7 da cópia de teste (regra do anexo da etapa 73); antes, versão 3 (beforeTaskSave com regras/histórico; Medição e Aprovação da NF com
 // responsável) e aprovadores ATIVOS nos níveis 1 a 4 para o C. Custo do PC.
 //
 //   FLUIG_URL=... FLUIG_USER=admin FLUIG_PASS='***' E2E_PROCESS_ID=liberacao_faturamento_medicao_test \
@@ -126,8 +126,12 @@ test.describe('fluxo completo — ' + PROCESS_ID + ' — ' + cen.descricao, () =
     enviar(t, 12, 80, { hd_aprovPc: 'Aprovado', txt_obsGeral: 'De acordo.' }, [18]));
   test('07. Aprovação 2 aprova → Aprovação 3', (t) => enviar(t, 18, 84, { hd_aprovPc: 'Aprovado', txt_obsGeral: '' }, [20]));
   test('08. Aprovação 3 aprova → Aprovação 4', (t) => enviar(t, 20, 87, { hd_aprovPc: 'Aprovado', txt_obsGeral: '' }, [26]));
-  test('09. Aprovação 4 aprova → Adicionar NF', (t) => enviar(t, 26, 90, { hd_aprovPc: 'Aprovado', txt_obsGeral: '' }, [73]));
-  test('10. Adicionar NF SEM anexo é barrado', (t) => deveBarrar(t, 73, 32, {}, 'anexo'));
+  // A Aprovação 4 já deixa um PDF anexado: simula a NF incluída fora da etapa Adicionar NF.
+  test('09. Aprovação 4 aprova (com um PDF anexado antes da hora) → Adicionar NF', (t) =>
+    enviar(t, 26, 90, { hd_aprovPc: 'Aprovado', txt_obsGeral: '' }, [73],
+      { anexos: [{ fileName: 'NF-antecipada-e2e.pdf', contentBase64: NF_PDF, description: 'NF antecipada E2E' }] }));
+  test('10. Adicionar NF SEM anexo nesta etapa é barrado (o anexo da Aprovação 4 não vale)', (t) =>
+    deveBarrar(t, 73, 32, {}, 'anexo da Nota Fiscal incluído por você nesta etapa'));
   test('11. Adicionar NF com a NF anexada → Medição dos Itens', (t) =>
     enviar(t, 73, 32, { txt_obsGeral: 'NF 12345 anexada.' }, [32], { anexos: [{ fileName: 'NF-teste-e2e.pdf', contentBase64: NF_PDF, description: 'NF teste E2E' }] }));
   test('12. Medição SEM item medido é barrada', (t) => deveBarrar(t, 32, 37, { hd_valNfOk: 'aprovado' }, 'item medido'));
@@ -158,5 +162,7 @@ test.describe('fluxo completo — ' + PROCESS_ID + ' — ' + cen.descricao, () =
       'Aprovação da NF', 'Liberação de Pagamento'];
     for (const e of etapas) assert.ok(hist.some((h) => h.startsWith(e + ' |')), 'histórico sem a etapa ' + e);
     assert.ok(hist.some((h) => h.includes('Revisão solicitada: Conferir o valor')), 'histórico sem o comentário da revisão');
+    const linhaNf = hist.find((h) => h.startsWith('Adicionar NF |')) || '';
+    assert.ok(linhaNf.includes('NF teste E2E') && !linhaNf.includes('NF antecipada'), 'histórico da Adicionar NF devia citar só a NF da etapa: ' + linhaNf);
   });
 });
