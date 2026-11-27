@@ -1,0 +1,389 @@
+{
+  "voz": {
+    "nome": "pt-BR-Chirp3-HD-Leda",
+    "velocidade": 0.94,
+    "estilo": "animada"
+  },
+  "falas": {
+    "v24_abertura": {
+      "texto": "Oi, amiguinho! Hoje a gente vai brincar com o pastor e as ovelhinhas!",
+      "dur": 4.391,
+      "estilo": "animada"
+    },
+    "v24_p1_pergunta": {
+      "texto": "A ovelhinha saiu para passear! Cadê ela?",
+      "dur": 3.32,
+      "estilo": "animada"
+    },
+    "v24_p1_resposta": {
+      "texto": "Achou! Estava atrás do arbusto! Oi, ovelhinha!",
+      "dur": 4.64,
+      "estilo": "animada"
+    },
+    "v24_p2_pergunta": {
+      "texto": "Quantas ovelhinhas estão no pasto? Conte comigo!",
+      "dur": 2.93,
+      "estilo": "animada"
+    },
+    "v24_p2_contagem": {
+      "texto": "Um... dois... três... quatro... cinco!",
+      "dur": 6.68,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 0.4
+        },
+        {
+          "ini": 1.25,
+          "fim": 1.96
+        },
+        {
+          "ini": 2.81,
+          "fim": 3.57
+        },
+        {
+          "ini": 4.42,
+          "fim": 5.15
+        },
+        {
+          "ini": 6,
+          "fim": 6.68
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v24_p2_resposta": {
+      "texto": "Cinco ovelhinhas! Que fofura!",
+      "dur": 2.177,
+      "estilo": "animada"
+    },
+    "v24_p3_pergunta": {
+      "texto": "Quem cuida das ovelhinhas com carinho? O pescador... o pastor... ou o padeiro?",
+      "dur": 7.37,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.97
+        },
+        {
+          "ini": 2.87,
+          "fim": 3.74
+        },
+        {
+          "ini": 4.74,
+          "fim": 5.48
+        },
+        {
+          "ini": 6.48,
+          "fim": 7.37
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v24_p3_resposta": {
+      "texto": "O pastor! Ele ama as ovelhinhas!",
+      "dur": 2.45,
+      "estilo": "animada"
+    },
+    "v24_p4_pergunta": {
+      "texto": "Olha uma sombra atrás do morro! Quem será? O camelo... o leão... ou a ovelha?",
+      "dur": 7.92,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.72
+        },
+        {
+          "ini": 2.22,
+          "fim": 2.88
+        },
+        {
+          "ini": 3.78,
+          "fim": 4.45
+        },
+        {
+          "ini": 5.45,
+          "fim": 6.11
+        },
+        {
+          "ini": 7.11,
+          "fim": 7.92
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v24_p4_resposta": {
+      "texto": "A ovelha! Quase achamos!",
+      "dur": 2.65,
+      "estilo": "animada"
+    },
+    "v24_p5_pergunta": {
+      "texto": "O pastor está sem uma coisa! O que será? O guarda-chuva... o cajado... ou a coroa?",
+      "dur": 8.84,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.77
+        },
+        {
+          "ini": 2.27,
+          "fim": 2.98
+        },
+        {
+          "ini": 3.88,
+          "fim": 5.08
+        },
+        {
+          "ini": 6.08,
+          "fim": 7.01
+        },
+        {
+          "ini": 8.01,
+          "fim": 8.84
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v24_p5_resposta": {
+      "texto": "O cajado! Agora ele pode procurar!",
+      "dur": 2.86,
+      "estilo": "animada"
+    },
+    "v24_p6_pergunta": {
+      "texto": "Qual ovelha é a grandona? A da esquerda... ou a da direita?",
+      "dur": 5.19,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.59
+        },
+        {
+          "ini": 2.49,
+          "fim": 3.4
+        },
+        {
+          "ini": 4.4,
+          "fim": 5.19
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v24_p6_resposta": {
+      "texto": "A da direita! Que ovelhona!",
+      "dur": 2.75,
+      "estilo": "animada"
+    },
+    "v24_p7_pergunta": {
+      "texto": "Tem um engraçadinho no meio das ovelhas! Quem é?",
+      "dur": 3.6,
+      "estilo": "animada"
+    },
+    "v24_p7_resposta": {
+      "texto": "O leãozinho! Ha ha! Ele quis brincar também!",
+      "dur": 4.56,
+      "estilo": "animada"
+    },
+    "v24_p8_pergunta": {
+      "texto": "Olha a filinha! Quem vem agora? A ovelha... a flor... ou a pedra?",
+      "dur": 7.59,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 0.99
+        },
+        {
+          "ini": 1.49,
+          "fim": 2.51
+        },
+        {
+          "ini": 3.41,
+          "fim": 4.25
+        },
+        {
+          "ini": 5.25,
+          "fim": 5.88
+        },
+        {
+          "ini": 6.88,
+          "fim": 7.59
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v24_p8_resposta": {
+      "texto": "A flor! Que fila cheirosa!",
+      "dur": 2.97,
+      "estilo": "animada"
+    },
+    "v24_p9_pergunta": {
+      "texto": "O que não tem no pasto? A grama... a flor... ou o foguete?",
+      "dur": 6.1,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.22
+        },
+        {
+          "ini": 2.12,
+          "fim": 2.78
+        },
+        {
+          "ini": 3.78,
+          "fim": 4.4
+        },
+        {
+          "ini": 5.4,
+          "fim": 6.1
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v24_p9_resposta": {
+      "texto": "O foguete! Ha ha! Ovelha não vai para a lua!",
+      "dur": 4.54,
+      "estilo": "animada"
+    },
+    "v24_p10_mostrar": {
+      "texto": "Olhe bem onde a ovelhinha está.",
+      "dur": 1.81,
+      "estilo": "animada"
+    },
+    "v24_p10_pergunta": {
+      "texto": "As cartas dançaram! Onde ela ficou? No um... no dois... ou no três?",
+      "dur": 7.56,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.37
+        },
+        {
+          "ini": 1.87,
+          "fim": 2.75
+        },
+        {
+          "ini": 3.55,
+          "fim": 4.19
+        },
+        {
+          "ini": 5.09,
+          "fim": 5.88
+        },
+        {
+          "ini": 6.78,
+          "fim": 7.56
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v24_p10_resposta": {
+      "texto": "No número três! Achamos a ovelhinha!",
+      "dur": 2.931,
+      "estilo": "animada"
+    },
+    "v24_p13_mostrar": {
+      "texto": "Olhe bem os três amigos!",
+      "dur": 1.81,
+      "estilo": "animada"
+    },
+    "v24_p13_pergunta": {
+      "texto": "Um amigo foi dar uma voltinha! Quem foi? A ovelha... o passarinho... ou o camelo?",
+      "dur": 8.56,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.84
+        },
+        {
+          "ini": 2.34,
+          "fim": 3.08
+        },
+        {
+          "ini": 3.98,
+          "fim": 4.77
+        },
+        {
+          "ini": 5.77,
+          "fim": 6.65
+        },
+        {
+          "ini": 7.65,
+          "fim": 8.56
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v24_p13_resposta": {
+      "texto": "A ovelha! Sempre ela!",
+      "dur": 2.2,
+      "estilo": "animada"
+    },
+    "v24_p14_mostrar": {
+      "texto": "Olha quem vem chegando ao pasto, um de cada vez!",
+      "dur": 3.44,
+      "estilo": "animada"
+    },
+    "v24_p14_pergunta": {
+      "texto": "Quem chegou primeiro? A ovelha... o pastor... ou o passarinho?",
+      "dur": 6.65,
+      "partes": [
+        {
+          "ini": 0,
+          "fim": 1.21
+        },
+        {
+          "ini": 2.11,
+          "fim": 2.97
+        },
+        {
+          "ini": 3.97,
+          "fim": 4.71
+        },
+        {
+          "ini": 5.71,
+          "fim": 6.65
+        }
+      ],
+      "estilo": "animada"
+    },
+    "v24_p14_resposta": {
+      "texto": "O passarinho! Chegou voando!",
+      "dur": 2.68,
+      "estilo": "animada"
+    },
+    "v24_encerramento": {
+      "texto": "O pastor achou a ovelhinha! Até a próxima, amiguinho!",
+      "dur": 3.62,
+      "estilo": "animada"
+    },
+    "v24_v2_p1_pergunta": {
+      "texto": "Ih! A ovelhinha saiu para passear! Cadê ela?",
+      "dur": 3.91,
+      "estilo": "animada"
+    },
+    "v24_v2_gancho": {
+      "texto": "Hoje a gente vai brincar com o pastor e as ovelhinhas. São doze brincadeiras, e a última é uma surpresa. Vem comigo?",
+      "dur": 8.17,
+      "estilo": "animada"
+    },
+    "v24_v2_surpresa": {
+      "texto": "Uma ovelhinha foi passear longe! Vamos procurar com o pastor?",
+      "dur": 4.94,
+      "estilo": "animada"
+    },
+    "v24_v2_metade": {
+      "texto": "Já procuramos um montão! Está gostoso brincar com você!",
+      "dur": 4.01,
+      "estilo": "animada"
+    },
+    "v24_v2_ultimo": {
+      "texto": "Estamos quase achando! Agora vem a brincadeira surpresa!",
+      "dur": 3.96,
+      "estilo": "animada"
+    },
+    "v24_v2_encerramento": {
+      "texto": "Uhuu! O pastor achou a ovelhinha e voltou todo feliz, com ela no colo! Jesus cuida da gente assim, com muito carinho. Vem brincar comigo de novo!",
+      "dur": 11.35,
+      "estilo": "animada"
+    }
+  }
+}

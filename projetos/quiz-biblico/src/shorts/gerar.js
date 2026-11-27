@@ -785,6 +785,85 @@ const SHORTS = [
     },
   },
   {
+    // S1 · qual é o diferente? (a Ovelhinha Perdida)
+    id: 'v24_short1',
+    pasta: 'v24-biblico-ovelha-perdida',
+    narrDir: NARR_SHORTS,
+    criar: () => {
+      const op = require('../art/ovelhaPerdida');
+      const dn = require('../art/daniel');
+      const cr = require('../art/criacao');
+      const animais = require('../art/animais');
+      const q = (fundo, opcoes) => ({ painel: 'texto', texto: '?', fundo, opcoes });
+      const flor = (c) => () => cr.flor(c);
+      return criarTresSombras({
+        narrDir: NARR_SHORTS,
+        ids: { q: ['s1_q1', 's3_e_agora', 's3_ultima'], r: ['s1c_r1', 's1c_r2', 's1c_r3'], fim: 's3_fim' },
+        fundo: fundos.pasto,
+        perguntas: [
+          q('#FFE0C7', [{ arte: op.ovelha, fundo: '#CFF1E0' }, { arte: op.ovelha, fundo: '#CFF1E0' }, { arte: dn.leao('feliz'), fundo: '#CFF1E0', certa: true }]),
+          q('#CFE6FF', [{ arte: flor('#FF8FB1'), fundo: '#E4DAFB' }, { arte: flor('#FFD23F'), fundo: '#E4DAFB', certa: true }, { arte: flor('#FF8FB1'), fundo: '#E4DAFB' }]),
+          q('#E4DAFB', [{ arte: animais.camelo, fundo: '#FFF1B8', certa: true }, { arte: animais.pomba, fundo: '#FFF1B8' }, { arte: animais.pomba, fundo: '#FFF1B8' }]),
+        ],
+      });
+    },
+    textos: {
+      titulo: 'Qual é o diferente? 🐑 Acerta as 3? #shorts',
+      descricao: 'Tem um engraçadinho no meio das ovelhas! Ache o diferente em 3 segundos! 🐑\n\nQuiz completo: Quiz Bíblico para Crianças 🐑 A Ovelhinha Perdida (link do vídeo longo)\n\n#shorts #quizinfantil #paracriancas',
+      tags: ['quiz infantil', 'qual é o diferente', 'jogo de atenção', 'quiz bíblico infantil', 'quiz para crianças', 'ovelhinha Tuti', 'shorts infantil'],
+    },
+  },
+  {
+    // S3 · qual é o maior? (a Ovelhinha Perdida)
+    id: 'v24_short2',
+    pasta: 'v24-biblico-ovelha-perdida',
+    narrDir: NARR_SHORTS,
+    criar: () => {
+      const op = require('../art/ovelhaPerdida');
+      const animais = require('../art/animais');
+      const objetos = require('../art/objetos');
+      const tres = (arte, escalas, certa, fundo, fundoOpc) => ({ painel: 'texto', texto: '?', fundo, opcoes: escalas.map((e, i) => ({ arte, escala: e, fundo: fundoOpc, certa: i === certa })) });
+      return criarTresSombras({
+        narrDir: NARR_SHORTS,
+        ids: { q: ['s3m_q1', 's3_e_agora', 's3_ultima'], r: ['s3m_r1', 's3m_r2', 's3m_r3'], fim: 's3_fim' },
+        fundo: fundos.pasto,
+        perguntas: [tres(animais.pomba, [0.55, 0.75, 1], 2, '#FFF1B8', '#CFE6FF'), tres(objetos.cajado, [1, 0.6, 0.78], 0, '#CFE6FF', '#FFF1B8'), tres(op.pastor, [0.62, 1, 0.8], 1, '#FFD9E4', '#CFF1E0')],
+      });
+    },
+    textos: {
+      titulo: 'Qual é o maior? 🐑 Acerta as 3? #shorts',
+      descricao: 'Três desafios rápidos: qual é o maior? Você tem 3 segundos! 🐑\n\nQuiz completo: Quiz Bíblico para Crianças 🐑 A Ovelhinha Perdida (link do vídeo longo)\n\n#shorts #quizinfantil #paracriancas',
+      tags: ['quiz infantil', 'qual é o maior', 'grande e pequeno', 'quiz bíblico infantil', 'quiz para crianças', 'ovelhinha Tuti', 'shorts infantil'],
+    },
+  },
+  {
+    // S5 · conte comigo! (a Ovelhinha Perdida)
+    id: 'v24_short3',
+    pasta: 'v24-biblico-ovelha-perdida',
+    narrDir: NARR_SHORTS,
+    criar: () => {
+      const op = require('../art/ovelhaPerdida');
+      const cr = require('../art/criacao');
+      const animais = require('../art/animais');
+      const nums = (lista, certo, fundo) => lista.map((x) => ({ texto: String(x), fundo, certa: x === certo }));
+      return criarTresSombras({
+        narrDir: NARR_SHORTS,
+        ids: { q: ['s5o_q1', 's5o_q2', 's5o_q3'], r: ['s5_r1', 's5_r2', 's5_r3'], fim: 's3_fim' },
+        fundo: fundos.pasto,
+        perguntas: [
+          { painel: 'contar', arte: op.ovelha, n: 3, fundo: '#CFF1E0', opcoes: nums([3, 4, 2], 3, '#FFF1B8') },
+          { painel: 'contar', arte: () => cr.flor('#FF8FB1'), n: 4, fundo: '#FFF1B8', opcoes: nums([5, 4, 3], 4, '#FFD9E4') },
+          { painel: 'contar', arte: animais.pomba, n: 5, fundo: '#CFE6FF', opcoes: nums([4, 3, 5], 5, '#E4DAFB') },
+        ],
+      });
+    },
+    textos: {
+      titulo: 'Conte comigo! 🐑 Acerta as 3? #shorts',
+      descricao: 'Ovelhinhas, flores e passarinhos: conte em 3 segundos! 🐑\n\nQuiz completo: Quiz Bíblico para Crianças 🐑 A Ovelhinha Perdida (link do vídeo longo)\n\n#shorts #quizinfantil #paracriancas',
+      tags: ['quiz infantil', 'contar até 5', 'números para crianças', 'quiz bíblico infantil', 'quiz para crianças', 'ovelhinha Tuti', 'shorts infantil'],
+    },
+  },
+  {
     id: 'v11_short1',
     pasta: 'v11-natal-ceia',
     criar: deVideo({ v: 'v11', pasta: 'v11-natal-ceia', n: 7, fundo: fundos.cozinha, selo: 'QUIZ DE NATAL', tutiOpts: { gorro: true } }),

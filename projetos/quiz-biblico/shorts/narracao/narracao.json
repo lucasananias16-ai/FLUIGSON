@@ -244,6 +244,36 @@
       "texto": "A última! Quantas estrelas?",
       "dur": 2.47,
       "estilo": "animada"
+    },
+    "s1c_r1": {
+      "texto": "O leãozinho!",
+      "dur": 0.84,
+      "estilo": "animada"
+    },
+    "s1c_r2": {
+      "texto": "A flor amarela!",
+      "dur": 1.12,
+      "estilo": "animada"
+    },
+    "s1c_r3": {
+      "texto": "O camelo!",
+      "dur": 0.88,
+      "estilo": "animada"
+    },
+    "s5o_q1": {
+      "texto": "Quantas ovelhinhas? Conte comigo!",
+      "dur": 2.23,
+      "estilo": "animada"
+    },
+    "s5o_q2": {
+      "texto": "E quantas flores?",
+      "dur": 1.22,
+      "estilo": "animada"
+    },
+    "s5o_q3": {
+      "texto": "A última! Quantos passarinhos?",
+      "dur": 2.53,
+      "estilo": "animada"
     }
   }
 }

@@ -25,7 +25,7 @@ No quadro 0, a ovelhinha pequena passa saltitando e se esconde atrás do arbusto
 | 6 | Contar | Quantas ovelhinhas estão no pasto? Conte comigo! (1 a 5) | Cinco ovelhinhas! Que fofura! |
 | 7 | Qual é a maior? | Olha as duas ovelhas! Qual é a grandona? A da esquerda ou a da direita? | A da direita! Que ovelhona! |
 | — | Regancho | "Já procuramos um montão! Está gostoso brincar com você!" | |
-| 8 | O que sumiu? | Três amigos aparecem, a nuvem passa e... ué! Um foi dar uma voltinha. Quem foi? A ovelha, o passarinho ou o camelo? | A ovelha! Sempre ela! |
+| 8 | O que sumiu? | Três amigos aparecem, a nuvem passa e um foi dar uma voltinha. Quem foi? A ovelha, o passarinho ou o camelo? | A ovelha! Sempre ela! |
 | 9 | Sequência | Olha a filinha! Ovelha, flor, ovelha, flor, ovelha... Quem vem agora? | A flor! Que fila cheirosa! |
 | 10 | Intruso | O que não tem no pasto? A grama, a flor ou o foguete? | O foguete! Ha ha! Ovelha não vai para a lua! |
 | 11 | O que falta | O pastor está sem uma coisa! O que será? O guarda-chuva, o cajado ou a coroa? | O cajado! Agora ele pode procurar! |

@@ -47,6 +47,13 @@ const FALAS = [
   { id: 's2r_r3', texto: 'Do rei!', tipo: 'fala' },
   { id: 's5r_q1', texto: 'Quantos camelos? Conte comigo!', tipo: 'fala' },
   { id: 's5r_q3', texto: 'A última! Quantas estrelas?', tipo: 'fala' },
+  // Vídeo 24 · a Ovelhinha Perdida
+  { id: 's1c_r1', texto: 'O leãozinho!', tipo: 'fala' },
+  { id: 's1c_r2', texto: 'A flor amarela!', tipo: 'fala' },
+  { id: 's1c_r3', texto: 'O camelo!', tipo: 'fala' },
+  { id: 's5o_q1', texto: 'Quantas ovelhinhas? Conte comigo!', tipo: 'fala' },
+  { id: 's5o_q2', texto: 'E quantas flores?', tipo: 'fala' },
+  { id: 's5o_q3', texto: 'A última! Quantos passarinhos?', tipo: 'fala' },
   // S3 · qual é o maior?
   { id: 's3m_q1', texto: 'Qual é o maior? Rápido!', tipo: 'fala' },
   { id: 's3m_r1', texto: 'O da direita!', tipo: 'fala' },

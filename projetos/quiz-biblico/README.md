@@ -254,6 +254,15 @@ Série nova "Jogos da Tuti": 12 desafios de memória de cinco tipos (cartas que 
 | 1 a 6 | Narrativa, imagens, narração, animação (6 min 05 s), legendas e pacote do YouTube | Aprovadas (pelo Claude, por decisão do dono do canal) |
 | 7 | Publicação | Pronto para subir. O passo a passo está em `v23-natal-reis-magos/youtube/como-publicar.md` |
 
+### Vídeo 24 — Quiz Bíblico: a Ovelhinha Perdida
+
+12 brincadeiras (6 min 04 s), no padrão novo, com o roteiro variado e o tom leve do Vídeo 23: abre no "achar" (a ovelhinha saltita e se esconde), tem "quem chegou primeiro?", "o que sumiu?" e a memória com três trocas; a ordem está em `roteiro.ordem`. O pasto, o arbusto e o pastor estão em `art/ovelhaPerdida.js`; Tuti sem gorro. Código em `src/v24/`; arquivos em `v24-biblico-ovelha-perdida/`. Agendado para segunda 14/12/2026, 16h.
+
+| Nº | Etapa | Situação |
+|---|---|---|
+| 1 a 6 | Narrativa, imagens, narração, animação (6 min 04 s), legendas e pacote do YouTube | Aprovadas (pelo Claude, por decisão do dono do canal) |
+| 7 | Publicação | Pronto para subir. O passo a passo está em `v24-biblico-ovelha-perdida/youtube/como-publicar.md` |
+
 ## Pastas
 
 - `v5-ingles-animais/` — arquivos do Vídeo 5, na mesma organização do Vídeo 4
@@ -402,6 +411,10 @@ node src/v22/video.js
 
 ```bash
 node src/v23/video.js
+```
+
+```bash
+node src/v24/video.js
 ```
 
 Cada comando monta um vídeo inteiro em `_rascunho/video/` (pasta fora do repositório): `v1_quiz_arca_de_noe.mp4`, `v2_desafios_de_davi_e_golias.mp4` e `v3_desafios_do_natal_de_jesus.mp4` e `v4_quiz_do_papai_noel.mp4` e `v5_festa_dos_animais.mp4`. Também grava as legendas e o mapa do vídeo na pasta de cada um. Cada cena é um trecho separado; só os trechos que mudaram são renderizados de novo. Um vídeo de 4 minutos leva cerca de 5 minutos para renderizar do zero.

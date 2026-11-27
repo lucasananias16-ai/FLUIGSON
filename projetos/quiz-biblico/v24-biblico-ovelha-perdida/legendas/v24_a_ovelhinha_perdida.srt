@@ -1,0 +1,328 @@
+1
+00:00:00,400 --> 00:00:03,320
+Ih! A ovelhinha saiu para passear!
+
+2
+00:00:03,440 --> 00:00:04,640
+Cadê ela?
+
+3
+00:00:11,700 --> 00:00:14,380
+Achou! Estava atrás do arbusto!
+
+4
+00:00:14,810 --> 00:00:16,500
+Oi, ovelhinha!
+
+5
+00:00:16,740 --> 00:00:20,020
+Hoje a gente vai brincar com
+o pastor e as ovelhinhas.
+
+6
+00:00:20,260 --> 00:00:23,910
+São doze brincadeiras, e
+a última é uma surpresa.
+
+7
+00:00:24,140 --> 00:00:25,340
+Vem comigo?
+
+8
+00:00:27,473 --> 00:00:31,063
+Olha quem vem chegando ao
+pasto, um de cada vez!
+
+9
+00:00:37,950 --> 00:00:39,410
+Quem chegou primeiro?
+
+10
+00:00:40,060 --> 00:00:41,260
+A ovelha...
+
+11
+00:00:41,920 --> 00:00:43,120
+o pastor...
+
+12
+00:00:43,660 --> 00:00:44,860
+ou o passarinho?
+
+13
+00:00:57,040 --> 00:00:59,880
+O passarinho! Chegou voando!
+
+14
+00:01:02,783 --> 00:01:05,003
+Quem cuida das ovelhinhas com carinho?
+
+15
+00:01:05,653 --> 00:01:06,853
+O pescador...
+
+16
+00:01:07,523 --> 00:01:08,723
+o pastor...
+
+17
+00:01:09,263 --> 00:01:10,463
+ou o padeiro?
+
+18
+00:01:22,593 --> 00:01:25,183
+O pastor! Ele ama as ovelhinhas!
+
+19
+00:01:27,907 --> 00:01:30,637
+Tem um engraçadinho no meio das ovelhas!
+
+20
+00:01:30,947 --> 00:01:32,147
+Quem é?
+
+21
+00:01:43,907 --> 00:01:46,747
+O leãozinho! Ha ha!
+
+22
+00:01:46,857 --> 00:01:48,637
+Ele quis brincar também!
+
+23
+00:01:50,690 --> 00:01:53,080
+Uma ovelhinha foi passear longe!
+
+24
+00:01:53,900 --> 00:01:55,700
+Vamos procurar com o pastor?
+
+25
+00:01:57,817 --> 00:01:59,787
+Olha uma sombra atrás do morro!
+
+26
+00:02:00,037 --> 00:02:01,237
+Quem será?
+
+27
+00:02:01,597 --> 00:02:02,797
+O camelo...
+
+28
+00:02:03,267 --> 00:02:04,467
+o leão...
+
+29
+00:02:04,927 --> 00:02:06,127
+ou a ovelha?
+
+30
+00:02:18,177 --> 00:02:20,987
+A ovelha! Quase achamos!
+
+31
+00:02:23,707 --> 00:02:25,697
+Quantas ovelhinhas estão no pasto?
+
+32
+00:02:25,777 --> 00:02:26,977
+Conte comigo!
+
+33
+00:02:27,297 --> 00:02:28,467
+Um...
+
+34
+00:02:28,547 --> 00:02:29,747
+dois...
+
+35
+00:02:30,107 --> 00:02:31,307
+três...
+
+36
+00:02:31,717 --> 00:02:32,917
+quatro...
+
+37
+00:02:33,297 --> 00:02:34,497
+cinco!
+
+38
+00:02:35,527 --> 00:02:37,877
+Cinco ovelhinhas! Que fofura!
+
+39
+00:02:40,933 --> 00:02:42,773
+Qual ovelha é a grandona?
+
+40
+00:02:43,423 --> 00:02:44,623
+A da esquerda...
+
+41
+00:02:45,333 --> 00:02:46,533
+ou a da direita?
+
+42
+00:02:58,563 --> 00:03:01,473
+A da direita! Que ovelhona!
+
+43
+00:03:03,533 --> 00:03:05,283
+Já procuramos um montão!
+
+44
+00:03:05,623 --> 00:03:07,693
+Está gostoso brincar com você!
+
+45
+00:03:09,207 --> 00:03:11,177
+Olhe bem os três amigos!
+
+46
+00:03:17,183 --> 00:03:19,273
+Um amigo foi dar uma voltinha!
+
+47
+00:03:19,523 --> 00:03:20,723
+Quem foi?
+
+48
+00:03:21,163 --> 00:03:22,363
+A ovelha...
+
+49
+00:03:22,953 --> 00:03:24,153
+o passarinho...
+
+50
+00:03:24,833 --> 00:03:26,033
+ou o camelo?
+
+51
+00:03:38,203 --> 00:03:40,553
+A ovelha! Sempre ela!
+
+52
+00:03:43,450 --> 00:03:44,690
+Olha a filinha!
+
+53
+00:03:44,940 --> 00:03:46,210
+Quem vem agora?
+
+54
+00:03:46,860 --> 00:03:48,060
+A ovelha...
+
+55
+00:03:48,700 --> 00:03:49,900
+a flor...
+
+56
+00:03:50,330 --> 00:03:51,530
+ou a pedra?
+
+57
+00:04:03,490 --> 00:04:06,600
+A flor! Que fila cheirosa!
+
+58
+00:04:09,517 --> 00:04:10,987
+O que não tem no pasto?
+
+59
+00:04:11,637 --> 00:04:12,837
+A grama...
+
+60
+00:04:13,297 --> 00:04:14,497
+a flor...
+
+61
+00:04:14,917 --> 00:04:16,117
+ou o foguete?
+
+62
+00:04:28,057 --> 00:04:30,607
+O foguete! Ha ha!
+
+63
+00:04:30,887 --> 00:04:32,757
+Ovelha não vai para a lua!
+
+64
+00:04:35,683 --> 00:04:37,703
+O pastor está sem uma coisa!
+
+65
+00:04:37,953 --> 00:04:39,153
+O que será?
+
+66
+00:04:39,563 --> 00:04:41,013
+O guarda-chuva...
+
+67
+00:04:41,763 --> 00:04:42,963
+o cajado...
+
+68
+00:04:43,693 --> 00:04:44,893
+ou a coroa?
+
+69
+00:04:56,963 --> 00:04:59,983
+O cajado! Agora ele pode procurar!
+
+70
+00:05:02,023 --> 00:05:03,633
+Estamos quase achando!
+
+71
+00:05:03,933 --> 00:05:06,143
+Agora vem a brincadeira surpresa!
+
+72
+00:05:08,200 --> 00:05:10,160
+Olhe bem onde a ovelhinha está.
+
+73
+00:05:16,860 --> 00:05:18,480
+As cartas dançaram!
+
+74
+00:05:18,730 --> 00:05:19,930
+Onde ela ficou?
+
+75
+00:05:20,410 --> 00:05:21,610
+No um...
+
+76
+00:05:21,950 --> 00:05:23,150
+no dois...
+
+77
+00:05:23,640 --> 00:05:24,840
+ou no três?
+
+78
+00:05:36,860 --> 00:05:39,960
+No número três! Achamos a ovelhinha!
+
+79
+00:05:42,783 --> 00:05:48,703
+Uhuu! O pastor achou a ovelhinha e
+voltou todo feliz, com ela no colo!
+
+80
+00:05:49,253 --> 00:05:52,183
+Jesus cuida da gente
+assim, com muito carinho.
+
+81
+00:05:52,543 --> 00:05:54,283
+Vem brincar comigo de novo!
