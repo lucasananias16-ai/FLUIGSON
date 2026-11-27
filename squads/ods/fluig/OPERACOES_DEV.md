@@ -39,3 +39,20 @@ Resultados:
 - **Cadastro** (dataset de colaboradores original): A e B passam; C falha só pela parametrização do print.
 - **Problema novo:** a tela de atribuição oferece só 100 centros de custo (dts_cCustoProtheus_JYNX sem filtro = TOP 100), e o FLU1G não está entre eles.
 - **Limpeza:** os cards 692, 693 e 694 foram excluídos. A busca de aprovadores para FLU1G voltou a 0, e não há solicitação ativa na cópia de teste.
+
+## 27/11/2026 — Teste do fluxo completo (até o Fim)
+Cadastros temporários de TESTE, todos excluídos ao final: alçadas TST1 a TST4 (níveis 1 a 4, cards 697, 699, 701 e 703)
+e atribuições "[TESTE] Admin Fluig" em FLU1G com Ativo = Sim (cards 698, 700, 702 e 704).
+
+Solicitação **234**, na cópia liberacao_faturamento_medicao_test, **finalizada** (status 2):
+Início → Aprovação 1 → Revisão → Aprovação 1 → Aprovação 2 → Aprovação 3 → Aprovação 4 → Adicionar NF →
+Medição dos Itens → Liberação de Pagamento → Fim. Gateways cruzados: 80, 84, 87, 90, 37 e 52.
+
+Tentativas anteriores, todas canceladas: 229 (o webservice esvazia campos não enviados), 230 (Medição sem responsável),
+231 e 232 (gateway 37 → Aprovação 39), 233 (sonda; parada na Medição).
+
+**Achado:** as atividades **Medição dos Itens (32)** e **Aprovação (39)** não têm mecanismo de atribuição. Ao passar pelo
+gateway 37 com NF fora do orçamento, o Fluig pede a escolha manual do responsável entre 12 usuários; pelos webservices
+isso não é possível ("O destino informado é inválido"). O caminho 37 → 39 → 41 só pode ser testado pela tela.
+
+Ao final da limpeza: nenhuma alçada ou atribuição TST*, 0 aprovadores para FLU1G e nenhuma solicitação ativa na cópia.

@@ -1,0 +1,33 @@
+▶ fluxo completo — liberacao_faturamento_medicao_test — PV 104281 / PC I82810 — USD 30.000 — C. Custo FLU1G (retorno da homologação 26/11)
+  ✔ 01. Início → Aprovação 1 (12) (2342.981937ms)
+  ℹ solicitação 234
+  ✔ 02. Aprovação 1 pede revisão → Revisão (28) (1483.783539ms)
+  ℹ 12 Aprovação 1 → 28 Revisão | campos: {"hd_aprovPc":"Revisar"} | resposta: [["WDNrDocto","710"],["iTask","28"],["cDestino","[admin]"],["WDNrVersao","2000"],["processLink","com.datasul.technology.webdesk.model.temp.ProcessLink[processLi
+  ✔ 03. Revisão reenviada → Aprovação 1 (12) (1396.565168ms)
+  ℹ 28 Revisão → 12 Aprovação 1 | campos: {"hd_aprovPc":""} | resposta: [["WDNrDocto","710"],["iTask","12"],["cDestino","[admin]"],["WDNrVersao","3000"],["processLink","com.datasul.technology.webdesk.model.temp.ProcessLink[processLi
+  ✔ 04. Aprovação 1 aprova → Aprovação 2 (18) (1718.632987ms)
+  ℹ 12 Aprovação 1 → 18 Aprovação 2 | campos: {"hd_aprovPc":"Aprovado"} | resposta: [["WDNrDocto","710"],["iTask","18"],["cDestino","[admin]"],["WDNrVersao","4000"],["processLink","com.datasul.technology.webdesk.model.temp.ProcessLink[processLi
+  ✔ 05. Aprovação 2 aprova → Aprovação 3 (20) (1917.361421ms)
+  ℹ 18 Aprovação 2 → 20 Aprovação 3 | campos: {"hd_aprovPc":"Aprovado"} | resposta: [["WDNrDocto","710"],["iTask","20"],["cDestino","[admin]"],["WDNrVersao","5000"],["processLink","com.datasul.technology.webdesk.model.temp.ProcessLink[processLi
+  ✔ 06. Aprovação 3 aprova → Aprovação 4 (26) (2201.501181ms)
+  ℹ 20 Aprovação 3 → 26 Aprovação 4 | campos: {"hd_aprovPc":"Aprovado"} | resposta: [["WDNrDocto","710"],["iTask","26"],["cDestino","[admin]"],["WDNrVersao","6000"],["processLink","com.datasul.technology.webdesk.model.temp.ProcessLink[processLi
+  ✔ 07. Aprovação 4 aprova → Adicionar NF (73) (1845.026117ms)
+  ℹ 26 Aprovação 4 → 73 Adicionar NF | campos: {"hd_aprovPc":"Aprovado"} | resposta: [["WDNrDocto","710"],["iTask","73"],["cDestino","[Pool:Group:ADICIONA.NF.PC]"],["WDNrVersao","7000"],["processLink","com.datasul.technology.webdesk.model.temp.P
+  ✔ 08. Adicionar NF → Medição dos Itens (32) [destino escolhido: admin] (1795.198084ms)
+  ℹ 73 Adicionar NF → 32 Medição dos Itens | campos: {} | resposta: [["WDNrDocto","710"],["iTask","32"],["cDestino","[admin]"],["WDNrVersao","8000"],["processLink","com.datasul.technology.webdesk.model.temp.ProcessLink[processLi
+  ✔ 09. Medição com NF dentro do orçamento → Liberação de Pagamento (46) (1647.221504ms)
+  ℹ 32 Medição dos Itens → 46 Liberação de Pagamento | campos: {"hd_valNfOk":"aprovado"} | resposta: [["WDNrDocto","710"],["iTask","46"],["cDestino","[Pool:Group:LIBERA.PAG.PC]"],["WDNrVersao","9000"],["processLink","com.datasul.technology.webdesk.model.temp.Pr
+  ✔ 10. Aprovação (39) — NF fora do orçamento: só pela tela (atividade sem responsável definido; exige escolha manual) (0.289795ms) # TODO
+  ✔ 11. Liberação de Pagamento sem saldo → Fim (53) (1996.628448ms)
+  ℹ 46 Liberação de Pagamento → encerrada | campos: {"txt_valFaturadoPc":"R$ 30.000,00","txt_valFaturarPc":"R$ 0,00","hd_possuiSaldo":"false"} | resposta: [["WDNrDocto","710"],["iTask","53"],["cDestino","[]"],["WDNrVersao","10000"],["processLink","com.datasul.technology.webdesk.model.temp.ProcessLink[processLinkPK
+  ✔ 12. solicitação consta como finalizada (216.232564ms)
+  ℹ workflowProcess: status 2 | ativo false | fim 2026-11-27T00:46:45-03:00
+✔ fluxo completo — liberacao_faturamento_medicao_test — PV 104281 / PC I82810 — USD 30.000 — C. Custo FLU1G (retorno da homologação 26/11) (18565.408599ms)
+ℹ tests 12
+ℹ suites 1
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 1
+ℹ duration_ms 18631.381842

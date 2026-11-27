@@ -125,7 +125,7 @@ class FluigSoap {
     const rePar = /<item>\s*<item>([^<]*)<\/item>\s*<item>([^<]*)<\/item>\s*<\/item>/g;
     let mp;
     while ((mp = rePar.exec(xml))) pairs.push([unesc(mp[1]), unesc(mp[2])]);
-    const err = pairs.find((p) => p[0] === 'ERROR');
+    const err = pairs.find((p) => /^ERROR/i.test(String(p[0]).trim()));
     if (err) throw new Error('startProcess: ' + err[1]);
     const ip = pairs.find((p) => p[0] === 'iProcess');
     if (!ip) throw new Error('startProcess: resposta sem iProcess');
@@ -177,7 +177,7 @@ class FluigSoap {
       esc(userId || this.username) + '</userId><completeTask>' + completeTask + '</completeTask><attachments/><cardData>' +
       card + '</cardData><appointment/><managerMode>' + managerMode + '</managerMode><threadSequence>' + threadSequence + '</threadSequence>');
     const pairs = this.pares(xml);
-    const err = pairs.find((p) => p[0] === 'ERROR');
+    const err = pairs.find((p) => /^ERROR/i.test(String(p[0]).trim()));
     if (err) throw new Error('saveAndSendTask: ' + err[1]);
     return pairs;
   }
